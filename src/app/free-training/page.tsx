@@ -319,7 +319,7 @@ export default function FreeTraining() {
                   href="/ebook" 
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-sm font-bold text-background hover:bg-primary/95 transition-all shadow-md shadow-primary/20 hover:scale-[1.01]"
                 >
-                  E-Kitabı Edin ($9)
+                  E-Kitabı Edin ($6)
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

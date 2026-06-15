@@ -20,7 +20,7 @@ Kısıtlamalar:
 
 Startup Doktoru Ürünleri:
 1. Ücretsiz Eğitim: "Startup'ların Yatırımcı Karşısında Yaptığı 7 Ölümcül Hata" → /free-training
-2. E-Kitap ($9): "13 Adımda Milyon Dolarlık Startup" → /ebook
+2. E-Kitap ($6): "13 Adımda Milyon Dolarlık Startup" → /ebook
 3. Video Eğitim ($49): "Yatırımcı Sunumu Hazırlama Eğitimi" → /investor-training`;
 
 export async function POST(req: NextRequest) {

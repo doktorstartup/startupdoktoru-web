@@ -82,7 +82,7 @@ export default function Home() {
               href="/ebook" 
               className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-background hover:bg-primary/90 transition-all shadow-md shadow-primary/20 hover:scale-[1.02] duration-300"
             >
-              E-Kitap Al ($9)
+              E-Kitap Al ($6)
             </Link>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function Home() {
               className="inline-flex h-14 items-center justify-center gap-2 rounded-xl border border-border/80 bg-secondary/30 px-8 text-base font-bold text-foreground hover:bg-secondary/60 transition-all hover:scale-[1.03] duration-300"
             >
               <BookOpen className="h-4 w-4 text-primary" />
-              E-Kitabı İncele ($9)
+              E-Kitabı İncele ($6)
             </Link>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function Home() {
               step: "Adım 02",
               title: "E-Kitap",
               desc: "13 kritik adımda milyon dolarlık bir startup kurmanın pratik el kitabını edinirsiniz.",
-              price: "$9 USD",
+              price: "$6 USD",
               btnText: "Satın Al",
               link: "/ebook",
               highlight: true
@@ -280,7 +280,7 @@ export default function Home() {
               href="/ebook" 
               className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20"
             >
-              E-Kitabı İndir ($9 USD)
+              E-Kitabı İndir ($6 USD)
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -310,7 +310,7 @@ export default function Home() {
                   </div>
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Eser Memişoğlu</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-accent">$9.00</div>
+                <div className="text-lg font-bold font-mono text-accent">$6.00</div>
               </div>
             </div>
           </div>
@@ -479,7 +479,7 @@ export default function Home() {
               href="/ebook" 
               className="inline-flex h-14 items-center justify-center gap-2 rounded-xl border border-border bg-secondary/40 px-8 text-base font-bold text-foreground hover:bg-secondary/70 transition-all hover:scale-[1.02] duration-300"
             >
-              E-Kitabı Edin ($9)
+              E-Kitabı Edin ($6)
             </Link>
           </div>
         </div>

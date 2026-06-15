@@ -63,8 +63,8 @@ const RECENT_LEADS = [
 // Mock Recent Orders
 const RECENT_ORDERS = [
   { id: "o1", email: "zeynep@edutrack.net", product: "Yatırımcı Sunumu Eğitimi", amount: "$49 USD", status: "Tamamlandı", date: "Bugün, 11:20" },
-  { id: "o2", email: "bugra@iot-node.com", product: "Milyon Dolarlık Startup E-Kitap", amount: "$9 USD", status: "Tamamlandı", date: "Dün, 18:45" },
-  { id: "o3", email: "ayse@greentech.org", product: "Milyon Dolarlık Startup E-Kitap", amount: "$9 USD", status: "Beklemede", date: "Dün, 15:30" }
+  { id: "o2", email: "bugra@iot-node.com", product: "Milyon Dolarlık Startup E-Kitap", amount: "$6 USD", status: "Tamamlandı", date: "Dün, 18:45" },
+  { id: "o3", email: "ayse@greentech.org", product: "Milyon Dolarlık Startup E-Kitap", amount: "$6 USD", status: "Beklemede", date: "Dün, 15:30" }
 ];
 
 export default function AdminDashboard() {
