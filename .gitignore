@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# yanlışlıkla proje klasörüne inen dosyalar (repoya gitmemeli)
+/.npm-cache
+/GitHubDesktop-arm64.zip
+/GitHub Desktop.app
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

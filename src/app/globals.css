@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050B14; /* Deep premium dark blue */
+  --foreground: #F3F4F6; /* Modern high contrast off-white */
+  
+  --card: #0E1726; /* Glassy slate dark blue card background */
+  --card-foreground: #F3F4F6;
+  
+  --primary: #00E5FF; /* Vibrant turquoise/cyan highlight color */
+  --primary-foreground: #050B14;
+  
+  --secondary: #0F213A; /* Slate deep blue secondary button background */
+  --secondary-foreground: #00E5FF;
+  
+  --muted: #1E293B; /* Muted borders and structural panels */
+  --muted-foreground: #94A3B8;
+  
+  --accent: #FACC15; /* Radiant conversion yellow accent */
+  --accent-foreground: #050B14;
+  
+  --border: #1E293B;
 }
 
 @theme inline {
+  --font-sans: var(--font-space-grotesk);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(14, 23, 38, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 41, 59, 0.5);
+}
+
+.glass-card {
+  background: rgba(14, 23, 38, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.15);
+  transform: translateY(-2px);
 }
