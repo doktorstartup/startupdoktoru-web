@@ -14,19 +14,19 @@ export default function EBookLanding() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const chapters = [
-    { num: "01", t: "Startup Zihniyeti", d: "Plansız kervan kurma alışkanlığını kırıp yerine stratejik temeller atmak." },
-    { num: "02", t: "Problem Doğrulama", d: "Müşterinin 'gerçekten acı çeken' ve para ödemeye hazır olduğu problemi bulmak." },
-    { num: "03", t: "MVP Geliştirme", d: "Over-engineering yapmadan, en az özellik ve en az maliyetle pazara çıkma." },
-    { num: "04", t: "İlk Müşteriyi Bulma", d: "Hiç reklam bütçesi harcamadan ilk 10 ve 100 müşteriye ulaşma taktikleri." },
-    { num: "05", t: "Ürün-Pazar Uyumu", d: "Ürününüzün pazarla tam örtüştüğünü gösteren matematiksel metrikler." },
-    { num: "06", t: "Büyüme (Growth) Sistemleri", d: "Düşük bütçelerle katlanarak büyümeyi sağlayacak büyüme motorları." },
-    { num: "07", t: "Funnel (Huni) Kurulumu", d: "Ziyaretçiyi adım adım sadık müşteriye dönüştüren otomasyonlar." },
-    { num: "08", t: "KPI ve Görev Yönetimi", d: "Ekip içi kaosu engelleyecek, gerçekçi ve ölçülebilir KPI çerçeveleri." },
-    { num: "09", t: "Operasyon Sistemleri", d: "Kurucudan bağımsız çalışan, kendi kendini yöneten iş süreçleri." },
-    { num: "10", t: "Delegasyon Metotları", d: "Hangi görevi, kime, ne zaman ve nasıl devredeceğinizin altın kuralları." },
-    { num: "11", t: "Yapay Zeka Kullanımı", d: "Gündelik iş süreçlerinizi AI ile 10 kat hızlandırma yöntemleri." },
-    { num: "12", t: "Yatırımcı Hazırlığı", d: "Değerleme hesapları ve yatırımcının karşısına çıkma kontrol listeleri." },
-    { num: "13", t: "Ölçeklenme", d: "Local bir startup'tan global bir işletmeye geçiş yolları." }
+    { num: "01", t: "İnovasyon Nedir? Doğru İnovasyonun Formülü", d: "'Yeni fikir' değil 'faydalı fikir': inovasyonun gerçek tanımı ve startup fikrini güçlendiren formül." },
+    { num: "02", t: "Over-Engineering: Mühendis Hastalığı", d: "Kullanıcının istemediği özellikleri eklemeye devam etmek startup'ı nasıl batırır — ve aşırı mühendislikten kurtulma." },
+    { num: "03", t: "MVP Nedir? En Az Özellikle Pazara Çıkmak", d: "Mükemmeliyetçilik tuzağına düşmeden, en hızlı ve en ucuz MVP ile pazara çıkma." },
+    { num: "04", t: "Problem Doğrulama & Ürün-Pazar Uyumu", d: "Müşterinin gerçekten para ödediği problemi bulmak ve ürün-pazar uyumunu (product-market fit) yakalamak." },
+    { num: "05", t: "Marka Konumlandırma & Rakip Analizi", d: "İnsanların sizi nasıl gördüğünü belirlemek ve rakip analiziyle pazarda doğru yeri almak." },
+    { num: "06", t: "Startup'ta Ekip Kurma: CEO, COO, CFO", d: "C-level rolleri, ekipteki boşlukları doğru kişilerle doldurmak ve doğru zamanda işe almak." },
+    { num: "07", t: "Nakit Akışı Yönetimi: Startup'ı Öldüren Hata", d: "'Nakit akışı öldürür' — startup'ların en çok battığı yer ve finansal modeli ayakta tutma." },
+    { num: "08", t: "Şirket Değerleme Nedir? Hangi Yöntem Ne Zaman", d: "Yatırımcıya gitmeden önce şirketinin değerini kendin bil: değerleme bir hayal değil, bağlam işi." },
+    { num: "09", t: "Berkus Yöntemi ile Değerleme", d: "Geliri olmayan (pre-revenue) startup'lar için melek yatırımcı Dave Berkus'un değerleme yöntemi." },
+    { num: "10", t: "Puan Kartı (Scorecard) Değerleme Yöntemi", d: "Startup değerlemesinde puan kartı yöntemiyle nicel ve nitel kriterleri birlikte değerlendirmek." },
+    { num: "11", t: "DCF ve Risk Faktörleri ile Değerleme", d: "İndirgenmiş Nakit Akışı (DCF) ve risk faktörü düzeltmesiyle gerçekçi değerleme hesabı." },
+    { num: "12", t: "Melek Yatırımcı & Yatırımcıyla Pazarlık", d: "Melek yatırımcı kimdir, yatırım turları ve masada güçlü oturmanın pazarlık taktikleri." },
+    { num: "13", t: "Yatırımcı Sunumu: 4 Dakikada Milyon Dolar", d: "Yatırım almış gerçek bir sunum üzerinden, yatırımcıyı ikna eden pitch'in püf noktaları." }
   ];
 
   return (
@@ -75,10 +75,10 @@ export default function EBookLanding() {
 
             <div className="space-y-4 mb-8">
               {[
-                "13 kritik adımda otonom startup kurma rehberi",
-                "Plansız büyüme ve over-engineering engelleme formülleri",
-                "Hiç reklam harcamadan ilk 100 müşteriye ulaşma taktikleri",
-                "Supabase veritabanıyla CRM & LMS entegrasyon şablonları"
+                "İnovasyon ve over-engineering: startup'ı batıran hataları önle",
+                "Şirket değerleme: Berkus, Puan Kartı (Scorecard) ve DCF yöntemleri",
+                "Melek yatırımcı bulma ve yatırımcıyla pazarlık taktikleri",
+                "Yatırım almış gerçek bir yatırımcı sunumunun püf noktaları"
               ].map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-sm text-foreground/90">
                   <Check className="h-4.5 w-4.5 text-primary shrink-0" />
@@ -87,18 +87,21 @@ export default function EBookLanding() {
               ))}
             </div>
 
-            <div className="flex items-center gap-6">
-              <button 
+            <div className="flex flex-col gap-4">
+              <div className="flex items-end gap-3">
+                <span className="text-base text-muted-foreground/70 line-through font-mono mb-1.5">12 $</span>
+                <span className="text-5xl font-black text-primary font-mono leading-none tracking-tight">6 $</span>
+                <span className="inline-flex items-center rounded-full bg-primary/15 text-primary border border-primary/30 text-[11px] font-extrabold px-2.5 py-1 uppercase tracking-wide mb-1.5">
+                  %50 indirim
+                </span>
+              </div>
+              <button
                 onClick={() => setIsCheckoutOpen(true)}
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 hover:scale-[1.01] cursor-pointer"
+                className="btn btn-lg btn-primary cursor-pointer w-full sm:w-auto"
               >
-                E-Kitabı Edin ($6.00 USD)
+                Hemen 6 $&apos;a Sahip Ol
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <div className="flex flex-col">
-                <span className="text-xs text-muted-foreground line-through">$12.00 USD</span>
-                <span className="text-sm font-bold text-accent font-mono">%50 İndirimli Sürüm</span>
-              </div>
             </div>
           </div>
 
@@ -127,7 +130,7 @@ export default function EBookLanding() {
                   </div>
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Eser Memişoğlu</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-accent">$6.00</div>
+                <div className="text-lg font-bold font-mono text-accent">6 $</div>
               </div>
             </div>
           </div>
@@ -153,12 +156,19 @@ export default function EBookLanding() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <button 
+          <div className="flex flex-col items-center gap-3 mt-12">
+            <div className="flex items-end gap-3">
+              <span className="text-base text-muted-foreground/70 line-through font-mono mb-1.5">12 $</span>
+              <span className="text-4xl font-black text-primary font-mono leading-none tracking-tight">6 $</span>
+              <span className="inline-flex items-center rounded-full bg-primary/15 text-primary border border-primary/30 text-[11px] font-extrabold px-2.5 py-1 uppercase tracking-wide mb-1">
+                %50 indirim
+              </span>
+            </div>
+            <button
               onClick={() => setIsCheckoutOpen(true)}
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 cursor-pointer"
+              className="btn btn-lg btn-primary cursor-pointer"
             >
-              Kitabı Hemen Satın Al ($6.00 USD)
+              Hemen 6 $&apos;a Sahip Ol
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -182,7 +192,8 @@ export default function EBookLanding() {
           productId="ebook_13_steps"
           productTitle="13 Adımda Milyon Dolarlık Startup"
           productNote="Anında PDF İndirme Erişimi"
-          priceLabel="$6.00"
+          priceLabel="6 $"
+          comparePrice="12 $"
           productQuery="ebook"
           onClose={() => setIsCheckoutOpen(false)}
         />

@@ -46,6 +46,39 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── STANDARDIZED LAYOUT & BUTTONS ─── */
+@layer components {
+  /* Page layout primitives */
+  .container-page {
+    @apply max-w-7xl mx-auto px-6 sm:px-8;
+  }
+  .section {
+    @apply py-20 md:py-32;
+  }
+
+  /* Repeated card gradient token */
+  .gradient-panel {
+    @apply bg-gradient-to-br from-[#0F213A] to-background;
+  }
+
+  /* Button system — single source of truth for height/padding/hover */
+  .btn {
+    @apply inline-flex h-12 items-center justify-center gap-2 rounded-xl px-6 text-sm font-bold transition-all duration-300;
+  }
+  .btn-lg {
+    @apply h-14 px-8 text-base;
+  }
+  .btn-sm {
+    @apply h-10 px-5 text-sm;
+  }
+  .btn-primary {
+    @apply bg-primary text-background shadow-lg shadow-primary/20 hover:bg-primary/95 hover:scale-[1.02];
+  }
+  .btn-secondary {
+    @apply border border-border/80 bg-secondary/30 text-foreground hover:bg-secondary/60 hover:scale-[1.02];
+  }
+}
+
 /* Glassmorphism utility */
 .glass-panel {
   background: rgba(14, 23, 38, 0.7);

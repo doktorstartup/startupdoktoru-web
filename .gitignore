@@ -44,3 +44,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+ebook-original.pdf
+ebook-15mb-backup.pdf

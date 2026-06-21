@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -8,7 +8,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { CreditCard, Lock, Loader2, ArrowRight } from "lucide-react";
+import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -18,8 +18,10 @@ type Props = {
   productId: string;
   productTitle: string;
   productNote: string;
-  priceLabel: string; // örn. "$9.00"
+  priceLabel: string; // ödenecek fiyat, ör. "$6.00"
+  comparePrice?: string; // üstü çizili eski fiyat, ör. "$12.00"
   productQuery: string; // "ebook" | "course"
+  discountCode?: string; // otomatik uygulanan kupon (ör. e-kitap alana "EBOOK50")
   onClose: () => void;
 };
 
@@ -90,14 +92,26 @@ export default function CheckoutForm({
   productTitle,
   productNote,
   priceLabel,
+  comparePrice,
   productQuery,
+  discountCode,
   onClose,
 }: Props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // ESC ile kapat
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
 
   const handleDetailsSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,7 +122,7 @@ export default function CheckoutForm({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, email, name }),
+        body: JSON.stringify({ productId, email, name, phone, discountCode }),
       });
       const data = await res.json();
 
@@ -127,9 +141,15 @@ export default function CheckoutForm({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-6">
-      <div className="relative w-full max-w-md rounded-3xl border border-border/80 bg-[#0E1726] shadow-2xl p-8 overflow-hidden">
-        <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-primary/5 blur-2xl" />
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-6"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-md rounded-3xl border border-border/80 bg-[#0E1726] shadow-2xl p-8 overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-primary/5 blur-2xl pointer-events-none" />
 
         <div className="flex justify-between items-center border-b border-border/40 pb-4 mb-6">
           <h3 className="text-lg font-bold flex items-center gap-2">
@@ -137,10 +157,12 @@ export default function CheckoutForm({
             Güvenli Ödeme
           </h3>
           <button
+            type="button"
             onClick={onClose}
-            className="text-muted-foreground hover:text-foreground text-xs font-semibold px-2.5 py-1 rounded bg-secondary/40 border border-border cursor-pointer"
+            aria-label="Kapat"
+            className="relative z-20 flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground bg-secondary/40 border border-border hover:bg-secondary/70 cursor-pointer transition-colors"
           >
-            Kapat
+            <X className="h-4 w-4" />
           </button>
         </div>
 
@@ -149,7 +171,12 @@ export default function CheckoutForm({
             <h4 className="text-sm font-bold text-foreground">{productTitle}</h4>
             <p className="text-[10px] text-muted-foreground">{productNote}</p>
           </div>
-          <span className="text-base font-extrabold font-mono text-primary">{priceLabel}</span>
+          <div className="text-right flex items-baseline gap-2">
+            {comparePrice && (
+              <span className="text-[11px] text-muted-foreground line-through font-mono">{comparePrice}</span>
+            )}
+            <span className="text-base font-extrabold font-mono text-primary">{priceLabel}</span>
+          </div>
         </div>
 
         {!clientSecret ? (
@@ -177,6 +204,19 @@ export default function CheckoutForm({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="eser@girisim.com"
+                className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
+              />
+            </div>
+            <div>
+              <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">
+                Telefon Numaranız
+              </label>
+              <input
+                type="tel"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="+90 5xx xxx xx xx"
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
             </div>

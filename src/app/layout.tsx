@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "../components/Analytics";
+import { DiscountPopup } from "../components/DiscountPopup";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -8,8 +10,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Startup Doktoru - Growth Funnel Platform",
-  description: "10 yıllık startup ve yatırım tecrübesinin sistematik özeti. Kervan yolda değil, stratejiyle düzülür.",
+  title: "Startup Doktoru — Yatırımcı Sunumu Nasıl Yapılır & Ücretsiz Startup Eğitimi",
+  description:
+    "Yatırım almış gerçek bir sunum üzerinden yatırımcı sunumu nasıl yapılır öğrenin. 12 dakikalık ücretsiz startup eğitimi ile başlayın. 10 yıllık startup ve yatırım tecrübesi.",
 };
 
 export default function RootLayout({
@@ -23,7 +26,9 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary/30 selection:text-primary">
+        <Analytics />
         {children}
+        <DiscountPopup />
       </body>
     </html>
   );

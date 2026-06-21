@@ -3,18 +3,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  BookOpen, 
-  Download, 
-  Menu, 
-  X, 
-  LogOut, 
-  Home, 
-  GraduationCap, 
-  User, 
-  Sparkles,
-  Trophy
+import {
+  Download,
+  Menu,
+  X,
+  LogOut,
+  Home,
+  GraduationCap,
 } from "lucide-react";
+import { useMember } from "../../lib/member";
 
 export default function PortalLayout({
   children,
@@ -23,6 +20,15 @@ export default function PortalLayout({
 }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { member, logout } = useMember();
+
+  const initials = member?.email?.slice(0, 2).toUpperCase() || "SD";
+  const displayEmail = member?.email || "Giriş yapılmadı";
+
+  const handleLogout = () => {
+    logout();
+    window.location.href = "/";
+  };
 
   const menuItems = [
     {
@@ -55,24 +61,12 @@ export default function PortalLayout({
         {/* User Card */}
         <div className="p-6 border-b border-border/20 bg-secondary/20">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold">
-              EG
+            <div className="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold uppercase shrink-0">
+              {initials}
             </div>
-            <div>
-              <div className="text-sm font-bold text-foreground">Eser Girişimci</div>
-              <div className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider">Kurucu / Öğrenci</div>
-            </div>
-          </div>
-
-          <div className="mt-4 bg-black/40 rounded-lg p-3 border border-border/40">
-            <div className="flex justify-between items-center text-xs mb-1.5">
-              <span className="text-muted-foreground flex items-center gap-1">
-                <Trophy className="h-3 w-3 text-accent" /> İlerleme
-              </span>
-              <span className="font-bold text-primary">60%</span>
-            </div>
-            <div className="w-full bg-muted rounded-full h-1.5 overflow-hidden">
-              <div className="bg-primary h-1.5 rounded-full" style={{ width: "60%" }}></div>
+            <div className="min-w-0">
+              <div className="text-sm font-bold text-foreground truncate">{displayEmail}</div>
+              <div className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider">Öğrenci</div>
             </div>
           </div>
         </div>
@@ -109,7 +103,7 @@ export default function PortalLayout({
             Ana Sayfaya Dön
           </Link>
           <button
-            onClick={() => window.location.href = "/"}
+            onClick={handleLogout}
             className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 hover:text-red-300 hover:bg-red-950/20 w-full transition-colors text-left"
           >
             <LogOut className="h-4 w-4 shrink-0" />
@@ -147,11 +141,11 @@ export default function PortalLayout({
             {/* Mobile User Info */}
             <div className="px-6 pb-6 border-b border-border/20">
               <div className="flex items-center gap-3">
-                <div className="h-9 w-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-sm">
-                  EG
+                <div className="h-9 w-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-sm uppercase shrink-0">
+                  {initials}
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-foreground">Eser Girişimci</div>
+                <div className="min-w-0">
+                  <div className="text-sm font-bold text-foreground truncate">{displayEmail}</div>
                   <div className="text-[10px] text-muted-foreground">Öğrenci</div>
                 </div>
               </div>
@@ -191,7 +185,7 @@ export default function PortalLayout({
                 Ana Sayfaya Dön
               </Link>
               <button
-                onClick={() => window.location.href = "/"}
+                onClick={handleLogout}
                 className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 w-full transition-colors text-left"
               >
                 <LogOut className="h-4 w-4 shrink-0" />

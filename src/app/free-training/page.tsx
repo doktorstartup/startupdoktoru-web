@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   Play, 
@@ -18,6 +18,10 @@ import {
   ChevronRight
 } from "lucide-react";
 import { supabase } from "../../lib/supabase";
+import { track } from "../../lib/track";
+import { YouTubeEmbed } from "../../components/YouTubeEmbed";
+import { VIDEOS } from "../../lib/videos";
+import { useMember } from "../../lib/member";
 
 export default function FreeTraining() {
   const [formData, setFormData] = useState({
@@ -31,6 +35,12 @@ export default function FreeTraining() {
   const [isRegistered, setIsRegistered] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+
+  // Giriş yapmış üyeye formu sorma — doğrudan videoyu göster.
+  const { member, login } = useMember();
+  useEffect(() => {
+    if (member) setIsRegistered(true);
+  }, [member]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -67,7 +77,12 @@ export default function FreeTraining() {
         console.warn("Supabase insertion fallback initiated:", error.message);
       }
 
-      // 2. Trigger registered state
+      // 2. Funnel olayı: lead + karşılama maili (Resend varsa)
+      track("lead", { email: formData.email });
+      fetch("/api/welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: formData.email, name: formData.name }) }).catch(() => {});
+
+      // 3. Üye oturumu aç (portalda ücretsiz eğitim görünür) + videoyu göster
+      await login(formData.email);
       setIsRegistered(true);
     } catch (err) {
       console.error("Lead submission error:", err);
@@ -277,34 +292,19 @@ export default function FreeTraining() {
                 Startup'ların Yatırımcı Karşısında Yaptığı 7 Ölümcül Hata
               </h2>
 
-              {/* MOCK PREMIUM VIDEO CONTAINER */}
-              <div className="w-full aspect-video rounded-3xl border border-border/80 bg-[#0E1726]/40 p-4 relative overflow-hidden group shadow-2xl mb-12">
-                <div className="w-full h-full rounded-2xl bg-black/80 relative flex items-center justify-center overflow-hidden border border-border/40">
-                  <div className="absolute top-4 left-4 flex items-center gap-2 z-20">
-                    <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                    <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Eser Memişoğlu - Özel Kayıt</span>
-                  </div>
-                  
-                  {/* Subtle video background style */}
-                  <div className="absolute inset-0 bg-cover bg-center opacity-30 blur-[2px]" style={{ backgroundImage: "url('/arkaplan video.png')" }} />
-                  
-                  {/* Play Interface */}
-                  <div className="z-20 flex flex-col items-center gap-4 cursor-pointer group">
-                    <div className="h-20 w-20 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-primary/25">
-                      <Play className="h-8 w-8 fill-current ml-1" />
-                    </div>
-                    <span className="text-sm font-bold text-foreground/80 tracking-wide">Eğitimi Başlat (24 Dakika)</span>
-                  </div>
-                  
-                  {/* Video Player Timeline Control Mock */}
-                  <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
-                    <span>0:00</span>
-                    <div className="flex-1 h-1 rounded bg-border relative overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-0 bg-primary" />
-                    </div>
-                    <span>24:12</span>
-                  </div>
-                </div>
+              {/* 12 DAKİKALIK ÜCRETSİZ EĞİTİM VİDEOSU */}
+              <div className="w-full aspect-video rounded-3xl border border-border/80 bg-[#0E1726]/40 overflow-hidden shadow-2xl mb-12">
+                <YouTubeEmbed
+                  videoId={VIDEOS.freeTraining12min}
+                  title="12 Dakikalık Ücretsiz Startup Eğitimi"
+                  label="Eğitimi Başlat (12 Dakika)"
+                  poster={{
+                    badge: "Ücretsiz · 12 Dakika",
+                    title: "Yatırımcı Karşısında Yapılan 7 Ölümcül Hata",
+                    subtitle: "İzlemek için tıkla — kredi kartı gerekmez",
+                    accent: "emerald",
+                  }}
+                />
               </div>
 
               {/* DYNAMIC FUNNEL UPSELL CTA PANEL */}
@@ -317,9 +317,9 @@ export default function FreeTraining() {
                 </p>
                 <Link 
                   href="/ebook" 
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-sm font-bold text-background hover:bg-primary/95 transition-all shadow-md shadow-primary/20 hover:scale-[1.01]"
+                  className="btn btn-primary"
                 >
-                  E-Kitabı Edin ($6)
+                  E-Kitabı Edin (6 $)
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

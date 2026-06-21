@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  Play,
   Check,
   ArrowRight,
   ChevronLeft,
@@ -15,6 +14,8 @@ import {
   Sparkles
 } from "lucide-react";
 import CheckoutForm from "../../components/CheckoutForm";
+import { BunnyEmbed } from "../../components/BunnyEmbed";
+import { getTraining, trainingPoster } from "../../lib/trainings";
 
 export default function InvestorTraining() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -114,39 +115,29 @@ export default function InvestorTraining() {
             <div className="flex items-center gap-6">
               <button
                 onClick={() => setIsCheckoutOpen(true)}
-                className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 hover:scale-[1.01] cursor-pointer"
+                className="btn btn-lg btn-primary cursor-pointer"
               >
-                Eğitime Başla ($49.00 USD)
+                Eğitime Başla (70 USD)
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <div className="flex flex-col">
-                <span className="text-xs text-muted-foreground line-through">$149.00 USD</span>
-                <span className="text-sm font-bold text-accent font-mono">%67 İndirimli Fiyat</span>
-              </div>
+              <Link href="/ebook" className="flex flex-col hover:opacity-80 transition-opacity">
+                <span className="text-sm font-bold text-accent">E-kitap alana 35 $</span>
+                <span className="text-xs text-muted-foreground">6 $&apos;lık e-kitapla %50 indirim →</span>
+              </Link>
             </div>
           </div>
 
-          {/* Mock video preview card */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-lg aspect-video rounded-3xl border border-border bg-[#0E1726]/40 p-4 relative overflow-hidden shadow-2xl">
-              <div className="w-full h-full rounded-2xl bg-black/80 relative flex items-center justify-center border border-border/40">
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Modül 01 Önizleme</span>
-                </div>
-                <div className="flex flex-col items-center gap-4 cursor-pointer group" onClick={() => setIsCheckoutOpen(true)}>
-                  <div className="h-20 w-20 rounded-full border border-primary/30 bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-primary/20">
-                    <Play className="h-8 w-8 fill-current ml-1" />
-                  </div>
-                  <span className="text-sm font-bold text-foreground/80">Önizlemeyi İzle</span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 text-xs font-mono text-muted-foreground">
-                  <span>0:00</span>
-                  <div className="flex-1 h-1 rounded bg-border"><div className="h-full w-0 bg-primary" /></div>
-                  <span>28:14</span>
-                </div>
-              </div>
+          {/* 1 dakikalık ücretsiz önizleme videosu */}
+          <div className="lg:col-span-5 flex flex-col items-center gap-3">
+            <div className="w-full max-w-lg aspect-video rounded-3xl border border-border bg-[#0E1726]/40 overflow-hidden shadow-2xl">
+              <BunnyEmbed
+                videoId={getTraining("investor_training")?.previewVideo || ""}
+                title="Yatırımcı Sunumu Eğitimi — Tanıtım"
+                label="Tanıtımı İzle"
+                poster={trainingPoster("investor_training")}
+              />
             </div>
+            <span className="text-xs text-muted-foreground">Önizleme ücretsiz · Tam eğitim 5 modül, 70 $ (e-kitap alana 35 $)</span>
           </div>
         </div>
 
@@ -179,9 +170,9 @@ export default function InvestorTraining() {
           <div className="flex justify-center">
             <button
               onClick={() => setIsCheckoutOpen(true)}
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 cursor-pointer hover:scale-[1.01]"
+              className="btn btn-lg btn-primary cursor-pointer"
             >
-              Eğitime Hemen Başla ($49.00 USD)
+              Eğitime Hemen Başla (70 USD)
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
@@ -206,8 +197,8 @@ export default function InvestorTraining() {
           productId="investor_training"
           productTitle="Yatırımcı Sunumu Eğitimi"
           productNote="5 Modül · 134 Dakika Tam Erişim"
-          priceLabel="$49.00"
-          productQuery="course"
+          priceLabel="70 $"
+          productQuery="investor_training"
           onClose={() => setIsCheckoutOpen(false)}
         />
       )}

@@ -1,21 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  Users, 
-  BarChart3, 
-  Settings, 
-  Menu, 
-  X, 
-  LogOut, 
-  Home, 
-  BookOpen, 
+import {
+  Users,
+  BarChart3,
+  Settings,
+  Menu,
+  X,
+  LogOut,
+  Home,
+  BookOpen,
   Layers,
   Shield,
-  FileText
+  FileText,
+  UserPlus,
+  KeyRound,
+  Loader2
 } from "lucide-react";
+
+const ADMIN_PW_KEY = "ds_admin_pw";
 
 export default function AdminLayout({
   children,
@@ -24,6 +29,104 @@ export default function AdminLayout({
 }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Admin şifre kapısı — tüm /admin'i korur. Şifre sessionStorage'da, sunucu doğrular.
+  const [authed, setAuthed] = useState(false);
+  const [checking, setChecking] = useState(true);
+  const [pw, setPw] = useState("");
+  const [pwErr, setPwErr] = useState("");
+  const [pwLoading, setPwLoading] = useState(false);
+
+  useEffect(() => {
+    let saved: string | null = null;
+    try {
+      saved = sessionStorage.getItem(ADMIN_PW_KEY);
+    } catch {
+      /* yoksa kapı kapalı kalır */
+    }
+    if (!saved) {
+      setChecking(false);
+      return;
+    }
+    fetch("/api/admin/auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: saved }),
+    })
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.ok) setAuthed(true);
+        else
+          try {
+            sessionStorage.removeItem(ADMIN_PW_KEY);
+          } catch {}
+      })
+      .catch(() => {})
+      .finally(() => setChecking(false));
+  }, []);
+
+  const submitPw = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPwErr("");
+    setPwLoading(true);
+    try {
+      const res = await fetch("/api/admin/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: pw }),
+      });
+      const d = await res.json();
+      if (d.ok) {
+        try {
+          sessionStorage.setItem(ADMIN_PW_KEY, pw);
+        } catch {}
+        setAuthed(true);
+      } else {
+        setPwErr(d.error || "Hatalı şifre.");
+      }
+    } catch {
+      setPwErr("Bağlantı hatası.");
+    } finally {
+      setPwLoading(false);
+    }
+  };
+
+  if (checking) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-[#050B14] text-muted-foreground">
+        <Loader2 className="h-6 w-6 animate-spin" />
+      </div>
+    );
+  }
+
+  if (!authed) {
+    return (
+      <div className="flex h-screen items-center justify-center bg-[#050B14] text-foreground px-6">
+        <form onSubmit={submitPw} className="w-full max-w-sm glass-panel rounded-3xl border border-border/60 p-8 text-center">
+          <div className="h-14 w-14 mx-auto rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-5">
+            <KeyRound className="h-7 w-7" />
+          </div>
+          <h1 className="text-xl font-extrabold tracking-tight mb-1">Yönetici Girişi</h1>
+          <p className="text-sm text-muted-foreground mb-6">Bu alan yöneticiye özeldir.</p>
+          <input
+            type="password"
+            autoFocus
+            value={pw}
+            onChange={(e) => setPw(e.target.value)}
+            placeholder="Yönetici şifresi"
+            className="w-full h-12 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all text-center mb-3"
+          />
+          {pwErr && <p className="text-xs text-red-400 mb-3">{pwErr}</p>}
+          <button type="submit" disabled={pwLoading} className="btn btn-primary w-full disabled:opacity-60">
+            {pwLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Giriş Yap"}
+          </button>
+          <Link href="/" className="block text-xs text-muted-foreground hover:text-foreground mt-4">
+            ← Ana sayfaya dön
+          </Link>
+        </form>
+      </div>
+    );
+  }
 
   const menuItems = [
     {
@@ -35,6 +138,16 @@ export default function AdminLayout({
       name: "Lead CRM Yönetimi",
       href: "/admin/leads",
       icon: Users,
+    },
+    {
+      name: "Erişim Yönetimi",
+      href: "/admin/access",
+      icon: UserPlus,
+    },
+    {
+      name: "Blog Yönetimi",
+      href: "/admin/blog",
+      icon: FileText,
     },
     {
       name: "İçerik & LMS Editörü",
@@ -103,7 +216,7 @@ export default function AdminLayout({
             Ana Sayfaya Dön
           </Link>
           <button
-            onClick={() => window.location.href = "/"}
+            onClick={() => { try { sessionStorage.removeItem(ADMIN_PW_KEY); } catch {} window.location.href = "/"; }}
             className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 hover:text-red-300 hover:bg-red-950/20 w-full transition-colors text-left"
           >
             <LogOut className="h-4 w-4 shrink-0" />
@@ -185,7 +298,7 @@ export default function AdminLayout({
                 Ana Sayfaya Dön
               </Link>
               <button
-                onClick={() => window.location.href = "/"}
+                onClick={() => { try { sessionStorage.removeItem(ADMIN_PW_KEY); } catch {} window.location.href = "/"; }}
                 className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 w-full transition-colors text-left"
               >
                 <LogOut className="h-4 w-4 shrink-0" />

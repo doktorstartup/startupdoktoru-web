@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   ArrowRight, 
   BookOpen, 
   HelpCircle, 
   MessageSquare, 
-  Play, 
-  Sparkles, 
-  ShieldCheck, 
+  Play,
+  ShieldCheck,
   TrendingUp, 
   Users, 
   ChevronDown, 
@@ -19,6 +19,10 @@ import {
   Award
 } from "lucide-react";
 import { AIDrawer } from "../components/AIDrawer";
+import { SiteHeader } from "../components/SiteHeader";
+import { SiteFooter } from "../components/SiteFooter";
+import { BunnyEmbed } from "../components/BunnyEmbed";
+import { getTraining, trainingPoster } from "../lib/trainings";
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -48,83 +52,69 @@ export default function Home() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary pb-20 md:pb-0">
       
       {/* ─── SLEEK HEADER ─── */}
-      <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-background font-bold text-xl shadow-lg shadow-primary/20">
-              SD
-            </div>
-            <span className="text-xl font-bold tracking-tight text-foreground">
-              STARTUP<span className="text-primary">DOKTORU</span>
-            </span>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#problem" className="hover:text-primary transition-colors">Problem</a>
-            <a href="#value-ladder" className="hover:text-primary transition-colors">Çözümümüz</a>
-            <a href="#ebook" className="hover:text-primary transition-colors">E-Kitap</a>
-            <a href="#training" className="hover:text-primary transition-colors">Eğitimler</a>
-            <a href="#about" className="hover:text-primary transition-colors">Hakkında</a>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <button 
-              onClick={() => setIsAiOpen(true)}
-              className="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary hover:bg-primary hover:text-background transition-all duration-300"
-            >
-              <Sparkles className="h-3 w-3 animate-pulse" />
-              <span>AI Mentor</span>
-            </button>
-            <Link 
-              href="/ebook" 
-              className="hidden sm:inline-flex h-10 items-center justify-center rounded-lg bg-primary px-5 text-sm font-semibold text-background hover:bg-primary/90 transition-all shadow-md shadow-primary/20 hover:scale-[1.02] duration-300"
-            >
-              E-Kitap Al ($6)
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader onOpenAi={() => setIsAiOpen(true)} />
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 px-6 sm:px-8 max-w-7xl mx-auto">
+      <section className="relative pt-24 pb-20 md:pt-36 md:pb-28 container-page">
         <div className="absolute top-0 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/10 blur-[120px]" />
         <div className="absolute top-20 right-1/4 -z-10 h-72 w-72 rounded-full bg-accent/5 blur-[120px]" />
-        
+
         <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-xs text-primary font-semibold uppercase tracking-wider mb-6">
             <Award className="h-3.5 w-3.5" />
             10 Yıllık Startup ve Yatırım Tecrübesi
           </div>
-          
+
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 font-sans">
             Kervan yolda değil,<br />
             <span className="bg-gradient-to-r from-primary via-[#38BDF8] to-accent bg-clip-text text-transparent">
               stratejiyle düzülür.
             </span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-12">
+
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
             Girişimcilerin büyük kısmı plansızlık yüzünden batıyor. Startup Doktoru, teoriyi bir kenara bırakıp işinizi yatırımcıya ve müşteriye hazırlayacak uygulanabilir yol haritaları sunar.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link 
-              href="/free-training" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/25 hover:scale-[1.03] duration-300"
-            >
+
+          {/* Primary CTA + risk reducer, e-book secondary */}
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <Link href="/free-training" className="btn btn-lg btn-primary w-full sm:w-auto">
               <Play className="h-4 w-4 fill-current" />
               Ücretsiz Eğitime Katıl
             </Link>
-            <Link 
-              href="/ebook" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl border border-border/80 bg-secondary/30 px-8 text-base font-bold text-foreground hover:bg-secondary/60 transition-all hover:scale-[1.03] duration-300"
+            <p className="text-sm md:text-base text-muted-foreground flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-primary" />
+              Kredi kartı gerekmez · 2 dakikada erişim
+            </p>
+            <Link
+              href="/ebook"
+              className="text-base md:text-lg font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-2 mt-2"
             >
-              <BookOpen className="h-4 w-4 text-primary" />
-              E-Kitabı İncele ($6)
+              <BookOpen className="h-5 w-5 text-primary" />
+              ya da e-kitabı incele · <span className="text-muted-foreground line-through">12 $</span> <span className="text-primary font-bold">6 $</span>
+              <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+
+          {/* Social proof strip */}
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center">
+            <div>
+              <p className="text-2xl font-extrabold font-mono text-primary">100+</p>
+              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Girişimci Mentorluk</p>
+            </div>
+            <div className="h-8 w-px bg-border/40 hidden sm:block" />
+            <div>
+              <p className="text-2xl font-extrabold font-mono text-primary">3</p>
+              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Girişim Kurulumu</p>
+            </div>
+            <div className="h-8 w-px bg-border/40 hidden sm:block" />
+            <div>
+              <p className="text-2xl font-extrabold font-mono text-primary">10+ Yıl</p>
+              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Saha Tecrübesi</p>
+            </div>
           </div>
         </div>
       </section>
@@ -196,18 +186,19 @@ export default function Home() {
               step: "Adım 02",
               title: "E-Kitap",
               desc: "13 kritik adımda milyon dolarlık bir startup kurmanın pratik el kitabını edinirsiniz.",
-              price: "$6 USD",
-              btnText: "Satın Al",
+              price: "6 USD",
+              oldPrice: "12 $",
+              btnText: "Hemen 6 $'a Al",
               link: "/ebook",
               highlight: true
             },
             {
               step: "Adım 03",
-              title: "Online Eğitim",
-              desc: "Adım adım yatırımcı sunumu ve pitch deck hazırlama müfredatına erişirsiniz.",
-              price: "$49 USD",
-              btnText: "Satın Al",
-              link: "/investor-training"
+              title: "Video Eğitimler",
+              desc: "Yatırımcı sunumu, startup giriş rehberi ve değerleme eğitimleri. E-kitap alana her biri %50 indirimli.",
+              price: "70 $ / paket 99 $",
+              btnText: "Eğitimleri Gör",
+              link: "/egitimler"
             }
           ].map((item, idx) => (
             <div 
@@ -227,14 +218,22 @@ export default function Home() {
                 <p className="text-sm text-muted-foreground leading-relaxed mb-6">{item.desc}</p>
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-foreground mb-6 font-mono">{item.price}</div>
-                <Link 
-                  href={item.link} 
-                  className={`flex h-11 items-center justify-center rounded-xl text-sm font-bold w-full transition-all duration-300 ${
-                    item.highlight 
-                      ? "bg-primary text-background hover:bg-primary/90" 
-                      : "border border-border/80 text-foreground hover:bg-secondary/40"
-                  }`}
+                <div className="mb-6">
+                  {item.oldPrice && (
+                    <span className="inline-block font-sans text-[11px] font-extrabold text-primary bg-primary/15 border border-primary/30 rounded-full px-3 py-1 uppercase tracking-wide mb-3">
+                      %50 indirim
+                    </span>
+                  )}
+                  <div className="font-mono flex items-baseline gap-2">
+                    {item.oldPrice && (
+                      <span className="text-lg text-muted-foreground line-through">{item.oldPrice}</span>
+                    )}
+                    <span className="text-2xl font-extrabold text-foreground">{item.price}</span>
+                  </div>
+                </div>
+                <Link
+                  href={item.link}
+                  className={`btn w-full ${item.highlight ? "btn-primary" : "btn-secondary"}`}
                 >
                   {item.btnText}
                 </Link>
@@ -258,16 +257,16 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-4 w-full mb-8">
               {[
-                "01. Startup Zihniyeti",
-                "02. Problem Doğrulama",
-                "03. MVP Geliştirme",
-                "04. İlk Müşteri Bulma",
-                "05. Ürün-Pazar Uyumu",
-                "06. Büyüme (Growth) Sistemleri",
-                "07. Funnel Kurulumu",
-                "08. KPI / Görev Yönetimi",
-                "09. Operasyon Sistemleri",
-                "10. Delegasyon & AI Dönüşümü"
+                "01. İnovasyon & Faydalı Fikir",
+                "02. Over-Engineering (Mühendis Hastalığı)",
+                "03. MVP ile Pazara Çıkış",
+                "04. Problem Doğrulama & Ürün-Pazar Uyumu",
+                "05. Marka Konumlandırma & Rakip Analizi",
+                "06. Ekip Kurma (CEO, COO, CFO)",
+                "07. Nakit Akışı Yönetimi",
+                "08. Şirket Değerleme (Berkus, Scorecard, DCF)",
+                "09. Melek Yatırımcı & Pazarlık",
+                "10. Yatırımcı Sunumu (Pitch)"
               ].map((ch, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-foreground">
                   <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
@@ -276,11 +275,8 @@ export default function Home() {
               ))}
             </div>
 
-            <Link 
-              href="/ebook" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20"
-            >
-              E-Kitabı İndir ($6 USD)
+            <Link href="/ebook" className="btn btn-lg btn-primary">
+              E-Kitabı İndir (6 $)
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -310,45 +306,49 @@ export default function Home() {
                   </div>
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Eser Memişoğlu</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-accent">$6.00</div>
+                <div className="text-lg font-bold font-mono text-accent">6 $</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── INVESTOR TRAINING SECTION ─── */}
+      {/* ─── INVESTOR PITCH TRAINING SECTION ─── */}
       <section id="training" className="py-20 md:py-32 max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1 flex justify-center">
-            {/* Visual dynamic mock of the course video player */}
-            <div className="w-full max-w-lg aspect-video rounded-2xl border border-border bg-[#0E1726]/40 p-4 relative overflow-hidden group shadow-2xl">
-              <div className="w-full h-full rounded-lg bg-black/60 border border-border/40 relative flex items-center justify-center">
-                <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-                  <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Modül 01: Yatırımcı Beklentileri</span>
-                </div>
-                <Play className="h-16 w-16 text-primary border border-primary/20 rounded-full p-4 hover:scale-110 transition-transform duration-300 shadow-lg shadow-primary/25 cursor-pointer" />
-              </div>
+          <div className="lg:col-span-6 order-2 lg:order-1 flex justify-center w-full">
+            {/* 1 dakikalık önizleme videosu */}
+            <div className="w-full max-w-lg aspect-video rounded-2xl border border-border bg-[#0E1726]/40 overflow-hidden shadow-2xl">
+              <BunnyEmbed
+                videoId={getTraining("investor_training")?.previewVideo || ""}
+                title="Yatırımcı Sunumu Eğitimi — Önizleme"
+                label="1 dakikalık önizlemeyi izle"
+                poster={{
+                  badge: "Ücretsiz Önizleme",
+                  title: "Yatırımcı Sunumu Nasıl Yapılır?",
+                  subtitle: "Yatırım almış gerçek bir sunum üzerinden",
+                  accent: "cyan",
+                }}
+              />
             </div>
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start">
-            <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Video Eğitim Modülü</span>
+            <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Video Eğitim · En Çok Aranan</span>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-              Yatırımcı Sunumu Hazırlama Eğitimi
+              Yatırımcı Sunumu Nasıl Yapılır?
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-              Yatırımcılardan fon toplamanın sırrı slaytların süslü olmasında değil, rakamların arkasındaki stratejidedir. Bu video eğitim paketiyle pitch deck sunumlarınızı kusursuzlaştırın.
+              Teoriyle değil, <strong className="text-foreground">gerçekten yatırım almış bir sunum üzerinden</strong> ilerliyoruz. Slaytları tek tek açıp yatırımcıyı ikna eden püf noktalarını gösteriyorum. 1 dakikalık önizleme ücretsiz.
             </p>
 
             <div className="space-y-4 mb-8 w-full">
               {[
-                { m: "Modül 1", t: "Yatırımcı Beklentileri & Doğru Metrikler" },
-                { m: "Modül 2", t: "Problem Anlatımı & Çözüm Sunumu" },
-                { m: "Modül 3", t: "Rakip Analizi & Konumlandırma Stratejisi" },
-                { m: "Modül 4", t: "Ekip Hikayesini Anlatma & Güven" },
-                { m: "Modül 5", t: "Analiz, Kritik Hatalar & Optimizasyon" }
+                { m: "01", t: "Problem & Çözüm Anlatımı" },
+                { m: "02", t: "Pazar Büyüklüğü & Rakip Analizi" },
+                { m: "03", t: "Ekip Kurma & Yatırımcıya Güven" },
+                { m: "04", t: "İş Modeli & Gelir Mantığı" },
+                { m: "05", t: "Yatırım Almış Gerçek Sunum İncelemesi" }
               ].map((mod, i) => (
                 <div key={i} className="flex items-center justify-between p-3.5 rounded-xl border border-border/60 bg-secondary/15 hover:border-primary/25 transition-all">
                   <div className="flex items-center gap-3">
@@ -360,13 +360,13 @@ export default function Home() {
               ))}
             </div>
 
-            <Link 
-              href="/investor-training" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20"
-            >
-              Eğitime Başla ($49 USD)
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <Link href="/investor-training" className="btn btn-lg btn-primary">
+                Önizlemeyi İzle & Eğitime Eriş
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <p className="text-xs text-muted-foreground mt-3">Tanıtım ücretsiz · Tam eğitim 70 $ (e-kitap alana 35 $)</p>
           </div>
         </div>
       </section>
@@ -403,15 +403,17 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 flex justify-center">
-            {/* Elegant placeholder mock for founder portrait */}
-            <div className="h-96 w-80 rounded-3xl bg-gradient-to-br from-[#0F213A] to-background border border-border shadow-2xl relative overflow-hidden flex flex-col justify-end p-8 group">
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-              
-              {/* Turquoise accent elements representing tech background */}
-              <div className="absolute top-8 left-8 h-12 w-12 rounded-full border border-primary/20 bg-primary/5 flex items-center justify-center text-primary">
-                <Sparkles className="h-5 w-5 animate-pulse" />
-              </div>
-              
+            {/* Founder portrait */}
+            <div className="h-96 w-80 rounded-3xl gradient-panel border border-border shadow-2xl relative overflow-hidden flex flex-col justify-end p-8 group">
+              <Image
+                src="/eser-memisoglu.png"
+                alt="Eser Memişoğlu — Kurucu & Girişim Danışmanı"
+                fill
+                sizes="320px"
+                className="object-cover object-top z-0 transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10" />
+
               <div className="relative z-20">
                 <span className="text-xs font-extrabold text-primary font-mono tracking-widest uppercase block mb-1">Kurucu & Girişim Danışmanı</span>
                 <h4 className="text-2xl font-bold text-foreground">Eser Memişoğlu</h4>
@@ -442,10 +444,12 @@ export default function Home() {
                 <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${activeFaq === i ? "rotate-180 text-primary" : ""}`} />
               </button>
               
-              <div className={`transition-all duration-300 ease-in-out overflow-hidden ${activeFaq === i ? "max-h-48 border-t border-border/40" : "max-h-0"}`}>
-                <p className="p-6 text-sm leading-relaxed text-muted-foreground bg-[#0E1726]/10">
-                  {faq.a}
-                </p>
+              <div className={`grid transition-all duration-300 ease-in-out ${activeFaq === i ? "grid-rows-[1fr] border-t border-border/40" : "grid-rows-[0fr]"}`}>
+                <div className="overflow-hidden">
+                  <p className="p-6 text-sm leading-relaxed text-muted-foreground bg-[#0E1726]/10">
+                    {faq.a}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
@@ -469,45 +473,29 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link 
-              href="/free-training" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 text-base font-bold text-background hover:bg-primary/95 transition-all shadow-lg shadow-primary/20 hover:scale-[1.02] duration-300"
-            >
+            <Link href="/free-training" className="btn btn-lg btn-primary w-full sm:w-auto">
               Ücretsiz Eğitime Başla
             </Link>
-            <Link 
-              href="/ebook" 
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl border border-border bg-secondary/40 px-8 text-base font-bold text-foreground hover:bg-secondary/70 transition-all hover:scale-[1.02] duration-300"
-            >
-              E-Kitabı Edin ($6)
+            <Link href="/ebook" className="btn btn-lg btn-secondary w-full sm:w-auto">
+              E-Kitabı Edin (6 $)
             </Link>
           </div>
         </div>
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="border-t border-border/40 py-12 bg-black/20">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-background font-bold text-sm">
-              SD
-            </div>
-            <span className="text-base font-bold tracking-tight text-foreground">
-              STARTUP<span className="text-primary">DOKTORU</span>
-            </span>
-          </div>
+      <SiteFooter />
 
-          <p className="text-xs text-muted-foreground text-center">
-            © 2026 Startup Doktoru. Tüm Hakları Saklıdır. "Kervan yolda değil, stratejiyle düzülür."
-          </p>
-
-          <div className="flex gap-6 text-xs text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Gizlilik Politikası</a>
-            <a href="#" className="hover:text-primary transition-colors">Mesafeli Satış Sözleşmesi</a>
-            <a href="#" className="hover:text-primary transition-colors">Kullanım Şartları</a>
-          </div>
+      {/* ─── MOBILE STICKY BUY BAR ─── */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-30 border-t border-border/40 bg-background/90 backdrop-blur-md px-4 py-3 flex items-center gap-3">
+        <div className="flex-1 leading-tight">
+          <p className="text-sm font-bold text-foreground">13 Adımda Milyon Dolarlık Startup</p>
+          <p className="text-xs text-muted-foreground">E-Kitap · <span className="line-through">12 $</span> <span className="text-primary font-bold">6 $</span></p>
         </div>
-      </footer>
+        <Link href="/ebook" className="btn btn-primary shrink-0">
+          Hemen Al · 6 $
+        </Link>
+      </div>
 
       {/* ─── AI FLOATING MENTOR DRAWER ─── */}
       <AIDrawer isOpen={isAiOpen} onClose={() => setIsAiOpen(false)} />

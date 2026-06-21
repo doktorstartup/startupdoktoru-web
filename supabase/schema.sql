@@ -164,6 +164,63 @@ CREATE POLICY "Allow admin to manage ds_blog posts" ON public.ds_blog_posts
     )
   );
 
+-- 7. DR. STARTUP EVENTS TABLE (Ziyaretçi / funnel olay takibi)
+CREATE TABLE IF NOT EXISTS public.ds_events (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  event_type TEXT NOT NULL CHECK (event_type IN ('page_view', 'lead', 'purchase', 'popup_view', 'popup_submit')),
+  session_id TEXT,
+  path TEXT,
+  referrer TEXT,
+  utm_source TEXT,
+  utm_medium TEXT,
+  utm_campaign TEXT,
+  email TEXT,
+  product_id TEXT,
+  amount NUMERIC,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS ds_events_type_created_idx ON public.ds_events (event_type, created_at);
+CREATE INDEX IF NOT EXISTS ds_events_session_idx ON public.ds_events (session_id);
+
+ALTER TABLE public.ds_events ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow public to insert ds_events" ON public.ds_events
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "Allow admin to read ds_events" ON public.ds_events
+  FOR SELECT USING (
+    EXISTS (
+      SELECT 1 FROM public.ds_users
+      WHERE ds_users.id = auth.uid() AND ds_users.role = 'admin'
+    )
+  );
+
+-- 8. DR. STARTUP DISCOUNT CODES TABLE (İndirim kodu altyapısı)
+CREATE TABLE IF NOT EXISTS public.ds_discount_codes (
+  code TEXT PRIMARY KEY,
+  percent_off INT NOT NULL CHECK (percent_off > 0 AND percent_off <= 100),
+  product_id TEXT REFERENCES public.ds_products(id) ON DELETE CASCADE, -- NULL = tüm ürünlerde geçerli
+  active BOOLEAN DEFAULT true,
+  expires_at TIMESTAMP WITH TIME ZONE,
+  max_uses INT,
+  used_count INT DEFAULT 0,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+ALTER TABLE public.ds_discount_codes ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow public read access to ds_discount_codes" ON public.ds_discount_codes
+  FOR SELECT USING (true);
+
+CREATE POLICY "Allow admin to manage ds_discount_codes" ON public.ds_discount_codes
+  FOR ALL USING (
+    EXISTS (
+      SELECT 1 FROM public.ds_users
+      WHERE ds_users.id = auth.uid() AND ds_users.role = 'admin'
+    )
+  );
+
 -- ============================================================================
 -- INITIAL SEED DATA
 -- ============================================================================
@@ -171,5 +228,17 @@ CREATE POLICY "Allow admin to manage ds_blog posts" ON public.ds_blog_posts
 INSERT INTO public.ds_products (id, title, description, price, currency, type)
 VALUES 
   ('ebook_13_steps', '13 Adımda Milyon Dolarlık Startup E-Book', 'Milyon dolarlık iş kurmak isteyen girişimcilerin el kitabı.', 6.00, 'USD', 'ebook'),
-  ('investor_training', 'Yatırımcı Sunumu Hazırlama Eğitimi', 'Yatırımcıların karşısına çıkmadan önce bilmeniz gereken tüm detaylar ve sunum hazırlama rehberi.', 49.00, 'USD', 'course')
+  ('investor_training', 'Yatırımcı Sunumu Hazırlama Eğitimi', 'Yatırımcıların karşısına çıkmadan önce bilmeniz gereken tüm detaylar ve sunum hazırlama rehberi.', 70.00, 'USD', 'course'),
+  ('startup_giris', 'Startup Giriş Rehberi', 'Bir startupta neler olmalı: doğru inovasyon, over-engineering, marka konumlandırma, MVP, ekip kurma, rakip analizi ve en sık yapılan hatalar.', 70.00, 'USD', 'course'),
+  ('degerleme', 'Startup Değerleme & Yatırımcı Pazarlığı', 'Berkus yöntemi, puan kartı yöntemi, risk faktörleri, DCF (indirgenmiş nakit akışı) ve yatırımcılarla pazarlık.', 70.00, 'USD', 'course'),
+  ('all_access_bundle', 'Tüm Eğitimler Paketi', '3 eğitimin tamamına tek seferde, en avantajlı fiyatla erişim.', 99.00, 'USD', 'course')
 ON CONFLICT (id) DO NOTHING;
+
+-- İndirim kodları:
+--  HOSGELDIN50: pasif (e-kitap herkese $6, sade çapa fiyatlandırma).
+--  EBOOK50: e-kitap alana eğitimlerde %50 (thank-you akışında otomatik uygulanır → $35).
+INSERT INTO public.ds_discount_codes (code, percent_off, product_id, active)
+VALUES
+  ('HOSGELDIN50', 50, NULL, false),
+  ('EBOOK50', 50, NULL, true)
+ON CONFLICT (code) DO NOTHING;

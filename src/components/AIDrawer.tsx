@@ -1,7 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { X, Send, Sparkles, Loader2, Award, Zap, ChevronRight } from "lucide-react";
+import { X, Send, Sparkles, Loader2, Zap, ChevronRight, ArrowRight } from "lucide-react";
+import { supabase } from "../lib/supabase";
+import { track } from "../lib/track";
+import { useMember } from "../lib/member";
 
 interface Message {
   role: "user" | "assistant";
@@ -13,6 +16,8 @@ interface AIDrawerProps {
   onClose: () => void;
 }
 
+const AI_LEAD_KEY = "ds_ai_lead";
+
 export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -23,6 +28,60 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Bilgi kapısı: sohbetten önce ad / mail / telefon / proje adı al.
+  const [unlocked, setUnlocked] = useState(false);
+  const [lead, setLead] = useState({ name: "", email: "", phone: "", project: "" });
+  const [gateLoading, setGateLoading] = useState(false);
+
+  // Giriş yapmış üyeden zaten bilgi aldık → tekrar sorma.
+  const { member } = useMember();
+
+  // Üyeyse ya da daha önce bilgi vermişse tekrar sorma.
+  useEffect(() => {
+    if (member) {
+      setUnlocked(true);
+      return;
+    }
+    try {
+      if (localStorage.getItem(AI_LEAD_KEY)) setUnlocked(true);
+    } catch {
+      /* localStorage yoksa kapı açık kalır */
+    }
+  }, [member]);
+
+  const handleGateSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setGateLoading(true);
+    try {
+      await supabase.from("ds_leads").insert([
+        {
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone || null,
+          company: lead.project || null, // projenin gerçek/şimdiki takma adı
+          source: "ai_mentor",
+          status: "NEW",
+          score: 15,
+          stage: "NEW_LEAD",
+          tags: ["ai_mentor"],
+        },
+      ]);
+      track("lead", { email: lead.email });
+      // Karşılama e-postası (Resend anahtarı varsa) — fire-and-forget
+      fetch("/api/welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: lead.email, name: lead.name }) }).catch(() => {});
+    } catch {
+      /* hata olsa bile sohbeti engelleme */
+    } finally {
+      try {
+        localStorage.setItem(AI_LEAD_KEY, lead.email);
+      } catch {
+        /* sessizce geç */
+      }
+      setGateLoading(false);
+      setUnlocked(true);
+    }
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -65,7 +124,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
           ...prev,
           {
             role: "assistant",
-            content: `Girişim fikrinizi ('${userMessage.substring(0, 40)}...') çok değerli buldum. \n\nSistem kurmadan büyümeye çalışmak en büyük hatadır. Startup Doktoru olarak bu fikri hayata geçirirken takip etmeniz gereken ilk 3 kritik adımı paylaşıyorum:\n\n1. **Problem Doğrulama:** Potansiyel 10 müşteri adayınızla görüşerek bu sorunun onlar için 'gerçekten acı veren' bir sorun olup olmadığını test edin.\n2. **MVP Geliştirme:** Fikrinizdeki tüm gereksiz özellikleri çıkarıp, sadece ana vaadi sunan en basit sürümü (MVP) kurgulayın.\n3. **Değer Merdiveni:** Müşteriye hemen büyük satışı yapmak yerine, önce ücretsiz bir eğitim veya doküman ($6 E-Book gibi) ile güven kazanın.\n\nE-Kitabımızı indirerek veya ders portalımıza katılarak bu adımların detaylı rehberlerine ulaşabilirsiniz. Sorunuz varsa yanıtlamaya devam edebilirim!`
+            content: `Girişim fikrinizi ('${userMessage.substring(0, 40)}...') çok değerli buldum. \n\nSistem kurmadan büyümeye çalışmak en büyük hatadır. Startup Doktoru olarak bu fikri hayata geçirirken takip etmeniz gereken ilk 3 kritik adımı paylaşıyorum:\n\n1. **Problem Doğrulama:** Potansiyel 10 müşteri adayınızla görüşerek bu sorunun onlar için 'gerçekten acı veren' bir sorun olup olmadığını test edin.\n2. **MVP Geliştirme:** Fikrinizdeki tüm gereksiz özellikleri çıkarıp, sadece ana vaadi sunan en basit sürümü (MVP) kurgulayın.\n3. **Değer Merdiveni:** Müşteriye hemen büyük satışı yapmak yerine, önce ücretsiz bir eğitim veya doküman (6 $'lık E-Book gibi) ile güven kazanın.\n\nE-Kitabımızı indirerek veya ders portalımıza katılarak bu adımların detaylı rehberlerine ulaşabilirsiniz. Sorunuz varsa yanıtlamaya devam edebilirim!`
           }
         ]);
       }, 1000);
@@ -106,6 +165,63 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
           </button>
         </div>
 
+        {!unlocked ? (
+          /* Bilgi kapısı — sohbetten önce iletişim + proje bilgisi */
+          <form onSubmit={handleGateSubmit} className="flex-1 overflow-y-auto px-6 py-8 flex flex-col">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 text-primary mb-4">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h4 className="text-lg font-extrabold tracking-tight mb-1">Mentöre bağlanmadan önce</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+              Sana ve projene özel yanıtlar verebilmem için kısa birkaç bilgi. Bilgilerin sadece sana daha iyi yardımcı olmak için kullanılır.
+            </p>
+
+            <div className="space-y-3">
+              <input
+                type="text"
+                required
+                value={lead.name}
+                onChange={(e) => setLead((p) => ({ ...p, name: e.target.value }))}
+                placeholder="Adın Soyadın"
+                className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
+              />
+              <input
+                type="email"
+                required
+                value={lead.email}
+                onChange={(e) => setLead((p) => ({ ...p, email: e.target.value }))}
+                placeholder="E-posta adresin"
+                className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
+              />
+              <input
+                type="tel"
+                required
+                value={lead.phone}
+                onChange={(e) => setLead((p) => ({ ...p, phone: e.target.value }))}
+                placeholder="Telefon (+90 5xx xxx xx xx)"
+                className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
+              />
+              <input
+                type="text"
+                required
+                value={lead.project}
+                onChange={(e) => setLead((p) => ({ ...p, project: e.target.value }))}
+                placeholder="Projenin adı (gerçek ya da takma)"
+                className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={gateLoading}
+              className="btn btn-primary btn-lg w-full mt-6 disabled:opacity-60"
+            >
+              {gateLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>Mentörle Konuşmaya Başla <ArrowRight className="h-4 w-4" /></>}
+            </button>
+            <p className="text-[10px] text-muted-foreground/80 text-center mt-3">Bilgilerin gizli tutulur, üçüncü taraflarla paylaşılmaz.</p>
+          </form>
+        ) : (
+        <>
         {/* Dynamic Context Header (Lead Status & Growth Scoring) */}
         <div className="px-6 py-3.5 bg-gradient-to-r from-primary/5 to-accent/5 border-b border-border/40 flex items-center justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5">
@@ -175,6 +291,8 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             Startup Doktoru AI mentorunun yönlendirmeleri yatırım tavsiyesi içermez. "Kervan yolda değil, stratejiyle düzülür."
           </p>
         </form>
+        </>
+        )}
 
       </div>
     </div>
