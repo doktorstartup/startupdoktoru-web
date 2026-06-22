@@ -7,7 +7,7 @@ import { MemberLogin } from "../../../components/MemberLogin";
 import { useMember } from "../../../lib/member";
 
 export default function EbookPortal() {
-  const { member, loading, login, hasAccess } = useMember();
+  const { member, loading, hasAccess } = useMember();
   const email = member?.email || "";
   const owned = hasAccess("ebook_13_steps");
 
@@ -37,7 +37,7 @@ export default function EbookPortal() {
     return <div className="flex items-center justify-center py-32 text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin" /></div>;
   }
   if (!member) {
-    return <MemberLogin login={login} />;
+    return <MemberLogin />;
   }
 
   if (!owned) {

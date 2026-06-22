@@ -37,7 +37,7 @@ export default function FreeTraining() {
   const [errorMsg, setErrorMsg] = useState("");
 
   // Giriş yapmış üyeye formu sorma — doğrudan videoyu göster.
-  const { member, login } = useMember();
+  const { member } = useMember();
   useEffect(() => {
     if (member) setIsRegistered(true);
   }, [member]);
@@ -81,8 +81,7 @@ export default function FreeTraining() {
       track("lead", { email: formData.email });
       fetch("/api/welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: formData.email, name: formData.name }) }).catch(() => {});
 
-      // 3. Üye oturumu aç (portalda ücretsiz eğitim görünür) + videoyu göster
-      await login(formData.email);
+      // 3. Videoyu göster (kayıt = lead; portal erişimi için ayrıca hesap açılır)
       setIsRegistered(true);
     } catch (err) {
       console.error("Lead submission error:", err);

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "../../../lib/stripe";
 import { supabaseAdmin } from "../../../lib/supabase";
+import { enroll } from "../../../lib/campaigns";
 
 // İndirim kodunu doğrular; geçerliyse percent_off döner, değilse null.
 // Geçersiz kod satışı ENGELLEMEZ — sessizce indirimsiz devam eder.
@@ -62,6 +63,36 @@ export async function POST(req: NextRequest) {
         ...(discount ? { discountCode: discount.code, percentOff: String(discount.percentOff) } : {}),
       },
     });
+
+    // Sepeti-bırakma takibi: ödeme adımına gelen kişiyi yakala (checkout_started).
+    // Ödeme tamamlanmazsa abandoned olarak kalır; webhook satışta CUSTOMER yapar.
+    try {
+      const normEmail = String(email).trim().toLowerCase();
+      const { data: existing } = await supabaseAdmin
+        .from("ds_leads")
+        .select("id, tags, status")
+        .ilike("email", normEmail)
+        .limit(1);
+      if (existing && existing.length > 0) {
+        const tags: string[] = existing[0].tags || [];
+        if (!tags.includes("checkout_started")) tags.push("checkout_started");
+        const patch: Record<string, unknown> = { tags };
+        if (existing[0].status !== "CUSTOMER") {
+          patch.status = "HOT";
+          patch.score = 75;
+        }
+        if (phone) patch.phone = phone;
+        await supabaseAdmin.from("ds_leads").update(patch).eq("id", existing[0].id);
+      } else {
+        await supabaseAdmin.from("ds_leads").insert([
+          { name, email: normEmail, phone: phone || null, source: "checkout", status: "HOT", score: 75, stage: "NEW_LEAD", tags: ["checkout_started"] },
+        ]);
+      }
+      // Sepeti bırakma kampanyasına kaydet (tamamlamazsa drip başlar)
+      await enroll("abandoned", null, { email: normEmail, name });
+    } catch (e) {
+      console.error("Checkout lead capture error:", e instanceof Error ? e.message : e);
+    }
 
     return NextResponse.json({
       clientSecret: paymentIntent.client_secret,

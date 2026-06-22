@@ -12,6 +12,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { useMember } from "../../lib/member";
+import { PhonePrompt } from "../../components/PhonePrompt";
 
 export default function PortalLayout({
   children,
@@ -208,6 +209,9 @@ export default function PortalLayout({
           </div>
         </div>
       </main>
+
+      {/* Telefonu olmayan üyeye yatırımcı-telefon kartı */}
+      <PhonePrompt />
     </div>
   );
 }

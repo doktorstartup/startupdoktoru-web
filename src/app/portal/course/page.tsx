@@ -11,7 +11,7 @@ import { VIDEOS } from "../../../lib/videos";
 import { useMember, getProgress, saveProgress, tagInterest } from "../../../lib/member";
 
 export default function CoursePortal() {
-  const { member, loading, login, hasAccess } = useMember();
+  const { member, loading, hasAccess } = useMember();
   const email = member?.email || "";
 
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -34,7 +34,7 @@ export default function CoursePortal() {
     return <div className="flex items-center justify-center py-32 text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin" /></div>;
   }
   if (!member) {
-    return <MemberLogin login={login} />;
+    return <MemberLogin />;
   }
 
   const owned = TRAININGS.filter((t) => hasAccess(t.id));

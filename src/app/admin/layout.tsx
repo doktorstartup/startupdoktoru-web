@@ -150,6 +150,11 @@ export default function AdminLayout({
       icon: FileText,
     },
     {
+      name: "Otomasyonlar",
+      href: "/admin/automations",
+      icon: Layers,
+    },
+    {
       name: "İçerik & LMS Editörü",
       href: "/admin/content",
       icon: BookOpen,

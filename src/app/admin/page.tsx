@@ -11,6 +11,8 @@ import {
   Eye,
   UserPlus,
   ChevronRight,
+  ShoppingCart,
+  Phone,
 } from "lucide-react";
 
 type Stats = {
@@ -20,6 +22,7 @@ type Stats = {
   revenue: number;
   conversion: { leadRate: number; saleRate: number; overallRate: number };
   topPages?: { path: string; views: number; visitors: number }[];
+  abandoned?: { id: string; name: string | null; email: string; phone: string | null; created_at: string }[];
   recentLeads: { id: string; name: string; email: string; company: string | null; score: number; stage: string; status: string; created_at: string }[];
   recentOrders: { id: string; email: string | null; product_id: string | null; amount: number; currency: string; payment_status: string; created_at: string }[];
 };
@@ -164,6 +167,34 @@ export default function AdminDashboard() {
           </div>
         )}
       </div>
+
+      {/* Sepeti bırakanlar — ödeme adımına gelip tamamlamayanlar */}
+      {(stats?.abandoned || []).length > 0 && (
+        <div className="glass-panel p-6 rounded-2xl border border-amber-500/30 bg-amber-500/[0.04]">
+          <div className="flex justify-between items-center border-b border-border/20 pb-4 mb-4">
+            <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+              <ShoppingCart className="h-4 w-4 text-amber-400" /> Sepeti Bırakanlar
+              <span className="text-[10px] font-mono bg-amber-500/15 text-amber-400 border border-amber-500/25 px-2 py-0.5 rounded-full">{stats?.abandoned?.length}</span>
+            </h3>
+            <span className="text-[10px] text-muted-foreground uppercase tracking-wider">Ödemeye geldi, tamamlamadı</span>
+          </div>
+          <div className="space-y-2.5">
+            {(stats?.abandoned || []).map((a) => (
+              <div key={a.id} className="flex items-center justify-between p-3 rounded-xl bg-secondary/15 border border-border/20 text-xs">
+                <div>
+                  <div className="font-bold text-foreground">{a.name || "—"}</div>
+                  <div className="text-[10px] text-muted-foreground mt-0.5 flex items-center gap-2">
+                    <span>{a.email}</span>
+                    {a.phone && (<span className="flex items-center gap-1"><Phone className="h-3 w-3" /> {a.phone}</span>)}
+                  </div>
+                </div>
+                <span className="text-[9px] text-muted-foreground font-mono">{fmtDate(a.created_at)}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-[11px] text-muted-foreground mt-3">Bu kişilere günlük otomasyon &quot;ödemeni tamamla&quot; maili yollar (Resend bağlıysa).</p>
+        </div>
+      )}
 
       {/* Main Split Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

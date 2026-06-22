@@ -61,6 +61,15 @@ export async function GET(req: NextRequest) {
       .order("created_at", { ascending: false })
       .limit(5);
 
+    // Sepeti bırakanlar: ödeme adımına gelmiş (checkout_started) ama müşteri olmamış.
+    const { data: abandoned } = await supabaseAdmin
+      .from("ds_leads")
+      .select("id, name, email, phone, created_at")
+      .neq("status", "CUSTOMER")
+      .contains("tags", ["checkout_started"])
+      .order("created_at", { ascending: false })
+      .limit(10);
+
     const leadCount = leads || 0;
     const leadRate = visitors > 0 ? (leadCount / visitors) * 100 : 0;
     const saleRate = leadCount > 0 ? (customers / leadCount) * 100 : 0;
@@ -73,6 +82,7 @@ export async function GET(req: NextRequest) {
       revenue,
       conversion: { leadRate, saleRate, overallRate },
       topPages,
+      abandoned: abandoned || [],
       recentLeads: recentLeads || [],
       recentOrders: recentOrders || [],
     });
@@ -86,6 +96,7 @@ export async function GET(req: NextRequest) {
         revenue: 0,
         conversion: { leadRate: 0, saleRate: 0, overallRate: 0 },
         topPages: [],
+        abandoned: [],
         recentLeads: [],
         recentOrders: [],
         fallback: true,

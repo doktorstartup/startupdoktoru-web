@@ -1,21 +1,24 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { supabase } from "./supabase";
 
-// Hafif üyelik (v1): e-posta ile giriş → ödenmiş siparişlerden erişim.
-// Oturum ve ders ilerlemesi localStorage'da tutulur.
-
-const SESSION_KEY = "ds_member";
+// Üyelik: Supabase Auth (email+şifre / Google). Erişim (owned) ödenmiş siparişlerden
+// e-posta eşleşmesiyle gelir. Ders ilerlemesi localStorage'da (e-posta bazlı).
 
 export type MemberSession = { email: string; owned: string[] };
 
-function readSession(): MemberSession | null {
-  if (typeof window === "undefined") return null;
+async function fetchOwned(email: string): Promise<string[]> {
   try {
-    const raw = localStorage.getItem(SESSION_KEY);
-    return raw ? (JSON.parse(raw) as MemberSession) : null;
+    const res = await fetch("/api/access", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    return data.owned || [];
   } catch {
-    return null;
+    return [];
   }
 }
 
@@ -24,64 +27,90 @@ export function useMember() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const s = readSession();
-    if (!s) {
-      setLoading(false);
-      return;
-    }
-    setMember(s); // önbellekteki erişimi hemen göster
-    // Her açılışta erişimi sunucudan TEKRAR doğrula (sonradan açılan erişim de görünsün).
-    fetch("/api/access", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: s.email }),
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        const updated: MemberSession = { email: s.email, owned: data.owned || [] };
-        try {
-          localStorage.setItem(SESSION_KEY, JSON.stringify(updated));
-        } catch {
-          /* yoksa geç */
+    let active = true;
+    const apply = async (email: string | undefined | null) => {
+      if (!email) {
+        if (active) {
+          setMember(null);
+          setLoading(false);
         }
-        setMember(updated);
-      })
-      .catch(() => {})
-      .finally(() => setLoading(false));
+        return;
+      }
+      const owned = await fetchOwned(email);
+      if (active) {
+        setMember({ email: email.toLowerCase(), owned });
+        setLoading(false);
+      }
+    };
+
+    supabase.auth.getSession().then(({ data }) => apply(data.session?.user?.email));
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      apply(session?.user?.email);
+    });
+    return () => {
+      active = false;
+      sub.subscription.unsubscribe();
+    };
   }, []);
 
-  const login = useCallback(async (email: string): Promise<{ ok: boolean; found: boolean }> => {
-    try {
-      const res = await fetch("/api/access", {
+  const signIn = useCallback(async (email: string, password: string) => {
+    const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    return { ok: !error, error: error?.message };
+  }, []);
+
+  const signUp = useCallback(
+    async ({ name, email, phone, password }: { name: string; email: string; phone: string; password: string }) => {
+      const normalized = email.trim().toLowerCase();
+      const { data, error } = await supabase.auth.signUp({
+        email: normalized,
+        password,
+        options: { data: { name, phone } },
+      });
+      if (error) return { ok: false, error: error.message };
+
+      // CRM lead + karşılama maili
+      try {
+        await supabase.from("ds_leads").insert([
+          { name, email: normalized, phone: phone || null, source: "signup", status: "NEW", score: 15, stage: "NEW_LEAD" },
+        ]);
+      } catch {
+        /* lead eklenemese de akışı bozma */
+      }
+      fetch("/api/welcome", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      const session: MemberSession = { email: email.trim().toLowerCase(), owned: data.owned || [] };
-      localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-      setMember(session);
-      return { ok: true, found: !!data.found };
-    } catch {
-      return { ok: false, found: false };
-    }
+        body: JSON.stringify({ email: normalized, name }),
+      }).catch(() => {});
+
+      // data.session yoksa "Confirm email" açık demektir → doğrulama bekleniyor.
+      return { ok: true, needsConfirm: !data.session };
+    },
+    []
+  );
+
+  const signInWithGoogle = useCallback(async () => {
+    // Doğrudan /portal/course'a dön — /portal ara-yönlendirmesi OAuth kodunu düşürüyor.
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: `${window.location.origin}/portal/course` },
+    });
   }, []);
 
-  const logout = useCallback(() => {
-    try {
-      localStorage.removeItem(SESSION_KEY);
-    } catch {
-      /* yoksa geç */
-    }
+  const resetPassword = useCallback(async (email: string) => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+      redirectTo: `${window.location.origin}/portal/course`,
+    });
+    return { ok: !error, error: error?.message };
+  }, []);
+
+  const logout = useCallback(async () => {
+    await supabase.auth.signOut();
     setMember(null);
   }, []);
 
-  const hasAccess = useCallback(
-    (productId: string) => !!member?.owned.includes(productId),
-    [member]
-  );
+  const hasAccess = useCallback((productId: string) => !!member?.owned.includes(productId), [member]);
 
-  return { member, owned: member?.owned || [], loading, login, logout, hasAccess };
+  return { member, owned: member?.owned || [], loading, signIn, signUp, signInWithGoogle, resetPassword, logout, hasAccess };
 }
 
 // ─── Ders ilerlemesi (localStorage, e-posta bazlı) ───
