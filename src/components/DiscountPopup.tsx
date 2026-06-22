@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Gift, X, Check, Loader2, ArrowRight } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { track } from "../lib/track";
+import { useMember } from "../lib/member";
 
 const SEEN_KEY = "ds_popup_seen";
 
@@ -39,8 +40,10 @@ export function DiscountPopup() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Admin/portal alanlarında gösterme
-  const suppressed = pathname?.startsWith("/admin") || pathname?.startsWith("/portal");
+  const { member } = useMember();
+
+  // Admin/portal alanlarında ve giriş yapmış üyeye gösterme
+  const suppressed = !!member || pathname?.startsWith("/admin") || pathname?.startsWith("/portal");
 
   const trigger = useCallback(() => {
     try {

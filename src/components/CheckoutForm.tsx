@@ -9,6 +9,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
+import { useMember } from "../lib/member";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -97,12 +98,14 @@ export default function CheckoutForm({
   discountCode,
   onClose,
 }: Props) {
+  const { member } = useMember();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [prefilling, setPrefilling] = useState(false);
 
   // ESC ile kapat
   useEffect(() => {
@@ -113,31 +116,52 @@ export default function CheckoutForm({
     return () => document.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const handleDetailsSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const createIntent = async (n: string, em: string, ph: string) => {
     setIsLoading(true);
     setError(null);
-
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, email, name, phone, discountCode }),
+        body: JSON.stringify({ productId, email: em, name: n, phone: ph, discountCode }),
       });
       const data = await res.json();
-
       if (!res.ok || !data.clientSecret) {
         setError(data.error || "Ödeme başlatılamadı.");
-        setIsLoading(false);
-        return;
+        return false;
       }
-
       setClientSecret(data.clientSecret);
+      return true;
     } catch {
       setError("Bağlantı hatası. Lütfen tekrar deneyin.");
+      return false;
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Giriş yapmış üyeyse bilgilerini doldur; ad+e-posta+telefon tamsa doğrudan ödemeye geç.
+  useEffect(() => {
+    if (!member?.email) return;
+    setEmail(member.email);
+    setPrefilling(true);
+    fetch(`/api/profile?email=${encodeURIComponent(member.email)}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.name) setName(d.name);
+        if (d.phone) setPhone(d.phone);
+        if (d.name && d.phone) {
+          createIntent(d.name, member.email, d.phone); // tüm bilgi var → ödeme adımına atla
+        }
+      })
+      .catch(() => {})
+      .finally(() => setPrefilling(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [member?.email]);
+
+  const handleDetailsSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await createIntent(name, email, phone);
   };
 
   return (
@@ -179,7 +203,12 @@ export default function CheckoutForm({
           </div>
         </div>
 
-        {!clientSecret ? (
+        {prefilling && !clientSecret ? (
+          <div className="flex flex-col items-center justify-center py-10 gap-3 text-muted-foreground">
+            <Loader2 className="h-5 w-5 animate-spin" />
+            <span className="text-xs">Bilgilerin hazırlanıyor…</span>
+          </div>
+        ) : !clientSecret ? (
           <form onSubmit={handleDetailsSubmit} className="space-y-4">
             <div>
               <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">

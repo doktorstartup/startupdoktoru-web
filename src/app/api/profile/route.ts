@@ -10,11 +10,11 @@ export async function GET(req: NextRequest) {
 
   const { data } = await supabaseAdmin
     .from("ds_leads")
-    .select("phone")
+    .select("name, phone")
     .ilike("email", email)
     .limit(1);
-  const hasPhone = !!(data && data[0]?.phone);
-  return NextResponse.json({ hasPhone });
+  const row = data && data[0];
+  return NextResponse.json({ hasPhone: !!row?.phone, name: row?.name || "", phone: row?.phone || "" });
 }
 
 // phone yoksa: kaydı garantile (Google ile gireni CRM'e al) + hasPhone döndür.
