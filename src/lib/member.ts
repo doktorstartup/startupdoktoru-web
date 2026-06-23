@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import type { User } from "@supabase/supabase-js";
 import { supabase } from "./supabase";
 
 // Üyelik: Supabase Auth (email+şifre / Google). Erişim (owned) ödenmiş siparişlerden
@@ -22,13 +23,36 @@ async function fetchOwned(email: string): Promise<string[]> {
   }
 }
 
+// Üye oturum açtığında lead + karşılama serisini garantile. Sunucu tarafı idempotent
+// (lead/enrollment çift oluşmaz, mail tekrar gitmez); burada tarayıcı başına bir kez çağırırız.
+function ensureWelcome(user: User) {
+  if (typeof window === "undefined" || !user?.email) return;
+  try {
+    const email = user.email.toLowerCase();
+    const key = `ds_welcomed_${email}`;
+    if (localStorage.getItem(key)) return;
+    localStorage.setItem(key, "1");
+    const meta = (user.user_metadata || {}) as { full_name?: string; name?: string };
+    const name = meta.full_name || meta.name || "";
+    const source = user.app_metadata?.provider || "auth";
+    fetch("/api/welcome", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, name, source }),
+    }).catch(() => {});
+  } catch {
+    /* sessizce geç */
+  }
+}
+
 export function useMember() {
   const [member, setMember] = useState<MemberSession | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let active = true;
-    const apply = async (email: string | undefined | null) => {
+    const apply = async (user: User | undefined | null) => {
+      const email = user?.email;
       if (!email) {
         if (active) {
           setMember(null);
@@ -41,11 +65,12 @@ export function useMember() {
         setMember({ email: email.toLowerCase(), owned });
         setLoading(false);
       }
+      ensureWelcome(user); // karşılama/CRM garantisi (özellikle Google ile girenler)
     };
 
-    supabase.auth.getSession().then(({ data }) => apply(data.session?.user?.email));
+    supabase.auth.getSession().then(({ data }) => apply(data.session?.user));
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      apply(session?.user?.email);
+      apply(session?.user);
     });
     return () => {
       active = false;
