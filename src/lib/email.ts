@@ -7,13 +7,14 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 export async function sendEmail(opts: { to: string; subject: string; html: string }): Promise<{ sent: boolean; skipped?: boolean }> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM || "Startup Doktoru <onboarding@resend.dev>";
+  const replyTo = process.env.RESEND_REPLY_TO || "doktorstartup@gmail.com";
   if (!apiKey) return { sent: false, skipped: true };
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [opts.to], subject: opts.subject, html: opts.html }),
+      body: JSON.stringify({ from, to: [opts.to], subject: opts.subject, html: opts.html, reply_to: replyTo }),
     });
     if (!res.ok) {
       console.error("Resend error:", await res.text());
