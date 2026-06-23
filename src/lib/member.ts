@@ -104,7 +104,12 @@ export function useMember() {
   }, []);
 
   const logout = useCallback(async () => {
-    await supabase.auth.signOut();
+    // scope 'local': oturumu hemen yerelden sil (sunucu round-trip'ine takılmaz)
+    try {
+      await supabase.auth.signOut({ scope: "local" });
+    } catch {
+      /* yine de devam et */
+    }
     setMember(null);
   }, []);
 

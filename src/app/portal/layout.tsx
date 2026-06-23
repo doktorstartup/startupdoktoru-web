@@ -26,8 +26,8 @@ export default function PortalLayout({
   const initials = member?.email?.slice(0, 2).toUpperCase() || "SD";
   const displayEmail = member?.email || "Giriş yapılmadı";
 
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout(); // oturum tamamen silinene kadar bekle, sonra yönlendir
     window.location.href = "/";
   };
 

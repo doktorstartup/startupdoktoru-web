@@ -138,9 +138,10 @@ export function SiteHeader({ onOpenAi }: Props) {
                     <LayoutDashboard className="h-4 w-4" /> Panelim ({initials})
                   </Link>
                   <button
-                    onClick={() => {
-                      logout();
+                    onClick={async () => {
+                      await logout();
                       setMobileOpen(false);
+                      window.location.href = "/";
                     }}
                     className="btn btn-lg btn-secondary w-full text-red-400"
                   >
