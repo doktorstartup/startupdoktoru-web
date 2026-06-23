@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -106,15 +106,34 @@ export default function CheckoutForm({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [prefilling, setPrefilling] = useState(false);
+  const abandonedRef = useRef(false);
+
+  // Ekranı ödeme adımına (intent) ulaşmadan kapatan, ama e-postası bilinen kişiyi
+  // "sepeti bırakma" olarak işaretle. Intent oluştuysa /api/checkout zaten kaydetti.
+  const handleClose = useCallback(() => {
+    if (!abandonedRef.current && !clientSecret) {
+      const e = email.trim().toLowerCase();
+      if (e.includes("@")) {
+        abandonedRef.current = true;
+        fetch("/api/abandon", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: e, name }),
+          keepalive: true,
+        }).catch(() => {});
+      }
+    }
+    onClose();
+  }, [clientSecret, email, name, onClose]);
 
   // ESC ile kapat
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") handleClose();
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [handleClose]);
 
   const createIntent = async (n: string, em: string, ph: string) => {
     setIsLoading(true);
@@ -140,7 +159,7 @@ export default function CheckoutForm({
     }
   };
 
-  // Giriş yapmış üyeyse bilgilerini doldur; ad+e-posta+telefon tamsa doğrudan ödemeye geç.
+  // Giriş yapmış üyeyse uğraştırmadan doğrudan ödemeye geç (e-posta yeterli; telefon opsiyonel).
   useEffect(() => {
     if (!member?.email) return;
     setEmail(member.email);
@@ -150,11 +169,12 @@ export default function CheckoutForm({
       .then((d) => {
         if (d.name) setName(d.name);
         if (d.phone) setPhone(d.phone);
-        if (d.name && d.phone) {
-          createIntent(d.name, member.email, d.phone); // tüm bilgi var → ödeme adımına atla
-        }
+        const n = d.name || member.email.split("@")[0];
+        createIntent(n, member.email, d.phone || ""); // üye → doğrudan ödeme adımına atla
       })
-      .catch(() => {})
+      .catch(() => {
+        createIntent(member.email.split("@")[0], member.email, "");
+      })
       .finally(() => setPrefilling(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [member?.email]);
@@ -167,7 +187,7 @@ export default function CheckoutForm({
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-6"
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div
         className="relative w-full max-w-md rounded-3xl border border-border/80 bg-[#0E1726] shadow-2xl p-8 overflow-hidden"
@@ -182,7 +202,7 @@ export default function CheckoutForm({
           </h3>
           <button
             type="button"
-            onClick={onClose}
+            onClick={handleClose}
             aria-label="Kapat"
             className="relative z-20 flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground bg-secondary/40 border border-border hover:bg-secondary/70 cursor-pointer transition-colors"
           >
@@ -238,11 +258,10 @@ export default function CheckoutForm({
             </div>
             <div>
               <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">
-                Telefon Numaranız
+                Telefon Numaranız <span className="text-muted-foreground/60 normal-case font-normal">(opsiyonel)</span>
               </label>
               <input
                 type="tel"
-                required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+90 5xx xxx xx xx"
