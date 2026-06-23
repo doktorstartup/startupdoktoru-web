@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Check, ArrowRight, Sparkles, Layers, BookOpen } from "lucide-react";
 import CheckoutForm from "../../components/CheckoutForm";
@@ -8,18 +8,25 @@ import { BunnyEmbed } from "../../components/BunnyEmbed";
 import { YouTubeEmbed } from "../../components/YouTubeEmbed";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
-import { TRAININGS, BUNDLE, trainingPoster } from "../../lib/trainings";
+import { TRAININGS, BUNDLE, trainingPoster, EBOOK_DISCOUNT_CODE, DISCOUNTED_TRAINING_PRICE } from "../../lib/trainings";
 
 type Checkout = {
   productId: string;
   productTitle: string;
   productNote: string;
   priceLabel: string;
+  comparePrice?: string;
   productQuery: string;
+  discountCode?: string;
 };
 
 export default function EgitimlerPage() {
   const [checkout, setCheckout] = useState<Checkout | null>(null);
+  // E-kitap upsell maili ?ind=ebook ile gelir → tek eğitimlerde %50 (paket $99 kalır).
+  const [ebookDiscount, setEbookDiscount] = useState(false);
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("ind") === "ebook") setEbookDiscount(true);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -37,14 +44,21 @@ export default function EgitimlerPage() {
           </p>
         </div>
 
-        {/* E-kitap nudge */}
-        <Link
-          href="/ebook"
-          className="flex items-center justify-center gap-3 text-base sm:text-lg font-bold text-center mb-12 mx-auto max-w-3xl px-6 py-5 rounded-2xl border border-accent/40 bg-accent/10 text-accent hover:bg-accent/15 transition-all"
-        >
-          <BookOpen className="h-6 w-6 shrink-0" />
-          <span>6 $&apos;lık e-kitabı alan herkes tüm eğitimleri <strong className="text-accent">%50 indirimle (35 $)</strong> alır →</span>
-        </Link>
+        {/* E-kitap nudge / indirim aktifse onay şeridi */}
+        {ebookDiscount ? (
+          <div className="flex items-center justify-center gap-3 text-base sm:text-lg font-bold text-center mb-12 mx-auto max-w-3xl px-6 py-5 rounded-2xl border border-primary/40 bg-primary/10 text-primary">
+            <Sparkles className="h-6 w-6 shrink-0" />
+            <span>E-kitap indirimin uygulandı — tüm tek eğitimler <strong>%50 indirimli (35 $)</strong>. Aşağıdan seç.</span>
+          </div>
+        ) : (
+          <Link
+            href="/ebook"
+            className="flex items-center justify-center gap-3 text-base sm:text-lg font-bold text-center mb-12 mx-auto max-w-3xl px-6 py-5 rounded-2xl border border-accent/40 bg-accent/10 text-accent hover:bg-accent/15 transition-all"
+          >
+            <BookOpen className="h-6 w-6 shrink-0" />
+            <span>6 $&apos;lık e-kitabı alan herkes tüm eğitimleri <strong className="text-accent">%50 indirimle (35 $)</strong> alır →</span>
+          </Link>
+        )}
 
         {/* Bundle highlight */}
         <div className="relative rounded-3xl gradient-panel border border-primary/30 ring-1 ring-primary/20 shadow-2xl p-8 md:p-10 mb-12 overflow-hidden">
@@ -115,15 +129,24 @@ export default function EgitimlerPage() {
                 </ul>
                 <div className="mt-auto space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-extrabold font-mono text-foreground">${t.price}</span>
+                    {ebookDiscount ? (
+                      <span className="flex items-baseline gap-2">
+                        <span className="text-sm text-muted-foreground line-through font-mono">${t.price}</span>
+                        <span className="text-2xl font-extrabold font-mono text-primary">${DISCOUNTED_TRAINING_PRICE}</span>
+                      </span>
+                    ) : (
+                      <span className="text-2xl font-extrabold font-mono text-foreground">${t.price}</span>
+                    )}
                     <button
                       onClick={() =>
                         setCheckout({
                           productId: t.id,
                           productTitle: t.title,
-                          productNote: "Video eğitim · ömür boyu erişim",
-                          priceLabel: `$${t.price}.00`,
+                          productNote: ebookDiscount ? "Video eğitim · e-kitap alana özel %50" : "Video eğitim · ömür boyu erişim",
+                          priceLabel: ebookDiscount ? `${DISCOUNTED_TRAINING_PRICE} $` : `$${t.price}.00`,
+                          comparePrice: ebookDiscount ? `$${t.price}` : undefined,
                           productQuery: t.productQuery,
+                          discountCode: ebookDiscount ? EBOOK_DISCOUNT_CODE : undefined,
                         })
                       }
                       className="btn btn-primary cursor-pointer"
@@ -167,7 +190,9 @@ export default function EgitimlerPage() {
           productTitle={checkout.productTitle}
           productNote={checkout.productNote}
           priceLabel={checkout.priceLabel}
+          comparePrice={checkout.comparePrice}
           productQuery={checkout.productQuery}
+          discountCode={checkout.discountCode}
           onClose={() => setCheckout(null)}
         />
       )}

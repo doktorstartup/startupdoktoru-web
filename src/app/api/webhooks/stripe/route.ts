@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { stripe } from "../../../../lib/stripe";
 import { supabaseAdmin } from "../../../../lib/supabase";
+import { enroll } from "../../../../lib/campaigns";
 
 // productId → lead aşaması/skoru eşlemesi
 const LEAD_BY_PRODUCT: Record<string, { stage: string; score: number }> = {
@@ -117,6 +118,16 @@ export async function POST(req: NextRequest) {
         if (insertError) {
           console.error("Lead insert error:", insertError.message);
         }
+      }
+    }
+
+    // E-kitap alanı eğitime yükseltmek için upsell e-posta serisine kaydet.
+    // Seri, kişi bir eğitim alınca otomatik durur (campaigns.ts → ownsTraining).
+    if (isNewOrder && productId === "ebook_13_steps" && email) {
+      try {
+        await enroll("ebook_upsell", null, { email, name: name || undefined });
+      } catch (e) {
+        console.error("Ebook upsell enroll error:", e instanceof Error ? e.message : e);
       }
     }
   }

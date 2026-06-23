@@ -11,6 +11,7 @@ const TRIGGERS = [
   { v: "lead", label: "Yeni Lead / Kayıt" },
   { v: "abandoned", label: "Sepeti Bırakma" },
   { v: "interest", label: "Eğitime İlgi" },
+  { v: "ebook_upsell", label: "E-kitap Alımı (Eğitim Upsell)" },
 ];
 
 function getPw() {

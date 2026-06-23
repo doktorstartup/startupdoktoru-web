@@ -19,6 +19,20 @@ async function isCustomer(email: string) {
   return data && data[0]?.status === "CUSTOMER";
 }
 
+const TRAINING_PRODUCTS = ["investor_training", "startup_giris", "degerleme", "all_access_bundle"];
+
+// Kişi bir EĞİTİM (e-kitap hariç) satın aldı mı? E-kitap upsell serisini durdurmak için.
+async function ownsTraining(email: string) {
+  const { data } = await supabaseAdmin
+    .from("ds_orders")
+    .select("product_id")
+    .eq("payment_status", "paid")
+    .ilike("email", email)
+    .in("product_id", TRAINING_PRODUCTS)
+    .limit(1);
+  return !!(data && data.length > 0);
+}
+
 async function weeklyCampaignIds(): Promise<string[]> {
   const { data } = await supabaseAdmin.from("ds_campaigns").select("id").eq("cadence", "weekly");
   return (data || []).map((c) => c.id as string);
@@ -28,7 +42,13 @@ async function weeklyCampaignIds(): Promise<string[]> {
 export async function processEnrollment(id: string) {
   const { data: e } = await supabaseAdmin.from("ds_campaign_enrollments").select("*").eq("id", id).single<Enrollment>();
   if (!e || e.done) return;
-  if (await isCustomer(e.email)) {
+  // Durdurma koşulu kampanya türüne göre değişir:
+  //  - ebook_upsell: kişi EĞİTİM alınca dur (e-kitap müşterisi olmak durdurmaz; amacı eğitime yükseltmek).
+  //  - diğer kampanyalar: müşteri olunca dur.
+  const { data: camp } = await supabaseAdmin
+    .from("ds_campaigns").select("trigger_type").eq("id", e.campaign_id).single<{ trigger_type: string }>();
+  const stop = camp?.trigger_type === "ebook_upsell" ? await ownsTraining(e.email) : await isCustomer(e.email);
+  if (stop) {
     await supabaseAdmin.from("ds_campaign_enrollments").update({ done: true }).eq("id", id);
     return;
   }
@@ -86,7 +106,7 @@ export async function processWeekly(limit = 1000) {
 
 // Tetik gerçekleşince eşleşen kampanyalara kaydet. Gecikmeli kampanyalarda gecikme-0 anında gider;
 // haftalık kampanyalarda ilk adım ilk Pazar gider (anında gönderim yok).
-export async function enroll(triggerType: "lead" | "abandoned" | "interest", triggerValue: string | null, person: { email?: string; name?: string }) {
+export async function enroll(triggerType: "lead" | "abandoned" | "interest" | "ebook_upsell", triggerValue: string | null, person: { email?: string; name?: string }) {
   const email = (person.email || "").trim().toLowerCase();
   if (!email.includes("@")) return;
   let query = supabaseAdmin.from("ds_campaigns").select("id, cadence").eq("trigger_type", triggerType).eq("enabled", true);
