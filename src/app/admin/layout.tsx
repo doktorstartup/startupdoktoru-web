@@ -17,7 +17,8 @@ import {
   FileText,
   UserPlus,
   KeyRound,
-  Loader2
+  Loader2,
+  Megaphone
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -153,6 +154,11 @@ export default function AdminLayout({
       name: "Otomasyonlar",
       href: "/admin/automations",
       icon: Layers,
+    },
+    {
+      name: "Bülten (Toplu Mail)",
+      href: "/admin/broadcast",
+      icon: Megaphone,
     },
     {
       name: "İçerik & LMS Editörü",
