@@ -113,22 +113,32 @@ export default function EgitimlerPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center justify-between mt-auto">
-                  <span className="text-2xl font-extrabold font-mono text-foreground">${t.price}</span>
-                  <button
-                    onClick={() =>
-                      setCheckout({
-                        productId: t.id,
-                        productTitle: t.title,
-                        productNote: "Video eğitim · ömür boyu erişim",
-                        priceLabel: `$${t.price}.00`,
-                        productQuery: t.productQuery,
-                      })
-                    }
-                    className="btn btn-primary cursor-pointer"
-                  >
-                    Satın Al
-                  </button>
+                <div className="mt-auto space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-2xl font-extrabold font-mono text-foreground">${t.price}</span>
+                    <button
+                      onClick={() =>
+                        setCheckout({
+                          productId: t.id,
+                          productTitle: t.title,
+                          productNote: "Video eğitim · ömür boyu erişim",
+                          priceLabel: `$${t.price}.00`,
+                          productQuery: t.productQuery,
+                        })
+                      }
+                      className="btn btn-primary cursor-pointer"
+                    >
+                      Satın Al
+                    </button>
+                  </div>
+                  {t.href && (
+                    <Link
+                      href={t.href}
+                      className="block text-center text-xs font-semibold text-primary hover:underline"
+                    >
+                      Eğitim detaylarını incele →
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

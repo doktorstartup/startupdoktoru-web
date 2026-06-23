@@ -66,6 +66,7 @@ export const TRAININGS: Training[] = [
     ],
     price: 70,
     productQuery: "startup_giris",
+    href: "/startup-giris",
   },
   {
     id: "degerleme",
@@ -85,6 +86,7 @@ export const TRAININGS: Training[] = [
     ],
     price: 70,
     productQuery: "degerleme",
+    href: "/degerleme",
   },
 ];
 
