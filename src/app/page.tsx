@@ -22,6 +22,8 @@ import { AIDrawer } from "../components/AIDrawer";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { BunnyEmbed } from "../components/BunnyEmbed";
+import { VcNetwork } from "../components/VcNetwork";
+import { Testimonials } from "../components/Testimonials";
 import { getTraining, trainingPoster } from "../lib/trainings";
 
 export default function Home() {
@@ -426,6 +428,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── VC NETWORK / GÜVENİLİR KAYNAK (görsel varsa) ─── */}
+      <VcNetwork />
+
       {/* ─── FAQ SECTION ─── */}
       <section className="py-20 md:py-32 max-w-4xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-16">
@@ -455,6 +460,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ─── ÖĞRENCİ MEMNUNİYET VİDEOLARI (video varsa) ─── */}
+      <Testimonials />
 
       {/* ─── FINAL CTA SECTION ─── */}
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8 mb-20">
