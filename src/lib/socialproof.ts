@@ -31,6 +31,12 @@ export const TESTIMONIALS: Testimonial[] = [
     youTubeId: "fJVjQfpMDcc",
   },
   {
+    name: "Melih",
+    role: "Dhetay",
+    quote: "Yatırımcıya hangi imtiyazları vermeliyiz, hangileri ölümcül sonuçlar doğurur, şirket nasıl değerlenir — hepsi çok değerli bilgilerdi.",
+    youTubeId: "2LLnJsbiEWA",
+  },
+  {
     name: "Serdar",
     role: "360 Interactive",
     quote: "Aslında tamamız gibi geliyordu ama Eser hoca ile konuşunca bütün eksiklerimizi gördük — şimdi tamamlıyoruz.",
