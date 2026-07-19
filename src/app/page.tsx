@@ -166,6 +166,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── ÖĞRENCİ MEMNUNİYET VİDEOLARI — ikna önce, teklif sonra ─── */}
+      <Testimonials />
+
       {/* ─── VALUE LADDER (SOLUTION) ─── */}
       <section id="value-ladder" className="py-20 md:py-32 max-w-7xl mx-auto px-6 sm:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20">
@@ -470,9 +473,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      {/* ─── ÖĞRENCİ MEMNUNİYET VİDEOLARI (video varsa) ─── */}
-      <Testimonials />
 
       {/* ─── FINAL CTA SECTION ─── */}
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-6 sm:px-8 mb-20">
