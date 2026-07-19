@@ -16,9 +16,43 @@ export type VcProof = {
 };
 
 // ── Öğrenci memnuniyet videoları ──
-// Örnek (gerçek gelince yorum işaretini kaldırıp doldur):
-//   { name: "Ayşe K.", role: "Kurucu, FinX", quote: "Yatırımcı görüşmem tamamen değişti.", youTubeId: "XXXXXXXXXXX" },
-export const TESTIMONIALS: Testimonial[] = [];
+// Sıralama = sayfadaki sıra (yatay videolar başta, dikeyler sonda).
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Muhammet Kayapınar",
+    role: "Violiv",
+    quote: "Aklımdaki bütün merak edilen sorular cevaplandı. Aydınlanma yaşadım ve artık hazırım.",
+    youTubeId: "lBZWArxe-7U",
+  },
+  {
+    name: "Yunus Burak Özcan",
+    role: "Gristek",
+    quote: "Az daha yanlış bir anlaşmayla 100 milyon dolarlık şirketi kaybedecektik. Hayatımızı kurtardı.",
+    youTubeId: "fJVjQfpMDcc",
+  },
+  {
+    name: "Serdar",
+    role: "360 Interactive",
+    quote: "Aslında tamamız gibi geliyordu ama Eser hoca ile konuşunca bütün eksiklerimizi gördük — şimdi tamamlıyoruz.",
+    youTubeId: "d41wNvz8Vbw",
+  },
+  {
+    name: "Gökhan Güleç",
+    role: "StreetCo",
+    quote: "Yatırımcının karşısında nasıl güçlü durulur ve pazarlık masasındaki bütün oyunlar öğrenilir — hepsini öğrendim.",
+    youTubeId: "f7acJhyevgg",
+  },
+  {
+    name: "Serhat",
+    quote: "Aklınıza gelen her fikir sizi zengin etmez. Bunun matematiğini görünce projemin tüm eksiklerini gördüm; yeni projemde çok daha iyisini yapacağım.",
+    youTubeId: "0fMZWdOOscw",
+  },
+  {
+    name: "Alaettin Keykubat",
+    quote: "Eğitim fiyatı yüksek gibi gelmişti. Ama şimdi anlıyorum ki bu kadar bilgiye az bile — 10 yıllık bu tecrübe paha biçilemez.",
+    youTubeId: "X0E75HaC6zs",
+  },
+];
 
 // ── VC'lerle / güvenilir kaynaklarla kareler ──
 // Örnek:

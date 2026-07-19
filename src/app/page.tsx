@@ -71,14 +71,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 font-sans">
-            Kervan yolda değil,<br />
+            Hedef:<br />
             <span className="bg-gradient-to-r from-primary via-[#38BDF8] to-accent bg-clip-text text-transparent">
-              stratejiyle düzülür.
+              Milyon Dolar
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-            Girişimcilerin büyük kısmı plansızlık yüzünden batıyor. Startup Doktoru, teoriyi bir kenara bırakıp işinizi yatırımcıya ve müşteriye hazırlayacak uygulanabilir yol haritaları sunar.
+            10 yıllık bilgi birikimiyle, nasıl milyon dolarlık bir girişim kurulur — adım adım anlatıyorum.
           </p>
 
           {/* Primary CTA + risk reducer, e-book secondary */}
@@ -404,7 +404,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 flex justify-center">
+          <div className="lg:col-span-6 flex flex-col items-center gap-6">
             {/* Founder portrait */}
             <div className="h-96 w-80 rounded-3xl gradient-panel border border-border shadow-2xl relative overflow-hidden flex flex-col justify-end p-8 group">
               <Image
@@ -424,6 +424,16 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            {/* Kişisel söz — fotoğrafın altında */}
+            <figure className="max-w-80 text-center">
+              <blockquote className="text-lg font-semibold italic text-foreground/90 leading-snug">
+                <span className="text-primary">“</span>Kervan yolda değil, stratejiyle düzülür.<span className="text-primary">”</span>
+              </blockquote>
+              <figcaption className="mt-2 text-[11px] uppercase tracking-widest text-muted-foreground">
+                Eser Memişoğlu&apos;nun ilkesi
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
