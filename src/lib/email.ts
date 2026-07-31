@@ -34,3 +34,14 @@ export function shell(body: string) {
     <p style="font-size:12px;color:#9ca3af">Startup Doktoru · Eser Memişoğlu · <a href="${SITE}" style="color:#00B8CC">${SITE.replace(/^https?:\/\//, "")}</a></p>
   </div>`;
 }
+
+// HTML enjeksiyonuna karşı basit kaçış (bildirim maillerinde kullanıcı verisi için).
+export function esc(s: string) {
+  return String(s).replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c] as string));
+}
+
+// Yöneticiye bilgilendirme maili (yeni kayıt / yeni satış). Varsayılan: esermemisoglu@gmail.com.
+export async function notifyAdmin(subject: string, bodyHtml: string) {
+  const to = process.env.ADMIN_NOTIFY_EMAIL || "esermemisoglu@gmail.com";
+  return sendEmail({ to, subject: `[Startup Doktoru] ${subject}`, html: shell(bodyHtml) });
+}

@@ -3,6 +3,7 @@ import type Stripe from "stripe";
 import { stripe } from "../../../../lib/stripe";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { enroll } from "../../../../lib/campaigns";
+import { notifyAdmin, esc } from "../../../../lib/email";
 
 // productId → lead aşaması/skoru eşlemesi
 const LEAD_BY_PRODUCT: Record<string, { stage: string; score: number }> = {
@@ -85,6 +86,18 @@ export async function POST(req: NextRequest) {
             .eq("code", discountCode);
         }
       }
+
+      // Admin'e "yeni satış" bilgilendirmesi.
+      const { data: prod } = await supabaseAdmin.from("ds_products").select("title").eq("id", productId).single();
+      const productTitle = prod?.title || productId || "(bilinmiyor)";
+      const amountLabel = `${(pi.amount / 100).toFixed(2)} ${(pi.currency || "usd").toUpperCase()}`;
+      await notifyAdmin(
+        `Yeni satış: ${productTitle}`,
+        `<h2 style="margin:0 0 8px;font-size:18px">Yeni satış 💰</h2>
+         <p style="margin:0"><strong>Ürün:</strong> ${esc(productTitle)}<br/>
+         <strong>Tutar:</strong> ${esc(amountLabel)}<br/>
+         <strong>Müşteri:</strong> ${esc(name || "-")} (${esc(email || "-")})${discountCode ? `<br/><strong>Kupon:</strong> ${esc(discountCode)}` : ""}</p>`
+      );
     }
 
     // İlgili lead'i müşteriye çevir; lead yoksa oluştur (önce form doldurmamış alıcı).
