@@ -13,12 +13,13 @@ Canlı: **https://startupdoktoru.com** · Repo: `github.com/doktorstartup/startu
 | Anahtar | Açıklama |
 |---|---|
 | `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` / `SUPABASE_SERVICE_ROLE_KEY` | Supabase (ref: `mvygvbobwebmceatasmb`) |
-| `SUPABASE_DB_URL` | Migration'ları `pg` ile doğrudan uygulamak için (sadece lokal) |
+| `SUPABASE_DB_URL` | (Eski) doğrudan `pg` bağlantısı — **direkt host artık DNS'te yok**, lokal script'ler için supabase-js REST kullan (bkz. §7) |
 | `STRIPE_SECRET_KEY` / `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` / `STRIPE_WEBHOOK_SECRET` | Ödeme |
 | `OPENAI_API_KEY` | AI Mentor |
 | `ADMIN_PASSWORD` | Tüm `/admin` ve admin API'leri korur (sunucu doğrular) |
 | `RESEND_API_KEY` / `RESEND_FROM` / `RESEND_REPLY_TO` | E-posta. From: `eser@startupdoktoru.com`, Reply-To: `doktorstartup@gmail.com` |
 | `CRON_SECRET` (opsiyonel) | Cron endpoint'ini korur |
+| `ADMIN_NOTIFY_EMAIL` (opsiyonel) | Kayıt/satış bildirimleri buraya (varsayılan `esermemisoglu@gmail.com`) |
 | `NEXT_PUBLIC_SITE_URL` | `https://startupdoktoru.com` |
 
 ## 3. Kimlik Doğrulama (Supabase Auth)
@@ -47,6 +48,12 @@ Tablolar: `ds_campaigns` (cadence: `delay`|`weekly`), `ds_campaign_steps`, `ds_c
 ## 6. İçerik & Medya
 - Eğitim videoları **Bunny.net** (kütüphane 475548) — canlıda oynaması için **referrer izin listesine `startupdoktoru.com` eklenmeli.** Tanıtımlar YouTube olabilir (`previewYouTube`).
 - E-kitap **özel Supabase Storage bucket `ebooks`** → `/api/ebook` erişim kontrollü imzalı URL ile sunar (public DEĞİL).
+- **Sosyal kanıt** `src/lib/socialproof.ts`: öğrenci memnuniyet videoları (YouTube unlisted) + VC/güvenilir-kaynak görselleri (`public/`). Diziler boşken bölüm gizli. Testimonials bölümü **değer merdiveninin önünde** (önce ikna).
+
+### Admin bildirimleri (kayıt/satış)
+- `notifyAdmin()` (`src/lib/email.ts`) → `ADMIN_NOTIFY_EMAIL` (varsayılan `esermemisoglu@gmail.com`).
+- **Yeni kayıt**: `/api/welcome` içinde, kişi başına bir kez (`ds_leads.tags` içine `admin_notified` eklenerek dedup).
+- **Yeni satış**: Stripe webhook `payment_intent.succeeded` → `isNewOrder` (ürün, tutar, müşteri, kupon).
 
 ## 7. Bilinen Tuzaklar (tekrar yaşamamak için)
 - **DNS Vercel'de.** İsimtescil DNS paneli yetkili değil; e-posta/DNS kaydı Vercel DNS'e.
@@ -54,6 +61,7 @@ Tablolar: `ds_campaigns` (cadence: `delay`|`weekly`), `ds_campaign_steps`, `ds_c
 - **Mobil drawer** header'ın DIŞINDA olmalı (header'daki `backdrop-blur` `fixed`'i bozar).
 - **"Unable to exchange external code"** = Supabase'de Google Client Secret yanlış.
 - **Stripe Link maili** (`notifications@link.com`) bizden değil — Stripe kayıtlı kart özelliği.
+- **Direkt DB bağlantısı (`db.<ref>.supabase.co`) artık DNS'te yok** (Supabase kaldırdı). Lokal DB script'leri için **supabase-js REST** (service role) kullan ya da **pooler** host'u (`aws-0-<region>.pooler.supabase.com:6543`, user `postgres.<ref>`). Uygulama zaten REST kullandığı için canlı etkilenmez.
 
 ## 8. Yayın Sonrası Yapılacaklar / Opsiyoneller
 - [ ] Bunny referrer'a `startupdoktoru.com` + `www` ekle (videolar).
