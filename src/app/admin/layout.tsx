@@ -18,7 +18,8 @@ import {
   UserPlus,
   KeyRound,
   Loader2,
-  Megaphone
+  Megaphone,
+  Building2
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -164,6 +165,11 @@ export default function AdminLayout({
       name: "İçerik & LMS Editörü",
       href: "/admin/content",
       icon: BookOpen,
+    },
+    {
+      name: "Yatırımcı Ağı (INVEST)",
+      href: "/admin/invest",
+      icon: Building2,
     },
   ];
 
