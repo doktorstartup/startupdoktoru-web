@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
-import { sendEmail, shell } from "../../../../lib/email";
+import { shell } from "../../../../lib/email";
+import { sendLogged } from "../../../../lib/mailer";
 
 // Toplu bülten: tüm lead'lere tek seferlik bilgilendirme maili (ör. haftalık startup haberleri).
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
@@ -27,7 +28,7 @@ export async function POST(req: NextRequest) {
 
   // Test: sadece tek adrese
   if (body.testEmail) {
-    const r = await sendEmail({ to: body.testEmail, subject: fill(subject, "Test"), html: shell(fill(html, "Test")) });
+    const r = await sendLogged({ to: body.testEmail, subject: fill(subject, "Test"), html: shell(fill(html, "Test")) }, { context: "test" });
     return NextResponse.json({ ok: true, test: true, sent: r.sent, skipped: r.skipped });
   }
 
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest) {
     const email = (l.email || "").trim().toLowerCase();
     if (!email.includes("@") || seen.has(email)) continue;
     seen.add(email);
-    const r = await sendEmail({ to: email, subject: fill(subject, l.name || ""), html: shell(fill(html, l.name || "")) });
+    const r = await sendLogged({ to: email, subject: fill(subject, l.name || ""), html: shell(fill(html, l.name || "")) }, { context: "broadcast" });
     if (r.skipped) {
       skipped = true;
       break;

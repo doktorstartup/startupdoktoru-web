@@ -45,6 +45,21 @@ Tablolar: `ds_campaigns` (cadence: `delay`|`weekly`), `ds_campaign_steps`, `ds_c
 - **Cron** `/api/cron/followup`: her gün `processDue`; TR'de Pazar ise `processWeekly`. `vercel.json` cron `0 7 * * *` (07:00 UTC = 10:00 TR). Daha kararlı/sık tetik için cron-job.org yedek.
 - Aktif kampanyalar: Karşılama · Sepeti Bırakanlar · Genel Takip · Yatırımcı İlgi Serisi · 13 Haftalık Startup Serisi · Topluluk Daveti (WhatsApp: chat.whatsapp.com/F9E2QPGYU2S5IMVOmfSlGb).
 
+### Mail İzleme & Cevap Takibi (`/admin/mail`)
+Tüm giden mailler (drip, bülten, yatırımcı) **`ds_email_messages`** defterine loglanır; açılma/tıklama/teslim/bounce **Resend webhook** ile işlenir. Gelen cevaplar **`ds_inbound_emails`**'e düşer ve `from_email` ile yatırımcıya eşleşir.
+- **Gönderim yolu:** `sendLogged()` (`src/lib/mailer.ts`) → `sendEmail` + defter kaydı. Resend'in döndürdüğü `message_id` = `provider_id`; webhook eşleşme anahtarı.
+- **Giden webhook:** `/api/webhooks/resend` — olaylar `email.delivered/opened/clicked/bounced/complained`. İmza `RESEND_WEBHOOK_SECRET` (Svix) ile doğrulanır.
+- **Gelen webhook:** `/api/webhooks/resend-inbound` — Resend Inbound. İmza `RESEND_INBOUND_SECRET` (yoksa `RESEND_WEBHOOK_SECRET`).
+- **Yatırımcı gönderimi:** `/api/admin/invest/send` — KVKK: yalnız `address_purpose='outreach_published'` + e-postası olan yatırımcılara; parti başına ≤200 (deliverability). reply-to = `RESEND_INBOUND_ADDRESS`.
+- **Uyarı:** "Açıldı" sinyali (Apple Mail Privacy vb.) güvenilmez → "Tıklandı"ya bak. 30k soğuk listede warm-up + throttle + net opt-out şart, yoksa domain itibarı yanar.
+
+**Kurulum (Resend paneli + DNS — canlıda bir kez yapılır):**
+1. **Tracking aç:** Resend → Domains → domain → Open/Click tracking ON.
+2. **Giden webhook:** Resend → Webhooks → Add → URL `https://startupdoktoru.com/api/webhooks/resend`, olaylar: delivered/opened/clicked/bounced/complained. Signing secret → `RESEND_WEBHOOK_SECRET`.
+3. **Inbound (cevap yakalama):** Resend → Inbound → alt-alan ekle (ör. `reply.startupdoktoru.com`) → verdiği **MX kaydını en düşük öncelikle Vercel DNS'e** ekle. Inbound webhook URL `https://startupdoktoru.com/api/webhooks/resend-inbound`, secret → `RESEND_INBOUND_SECRET`.
+4. **Reply adresi:** `RESEND_INBOUND_ADDRESS=yatirim@reply.startupdoktoru.com` (bu adrese gelen cevaplar Inbound'a düşer). Env değişince Vercel Redeploy.
+5. **Migration:** `supabase/migrations/0015_email_tracking.sql` çalıştır (Supabase SQL editor).
+
 ## 6. İçerik & Medya
 - Eğitim videoları **Bunny.net** (kütüphane 475548) — canlıda oynaması için **referrer izin listesine `startupdoktoru.com` eklenmeli.** Tanıtımlar YouTube olabilir (`previewYouTube`).
 - E-kitap **özel Supabase Storage bucket `ebooks`** → `/api/ebook` erişim kontrollü imzalı URL ile sunar (public DEĞİL).

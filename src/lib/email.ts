@@ -4,26 +4,30 @@
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
-export async function sendEmail(opts: { to: string; subject: string; html: string }): Promise<{ sent: boolean; skipped?: boolean }> {
+export async function sendEmail(opts: { to: string; subject: string; html: string; replyTo?: string; headers?: Record<string, string> }): Promise<{ sent: boolean; skipped?: boolean; id?: string; error?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM || "Startup Doktoru <onboarding@resend.dev>";
-  const replyTo = process.env.RESEND_REPLY_TO || "doktorstartup@gmail.com";
+  const replyTo = opts.replyTo || process.env.RESEND_REPLY_TO || "doktorstartup@gmail.com";
   if (!apiKey) return { sent: false, skipped: true };
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ from, to: [opts.to], subject: opts.subject, html: opts.html, reply_to: replyTo }),
+      body: JSON.stringify({ from, to: [opts.to], subject: opts.subject, html: opts.html, reply_to: replyTo, headers: opts.headers }),
     });
     if (!res.ok) {
-      console.error("Resend error:", await res.text());
-      return { sent: false };
+      const error = await res.text();
+      console.error("Resend error:", error);
+      return { sent: false, error };
     }
-    return { sent: true };
+    // Resend başarılı gönderimde { id } döndürür → takip için provider_id olarak saklanır.
+    const data = (await res.json().catch(() => ({}))) as { id?: string };
+    return { sent: true, id: data.id };
   } catch (e) {
-    console.error("sendEmail error:", e instanceof Error ? e.message : e);
-    return { sent: false };
+    const error = e instanceof Error ? e.message : String(e);
+    console.error("sendEmail error:", error);
+    return { sent: false, error };
   }
 }
 

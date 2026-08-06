@@ -19,7 +19,8 @@ import {
   KeyRound,
   Loader2,
   Megaphone,
-  Building2
+  Building2,
+  Mail
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -160,6 +161,11 @@ export default function AdminLayout({
       name: "Bülten (Toplu Mail)",
       href: "/admin/broadcast",
       icon: Megaphone,
+    },
+    {
+      name: "Mail Trafiği",
+      href: "/admin/mail",
+      icon: Mail,
     },
     {
       name: "İçerik & LMS Editörü",

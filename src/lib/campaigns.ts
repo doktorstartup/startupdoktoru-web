@@ -3,7 +3,8 @@
 //  - 'weekly' kampanyalar: her Pazar bir adım (processWeekly). 13 haftalık seri böyle.
 // Müşteri olan kişide seri durur. Resend yoksa beklemede kalır.
 import { supabaseAdmin } from "./supabase";
-import { sendEmail, shell } from "./email";
+import { shell } from "./email";
+import { sendLogged } from "./mailer";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
@@ -60,7 +61,7 @@ export async function processEnrollment(id: string) {
   while (sent < list.length) {
     const step = list[sent];
     if (step.delay_minutes > elapsedMin) break;
-    const r = await sendEmail({ to: e.email, subject: fill(step.subject, e.name || ""), html: shell(fill(step.body_html, e.name || "")) });
+    const r = await sendLogged({ to: e.email, subject: fill(step.subject, e.name || ""), html: shell(fill(step.body_html, e.name || "")) }, { context: "drip", contextRef: e.id });
     if (r.skipped) return;
     sent++;
   }
@@ -92,7 +93,7 @@ export async function processWeekly(limit = 1000) {
       continue;
     }
     const step = list[e.sent_steps];
-    const r = await sendEmail({ to: e.email, subject: fill(step.subject, e.name || ""), html: shell(fill(step.body_html, e.name || "")) });
+    const r = await sendLogged({ to: e.email, subject: fill(step.subject, e.name || ""), html: shell(fill(step.body_html, e.name || "")) }, { context: "drip", contextRef: e.id });
     if (r.skipped) break; // Resend yok
     const nextSent = e.sent_steps + 1;
     await supabaseAdmin
