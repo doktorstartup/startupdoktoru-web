@@ -45,11 +45,12 @@ export async function sendEmail(opts: { to: string; subject: string; html: strin
   }
 }
 
+// Sade, "kişisel mektup" görünümü — renkli buton/marka bloğu yok.
+// Gmail'in Promotions sekmesine düşmemek için kasıtlı olarak yalın tutulur.
 export function shell(body: string) {
-  return `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:auto;color:#0E1726;line-height:1.6">
+  return `<div style="font-family:system-ui,sans-serif;max-width:520px;margin:auto;color:#1f2937;line-height:1.6;font-size:15px">
     ${body}
-    <hr style="border:none;border-top:1px solid #e5e7eb;margin:28px 0" />
-    <p style="font-size:12px;color:#9ca3af">Startup Doktoru · Eser Memişoğlu · <a href="${SITE}" style="color:#00B8CC">${SITE.replace(/^https?:\/\//, "")}</a></p>
+    <p style="font-size:12px;color:#9ca3af;margin:28px 0 0">Startup Doktoru · Eser Memişoğlu · <a href="${SITE}" style="color:#9ca3af">${SITE.replace(/^https?:\/\//, "")}</a></p>
   </div>`;
 }
 
