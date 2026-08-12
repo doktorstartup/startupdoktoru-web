@@ -15,6 +15,17 @@ const CAP = 200; // tek seferde üst sınır (deliverability + free-tier korumas
 type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null };
 type Seg = { status?: string; country?: string; sector?: string; stage?: string };
 
+// Resend hata gövdesi JSON döner; okunur mesajı çıkar (teşhis panelde görünsün).
+function readable(err?: string): string | undefined {
+  if (!err) return undefined;
+  try {
+    const j = JSON.parse(err) as { message?: string };
+    return (j.message || err).slice(0, 300);
+  } catch {
+    return err.slice(0, 300);
+  }
+}
+
 function fill(s: string, inv: Inv) {
   const partner = inv.partner_name || "";
   return s
@@ -88,7 +99,7 @@ export async function POST(req: NextRequest) {
       { to, subject: fill(subject, inv), html: shell(fill(html, inv)), replyTo },
       { context: "invest", contextRef: inv.id },
     );
-    return NextResponse.json({ ok: true, sent: r.sent, skipped: r.skipped });
+    return NextResponse.json({ ok: true, sent: r.sent, skipped: r.skipped, suppressed: r.suppressed, error: readable(r.error) });
   }
 
   const seg: Seg = body.segment || {};

@@ -255,8 +255,9 @@ function MailPanel({ inv, onClose }: { inv: Investor; onClose: () => void }) {
       const d = await res.json();
       if (!res.ok) setMsg(d.error || "Hata.");
       else if (d.skipped) setMsg("Resend yapılandırılmamış — gönderilemedi.");
+      else if (d.suppressed) setMsg("Bu adres engelleme listesinde — gönderilmedi.");
       else if (d.sent) { setMsg("Gönderildi ✓ — Mail Trafiği'nden aç/tıkla/cevabı takip et."); setSubject(""); setBody(""); }
-      else setMsg("Gönderilemedi.");
+      else setMsg(d.error ? `Gönderilemedi: ${d.error}` : "Gönderilemedi.");
     } catch {
       setMsg("Bağlantı hatası.");
     } finally { setSending(false); }

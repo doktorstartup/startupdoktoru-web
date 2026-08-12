@@ -4,10 +4,24 @@
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
+// "Ad <mail@site.com>" veya "mail@site.com" biçimini doğrular.
+// Yanlış yapılandırılmış bir reply-to (ör. yer tutucu) tüm gönderimi düşürmesin diye.
+function validAddress(v?: string | null): boolean {
+  if (!v) return false;
+  const m = v.match(/<([^>]+)>\s*$/);
+  const addr = (m ? m[1] : v).trim();
+  return /^[^\s<>@]+@[^\s<>@]+\.[^\s<>@]+$/.test(addr);
+}
+
 export async function sendEmail(opts: { to: string; subject: string; html: string; replyTo?: string; headers?: Record<string, string> }): Promise<{ sent: boolean; skipped?: boolean; id?: string; error?: string }> {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM || "Startup Doktoru <onboarding@resend.dev>";
-  const replyTo = opts.replyTo || process.env.RESEND_REPLY_TO || "doktorstartup@gmail.com";
+  const fallbackReply = process.env.RESEND_REPLY_TO || "doktorstartup@gmail.com";
+  let replyTo = opts.replyTo || fallbackReply;
+  if (!validAddress(replyTo)) {
+    console.error("Geçersiz reply-to yok sayıldı:", replyTo);
+    replyTo = validAddress(fallbackReply) ? fallbackReply : "doktorstartup@gmail.com";
+  }
   if (!apiKey) return { sent: false, skipped: true };
 
   try {
