@@ -67,8 +67,9 @@ export default function InvestAdmin() {
   const [fStage, setFStage] = useState("");
   const [q, setQ] = useState("");
 
-  const load = () => {
-    setLoading(true);
+  // silent=true → listeyi spinner'la değiştirme (arka plan tazeleme; form odağı bozulmasın).
+  const load = (silent = false) => {
+    if (!silent) setLoading(true);
     const p = new URLSearchParams({ password: getPw() });
     if (fStatus !== "all") p.set("status", fStatus);
     if (fSector) p.set("sector", fSector.trim());
@@ -78,11 +79,15 @@ export default function InvestAdmin() {
       .then((r) => r.json())
       .then((d) => setItems(d.investors || []))
       .catch(() => setItems([]))
-      .finally(() => setLoading(false));
+      .finally(() => { if (!silent) setLoading(false); });
   };
   useEffect(() => { load(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [fStatus, fSector, fStage]);
 
-  const act = async (payload: Record<string, unknown>) => {
+  // Tek satırı yerelde güncelle — alan kaydında listeyi yeniden çekmeye gerek yok.
+  const patchItem = (id: string, patch: Partial<Investor>) =>
+    setItems((prev) => prev.map((it) => (it.id === id ? { ...it, ...patch } : it)));
+
+  const act = async (payload: Record<string, unknown>, opts?: { refresh?: boolean }) => {
     setBusy(true);
     try {
       const r = await fetch("/api/admin/invest", {
@@ -91,8 +96,12 @@ export default function InvestAdmin() {
         body: JSON.stringify({ password: getPw(), ...payload }),
       });
       const d = await r.json().catch(() => ({}));
-      if (d.error) alert(d.error);
-      load();
+      if (d.error) {
+        alert(d.error);
+        load(true); // hata → sunucu gerçeğine dön
+        return;
+      }
+      if (opts?.refresh !== false) load(true);
     } finally {
       setBusy(false);
     }
@@ -217,7 +226,7 @@ export default function InvestAdmin() {
                 </div>
 
                 {mailId === inv.id && <MailPanel inv={inv} onClose={() => setMailId(null)} />}
-                {open && <EditPanel inv={inv} act={act} busy={busy} />}
+                {open && <EditPanel inv={inv} act={act} busy={busy} patchItem={patchItem} />}
               </div>
             );
           })}
@@ -283,52 +292,69 @@ function MailPanel({ inv, onClose }: { inv: Investor; onClose: () => void }) {
   );
 }
 
-// ── Düzenleme paneli (alan blur'da otomatik kaydeder — automations deseni) ──
-function EditPanel({ inv, act, busy }: { inv: Investor; act: (p: Record<string, unknown>) => void; busy: boolean }) {
-  const save = (field: string, value: unknown) => act({ action: "update", id: inv.id, [field]: value });
-  const inputCls = "w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none";
-  const labelCls = "text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1";
+// Ortak sınıflar + alan bileşenleri MODÜL seviyesinde: render içinde tanımlanırsa React
+// her render'da yeni bileşen sanıp input'u söker-takar (odak kaybı, alanın sıfırlanması).
+const inputCls = "w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none";
+const labelCls = "text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1";
 
-  const Text = ({ label, field, ph }: { label: string; field: keyof Investor; ph?: string }) => (
+function Field({ label, value, ph, onSave }: { label: string; value: string; ph?: string; onSave: (v: string) => void }) {
+  return (
     <div>
       <label className={labelCls}>{label}</label>
-      <input defaultValue={(inv[field] as string) || ""} placeholder={ph}
-        onBlur={(e) => e.target.value !== (inv[field] || "") && save(field, e.target.value || null)} className={inputCls} />
+      <input defaultValue={value} placeholder={ph}
+        onBlur={(e) => e.target.value !== value && onSave(e.target.value)} className={inputCls} />
     </div>
   );
-  const Arr = ({ label, field, ph }: { label: string; field: "sectors" | "stages" | "tags"; ph?: string }) => (
+}
+
+function ArrField({ label, value, ph, onSave }: { label: string; value: string[]; ph?: string; onSave: (v: string[]) => void }) {
+  return (
     <div>
       <label className={labelCls}>{label} <span className="normal-case font-normal text-muted-foreground/60">(virgülle)</span></label>
-      <input defaultValue={(inv[field] || []).join(", ")} placeholder={ph}
-        onBlur={(e) => { const a = csv(e.target.value); if (a.join(",") !== (inv[field] || []).join(",")) save(field, a); }} className={inputCls} />
+      <input defaultValue={value.join(", ")} placeholder={ph}
+        onBlur={(e) => { const a = csv(e.target.value); if (a.join(",") !== value.join(",")) onSave(a); }} className={inputCls} />
     </div>
   );
+}
+
+// ── Düzenleme paneli (alan blur'da otomatik kaydeder — automations deseni) ──
+function EditPanel({ inv, act, busy, patchItem }: {
+  inv: Investor;
+  act: (p: Record<string, unknown>, o?: { refresh?: boolean }) => void;
+  busy: boolean;
+  patchItem: (id: string, patch: Partial<Investor>) => void;
+}) {
+  // Alan kaydı: önce yerelde güncelle (anında), sonra sunucuya yaz — liste yeniden çekilmez.
+  const save = (field: string, value: unknown) => {
+    patchItem(inv.id, { [field]: value } as Partial<Investor>);
+    act({ action: "update", id: inv.id, [field]: value }, { refresh: false });
+  };
 
   return (
     <div className="border-t border-border/30 p-5 space-y-4 bg-background/30">
       <div className="grid sm:grid-cols-3 gap-3">
-        <Text label="Firma / Fon" field="firm_name" />
-        <Text label="Partner" field="partner_name" ph="Ad Soyad" />
-        <Text label="Ünvan" field="role" ph="Managing Partner" />
+        <Field label="Firma / Fon" value={inv.firm_name || ""} onSave={(v) => v.trim() && save("firm_name", v.trim())} />
+        <Field label="Partner" value={inv.partner_name || ""} ph="Ad Soyad" onSave={(v) => save("partner_name", v || null)} />
+        <Field label="Ünvan" value={inv.role || ""} ph="Managing Partner" onSave={(v) => save("role", v || null)} />
       </div>
 
       <div className="grid sm:grid-cols-3 gap-3">
-        <Text label="E-posta" field="email" ph="pitch@fon.com" />
+        <Field label="E-posta" value={inv.email || ""} ph="pitch@fon.com" onSave={(v) => save("email", v || null)} />
         <div>
           <label className={labelCls}>E-posta amacı</label>
           <select defaultValue={inv.address_purpose} onChange={(e) => save("address_purpose", e.target.value)} className={inputCls}>
             {ADDR_PURPOSE.map((a) => <option key={a.v} value={a.v}>{a.label}</option>)}
           </select>
         </div>
-        <Text label="Ticket" field="ticket" ph="$100K–$1M" />
+        <Field label="Ticket" value={inv.ticket || ""} ph="$100K–$1M" onSave={(v) => save("ticket", v || null)} />
       </div>
 
       <div className="grid sm:grid-cols-3 gap-3">
-        <Arr label="Sektörler" field="sectors" ph="fintech, saas" />
-        <Arr label="Stage" field="stages" ph="pre-seed, seed" />
+        <ArrField label="Sektörler" value={inv.sectors || []} ph="fintech, saas" onSave={(v) => save("sectors", v)} />
+        <ArrField label="Stage" value={inv.stages || []} ph="pre-seed, seed" onSave={(v) => save("stages", v)} />
         <div className="grid grid-cols-2 gap-3">
-          <Text label="Ülke" field="country" ph="TR" />
-          <Text label="Şehir" field="city" ph="İstanbul" />
+          <Field label="Ülke" value={inv.country || ""} ph="TR" onSave={(v) => save("country", v || null)} />
+          <Field label="Şehir" value={inv.city || ""} ph="İstanbul" onSave={(v) => save("city", v || null)} />
         </div>
       </div>
 
@@ -339,9 +365,9 @@ function EditPanel({ inv, act, busy }: { inv: Investor; act: (p: Record<string, 
       </div>
 
       <div className="grid sm:grid-cols-3 gap-3">
-        <Text label="Website" field="website" ph="https://" />
-        <Text label="LinkedIn" field="linkedin" ph="https://linkedin.com/…" />
-        <Text label="Twitter/X" field="twitter" ph="@handle" />
+        <Field label="Website" value={inv.website || ""} ph="https://" onSave={(v) => save("website", v || null)} />
+        <Field label="LinkedIn" value={inv.linkedin || ""} ph="https://linkedin.com/…" onSave={(v) => save("linkedin", v || null)} />
+        <Field label="Twitter/X" value={inv.twitter || ""} ph="@handle" onSave={(v) => save("twitter", v || null)} />
       </div>
 
       <div>
