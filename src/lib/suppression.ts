@@ -15,12 +15,18 @@ export async function isSuppressed(email: string): Promise<boolean> {
 }
 
 // Listeye ekle (zaten varsa dokunma — ilk kayıt nedeni korunur).
-export async function suppress(email: string, reason: SuppressReason, source?: string | null) {
+// Başarısızsa false döner: çağıran taraf kullanıcıya "oldu" demesin.
+export async function suppress(email: string, reason: SuppressReason, source?: string | null): Promise<boolean> {
   const to = normalizeEmail(email);
-  if (!to.includes("@")) return;
-  await supabaseAdmin
+  if (!to.includes("@")) return false;
+  const { error } = await supabaseAdmin
     .from("ds_email_suppressions")
     .upsert([{ email: to, reason, source: source ?? null }], { onConflict: "email", ignoreDuplicates: true });
+  if (error) {
+    console.error("suppress başarısız:", error.message);
+    return false;
+  }
+  return true;
 }
 
 // Opt-out bağlantısı için imza. Kendi adresinden başkasını çıkaramasın diye HMAC.

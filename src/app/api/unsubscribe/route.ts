@@ -29,7 +29,11 @@ async function handle(req: NextRequest): Promise<{ ok: boolean; title: string; m
   if (!email.includes("@") || !verifyUnsubToken(email, token)) {
     return { ok: false, title: "Bağlantı geçersiz", message: "Bu bağlantı geçersiz veya süresi dolmuş görünüyor. Yardım için bize yanıt verebilirsiniz." };
   }
-  await suppress(email, "unsubscribed", "link");
+  const saved = await suppress(email, "unsubscribed", "link");
+  if (!saved) {
+    // Kaydedemediysek "oldu" deme — kullanıcı mail almaya devam edecek.
+    return { ok: false, title: "Kaydedemedik", message: "Teknik bir sorun nedeniyle çıkış talebini kaydedemedik. Bu e-postayı yanıtlarsan seni listeden hemen çıkarırız." };
+  }
   return {
     ok: true,
     title: "Çıkışınız alındı",
