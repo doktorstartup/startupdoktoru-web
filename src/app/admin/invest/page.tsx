@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import {
-  Loader2, Plus, Trash2, ChevronDown, Building2, Check, X, ExternalLink, Search, ShieldCheck, Clock,
+  Loader2, Plus, Trash2, ChevronDown, Building2, Check, X, ExternalLink, Search, ShieldCheck, Clock, Send,
 } from "lucide-react";
 
 type Investor = {
@@ -58,6 +58,7 @@ export default function InvestAdmin() {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [mailId, setMailId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [newFirm, setNewFirm] = useState("");
 
@@ -209,15 +210,74 @@ export default function InvestAdmin() {
                       <button onClick={() => act({ action: "set_status", id: inv.id, status: "rejected" })} disabled={busy} title="Reddet"
                         className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/25 text-red-400 inline-flex items-center justify-center hover:bg-red-500/20"><X className="h-4 w-4" /></button>
                     )}
+                    <button onClick={() => setMailId(mailId === inv.id ? null : inv.id)} disabled={busy} title="Mail at"
+                      className="h-8 w-8 rounded-lg bg-sky-500/10 border border-sky-500/25 text-sky-400 inline-flex items-center justify-center hover:bg-sky-500/20"><Send className="h-4 w-4" /></button>
                     <button onClick={() => setOpenId(open ? null : inv.id)} className="h-8 w-8 rounded-lg text-muted-foreground hover:text-foreground inline-flex items-center justify-center"><ChevronDown className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`} /></button>
                   </div>
                 </div>
 
+                {mailId === inv.id && <MailPanel inv={inv} onClose={() => setMailId(null)} />}
                 {open && <EditPanel inv={inv} act={act} busy={busy} />}
               </div>
             );
           })}
         </div>
+      )}
+    </div>
+  );
+}
+
+// ── 1:1 mail paneli (kart üstündeki "Mail at") ──
+function MailPanel({ inv, onClose }: { inv: Investor; onClose: () => void }) {
+  const [subject, setSubject] = useState("");
+  const [body, setBody] = useState("");
+  const [sending, setSending] = useState(false);
+  const [msg, setMsg] = useState("");
+  const canSend = !!inv.email && inv.email.includes("@");
+
+  const send = async () => {
+    if (!subject.trim() || !body.trim()) { setMsg("Konu ve içerik gerekli."); return; }
+    setSending(true); setMsg("");
+    try {
+      const res = await fetch("/api/admin/invest/send", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: getPw(), investorId: inv.id, subject, body_html: body }),
+      });
+      const d = await res.json();
+      if (!res.ok) setMsg(d.error || "Hata.");
+      else if (d.skipped) setMsg("Resend yapılandırılmamış — gönderilemedi.");
+      else if (d.sent) { setMsg("Gönderildi ✓ — Mail Trafiği'nden aç/tıkla/cevabı takip et."); setSubject(""); setBody(""); }
+      else setMsg("Gönderilemedi.");
+    } catch {
+      setMsg("Bağlantı hatası.");
+    } finally { setSending(false); }
+  };
+
+  return (
+    <div className="border-t border-border/30 p-5 space-y-3 bg-sky-500/[0.03]">
+      <div className="flex items-center justify-between">
+        <div className="text-sm font-bold flex items-center gap-2"><Send className="h-4 w-4 text-sky-400" /> Mail at</div>
+        <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>
+      </div>
+      {canSend ? (
+        <>
+          <div className="text-xs text-muted-foreground">
+            Alıcı: <span className="text-foreground font-semibold">{inv.email}</span> · cevaplar Mail Trafiği&apos;ne düşer.
+            Değişkenler: <code>{"{{firm}}"}</code>, <code>{"{{partner}}"}</code>.
+          </div>
+          <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Konu"
+            className="w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none" />
+          <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={7} placeholder="İçerik (HTML destekli)…"
+            className="w-full px-3 py-2 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none font-mono" />
+          <div className="flex items-center gap-3">
+            <button onClick={send} disabled={sending} className="btn btn-primary gap-2 text-sm">
+              {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />} Gönder
+            </button>
+            {msg && <span className="text-sm text-primary">{msg}</span>}
+          </div>
+        </>
+      ) : (
+        <div className="text-sm text-amber-400">Bu yatırımcının kayıtlı e-postası yok — önce düzenleyip e-posta ekleyin.</div>
       )}
     </div>
   );

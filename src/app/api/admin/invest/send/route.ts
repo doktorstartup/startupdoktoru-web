@@ -72,6 +72,25 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, test: true, sent: r.sent, skipped: r.skipped });
   }
 
+  // 1:1 gönderim: kart üstündeki "Mail at". Admin bilinçli tekil seçim → toplu KVKK kapısını (outreach_published)
+  // bypass eder; yalnız geçerli e-posta şart. Loglanır: context='invest'.
+  if (body.investorId) {
+    const { data } = await supabaseAdmin
+      .from("inv_investors")
+      .select("id, firm_name, partner_name, email")
+      .eq("id", body.investorId)
+      .single();
+    const inv = data as Inv | null;
+    if (!inv) return NextResponse.json({ error: "Yatırımcı bulunamadı." }, { status: 404 });
+    const to = (inv.email || "").trim().toLowerCase();
+    if (!to.includes("@")) return NextResponse.json({ error: "Bu yatırımcının e-postası yok." }, { status: 400 });
+    const r = await sendLogged(
+      { to, subject: fill(subject, inv), html: shell(fill(html, inv)), replyTo },
+      { context: "invest", contextRef: inv.id },
+    );
+    return NextResponse.json({ ok: true, sent: r.sent, skipped: r.skipped });
+  }
+
   const seg: Seg = body.segment || {};
   const limit = Math.min(Number(body.limit) || 50, CAP);
 

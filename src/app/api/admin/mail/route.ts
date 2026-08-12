@@ -3,11 +3,12 @@ import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
 
 // Mail izleme paneli verisi — şifre korumalı.
-// GET: istatistik kartları + giden mail defteri (filtreli) + gelen cevaplar.
-// POST: gelen cevabı "işlendi" işaretle (takibi kaçırmamak için).
+// GET: istatistik kartları + giden mail defteri (filtreli) + gelen cevaplar + engelleme listesi.
+// POST: gelen cevabı "işlendi" işaretle · engelleme listesine ekle/çıkar.
 
 const M = () => supabaseAdmin.from("ds_email_messages").select("id", { count: "exact", head: true });
 const I = () => supabaseAdmin.from("ds_inbound_emails").select("id", { count: "exact", head: true });
+const S = () => supabaseAdmin.from("ds_email_suppressions").select("id", { count: "exact", head: true });
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
@@ -15,7 +16,7 @@ export async function GET(req: NextRequest) {
   if (!auth.ok) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
   // İstatistikler (küçük head-count sorguları)
-  const [total, delivered, opened, clicked, bounced, complained, failed, inboundTotal, inboundNew] = await Promise.all([
+  const [total, delivered, opened, clicked, bounced, complained, failed, inboundTotal, inboundNew, suppressedTotal] = await Promise.all([
     M().neq("status", "failed"),
     M().not("delivered_at", "is", null),
     M().not("opened_at", "is", null),
@@ -25,6 +26,7 @@ export async function GET(req: NextRequest) {
     M().eq("status", "failed"),
     I(),
     I().eq("handled", false),
+    S(),
   ]).then((rows) => rows.map((r) => r.count || 0));
 
   // Giden defter (filtreli)
@@ -48,10 +50,18 @@ export async function GET(req: NextRequest) {
     .order("received_at", { ascending: false })
     .limit(100);
 
+  // Engelleme listesi (bir daha mail atılmayacak adresler)
+  const { data: suppressions } = await supabaseAdmin
+    .from("ds_email_suppressions")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(300);
+
   return NextResponse.json({
-    stats: { total, delivered, opened, clicked, bounced, complained, failed, inboundTotal, inboundNew },
+    stats: { total, delivered, opened, clicked, bounced, complained, failed, inboundTotal, inboundNew, suppressedTotal },
     messages: messages || [],
     inbound: inbound || [],
+    suppressions: suppressions || [],
   });
 }
 
@@ -66,6 +76,25 @@ export async function POST(req: NextRequest) {
       .from("ds_inbound_emails")
       .update({ handled: body.handled !== false })
       .eq("id", body.id);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true });
+  }
+
+  // Engelleme listesine elle ekleme (ör. "bir daha yazma" diyen kişi)
+  if (body.action === "suppress_add") {
+    const email = String(body.email || "").trim().toLowerCase();
+    if (!email.includes("@")) return NextResponse.json({ error: "Geçerli e-posta gerekli." }, { status: 400 });
+    const { error } = await supabaseAdmin
+      .from("ds_email_suppressions")
+      .upsert([{ email, reason: "manual", source: "admin", notes: body.notes || null }], { onConflict: "email", ignoreDuplicates: true });
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ ok: true });
+  }
+
+  // Listeden çıkarma (yanlış eklendiyse) — dikkat: şikâyet edeni geri açma.
+  if (body.action === "suppress_remove") {
+    if (!body.id) return NextResponse.json({ error: "id gerekli." }, { status: 400 });
+    const { error } = await supabaseAdmin.from("ds_email_suppressions").delete().eq("id", body.id);
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   }

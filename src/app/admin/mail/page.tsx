@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import {
   Loader2, Mail, Send, Search, Inbox, CheckCircle2, MousePointerClick, Eye,
-  AlertTriangle, Ban, XCircle, RefreshCw, Building2,
+  AlertTriangle, Ban, XCircle, RefreshCw, Building2, ShieldOff, Plus, Trash2,
 } from "lucide-react";
 
 type Message = {
@@ -31,9 +31,17 @@ type Inbound = {
   received_at: string;
   matched_investor: { firm_name: string } | null;
 };
+type Suppression = {
+  id: string;
+  email: string;
+  reason: "bounced" | "complained" | "unsubscribed" | "manual";
+  source: string | null;
+  created_at: string;
+};
 type Stats = {
   total: number; delivered: number; opened: number; clicked: number;
   bounced: number; complained: number; failed: number; inboundTotal: number; inboundNew: number;
+  suppressedTotal: number;
 };
 
 function getPw() {
@@ -56,10 +64,15 @@ const STATUS_BADGE: Record<string, string> = {
   complained: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20",
   failed: "bg-red-500/10 text-red-400 border-red-500/20",
   queued: "bg-slate-500/10 text-slate-400 border-slate-500/20",
+  suppressed: "bg-slate-500/10 text-slate-400 border-slate-500/20",
 };
 const STATUS_TR: Record<string, string> = {
   sent: "Gönderildi", delivered: "Teslim", opened: "Açıldı", clicked: "Tıklandı",
   bounced: "Bounce", complained: "Şikâyet", failed: "Başarısız", queued: "Sırada",
+  suppressed: "Engellendi",
+};
+const REASON_TR: Record<string, string> = {
+  bounced: "Ulaşılamadı", complained: "Şikâyet etti", unsubscribed: "Çıktı", manual: "Elle eklendi",
 };
 const CTX_TR: Record<string, string> = { drip: "Drip", broadcast: "Bülten", invest: "Yatırımcı", test: "Test", transactional: "Sistem" };
 
@@ -69,8 +82,9 @@ export default function MailAdmin() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inbound, setInbound] = useState<Inbound[]>([]);
+  const [suppressions, setSuppressions] = useState<Suppression[]>([]);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState<"out" | "in" | "compose">("out");
+  const [tab, setTab] = useState<"out" | "in" | "compose" | "blocked">("out");
 
   const [context, setContext] = useState("all");
   const [status, setStatus] = useState("all");
@@ -86,6 +100,7 @@ export default function MailAdmin() {
         setStats(d.stats);
         setMessages(d.messages || []);
         setInbound(d.inbound || []);
+        setSuppressions(d.suppressions || []);
       }
     } finally {
       setLoading(false);
@@ -109,13 +124,14 @@ export default function MailAdmin() {
       </div>
 
       {/* İstatistik kartları */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 mb-6">
         <StatCard icon={Send} label="Gönderildi" value={stats?.total} tone="text-sky-400" />
         <StatCard icon={CheckCircle2} label="Teslim" value={stats?.delivered} tone="text-blue-400" />
         <StatCard icon={Eye} label="Açıldı" value={stats?.opened} tone="text-amber-400" />
         <StatCard icon={MousePointerClick} label="Tıklandı" value={stats?.clicked} tone="text-emerald-400" />
         <StatCard icon={AlertTriangle} label="Bounce" value={stats?.bounced} tone="text-red-400" />
         <StatCard icon={Ban} label="Şikâyet" value={stats?.complained} tone="text-fuchsia-400" />
+        <StatCard icon={ShieldOff} label="Engelli" value={stats?.suppressedTotal} tone="text-slate-400" />
         <StatCard icon={Inbox} label="Cevap" value={stats?.inboundTotal} sub={stats?.inboundNew ? `${stats.inboundNew} yeni` : undefined} tone="text-primary" />
       </div>
 
@@ -126,6 +142,7 @@ export default function MailAdmin() {
           Gelen Cevaplar{stats?.inboundNew ? <span className="ml-2 px-1.5 py-0.5 rounded-full bg-primary text-background text-[10px] font-bold">{stats.inboundNew}</span> : null}
         </TabBtn>
         <TabBtn active={tab === "compose"} onClick={() => setTab("compose")}>Yatırımcıya Gönder</TabBtn>
+        <TabBtn active={tab === "blocked"} onClick={() => setTab("blocked")}>Engellenenler</TabBtn>
       </div>
 
       {tab === "out" && (
@@ -184,6 +201,7 @@ export default function MailAdmin() {
 
       {tab === "in" && <InboundList inbound={inbound} loading={loading} onChange={load} />}
       {tab === "compose" && <Composer onSent={load} />}
+      {tab === "blocked" && <BlockedList rows={suppressions} loading={loading} onChange={load} />}
     </div>
   );
 }
@@ -242,6 +260,86 @@ function InboundList({ inbound, loading, onChange }: { inbound: Inbound[]; loadi
           </div>
         </div>
       ))}
+    </div>
+  );
+}
+
+function BlockedList({ rows, loading, onChange }: { rows: Suppression[]; loading: boolean; onChange: () => void }) {
+  const [email, setEmail] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState("");
+
+  const post = async (payload: Record<string, unknown>) => {
+    setBusy(true); setMsg("");
+    try {
+      const res = await fetch("/api/admin/mail", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: getPw(), ...payload }),
+      });
+      const d = await res.json();
+      if (!res.ok) setMsg(d.error || "Hata.");
+      else onChange();
+    } finally { setBusy(false); }
+  };
+
+  const add = async () => {
+    if (!email.includes("@")) { setMsg("Geçerli e-posta girin."); return; }
+    await post({ action: "suppress_add", email });
+    setEmail("");
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="glass-panel rounded-2xl border border-border/50 p-4">
+        <div className="text-sm font-bold mb-1 flex items-center gap-2"><ShieldOff className="h-4 w-4 text-slate-400" /> Engelleme Listesi</div>
+        <p className="text-xs text-muted-foreground mb-3">
+          Bu adreslere <strong className="text-foreground">hiçbir</strong> pazarlama maili gitmez (drip, bülten, yatırımcı).
+          Ulaşılamayan ve şikâyet edenler otomatik eklenir; “bir daha yazmayın” diyeni elle ekleyebilirsin.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <input value={email} onChange={(e) => setEmail(e.target.value)} onKeyDown={(e) => e.key === "Enter" && add()}
+            placeholder="engellenecek@adres.com"
+            className="flex-1 min-w-[220px] h-10 px-3 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none" />
+          <button onClick={add} disabled={busy} className="btn btn-primary gap-2 text-sm">
+            {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />} Ekle
+          </button>
+        </div>
+        {msg && <p className="text-sm text-primary mt-2">{msg}</p>}
+      </div>
+
+      <div className="glass-panel rounded-2xl border border-border/50 overflow-hidden">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-[11px] uppercase tracking-wider text-muted-foreground border-b border-border/40">
+              <th className="px-4 py-3">E-posta</th>
+              <th className="px-4 py-3">Neden</th>
+              <th className="px-4 py-3">Kaynak</th>
+              <th className="px-4 py-3">Tarih</th>
+              <th className="px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {loading && <tr><td colSpan={5} className="px-4 py-10 text-center text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin inline" /></td></tr>}
+            {!loading && rows.length === 0 && <tr><td colSpan={5} className="px-4 py-10 text-center text-muted-foreground">Liste boş — henüz engellenen adres yok.</td></tr>}
+            {!loading && rows.map((r) => (
+              <tr key={r.id} className="border-b border-border/20 hover:bg-secondary/20">
+                <td className="px-4 py-3 font-medium">{r.email}</td>
+                <td className="px-4 py-3"><span className="inline-block px-2 py-0.5 rounded-md text-[11px] font-semibold border bg-slate-500/10 text-slate-400 border-slate-500/20">{REASON_TR[r.reason] || r.reason}</span></td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{r.source || "—"}</td>
+                <td className="px-4 py-3 text-xs text-muted-foreground">{fmt(r.created_at)}</td>
+                <td className="px-4 py-3 text-right">
+                  <button onClick={() => { if (confirm(`${r.email} listeden çıkarılsın mı? (Tekrar mail alabilir)`)) post({ action: "suppress_remove", id: r.id }); }}
+                    disabled={busy} title="Listeden çıkar"
+                    className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/25 text-red-400 inline-flex items-center justify-center hover:bg-red-500/20">
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="text-xs text-muted-foreground">Not: Şikâyet edeni (spam işaretleyen) listeden çıkarma — itibar riski.</p>
     </div>
   );
 }

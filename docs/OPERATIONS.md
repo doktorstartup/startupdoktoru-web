@@ -53,6 +53,14 @@ Tüm giden mailler (drip, bülten, yatırımcı) **`ds_email_messages`** defteri
 - **Yatırımcı gönderimi:** `/api/admin/invest/send` — KVKK: yalnız `address_purpose='outreach_published'` + e-postası olan yatırımcılara; parti başına ≤200 (deliverability). reply-to = `RESEND_INBOUND_ADDRESS`.
 - **Uyarı:** "Açıldı" sinyali (Apple Mail Privacy vb.) güvenilmez → "Tıklandı"ya bak. 30k soğuk listede warm-up + throttle + net opt-out şart, yoksa domain itibarı yanar.
 
+### Engelleme Listesi & Abonelikten Çıkma (opt-out)
+Tablo **`ds_email_suppressions`** — bu adreslere **hiçbir pazarlama maili** gitmez (drip, bülten, yatırımcı). İşlem mailleri (`context='transactional'`) etkilenmez.
+- **Tek kapı:** `sendLogged()` gönderimden önce listeyi kontrol eder; engelliyse mail gitmez, deftere `status='suppressed'` yazılır (panelde görünür).
+- **Otomatik ekleme:** kalıcı bounce + spam şikâyeti → `/api/webhooks/resend` ekler. Geçici (transient/soft) bounce engellemez.
+- **Kullanıcı çıkışı:** her pazarlama mailinin altındaki bağlantı + `List-Unsubscribe` / `List-Unsubscribe-Post` başlıkları (Gmail "tek tık"). Uç: `/api/unsubscribe` (HMAC imzalı; başkasının adresi çıkarılamaz).
+- **Elle yönetim:** `/admin/mail` → **Engellenenler** sekmesi (ekle / listeden çıkar). Şikâyet edeni geri açma — itibar riski.
+- **Migration:** `supabase/migrations/0016_email_suppression.sql`.
+
 **Kurulum (Resend paneli + DNS — canlıda bir kez yapılır):**
 1. **Tracking aç:** Resend → Domains → domain → Open/Click tracking ON.
 2. **Giden webhook:** Resend → Webhooks → Add → URL `https://startupdoktoru.com/api/webhooks/resend`, olaylar: delivered/opened/clicked/bounced/complained. Signing secret → `RESEND_WEBHOOK_SECRET`.
