@@ -112,7 +112,7 @@ export default function InvestorTraining() {
               ))}
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <button
                 onClick={() => setIsCheckoutOpen(true)}
                 className="btn btn-lg btn-primary cursor-pointer"
@@ -120,9 +120,14 @@ export default function InvestorTraining() {
                 Eğitime Başla (70 USD)
                 <ArrowRight className="h-4 w-4" />
               </button>
+              {/* Değer merdiveni: daha ucuz giriş (e-kitap) ve daha kapsamlı seçenek (paket) */}
               <Link href="/ebook" className="flex flex-col hover:opacity-80 transition-opacity">
                 <span className="text-sm font-bold text-accent">E-kitap alana 35 $</span>
                 <span className="text-xs text-muted-foreground">6 $&apos;lık e-kitapla %50 indirim →</span>
+              </Link>
+              <Link href="/egitimler" className="flex flex-col hover:opacity-80 transition-opacity">
+                <span className="text-sm font-bold text-primary">Tüm eğitimler 99 $</span>
+                <span className="text-xs text-muted-foreground">3 eğitimin tamamı, tek pakette →</span>
               </Link>
             </div>
           </div>

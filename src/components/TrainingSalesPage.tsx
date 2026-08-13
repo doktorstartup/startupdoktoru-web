@@ -6,7 +6,7 @@ import { Check, ArrowRight, ChevronLeft, Video, Play } from "lucide-react";
 import CheckoutForm from "./CheckoutForm";
 import { BunnyEmbed } from "./BunnyEmbed";
 import { YouTubeEmbed } from "./YouTubeEmbed";
-import { getTraining, trainingPoster } from "../lib/trainings";
+import { getTraining, trainingPoster, BUNDLE, DISCOUNTED_TRAINING_PRICE } from "../lib/trainings";
 
 // Tek eğitim için özel satış+ödeme sayfası. İçerik eğitim kataloğundan (trainings.ts) gelir.
 // /investor-training elle yazılmış bir sayfa; bu bileşen diğer eğitimleri aynı düzende üretir.
@@ -64,14 +64,19 @@ export function TrainingSalesPage({ trainingId }: { trainingId: string }) {
               ))}
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <button onClick={() => setIsCheckoutOpen(true)} className="btn btn-lg btn-primary cursor-pointer">
                 Eğitime Başla ({t.price} USD)
                 <ArrowRight className="h-4 w-4" />
               </button>
+              {/* Değer merdiveni: daha ucuz giriş (e-kitap) ve daha kapsamlı seçenek (paket) */}
               <Link href="/ebook" className="flex flex-col hover:opacity-80 transition-opacity">
-                <span className="text-sm font-bold text-accent">E-kitap alana 35 $</span>
+                <span className="text-sm font-bold text-accent">E-kitap alana {DISCOUNTED_TRAINING_PRICE} $</span>
                 <span className="text-xs text-muted-foreground">6 $&apos;lık e-kitapla %50 indirim →</span>
+              </Link>
+              <Link href="/egitimler" className="flex flex-col hover:opacity-80 transition-opacity">
+                <span className="text-sm font-bold text-primary">Tüm eğitimler {BUNDLE.price} $</span>
+                <span className="text-xs text-muted-foreground">3 eğitimin tamamı, tek pakette →</span>
               </Link>
             </div>
           </div>
