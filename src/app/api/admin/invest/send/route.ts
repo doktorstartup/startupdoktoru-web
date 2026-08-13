@@ -97,9 +97,9 @@ export async function POST(req: NextRequest) {
     if (!to.includes("@")) return NextResponse.json({ error: "Bu yatırımcının e-postası yok." }, { status: 400 });
     // Kişisel mod: toplu-mail izleri (unsubscribe footer/başlık) yok. Nazik çıkış yolu
     // düz cümle olarak eklenir — insan yazmış gibi durur, Promotions'a itmez.
-    const body = `${fill(html, inv)}<p style="margin:14px 0 0">Yazmamı istemezsen bu e-postaya “çıkar” diye yanıtlaman yeterli.</p>`;
+    const personalHtml = `${fill(html, inv)}<p style="margin:14px 0 0">Yazmamı istemezsen bu e-postaya “çıkar” diye yanıtlaman yeterli.</p>`;
     const r = await sendLogged(
-      { to, subject: fill(subject, inv), html: shell(body), replyTo },
+      { to, subject: fill(subject, inv), html: shell(personalHtml), replyTo },
       { context: "invest", contextRef: inv.id, personal: true },
     );
     return NextResponse.json({ ok: true, sent: r.sent, skipped: r.skipped, suppressed: r.suppressed, error: readable(r.error) });
