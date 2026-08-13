@@ -228,10 +228,25 @@ function TabBtn({ active, onClick, children }: { active: boolean; onClick: () =>
 
 function InboundList({ inbound, loading, onChange }: { inbound: Inbound[]; loading: boolean; onChange: () => void }) {
   const [busy, setBusy] = useState<string | null>(null);
+  const post = (payload: Record<string, unknown>) =>
+    fetch("/api/admin/mail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password: getPw(), ...payload }) });
+
   const toggle = async (id: string, handled: boolean) => {
     setBusy(id);
     try {
-      await fetch("/api/admin/mail", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password: getPw(), action: "mark_handled", id, handled }) });
+      await post({ action: "mark_handled", id, handled });
+      onChange();
+    } finally { setBusy(null); }
+  };
+
+  // "çıkar / yazma" diyen kişiyi tek tıkla engelle + işlendi işaretle.
+  const block = async (r: Inbound) => {
+    if (!r.from_email) return;
+    if (!confirm(`${r.from_email} engelleme listesine eklensin mi? Bu adrese bir daha mail gitmez.`)) return;
+    setBusy(r.id);
+    try {
+      await post({ action: "suppress_add", email: r.from_email, notes: `Cevapta çıkış istedi: ${r.subject || ""}`.slice(0, 200) });
+      await post({ action: "mark_handled", id: r.id, handled: true });
       onChange();
     } finally { setBusy(null); }
   };
@@ -249,14 +264,24 @@ function InboundList({ inbound, loading, onChange }: { inbound: Inbound[]; loadi
                 {r.matched_investor && <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] bg-accent/10 text-accent border border-accent/20"><Building2 className="h-3 w-3" />{r.matched_investor.firm_name}</span>}
               </div>
               <div className="text-sm font-semibold mt-1">{r.subject || "(konu yok)"}</div>
-              {r.preview && <div className="text-sm text-muted-foreground mt-1 line-clamp-3">{r.preview}</div>}
+              {r.preview ? (
+                <div className="text-sm text-foreground/90 mt-2 whitespace-pre-wrap bg-background/40 border border-border/30 rounded-lg p-3">{r.preview}</div>
+              ) : (
+                <div className="text-xs text-muted-foreground/70 mt-2 italic">(içerik alınamadı)</div>
+              )}
               <div className="text-[11px] text-muted-foreground mt-2">{fmt(r.received_at)}</div>
             </div>
-            <button onClick={() => toggle(r.id, !r.handled)} disabled={busy === r.id}
-              className={`shrink-0 btn text-xs gap-1 ${r.handled ? "btn-ghost" : "btn-primary"}`}>
-              {busy === r.id ? <Loader2 className="h-3 w-3 animate-spin" /> : r.handled ? <XCircle className="h-3 w-3" /> : <CheckCircle2 className="h-3 w-3" />}
-              {r.handled ? "Geri al" : "İşlendi"}
-            </button>
+            <div className="shrink-0 flex flex-col gap-2">
+              <button onClick={() => toggle(r.id, !r.handled)} disabled={busy === r.id}
+                className={`btn text-xs gap-1 ${r.handled ? "btn-ghost" : "btn-primary"}`}>
+                {busy === r.id ? <Loader2 className="h-3 w-3 animate-spin" /> : r.handled ? <XCircle className="h-3 w-3" /> : <CheckCircle2 className="h-3 w-3" />}
+                {r.handled ? "Geri al" : "İşlendi"}
+              </button>
+              <button onClick={() => block(r)} disabled={busy === r.id || !r.from_email} title="Bu adrese bir daha mail gitmesin"
+                className="btn btn-ghost text-xs gap-1 text-red-400 hover:text-red-300">
+                <ShieldOff className="h-3 w-3" /> Engelle
+              </button>
+            </div>
           </div>
         </div>
       ))}

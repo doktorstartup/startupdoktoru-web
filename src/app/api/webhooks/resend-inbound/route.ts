@@ -9,6 +9,36 @@ import { verifySvix } from "../../../../lib/svix";
 
 export const runtime = "nodejs";
 
+// Resend inbound webhook'u yalnız META gönderir (gövde yok) → metni ayrı uçtan çek.
+async function fetchBody(id: string): Promise<string> {
+  const key = process.env.RESEND_API_KEY;
+  if (!key || !id) return "";
+  try {
+    const res = await fetch(`https://api.resend.com/emails/inbound/${id}`, {
+      headers: { Authorization: `Bearer ${key}` },
+    });
+    if (!res.ok) return "";
+    const d = (await res.json()) as { text?: string; html?: string };
+    if (d.text) return d.text;
+    return d.html ? d.html.replace(/<[^>]+>/g, " ") : "";
+  } catch {
+    return "";
+  }
+}
+
+// Alıntılanan önceki maili at — panelde sadece kişinin yazdığı görünsün.
+function stripQuoted(text: string): string {
+  const lines = text.split(/\r?\n/);
+  const out: string[] = [];
+  for (const line of lines) {
+    if (/^\s*>/.test(line)) break;                       // alıntı bloğu
+    if (/(şunu yazdı|wrote):\s*$/i.test(line)) break;     // "… tarihinde şunu yazdı:"
+    if (/^-{2,}\s*(Forwarded|Original)/i.test(line)) break;
+    out.push(line);
+  }
+  return out.join("\n").trim() || text.trim();
+}
+
 // "Ad <mail@x>" | "mail@x" | {email,name} | {address,name} → {email,name}
 function parseAddr(v: unknown): { email: string | null; name: string | null } {
   if (!v) return { email: null, name: null };
@@ -53,9 +83,10 @@ export async function POST(req: NextRequest) {
   const toRaw = Array.isArray(d.to) ? d.to[0] : d.to;
   const to = parseAddr(toRaw);
   const subject = typeof d.subject === "string" ? d.subject : null;
-  const text = typeof d.text === "string" ? d.text : "";
-  const preview = text ? text.slice(0, 1000) : null;
   const providerId = (typeof d.email_id === "string" ? d.email_id : typeof d.id === "string" ? d.id : null);
+  // Gövde webhook'ta gelmez → API'den çek; gelirse onu kullan.
+  const text = typeof d.text === "string" && d.text ? d.text : await fetchBody(providerId || "");
+  const preview = text ? stripQuoted(text).slice(0, 1000) : null;
 
   // Yatırımcı eşleşmesi: from_email birincil adresle eşleşir mi?
   // (email_secondary eşleşmesi 0014 migration canlıya girince eklenebilir.)
