@@ -27,12 +27,15 @@ async function fetchBody(id: string): Promise<string> {
 }
 
 // Alıntılanan önceki maili at — panelde sadece kişinin yazdığı görünsün.
+// Gmail atıf satırını bölebildiği için ("… 22:01 tarihinde" / "şunu yazdı:") birkaç kalıba bakarız.
 function stripQuoted(text: string): string {
   const lines = text.split(/\r?\n/);
   const out: string[] = [];
   for (const line of lines) {
-    if (/^\s*>/.test(line)) break;                       // alıntı bloğu
-    if (/(şunu yazdı|wrote):\s*$/i.test(line)) break;     // "… tarihinde şunu yazdı:"
+    if (/^\s*>/.test(line)) break;                          // alıntı bloğu
+    if (/(şunu yazdı|wrote):\s*$/i.test(line)) break;
+    if (/tarihinde\s*$/i.test(line)) break;                 // satırı bölünmüş TR atıf
+    if (/<[^>]+@[^>]+>.*\b(19|20)\d{2}\b/.test(line)) break; // "Ad <mail>, 13 Ağu 2026 …"
     if (/^-{2,}\s*(Forwarded|Original)/i.test(line)) break;
     out.push(line);
   }
