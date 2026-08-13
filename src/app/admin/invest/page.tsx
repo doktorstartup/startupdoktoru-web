@@ -275,6 +275,10 @@ function MailPanel({ inv, onClose }: { inv: Investor; onClose: () => void }) {
             Alıcı: <span className="text-foreground font-semibold">{inv.email}</span> · cevaplar Mail Trafiği&apos;ne düşer.
             Değişkenler: <code>{"{{firm}}"}</code>, <code>{"{{partner}}"}</code>.
           </div>
+          <div className="text-xs text-sky-400/90 bg-sky-500/[0.06] border border-sky-500/20 rounded-lg px-3 py-2">
+            Kişisel mod: toplu-mail işaretleri eklenmez, Birincil sekmeye düşme şansı yüksektir.
+            En iyi sonuç için <strong>link koyma</strong> (linkler takip alan adına çevrilir, tanıtım izlenimi verir) ve cevap iste.
+          </div>
           <input value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Konu"
             className="w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none" />
           <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={7} placeholder="İçerik (HTML destekli)…"

@@ -18,9 +18,12 @@ function withUnsubFooter(html: string, url: string) {
   </div>`;
 }
 
+// personal=true → 1:1 kişisel mail: abonelikten çıkma footer'ı ve List-Unsubscribe başlığı
+// eklenmez (bunlar "toplu mail" işareti olup Gmail'i Promotions'a iter). Engelleme
+// kontrolü yine uygulanır — "yazma" diyene kişisel modda da yazmayız.
 export async function sendLogged(
   opts: { to: string; subject: string; html: string; replyTo?: string; headers?: Record<string, string> },
-  ctx: { context: EmailContext; contextRef?: string | null },
+  ctx: { context: EmailContext; contextRef?: string | null; personal?: boolean },
 ): Promise<{ sent: boolean; skipped?: boolean; suppressed?: boolean; id?: string; error?: string }> {
   const to = normalizeEmail(opts.to);
 
@@ -39,10 +42,10 @@ export async function sendLogged(
     return { sent: false, suppressed: true };
   }
 
-  // Pazarlama maillerine abonelikten çıkma bağlantısı + tek-tık başlıkları (deliverability).
+  // Toplu pazarlama maillerine abonelikten çıkma bağlantısı + tek-tık başlıkları (deliverability).
   let html = opts.html;
   let headers = opts.headers;
-  if (isMarketing(ctx.context)) {
+  if (isMarketing(ctx.context) && !ctx.personal) {
     const url = unsubUrl(to);
     html = withUnsubFooter(html, url);
     headers = {
