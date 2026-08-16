@@ -40,10 +40,11 @@ Canlı: **https://startupdoktoru.com** · Repo: `github.com/doktorstartup/startu
 Tablolar: `ds_campaigns` (cadence: `delay`|`weekly`), `ds_campaign_steps`, `ds_campaign_enrollments`.
 - **Tetik:** `lead` (kayıt/popup/AI/ücretsiz eğitim) · `abandoned` (ödemeye gelip bırakma) · `interest` (eğitim tanıtımı izleme).
 - **delay** kampanyalar: enroll'da gecikme-0 anında; sonrası cron'la zamanı gelince.
-- **weekly** kampanyalar (13 Haftalık Seri): her **Pazar (TR)** bir adım; `last_sent_at` çift-gönderim korur.
+- **weekly** kampanyalar (16 Haftalık Seri): her **Pazar (TR)** bir adım; `last_sent_at` çift-gönderim korur. Seri uzatılabilir — adım eklemek yeter, kod değişmez (bitmemiş kayıtlar yeni adımları sırayla alır).
 - Kişi **CUSTOMER** olursa seri durur (spam yok). Kampanyalar bağımsız → bir kişi aynı hafta birden çok kampanyadan mail alabilir.
 - **Cron** `/api/cron/followup`: her gün `processDue`; TR'de Pazar ise `processWeekly`. `vercel.json` cron `0 7 * * *` (07:00 UTC = 10:00 TR). Daha kararlı/sık tetik için cron-job.org yedek.
-- Aktif kampanyalar: Karşılama · Sepeti Bırakanlar · Genel Takip · Yatırımcı İlgi Serisi · 13 Haftalık Startup Serisi · Topluluk Daveti (WhatsApp: chat.whatsapp.com/F9E2QPGYU2S5IMVOmfSlGb).
+- Aktif kampanyalar: Karşılama · Sepeti Bırakanlar (3 adım) · Genel Takip · İlgi Serileri (Yatırımcı Sunumu / Startup Giriş / Değerleme — `trigger_value` ile ürüne özel) · 16 Haftalık Startup Serisi · Topluluk Daveti (WhatsApp: chat.whatsapp.com/F9E2QPGYU2S5IMVOmfSlGb) · E-kitap → Eğitim Upsell.
+- **İçerik dili (tüm kampanyalar):** düz metin, buton/emoji yok, tek link — Gmail'in Promotions sekmesine düşmemek için. Kalıp: yanılgıyı düzelten giriş → hap bilgi → o hafta yapılacak somut iş.
 
 ### Mail İzleme & Cevap Takibi (`/admin/mail`)
 Tüm giden mailler (drip, bülten, yatırımcı) **`ds_email_messages`** defterine loglanır; açılma/tıklama/teslim/bounce **Resend webhook** ile işlenir. Gelen cevaplar **`ds_inbound_emails`**'e düşer ve `from_email` ile yatırımcıya eşleşir.
