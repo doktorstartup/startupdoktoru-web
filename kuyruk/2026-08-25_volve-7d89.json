@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_volve-7d89",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Volve",
+    "domain": "volvetech.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "USD",
+      "usd": 3000000
+    },
+    "lider": "Skyfall Ventures",
+    "katilanlar": [
+      "Daniel Kjørberg Siraj",
+      "Norrsken Evolve",
+      "OBOS Ventures",
+      "Startuplab",
+      "Antler",
+      "J12"
+    ],
+    "kurucular": [
+      "Herman Smith",
+      "Abyl Ikshanov",
+      "Alf Jørgen Dovland"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T06:03:34.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/volve-raises-3m/",
+      "baslik": "Norway&#8217;s Volve raises $3 million seed to tackle construction’s costly pre-project decisions with AI",
+      "tarih": "Tue, 25 Aug 2026 13:35:44 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/25/volve-lands-3m-to-expand-construction-tendering-ai-across-europe/",
+      "baslik": "Volve lands $3M to expand construction tendering AI across Europe",
+      "tarih": "Tue, 25 Aug 2026 06:03:34 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Oslo-based construction technology company Volve has raised NOK 30 million (approximately $3 million) in a seed round led by Skyfall Ventures , with J12 , Norrsken Evolve , OBOS Ventures, Antler , Sta",
+      "kaynak_url": "https://arcticstartup.com/volve-raises-3m/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://arcticstartup.com/volve-raises-3m/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

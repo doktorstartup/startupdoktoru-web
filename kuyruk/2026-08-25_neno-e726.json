@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_neno-e726",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 3,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Neno",
+    "domain": "neno.co",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6600000,
+      "birim": "EUR",
+      "usd": 7128000
+    },
+    "lider": "AlleyCorp",
+    "katilanlar": [
+      "Firstminute Capital",
+      "Motive Partners"
+    ],
+    "kurucular": [
+      "Nick Knuppe"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T06:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/25/dutch-ai-native-financial-services-startup-neno-secures-eur66m-for-european-expansion/",
+      "baslik": "Dutch AI-native financial services startup Neno secures €6.6M for European expansion",
+      "tarih": "Tue, 25 Aug 2026 06:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Amsterdam-based AI-native financial services company Neno has raised €6.6 million in seed funding to develop its technology, expand its accounting and tax services and enter additional European market",
+      "kaynak_url": "https://tech.eu/2026/08/25/dutch-ai-native-financial-services-startup-neno-secures-eur66m-for-european-expansion/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/08/25/dutch-ai-native-financial-services-startup-neno-secures-eur66m-for-european-expansion/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

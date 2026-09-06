@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-08-27_colibritd-1a55",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "ColibriTD",
+    "domain": "colibritd.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Laurent Guiraud",
+      "Hacène Goudjil"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-27T07:25:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/27/colibritd-secures-eur4m-to-scale-its-quantum-simulation-platform/",
+      "baslik": "ColibriTD secures €4M to scale its quantum simulation platform",
+      "tarih": "Thu, 27 Aug 2026 07:25:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French quantum software company ColibriTD has raised €4 million in seed funding to further develop its multiphysics simulation technology and expand internationally.",
+      "kaynak_url": "https://tech.eu/2026/08/27/colibritd-secures-eur4m-to-scale-its-quantum-simulation-platform/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/08/27/colibritd-secures-eur4m-to-scale-its-quantum-simulation-platform/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

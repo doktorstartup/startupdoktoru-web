@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_stability-ai-2fb0",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Stability AI",
+    "domain": "stability.ai",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 76000000,
+      "birim": "USD",
+      "usd": 76000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Pacific Alliance Ventures",
+      "Universal Music Group",
+      "Warner Music Group",
+      "Sony Music Group",
+      "Electronic Arts",
+      "AMD Ventures",
+      "Eric Schmidt",
+      "Sean Parker",
+      "Greycroft",
+      "Coatue"
+    ],
+    "kurucular": [
+      "Prem Akkaraju",
+      "Emad Mostaque"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T16:23:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/25/stabiityai-raises-76m-with-warner-and-sony-investing/",
+      "baslik": "Stability AI raises $76M, with Warner and Sony investing",
+      "tarih": "Tue, 25 Aug 2026 16:23:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stability AI , the London-founded AI startup behind the Stable Diffusion AI model, which has switched its focus from the UK to the US, has raised a $76m funding round, with investment from three music",
+      "kaynak_url": "https://tech.eu/2026/08/25/stabiityai-raises-76m-with-warner-and-sony-investing/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/08/25/stabiityai-raises-76m-with-warner-and-sony-investing/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

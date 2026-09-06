@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-08-27_deep-cogito-5649",
+  "durum": "hazir",
+  "puan": 86,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Deep Cogito",
+    "domain": "deepcogito.com",
+    "ulke": "TR",
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 43000000,
+      "birim": "USD",
+      "usd": 43000000
+    },
+    "lider": "TQ Ventures",
+    "katilanlar": [
+      "Nexus Venture Partners",
+      "Atreides Management",
+      "South Park Commons",
+      "Benchmark",
+      "Zscaler"
+    ],
+    "kurucular": [
+      "Drishan Arora",
+      "Dhruv Malrana"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-27T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/08/27/yapay-zeka-girisimi-deep-cogito-43-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka girişimi Deep Cogito, 43 milyon dolar yatırım aldı",
+      "tarih": "Thu, 27 Aug 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka girişimi Deep Cogito , 43 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/08/27/yapay-zeka-girisimi-deep-cogito-43-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/08/27/yapay-zeka-girisimi-deep-cogito-43-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

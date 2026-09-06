@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-08-27_instinct-f24b",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Instinct",
+    "domain": "instinct.co",
+    "ulke": "TR",
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 250000000,
+      "birim": "USD",
+      "usd": 250000000
+    },
+    "lider": "Index Ventures",
+    "katilanlar": [
+      "Conviction Partners",
+      "Benchmark",
+      "Greenoaks"
+    ],
+    "kurucular": [
+      "Noah Shinn"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-27T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/08/27/kisisel-yapay-zeka-asistanlari-gelistiren-instinct-250-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kişisel yapay zeka asistanları geliştiren Instinct, 250 milyon dolar yatırım aldı",
+      "tarih": "Thu, 27 Aug 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kişisel yapay zeka asistanları geliştiren Instinct , 250 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/08/27/kisisel-yapay-zeka-asistanlari-gelistiren-instinct-250-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/08/27/kisisel-yapay-zeka-asistanlari-gelistiren-instinct-250-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

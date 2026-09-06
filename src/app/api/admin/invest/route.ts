@@ -4,7 +4,7 @@ import { verifyAdminPassword } from "../../../../lib/adminAuth";
 
 // INVEST yatırımcı DB yönetimi — şifre korumalı. GET: liste+filtre. POST: action ile CRUD + review.
 const FIELDS = [
-  "firm_name", "partner_name", "role", "email", "address_purpose", "website", "linkedin",
+  "firm_name", "partner_name", "role", "email", "email_secondary", "address_purpose", "website", "linkedin",
   "twitter", "thesis", "sectors", "stages", "ticket", "country", "city", "portfolio",
   "source_url", "notes", "tags",
 ];

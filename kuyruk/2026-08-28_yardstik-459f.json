@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_yardstik-459f",
+  "durum": "hazir",
+  "puan": 81,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Yardstik",
+    "domain": "yardstik.com",
+    "ulke": "TR",
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 30000000,
+      "birim": "USD",
+      "usd": 30000000
+    },
+    "lider": "Harbert Growth Partners",
+    "katilanlar": [
+      "Great North Ventures",
+      "Crosslink Capital",
+      "Grotech Ventures",
+      "Rally Ventures",
+      "MissionOG"
+    ],
+    "kurucular": [
+      "Matt Meents"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/08/28/dolandiricilik-onleme-girisimi-yardstik-30-milyon-dolar-yatirim-aldi/",
+      "baslik": "Dolandırıcılık önleme girişimi Yardstik, 30 milyon dolar yatırım aldı",
+      "tarih": "Fri, 28 Aug 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Dolandırıcılık önleme girişimi Yardstik , 30 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/08/28/dolandiricilik-onleme-girisimi-yardstik-30-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/08/28/dolandiricilik-onleme-girisimi-yardstik-30-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

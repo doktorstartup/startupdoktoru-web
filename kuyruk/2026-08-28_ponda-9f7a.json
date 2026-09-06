@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_ponda-9f7a",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Ponda",
+    "domain": "ponda.bio",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1600000,
+      "birim": "EUR",
+      "usd": 1728000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Julian Ellis-Brown",
+      "Nelly Tehari",
+      "Finlay Duncan",
+      "Antonia Jara"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T15:22:12.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/08/biomaterials-company-ponda-closes-their-crowdfunding-round-at-e1-6-million-shattering-their-e230k-mininum/",
+      "baslik": "Biomaterials company Ponda closes crowdfunding round at €1.6 million &#8211; welcoming 256 new investors",
+      "tarih": "Fri, 28 Aug 2026 15:22:12 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Ponda , a biomaterials company out of Bristol restoring wetlands through regenerative farming, has closed its latest crowdfunding campaign, raising €1.6 million (£1.4 million) in a Seed extension that",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/biomaterials-company-ponda-closes-their-crowdfunding-round-at-e1-6-million-shattering-their-e230k-mininum/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/biomaterials-company-ponda-closes-their-crowdfunding-round-at-e1-6-million-shattering-their-e230k-mininum/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

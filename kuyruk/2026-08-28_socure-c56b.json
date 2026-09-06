@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_socure-c56b",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Socure",
+    "domain": "socure.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 156000000,
+      "birim": "USD",
+      "usd": 156000000
+    },
+    "lider": "Summit Partners",
+    "katilanlar": [
+      "Goldman Sachs Alternatives",
+      "Wells Fargo",
+      "Docusign"
+    ],
+    "kurucular": [
+      "Johnny Ayers",
+      "Sunil Madhu"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T09:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/08/28/socure-52-milyar-dolar-degerleme-uzerinden-156-milyon-dolar-yatirim-aldi/",
+      "baslik": "Socure, 5.2 milyar dolar değerleme üzerinden 156 milyon dolar yatırım aldı",
+      "tarih": "Fri, 28 Aug 2026 09:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Socure, 156 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/08/28/socure-52-milyar-dolar-degerleme-uzerinden-156-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

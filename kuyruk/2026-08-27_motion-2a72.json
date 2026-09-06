@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-08-27_motion-2a72",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Motion",
+    "domain": "motion.one",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "USD",
+      "usd": 2000000
+    },
+    "lider": "Extantia Capital",
+    "katilanlar": [
+      "Norrsken Evolve"
+    ],
+    "kurucular": [
+      "Alexander Stevens"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-27T06:45:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/27/motion-lands-2m-to-expand-humanoid-robot-deployments-across-europe/",
+      "baslik": "Motion lands $2M to expand humanoid robot deployments across Europe",
+      "tarih": "Thu, 27 Aug 2026 06:45:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Brussels-based robotics company Motion has raised $2 million in pre-seed funding to expand its Humanoids-as-a-Service (HaaS) platform and move its existing industrial pilots into commercial deployment",
+      "kaynak_url": "https://tech.eu/2026/08/27/motion-lands-2m-to-expand-humanoid-robot-deployments-across-europe/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/08/27/motion-lands-2m-to-expand-humanoid-robot-deployments-across-europe/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

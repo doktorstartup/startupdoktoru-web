@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_itoflow-5449",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Itoflow",
+    "domain": "itoflow.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2500000,
+      "birim": "USD",
+      "usd": 2500000
+    },
+    "lider": "Balderton Capital",
+    "katilanlar": [
+      "Barney Hussey-Yeo"
+    ],
+    "kurucular": [
+      "Aditya Jha"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/25/itoflow-lands-25m-to-scale-investment-research-and-portfolio-management/",
+      "baslik": "Itoflow lands $2.5M to scale investment research and portfolio management",
+      "tarih": "Tue, 25 Aug 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI investment platform Itoflow has raised $2.5 million in pre-seed funding to develop its technology to help professional investment teams automate and scale research and portfolio management.",
+      "kaynak_url": "https://tech.eu/2026/08/25/itoflow-lands-25m-to-scale-investment-research-and-portfolio-management/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/08/25/itoflow-lands-25m-to-scale-investment-research-and-portfolio-management/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

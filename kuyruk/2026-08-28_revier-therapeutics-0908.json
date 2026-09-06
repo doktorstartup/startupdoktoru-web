@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_revier-therapeutics-0908",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Revier Therapeutics",
+    "domain": "revier.bio",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "EUR",
+      "usd": 6480000
+    },
+    "lider": "KHAN Technology Transfer Fund II",
+    "katilanlar": [
+      "High-Tech Gründerfonds (HTGF)",
+      "Revier Invest Heidelberg",
+      "VORNvc"
+    ],
+    "kurucular": [
+      "Eva van Rooij",
+      "Johannes Backs"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T11:00:30.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/08/heidelberg-based-revier-therapeutics-launches-with-e6-million-to-develop-cardiometabolic-therapies/",
+      "baslik": "Heidelberg-based Revier Therapeutics launches with €6 million to develop cardiometabolic therapies",
+      "tarih": "Fri, 28 Aug 2026 11:00:30 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Revier Therapeutics , a Heidelberg-based BioTech company advancing disease-modifying therapies for patients with cardiometabolic disease, has officially launched and announced the closing of a €6 mill",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/heidelberg-based-revier-therapeutics-launches-with-e6-million-to-develop-cardiometabolic-therapies/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/heidelberg-based-revier-therapeutics-launches-with-e6-million-to-develop-cardiometabolic-therapies/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

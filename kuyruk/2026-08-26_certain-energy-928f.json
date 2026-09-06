@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-08-26_certain-energy-928f",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Certain Energy",
+    "domain": "certainenergy.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "GBP",
+      "usd": 12700000
+    },
+    "lider": "British Business Bank",
+    "katilanlar": [
+      "Temasek Trust's Catalytic Capital for Climate and Health (C3H)",
+      "Ceres Power Holdings",
+      "Centrica"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-08-26T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/26/certain-energy-raises-ps10m-series-a-for-long-duration-battery-storage/",
+      "baslik": "Certain Energy raises £10M Series A for long-duration battery storage",
+      "tarih": "Wed, 26 Aug 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "British long-duration energy storage company Certain Energy has raised £10 million in Series A funding to commercialise its manganese flow battery technology and prepare it for grid-scale deployment.",
+      "kaynak_url": "https://tech.eu/2026/08/26/certain-energy-raises-ps10m-series-a-for-long-duration-battery-storage/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/08/26/certain-energy-raises-ps10m-series-a-for-long-duration-battery-storage/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

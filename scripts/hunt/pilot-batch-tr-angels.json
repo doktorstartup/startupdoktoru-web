@@ -1,0 +1,45 @@
+[
+  {
+    "firm_name": "Galata Business Angels",
+    "partner_name": "Ata Uzunhasan",
+    "role": "Angel Investor (GBA üye)",
+    "linkedin": "https://linkedin.com/in/ata-uzunhasan-1b26a914",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed"],
+    "sectors": ["b2b-saas", "marketplace"],
+    "portfolio": "Firefly, Nymbl, Teleporter, Whole Surplus, UserGuiding, Denebunu",
+    "thesis": "Eski danışman/bankacı ve startup scout. Avrupa'da 20+ anlaşma, 30+ turda yatırım yaptı; ağırlıklı SaaS ve marketplace. 19 girişime yatırımcı (UserGuiding, Whole Surplus, Denebunu dahil). Galata Business Angels üyesi.",
+    "source_url": "https://linkedin.com/in/ata-uzunhasan-1b26a914",
+    "tags": ["hunt-pilot", "TR", "linkedin-only"],
+    "notes": "İletişim: sadece LinkedIn (yayınlanmış e-posta yok) → linkedin-only. Kalite: aktif (19 yatırım), net SaaS/marketplace odağı, doğrulanabilir portföy."
+  },
+  {
+    "firm_name": "Berik Ventures",
+    "partner_name": "Hulusi Berik",
+    "role": "Founder / Angel Investor",
+    "linkedin": "https://linkedin.com/in/hulusi-berik-92902232",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed"],
+    "sectors": ["ai", "healthtech"],
+    "thesis": "Erken aşama melek yatırımcı ve venture builder; odak yapay zekâ ve sağlık. Berik Ventures kurucusu (2012). Ayrıca Keiretsu Forum Türkiye'de Kurucu Partner (San Francisco merkezli global melek ağı).",
+    "source_url": "https://linkedin.com/in/hulusi-berik-92902232",
+    "tags": ["hunt-pilot", "TR", "linkedin-only"],
+    "notes": "İletişim: sadece LinkedIn → linkedin-only. Kalite: net AI/sağlık odağı, Keiretsu Forum bağlantısı."
+  },
+  {
+    "firm_name": "Q Angels",
+    "partner_name": "Ayşe İnal",
+    "role": "Founding President / Angel Investor",
+    "linkedin": "https://linkedin.com/in/ayseeinal",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed"],
+    "sectors": ["gaming", "technology", "generalist"],
+    "thesis": "Seri girişimci ve melek yatırımcı. Revel Games kurucu ortağı/CEO'su; Q Angels kurucu başkanı; Datarow'da (AWS tarafından satın alındı) Strateji ve Yatırım Ortağı; Galata Business Angels danışmanı/eski Genel Müdürü.",
+    "source_url": "https://linkedin.com/in/ayseeinal",
+    "tags": ["hunt-pilot", "TR", "linkedin-only"],
+    "notes": "İletişim: sadece LinkedIn → linkedin-only. Kalite: güçlü operatör geçmişi (Datarow→AWS), Q Angels + GBA."
+  }
+]

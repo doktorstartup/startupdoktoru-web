@@ -1,0 +1,44 @@
+[
+  {
+    "firm_name": "APY Ventures",
+    "email": "team@apyventures.com",
+    "address_purpose": "outreach_published",
+    "website": "https://apyventures.com/en",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed", "series-a"],
+    "sectors": ["fintech", "technology", "generalist"],
+    "thesis": "Albaraka Portföy Yönetimi'nin kurduğu Girişim Sermayesi Yatırım Fonları'nın (GSYF) şemsiye markası. Teknoloji girişimlerine yatırım yapıyor; her biri farklı sektör ve aşamaya odaklı birden fazla fonu var (ör. Fintech GSYF). Seçici, uygulamalı (hands-on) ve kurucu-dostu bir yaklaşımla girişimleri tüm aşamalarda destekliyor.",
+    "source_url": "https://apyventures.com/en/team",
+    "tags": ["hunt-pilot", "TR"],
+    "notes": "İletişim: team@apyventures.com (sitede yayınlanmış) → outreach_published. Fon yöneticisi Albaraka Portföy Yönetimi A.Ş. Kalite: kurumsal, çok fonlu, fintech ağırlıklı."
+  },
+  {
+    "firm_name": "Inveo Ventures",
+    "email": "ventures@inveo.com.tr",
+    "address_purpose": "outreach_published",
+    "website": "https://inveoventures.com/",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed", "series-a"],
+    "sectors": ["technology", "gaming", "generalist"],
+    "thesis": "Net traction'ı olan, global ölçeğe uygun teknoloji girişimlerine yatırım yapıyor. Aşamalar: pre-seed / seed / bridge / pre-Series A. Doğrudan yatırımların yanında Boğaziçi Ventures ve Revo Capital gibi fonlara LP olarak da yatırıyor; portföyüne iş geliştirme ağı ve pazar erişimi sağlıyor.",
+    "source_url": "https://inveoventures.com/",
+    "tags": ["hunt-pilot", "TR"],
+    "notes": "İletişim: ventures@inveo.com.tr (yayınlanmış) → outreach_published. Inveo Group'un VC kolu. Kalite: traction odaklı, hem doğrudan yatırım hem LP."
+  },
+  {
+    "firm_name": "ScaleX Ventures",
+    "email": "contact@scalexventures.com",
+    "address_purpose": "outreach_published",
+    "website": "https://scalexventures.com/",
+    "country": "TR",
+    "city": "Istanbul",
+    "stages": ["pre-seed", "seed"],
+    "sectors": ["b2b-saas", "deep-tech", "devtools"],
+    "thesis": "Erken aşama (tohum) B2B yazılım ve derin teknoloji girişimlerine yatırım yapıyor; son dönemde yazılım geliştirme / dev-tools alanına ağırlık veriyor (ör. IronBee, Altogic). Ekibi kendi başına kanıtlanmış kurucular ve operatörlerden oluşuyor; sermayenin ötesinde operasyonel destek sağlıyor. İstanbul/Londra.",
+    "source_url": "https://scalexventures.com/",
+    "tags": ["hunt-pilot", "TR"],
+    "notes": "İletişim: contact@scalexventures.com (yayınlanmış) → outreach_published. Kalite: net B2B/dev-tools odağı, operatör-kurucu ekip."
+  }
+]

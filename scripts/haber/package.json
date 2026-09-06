@@ -1,0 +1,10 @@
+{
+  "name": "haber-varlik",
+  "private": true,
+  "type": "module",
+  "description": "Görsel/video çekimi. AYRI package.json: kök projeye (Vercel build'ine) girmesin — playwright+ffmpeg ~60 MB.",
+  "dependencies": {
+    "playwright-core": "1.56.1",
+    "ffmpeg-static": "5.2.0"
+  }
+}

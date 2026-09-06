@@ -1,0 +1,229 @@
+{
+  "baslik": "Yapay zekayı biz mi eğitiyoruz, o mu bizi?",
+  "slug": "yapay-zekayi-biz-mi-egitiyoruz",
+  "seo_title": "Yapay zekayı biz mi eğitiyoruz, o mu bizi? — Önümüzdeki 5 yıl",
+  "seo_description": "Robotlar takvimin gerisinde, ama ikna optimizasyonu çoktan önde. Yapay zekanın insan davranışını yönlendirmesi üzerine bir tartışma ve önümüzdeki beş yıl için üç senaryo.",
+  "bolumler": [
+    {
+      "tip": "p",
+      "metin": "Tartışma genelde yanlış yerden başlıyor: robotlar işimizi alacak mı? Bu soru rahatlatıcı çünkü cevabı ertelenebilir bir tarihte duruyor. Oysa asıl değişim çoktan oldu ve robotlarla ilgisi yok."
+    },
+    {
+      "tip": "p",
+      "metin": "Görünen yarış geride. Görünmeyen yarış bitti bile."
+    },
+    {
+      "tip": "h2",
+      "metin": "Gürültülü taraf: robotlar"
+    },
+    {
+      "tip": "p",
+      "metin": "Ocak 2026'da Tesla, Optimus'un seri üretimine geçtiğini duyurdu; Mart itibarıyla fabrikalarda **binden fazla** birim bulunduğu bildiriliyor. Manşetler bunu insansı robot çağının başlangıcı diye okudu."
+    },
+    {
+      "tip": "p",
+      "metin": "Ama aynı ay Elon Musk yatırımcılara şunu söyledi: bu birimler esas olarak **öğrenme ve veri toplama** için kullanılıyor, fabrikalarda kayda değer bir üretim işi yapmıyorlar. 2025 hedefi 5.000 birimdi; gerçekleşen birkaç yüz."
+    },
+    {
+      "tip": "p",
+      "metin": "Yani en çok konuşulan yapay zeka hikâyesi, kendi takviminin gerisinde ve bunu açıkça kabul ediyor. Robot henüz senin yerine çalışmıyor. **Senden öğreniyor.**"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "İki yarış aynı hızda ilerlemiyor.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "İki yarış",
+        "baslik": "Görünen ve görünmeyen",
+        "sutunlar": [
+          "Görünen: robotlar",
+          "Görünmeyen: ikna"
+        ],
+        "satirlar": [
+          [
+            "Manşetlerde",
+            "Sessiz"
+          ],
+          [
+            "Takvimin **gerisinde**",
+            "Çoktan **ölçülüyor**"
+          ],
+          [
+            "Henüz veri topluyor",
+            "Davranışı değiştiriyor"
+          ],
+          [
+            "Fabrikada",
+            "Telefonunda"
+          ]
+        ]
+      }
+    },
+    {
+      "tip": "h2",
+      "metin": "Sessiz taraf: ikna optimizasyonu"
+    },
+    {
+      "tip": "p",
+      "metin": "Şimdi diğer tarafa bak. Reklam yöneticilerinin **%83'ü** yaratıcı sürece yapay zekayı dahil etmiş durumda; iki yıl önce bu oran %60'tı. Google tek bir çeyrekte reklamverenlerin **70 milyona yakın** reklam varlığını üretken modellerle oluşturduğunu bildiriyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Rakamların büyüklüğü değil, yönü önemli. Bir saha çalışmasında tamamen yapay zeka tarafından üretilen görseller, insan yapımı olanlara göre **%50'ye varan** oranda daha yüksek tıklama aldı."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu cümleyi bir kez daha oku. Bir sistem, insanın dikkatini insandan daha iyi yönlendirmeyi öğrendi. Ve bunu senin tıklamalarından öğrendi."
+    },
+    {
+      "tip": "alinti",
+      "metin": "Robot henüz senin işini yapmıyor. Ama bir algoritma, seni ikna etme işini senden iyi yapıyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Kim kimi eğitiyor?"
+    },
+    {
+      "tip": "p",
+      "metin": "\"Yapay zekayı eğitiyoruz\" cümlesi teknik olarak doğru ama eksik. Eğitim tek yönlü değil. Sen bir öneriyi kabul ettiğinde sistem öğreniyor; sistem sana ne göstereceğini seçtiğinde sen de bir şey öğreniyorsun — neyin normal, neyin arzu edilir, neyin mümkün olduğunu."
+    },
+    {
+      "tip": "p",
+      "metin": "İçerik öneri algoritmaları hangi fikirlerin öne çıkacağını, arama motorları hangi kaynakların görünür olacağını, asistanlar hangi seçenekleri sunacağını belirliyor. Bu filtrelemenin toplumsal karar alma üzerindeki birikimli etkisi henüz yeterince araştırılmış değil."
+    },
+    {
+      "tip": "p",
+      "metin": "Sorun bir kötü niyet değil. Sorun şu: kendi tercihin ile sana önerilmiş tercih arasındaki çizgi bulanıklaşıyor. Ve bulanıklaştığını fark etmiyorsun, çünkü öneri tam da senin beğeneceğin şekilde tasarlandı."
+    },
+    {
+      "tip": "p",
+      "metin": "Zekânın en pahalı kısmı bilgi değil, **dikkat**. Dikkatini nereye vereceğini başkası seçiyorsa, düşündüğün şeyi de büyük ölçüde o seçmiş oluyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Önümüzdeki beş yıl"
+    },
+    {
+      "tip": "p",
+      "metin": "Kesin tahmin yapmayacağım; kimse yapamaz. Ama üç eğilim şu an ölçülebilir durumda ve üçü de aynı yöne gidiyor."
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Üçü de bugün başlamış durumda.",
+      "gorsel": {
+        "tip": "liste",
+        "etiket": "Beş yıl",
+        "baslik": "Ölçülebilir üç eğilim",
+        "maddeler": [
+          "**İkna üretimi ucuzlar.** Kampanya başına binlerce varyant, hepsi kişiye özel.",
+          "**Karar aracıya devredilir.** Ajanlar senin adına seçer; sen sonucu onaylarsın.",
+          "**Robot fiziksel işe geçer.** Ama bu, ikna tarafındaki değişimden yavaş ilerler.",
+          "**Ayrım zorlaşır.** Kendi fikrin ile önerilmiş fikir arasındaki sınır silikleşir."
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Dikkat et: ilk üçü teknoloji sorusu, dördüncüsü değil. Dördüncüsü bir alışkanlık sorusu ve cevabı sende."
+    },
+    {
+      "tip": "h2",
+      "metin": "Girişimci için ne anlama geliyor?"
+    },
+    {
+      "tip": "p",
+      "metin": "Kurucuların en sık hatası, bu tartışmayı felsefi bir sohbet sanıp geçmek. Oysa doğrudan iş modelini ilgilendiriyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Eğer ürünün bir öneri veriyorsa, artık sadece bir özellik satmıyorsun — kullanıcının kararını şekillendiriyorsun. Bu, ürününü daha değerli yapar ve sorumluluğunu ağırlaştırır. İkisi birlikte gelir."
+    },
+    {
+      "tip": "gorsel",
+      "koyu": true,
+      "altyazi": "Ürününüz bir öneri veriyorsa bu üç soruyu cevaplayın.",
+      "gorsel": {
+        "tip": "sema",
+        "etiket": "Bu hafta",
+        "baslik": "Ürünündeki öneriyi denetle",
+        "adimlar": [
+          "Ürünün hangi noktada kullanıcı adına karar veriyor?",
+          "Kullanıcı bu kararı görebiliyor mu?",
+          "İtiraz edip başka seçeneği seçebiliyor mu?"
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Üçüncü soruya \"hayır\" diyorsan, ürünün bir araç değil bir yönlendirici. Bu bir suçlama değil, bir tasarım kararı — ama bilinçli verilmiş olması gerekiyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Peki cevap ne?"
+    },
+    {
+      "tip": "p",
+      "metin": "Soruyu \"biz mi onu kullanıyoruz, o mu bizi\" diye kurmak ikili bir tuzak. Gerçek cevap ikisi de: sistem senden öğrenirken sen de sistemden öğreniyorsun. Fark, hangi tarafın öğrendiğini ölçtüğünde."
+    },
+    {
+      "tip": "p",
+      "metin": "Şirketler ölçüyor. Tıklama, kalma süresi, dönüşüm — hepsi kayıt altında. Sen kendi tarafını ölçmüyorsan, asimetri orada başlıyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu hafta yapabileceğin şey basit: son aldığın üç önemli kararı yaz. Her birinin yanına, o kararı ilk kez nereden duyduğunu ekle. Üçü de bir akıştan geldiyse, sorunun cevabını bulmuşsun demektir."
+    }
+  ],
+  "kaynaklar": [
+    {
+      "ad": "Humanoid Robots in 2026: What Is Actually Deployed — Technology.org",
+      "url": "https://www.technology.org/2026/07/18/humanoid-robots-in-2026-what-is-actually-deployed/",
+      "not": "Optimus ve Figure'ün gerçek konuşlanma durumu"
+    },
+    {
+      "ad": "Tesla Optimus Deployment Tracker (2026)",
+      "url": "https://newmarketpitch.com/blogs/news/humanoid-robotics-optimus-deployment-tracker",
+      "not": "üretim hedefi ile gerçekleşen arasındaki fark"
+    },
+    {
+      "ad": "AI-Powered Advertising Campaign Statistics — Luma",
+      "url": "https://lumalabs.ai/news/ai-powered-advertising-campaign-statistics",
+      "not": "%83 benimseme oranı ve tıklama karşılaştırması"
+    },
+    {
+      "ad": "Yapay zeka insan iradesini nasıl aşındırıyor? — Teyit",
+      "url": "https://teyit.org/teyitpedia/yapay-zeka-insan-iradesini-nasil-asindiriyor",
+      "not": "öneri sistemlerinin karar süreçlerine etkisi"
+    },
+    {
+      "ad": "Algoritmalar Tarafsız Olabilir mi? — TÜBİTAK Bilim Genç",
+      "url": "https://bilimgenc.tubitak.gov.tr/makale/algoritmalar-tarafsiz-olabilir-mi-kodlarin-karar-sureci",
+      "not": "algoritmik karar süreçleri"
+    }
+  ],
+  "cta_baslik": "Kendi kararlarını sen ver",
+  "cta": "Girişimini kurarken hangi kararı kime devrettiğini bilmek, en az ürünün kadar önemli. Yatırımcı karşısına çıkmadan önce bilmen gerekenleri anlatıyorum.",
+  "cta_link": "/free-training",
+  "cta_link_metin": "Ücretsiz eğitime göz at",
+  "kapak_etiket": "Tartışma",
+  "kapak_metin": "Robot henüz senin işini yapmıyor. Ama bir algoritma, seni **ikna etme** işini senden iyi yapıyor.",
+  "tip": "analiz",
+  "sorular": [
+    {
+      "soru": "Yapay zeka gerçekten insan kararlarını yönlendiriyor mu, yoksa sadece tercihimizi mi yansıtıyor?",
+      "cevap": "İkisi aynı anda oluyor ve ayırmak zorlaşıyor. Sistem senin geçmiş tercihlerinden öğreniyor, sonra o öğrendiğiyle sana ne göstereceğini seçiyor. Gösterdiği şey bir sonraki tercihini şekillendiriyor. Döngü kapandığı için \"benim tercihim\" ile \"bana önerilen\" arasındaki çizgi siliniyor."
+    },
+    {
+      "soru": "Robotlar önümüzdeki beş yılda işleri devralacak mı?",
+      "cevap": "Bugünkü veri bunu desteklemiyor. Tesla'nın kendi açıklamasına göre fabrikadaki insansı robotlar esas olarak öğrenme ve veri toplama aşamasında; 2025 üretim hedefinin onda birine ulaşılabilmiş. Fiziksel iş tarafı, ikna ve karar tarafındaki değişimden **belirgin biçimde yavaş** ilerliyor."
+    },
+    {
+      "soru": "Bir girişimci bu değişimden nasıl korunur?",
+      "cevap": "Korunmak yanlış kelime; ürününü bilinçli tasarlamak doğru olan. Ürünün kullanıcı adına bir karar veriyorsa üç şeyi netleştir: karar hangi noktada veriliyor, kullanıcı bunu görebiliyor mu, itiraz edip başka seçeneği seçebiliyor mu. Üçüncüsüne \"hayır\" diyorsan ürünün bir araç değil, bir yönlendirici."
+    },
+    {
+      "soru": "Yapay zekanın önerilerine güvenmeli miyim?",
+      "cevap": "Güvenmek ya da güvenmemek değil, **ölçmek** mesele. Şirketler senin tıklamanı, kalma süreni, dönüşümünü ölçüyor. Sen kendi tarafını ölçmüyorsan asimetri orada başlıyor. Basit bir başlangıç: son üç önemli kararının yanına, o fikri ilk nereden duyduğunu yaz."
+    }
+  ]
+}

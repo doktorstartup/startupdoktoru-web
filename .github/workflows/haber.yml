@@ -1,0 +1,59 @@
+name: haber-kuyruk
+
+# Yatırım haberlerini toplayıp kuyruk/ altına JSON yazar.
+#
+# GÜVENLİK — bu workflow'a HİÇBİR SIR KONMAZ.
+# Repo public ve SUPABASE_SERVICE_ROLE_KEY üretimdeki tüm RLS'i bypass eder.
+# Toplayıcı yalnız herkese açık RSS okur ve repoya JSON yazar; anahtara ihtiyacı yok.
+# Görsel çekimi ve blog yayını operatörün kendi makinesinde (.env.local ile) koşar.
+#
+# 60 GÜN KURALI: GitHub, public repoda 60 gün hiç hareket olmazsa zamanlanmış
+# workflow'ları otomatik devre dışı bırakır. Bu iş her koştuğunda kuyruğu commit'lediği
+# için repo sessizleşmiyor — koruma kendiliğinden sağlanıyor.
+
+on:
+  schedule:
+    # Saat başından kaçınıldı: GitHub "high load times include the start of every hour"
+    # diyor ve tam saatteki tetikler gecikip düşebiliyor.
+    - cron: "10 5 * * *"    # 08:10 TR
+    - cron: "10 14 * * *"   # 17:10 TR
+  workflow_dispatch:
+
+permissions:
+  contents: write           # yalnız kuyruğu commit'lemek için
+
+concurrency:
+  group: haber-kuyruk
+  cancel-in-progress: false
+
+jobs:
+  topla:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      # Action'lar SHA'ya sabitlendi: contents:write yetkisi var, etiket taşınabilir.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262   # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
+        with:
+          node-version: "22"
+
+      # npm install YOK — toplayıcının sıfır bağımlılığı var.
+      - name: Regresyon testleri
+        run: node scripts/haber/regresyon.test.mjs
+
+      - name: Haberleri topla
+        run: node scripts/haber/topla.mjs --yaz
+
+      - name: Kuyruğu commit'le
+        run: |
+          git config user.name  "haber-kuyruk"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kuyruk
+          if git diff --cached --quiet; then
+            echo "Yeni haber yok — commit atlanıyor."
+            exit 0
+          fi
+          # [skip ci]: kuyruk commit'i Vercel'de gereksiz bir deploy açmasın.
+          git commit -m "haber: kuyruk $(date -u +%F) [skip ci]"
+          git pull --rebase --autostash
+          git push

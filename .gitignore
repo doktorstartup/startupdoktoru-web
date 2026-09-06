@@ -46,3 +46,11 @@ yarn-error.log*
 next-env.d.ts
 ebook-original.pdf
 ebook-15mb-backup.pdf
+
+# haber paketleri: paket başına ~16 MB (video + görseller). Repoya GİRMEZ.
+# Yeri HABER_PAKET_DIR ile değiştirilebilir (ör. Google Drive senkron klasörü).
+/paketler
+
+# haber toplayıcı bağımlılıkları (playwright-core + ffmpeg-static, ~54 MB).
+# Kök /node_modules kalıbı alt klasörleri yakalamıyor.
+scripts/haber/node_modules

@@ -98,3 +98,99 @@ body {
   box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.15);
   transform: translateY(-2px);
 }
+
+/* ─── BLOG İÇERİĞİ (HTML gövde) ───
+   Yalnız içeriği "<" ile başlayan yazılarda kullanılır; düz metin yazılar
+   eski görünümünü korur. Etiket kümesi bilinçli olarak dar: h2 h3 p ul ol li
+   strong em a figure img figcaption blockquote hr. */
+.ds-prose {
+  color: color-mix(in srgb, var(--foreground) 90%, transparent);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.ds-prose > * + * { margin-top: 1.1rem; }
+.ds-prose h2 {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+.ds-prose h3 {
+  margin-top: 1.9rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.ds-prose strong { color: var(--foreground); font-weight: 700; }
+.ds-prose a { color: var(--primary); text-underline-offset: 3px; text-decoration: underline; }
+.ds-prose a:hover { opacity: 0.85; }
+.ds-prose ul, .ds-prose ol { padding-left: 1.35rem; }
+.ds-prose ul { list-style: disc; }
+.ds-prose ol { list-style: decimal; }
+.ds-prose li { margin-top: 0.45rem; }
+.ds-prose li::marker { color: var(--muted-foreground); }
+.ds-prose blockquote {
+  border-left: 3px solid var(--primary);
+  padding: 0.15rem 0 0.15rem 1rem;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.ds-prose hr { border: 0; border-top: 1px solid var(--border); margin: 2.25rem 0; }
+.ds-prose figure { margin-top: 1.75rem; }
+.ds-prose img {
+  width: 100%;
+  height: auto;
+  /* Telefon oranındaki ekran görüntüleri (App Store vb.) yazıyı domine ediyordu:
+     yükseklik sınırlanıp ortalanıyor, en-boy oranı korunuyor. */
+  max-height: 34rem;
+  object-fit: contain;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+  background: color-mix(in srgb, var(--card) 60%, transparent);
+}
+.ds-prose figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+/* ─── HABER YAZISI: YOL HARİTASI ve YORUM ─── */
+.ds-prose .ds-yol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+.ds-prose .ds-durak {
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.1rem 1.2rem;
+  background: color-mix(in srgb, var(--card) 55%, transparent);
+}
+.ds-prose .ds-etiket {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 0.45rem;
+}
+.ds-prose .ds-durak strong { display: block; font-size: 1.02rem; line-height: 1.3; }
+.ds-prose .ds-durak ul { margin-top: 0.6rem; padding-left: 1.1rem; }
+.ds-prose .ds-durak li { font-size: 0.9rem; color: var(--muted-foreground); margin-top: 0.25rem; }
+
+/* Yorum bölümü olgudan GÖRSEL OLARAK ayrışır: okur neyin aktarım,
+   neyin değerlendirme olduğunu ilk bakışta anlamalı. */
+.ds-prose .ds-yorum {
+  margin-top: 2.5rem;
+  padding: 0.2rem 1.4rem 1.2rem;
+  border-left: 3px solid var(--primary);
+  background: color-mix(in srgb, var(--card) 45%, transparent);
+  border-radius: 0 1rem 1rem 0;
+}
+.ds-prose .ds-yorum h2 { margin-top: 1.4rem; font-size: 1.35rem; color: var(--primary); }

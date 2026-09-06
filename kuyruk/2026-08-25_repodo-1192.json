@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_repodo-1192",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Repodo",
+    "domain": "repodo.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 8200000,
+      "birim": "EUR",
+      "usd": 8856000
+    },
+    "lider": "Hedosophia",
+    "katilanlar": [
+      "Seed Capital"
+    ],
+    "kurucular": [
+      "Ken Villum Klausen",
+      "Peter Andreasen",
+      "Joachim Strøjer Hansen",
+      "Anders Houmann"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T07:06:09.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/08/25/lunar-co-founders-launch-ai-audit-startup-repodo-raising-over-eur8m/",
+      "baslik": "Lunar co-founders launch AI audit startup Repodo, raising over €8M",
+      "tarih": "Tue, 25 Aug 2026 07:06:09 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The €8.2m pre-seed round in Repodo, which is launching in Denmark, is led by Hedosophia and Seed Capital, which backed Lunar, along with \"prominent investors\".",
+      "kaynak_url": "https://tech.eu/2026/08/25/lunar-co-founders-launch-ai-audit-startup-repodo-raising-over-eur8m/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/08/25/lunar-co-founders-launch-ai-audit-startup-repodo-raising-over-eur8m/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_lupin-dental-04c4",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Lupin Dental",
+    "domain": "lupindental.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "Fynveur",
+    "katilanlar": [
+      "Bpifrance"
+    ],
+    "kurucular": [
+      "Galip Gürel",
+      "Stefen Koubi"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T06:54:14.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/08/montpellier-based-dental-robotics-startup-lupin-dental-closes-e15-million-series-a-round/",
+      "baslik": "Montpellier-based dental robotics startup Lupin Dental closes €15 million Series A round",
+      "tarih": "Fri, 28 Aug 2026 06:54:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lupin Dental , a Montpellier-based early-stage robotics company focused on developing innovative dental technologies, has announced the close of its €15 million Series A financing round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/montpellier-based-dental-robotics-startup-lupin-dental-closes-e15-million-series-a-round/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/montpellier-based-dental-robotics-startup-lupin-dental-closes-e15-million-series-a-round/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

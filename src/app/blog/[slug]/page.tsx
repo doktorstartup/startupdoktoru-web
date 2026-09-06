@@ -30,9 +30,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return { title: "Yazı bulunamadı — Startup Doktoru" };
+
+  const title = post.seo_title || `${post.title} — Startup Doktoru`;
+  const description = post.seo_description || undefined;
+  // Kapak varsa önizleme görseli o; yoksa kök layout'un varsayılanı devreye girer.
+  const images = post.cover_image ? [{ url: post.cover_image, alt: post.title }] : undefined;
+
   return {
-    title: post.seo_title || `${post.title} — Startup Doktoru`,
-    description: post.seo_description || undefined,
+    title,
+    description,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/blog/${post.slug}`,
+      title,
+      description,
+      publishedTime: post.created_at,
+      images,
+    },
+    twitter: { card: "summary_large_image", title, description, images: images?.map((i) => i.url) },
   };
 }
 
@@ -65,9 +81,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           <img src={post.cover_image} alt={post.title} className="w-full rounded-2xl border border-border/40 mb-10" />
         )}
 
-        <div className="text-foreground/90 leading-relaxed text-base whitespace-pre-wrap [&>*]:mb-4">
-          {post.content}
-        </div>
+        {/* İçerik "<" ile başlıyorsa HTML olarak render edilir (haber paketleri böyle yazılır);
+            aksi halde eski yazıların düz metin davranışı aynen korunur.
+            HTML'i her zaman bizim şablonumuz üretir — model çıktısı içine kaçırılmış metin olarak girer. */}
+        {post.content.trimStart().startsWith("<") ? (
+          <div className="ds-prose" dangerouslySetInnerHTML={{ __html: post.content }} />
+        ) : (
+          <div className="text-foreground/90 leading-relaxed text-base whitespace-pre-wrap [&>*]:mb-4">
+            {post.content}
+          </div>
+        )}
 
         <div className="mt-16 pt-8 border-t border-border/40 text-center">
           <p className="text-muted-foreground mb-4">Girişimini bir üst seviyeye taşımaya hazır mısın?</p>

@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-08-25_solace-care-2d81",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 6,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Solace Care",
+    "domain": "solace.care",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2100000,
+      "birim": "EUR",
+      "usd": 2268000
+    },
+    "lider": "Spintop Ventures",
+    "katilanlar": [
+      "Caroline Farberger",
+      "Play Insurtech",
+      "Tomi Yli-Kyyny",
+      "Wave Ventures",
+      "Plug"
+    ],
+    "kurucular": [
+      "Valtteri Korkiakoski",
+      "Josef Karakoca"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-25T13:18:27.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/solace-care-raises-e2-1m-pre-seed/",
+      "baslik": "Swedish Solace Care secures €2.1 million pre-seed to expand end-of-life platform across Europe",
+      "tarih": "Tue, 25 Aug 2026 13:18:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based Solace Care has raised €2.1 million in a pre-seed round led by Spintop Ventures , with the participation from Plug and Play Insurtech , Wave Ventures and a group of Nordic insurance ex",
+      "kaynak_url": "https://arcticstartup.com/solace-care-raises-e2-1m-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/solace-care-raises-e2-1m-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

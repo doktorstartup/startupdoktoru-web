@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-08-26_osenergy-f97b",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 9,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "os.energy",
+    "domain": "os.energy",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": "PSV Tech",
+    "katilanlar": [],
+    "kurucular": [
+      "Niklas Allamand Dib",
+      "Maziar Zamani"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-26T08:36:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/os-energy-raises-e1m-for-osmund/",
+      "baslik": "Danish os.energy raises €1 million to develop AI-powered tools for household energy use",
+      "tarih": "Wed, 26 Aug 2026 08:36:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Copenhagen-based energy tech startup os.energy has launched its consumer energy brand Osmund after a year in stealth, backed by a €1 million pre-seed investment from Danish early-stage investor PSV Te",
+      "kaynak_url": "https://arcticstartup.com/os-energy-raises-e1m-for-osmund/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/os-energy-raises-e1m-for-osmund/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

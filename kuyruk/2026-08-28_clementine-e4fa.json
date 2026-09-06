@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_clementine-e4fa",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Clementine",
+    "domain": "askclementine.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1700000,
+      "birim": "EUR",
+      "usd": 1836000
+    },
+    "lider": "Healthy.Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Vince van de Weijer"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T12:57:33.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/08/maastricht-based-clementine-raises-e1-7-million-to-scale-its-ai-powered-hearing-care-platform/",
+      "baslik": "Maastricht-based Clementine raises €1.7 million to scale its AI-powered hearing care platform",
+      "tarih": "Fri, 28 Aug 2026 12:57:33 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Clementine , a Maastricht-based startup that has built an AI-powered platform to help hearing clinics convert leads into patients, has raised €1.7 million ($2 million) in Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/maastricht-based-clementine-raises-e1-7-million-to-scale-its-ai-powered-hearing-care-platform/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/maastricht-based-clementine-raises-e1-7-million-to-scale-its-ai-powered-hearing-care-platform/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}

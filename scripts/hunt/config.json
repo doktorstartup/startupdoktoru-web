@@ -1,0 +1,23 @@
+{
+  "purpose": "aracılık/network — üye startuplar adına geniş, zengin etiketli, aktif yatırımcı grafiği",
+  "geos": ["global"],
+  "geo_priority": ["TR", "US", "EU"],
+  "stages": ["pre-seed", "seed", "series-a"],
+  "seed_sectors": ["generalist", "fintech", "healthtech", "b2b-saas"],
+  "exa_queries": [
+    "active early-stage venture capital partners and angel investors backing pre-seed and seed startups, with partner name firm and investment focus",
+    "category:people active angel investor or venture capital partner in Turkey investing in early-stage startups",
+    "seed-stage healthtech / digital health venture capital partner thesis and ticket size",
+    "category:people angel investor writing pre-seed and seed checks fintech Europe"
+  ],
+  "quality": {
+    "require_signals": ["active_recent", "public_channel", "clear_focus"],
+    "require_source_url": true,
+    "require_published_contact": true,
+    "load_status": "pending"
+  },
+  "kvkk": {
+    "email_only_if_published": true,
+    "address_purpose_default": "unknown"
+  }
+}

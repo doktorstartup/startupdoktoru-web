@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-08-28_nanolope-e6e0",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Nanolope",
+    "domain": "nanolope.de",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 800000,
+      "birim": "EUR",
+      "usd": 864000
+    },
+    "lider": "IBB Ventures",
+    "katilanlar": [],
+    "kurucular": [
+      "Felix Marske",
+      "Eric Matthes",
+      "Dominik L. Schreiber"
+    ],
+    "sektor": null,
+    "tarih": "2026-08-28T09:03:22.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/08/berlin-based-nanolope-secures-e800k-to-turn-building-surfaces-into-thermal-energy-storage-systems/",
+      "baslik": "Berlin-based Nanolope secures €800k to turn building surfaces into thermal energy storage systems",
+      "tarih": "Fri, 28 Aug 2026 09:03:22 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Nanolope , a Berlin-based DeepTech startup developing high‑density thermal energy storage materials for buildings and energy systems, has closed an €800k pre-Seed financing round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/berlin-based-nanolope-secures-e800k-to-turn-building-surfaces-into-thermal-energy-storage-systems/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/08/berlin-based-nanolope-secures-e800k-to-turn-building-surfaces-into-thermal-energy-storage-systems/"
+    }
+  ],
+  "olusturma": "2026-08-30T07:03:40.013Z"
+}
