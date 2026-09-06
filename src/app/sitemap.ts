@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data } = await supabaseAdmin
     .from("ds_blog_posts")
     .select("slug, created_at")
+    .eq("durum", "yayinda")
     .order("created_at", { ascending: false })
     .limit(1000);
 

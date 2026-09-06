@@ -23,9 +23,27 @@ node scripts/haber/metin.mjs $K              # ya da ücretsiz LLM (anahtar gere
 # 3) Kaydırmalı post (6 slayt, 1080×1350)
 node scripts/haber/carousel.mjs $K
 
-# 4) Blog yazısı + görseller
+# 4) Blog yazısı + görseller  → siteye TASLAK olarak düşer
 node --env-file=.env.local scripts/haber/yayinla.mjs $K
 ```
+
+# 5) Yayın onayı — /admin/blog
+
+Adım 4 yazıyı **canlıya çıkarmaz**, taslak olarak bırakır. Taslak `/blog`
+listesinde ve sitemap'te görünmez, doğrudan URL'i 404 verir, anon anahtarla
+sorgulansa bile RLS engeller.
+
+`/admin/blog` panelinde her taslağın yanında:
+
+| Düğme | Ne yapar |
+|---|---|
+| ↗ (dış bağlantı) | Taslağı şifreli önizleme bağlantısıyla açar (`?onizleme=…`, `noindex`) |
+| ✎ | İçeriği düzenler — durumu değiştirmez |
+| **Yayınla** | Siteye çıkarır: `/blog` listesine ve sitemap'e girer |
+| **Taslağa al** | Yayındaki yazıyı siteden geri çeker (onay sorar) |
+
+Yayındaki bir yazıyı `yayinla.mjs` ile yeniden basmak durumu bozmaz — yayında kalır.
+Panelden elle açılan yeni yazılar da taslak doğar.
 
 ## Kuyruğu görmek
 

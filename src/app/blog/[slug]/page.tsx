@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import { SiteHeader } from "../../../components/SiteHeader";
 import { SiteFooter } from "../../../components/SiteFooter";
 import { supabaseAdmin } from "../../../lib/supabase";
+import { verifyAdminPassword } from "../../../lib/adminAuth";
 
 export const dynamic = "force-dynamic";
 
@@ -15,21 +16,37 @@ type Post = {
   seo_description: string | null;
   cover_image: string | null;
   created_at: string;
+  durum: string;
 };
+
+type Arama = Promise<{ [k: string]: string | string[] | undefined }>;
+
+// Taslak yazı herkese kapalı. Tek istisna: admin panelindeki önizleme bağlantısı
+// ?onizleme=<yönetici şifresi> ile gelir — panel şifreyi zaten sorguda taşıyor.
+async function onizlemeMi(searchParams?: Arama) {
+  const sp = searchParams ? await searchParams : undefined;
+  const t = sp?.onizleme;
+  return verifyAdminPassword(Array.isArray(t) ? t[0] : t).ok;
+}
 
 async function getPost(slug: string): Promise<Post | null> {
   const { data } = await supabaseAdmin
     .from("ds_blog_posts")
-    .select("title, slug, content, seo_title, seo_description, cover_image, created_at")
+    .select("title, slug, content, seo_title, seo_description, cover_image, created_at, durum")
     .eq("slug", slug)
     .single();
   return (data as Post) || null;
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Arama }) {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return { title: "Yazı bulunamadı — Startup Doktoru" };
+  if (post.durum !== "yayinda") {
+    if (!(await onizlemeMi(searchParams))) return { title: "Yazı bulunamadı — Startup Doktoru" };
+    // Önizleme: arama motorlarına kapalı.
+    return { title: `[TASLAK] ${post.title}`, robots: { index: false, follow: false } };
+  }
 
   const title = post.seo_title || `${post.title} — Startup Doktoru`;
   const description = post.seo_description || undefined;
@@ -60,10 +77,12 @@ function fmtDate(iso: string) {
   }
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Arama }) {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) notFound();
+  const taslak = post.durum !== "yayinda";
+  if (taslak && !(await onizlemeMi(searchParams))) notFound();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -72,6 +91,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
           <ChevronLeft className="h-4 w-4" /> Tüm yazılar
         </Link>
+
+        {taslak && (
+          <div className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
+            <strong>Taslak önizlemesi.</strong> Bu yazı yayında değil — site ziyaretçileri göremez, arama motorlarına kapalı.
+            Yayına almak için admin panelindeki <em>Yayınla</em> düğmesini kullan.
+          </div>
+        )}
 
         <p className="text-xs text-muted-foreground font-mono mb-3">{fmtDate(post.created_at)}</p>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-8">{post.title}</h1>

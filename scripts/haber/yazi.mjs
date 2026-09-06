@@ -180,7 +180,9 @@ export async function yayinlaYazi(yazi, { kuru = false } = {}) {
     if (error) throw new Error(error.message);
     return { satir, yollar, yazildi: true, guncellendi: true };
   }
-  const { error } = await db.from("ds_blog_posts").insert([satir]);
+  // Yeni yazı TASLAK olarak basılır — yayına alma kararı admin panelinden verilir.
+  // Güncellemede durum'a dokunulmaz: yayındaki bir yazı yeniden basılınca yayında kalır.
+  const { error } = await db.from("ds_blog_posts").insert([{ ...satir, durum: "taslak" }]);
   if (error) throw new Error(error.message);
   return { satir, yollar, yazildi: true, guncellendi: false };
 }

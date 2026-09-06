@@ -26,6 +26,7 @@ export default async function BlogList() {
   const { data } = await supabaseAdmin
     .from("ds_blog_posts")
     .select("id, title, slug, seo_description, cover_image, created_at")
+    .eq("durum", "yayinda")
     .order("created_at", { ascending: false });
 
   const posts = (data as Post[]) || [];

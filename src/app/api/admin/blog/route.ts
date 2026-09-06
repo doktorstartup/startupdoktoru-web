@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
 
   const { data: posts, error } = await supabaseAdmin
     .from("ds_blog_posts")
-    .select("id, title, slug, content, seo_title, seo_description, cover_image, created_at")
+    .select("id, title, slug, content, seo_title, seo_description, cover_image, created_at, durum")
     .order("created_at", { ascending: false });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
@@ -81,6 +81,12 @@ export async function PATCH(req: NextRequest) {
     if (body[k] !== undefined) patch[k] = body[k] || null;
   }
   if (body.slug !== undefined) patch.slug = slugify(body.slug);
+  if (body.durum !== undefined) {
+    if (body.durum !== "taslak" && body.durum !== "yayinda") {
+      return NextResponse.json({ error: "durum yalnız 'taslak' veya 'yayinda' olabilir." }, { status: 400 });
+    }
+    patch.durum = body.durum;
+  }
 
   const { error } = await supabaseAdmin.from("ds_blog_posts").update(patch).eq("id", id);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });

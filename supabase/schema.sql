@@ -147,14 +147,18 @@ CREATE TABLE IF NOT EXISTS public.ds_blog_posts (
   seo_title TEXT,
   seo_description TEXT,
   cover_image TEXT,
+  -- Yayın durumu. Yeni yazı taslak doğar; yayına alma admin panelinden yapılır.
+  durum TEXT NOT NULL DEFAULT 'taslak' CHECK (durum IN ('taslak', 'yayinda')),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
+
+CREATE INDEX IF NOT EXISTS ds_blog_posts_durum_idx ON public.ds_blog_posts (durum, created_at DESC);
 
 -- Enable RLS for ds_blog_posts
 ALTER TABLE public.ds_blog_posts ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Allow public read access to ds_blog posts" ON public.ds_blog_posts
-  FOR SELECT USING (true);
+  FOR SELECT USING (durum = 'yayinda');
 
 CREATE POLICY "Allow admin to manage ds_blog posts" ON public.ds_blog_posts
   FOR ALL USING (

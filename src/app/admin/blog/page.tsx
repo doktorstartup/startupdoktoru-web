@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Newspaper, Plus, Edit3, Trash2, Loader2, Eye, X, Check, ExternalLink } from "lucide-react";
+import { Newspaper, Plus, Edit3, Trash2, Loader2, Eye, X, Check, ExternalLink, Globe, Undo2 } from "lucide-react";
 
 type Post = {
   id: string;
@@ -14,6 +14,7 @@ type Post = {
   cover_image: string | null;
   created_at: string;
   views: number;
+  durum: string;
 };
 
 type Draft = {
@@ -42,6 +43,7 @@ export default function BlogAdmin() {
   const [draft, setDraft] = useState<Draft | null>(null);
   const [saving, setSaving] = useState(false);
   const [err, setErr] = useState("");
+  const [busy, setBusy] = useState<string | null>(null);
 
   const load = () => {
     setLoading(true);
@@ -84,6 +86,23 @@ export default function BlogAdmin() {
     }
   };
 
+  // Yayına alma / taslağa çekme. Yazının içeriğine dokunmaz, yalnız durumu değiştirir.
+  const durumDegistir = async (p: Post) => {
+    const hedef = p.durum === "yayinda" ? "taslak" : "yayinda";
+    if (hedef === "taslak" && !confirm(`"${p.title}" siteden kaldırılıp taslağa alınacak. Onaylıyor musun?`)) return;
+    setBusy(p.id);
+    try {
+      await fetch("/api/admin/blog", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: getPw(), id: p.id, durum: hedef }),
+      });
+      load();
+    } finally {
+      setBusy(null);
+    }
+  };
+
   const remove = async (id: string) => {
     if (!confirm("Bu yazıyı silmek istediğine emin misin?")) return;
     await fetch(`/api/admin/blog?password=${encodeURIComponent(getPw())}&id=${id}`, { method: "DELETE" });
@@ -98,7 +117,10 @@ export default function BlogAdmin() {
           <h1 className="text-3xl font-extrabold tracking-tight mt-1 flex items-center gap-2">
             <Newspaper className="h-7 w-7 text-primary" /> Yazılar
           </h1>
-          <p className="text-sm text-muted-foreground mt-1">Yazı ekle/düzenle. Her yazının okunma sayısı yanında görünür.</p>
+          <p className="text-sm text-muted-foreground mt-1">
+            Yeni yazılar <strong>taslak</strong> olarak başlar; siteye çıkması için <em>Yayınla</em>&apos;ya basman gerekir.
+            Haber ve fikir hatları da yazıları buraya taslak olarak bırakır.
+          </p>
         </div>
         {!draft && (
           <button onClick={() => setDraft({ ...EMPTY })} className="btn btn-primary shrink-0">
@@ -151,16 +173,41 @@ export default function BlogAdmin() {
             {posts.map((p) => (
               <div key={p.id} className="flex items-center justify-between gap-4 p-4 hover:bg-secondary/10 transition-colors">
                 <div className="min-w-0">
-                  <div className="font-bold text-sm truncate">{p.title}</div>
+                  <div className="font-bold text-sm truncate flex items-center gap-2">
+                    {p.title}
+                    {p.durum !== "yayinda" && (
+                      <span className="shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border border-amber-500/40 bg-amber-500/10 text-amber-400">
+                        Taslak
+                      </span>
+                    )}
+                  </div>
                   <div className="text-[11px] text-muted-foreground font-mono mt-0.5 flex items-center gap-3">
                     <span>/blog/{p.slug}</span>
                     <span className="flex items-center gap-1"><Eye className="h-3 w-3" /> {p.views} okunma</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  <Link href={`/blog/${p.slug}`} target="_blank" className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all">
+                  {/* Taslak sayfası herkese kapalı; önizleme şifreli bağlantıyla açılır. */}
+                  <Link
+                    href={p.durum === "yayinda" ? `/blog/${p.slug}` : `/blog/${p.slug}?onizleme=${encodeURIComponent(getPw())}`}
+                    target="_blank"
+                    title={p.durum === "yayinda" ? "Sitede aç" : "Taslağı önizle"}
+                    className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all">
                     <ExternalLink className="h-3.5 w-3.5" />
                   </Link>
+                  <button
+                    onClick={() => durumDegistir(p)}
+                    disabled={busy === p.id}
+                    title={p.durum === "yayinda" ? "Taslağa al (siteden kaldırır)" : "Yayınla (siteye çıkarır)"}
+                    className={`h-8 inline-flex items-center justify-center gap-1.5 px-3 rounded-lg border text-xs font-bold transition-all disabled:opacity-60 ${
+                      p.durum === "yayinda"
+                        ? "bg-secondary/80 border-border/80 text-muted-foreground hover:text-amber-400"
+                        : "bg-primary/10 border-primary/40 text-primary hover:bg-primary/20"
+                    }`}>
+                    {busy === p.id ? <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                      : p.durum === "yayinda" ? <Undo2 className="h-3.5 w-3.5" /> : <Globe className="h-3.5 w-3.5" />}
+                    {p.durum === "yayinda" ? "Taslağa al" : "Yayınla"}
+                  </button>
                   <button onClick={() => setDraft({ id: p.id, title: p.title, slug: p.slug, content: p.content, seo_title: p.seo_title || "", seo_description: p.seo_description || "", cover_image: p.cover_image || "" })}
                     className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all">
                     <Edit3 className="h-3.5 w-3.5" />
