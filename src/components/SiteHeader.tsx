@@ -26,13 +26,9 @@ export function SiteHeader({ onOpenAi }: Props) {
     <>
     <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="container-page flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-background font-bold text-xl shadow-lg shadow-primary/20">
-            SD
-          </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
-            STARTUP<span className="text-primary">DOKTORU</span>
-          </span>
+        <Link href="/" className="flex items-center" aria-label="Startup Doktoru ana sayfa">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-sd-beyaz.png" alt="Startup Doktoru" className="h-9 sm:h-11 w-auto" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
@@ -93,9 +89,8 @@ export function SiteHeader({ onOpenAi }: Props) {
           />
           <div className="absolute right-0 top-0 h-full w-72 max-w-[80vw] bg-[#0B1220] border-l border-border/60 shadow-2xl p-6 flex flex-col gap-6 overflow-y-auto">
             <div className="flex items-center justify-between">
-              <span className="text-lg font-bold tracking-tight">
-                STARTUP<span className="text-primary">DOKTORU</span>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo-sd-beyaz.png" alt="Startup Doktoru" className="h-10 w-auto" />
               <button
                 onClick={() => setMobileOpen(false)}
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-border/60 text-muted-foreground hover:text-foreground"

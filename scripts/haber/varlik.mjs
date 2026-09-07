@@ -353,16 +353,32 @@ async function gorselleriIndir(urller, dizin, onEk) {
 
 // ── App Store görselleri (ücretsiz, anahtarsız) ───────────────────────────
 // Ölçülen isabet %12,5 — esasen TR tüketici uygulaması kanalı. Bulunamaması normal.
-export async function appStoreGorselleri(sirketAdi) {
+
+const konak = (url) => { try { return new URL(url).hostname.replace(/^www\./, "").toLowerCase(); } catch { return ""; } };
+
+// KİMLİK KAPISI. Uygulama ADINDA şirket adının geçmesi kanıt DEĞİL: "Crusoe"
+// aramasi "Crusoe Squeaky Ball Bubble POP"u (satıcı: Cristian Cendon Marquez,
+// doggymakers.com) getiriyor ve eski kapı bunu geçiriyordu. Ölçümde ayrımı
+// yapan tek alan satıcı kimliği: gerçek eşleşmelerin hepsinde şirket adı
+// sellerName'de geçiyor (HUBX YAZILIM…, ULTRAHUMAN HEALTHCARE…, MIDAS
+// FINANSAL…), altı yanlış eşleşmenin hiçbirinde geçmiyor.
+// sellerUrl ayrı bir kabul yolu — marka alan adı tüzel adla uyuşmayabiliyor
+// (Midas → getmidas.com), o yüzden VE değil VEYA.
+export function appStoreUygunMu(r, sirketAdi, domain) {
+  const anahtar = sirketAdi.toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (anahtar.length < 4) return false;
+  const satici = String(r.sellerName ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (satici.includes(anahtar)) return true;
+  const d = String(domain ?? "").replace(/^www\./, "").toLowerCase();
+  return !!d && konak(r.sellerUrl ?? "") === d;
+}
+
+export async function appStoreGorselleri(sirketAdi, domain) {
   try {
     const u = `https://itunes.apple.com/search?term=${encodeURIComponent(sirketAdi)}&country=tr&entity=software&limit=5`;
     const d = await (await fetch(u, { signal: AbortSignal.timeout(10_000) })).json();
-    const anahtar = sirketAdi.toLowerCase().replace(/[^a-z0-9]/g, "");
-    const uy = (d.results ?? []).find((r) => {
-      const s = `${r.trackName} ${r.sellerName}`.toLowerCase().replace(/[^a-z0-9]/g, "");
-      return s.includes(anahtar) && anahtar.length >= 4;
-    });
-    if (!uy) return { bulundu: false, neden: `${d.resultCount ?? 0} sonuç, adı eşleşen yok` };
+    const uy = (d.results ?? []).find((r) => appStoreUygunMu(r, sirketAdi, domain));
+    if (!uy) return { bulundu: false, neden: `${d.resultCount ?? 0} sonuç, satıcı kimliği eşleşen yok` };
     // 320x480bb.jpg → 1290x2796bb.jpg ile tam çözünürlük (doğrulandı, http 200).
     const tam = (uy.screenshotUrls ?? []).map((s) => s.replace(/\/\d+x\d+bb\.(jpg|png)$/, "/1290x2796bb.$1"));
     return { bulundu: true, uygulama: uy.trackName, saglayici: uy.sellerName, ikon: uy.artworkUrl512 ?? null, ekranlar: tam.slice(0, 5) };
@@ -426,7 +442,7 @@ export async function varlikCek({ domain, sirketAdi, slug, dizin = PAKET_DIR }) 
     }
 
     // 4) App Store
-    const app = await appStoreGorselleri(sirketAdi);
+    const app = await appStoreGorselleri(sirketAdi, domain);
     if (app.bulundu && app.ekranlar?.length) {
       app.inen = await gorselleriIndir(app.ekranlar, join(paket, "02_gorsel"), "20_appstore");
     }

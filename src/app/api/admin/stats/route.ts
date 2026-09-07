@@ -41,11 +41,18 @@ export async function GET(req: NextRequest) {
     // Ödenmiş siparişler (müşteri + gelir)
     const { data: paidOrders } = await supabaseAdmin
       .from("ds_orders")
-      .select("amount")
+      .select("id, email, amount")
       .eq("payment_status", "paid");
 
-    const customers = (paidOrders || []).length;
     const revenue = (paidOrders || []).reduce((sum, o) => sum + Number(o.amount || 0), 0);
+
+    // "Müşteri" = para ödemiş TEKİL kişi; ödenmiş sipariş satırı değil. İki fark var:
+    // bir kişi birden çok ürün alabiliyor, ve admin panelinden verilen ücretsiz
+    // erişimler de ds_orders'a paid satır olarak düşüyor (payment_method='manual',
+    // amount=0). Satır sayısı ikisini de müşteri sayıyordu.
+    const customers = new Set(
+      (paidOrders || []).filter((o) => Number(o.amount || 0) > 0).map((o) => o.email || o.id)
+    ).size;
 
     // Son lead'ler
     const { data: recentLeads } = await supabaseAdmin

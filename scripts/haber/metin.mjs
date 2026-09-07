@@ -14,6 +14,7 @@
 // Kullanım:
 //   node scripts/haber/metin.mjs kuyruk/<kayit>.json            → ücretsiz LLM ile yaz
 //   node scripts/haber/metin.mjs kuyruk/<kayit>.json --prompt   → promptu bas (Claude'a yapıştır)
+//   node scripts/haber/metin.mjs kuyruk/<kayit>.json --dogrula  → elde yazılmış metin.json'ı kapıdan geçir
 
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -160,6 +161,28 @@ export function dogrula(metinler, makale, kayit) {
       continue;
     }
 
+    // SORU-CEVAP nesne dizisidir. Soru ve cevap AYRI denetlenir; birleştirilirse
+    // sorunun sonundaki ad, cevabın başındaki sözcükle yan yana gelip cümle
+    // ortası sanılıyor. Kapı bu bölümde de olgu bölümü sertliğinde çalışır.
+    if (alan === "sorular") {
+      const kabulSC = [];
+      for (const sc of paragraflar) {
+        if (!sc || typeof sc !== "object") continue;
+        const soru = typeof sc.soru === "string" ? sc.soru.trim() : "";
+        const cevap = typeof sc.cevap === "string" ? sc.cevap.trim() : "";
+        if (!soru || !cevap) continue;
+        let sorun = null;
+        for (const alanMetni of [soru, cevap]) {
+          const r = kapidanGecir(alanMetni.replace(/\*\*/g, ""), kaynak, kunyeSayilari, alan, false);
+          if (r.sorun) { sorun = r.sorun; break; }
+        }
+        if (sorun) { sorunlar.push(sorun); continue; }
+        kabulSC.push({ soru, cevap });
+      }
+      if (kabulSC.length) temiz.sorular = kabulSC;
+      continue;
+    }
+
     const yorumMu = alan === "yorum";
     const kabul = [];
     for (const p of paragraflar) {
@@ -189,12 +212,23 @@ function kapidanGecir(duz, kaynak, kunyeSayilari, alan, yorumMu) {
   });
   if (uydurmaSayi.length) return { sorun: `${alan}: kaynakta geçmeyen sayı ${uydurmaSayi.join(", ")} — düşürüldü` };
 
-  const adlar = duz.match(/\b[A-ZÇĞİÖŞÜ][\wçğıöşü]+(?:\s+[A-ZÇĞİÖŞÜ][\wçğıöşü]+)+/g) ?? [];
-  const uydurmaAd = adlar.filter((a) => !kaynak.includes(norm(a)) && !(yorumMu && GENEL_ADLAR.has(norm(a))));
-  if (uydurmaAd.length) return { sorun: `${alan}: kaynakta geçmeyen ad "${uydurmaAd[0]}" — düşürüldü` };
-
   const cumleBasi = new Set();
   for (const m of duz.matchAll(/(?:^|[.!?]\s+)([A-ZÇĞİÖŞÜ][\wçğıöşü'’]*)/g)) cumleBasi.add(m[1]);
+
+  const adGecer = (a) => kaynak.includes(norm(a)) || (yorumMu && GENEL_ADLAR.has(norm(a)));
+  const adlar = duz.match(/\b[A-ZÇĞİÖŞÜ][\wçğıöşü]+(?:\s+[A-ZÇĞİÖŞÜ][\wçğıöşü]+)+/g) ?? [];
+  const uydurmaAd = adlar.filter((a) => {
+    if (adGecer(a)) return false;
+    // Cümle başındaki sözcük büyük harfle başlar ama özel ad DEĞİLDİR. Tarama onu
+    // ada dahil edince "Turda Mubadala Capital" gibi kaynakta olmayan bir ad
+    // uyduruyordu — tek sözcük kapısında bu istisna zaten vardı. Baştaki sözcüğü
+    // düşürüp kalanı sınıyoruz; kalan gerçekten uydurmaysa yine takılır. Tek
+    // sözcük kalırsa aşağıdaki tek-sözcük kapısı devralır.
+    if (!cumleBasi.has(a.split(/\s+/)[0])) return true;
+    const kalan = a.split(/\s+/).slice(1).join(" ");
+    return kalan.includes(" ") ? !adGecer(kalan) : false;
+  });
+  if (uydurmaAd.length) return { sorun: `${alan}: kaynakta geçmeyen ad "${uydurmaAd[0]}" — düşürüldü` };
   for (const m of duz.matchAll(/\b([A-ZÇĞİÖŞÜ][\wçğıöşü]+(?:['’][\wçğıöşü]+)?)/g)) {
     const kelime = m[1];
     if (cumleBasi.has(kelime)) continue;
@@ -289,7 +323,7 @@ export async function metinUret(kayit, { paket } = {}) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const dosya = process.argv[2];
   if (!dosya) {
-    console.error("Kullanım: node scripts/haber/metin.mjs kuyruk/<kayit>.json [--prompt]");
+    console.error("Kullanım: node scripts/haber/metin.mjs kuyruk/<kayit>.json [--prompt|--dogrula]");
     process.exit(1);
   }
   const kayit = JSON.parse(readFileSync(dosya, "utf8"));
@@ -299,6 +333,26 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     // Claude Code yolu: promptu bas, oturumda yaz, çıktıyı metin.json'a kaydet.
     const makale = await makaleCek(kayit.kaynaklar[0].url);
     console.log(promptYaz(kayit, makale));
+    process.exit(0);
+  }
+
+  // Elle yazılan metin.json da kapıdan geçmeli. dogrula() yalnız LLM yolunda
+  // koşuyordu; Claude Code yolu varsayılan olduğu için o yol denetimsiz kalıyordu.
+  if (process.argv.includes("--dogrula")) {
+    const yol = join(paket, "metin.json");
+    const makale = await makaleCek(kayit.kaynaklar[0].url);
+    const { metinler, sorunlar } = dogrula(JSON.parse(readFileSync(yol, "utf8")), makale, kayit);
+    console.log(`${yol}\n`);
+    for (const [alan, p] of Object.entries(metinler)) {
+      if (!Array.isArray(p) || !p.length) continue;
+      console.log(`  ${alan}: ${p.length} blok`);
+    }
+    if (sorunlar.length) {
+      console.log("\n⚠  KAPI DÜŞÜRDÜ — bu cümleler yayınlanamaz:");
+      for (const x of sorunlar) console.log(`   - ${x}`);
+      process.exit(1);
+    }
+    console.log("\n✓ kapı temiz — her sayı ve özel ad kaynakta doğrulandı");
     process.exit(0);
   }
 

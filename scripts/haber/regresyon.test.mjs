@@ -9,6 +9,8 @@ import { kisilerCikar } from "./kisiler.mjs";
 import { identityGate, nameInDomain } from "./domain.mjs";
 import { ayniTur, puanla } from "./kuyruk.mjs";
 import { sirketAdiCikar } from "./topla.mjs";
+import { appStoreUygunMu } from "./varlik.mjs";
+import { dogrula } from "./metin.mjs";
 
 const R = [];
 const t = (ad, ok) => R.push([ad, !!ok]);
@@ -129,6 +131,76 @@ t("TR ayrılma hâli: yatırımcı çıkarılıyor",
 // Yatırımcı adı KISALTILMAZ: Point72 Private Investments ≠ Point72 Ventures ≠ Point72.
 t("yatırımcı adı tam hâliyle korunuyor",
   !/^Point72$/.test(kisilerCikar("HubX, Point72 Private Investments’tan 75 milyon dolar yatırım aldı.").lider_yatirimci ?? ""));
+
+
+// ── App Store kimlik kapısı ───────────────────────────────────────────────
+// 2026-09-07: Crusoe paketine "Crusoe Squeaky Ball Bubble POP" (satıcı:
+// Cristian Cendon Marquez) girdi. Eski kapı uygulama ADINDA şirket adını
+// arıyordu; ayrımı yapan alan satıcı kimliği. Vakalar iTunes'dan ölçüldü.
+{
+  const V = [
+    // [not, sonuç, şirket, domain, beklenen]
+    ["Crusoe: köpek oyunu",   { trackName: "Crusoe Squeaky Ball Bubble POP", sellerName: "Cristian Cendon Marquez", sellerUrl: "https://doggymakers.com" }, "Crusoe", "crusoe.ai", false],
+    ["Crusoe: adiss",         { trackName: "Crusoe", sellerName: "ASESORAMIENTO Y DESARROLLO DE SISTEMAS INFORMATICOS SL", sellerUrl: null }, "Crusoe", "crusoe.ai", false],
+    ["Atira Link: şahıs",     { trackName: "Atira Link", sellerName: "Mehde Mohamad", sellerUrl: "https://atiralink.com" }, "Atira", "atira.ai", false],
+    ["HubX: tüzel ad",        { trackName: "AI Video - AI Video Generator", sellerName: "HUBX YAZILIM HIZMETLERI ANONIM SIRKETI", sellerUrl: "https://aivideoart.co/" }, "HubX", "hubx.co", true],
+    ["Ultrahuman: tüzel ad",  { trackName: "Ultrahuman", sellerName: "ULTRAHUMAN HEALTHCARE PRIVATE LIMITED", sellerUrl: "https://www.ultrahuman.com" }, "Ultrahuman", "ultrahuman.com", true],
+    ["Midas: marka ≠ domain", { trackName: "Midas: Borsa Hisse Alım Satım", sellerName: "MIDAS FINANSAL TEKNOLOJILER AS", sellerUrl: "https://www.getmidas.com/" }, "Midas", "midas.com.tr", true],
+    ["sellerUrl domain yolu", { trackName: "Bambaşka Ad", sellerName: "Holding A.S.", sellerUrl: "https://www.getir.com/x" }, "Getir", "getir.com", true],
+    ["kısa ad elenir",        { trackName: "AI Score", sellerName: "AI Score Ltd", sellerUrl: null }, "AI", "aiscore.ai", false],
+  ];
+  let ok = true;
+  for (const [not, r, ad, dom, bekle] of V) {
+    if (appStoreUygunMu(r, ad, dom) !== bekle) { ok = false; console.log(`     ✗ ${not}`); }
+  }
+  t("App Store kimlik kapısı: 8/8 vaka", ok);
+}
+
+
+// ── Uydurma kapısı: cümle başı büyük harfi ada dahil etmemeli ─────────────
+// 2026-09-07: "Turda **Mubadala Capital** yer aldı." reddedildi çünkü çok
+// sözcüklü ad taraması "Turda"yı adın parçası saydı. Tek sözcük kapısında bu
+// istisna zaten vardı. Gevşetme uydurmayı geçirmemeli — iki yön de sınanır.
+{
+  const makale = "Tura Atreides Management ve Valor Equity Partners ortaklasa liderlik etti. "
+    + "Turda Mubadala Capital yer aldi. Sirket 2018 yilinda kuruldu.";
+  const kayit = { kunye: { tutar: { deger: 3000000000, usd: 3000000000 } } };
+  const ko = (bloklar) => dogrula({ olcek: bloklar }, makale, kayit);
+
+  const kabul = [
+    ["cümle başı + gerçek ad", "Turda **Mubadala Capital** yer aldı."],
+    ["cümle başı + iki gerçek ad", "Tura **Atreides Management** ve **Valor Equity Partners** liderlik etti."],
+    ["ad cümle başındayken", "**Mubadala Capital** turda yer aldı."],
+  ];
+  const ret = [
+    ["cümle başı + UYDURMA ad", "Turda Hayali Sermaye Fonu yer aldı."],
+    ["cümle ortası uydurma ad", "Şirket Hayali Sermaye ile çalışıyor."],
+    ["uydurma tek özel ad", "Şirket Ankara'da ofis açtı."],
+    ["uydurma sayı", "Şirketin 4200 çalışanı var."],
+  ];
+  let ok = true;
+  for (const [not, c] of kabul) {
+    const r = ko([c]);
+    if (r.sorunlar.length) { ok = false; console.log(`     ✗ geçmeliydi: ${not} → ${r.sorunlar[0]}`); }
+  }
+  for (const [not, c] of ret) {
+    const r = ko([c]);
+    if (!r.sorunlar.length) { ok = false; console.log(`     ✗ ELENMELİYDİ: ${not}`); }
+  }
+  t("uydurma kapısı: 3 kabul + 4 ret", ok);
+}
+
+// ── Soru-cevap blokları da kapıdan geçmeli ───────────────────────────────
+// 2026-09-07: sorular alanı dogrula()'da tanınmıyordu; yayinla.mjs onu ham
+// dosyadan okuduğu için FAQ cevapları hiç denetlenmeden yayına gidiyordu.
+{
+  const makale = "Sirketi Chase Lochmiller ve Cully Cavness kurdu.";
+  const kayit = { kunye: { tutar: { deger: 1, usd: 1 } } };
+  const gecer = dogrula({ sorular: [{ soru: "Kurucular kim?", cevap: "**Chase Lochmiller** ve **Cully Cavness**." }] }, makale, kayit);
+  const duser = dogrula({ sorular: [{ soru: "Kurucular kim?", cevap: "**Ahmet Yilmaz** ve **Cully Cavness**." }] }, makale, kayit);
+  t("soru-cevap kapıdan geçiyor", gecer.sorular !== undefined || gecer.metinler.sorular?.length === 1);
+  t("soru-cevap uydurma adı eliyor", duser.sorunlar.length === 1 && !duser.metinler.sorular);
+}
 
 // ── Rapor ──
 let bad = 0;

@@ -3,12 +3,8 @@ export function SiteFooter() {
     <footer className="border-t border-border/40 py-12 bg-black/20">
       <div className="container-page flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-background font-bold text-sm">
-            SD
-          </div>
-          <span className="text-base font-bold tracking-tight text-foreground">
-            STARTUP<span className="text-primary">DOKTORU</span>
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-sd-beyaz.png" alt="Startup Doktoru" className="h-9 w-auto" />
         </div>
 
         <p className="text-xs text-muted-foreground text-center">

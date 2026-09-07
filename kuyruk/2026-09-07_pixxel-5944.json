@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_pixxel-5944",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Pixxel",
+    "domain": "pixxel.space",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": "Temasek",
+    "katilanlar": [
+      "Radical Ventures",
+      "IMM Investment",
+      "360 ONE Asset",
+      "Seraphim"
+    ],
+    "kurucular": [
+      "Awais Ahmed",
+      "Kshitij Khandelwal"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-07T11:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/07/uzay-veri-sirketi-pixxel-100-milyon-dolar-yatirim-aldi/",
+      "baslik": "Uzay veri şirketi Pixxel, 100 milyon dolar yatırım aldı",
+      "tarih": "Mon, 07 Sep 2026 11:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Uzay veri şirketi Pixxel , 100 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/07/uzay-veri-sirketi-pixxel-100-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/07/uzay-veri-sirketi-pixxel-100-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T17:51:46.581Z"
+}
