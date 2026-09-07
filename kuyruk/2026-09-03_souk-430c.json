@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_souk-430c",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Souk",
+    "domain": "joinsouk.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1600000,
+      "birim": "USD",
+      "usd": 1600000
+    },
+    "lider": "Sure Valley Ventures (SVV)",
+    "katilanlar": [
+      "Fuel Ventures",
+      "Antler",
+      "B2B"
+    ],
+    "kurucular": [
+      "Leo Crowe"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/03/souk-lands-16m-to-turn-inactive-b2b-partners-into-revenue/",
+      "baslik": "Souk lands $1.6M to turn inactive B2B partners into revenue",
+      "tarih": "Thu, 03 Sep 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UK-based B2B software startup Souk has raised $1.6 million in pre-seed funding to develop its AI-powered partner management platform.",
+      "kaynak_url": "https://tech.eu/2026/09/03/souk-lands-16m-to-turn-inactive-b2b-partners-into-revenue/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/03/souk-lands-16m-to-turn-inactive-b2b-partners-into-revenue/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

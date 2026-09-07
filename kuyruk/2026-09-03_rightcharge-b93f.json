@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_rightcharge-b93f",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Rightcharge",
+    "domain": "rightcharge.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 500000,
+      "birim": "GBP",
+      "usd": 635000
+    },
+    "lider": "Soulmates Ventures",
+    "katilanlar": [
+      "BlackWood Ventures",
+      "Purple Ventures"
+    ],
+    "kurucular": [
+      "Charlie Cook"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/03/rightcharge-raises-ps500k-to-scale-fleet-ev-charging-payments-across-europe/",
+      "baslik": "Rightcharge raises £500K to scale fleet EV charging payments across Europe",
+      "tarih": "Thu, 03 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UK EV charging payments startup Rightcharge has raised £500,000 in growth funding to expand across Europe and further develop its platform for managing fleet charging payments.",
+      "kaynak_url": "https://tech.eu/2026/09/03/rightcharge-raises-ps500k-to-scale-fleet-ev-charging-payments-across-europe/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/03/rightcharge-raises-ps500k-to-scale-fleet-ev-charging-payments-across-europe/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_hiddenlayer-352f",
+  "durum": "hazir",
+  "puan": 80,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "HiddenLayer",
+    "domain": "hiddenlayer.com",
+    "ulke": "TR",
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": "Delta-v Capital",
+    "katilanlar": [
+      "Microsoft’s Venture Fund",
+      "Ten Eleven Ventures",
+      "Booz Allen Ventures",
+      "Morgan Stanley",
+      "M12"
+    ],
+    "kurucular": [
+      "Tanner Burns",
+      "James Ballard"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/03/yapay-zeka-destekli-siber-guvenlik-cozumleri-gelistiren-hiddenlayer-100-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli siber güvenlik çözümleri geliştiren HiddenLayer, 100 milyon dolar yatırım aldı",
+      "tarih": "Thu, 03 Sep 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli siber güvenlik çözümleri geliştiren HiddenLayer , 100 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/yapay-zeka-destekli-siber-guvenlik-cozumleri-gelistiren-hiddenlayer-100-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/yapay-zeka-destekli-siber-guvenlik-cozumleri-gelistiren-hiddenlayer-100-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-02_stransistors-8a4c",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 3,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "S-Transistors",
+    "domain": "s-transistors.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2600000,
+      "birim": "EUR",
+      "usd": 2808000
+    },
+    "lider": "Lifeline Ventures",
+    "katilanlar": [],
+    "kurucular": [
+      "Heorhii Bohuslavskyi",
+      "Andrey Generalov"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-02T04:27:38.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/s-transistors-raises-e2-6-million-pre-seed/",
+      "baslik": "Finnish startup S-Transistors raises €2.6 million pre-seed to develop superconducting electronics for quantum computing",
+      "tarih": "Wed, 02 Sep 2026 04:27:38 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Finnish startup S-Transistors has raised €2.6 million in pre-seed funding in a round led by Lifeline Ventures , with participation from an angel investor .",
+      "kaynak_url": "https://arcticstartup.com/s-transistors-raises-e2-6-million-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/s-transistors-raises-e2-6-million-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_zeit-ai-ee2d",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Zeit AI",
+    "domain": "zeit-ai.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Marvin Bornstein",
+      "Leopold von Waldthausen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T08:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/",
+      "baslik": "Zeit AI raises €5M to give Europe’s mid-market its own data engineer",
+      "tarih": "Thu, 03 Sep 2026 08:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Zeit AI , a startup developing autonomous data engineering technology, has raised €5 million in funding to expand its platform for mid-sized European companies.",
+      "kaynak_url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://tech.eu/2026/09/03/zeit-ai-raises-eur5m-to-give-europes-mid-market-its-own-data-engineer/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

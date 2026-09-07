@@ -1,0 +1,72 @@
+{
+  "surum": 1,
+  "id": "2026-09-02_wonderful-be62",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Wonderful",
+    "domain": "wonderful.ai",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 550000000,
+      "birim": "USD",
+      "usd": 550000000
+    },
+    "lider": "Insight Partners",
+    "katilanlar": [
+      "Bessemer Venture Partners",
+      "Index Ventures",
+      "Vine Ventures",
+      "Salesforce",
+      "9Yards",
+      "IVP"
+    ],
+    "kurucular": [
+      "Bar Winkler",
+      "Roey Lalazar"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-02T16:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/03/wonderful-5-milyar-dolar-degerleme-ile-550-milyon-dolar-yatirim-aldi/",
+      "baslik": "Wonderful, 5 milyar dolar değerleme ile 550 milyon dolar yatırım aldı",
+      "tarih": "Thu, 03 Sep 2026 09:00:00 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/02/netherlands-based-ai-startup-wonderful-raises-550m-at-5bn-valuation/",
+      "baslik": "Netherlands-based AI startup Wonderful raises $550M at $5BN valuation",
+      "tarih": "Wed, 02 Sep 2026 16:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Wonderful, 550 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/wonderful-5-milyar-dolar-degerleme-ile-550-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/wonderful-5-milyar-dolar-degerleme-ile-550-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

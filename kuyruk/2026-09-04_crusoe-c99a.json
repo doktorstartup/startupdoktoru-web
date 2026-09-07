@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-04_crusoe-c99a",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Crusoe",
+    "domain": "crusoe.ai",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000000,
+      "birim": "USD",
+      "usd": 3000000000
+    },
+    "lider": "Atreides Management",
+    "katilanlar": [
+      "Valor Equity Partners",
+      "Mubadala Capital"
+    ],
+    "kurucular": [
+      "Chase Lochmiller",
+      "Cully Cavness"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-04T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/04/crusoe-30-milyar-dolar-degerleme-uzerinden-3-milyar-dolar-yatirim-aldi/",
+      "baslik": "Crusoe, 30 milyar dolar değerleme üzerinden 3 milyar dolar yatırım aldı",
+      "tarih": "Fri, 04 Sep 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Crusoe, 3 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/04/crusoe-30-milyar-dolar-degerleme-uzerinden-3-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

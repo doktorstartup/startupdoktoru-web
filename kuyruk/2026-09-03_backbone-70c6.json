@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_backbone-70c6",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Backbone",
+    "domain": "usebackbone.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "Pitchdrive",
+    "katilanlar": [
+      "PROfounders Capital",
+      "Passion Capital",
+      "Agristo",
+      "100IN",
+      "Darta"
+    ],
+    "kurucular": [
+      "Louis Opsomer",
+      "Siska Lannoo",
+      "Julien Steel"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T05:32:53.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/",
+      "baslik": "Backbone raises €4M for automated food quality and compliance",
+      "tarih": "Thu, 03 Sep 2026 05:32:53 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Food industry software startup Backbone has raised €4 million in pre-seed funding to further develop its AI-powered quality and compliance platform and support its commercial expansion.",
+      "kaynak_url": "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/03/backbone-raises-eur4m-for-automated-food-quality-and-compliance/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

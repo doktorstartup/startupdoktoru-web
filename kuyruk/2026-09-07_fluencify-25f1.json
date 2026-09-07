@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_fluencify-25f1",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Fluencify",
+    "domain": "fluencify.io",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 4300000,
+      "birim": "USD",
+      "usd": 4300000
+    },
+    "lider": "byFounders",
+    "katilanlar": [
+      "Wave Ventures"
+    ],
+    "kurucular": [
+      "Erik Romdhane",
+      "Isaac Norin",
+      "Sam Stones Hälleberg"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-07T09:10:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/07/fluencify-secures-43m-to-scale-its-creator-campaign-platform/",
+      "baslik": "Fluencify secures $4.3M to scale its creator campaign platform",
+      "tarih": "Mon, 07 Sep 2026 09:10:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based creator marketing platform Fluencify has raised an oversubscribed $4.3 million pre-seed round led by byFounders , with participation from Wave Ventures .",
+      "kaynak_url": "https://tech.eu/2026/09/07/fluencify-secures-43m-to-scale-its-creator-campaign-platform/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/07/fluencify-secures-43m-to-scale-its-creator-campaign-platform/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

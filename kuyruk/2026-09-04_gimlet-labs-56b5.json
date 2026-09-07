@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-04_gimlet-labs-56b5",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Gimlet Labs",
+    "domain": "gimletlabs.ai",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 300000000,
+      "birim": "USD",
+      "usd": 300000000
+    },
+    "lider": "Andreessen Horowitz",
+    "katilanlar": [
+      "Microsoft’un girişim sermayesi fonu M12",
+      "Arm Holdings"
+    ],
+    "kurucular": [
+      "Omid Azizi",
+      "Natalie Serrino"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-04T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/04/gimlet-labs-3-milyar-dolar-degerleme-uzerinden-300-milyon-dolar-yatirim-aldi/",
+      "baslik": "Gimlet Labs, 3 milyar dolar değerleme üzerinden 300 milyon dolar yatırım aldı",
+      "tarih": "Fri, 04 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gimlet Labs, 300 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/04/gimlet-labs-3-milyar-dolar-degerleme-uzerinden-300-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

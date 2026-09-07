@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-09-04_creoir-f729",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 0,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Creoir",
+    "domain": "creoir.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": null,
+      "birim": null,
+      "usd": null
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Antti Lilja",
+      "Jaakko Mattila",
+      "Oskari Ketola"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-04T13:53:05.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/oulu-based-creoir-secures-seed-funding-to-scale-voice-ai-for-defence-and-mission-critical-systems/",
+      "baslik": "Oulu-based Creoir secures Seed funding to scale voice AI for defence and mission-critical systems",
+      "tarih": "Fri, 04 Sep 2026 13:53:05 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/oulu-based-creoir-secures-seed-funding-to-scale-voice-ai-for-defence-and-mission-critical-systems/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

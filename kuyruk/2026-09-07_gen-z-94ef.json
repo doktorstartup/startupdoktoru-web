@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_gen-z-94ef",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Gen Z",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 4300000,
+      "birim": "USD",
+      "usd": 4300000
+    },
+    "lider": "byFounders",
+    "katilanlar": [
+      "Wave Ventures"
+    ],
+    "kurucular": [
+      "Erik Romdhane",
+      "Isaac Norin",
+      "Sam Stones Hälleberg"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-07T08:26:51.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/fluencify-raises-oversubscribed-4-3m-pre-seed/",
+      "baslik": "Gen Z influencer-founders land oversubscribed $4.3M pre-seed to automate creator marketing end-to-end",
+      "tarih": "Mon, 07 Sep 2026 08:26:51 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based creator marketing platform Fluencify has raised an oversubscribed $4.3M pre-seed round led by byFounders , with participation from Wave Ventures , bringing the company’s total funding",
+      "kaynak_url": "https://arcticstartup.com/fluencify-raises-oversubscribed-4-3m-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/fluencify-raises-oversubscribed-4-3m-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

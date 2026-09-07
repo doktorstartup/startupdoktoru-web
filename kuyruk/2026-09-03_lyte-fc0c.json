@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_lyte-fc0c",
+  "durum": "hazir",
+  "puan": 81,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Lyte",
+    "domain": "lyte.ai",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 165000000,
+      "birim": "USD",
+      "usd": 165000000
+    },
+    "lider": "Maverick Silicon",
+    "katilanlar": [
+      "Fidelity Management & Research Company",
+      "Atreides Management",
+      "Key1 Capital",
+      "Ora Global"
+    ],
+    "kurucular": [
+      "Arman Hajati",
+      "Yuval Gerson"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/03/lyte-1-6-milyar-dolar-degerleme-uzerinden-165-milyon-dolar-yatirim-aldi/",
+      "baslik": "Lyte, 1,6 milyar dolar değerleme üzerinden 165 milyon dolar yatırım aldı",
+      "tarih": "Thu, 03 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Robotların görmesini ve çevresini anlamasını sağlayan yapay zeka teknolojileri geliştiren Lyte , 165 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/lyte-1-6-milyar-dolar-degerleme-uzerinden-165-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/03/lyte-1-6-milyar-dolar-degerleme-uzerinden-165-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_cato-e48f",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Cato",
+    "domain": "get-cato.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "EUR",
+      "usd": 6480000
+    },
+    "lider": "Keen Venture Partners",
+    "katilanlar": [
+      "Lexroom",
+      "Sibill",
+      "Pillar",
+      "VCs"
+    ],
+    "kurucular": [
+      "Andrea Zorzetto",
+      "Matteo Bossolini"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-07T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/milan-based-cato-raises-e6-million-to-help-companies-find-and-win-public-tenders-with-ai/",
+      "baslik": "Milan-based Cato raises €6 million to help companies find and win public tenders with AI",
+      "tarih": "Mon, 07 Sep 2026 07:00:51 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/07/cato-raises-eur6m-to-expand-its-ai-platform-for-public-sector-sales/",
+      "baslik": "Cato raises €6M to expand its AI platform for public sector sales",
+      "tarih": "Mon, 07 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Cato , a Milan-based AI platform that helps companies find, analyse and win public tenders, has raised a €6 million Seed round led by Keen Venture Partners.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/milan-based-cato-raises-e6-million-to-help-companies-find-and-win-public-tenders-with-ai/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/milan-based-cato-raises-e6-million-to-help-companies-find-and-win-public-tenders-with-ai/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

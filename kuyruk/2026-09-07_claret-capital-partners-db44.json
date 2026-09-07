@@ -1,0 +1,49 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_claret-capital-partners-db44",
+  "durum": "hazir",
+  "puan": 46,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Claret Capital Partners",
+    "domain": "claret-capital.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 575000000,
+      "birim": "EUR",
+      "usd": 621000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-07T05:29:08.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/londons-claret-capital-partners-closes-fund-iv-at-e575-million-to-back-european-tech-life-sciences-and-impact-companies/",
+      "baslik": "London’s Claret Capital Partners closes Fund IV at €575 million to back European tech, life sciences and impact companies",
+      "tarih": "Mon, 07 Sep 2026 05:29:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Claret Capital Partners , a London-based independent growth debt fund manager, today announced the final close of its Claret European Growth Capital Fund IV (Fund IV), which has now raised €575 millio",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/londons-claret-capital-partners-closes-fund-iv-at-e575-million-to-back-european-tech-life-sciences-and-impact-companies/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

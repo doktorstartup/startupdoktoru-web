@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-03_atira-2fff",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Atira",
+    "domain": "atira.ai",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "USD",
+      "usd": 15000000
+    },
+    "lider": "Accel",
+    "katilanlar": [
+      "Ann-Kristin Achleitner",
+      "Bastian Nominacher",
+      "Marc Bitzer",
+      "Markus Flik",
+      "Fortino",
+      "Booom",
+      "UVC"
+    ],
+    "kurucular": [
+      "Florian Diegruber",
+      "August DuMont Schütte"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-03T13:43:27.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/",
+      "baslik": "Atira raises $17.5M to bring AI orchestration to industrial sales",
+      "tarih": "Thu, 03 Sep 2026 13:43:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Munich-based AI company Atira has raised $15 million in seed funding to expand its platform for automating industrial sales engineering.",
+      "kaynak_url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/03/atira-raises-175m-to-bring-ai-orchestration-to-industrial-sales/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

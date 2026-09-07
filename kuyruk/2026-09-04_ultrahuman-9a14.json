@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-04_ultrahuman-9a14",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Ultrahuman",
+    "domain": null,
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 70000000,
+      "birim": "USD",
+      "usd": 70000000
+    },
+    "lider": "Qualcomm Ventures",
+    "katilanlar": [
+      "Nexus Venture Partners",
+      "Alteria Capital",
+      "Blume Ventures",
+      "Alpha Wave",
+      "Labcorp"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-04T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/04/saglik-teknolojileri-gelistiren-ultrahuman-70-milyon-dolar-yatirim-aldi/",
+      "baslik": "Sağlık teknolojileri geliştiren Ultrahuman, 70 milyon dolar yatırım aldı",
+      "tarih": "Fri, 04 Sep 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sağlık teknolojileri geliştiren Ultrahuman , 70 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/04/saglik-teknolojileri-gelistiren-ultrahuman-70-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

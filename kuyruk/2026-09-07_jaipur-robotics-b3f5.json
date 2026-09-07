@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-07_jaipur-robotics-b3f5",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Jaipur Robotics",
+    "domain": "jaipurrobotics.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4300000,
+      "birim": "EUR",
+      "usd": 4644000
+    },
+    "lider": "EquityPitcher Ventures",
+    "katilanlar": [
+      "High-Tech Gründerfonds (HTGF)"
+    ],
+    "kurucular": [
+      "Ermes Zamboni",
+      "Nikhil Prakash"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-07T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/",
+      "baslik": "Swiss startup Jaipur Robotics raises €4.3 million to expand its AI operating system across more waste-to-energy plants",
+      "tarih": "Mon, 07 Sep 2026 08:47:31 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/07/jaipur-robotics-raises-eur43m-to-bring-computer-vision-to-waste-plants/",
+      "baslik": "Jaipur Robotics raises €4.3M to bring computer vision to waste plants",
+      "tarih": "Mon, 07 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Jaipur Robotics , the Swiss AI company transforming waste plant operations with computer vision and automation, today announced a €4.3 million Seed funding round to pursue market leadership, expand in",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/swiss-startup-jaipur-robotics-raises-e4-3-million-to-expand-its-ai-operating-system-across-more-waste-to-energy-and-industrial-plants/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}

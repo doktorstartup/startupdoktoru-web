@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-04_ai-40cb",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "AI",
+    "domain": "aiscore.ai",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5400000,
+      "birim": "USD",
+      "usd": 5400000
+    },
+    "lider": "Fuel Ventures",
+    "katilanlar": [
+      "GALLOS Technologies"
+    ],
+    "kurucular": [
+      "Alex Harland",
+      "Benita Tibb"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-04T09:57:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/04/uk-startup-ai-score-raises-54m-to-scale-its-enterprise-ai-governance-platform/",
+      "baslik": "UK startup AI Score raises $5.4M to scale its enterprise AI governance platform",
+      "tarih": "Fri, 04 Sep 2026 10:45:51 +0000"
+    },
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/londons-ai-score-raises-e4-6-million-to-help-businesses-keep-ai-agents-under-control/",
+      "baslik": "London&#8217;s AI Score raises €4.6 million to help businesses keep AI agents under control",
+      "tarih": "Fri, 04 Sep 2026 09:57:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based AI governance company AI Score has raised $5.4 million in seed funding to further develop its platform for managing the use of generative and agentic AI across organisations.",
+      "kaynak_url": "https://tech.eu/2026/09/04/uk-startup-ai-score-raises-54m-to-scale-its-enterprise-ai-governance-platform/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/04/uk-startup-ai-score-raises-54m-to-scale-its-enterprise-ai-governance-platform/"
+    }
+  ],
+  "olusturma": "2026-09-07T10:12:08.304Z"
+}
