@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifySvix } from "../../../../lib/svix";
+import { noteInvestorReply } from "../../../../lib/invest-interest";
 
 // Resend Inbound (gelen mail/cevap) webhook → ds_inbound_emails.
 // from_email → yatırımcı eşleşmesi + son 'invest' mesajıyla ilişkilendirme.
@@ -131,6 +132,12 @@ export async function POST(req: NextRequest) {
     }],
     providerId ? { onConflict: "provider_id", ignoreDuplicates: true } : undefined,
   );
+
+  // Eşleşen yatırımcı yanıt verdiyse: outreach 'replied' + ekibe bildir (ilgi işaretini ezmez).
+  if (matchedInvestor) {
+    try { await noteInvestorReply(matchedInvestor, from.email, preview); }
+    catch (e) { console.error("noteInvestorReply:", e); }
+  }
 
   return NextResponse.json({ ok: true, matchedInvestor: !!matchedInvestor });
 }

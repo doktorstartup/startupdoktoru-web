@@ -186,9 +186,12 @@ export default function CheckoutForm({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-6"
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-sm"
       onClick={handleClose}
     >
+      {/* min-h-full + items-center: kısa formda ortalar, uzun formda (Stripe Link açılınca)
+          overlay kaydırılır → "Ödemeyi Tamamla" butonu her zaman erişilebilir (PC + mobil). */}
+      <div className="flex min-h-full items-center justify-center p-4 sm:p-6">
       <div
         className="relative w-full max-w-md rounded-3xl border border-border/80 bg-[#0E1726] shadow-2xl p-8 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
@@ -297,6 +300,7 @@ export default function CheckoutForm({
             <PaymentStep productQuery={productQuery} />
           </Elements>
         )}
+        </div>
       </div>
     </div>
   );

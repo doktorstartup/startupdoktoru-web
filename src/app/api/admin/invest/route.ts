@@ -24,6 +24,7 @@ export async function GET(req: NextRequest) {
   if (sector) query = query.contains("sectors", [sector]);
   const stage = sp.get("stage");
   if (stage) query = query.contains("stages", [stage]);
+  if (sp.get("interested") === "1") query = query.not("interest_at", "is", null);
   const q = (sp.get("q") || "").trim();
   if (q) {
     const like = `%${q}%`;

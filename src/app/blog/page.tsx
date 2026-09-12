@@ -3,11 +3,13 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { SiteHeader } from "../../components/SiteHeader";
 import { SiteFooter } from "../../components/SiteFooter";
 import { supabaseAdmin } from "../../lib/supabase";
+import { pageMeta } from "../../lib/seo";
 
-export const metadata = {
-  title: "Blog — Startup Doktoru",
-  description: "Girişimcilik, yatırım, değerleme ve büyüme üzerine uygulanabilir yazılar.",
-};
+export const metadata = pageMeta({
+  path: "/blog",
+  title: "Startup Blogu — Girişimcilik ve Yatırım | Startup Doktoru",
+  description: "Girişimcilik, yatırım, şirket değerleme ve büyüme üzerine uygulanabilir yazılar. Startup dünyasından haberler ve saha notları.",
+});
 
 // Her istekte tazele (yeni yazılar anında görünsün)
 export const dynamic = "force-dynamic";

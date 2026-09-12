@@ -1,0 +1,27 @@
+# Startup Doktoru
+
+> Türkiye'den girişimciler için startup eğitimi. 10 yıllık startup ve yatırım
+> tecrübesiyle; yatırımcı sunumu hazırlama, şirket değerleme ve startup kurulumu
+> üzerine video eğitimler, e-kitap ve ücretsiz içerikler. Eser Memişoğlu tarafından
+> hazırlanır. İçerik dili Türkçe'dir.
+
+## Eğitimler
+
+- [Yatırımcı Sunumu Hazırlama](https://startupdoktoru.com/investor-training): Yatırım almış gerçek bir pitch deck üzerinden slayt slayt sunum hazırlama. 5 modül, 134 dakika, 70 USD.
+- [Startup Giriş Rehberi](https://startupdoktoru.com/startup-giris): Doğru inovasyon, over-engineering, marka konumlandırma, MVP, ekip kurma ve rakip analizi. 70 USD.
+- [Startup Değerleme & Yatırımcı Pazarlığı](https://startupdoktoru.com/degerleme): Berkus, puan kartı, risk faktörleri ve DCF yöntemleriyle değerleme; yatırımcı pazarlığı. 70 USD.
+- [Tüm eğitimler](https://startupdoktoru.com/egitimler): Üç eğitimin tamamı tek pakette, 99 USD.
+
+## Ücretsiz ve giriş seviyesi
+
+- [Ücretsiz startup eğitimi](https://startupdoktoru.com/free-training): 12 dakikalık video eğitim; kayıt olmak yeterli.
+- [Startup e-kitabı](https://startupdoktoru.com/ebook): İnovasyondan değerlemeye 13 bölüm, 6 USD.
+
+## İçerik
+
+- [Blog](https://startupdoktoru.com/blog): Girişimcilik, yatırım, değerleme ve büyüme üzerine yazılar; startup dünyasından haberler.
+- [Site haritası](https://startupdoktoru.com/sitemap.xml)
+
+## İletişim
+
+- Site: https://startupdoktoru.com

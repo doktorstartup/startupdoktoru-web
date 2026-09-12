@@ -12,9 +12,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
-const TITLE = "Startup Doktoru — Yatırımcı Sunumu Nasıl Yapılır & Ücretsiz Startup Eğitimi";
+// Ana sayfanın başlığı. "yatırımcı sunumu nasıl yapılır" sorgusu /investor-training
+// sayfasına bırakıldı; sayfalar aynı sorguda birbiriyle yarışmasın.
+const TITLE = "Startup Doktoru — Ücretsiz Startup Eğitimi ve Yatırım Rehberi";
 const DESC =
-  "Yatırım almış gerçek bir sunum üzerinden yatırımcı sunumu nasıl yapılır öğrenin. 12 dakikalık ücretsiz startup eğitimi ile başlayın. 10 yıllık startup ve yatırım tecrübesi.";
+  "Yatırım almış gerçek bir sunum üzerinden startup eğitimi. 12 dakikalık ücretsiz eğitimle başlayın; e-kitap ve video eğitimlerle devam edin. 10 yıllık saha tecrübesi.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),

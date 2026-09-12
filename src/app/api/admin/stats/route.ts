@@ -39,10 +39,13 @@ export async function GET(req: NextRequest) {
       .select("id", { count: "exact", head: true });
 
     // Ödenmiş siparişler (müşteri + gelir)
+    // .not product_id: paylaşılan Stripe hesabına gelen YABANCI ödemeler (bizim checkout'umuzdan
+    // çıkmadığı için productId taşımaz) ciroya ve müşteri sayısına GİRMEZ — yalnız bizim satışlarımız.
     const { data: paidOrders } = await supabaseAdmin
       .from("ds_orders")
       .select("id, email, amount")
-      .eq("payment_status", "paid");
+      .eq("payment_status", "paid")
+      .not("product_id", "is", null);
 
     const revenue = (paidOrders || []).reduce((sum, o) => sum + Number(o.amount || 0), 0);
 
@@ -65,6 +68,7 @@ export async function GET(req: NextRequest) {
     const { data: recentOrders } = await supabaseAdmin
       .from("ds_orders")
       .select("id, email, product_id, amount, currency, payment_status, created_at")
+      .not("product_id", "is", null)
       .order("created_at", { ascending: false })
       .limit(5);
 

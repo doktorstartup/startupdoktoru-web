@@ -31,6 +31,14 @@ export async function POST(req: NextRequest) {
     const pi = event.data.object as Stripe.PaymentIntent;
     const { productId, email, name, phone, discountCode } = pi.metadata || {};
 
+    // Paylaşılan Stripe hesabı koruması: yalnız BİZİM checkout'umuzdan çıkan ödemeler
+    // productId metadata'sı taşır (api/checkout her zaman set eder). productId yoksa bu ödeme
+    // bize ait değildir (hesabı paylaştığımız kişinin kendi satışı) → ciroya/siparişe yazma, atla.
+    if (!productId) {
+      console.log("Bize ait olmayan ödeme (productId yok) atlandı:", pi.id);
+      return NextResponse.json({ received: true, ignored: "not_ours" });
+    }
+
     // Sipariş kaydı (service role — RLS bypass).
     // payment_ref UNIQUE olduğundan upsert ile webhook tekrarında mükerrer önlenir.
     // .select() ile dönen satır sayısı, kaydın YENİ eklenip eklenmediğini söyler
