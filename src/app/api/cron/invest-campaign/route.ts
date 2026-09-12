@@ -12,7 +12,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Günlük gönderim tavanı — INVEST_DAILY_CAP env ile ayarlanır (ısıtma için ilk hafta düşük tut).
-const DAILY_CAP = Math.max(1, Math.min(Number(process.env.INVEST_DAILY_CAP) || 50, 200));
+const DAILY_CAP = Math.max(1, Math.min(Number(process.env.INVEST_DAILY_CAP) || 25, 200));
 const SEGMENT = "tier1-invite";
 
 type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null; country: string | null; sectors: string[] | null; stages: string[] | null; role: string | null };
