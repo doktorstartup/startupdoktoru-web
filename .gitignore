@@ -54,3 +54,6 @@ ebook-15mb-backup.pdf
 # haber toplayıcı bağımlılıkları (playwright-core + ffmpeg-static, ~54 MB).
 # Kök /node_modules kalıbı alt klasörleri yakalamıyor.
 scripts/haber/node_modules
+
+# Claude Code kişisel izin/ayarları (git izinleri vb.) — repoya girmez.
+.claude/settings.local.json

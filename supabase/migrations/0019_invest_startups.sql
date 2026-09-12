@@ -26,7 +26,7 @@ insert into inv_startups (name, disclose_name, descriptor, sectors, stages, one_
  'an autonomous marketing decision engine for e-commerce brands, already revenue-generating (246 connected stores, ₺7M+ of customer revenue recovered in the last 30 days)',
  'opening its first round',
  true, true),
-('GRİSTEK', true,
+('GRİSTEK', false,
  'a patented Turkish water-tech / deep-tech startup with embedded health-sensing',
  array['cleantech','climatetech','watertech','deeptech','iot','hardware','healthtech','impact','sustainability','energytech'],
  array['seed'],
