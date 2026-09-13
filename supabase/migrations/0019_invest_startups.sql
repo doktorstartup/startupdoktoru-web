@@ -23,14 +23,14 @@ insert into inv_startups (name, disclose_name, descriptor, sectors, stages, one_
  'a revenue-generating Turkish marketing-AI startup',
  array['ecommerce','marketing','martech','ai','saas','b2b-saas','retail'],
  array['pre-seed','seed'],
- 'an autonomous marketing decision engine for e-commerce brands, already revenue-generating (246 connected stores, ₺7M+ of customer revenue recovered in the last 30 days)',
- 'opening its first round',
+ 'an autonomous marketing decision engine for e-commerce brands — already profitable on recurring revenue (246 connected stores, ₺7M+ of customer revenue recovered in the last 30 days), so it sustains itself',
+ 'opening a small $300K first round',
  true, true),
 ('GRİSTEK', false,
  'a patented Turkish water-tech / deep-tech startup with embedded health-sensing',
  array['cleantech','climatetech','watertech','deeptech','iot','hardware','healthtech','impact','sustainability','energytech'],
  array['seed'],
- 'patented IoT greywater-recovery hardware, already deployed at a major Turkish bank and municipalities at 99% measured efficiency, whose embedded sensors open a deeper health-analytics and patent play (Water-as-a-Service model)',
+ 'patented IoT greywater-recovery hardware, already deployed with municipalities at 99% measured efficiency, whose embedded sensors open a deeper health-analytics and patent play (Water-as-a-Service model)',
  'raising a $1.5M seed round to scale production',
  false, true)
 on conflict (name) do nothing;
