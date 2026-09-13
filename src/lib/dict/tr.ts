@@ -54,6 +54,7 @@ export const tr = {
     solution: "Çözümümüz",
     ebook: "E-Kitap",
     training: "Eğitimler",
+    blog: "Blog",
     about: "Hakkında",
   },
 

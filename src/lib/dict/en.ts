@@ -51,6 +51,7 @@ export const en: Dict = {
     solution: "Our Solution",
     ebook: "Ebook",
     training: "Courses",
+    blog: "Blog",
     about: "About",
   },
 

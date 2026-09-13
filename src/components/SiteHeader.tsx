@@ -22,11 +22,13 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
   const t = useT();
   const href = useHref();
 
+  // "#" ile başlayanlar ana sayfa içi çapa; diğerleri ayrı sayfa (dile göre üretilir).
   const navLinks = [
     { href: "#problem", label: t.nav.problem },
     { href: "#value-ladder", label: t.nav.solution },
     { href: "#ebook", label: t.nav.ebook },
     { href: "#training", label: t.nav.training },
+    { href: href("/blog"), label: t.nav.blog },
     { href: "#about", label: t.nav.about },
   ];
 
@@ -40,11 +42,17 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-primary transition-colors">
-              {l.label}
-            </a>
-          ))}
+          {navLinks.map((l) =>
+            l.href.startsWith("#") ? (
+              <a key={l.href} href={l.href} className="hover:text-primary transition-colors">
+                {l.label}
+              </a>
+            ) : (
+              <Link key={l.href} href={l.href} className="hover:text-primary transition-colors">
+                {l.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -109,16 +117,27 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
               </button>
             </div>
             <nav className="flex flex-col gap-1 text-base font-semibold text-foreground">
-              {navLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="py-3 px-2 rounded-lg hover:bg-secondary/40 hover:text-primary transition-colors"
-                >
-                  {l.label}
-                </a>
-              ))}
+              {navLinks.map((l) =>
+                l.href.startsWith("#") ? (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="py-3 px-2 rounded-lg hover:bg-secondary/40 hover:text-primary transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="py-3 px-2 rounded-lg hover:bg-secondary/40 hover:text-primary transition-colors"
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
             </nav>
             <div className="mt-auto flex flex-col gap-3">
               <LanguageSwitcher className="justify-center py-2" available={availableLocales} />
