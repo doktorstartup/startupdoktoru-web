@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { processDue, processWeekly } from "../../../../lib/campaigns";
+import { buildDigest } from "../../../../lib/watchdog";
+import { notifyAdmin } from "../../../../lib/email";
 
 // Kampanya işleyici (cron). Günlük çalışır:
 //  - Her gün: gecikmeli kampanyalar (sepet, takip, ilgi...) → processDue.
@@ -24,5 +26,15 @@ export async function GET(req: NextRequest) {
     weeklySent = await processWeekly();
   }
 
-  return NextResponse.json({ ok: true, processed, weeklySent, isSundayTR: trDay === 0 });
+  // Bekçi: günlük özet + gözden kaçanları uyar (hata olsa da cron'u düşürmesin).
+  let watchdog: { alertCount: number } | { error: string };
+  try {
+    const { subject, html, alertCount } = await buildDigest();
+    await notifyAdmin(subject, html);
+    watchdog = { alertCount };
+  } catch (e) {
+    watchdog = { error: e instanceof Error ? e.message : String(e) };
+  }
+
+  return NextResponse.json({ ok: true, processed, weeklySent, isSundayTR: trDay === 0, watchdog });
 }
