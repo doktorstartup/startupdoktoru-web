@@ -20,7 +20,7 @@ Kısıtlamalar:
 
 Startup Doktoru Ürünleri:
 1. Ücretsiz Eğitim: "Startup'ların Yatırımcı Karşısında Yaptığı 7 Ölümcül Hata" → /free-training
-2. E-Kitap (12 $ yerine 6 $): "13 Adımda Milyon Dolarlık Startup" → /ebook
+2. E-Kitap (12 $ yerine 6 $): "Hedef Milyon Dolar" — basılı kitabın dijital sürümü → /ebook
 3. Video Eğitimler (70 $, e-kitap alana 35 $; 3'ü birden paket 99 $): Yatırımcı Sunumu, Startup Giriş Rehberi, Değerleme → /egitimler`;
 
 // /en tarafındaki ziyaretçiye İngilizce yanıt verilir.
@@ -39,7 +39,7 @@ Constraints:
 
 Startup Doktoru products:
 1. Free training: "The 7 Fatal Mistakes Startups Make in Front of Investors" → /en/free-training
-2. Ebook ($6, down from $12): "A Million-Dollar Startup in 13 Steps" → /en/ebook
+2. Ebook ($6, down from $12): "Hedef Milyon Dolar" — the digital edition of the printed book → /en/ebook
 3. Video courses ($70, $35 for ebook owners; all three bundled at $99): Investor Pitch Deck, Startup Founding Guide, Valuation → /en/egitimler`;
 
 export async function POST(req: NextRequest) {

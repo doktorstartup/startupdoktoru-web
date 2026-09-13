@@ -57,8 +57,8 @@ export const KITAP: Kitap | null = {
 export const KITAP_METIN = {
   eyebrowCikti: "Yeni Kitap",
   eyebrowYakinda: "Çok Yakında",
-  durumCikti: "Çıktı — kitapçınızdan istemeyi unutmayın.",
-  durumYakinda: "Çok yakında kitapçılarda.",
+  durumCikti: "Çıktı — tüm online platformlardan ve kitapçınızdan alabilirsiniz.",
+  durumYakinda: "Çok yakında kitapçılarda ve tüm online platformlarda.",
   satinAl: "Nereden alınır:",
 
   formatBaslik: "İki format, aynı kitap",

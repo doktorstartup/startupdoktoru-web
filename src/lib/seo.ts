@@ -21,13 +21,18 @@ export function pageMeta({
   path,
   title,
   description,
+  image,
 }: {
   lang: Locale;
   path: string;
   title: string;
   description: string;
+  image?: { url: string; width: number; height: number }; // verilmezse portre kullanılır
 }): Metadata {
   const url = `${SITE}${localePath(lang, path)}`;
+  const gorsel = image
+    ? [{ ...image, alt: title }]
+    : [{ url: "/eser-memisoglu.png", width: 2048, height: 2048, alt: "Startup Doktoru" }];
   return {
     title,
     description,
@@ -39,13 +44,13 @@ export function pageMeta({
       url,
       title,
       description,
-      images: [{ url: "/eser-memisoglu.png", width: 2048, height: 2048, alt: "Startup Doktoru" }],
+      images: gorsel,
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/eser-memisoglu.png"],
+      images: gorsel.map((g) => g.url),
     },
   };
 }

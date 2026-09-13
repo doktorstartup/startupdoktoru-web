@@ -158,7 +158,7 @@ export const tr = {
 
     ebookSection: {
       eyebrow: "Dijital Dönüşüm El Kitabı",
-      title: "13 Adımda Milyon Dolarlık Startup",
+      title: "Hedef Milyon Dolar",
       body: "Bu kitap, son 10 yılda edindiğimiz inovasyon, yatırımcılık ve büyüme tecrübelerinin damıtılmış bir özetidir. Adım adım şirketinizin omurgasını nasıl kuracağınızı örneklerle öğretir.",
       chapters: [
         "01. İnovasyon & Faydalı Fikir",
@@ -174,10 +174,6 @@ export const tr = {
       ],
       cta: "E-Kitabı İndir (6 $)",
       cardTag: "Sistem Kitabı",
-      cardTitleTop: "13 Adımda",
-      cardTitleMid: "Milyon Dolarlık",
-      cardTitleBottom: "Startup",
-      cardNote: "plansız kervan kurmaya son veren büyüme yol haritası.",
     },
 
     trainingSection: {
@@ -251,7 +247,7 @@ export const tr = {
     },
 
     stickyBar: {
-      title: "13 Adımda Milyon Dolarlık Startup",
+      title: "Hedef Milyon Dolar",
       meta: "E-Kitap ·",
       cta: "Hemen Al · 6 $",
     },
@@ -279,7 +275,7 @@ export const tr = {
     discountBadge: "%50 İndirim · Hemen Yakala",
     close: "Kapat",
     title: "Gitmeden önce dur!",
-    bodyStrong: "13 Adımda Milyon Dolarlık Startup",
+    bodyStrong: "Hedef Milyon Dolar",
     bodyRest: " e-kitabını ilk siparişe özel yarı fiyatına al.",
     emailPlaceholder: "e-posta adresin",
     cta: "Hemen 6 $'a Al",
@@ -291,7 +287,7 @@ export const tr = {
   ebookPage: {
     backHome: "Ana Sayfa",
     badge: "Milyon Dolarlık Startup Rehberi",
-    title: "13 Adımda Milyon Dolarlık Startup",
+    title: "Hedef Milyon Dolar",
     intro:
       "10 yıllık startup kuruculuğu, inovasyon ve yatırım yönetimi tecrübesinin damıtılmış tek kitabı. Girişiminizi bir 'kaos yığını' olmaktan çıkarıp, otomatik işleyen kârlı bir büyüme makinesine dönüştürün.",
     features: [
@@ -303,10 +299,6 @@ export const tr = {
     discountBadge: "%50 indirim",
     cta: "Hemen 6 $'a Sahip Ol",
     cardTag: "PDF Sürüm",
-    cardTitleTop: "13 Adımda",
-    cardTitleMid: "Milyon Dolarlık",
-    cardTitleBottom: "Startup",
-    cardNote: "Plansız kervan kurmaya son veren dijital el kitabı.",
     chaptersEyebrow: "İçindekiler",
     chaptersTitle: "Kitap Bölümleri ve Müfredat",
     chaptersLead: "Kitap boyunca derinlemesine inceleyeceğimiz ve girişiminizde uygulayacağınız 13 bölüm:",
@@ -527,7 +519,7 @@ export const tr = {
     upsellEyebrow: "BİR SONRAKİ ADIM",
     upsellTitle: "Milyon dolarlık startup kurmanın tüm şifrelerini çözün!",
     upsellBodyBefore: "Check-up, MVP geliştirme, funnel kurulumu ve büyüme otomasyonlarını içeren ",
-    upsellBodyStrong: "13 Adımda Milyon Dolarlık Startup E-Kitabımızı",
+    upsellBodyStrong: "Hedef Milyon Dolar E-Kitabımızı",
     upsellBodyAfter: " edinin.",
     upsellCta: "E-Kitabı Edin (6 $)",
   },
@@ -537,7 +529,7 @@ export const tr = {
     titleEbook: "E-Kitabınız Hazır!",
     titleCourse: "Erişiminiz Açıldı!",
     bodyEbook:
-      "13 Adımda Milyon Dolarlık Startup e-kitabınız başarıyla satın alındı. Aşağıdan indirmeye başlayabilirsiniz. İndirme linki e-posta adresinize de iletildi.",
+      "Hedef Milyon Dolar e-kitabınız başarıyla satın alındı. Aşağıdan indirmeye başlayabilirsiniz. İndirme linki e-posta adresinize de iletildi.",
     bodyCourse:
       "Satın aldığınız eğitime tam erişiminiz açıldı. Öğrenci portalına giriş yaparak izlemeye başlayabilirsiniz.",
     ctaEbook: "E-Kitabı İndir",
@@ -607,10 +599,10 @@ export const tr = {
     belgeHazirlaniyor: "Bu belge hazırlanıyor, çok yakında burada olacak.",
     belgelerBaslik: "Dosyalarım",
     ebookEmptyTitle: "E-kitabın burada görünecek",
-    ebookEmptyBodyBefore: "Bu e-posta ile e-kitap satın alımı bulunamadı. 13 Adımda Milyon Dolarlık Startup e-kitabını ",
+    ebookEmptyBodyBefore: "Bu e-posta ile e-kitap satın alımı bulunamadı. Hedef Milyon Dolar e-kitabını ",
     ebookEmptyBodyAfter: "'a edinebilirsin.",
     ebookEmptyCta: "E-Kitabı Al (6 $)",
-    ebookTitle: "13 Adımda Milyon Dolarlık Startup",
+    ebookTitle: "Hedef Milyon Dolar",
     ebookLead: "Kitabını burada, site içinde okuyabilirsin.",
     ebookFooter: "Erişimin hesabına tanımlı — istediğin zaman buradan okuyabilirsin.",
     ebookError: "E-kitap açılamadı.",

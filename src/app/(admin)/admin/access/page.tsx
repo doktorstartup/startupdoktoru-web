@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { KeyRound, UserPlus, Loader2, Check, X, ShieldCheck, Search } from "lucide-react";
 
 const PRODUCTS = [
-  { id: "ebook_13_steps", label: "E-Kitap (13 Adımda Milyon Dolarlık Startup)" },
+  { id: "ebook_13_steps", label: "E-Kitap (Hedef Milyon Dolar)" },
   { id: "investor_training", label: "Yatırımcı Sunumu Hazırlama" },
   { id: "startup_giris", label: "Startup Giriş Rehberi" },
   { id: "degerleme", label: "Startup Değerleme & Pazarlık" },

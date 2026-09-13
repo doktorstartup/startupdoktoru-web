@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Check,
   BookOpen,
@@ -85,33 +86,21 @@ export default function EBookLanding() {
             </div>
           </div>
 
-          {/* Book Mockup Frame */}
+          {/* Basılı kitabın gerçek kapağı — dijital sürüm aynı kitap */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative h-96 w-72 rounded-2xl bg-gradient-to-br from-[#0F213A] to-background border border-primary/20 shadow-2xl p-8 flex flex-col justify-between overflow-hidden group">
-              <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
-              <div className="flex justify-between items-start">
-                <span className="text-xs font-bold text-primary font-mono tracking-widest uppercase">E-Book</span>
-                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">{t.cardTag}</span>
-              </div>
-              <div className="my-8">
-                <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground font-sans">
-                  {t.cardTitleTop}<br />
-                  <span className="text-primary font-bold">{t.cardTitleMid}</span><br />
-                  {t.cardTitleBottom}
-                </h3>
-                <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
-                  {t.cardNote}
-                </p>
-              </div>
-              <div className="flex justify-between items-center border-t border-border/40 pt-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-[10px]">
-                    SD
-                  </div>
-                  <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Eser Memişoğlu</span>
-                </div>
-                <div className="text-lg font-bold font-mono text-accent">{all.prices.ebookNew}</div>
-              </div>
+            <div className="relative">
+              <Image
+                src="/kitap-kapak.webp"
+                alt={`${t.title} — kitap kapağı`}
+                width={1000}
+                height={1445}
+                sizes="(max-width: 640px) 256px, 288px"
+                priority
+                className="w-64 sm:w-72 h-auto rounded-lg shadow-2xl ring-1 ring-border/40"
+              />
+              <span className="absolute top-3 right-3 text-[10px] font-bold px-2 py-1 rounded-full bg-background/90 border border-accent/30 text-accent uppercase tracking-widest backdrop-blur-sm">
+                {t.cardTag}
+              </span>
             </div>
           </div>
 

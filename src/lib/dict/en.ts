@@ -156,7 +156,7 @@ export const en: Dict = {
 
     ebookSection: {
       eyebrow: "The Digital Transformation Handbook",
-      title: "A Million-Dollar Startup in 13 Steps",
+      title: "Hedef Milyon Dolar",
       body: "This book distills ten years of innovation, fundraising and growth experience. Step by step, with real examples, it shows you how to build the backbone of your company.",
       chapters: [
         "01. Innovation & a Useful Idea",
@@ -172,10 +172,6 @@ export const en: Dict = {
       ],
       cta: "Download the Ebook ($6)",
       cardTag: "The System Book",
-      cardTitleTop: "A Million-Dollar",
-      cardTitleMid: "Startup",
-      cardTitleBottom: "in 13 Steps",
-      cardNote: "the growth roadmap that puts an end to figuring it out on the way.",
     },
 
     trainingSection: {
@@ -249,7 +245,7 @@ export const en: Dict = {
     },
 
     stickyBar: {
-      title: "A Million-Dollar Startup in 13 Steps",
+      title: "Hedef Milyon Dolar",
       meta: "Ebook ·",
       cta: "Get It · $6",
     },
@@ -278,7 +274,7 @@ export const en: Dict = {
     discountBadge: "50% off · Grab it now",
     close: "Close",
     title: "Wait — before you go!",
-    bodyStrong: "A Million-Dollar Startup in 13 Steps",
+    bodyStrong: "Hedef Milyon Dolar",
     bodyRest: " — get the ebook at half price on your first order.",
     emailPlaceholder: "your email address",
     cta: "Get It for $6",
@@ -291,7 +287,7 @@ export const en: Dict = {
   ebookPage: {
     backHome: "Home",
     badge: "The Million-Dollar Startup Guide",
-    title: "A Million-Dollar Startup in 13 Steps",
+    title: "Hedef Milyon Dolar",
     intro:
       "Ten years of founding startups, innovation work and investment management, distilled into a single book. Turn your company from a pile of chaos into a profitable growth machine that runs itself.",
     features: [
@@ -303,10 +299,6 @@ export const en: Dict = {
     discountBadge: "50% off",
     cta: "Get It Now for $6",
     cardTag: "PDF Edition",
-    cardTitleTop: "A Million-Dollar",
-    cardTitleMid: "Startup",
-    cardTitleBottom: "in 13 Steps",
-    cardNote: "The digital handbook that ends figuring it out as you go.",
     chaptersEyebrow: "Contents",
     chaptersTitle: "Chapters and Curriculum",
     chaptersLead: "The 13 chapters we go through in depth — and that you apply in your own company:",
@@ -533,7 +525,7 @@ export const en: Dict = {
     upsellEyebrow: "THE NEXT STEP",
     upsellTitle: "Unlock everything it takes to build a million-dollar startup",
     upsellBodyBefore: "Get ",
-    upsellBodyStrong: "A Million-Dollar Startup in 13 Steps",
+    upsellBodyStrong: "Hedef Milyon Dolar",
     upsellBodyAfter: " — covering check-ups, MVP development, funnel setup and growth automation.",
     upsellCta: "Get the Ebook ($6)",
   },
@@ -544,7 +536,7 @@ export const en: Dict = {
     titleEbook: "Your Ebook Is Ready!",
     titleCourse: "Your Access Is Open!",
     bodyEbook:
-      "Your copy of A Million-Dollar Startup in 13 Steps has been purchased. You can start downloading below — the link has also been sent to your email address.",
+      "Your copy of Hedef Milyon Dolar has been purchased. You can start downloading below — the link has also been sent to your email address.",
     bodyCourse:
       "You now have full access to the course you purchased. Log in to the student portal to start watching.",
     ctaEbook: "Download the Ebook",
@@ -615,10 +607,10 @@ export const en: Dict = {
     belgeHazirlaniyor: "This document is being prepared and will be here shortly.",
     belgelerBaslik: "My Files",
     ebookEmptyTitle: "Your ebook will appear here",
-    ebookEmptyBodyBefore: "We found no ebook purchase for this email. You can get A Million-Dollar Startup in 13 Steps for ",
+    ebookEmptyBodyBefore: "We found no ebook purchase for this email. You can get Hedef Milyon Dolar for ",
     ebookEmptyBodyAfter: ".",
     ebookEmptyCta: "Get the Ebook ($6)",
-    ebookTitle: "A Million-Dollar Startup in 13 Steps",
+    ebookTitle: "Hedef Milyon Dolar",
     ebookLead: "You can read your book right here on the site.",
     ebookFooter: "Access is tied to your account — come back and read any time.",
     ebookError: "The ebook could not be opened.",

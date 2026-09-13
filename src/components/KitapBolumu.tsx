@@ -1,10 +1,45 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { BookOpen, Check, ExternalLink, Sparkles, Download } from "lucide-react";
 import { KITAP, KITAP_METIN as M } from "../lib/kitap";
 import { useHref, useLang, useT } from "../lib/i18n-client";
+
+// Bölüm görüş alanına girince bir kez açılır. Kütüphane yok; IntersectionObserver
+// + CSS geçişi. Hareketi azalt tercihi açık olan kullanıcıda geçiş motion-reduce
+// sınıflarıyla devre dışı kalır.
+function useGorunum<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [gorundu, setGorundu] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([giris]) => {
+        if (giris.isIntersecting) {
+          setGorundu(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return { ref, gorundu };
+}
+
+// Açılış geçişi: sırayla gelsin diye her öğeye küçük bir gecikme veriliyor.
+const acilis = (gorundu: boolean, gecikme = 0) => ({
+  className: `transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
+    gorundu ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+  }`,
+  style: { transitionDelay: `${gecikme}ms` },
+});
 
 // Basılı kitabın tanıtımı + dijital sürümle ilişkisi.
 // Kitap girilmemişse ya da İngilizce taraftaysak bölüm hiç render edilmez.
@@ -12,38 +47,64 @@ export function KitapBolumu() {
   const lang = useLang();
   const all = useT();
   const href = useHref();
+  const { ref, gorundu } = useGorunum<HTMLDivElement>();
 
   if (!KITAP || !KITAP.yayinda || lang !== "tr") return null;
   const cikti = KITAP.durum === "cikti";
 
   return (
-    <section id="kitap" className="py-20 md:py-32 bg-black/40 border-y border-border/10">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="kitap" className="py-20 md:py-32 bg-black/40 border-y border-border/10 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8" ref={ref}>
         {/* Kitap tanıtımı */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="lg:col-span-5 flex justify-center relative">
+            {/* Kapağın arkasındaki altın parıltı — kapakla birlikte açılır */}
+            <div
+              aria-hidden
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-80 rounded-full bg-amber-400/10 blur-[100px] transition-opacity duration-1000 motion-reduce:transition-none ${
+                gorundu ? "opacity-100" : "opacity-0"
+              }`}
+            />
             <Image
               src={KITAP.kapak}
               alt={`${KITAP.baslik} — kitap kapağı`}
               width={1000}
               height={1445}
               sizes="(max-width: 640px) 256px, 288px"
-              className="w-64 sm:w-72 h-auto rounded-lg shadow-2xl ring-1 ring-border/40"
+              className={`relative w-64 sm:w-72 h-auto rounded-lg shadow-2xl ring-1 ring-border/40 transition-all duration-1000 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:scale-100 ${
+                gorundu ? "opacity-100 scale-100" : "opacity-0 scale-95"
+              }`}
             />
           </div>
 
           <div className="lg:col-span-7 flex flex-col items-start">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-xs text-accent font-semibold uppercase tracking-wider mb-6">
+            <span
+              style={acilis(gorundu, 150).style}
+              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-xs text-accent font-semibold uppercase tracking-wider mb-6 ${acilis(gorundu, 150).className}`}
+            >
               <Sparkles className="h-3.5 w-3.5" />
               {cikti ? M.eyebrowCikti : M.eyebrowYakinda}
             </span>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-3">
+            <h2
+              style={acilis(gorundu, 250).style}
+              className={`text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-3 ${acilis(gorundu, 250).className}`}
+            >
               {KITAP.baslik}
             </h2>
-            <p className="text-lg text-primary font-semibold mb-6">{KITAP.altBaslik}</p>
+            <p
+              style={acilis(gorundu, 320).style}
+              className={`text-lg text-primary font-semibold mb-6 ${acilis(gorundu, 320).className}`}
+            >
+              {KITAP.altBaslik}
+            </p>
 
-            <p className="text-muted-foreground leading-relaxed mb-6 text-base max-w-xl">{KITAP.ozet}</p>
+            <p
+              style={acilis(gorundu, 400).style}
+              className={`text-muted-foreground leading-relaxed mb-6 text-base max-w-xl ${acilis(gorundu, 400).className}`}
+            >
+              {KITAP.ozet}
+            </p>
 
             {KITAP.sorular.length > 0 && (
               <ul className="space-y-3 mb-8 max-w-xl">
@@ -56,7 +117,10 @@ export function KitapBolumu() {
               </ul>
             )}
 
-            <p className="text-sm font-bold text-foreground mb-6">
+            <p
+              style={acilis(gorundu, 560).style}
+              className={`text-sm font-bold text-foreground mb-6 ${acilis(gorundu, 560).className}`}
+            >
               {cikti ? M.durumCikti : M.durumYakinda}
               {KITAP.fiyat && <span className="text-muted-foreground font-normal"> · {KITAP.fiyat}</span>}
             </p>

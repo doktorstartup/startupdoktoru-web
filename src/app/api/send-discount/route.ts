@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
         html: `
           <div style="font-family:sans-serif;max-width:480px;margin:auto">
             <h2>Hoş geldin! 🎁</h2>
-            <p>13 Adımda Milyon Dolarlık Startup e-kitabında geçerli <strong>%10 indirim kodun</strong>:</p>
+            <p>Hedef Milyon Dolar e-kitabında geçerli <strong>%10 indirim kodun</strong>:</p>
             <p style="font-size:24px;font-weight:bold;letter-spacing:3px;color:#00B8CC">${code}</p>
             <p>Ödeme ekranında bu kodu girmen yeterli.</p>
           </div>
