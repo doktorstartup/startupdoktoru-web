@@ -10,13 +10,16 @@ import {
   ChevronLeft,
 } from "lucide-react";
 import CheckoutForm from "../../../../components/CheckoutForm";
-import { useHref, useT } from "../../../../lib/i18n-client";
+import { useHref, useLang, useT } from "../../../../lib/i18n-client";
+import { IngilizceBaskiKaydi } from "../../../../components/IngilizceBaskiKaydi";
 
 export default function EBookLanding() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const all = useT();
   const t = all.ebookPage;
   const href = useHref();
+  // Kitap Türkçe: /en tarafında satış yok, talep ölçülüyor.
+  const en = useLang() === "en";
 
 
   return (
@@ -68,6 +71,9 @@ export default function EBookLanding() {
               ))}
             </div>
 
+            {en ? (
+              <IngilizceBaskiKaydi />
+            ) : (
             <div className="flex flex-col gap-4">
               <div className="flex items-end gap-3">
                 <span className="text-base text-muted-foreground/70 line-through font-mono mb-1.5">{all.prices.ebookOld}</span>
@@ -84,6 +90,7 @@ export default function EBookLanding() {
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
+            )}
           </div>
 
           {/* Basılı kitabın gerçek kapağı — dijital sürüm aynı kitap */}
@@ -126,6 +133,10 @@ export default function EBookLanding() {
           </div>
 
           <div className="flex flex-col items-center gap-3 mt-12">
+            {en ? (
+              <IngilizceBaskiKaydi />
+            ) : (
+            <>
             <div className="flex items-end gap-3">
               <span className="text-base text-muted-foreground/70 line-through font-mono mb-1.5">{all.prices.ebookOld}</span>
               <span className="text-4xl font-black text-primary font-mono leading-none tracking-tight">{all.prices.ebookNew}</span>
@@ -140,6 +151,8 @@ export default function EBookLanding() {
               {t.cta}
               <ArrowRight className="h-4 w-4" />
             </button>
+            </>
+            )}
           </div>
         </section>
       </main>
@@ -156,7 +169,7 @@ export default function EBookLanding() {
       </footer>
 
       {/* ─── STRIPE ELEMENTS CHECKOUT ─── */}
-      {isCheckoutOpen && (
+      {isCheckoutOpen && !en && (
         <CheckoutForm
           productId="ebook_13_steps"
           productTitle={t.title}

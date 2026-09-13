@@ -12,7 +12,7 @@ export const en: Dict = {
     ebook: {
       title: "Startup Ebook: 13 Chapters from MVP to Valuation | Startup Doktoru",
       description:
-        "Innovation, MVP, product-market fit, team building, cash flow, company valuation and investor negotiation — a 13-chapter startup ebook for $6.",
+        "Innovation, MVP, product-market fit, team building, cash flow, company valuation and investor negotiation — a 13-chapter startup book. The English edition is in preparation; sign up to be notified.",
     },
     egitimler: {
       title: "Startup Video Courses — 3 Courses, One Bundle | Startup Doktoru",
@@ -88,7 +88,7 @@ export const en: Dict = {
         "Ten years of hard-won experience, distilled into a step-by-step path for building a million-dollar startup.",
       ctaFree: "Start the Free Training",
       riskReducer: "No credit card · access in 2 minutes",
-      ebookLink: "or take a look at the ebook ·",
+      ebookLink: "or take a look at the book →",
       stats: [
         { value: "100+", label: "Founders Mentored" },
         { value: "3", label: "Companies Founded" },
@@ -139,9 +139,9 @@ export const en: Dict = {
           step: "Step 02",
           title: "Ebook",
           desc: "The practical handbook for building a million-dollar startup in 13 critical steps.",
-          price: "$6",
-          oldPrice: "$12",
-          btnText: "Get It for $6",
+          price: "Coming soon",
+          oldPrice: "",
+          btnText: "Get Notified",
         },
         {
           step: "Step 03",
@@ -170,7 +170,7 @@ export const en: Dict = {
         "09. Angel Investors & Negotiation",
         "10. The Investor Pitch",
       ],
-      cta: "Download the Ebook ($6)",
+      cta: "English Edition — Notify Me",
       cardTag: "The System Book",
     },
 
@@ -241,13 +241,13 @@ export const en: Dict = {
       title: "Ready to turn your startup into a fundable, profitable system?",
       body: "Don't stop at theory. Take your business up a level today with Startup Doktoru's practical handbooks, video course modules and automated growth playbooks.",
       primary: "Start the Free Training",
-      secondary: "Get the Ebook ($6)",
+      secondary: "English Edition — Notify Me",
     },
 
     stickyBar: {
       title: "Hedef Milyon Dolar",
-      meta: "Ebook ·",
-      cta: "Get It · $6",
+      meta: "English edition coming",
+      cta: "Notify Me",
     },
   },
 
@@ -660,5 +660,19 @@ export const en: Dict = {
     ctaLead: "Ready to take your startup up a level?",
     cta: "See the Ebook ($6)",
     dateLocale: "en-US",
+  },
+
+  ebookEn: {
+    badge: "English Edition",
+    title: "The English edition is on its way",
+    lead: "The book is currently available in Turkish only. We're preparing the English edition — leave your email and you'll be the first to know.",
+    placeholder: "your email address",
+    cta: "Notify Me",
+    sending: "Sending...",
+    doneTitle: "You're on the list",
+    doneBody: "We'll write to you the moment the English edition is out. In the meantime, the free training is worth a look.",
+    error: "That didn't go through — mind trying again?",
+    turkishNote: "Read Turkish? You can get the book right now.",
+    turkishCta: "Go to the Turkish edition",
   },
 };

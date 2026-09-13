@@ -651,6 +651,19 @@ export const tr = {
     cta: "E-Kitabı İncele (6 $)",
     dateLocale: "tr-TR",
   },
+  ebookEn: {
+    badge: "İngilizce Baskı",
+    title: "İngilizce baskı hazırlanıyor",
+    lead: "Kitap şu an yalnızca Türkçe. İngilizce baskıyı hazırlıyoruz — çıktığında ilk sen haberdar ol.",
+    placeholder: "e-posta adresin",
+    cta: "Haber Ver",
+    sending: "Gönderiliyor...",
+    doneTitle: "Listeye eklendin",
+    doneBody: "İngilizce baskı çıktığında sana yazacağız. Bu arada ücretsiz eğitime göz atabilirsin.",
+    error: "Kayıt alınamadı, tekrar dener misin?",
+    turkishNote: "Türkçe okuyorsan kitabı şimdi alabilirsin.",
+    turkishCta: "Türkçe sürüme git",
+  },
 };
 
 export type Dict = typeof tr;

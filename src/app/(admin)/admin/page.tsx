@@ -13,10 +13,12 @@ import {
   ChevronRight,
   ShoppingCart,
   Phone,
+  Globe,
 } from "lucide-react";
 
 type Stats = {
   visitors: number;
+  ebookEnInterest?: number;
   leads: number;
   customers: number;
   revenue: number;
@@ -59,6 +61,7 @@ export default function AdminDashboard() {
     { name: "Lead (Üye)", value: stats ? `${stats.leads}` : "—", icon: UserPlus, color: "text-primary", hint: "Form/pop-up ile kaydolan" },
     { name: "Müşteri", value: stats ? `${stats.customers}` : "—", icon: CheckCircle2, color: "text-emerald-400", hint: "Satın alım yapan" },
     { name: "Net Gelir", value: stats ? `$${stats.revenue.toLocaleString("en-US")}` : "—", icon: DollarSign, color: "text-accent", hint: "Ödenmiş siparişler" },
+    { name: "İng. Baskı Talebi", value: stats ? `${stats.ebookEnInterest ?? 0}` : "—", icon: Globe, color: "text-amber-400", hint: "/en/ebook'ta e-posta bırakan" },
   ];
 
   // Funnel barı için oransal genişlikler (ziyaretçi = %100 taban)

@@ -86,8 +86,14 @@ export async function GET(req: NextRequest) {
     const saleRate = leadCount > 0 ? (customers / leadCount) * 100 : 0;
     const overallRate = visitors > 0 ? (customers / visitors) * 100 : 0;
 
+    // İngilizce baskı talep ölçümü: /en/ebook'ta e-posta bırakanlar.
+    const { count: ebookEnInterest } = await supabaseAdmin
+      .from("ds_ebook_en_interest")
+      .select("id", { count: "exact", head: true });
+
     return NextResponse.json({
       visitors,
+      ebookEnInterest: ebookEnInterest || 0,
       leads: leadCount,
       customers,
       revenue,

@@ -250,3 +250,17 @@ VALUES
   ('HOSGELDIN50', 50, NULL, false),
   ('EBOOK50', 50, NULL, true)
 ON CONFLICT (code) DO NOTHING;
+
+-- 12. İNGİLİZCE BASKI İLGİ LİSTESİ
+-- Kitap Türkçe; /en tarafında satış yerine talep ölçülüyor. Baskı çıkarsa
+-- haber vermek için ayrı liste (ds_leads'in kaynak atfını bozmamak için ayrı).
+CREATE TABLE IF NOT EXISTS public.ds_ebook_en_interest (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS ds_ebook_en_interest_created_idx ON public.ds_ebook_en_interest (created_at DESC);
+
+-- Politika yok: listeye yalnız service-role erişir.
+ALTER TABLE public.ds_ebook_en_interest ENABLE ROW LEVEL SECURITY;

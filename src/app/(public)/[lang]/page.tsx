@@ -26,13 +26,15 @@ import { VcNetwork } from "../../../components/VcNetwork";
 import { Testimonials } from "../../../components/Testimonials";
 import { KitapBolumu } from "../../../components/KitapBolumu";
 import { getTraining, trainingPoster } from "../../../lib/trainings";
-import { useHref, useT } from "../../../lib/i18n-client";
+import { useHref, useLang, useT } from "../../../lib/i18n-client";
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isAiOpen, setIsAiOpen] = useState(false);
   const t = useT().home;
   const href = useHref();
+  // Kitap Türkçe: /en tarafında e-kitap satılmıyor, fiyat da gösterilmiyor.
+  const en = useLang() === "en";
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -83,7 +85,14 @@ export default function Home() {
               className="text-base md:text-lg font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-2 mt-2"
             >
               <BookOpen className="h-5 w-5 text-primary" />
-              {t.hero.ebookLink} <span className="text-muted-foreground line-through">{t.ladder.steps[1].oldPrice}</span> <span className="text-primary font-bold">{t.ladder.steps[1].price}</span>
+              {t.hero.ebookLink}
+              {!en && (
+                <>
+                  {" "}
+                  <span className="text-muted-foreground line-through">{t.ladder.steps[1].oldPrice}</span>{" "}
+                  <span className="text-primary font-bold">{t.ladder.steps[1].price}</span>
+                </>
+              )}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -415,7 +424,16 @@ export default function Home() {
       <div className="md:hidden fixed bottom-0 inset-x-0 z-30 border-t border-border/40 bg-background/90 backdrop-blur-md px-4 py-3 flex items-center gap-3">
         <div className="flex-1 leading-tight">
           <p className="text-sm font-bold text-foreground">{t.stickyBar.title}</p>
-          <p className="text-xs text-muted-foreground">{t.stickyBar.meta} <span className="line-through">{t.ladder.steps[1].oldPrice}</span> <span className="text-primary font-bold">{t.ladder.steps[1].price}</span></p>
+          <p className="text-xs text-muted-foreground">
+            {t.stickyBar.meta}
+            {!en && (
+              <>
+                {" "}
+                <span className="line-through">{t.ladder.steps[1].oldPrice}</span>{" "}
+                <span className="text-primary font-bold">{t.ladder.steps[1].price}</span>
+              </>
+            )}
+          </p>
         </div>
         <Link href={href("/ebook")} className="btn btn-primary shrink-0">
           {t.stickyBar.cta}

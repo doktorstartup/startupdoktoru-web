@@ -6,7 +6,7 @@ import { Gift, X, Check, Loader2, ArrowRight } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { track } from "../lib/track";
 import { useMember } from "../lib/member";
-import { useHref, useT } from "../lib/i18n-client";
+import { useHref, useLang, useT } from "../lib/i18n-client";
 
 const SEEN_KEY = "ds_popup_seen";
 
@@ -46,9 +46,11 @@ export function DiscountPopup() {
   const { member } = useMember();
   const t = useT().discountPopup;
   const href = useHref();
+  // Popup e-kitabı yarı fiyata satıyor; /en tarafında e-kitap satışı yok.
+  const en = useLang() === "en";
 
   // Admin/portal alanlarında ve giriş yapmış üyeye gösterme
-  const suppressed = !!member || pathname?.startsWith("/admin") || pathname?.startsWith("/portal");
+  const suppressed = en || !!member || pathname?.startsWith("/admin") || pathname?.startsWith("/portal");
 
   const trigger = useCallback(() => {
     try {
