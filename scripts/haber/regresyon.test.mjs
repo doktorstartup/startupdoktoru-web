@@ -9,7 +9,8 @@ import { kisilerCikar } from "./kisiler.mjs";
 import { identityGate, nameInDomain } from "./domain.mjs";
 import { ayniTur, puanla } from "./kuyruk.mjs";
 import { sirketAdiCikar } from "./topla.mjs";
-import { appStoreUygunMu } from "./varlik.mjs";
+// varlik.mjs playwright'a bağlı ve CI'da kurulmuyor; saf fonksiyon ayrı modülde.
+import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
 
 const R = [];

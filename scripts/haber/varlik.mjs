@@ -23,12 +23,15 @@
 //   node scripts/haber/varlik.mjs kuyruk/2026-08-28_hubx-5ca6.json
 //   node scripts/haber/varlik.mjs --domain hubx.co --ad HubX
 
+import { appStoreUygunMu } from "./appstore.mjs";
 import { chromium } from "playwright-core";
 import ffmpeg from "ffmpeg-static";
 import { spawn } from "node:child_process";
 import { mkdirSync, writeFileSync, rmSync, readFileSync, existsSync, statSync, mkdtempSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
+
+export { appStoreUygunMu };
 
 // Paketler repoya girmez (.gitignore). Yeri HABER_PAKET_DIR ile değiştirilebilir —
 // örneğin Google Drive senkron klasörü, böylece paketler otomatik yedeklenir.
@@ -364,15 +367,6 @@ const konak = (url) => { try { return new URL(url).hostname.replace(/^www\./, ""
 // FINANSAL…), altı yanlış eşleşmenin hiçbirinde geçmiyor.
 // sellerUrl ayrı bir kabul yolu — marka alan adı tüzel adla uyuşmayabiliyor
 // (Midas → getmidas.com), o yüzden VE değil VEYA.
-export function appStoreUygunMu(r, sirketAdi, domain) {
-  const anahtar = sirketAdi.toLowerCase().replace(/[^a-z0-9]/g, "");
-  if (anahtar.length < 4) return false;
-  const satici = String(r.sellerName ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
-  if (satici.includes(anahtar)) return true;
-  const d = String(domain ?? "").replace(/^www\./, "").toLowerCase();
-  return !!d && konak(r.sellerUrl ?? "") === d;
-}
-
 export async function appStoreGorselleri(sirketAdi, domain) {
   try {
     const u = `https://itunes.apple.com/search?term=${encodeURIComponent(sirketAdi)}&country=tr&entity=software&limit=5`;
