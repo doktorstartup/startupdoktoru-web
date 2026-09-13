@@ -8,7 +8,21 @@ import { track } from "../lib/track";
 import { useMember } from "../lib/member";
 import { useHref, useLang, useT } from "../lib/i18n-client";
 
-const SEEN_KEY = "ds_popup_seen";
+const SEEN_KEY = "ds_popup_seen"; // en son ne zaman gösterildi (ms)
+const DONE_KEY = "ds_popup_done"; // kaydolan bir daha görmesin
+const TEKRAR_GUN = 7;
+
+// Kaydolmayana 7 gün sonra bir şans daha. Eski sürüm SEEN_KEY'e "1" yazıyordu;
+// sayıya çevrilince 1 ms olur ve süresi dolmuş sayılır — o kullanıcılar da geri gelir.
+function gosterilebilir() {
+  try {
+    if (localStorage.getItem(DONE_KEY)) return false;
+    const son = Number(localStorage.getItem(SEEN_KEY) || 0);
+    return !son || Date.now() - son > TEKRAR_GUN * 864e5;
+  } catch {
+    return true; // localStorage yoksa engelleme
+  }
+}
 
 // Fiyat bloğu — normalde $12 → bugün $6 (%50). Hem popup hem teşekkür ekranında kullanılır.
 function PriceBlock() {
@@ -53,14 +67,10 @@ export function DiscountPopup() {
   const suppressed = en || !!member || pathname?.startsWith("/admin") || pathname?.startsWith("/portal");
 
   const trigger = useCallback(() => {
-    try {
-      if (localStorage.getItem(SEEN_KEY)) return;
-    } catch {
-      /* localStorage yoksa yine de göster */
-    }
+    if (!gosterilebilir()) return;
     setOpen(true);
     try {
-      localStorage.setItem(SEEN_KEY, "1");
+      localStorage.setItem(SEEN_KEY, String(Date.now()));
     } catch {
       /* sessizce geç */
     }
@@ -68,15 +78,7 @@ export function DiscountPopup() {
   }, []);
 
   useEffect(() => {
-    if (suppressed) return;
-    try {
-      if (localStorage.getItem(SEEN_KEY)) return;
-    } catch {
-      /* yoksa devam */
-    }
-
-    // Yalnızca gerçek fare olan cihazlarda (mobil/trackpad kaydırmada tetikleme).
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (suppressed || !gosterilebilir()) return;
 
     // Sayfaya yeni gelmişken rahatsız etme — ilk 8 sn tetikleme kapalı.
     let armed = false;
@@ -84,16 +86,33 @@ export function DiscountPopup() {
       armed = true;
     }, 8000);
 
-    // Gerçek çıkış-niyeti: imleç pencereyi ÜSTTEN (sekme/adres/back yönünde) terk edince.
-    // mouseleave (mouseout değil) child geçişlerinde tetiklenmez → kaydırırken yanlış açılmaz.
-    const onLeave = (e: MouseEvent) => {
-      if (armed && e.clientY <= 0 && !e.relatedTarget) trigger();
-    };
+    // Masaüstü: gerçek çıkış-niyeti — imleç pencereyi ÜSTTEN (sekme/adres/back
+    // yönünde) terk edince. mouseleave (mouseout değil) child geçişlerinde
+    // tetiklenmez → kaydırırken yanlış açılmaz.
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const onLeave = (e: MouseEvent) => {
+        if (armed && e.clientY <= 0 && !e.relatedTarget) trigger();
+      };
+      document.documentElement.addEventListener("mouseleave", onLeave);
+      return () => {
+        document.documentElement.removeEventListener("mouseleave", onLeave);
+        window.clearTimeout(armTimer);
+      };
+    }
 
-    document.documentElement.addEventListener("mouseleave", onLeave);
+    // Dokunmatik cihazda "çıkış niyeti" diye bir sinyal yok; popup buralarda hiç
+    // açılmıyordu. Sayfanın yarısını geçmek ya da 30 sn kalmak ilgi göstergesi.
+    const onScroll = () => {
+      if (!armed) return;
+      const h = document.documentElement.scrollHeight;
+      if (h > 0 && (window.scrollY + window.innerHeight) / h > 0.55) trigger();
+    };
+    const sureTimer = window.setTimeout(() => trigger(), 30000);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      document.documentElement.removeEventListener("mouseleave", onLeave);
+      window.removeEventListener("scroll", onScroll);
       window.clearTimeout(armTimer);
+      window.clearTimeout(sureTimer);
     };
   }, [suppressed, trigger]);
 
@@ -114,6 +133,11 @@ export function DiscountPopup() {
         },
       ]);
       track("popup_submit", { email });
+      try {
+        localStorage.setItem(DONE_KEY, "1");
+      } catch {
+        /* sessizce geç */
+      }
       // Karşılama e-postası (Resend anahtarı varsa) — fire-and-forget
       fetch("/api/welcome", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }).catch(() => {});
       setSubmitted(true);

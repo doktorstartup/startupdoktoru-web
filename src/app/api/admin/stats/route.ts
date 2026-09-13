@@ -12,16 +12,20 @@ export async function GET(req: NextRequest) {
   }
   try {
     // Distinct ziyaretçi + sayfa kırılımı için page_view'leri çek (session_id + path).
-    const { data: pageViews } = await supabaseAdmin
+    const { data: tumPageViews } = await supabaseAdmin
       .from("ds_events")
       .select("session_id, path")
       .eq("event_type", "page_view");
 
-    const visitors = new Set((pageViews || []).map((e) => e.session_id).filter(Boolean)).size;
+    // Yönetim paneli gezintisi ziyaretçi değil: huni oranlarını şişiriyordu.
+    // (Panel artık hiç izlenmiyor; bu filtre geçmiş kayıtlar için.)
+    const pageViews = (tumPageViews || []).filter((e) => !(e.path || "").startsWith("/admin"));
+
+    const visitors = new Set(pageViews.map((e) => e.session_id).filter(Boolean)).size;
 
     // Sayfa bazlı görüntüleme + tekil ziyaretçi kırılımı (en çok görüntülenen ilk 12).
     const pageMap = new Map<string, { views: number; sessions: Set<string> }>();
-    for (const e of pageViews || []) {
+    for (const e of pageViews) {
       const path = e.path || "/";
       if (!pageMap.has(path)) pageMap.set(path, { views: 0, sessions: new Set() });
       const rec = pageMap.get(path)!;
