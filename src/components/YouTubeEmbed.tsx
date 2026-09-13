@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { useT } from "../lib/i18n-client";
 
 type Accent = "cyan" | "violet" | "amber" | "emerald";
 
@@ -31,6 +32,7 @@ const ACCENTS: Record<Accent, { glow: string; from: string; ring: string }> = {
 // videoId boşsa markalı "Video yakında" placeholder'ı gösterir.
 export function YouTubeEmbed({ videoId, title, label, poster, onPlay }: Props) {
   const [playing, setPlaying] = useState(false);
+  const t = useT();
   const a = ACCENTS[poster?.accent || "cyan"];
   const start = () => {
     setPlaying(true);
@@ -44,7 +46,7 @@ export function YouTubeEmbed({ videoId, title, label, poster, onPlay }: Props) {
           <Play className="h-8 w-8 fill-current ml-1" />
         </div>
         {label && <span className="text-sm font-bold text-foreground/80">{label}</span>}
-        <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Video yakında</span>
+        <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">{t.video.comingSoon}</span>
       </div>
     );
   }

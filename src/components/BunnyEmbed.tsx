@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Play } from "lucide-react";
+import { useT } from "../lib/i18n-client";
 import { BUNNY_LIBRARY } from "../lib/videos";
 
 type Accent = "cyan" | "violet" | "amber";
@@ -56,6 +57,7 @@ function CoverSurface({ poster, children }: { poster: Poster; children: React.Re
 // Tıkla-oynat (facade) Bunny.net gömme. videoId boşsa "Video yakında" placeholder.
 export function BunnyEmbed({ videoId, title, label, onPlay, poster }: Props) {
   const [playing, setPlaying] = useState(false);
+  const t = useT();
   const accentRing = ACCENTS[poster?.accent || "cyan"].ring;
 
   // Video henüz yok → markalı "Yakında" kapağı (poster varsa) ya da sade placeholder.
@@ -69,7 +71,7 @@ export function BunnyEmbed({ videoId, title, label, onPlay, poster }: Props) {
           >
             <Play className="h-7 w-7 fill-current ml-1" />
           </div>
-          <span className="text-[10px] font-mono text-white/60 uppercase tracking-widest">Video yakında</span>
+          <span className="text-[10px] font-mono text-white/60 uppercase tracking-widest">{t.video.comingSoon}</span>
         </CoverSurface>
       );
     }
@@ -79,7 +81,7 @@ export function BunnyEmbed({ videoId, title, label, onPlay, poster }: Props) {
           <Play className="h-8 w-8 fill-current ml-1" />
         </div>
         {label && <span className="text-sm font-bold text-foreground/80">{label}</span>}
-        <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">Video yakında</span>
+        <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">{t.video.comingSoon}</span>
       </div>
     );
   }

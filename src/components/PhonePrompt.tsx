@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import { Phone, X, Loader2, Check } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import { useMember } from "../lib/member";
+import { useT } from "../lib/i18n-client";
 
 const DONE_KEY = "ds_phone_prompt_done";
 
 // Telefonu olmayan üyeye (özellikle Google ile girenlere) yatırımcı çerçevesiyle telefon sorar.
 export function PhonePrompt() {
   const { member } = useMember();
+  const t = useT().phonePrompt;
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -87,17 +89,17 @@ export function PhonePrompt() {
             <div className="h-14 w-14 mx-auto rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
               <Check className="h-7 w-7" />
             </div>
-            <h3 className="text-xl font-extrabold tracking-tight">Teşekkürler! 🎉</h3>
-            <p className="text-sm text-muted-foreground mt-1">Yatırımcı ağımıza eklendin.</p>
+            <h3 className="text-xl font-extrabold tracking-tight">{t.doneTitle}</h3>
+            <p className="text-sm text-muted-foreground mt-1">{t.doneBody}</p>
           </div>
         ) : (
           <div className="text-center">
             <div className="h-14 w-14 mx-auto rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
               <Phone className="h-7 w-7" />
             </div>
-            <h3 className="text-xl font-extrabold tracking-tight mb-2">Son bir adım kaldı 📞</h3>
+            <h3 className="text-xl font-extrabold tracking-tight mb-2">{t.title}</h3>
             <p className="text-sm text-muted-foreground mb-6">
-              Yatırımcıların <strong className="text-foreground">seninle iletişime geçebilmesi</strong> için telefon numaranı bırakman <strong className="text-foreground">önemlidir</strong>. Uygun yatırım fırsatlarında ekibimiz sana ulaşır.
+              {t.bodyBefore}<strong className="text-foreground">{t.bodyStrong1}</strong>{t.bodyMiddle}<strong className="text-foreground">{t.bodyStrong2}</strong>{t.bodyAfter}
             </p>
             <form onSubmit={save} className="space-y-3">
               <input
@@ -105,14 +107,14 @@ export function PhonePrompt() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+90 5xx xxx xx xx"
+                placeholder={t.placeholder}
                 className="w-full h-12 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none text-center"
               />
               <button type="submit" disabled={loading} className="btn btn-lg btn-primary w-full">
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Numaramı Kaydet"}
+                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : t.save}
               </button>
             </form>
-            <button onClick={dismiss} className="text-xs text-muted-foreground hover:text-foreground mt-4">Şimdi değil</button>
+            <button onClick={dismiss} className="text-xs text-muted-foreground hover:text-foreground mt-4">{t.dismiss}</button>
           </div>
         )}
       </div>
