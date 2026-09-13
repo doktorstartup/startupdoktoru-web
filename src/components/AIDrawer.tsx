@@ -5,6 +5,7 @@ import { X, Send, Sparkles, Loader2, Zap, ChevronRight, ArrowRight } from "lucid
 import { supabase } from "../lib/supabase";
 import { track } from "../lib/track";
 import { useMember } from "../lib/member";
+import { useHref, useLang, useT } from "../lib/i18n-client";
 
 interface Message {
   role: "user" | "assistant";
@@ -19,11 +20,11 @@ interface AIDrawerProps {
 const AI_LEAD_KEY = "ds_ai_lead";
 
 export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
+  const lang = useLang();
+  const t = useT().ai;
+  const href = useHref();
   const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: "Merhaba! Ben Startup Doktoru AI Mentörü. Girişiminizin fikrini doğrulamak, değerleme hazırlığı yapmak veya büyüme hunileri (funnel) kurmak konusunda size yol göstermeye hazırım.\n\nNasıl bir girişim projesi üzerinde çalışıyorsunuz? Fikrinizi bana kısaca anlatın, hemen analiz edelim."
-    }
+    { role: "assistant", content: t.greeting },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -106,6 +107,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          lang,
           messages: [...messages, { role: "user", content: userMessage }].slice(-6) // Send last few messages for context
         }),
       });
@@ -124,7 +126,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
           ...prev,
           {
             role: "assistant",
-            content: `Girişim fikrinizi ('${userMessage.substring(0, 40)}...') çok değerli buldum. \n\nSistem kurmadan büyümeye çalışmak en büyük hatadır. Startup Doktoru olarak bu fikri hayata geçirirken takip etmeniz gereken ilk 3 kritik adımı paylaşıyorum:\n\n1. **Problem Doğrulama:** Potansiyel 10 müşteri adayınızla görüşerek bu sorunun onlar için 'gerçekten acı veren' bir sorun olup olmadığını test edin.\n2. **MVP Geliştirme:** Fikrinizdeki tüm gereksiz özellikleri çıkarıp, sadece ana vaadi sunan en basit sürümü (MVP) kurgulayın.\n3. **Değer Merdiveni:** Müşteriye hemen büyük satışı yapmak yerine, önce ücretsiz bir eğitim veya doküman (6 $'lık E-Book gibi) ile güven kazanın.\n\nE-Kitabımızı indirerek veya ders portalımıza katılarak bu adımların detaylı rehberlerine ulaşabilirsiniz. Sorunuz varsa yanıtlamaya devam edebilirim!`
+            content: t.fallbackIntro.replace("{snippet}", userMessage.substring(0, 40))
           }
         ]);
       }, 1000);
@@ -151,10 +153,10 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             </div>
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-1.5 text-base">
-                AI Mentor Asistanı
+                {t.title}
                 <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-accent/15 border border-accent/20 text-accent uppercase tracking-widest">PRO</span>
               </h3>
-              <p className="text-xs text-muted-foreground">Eser Memişoğlu Büyüme & Yatırım Modeli</p>
+              <p className="text-xs text-muted-foreground">{t.subtitle}</p>
             </div>
           </div>
           <button 
@@ -171,9 +173,9 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 border border-primary/20 text-primary mb-4">
               <Sparkles className="h-6 w-6" />
             </div>
-            <h4 className="text-lg font-extrabold tracking-tight mb-1">Mentöre bağlanmadan önce</h4>
+            <h4 className="text-lg font-extrabold tracking-tight mb-1">{t.gateTitle}</h4>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-              Sana ve projene özel yanıtlar verebilmem için kısa birkaç bilgi. Bilgilerin sadece sana daha iyi yardımcı olmak için kullanılır.
+              {t.gateLead}
             </p>
 
             <div className="space-y-3">
@@ -182,7 +184,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
                 required
                 value={lead.name}
                 onChange={(e) => setLead((p) => ({ ...p, name: e.target.value }))}
-                placeholder="Adın Soyadın"
+                placeholder={t.namePlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
               <input
@@ -190,7 +192,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
                 required
                 value={lead.email}
                 onChange={(e) => setLead((p) => ({ ...p, email: e.target.value }))}
-                placeholder="E-posta adresin"
+                placeholder={t.emailPlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
               <input
@@ -198,7 +200,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
                 required
                 value={lead.phone}
                 onChange={(e) => setLead((p) => ({ ...p, phone: e.target.value }))}
-                placeholder="Telefon (+90 5xx xxx xx xx)"
+                placeholder={t.phonePlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
               <input
@@ -206,7 +208,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
                 required
                 value={lead.project}
                 onChange={(e) => setLead((p) => ({ ...p, project: e.target.value }))}
-                placeholder="Projenin adı (gerçek ya da takma)"
+                placeholder={t.projectPlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
             </div>
@@ -216,9 +218,9 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
               disabled={gateLoading}
               className="btn btn-primary btn-lg w-full mt-6 disabled:opacity-60"
             >
-              {gateLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>Mentörle Konuşmaya Başla <ArrowRight className="h-4 w-4" /></>}
+              {gateLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>{t.gateCta} <ArrowRight className="h-4 w-4" /></>}
             </button>
-            <p className="text-[10px] text-muted-foreground/80 text-center mt-3">Bilgilerin gizli tutulur, üçüncü taraflarla paylaşılmaz.</p>
+            <p className="text-[10px] text-muted-foreground/80 text-center mt-3">{t.gateNote}</p>
           </form>
         ) : (
         <>
@@ -226,10 +228,10 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
         <div className="px-6 py-3.5 bg-gradient-to-r from-primary/5 to-accent/5 border-b border-border/40 flex items-center justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Zap className="h-3.5 w-3.5 text-accent" />
-            <span>Mevcut Durum: <strong>Girişim Check-Up Bekleniyor</strong></span>
+            <span>{t.statusBefore} <strong>{t.statusValue}</strong></span>
           </div>
-          <a href="/free-training" className="text-primary font-bold hover:underline flex items-center">
-            Puan Artır
+          <a href={href("/free-training")} className="text-primary font-bold hover:underline flex items-center">
+            {t.raiseScore}
             <ChevronRight className="h-3 w-3" />
           </a>
         </div>
@@ -251,7 +253,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
                 {msg.content}
               </div>
               <span className="text-[10px] text-muted-foreground font-mono mt-1.5 px-1">
-                {msg.role === "user" ? "Girişimci" : "Dr. Startup AI"}
+                {msg.role === "user" ? t.roleUser : t.roleAssistant}
               </span>
             </div>
           ))}
@@ -259,7 +261,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             <div className="flex flex-col items-start">
               <div className="glass-panel rounded-2xl p-4 flex items-center gap-3">
                 <Loader2 className="h-4 w-4 animate-spin text-primary" />
-                <span className="text-xs text-muted-foreground">Fikir analizi yapılıyor ve büyüme hunisi planlanıyor...</span>
+                <span className="text-xs text-muted-foreground">{t.thinking}</span>
               </div>
             </div>
           )}
@@ -276,7 +278,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Girişim projenizi veya takıldığınız konuyu yazın..."
+              placeholder={t.inputPlaceholder}
               className="w-full h-12 pl-4 pr-12 rounded-xl bg-background border border-border focus:border-primary/50 focus:ring-1 focus:ring-primary/20 text-sm text-foreground placeholder:text-muted-foreground outline-none transition-all"
             />
             <button
@@ -288,7 +290,7 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             </button>
           </div>
           <p className="text-[10px] text-muted-foreground/80 text-center mt-3">
-            Startup Doktoru AI mentorunun yönlendirmeleri yatırım tavsiyesi içermez. "Kervan yolda değil, stratejiyle düzülür."
+            {t.disclaimer}
           </p>
         </form>
         </>

@@ -616,4 +616,31 @@ export const en: Dict = {
     ebookError: "The ebook could not be opened.",
     connectionError: "Connection error.",
   },
+
+  ai: {
+    greeting:
+      "Hi! I'm the Startup Doktoru AI mentor. I can help you validate your idea, get ready for a valuation, or build growth funnels.\n\nWhat are you working on? Tell me about your idea in a couple of lines and we'll take it apart together.",
+    title: "AI Mentor Assistant",
+    subtitle: "Eser Memişoğlu's Growth & Fundraising Model",
+    close: "Close",
+    gateTitle: "Before we connect you",
+    gateLead:
+      "A few quick details so I can answer for you and your project specifically. They're used only to help you better.",
+    namePlaceholder: "Your full name",
+    emailPlaceholder: "Your email address",
+    phonePlaceholder: "Phone (+1 555 000 0000)",
+    projectPlaceholder: "Project name (real or a placeholder)",
+    gateCta: "Start Talking to the Mentor",
+    gateNote: "Your details stay confidential and are never shared with third parties.",
+    statusBefore: "Current status:",
+    statusValue: "Startup Check-Up pending",
+    raiseScore: "Raise Score",
+    roleUser: "Founder",
+    roleAssistant: "Dr. Startup AI",
+    thinking: "Analyzing the idea and mapping the growth funnel...",
+    inputPlaceholder: "Describe your startup or what you're stuck on...",
+    fallbackIntro: "Your idea ('{snippet}...') is a good one. \n\nTrying to grow before you build a system is the biggest mistake there is. Here are the first three critical steps for turning this idea into a company:\n\n1. **Problem validation:** Talk to 10 potential customers and test whether this problem is genuinely painful for them.\n2. **MVP development:** Strip out every unnecessary feature and build the simplest version that still delivers the core promise.\n3. **The value ladder:** Instead of going straight for the big sale, earn trust first with something free or small (like the $6 ebook).\n\nYou'll find detailed guides for each step in the ebook or the course portal. Happy to keep answering questions!",
+    disclaimer:
+      "Guidance from the Startup Doktoru AI mentor is not investment advice. \u201CA caravan isn't sorted out on the road — it's sorted out with strategy.\u201D",
+  },
 };

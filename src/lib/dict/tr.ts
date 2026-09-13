@@ -608,6 +608,32 @@ export const tr = {
     ebookError: "E-kitap açılamadı.",
     connectionError: "Bağlantı hatası.",
   },
+  ai: {
+    greeting:
+      "Merhaba! Ben Startup Doktoru AI Mentörü. Girişiminizin fikrini doğrulamak, değerleme hazırlığı yapmak veya büyüme hunileri (funnel) kurmak konusunda size yol göstermeye hazırım.\n\nNasıl bir girişim projesi üzerinde çalışıyorsunuz? Fikrinizi bana kısaca anlatın, hemen analiz edelim.",
+    title: "AI Mentor Asistanı",
+    subtitle: "Eser Memişoğlu Büyüme & Yatırım Modeli",
+    close: "Kapat",
+    gateTitle: "Mentöre bağlanmadan önce",
+    gateLead:
+      "Sana ve projene özel yanıtlar verebilmem için kısa birkaç bilgi. Bilgilerin sadece sana daha iyi yardımcı olmak için kullanılır.",
+    namePlaceholder: "Adın Soyadın",
+    emailPlaceholder: "E-posta adresin",
+    phonePlaceholder: "Telefon (+90 5xx xxx xx xx)",
+    projectPlaceholder: "Projenin adı (gerçek ya da takma)",
+    gateCta: "Mentörle Konuşmaya Başla",
+    gateNote: "Bilgilerin gizli tutulur, üçüncü taraflarla paylaşılmaz.",
+    statusBefore: "Mevcut Durum:",
+    statusValue: "Girişim Check-Up Bekleniyor",
+    raiseScore: "Puan Artır",
+    roleUser: "Girişimci",
+    roleAssistant: "Dr. Startup AI",
+    thinking: "Fikir analizi yapılıyor ve büyüme hunisi planlanıyor...",
+    inputPlaceholder: "Girişim projenizi veya takıldığınız konuyu yazın...",
+    fallbackIntro: "Girişim fikrinizi ('{snippet}...') çok değerli buldum. \n\nSistem kurmadan büyümeye çalışmak en büyük hatadır. Startup Doktoru olarak bu fikri hayata geçirirken takip etmeniz gereken ilk 3 kritik adımı paylaşıyorum:\n\n1. **Problem Doğrulama:** Potansiyel 10 müşteri adayınızla görüşerek bu sorunun onlar için 'gerçekten acı veren' bir sorun olup olmadığını test edin.\n2. **MVP Geliştirme:** Fikrinizdeki tüm gereksiz özellikleri çıkarıp, sadece ana vaadi sunan en basit sürümü (MVP) kurgulayın.\n3. **Değer Merdiveni:** Müşteriye hemen büyük satışı yapmak yerine, önce ücretsiz bir eğitim veya doküman (6 $'lık E-Book gibi) ile güven kazanın.\n\nE-Kitabımızı indirerek veya ders portalımıza katılarak bu adımların detaylı rehberlerine ulaşabilirsiniz. Sorunuz varsa yanıtlamaya devam edebilirim!",
+    disclaimer:
+      "Startup Doktoru AI mentorunun yönlendirmeleri yatırım tavsiyesi içermez. \u201CKervan yolda değil, stratejiyle düzülür.\u201D",
+  },
 };
 
 export type Dict = typeof tr;
