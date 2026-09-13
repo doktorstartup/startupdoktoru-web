@@ -643,4 +643,22 @@ export const en: Dict = {
     disclaimer:
       "Guidance from the Startup Doktoru AI mentor is not investment advice. \u201CA caravan isn't sorted out on the road — it's sorted out with strategy.\u201D",
   },
+
+  blog: {
+    eyebrow: "Blog",
+    title: "Writing on Building Startups",
+    lead: "Practical pieces from the field on fundraising, valuation, innovation and growth.",
+    empty: "No posts published yet. Coming soon.",
+    read: "Read",
+    back: "All posts",
+    notFound: "Post not found — Startup Doktoru",
+    draftPrefix: "[DRAFT]",
+    draftNoticeStrong: "Draft preview.",
+    draftNoticeBefore: " This post is not published — visitors cannot see it and search engines are blocked. Use the ",
+    draftNoticeEm: "Publish",
+    draftNoticeAfter: " button in the admin panel to take it live.",
+    ctaLead: "Ready to take your startup up a level?",
+    cta: "See the Ebook ($6)",
+    dateLocale: "en-US",
+  },
 };

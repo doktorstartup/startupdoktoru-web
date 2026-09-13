@@ -8,8 +8,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        // Yönetim, üye alanı ve teşekkür sayfası indekslenmez.
-        disallow: ["/admin", "/portal", "/thank-you", "/api/"],
+        // Yönetim, üye alanı ve teşekkür sayfası indekslenmez — iki dilde de.
+        disallow: ["/admin", "/portal", "/thank-you", "/api/", "/en/portal", "/en/thank-you"],
       },
     ],
     sitemap: `${SITE}/sitemap.xml`,

@@ -142,17 +142,21 @@ CREATE POLICY "Allow admin to view ds_progress" ON public.ds_course_progress
 CREATE TABLE IF NOT EXISTS public.ds_blog_posts (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   title TEXT NOT NULL,
-  slug TEXT UNIQUE NOT NULL,
+  slug TEXT NOT NULL,
   content TEXT NOT NULL,
   seo_title TEXT,
   seo_description TEXT,
   cover_image TEXT,
   -- Yayın durumu. Yeni yazı taslak doğar; yayına alma admin panelinden yapılır.
   durum TEXT NOT NULL DEFAULT 'taslak' CHECK (durum IN ('taslak', 'yayinda')),
+  -- Yazının dili. Aynı slug her dilde bir kez bulunabilir: /blog/x ve /en/blog/x.
+  lang TEXT NOT NULL DEFAULT 'tr' CHECK (lang IN ('tr', 'en')),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
+CREATE UNIQUE INDEX IF NOT EXISTS ds_blog_posts_slug_lang_key ON public.ds_blog_posts (slug, lang);
 CREATE INDEX IF NOT EXISTS ds_blog_posts_durum_idx ON public.ds_blog_posts (durum, created_at DESC);
+CREATE INDEX IF NOT EXISTS ds_blog_posts_lang_durum_idx ON public.ds_blog_posts (lang, durum, created_at DESC);
 
 -- Enable RLS for ds_blog_posts
 ALTER TABLE public.ds_blog_posts ENABLE ROW LEVEL SECURITY;

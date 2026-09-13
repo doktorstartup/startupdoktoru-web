@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Newspaper, Plus, Edit3, Trash2, Loader2, Eye, X, Check, ExternalLink, Globe, Undo2 } from "lucide-react";
+import { Newspaper, Plus, Edit3, Trash2, Loader2, Eye, X, Check, ExternalLink, Globe, Undo2, Languages } from "lucide-react";
 
 type Post = {
   id: string;
@@ -15,6 +15,7 @@ type Post = {
   created_at: string;
   views: number;
   durum: string;
+  lang: "tr" | "en";
 };
 
 type Draft = {
@@ -25,9 +26,13 @@ type Draft = {
   seo_title: string;
   seo_description: string;
   cover_image: string;
+  lang: "tr" | "en";
 };
 
-const EMPTY: Draft = { title: "", slug: "", content: "", seo_title: "", seo_description: "", cover_image: "" };
+const EMPTY: Draft = { title: "", slug: "", content: "", seo_title: "", seo_description: "", cover_image: "", lang: "tr" };
+
+// Yazının sitedeki adresi: Türkçe öneksiz, İngilizce /en altında.
+const yol = (p: { slug: string; lang: "tr" | "en" }) => (p.lang === "en" ? `/en/blog/${p.slug}` : `/blog/${p.slug}`);
 
 function getPw() {
   try {
@@ -103,6 +108,24 @@ export default function BlogAdmin() {
     }
   };
 
+  // Türkçe yazının İngilizcesini üretir (aynı slug, 'en' satırı, taslak).
+  const cevir = async (p: Post) => {
+    if (!confirm(`"${p.title}" İngilizceye çevrilecek ve /en/blog/${p.slug} adresine taslak olarak yazılacak. Devam?`)) return;
+    setBusy(p.id);
+    try {
+      const res = await fetch("/api/admin/blog", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: getPw(), id: p.id }),
+      });
+      const d = await res.json();
+      if (!res.ok) alert(d.error || "Çeviri başarısız.");
+      load();
+    } finally {
+      setBusy(null);
+    }
+  };
+
   const remove = async (id: string) => {
     if (!confirm("Bu yazıyı silmek istediğine emin misin?")) return;
     await fetch(`/api/admin/blog?password=${encodeURIComponent(getPw())}&id=${id}`, { method: "DELETE" });
@@ -142,6 +165,11 @@ export default function BlogAdmin() {
             <input value={draft.slug} onChange={(e) => setDraft({ ...draft, slug: e.target.value })} placeholder="URL (boşsa başlıktan üretilir)"
               className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none font-mono" />
           </div>
+          <select value={draft.lang} onChange={(e) => setDraft({ ...draft, lang: e.target.value as "tr" | "en" })}
+            className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none">
+            <option value="tr">Türkçe — /blog/...</option>
+            <option value="en">İngilizce — /en/blog/...</option>
+          </select>
           <textarea value={draft.content} onChange={(e) => setDraft({ ...draft, content: e.target.value })} placeholder="İçerik (düz metin, paragraflar satır boşluğuyla ayrılır) *"
             className="w-full h-64 p-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none resize-y leading-relaxed" />
           <input value={draft.cover_image} onChange={(e) => setDraft({ ...draft, cover_image: e.target.value })} placeholder="Kapak görseli URL (opsiyonel)"
@@ -174,6 +202,9 @@ export default function BlogAdmin() {
               <div key={p.id} className="flex items-center justify-between gap-4 p-4 hover:bg-secondary/10 transition-colors">
                 <div className="min-w-0">
                   <div className="font-bold text-sm truncate flex items-center gap-2">
+                    <span className="shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border border-border/60 bg-secondary/40 text-muted-foreground">
+                      {p.lang}
+                    </span>
                     {p.title}
                     {p.durum !== "yayinda" && (
                       <span className="shrink-0 text-[10px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border border-amber-500/40 bg-amber-500/10 text-amber-400">
@@ -182,14 +213,14 @@ export default function BlogAdmin() {
                     )}
                   </div>
                   <div className="text-[11px] text-muted-foreground font-mono mt-0.5 flex items-center gap-3">
-                    <span>/blog/{p.slug}</span>
+                    <span>{yol(p)}</span>
                     <span className="flex items-center gap-1"><Eye className="h-3 w-3" /> {p.views} okunma</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
                   {/* Taslak sayfası herkese kapalı; önizleme şifreli bağlantıyla açılır. */}
                   <Link
-                    href={p.durum === "yayinda" ? `/blog/${p.slug}` : `/blog/${p.slug}?onizleme=${encodeURIComponent(getPw())}`}
+                    href={p.durum === "yayinda" ? yol(p) : `${yol(p)}?onizleme=${encodeURIComponent(getPw())}`}
                     target="_blank"
                     title={p.durum === "yayinda" ? "Sitede aç" : "Taslağı önizle"}
                     className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all">
@@ -208,7 +239,16 @@ export default function BlogAdmin() {
                       : p.durum === "yayinda" ? <Undo2 className="h-3.5 w-3.5" /> : <Globe className="h-3.5 w-3.5" />}
                     {p.durum === "yayinda" ? "Taslağa al" : "Yayınla"}
                   </button>
-                  <button onClick={() => setDraft({ id: p.id, title: p.title, slug: p.slug, content: p.content, seo_title: p.seo_title || "", seo_description: p.seo_description || "", cover_image: p.cover_image || "" })}
+                  {p.lang === "tr" && (
+                    <button
+                      onClick={() => cevir(p)}
+                      disabled={busy === p.id}
+                      title="İngilizceye çevir (/en/blog altına taslak olarak yazar)"
+                      className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all disabled:opacity-60">
+                      {busy === p.id ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Languages className="h-3.5 w-3.5" />}
+                    </button>
+                  )}
+                  <button onClick={() => setDraft({ id: p.id, title: p.title, slug: p.slug, content: p.content, seo_title: p.seo_title || "", seo_description: p.seo_description || "", cover_image: p.cover_image || "", lang: p.lang })}
                     className="h-8 w-8 rounded-lg bg-secondary/80 border border-border/80 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all">
                     <Edit3 className="h-3.5 w-3.5" />
                   </button>

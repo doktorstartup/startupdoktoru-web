@@ -634,6 +634,23 @@ export const tr = {
     disclaimer:
       "Startup Doktoru AI mentorunun yönlendirmeleri yatırım tavsiyesi içermez. \u201CKervan yolda değil, stratejiyle düzülür.\u201D",
   },
+  blog: {
+    eyebrow: "Blog",
+    title: "Girişimcilik Yazıları",
+    lead: "Yatırım, değerleme, inovasyon ve büyüme üzerine sahadan, uygulanabilir içerikler.",
+    empty: "Henüz yazı yayınlanmadı. Çok yakında.",
+    read: "Oku",
+    back: "Tüm yazılar",
+    notFound: "Yazı bulunamadı — Startup Doktoru",
+    draftPrefix: "[TASLAK]",
+    draftNoticeStrong: "Taslak önizlemesi.",
+    draftNoticeBefore: " Bu yazı yayında değil — site ziyaretçileri göremez, arama motorlarına kapalı. Yayına almak için admin panelindeki ",
+    draftNoticeEm: "Yayınla",
+    draftNoticeAfter: " düğmesini kullan.",
+    ctaLead: "Girişimini bir üst seviyeye taşımaya hazır mısın?",
+    cta: "E-Kitabı İncele (6 $)",
+    dateLocale: "tr-TR",
+  },
 };
 
 export type Dict = typeof tr;

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { supabaseAdmin } from "../lib/supabase";
+import { LOCALES, localePath } from "../lib/i18n";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
@@ -19,23 +20,30 @@ export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const entries: MetadataRoute.Sitemap = STATIC.map((s) => ({
-    url: `${SITE}${s.path}`,
-    lastModified: now,
-    changeFrequency: s.changeFrequency,
-    priority: s.priority,
-  }));
+  // Site iki dilli: her sayfa hem Türkçe (öneksiz) hem İngilizce (/en) adresiyle listelenir.
+  const entries: MetadataRoute.Sitemap = [];
+  for (const s of STATIC) {
+    for (const lang of LOCALES) {
+      entries.push({
+        url: `${SITE}${localePath(lang, s.path || "/")}`,
+        lastModified: now,
+        changeFrequency: s.changeFrequency,
+        priority: s.priority,
+      });
+    }
+  }
 
+  // Blog yazıları dil başına ayrı satır; İngilizcesi yazılmamış yazı /en'de çıkmaz.
   const { data } = await supabaseAdmin
     .from("ds_blog_posts")
-    .select("slug, created_at")
+    .select("slug, lang, created_at")
     .eq("durum", "yayinda")
     .order("created_at", { ascending: false })
     .limit(1000);
 
-  for (const p of (data as { slug: string; created_at: string }[]) || []) {
+  for (const p of (data as { slug: string; lang: "tr" | "en"; created_at: string }[]) || []) {
     entries.push({
-      url: `${SITE}/blog/${p.slug}`,
+      url: `${SITE}${localePath(p.lang, `/blog/${p.slug}`)}`,
       lastModified: new Date(p.created_at),
       changeFrequency: "monthly",
       priority: 0.6,

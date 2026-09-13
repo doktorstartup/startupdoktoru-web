@@ -174,7 +174,7 @@ export async function yayinlaYazi(yazi, { kuru = false } = {}) {
   if (kuru) return { satir, yollar, yazildi: false };
 
   const db = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
-  const { data: mevcut } = await db.from("ds_blog_posts").select("id").eq("slug", slug).maybeSingle();
+  const { data: mevcut } = await db.from("ds_blog_posts").select("id").eq("slug", slug).eq("lang", "tr").maybeSingle();
   if (mevcut) {
     const { error } = await db.from("ds_blog_posts").update(satir).eq("id", mevcut.id);
     if (error) throw new Error(error.message);
@@ -182,7 +182,7 @@ export async function yayinlaYazi(yazi, { kuru = false } = {}) {
   }
   // Yeni yazı TASLAK olarak basılır — yayına alma kararı admin panelinden verilir.
   // Güncellemede durum'a dokunulmaz: yayındaki bir yazı yeniden basılınca yayında kalır.
-  const { error } = await db.from("ds_blog_posts").insert([{ ...satir, durum: "taslak" }]);
+  const { error } = await db.from("ds_blog_posts").insert([{ ...satir, durum: "taslak", lang: "tr" }]);
   if (error) throw new Error(error.message);
   return { satir, yollar, yazildi: true, guncellendi: false };
 }

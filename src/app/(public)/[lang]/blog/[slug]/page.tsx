@@ -5,6 +5,9 @@ import { SiteHeader } from "../../../../../components/SiteHeader";
 import { SiteFooter } from "../../../../../components/SiteFooter";
 import { supabaseAdmin } from "../../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../../lib/adminAuth";
+import { getDict } from "../../../../../lib/dict";
+import { isLocale, localePath, DEFAULT_LOCALE, type Locale } from "../../../../../lib/i18n";
+import { altLanguages } from "../../../../../lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -29,23 +32,26 @@ async function onizlemeMi(searchParams?: Arama) {
   return verifyAdminPassword(Array.isArray(t) ? t[0] : t).ok;
 }
 
-async function getPost(slug: string): Promise<Post | null> {
+async function getPost(slug: string, lang: Locale): Promise<Post | null> {
   const { data } = await supabaseAdmin
     .from("ds_blog_posts")
     .select("title, slug, content, seo_title, seo_description, cover_image, created_at, durum")
     .eq("slug", slug)
-    .single();
+    .eq("lang", lang)
+    .maybeSingle();
   return (data as Post) || null;
 }
 
-export async function generateMetadata({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Arama }) {
-  const { slug } = await params;
-  const post = await getPost(slug);
-  if (!post) return { title: "Yazı bulunamadı — Startup Doktoru" };
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ lang: string; slug: string }>; searchParams: Arama }) {
+  const { lang: raw, slug } = await params;
+  const lang = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = getDict(lang).blog;
+  const post = await getPost(slug, lang);
+  if (!post) return { title: t.notFound };
   if (post.durum !== "yayinda") {
-    if (!(await onizlemeMi(searchParams))) return { title: "Yazı bulunamadı — Startup Doktoru" };
+    if (!(await onizlemeMi(searchParams))) return { title: t.notFound };
     // Önizleme: arama motorlarına kapalı.
-    return { title: `[TASLAK] ${post.title}`, robots: { index: false, follow: false } };
+    return { title: `${t.draftPrefix} ${post.title}`, robots: { index: false, follow: false } };
   }
 
   const title = post.seo_title || `${post.title} — Startup Doktoru`;
@@ -56,10 +62,10 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   return {
     title,
     description,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: { canonical: localePath(lang, `/blog/${post.slug}`), languages: altLanguages(`/blog/${post.slug}`) },
     openGraph: {
       type: "article",
-      url: `/blog/${post.slug}`,
+      url: localePath(lang, `/blog/${post.slug}`),
       title,
       description,
       publishedTime: post.created_at,
@@ -69,17 +75,19 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   };
 }
 
-function fmtDate(iso: string) {
+function fmtDate(iso: string, locale: string) {
   try {
-    return new Date(iso).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+    return new Date(iso).toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
   } catch {
     return iso;
   }
 }
 
-export default async function BlogPost({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Arama }) {
-  const { slug } = await params;
-  const post = await getPost(slug);
+export default async function BlogPost({ params, searchParams }: { params: Promise<{ lang: string; slug: string }>; searchParams: Arama }) {
+  const { lang: raw, slug } = await params;
+  const lang = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = getDict(lang).blog;
+  const post = await getPost(slug, lang);
   if (!post) notFound();
   const taslak = post.durum !== "yayinda";
   if (taslak && !(await onizlemeMi(searchParams))) notFound();
@@ -88,18 +96,17 @@ export default async function BlogPost({ params, searchParams }: { params: Promi
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main className="max-w-3xl mx-auto px-6 sm:px-8 py-16 md:py-20">
-        <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
-          <ChevronLeft className="h-4 w-4" /> Tüm yazılar
+        <Link href={localePath(lang, "/blog")} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
+          <ChevronLeft className="h-4 w-4" /> {t.back}
         </Link>
 
         {taslak && (
           <div className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
-            <strong>Taslak önizlemesi.</strong> Bu yazı yayında değil — site ziyaretçileri göremez, arama motorlarına kapalı.
-            Yayına almak için admin panelindeki <em>Yayınla</em> düğmesini kullan.
+            <strong>{t.draftNoticeStrong}</strong>{t.draftNoticeBefore}<em>{t.draftNoticeEm}</em>{t.draftNoticeAfter}
           </div>
         )}
 
-        <p className="text-xs text-muted-foreground font-mono mb-3">{fmtDate(post.created_at)}</p>
+        <p className="text-xs text-muted-foreground font-mono mb-3">{fmtDate(post.created_at, t.dateLocale)}</p>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-8">{post.title}</h1>
 
         {post.cover_image && (
@@ -119,8 +126,8 @@ export default async function BlogPost({ params, searchParams }: { params: Promi
         )}
 
         <div className="mt-16 pt-8 border-t border-border/40 text-center">
-          <p className="text-muted-foreground mb-4">Girişimini bir üst seviyeye taşımaya hazır mısın?</p>
-          <Link href="/ebook" className="btn btn-lg btn-primary">E-Kitabı İncele (6 $)</Link>
+          <p className="text-muted-foreground mb-4">{t.ctaLead}</p>
+          <Link href={localePath(lang, "/ebook")} className="btn btn-lg btn-primary">{t.cta}</Link>
         </div>
       </main>
       <SiteFooter />
