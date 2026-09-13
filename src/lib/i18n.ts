@@ -26,3 +26,8 @@ export function stripLocale(pathname: string): string {
   }
   return pathname;
 }
+
+// Sözlükteki {n} / {price} gibi yer tutucuları doldurur.
+export function fill(template: string, values: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (m, k) => (k in values ? String(values[k]) : m));
+}
