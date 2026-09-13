@@ -254,6 +254,38 @@ export const tr = {
       cta: "Hemen Al · 6 $",
     },
   },
+  prices: {
+    ebookOld: "12 $",
+    ebookNew: "6 $",
+  },
+
+  testimonials: {
+    eyebrow: "Öğrenci Sonuçları",
+    title: "Eğitimi Alanlar Ne Diyor?",
+    lead: "Gerçek girişimcilerden, kendi ağızlarından.",
+    watch: "İzle",
+    videoTitleSuffix: "memnuniyet",
+  },
+
+  vcNetwork: {
+    eyebrow: "Güvenilir Kaynak",
+  },
+
+  discountPopup: {
+    normalPrice: "Normal fiyat",
+    todayForYou: "Bugün sana",
+    discountBadge: "%50 İndirim · Hemen Yakala",
+    close: "Kapat",
+    title: "Gitmeden önce dur!",
+    bodyStrong: "13 Adımda Milyon Dolarlık Startup",
+    bodyRest: " e-kitabını ilk siparişe özel yarı fiyatına al.",
+    emailPlaceholder: "e-posta adresin",
+    cta: "Hemen 6 $'a Al",
+    noSpam: "Spam yok. İstediğin zaman çıkabilirsin.",
+    doneTitle: "İndirimin hazır 🎉",
+    doneBody: "E-kitabı şimdi yarı fiyatına, hemen indirebilirsin.",
+    doneCta: "Hemen 6 $'a Sahip Ol",
+  },
 };
 
 export type Dict = typeof tr;

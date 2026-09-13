@@ -252,4 +252,37 @@ export const en: Dict = {
       cta: "Get It · $6",
     },
   },
+
+  prices: {
+    ebookOld: "$12",
+    ebookNew: "$6",
+  },
+
+  testimonials: {
+    eyebrow: "Student Results",
+    title: "What Do Graduates Say?",
+    lead: "From real founders, in their own words.",
+    watch: "Watch",
+    videoTitleSuffix: "testimonial",
+  },
+
+  vcNetwork: {
+    eyebrow: "A Credible Source",
+  },
+
+  discountPopup: {
+    normalPrice: "Regular price",
+    todayForYou: "Today, for you",
+    discountBadge: "50% off · Grab it now",
+    close: "Close",
+    title: "Wait — before you go!",
+    bodyStrong: "A Million-Dollar Startup in 13 Steps",
+    bodyRest: " — get the ebook at half price on your first order.",
+    emailPlaceholder: "your email address",
+    cta: "Get It for $6",
+    noSpam: "No spam. Unsubscribe whenever you like.",
+    doneTitle: "Your discount is ready 🎉",
+    doneBody: "You can download the ebook at half price right now.",
+    doneCta: "Get It for $6",
+  },
 };
