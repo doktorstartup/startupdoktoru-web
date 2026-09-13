@@ -18,6 +18,7 @@ import {
 
 type Stats = {
   visitors: number;
+  channels?: { kanal: string; ziyaretci: number; lead: number; satis: number }[];
   ebookEnInterest?: number;
   leads: number;
   customers: number;
@@ -138,6 +139,57 @@ export default function AdminDashboard() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Kanal kırılımı — hangi kaynak ziyaretçi, lead ve satış getirdi */}
+      <div className="glass-panel p-6 rounded-2xl border border-border/40">
+        <div className="flex justify-between items-center border-b border-border/20 pb-4 mb-4">
+          <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+            <Globe className="h-4 w-4 text-amber-400" /> Kanal Kırılımı
+          </h3>
+          <span className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider">Ziyaretçi → Lead → Satış</span>
+        </div>
+        {(stats?.channels || []).length === 0 ? (
+          <p className="text-xs text-muted-foreground py-4 text-center">Henüz kanal verisi yok.</p>
+        ) : (
+          <>
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="text-muted-foreground border-b border-border/20">
+                    <th className="text-left font-semibold pb-2">Kanal</th>
+                    <th className="text-right font-semibold pb-2">Ziyaretçi</th>
+                    <th className="text-right font-semibold pb-2">Lead</th>
+                    <th className="text-right font-semibold pb-2">Lead %</th>
+                    <th className="text-right font-semibold pb-2">Satış</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/10">
+                  {(stats?.channels || []).map((k) => (
+                    <tr key={k.kanal}>
+                      <td className="py-2 font-mono text-foreground">{k.kanal}</td>
+                      <td className="py-2 text-right font-mono text-foreground">{k.ziyaretci}</td>
+                      <td className="py-2 text-right font-mono text-primary">{k.lead}</td>
+                      <td className="py-2 text-right font-mono text-muted-foreground">
+                        {k.ziyaretci > 0 ? `%${Math.round((k.lead / k.ziyaretci) * 100)}` : "—"}
+                      </td>
+                      <td className={`py-2 text-right font-mono font-bold ${k.satis > 0 ? "text-emerald-400" : "text-muted-foreground"}`}>
+                        {k.satis}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {/* Satış olayı 13 Eylül'de devreye girdi; öncesi ölçülemiyor. */}
+            <p className="text-[10px] text-muted-foreground mt-4 leading-relaxed">
+              Kanal, kampanya etiketi (utm) varsa ondan, yoksa ilk dış referrer&apos;dan belirlenir.
+              Satış sütunu 13 Eylül 2026&apos;dan itibaren dolar — daha eski satışlar kaynaksız kaldı.
+              Instagram bağlantılarını <span className="font-mono">?utm_source=ig&amp;utm_medium=story</span> gibi
+              etiketlemezsen uygulama içi tarayıcı kaynağı göstermez.
+            </p>
+          </>
+        )}
       </div>
 
       {/* Sayfa görüntüleme kırılımı — hangi sayfa kaç kez/kaç kişi tarafından görüldü */}

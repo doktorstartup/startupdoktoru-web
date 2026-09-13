@@ -11,11 +11,13 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: auth.error }, { status: auth.status });
   }
   try {
-    // Distinct ziyaretçi + sayfa kırılımı için page_view'leri çek (session_id + path).
-    const { data: tumPageViews } = await supabaseAdmin
+    // Tüm olaylar tek sorguda: sayfa kırılımı da kanal kırılımı da buradan çıkar.
+    const { data: tumOlaylar } = await supabaseAdmin
       .from("ds_events")
-      .select("session_id, path")
-      .eq("event_type", "page_view");
+      .select("session_id, path, event_type, referrer, utm_source, utm_medium, created_at")
+      .order("created_at", { ascending: true });
+
+    const tumPageViews = (tumOlaylar || []).filter((e) => e.event_type === "page_view");
 
     // Yönetim paneli gezintisi ziyaretçi değil: huni oranlarını şişiriyordu.
     // (Panel artık hiç izlenmiyor; bu filtre geçmiş kayıtlar için.)
@@ -95,8 +97,72 @@ export async function GET(req: NextRequest) {
       .from("ds_ebook_en_interest")
       .select("id", { count: "exact", head: true });
 
+    // ── Kanal kırılımı ────────────────────────────────────────────────────
+    // Bir oturumun kanalı: kampanya etiketi varsa o, yoksa ilk dış referrer.
+    // Etiket her zaman kazanır — Instagram uygulama içi tarayıcısı referrer'ı
+    // çoğu zaman hiç göndermiyor, tek güvenilir sinyal utm.
+    const kanalAdi = (referrer: string | null): string => {
+      const r = (referrer || "").toLowerCase();
+      if (!r) return "doğrudan";
+      if (r.includes("startupdoktoru.com") || r.includes("localhost")) return "";
+      if (r.includes("google.")) return "google (organik)";
+      if (r.includes("instagram")) return "instagram";
+      if (r.includes("facebook")) return "facebook";
+      if (r.includes("youtube")) return "youtube";
+      if (r.includes("chatgpt") || r.includes("openai")) return "chatgpt";
+      if (r.includes("linkedin")) return "linkedin";
+      if (r.includes("t.co") || r.includes("twitter") || r.includes("x.com")) return "x";
+      if (r.includes("com.google.android.gm") || r.includes("mail.")) return "e-posta";
+      try {
+        return new URL(referrer!).hostname.replace(/^www\./, "");
+      } catch {
+        return "diğer";
+      }
+    };
+
+    const oturumKanali = new Map<string, string>();
+    const oturumLead = new Set<string>();
+    const oturumSatis = new Set<string>();
+
+    for (const e of tumOlaylar || []) {
+      const sid = e.session_id;
+      if (!sid || (e.path || "").startsWith("/admin")) continue;
+
+      if (e.event_type === "lead") oturumLead.add(sid);
+      if (e.event_type === "purchase") oturumSatis.add(sid);
+
+      const mevcut = oturumKanali.get(sid);
+      // Kampanya etiketi gördüğümüz an kanalı ona sabitle. Kısaltmalar açılır ki
+      // etiketli trafik, referrer'dan tanınan aynı kanalla yan yana dursun.
+      if (e.utm_source) {
+        const takma: Record<string, string> = { ig: "instagram", fb: "facebook", yt: "youtube", li: "linkedin" };
+        const kaynak = takma[e.utm_source.toLowerCase()] || e.utm_source;
+        oturumKanali.set(sid, e.utm_medium ? `${kaynak} / ${e.utm_medium}` : kaynak);
+        continue;
+      }
+      // Etiket yoksa yalnız ilk anlamlı referrer'ı yaz; sonrakiler ezmesin.
+      if (!mevcut) {
+        const ad = kanalAdi(e.referrer);
+        if (ad) oturumKanali.set(sid, ad);
+      }
+    }
+
+    const kanalMap = new Map<string, { ziyaretci: number; lead: number; satis: number }>();
+    for (const [sid, kanal] of oturumKanali) {
+      if (!kanalMap.has(kanal)) kanalMap.set(kanal, { ziyaretci: 0, lead: 0, satis: 0 });
+      const r = kanalMap.get(kanal)!;
+      r.ziyaretci += 1;
+      if (oturumLead.has(sid)) r.lead += 1;
+      if (oturumSatis.has(sid)) r.satis += 1;
+    }
+
+    const channels = Array.from(kanalMap.entries())
+      .map(([kanal, r]) => ({ kanal, ...r }))
+      .sort((a, b) => b.satis - a.satis || b.lead - a.lead || b.ziyaretci - a.ziyaretci);
+
     return NextResponse.json({
       visitors,
+      channels,
       ebookEnInterest: ebookEnInterest || 0,
       leads: leadCount,
       customers,
@@ -112,6 +178,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         visitors: 0,
+        channels: [],
         leads: 0,
         customers: 0,
         revenue: 0,
