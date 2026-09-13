@@ -9,6 +9,7 @@ import {
   useElements,
 } from "@stripe/react-stripe-js";
 import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
+import { useHref, useT } from "../lib/i18n-client";
 import { useMember } from "../lib/member";
 
 const stripePromise = loadStripe(
@@ -28,6 +29,8 @@ type Props = {
 
 // Ödeme adımı: PaymentElement + onay
 function PaymentStep({ productQuery }: { productQuery: string }) {
+  const t = useT().checkout;
+  const href = useHref();
   const stripe = useStripe();
   const elements = useElements();
   const [isLoading, setIsLoading] = useState(false);
@@ -43,13 +46,13 @@ function PaymentStep({ productQuery }: { productQuery: string }) {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${window.location.origin}/thank-you?product=${productQuery}`,
+        return_url: `${window.location.origin}${href("/thank-you")}?product=${productQuery}`,
       },
     });
 
     // confirmPayment başarılıysa kullanıcı return_url'e yönlenir; buraya yalnızca hata dönerse gelinir.
     if (error) {
-      setError(error.message || "Ödeme tamamlanamadı. Lütfen tekrar deneyin.");
+      setError(error.message || t.errorPayment);
       setIsLoading(false);
     }
   };
@@ -64,7 +67,7 @@ function PaymentStep({ productQuery }: { productQuery: string }) {
 
       <div className="flex items-center gap-2 text-[10px] text-muted-foreground justify-center py-1 select-none">
         <Lock className="h-3 w-3 text-primary" />
-        <span>256-bit SSL şifreli güvenli ödeme (Stripe).</span>
+        <span>{t.ssl}</span>
       </div>
 
       <button
@@ -75,11 +78,11 @@ function PaymentStep({ productQuery }: { productQuery: string }) {
         {isLoading ? (
           <span className="flex items-center gap-2">
             <Loader2 className="h-4 w-4 animate-spin text-background" />
-            Ödeme Doğrulanıyor...
+            {t.verifying}
           </span>
         ) : (
           <span className="flex items-center gap-2">
-            Ödemeyi Tamamla
+            {t.complete}
             <ArrowRight className="h-4 w-4" />
           </span>
         )}
@@ -98,6 +101,7 @@ export default function CheckoutForm({
   discountCode,
   onClose,
 }: Props) {
+  const t = useT().checkout;
   const { member } = useMember();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -146,13 +150,13 @@ export default function CheckoutForm({
       });
       const data = await res.json();
       if (!res.ok || !data.clientSecret) {
-        setError(data.error || "Ödeme başlatılamadı.");
+        setError(data.error || t.errorStart);
         return false;
       }
       setClientSecret(data.clientSecret);
       return true;
     } catch {
-      setError("Bağlantı hatası. Lütfen tekrar deneyin.");
+      setError(t.errorConnection);
       return false;
     } finally {
       setIsLoading(false);
@@ -201,12 +205,12 @@ export default function CheckoutForm({
         <div className="flex justify-between items-center border-b border-border/40 pb-4 mb-6">
           <h3 className="text-lg font-bold flex items-center gap-2">
             <CreditCard className="h-5 w-5 text-primary" />
-            Güvenli Ödeme
+            {t.title}
           </h3>
           <button
             type="button"
             onClick={handleClose}
-            aria-label="Kapat"
+            aria-label={t.close}
             className="relative z-20 flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground hover:text-foreground bg-secondary/40 border border-border hover:bg-secondary/70 cursor-pointer transition-colors"
           >
             <X className="h-4 w-4" />
@@ -229,45 +233,45 @@ export default function CheckoutForm({
         {prefilling && !clientSecret ? (
           <div className="flex flex-col items-center justify-center py-10 gap-3 text-muted-foreground">
             <Loader2 className="h-5 w-5 animate-spin" />
-            <span className="text-xs">Bilgilerin hazırlanıyor…</span>
+            <span className="text-xs">{t.preparing}</span>
           </div>
         ) : !clientSecret ? (
           <form onSubmit={handleDetailsSubmit} className="space-y-4">
             <div>
               <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">
-                Adınız Soyadınız
+                {t.nameLabel}
               </label>
               <input
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Eser Memişoğlu"
+                placeholder={t.namePlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
             </div>
             <div>
               <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">
-                E-posta Adresiniz
+                {t.emailLabel}
               </label>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="eser@girisim.com"
+                placeholder={t.emailPlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
             </div>
             <div>
               <label className="text-[10px] font-bold text-muted-foreground block mb-1 uppercase tracking-wider">
-                Telefon Numaranız <span className="text-muted-foreground/60 normal-case font-normal">(opsiyonel)</span>
+                {t.phoneLabel} <span className="text-muted-foreground/60 normal-case font-normal">{t.phoneOptional}</span>
               </label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="+90 5xx xxx xx xx"
+                placeholder={t.phonePlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
             </div>
@@ -282,11 +286,11 @@ export default function CheckoutForm({
               {isLoading ? (
                 <span className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin text-background" />
-                  Hazırlanıyor...
+                  {t.preparingBtn}
                 </span>
               ) : (
                 <span className="flex items-center gap-2">
-                  Ödemeye Geç
+                  {t.toPayment}
                   <ArrowRight className="h-4 w-4" />
                 </span>
               )}
