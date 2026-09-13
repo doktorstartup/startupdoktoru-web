@@ -42,9 +42,11 @@ export type Kitap = {
 export const KITAP: Kitap | null = null;
 
 // ── Bölüm metinleri (Türkçe) ──────────────────────────────────────────────
-// E-kitapla kitabın KARIŞMAMASI bu bölümün tek işi. İkisi aynı şeyin küçük ve
-// büyük hâli değil; farklı işler yapıyorlar. "Genişletilmiş basım" dili bilerek
-// kullanılmıyor — o dil "madem büyüğü var, küçüğünü niye alayım" sorusunu doğurur.
+// E-kitap artık BU kitabın dijital sürümü. İkisi aynı içerik, iki format —
+// karışıklık bu yüzden yapısal olarak yok. "Genişletilmiş basım" ya da
+// "biri rehber diğeri hikâye" dili KULLANILMIYOR; o dil "hangisini alayım"
+// sorusunu doğuruyordu. Eğitim slaytları ayrı bir materyal ve satılmıyor:
+// eğitim alanlara portalda hediye veriliyor.
 export const KITAP_METIN = {
   eyebrowCikti: "Yeni Kitap",
   eyebrowYakinda: "Çok Yakında",
@@ -52,17 +54,27 @@ export const KITAP_METIN = {
   durumYakinda: "Çok yakında kitapçılarda.",
   satinAl: "Nereden alınır:",
 
-  karsilastirmaBaslik: "Hangisi bana göre?",
-  karsilastirmaLead:
-    "İkisi aynı kitabın küçüğü ve büyüğü değil. Farklı işler yapıyorlar — çoğu kişi ikisini birden okuyor.",
+  formatBaslik: "İki format, aynı kitap",
+  formatLead:
+    "İçerik birebir aynı. Tek fark, kitabı elinde tutmak mı yoksa şimdi okumaya başlamak mı istediğin.",
 
-  ebookEtiket: "Hızlı rehber",
-  ebookBaslik: "E-Kitap",
-  ebookOzet:
-    "Eğitimlerde anlattığım slaytlardan damıtılmış hap bilgiler. Ne yapman gerektiğini adım adım söyler; masanın üstünde duran kontrol listesi gibi.",
-  ebookOzellikler: ["Dijital — anında indirirsin", "13 bölüm, uygulama odaklı", "Takıldıkça dönüp bakılır"],
-  ebookCta: "E-Kitabı İncele",
+  basiliEtiket: "Basılı",
+  basiliOzellikler: [
+    "Kitapçılarda ve online pazaryerlerinde",
+    "Rafta durur, imzalanır, hediye edilir",
+    "Kargoyla gelir",
+  ],
+  basiliCtaCikti: "Satış noktaları yukarıda",
+  basiliCtaYakinda: "Çok yakında",
 
-  kitapEtiket: "Yaşanmış hikâyeler",
-  kitapOzellikler: ["Basılı — kargoyla gelir", "Baştan sona okunur", "Sahadan gerçek hikâyeler"],
+  dijitalEtiket: "Dijital sürüm",
+  dijitalBaslik: "Hemen okumaya başla",
+  dijitalOzet:
+    "Aynı kitabın dijital sürümü. Ödemeden hemen sonra, site içindeki okuyucudan açılır.",
+  dijitalOzellikler: [
+    "Anında erişim — kargo beklemezsin",
+    "Site içinde, her cihazdan okunur",
+    "Video eğitimlerde %50 indirim kazandırır",
+  ],
+  dijitalCta: "Dijital Sürümü Al",
 };

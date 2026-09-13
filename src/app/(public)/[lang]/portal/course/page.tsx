@@ -45,6 +45,8 @@ export default function CoursePortal() {
   const owned = TRAININGS.filter((t) => hasAccess(t.id));
   const notOwned = TRAININGS.filter((t) => !hasAccess(t.id));
   const ownsEbook = hasAccess("ebook_13_steps");
+  // Sunum dosyası eğitim alanlara da açık; kart ikisinde de görünsün.
+  const dosyasiVar = ownsEbook || owned.length > 0;
 
   const openTraining = (id: string, lessonId?: string) => {
     setActiveId(id);
@@ -249,7 +251,7 @@ export default function CoursePortal() {
               );
             })}
 
-            {ownsEbook && (
+            {dosyasiVar && (
               <Link href={href("/portal/ebook")} className="glass-panel rounded-2xl border border-border/40 hover:border-accent/40 transition-all p-5 flex flex-col group">
                 <div className="flex items-center justify-between mb-3">
                   <div className="h-11 w-11 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent"><BookOpen className="h-5 w-5" /></div>

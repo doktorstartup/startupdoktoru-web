@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Check, ArrowRight, ChevronLeft, Video, Play } from "lucide-react";
+import { Check, ArrowRight, ChevronLeft, Video, Play, Sparkles } from "lucide-react";
 import CheckoutForm from "./CheckoutForm";
 import { BunnyEmbed } from "./BunnyEmbed";
 import { YouTubeEmbed } from "./YouTubeEmbed";
@@ -70,6 +70,10 @@ export function TrainingSalesPage({ trainingId }: { trainingId: string }) {
                 </div>
               ))}
             </div>
+
+            <p className="flex items-start gap-2 text-sm font-semibold text-accent mb-6 -mt-4">
+              <Sparkles className="h-4 w-4 shrink-0 mt-0.5" /> {all.trainingsPage.slideBonus}
+            </p>
 
             <div className="flex flex-wrap items-center gap-6">
               <button onClick={() => setIsCheckoutOpen(true)} className="btn btn-lg btn-primary cursor-pointer">

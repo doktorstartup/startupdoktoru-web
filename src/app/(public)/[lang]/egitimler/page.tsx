@@ -48,6 +48,9 @@ export default function EgitimlerPage() {
           <p className="text-muted-foreground text-lg leading-relaxed">
             {d.lead}
           </p>
+          <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-accent">
+            <Sparkles className="h-4 w-4 shrink-0" /> {d.slideBonus}
+          </p>
         </div>
 
         {/* E-kitap nudge / indirim aktifse onay şeridi */}
