@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -17,6 +17,7 @@ import {
 import CheckoutForm from "../../../../components/CheckoutForm";
 import { TRAININGS, BUNDLE, trainingText, bundleText, EBOOK_DISCOUNT_CODE, DISCOUNTED_TRAINING_PRICE } from "../../../../lib/trainings";
 import { useHref, useLang, useT } from "../../../../lib/i18n-client";
+import { track } from "../../../../lib/track";
 import { fill } from "../../../../lib/i18n";
 
 type Checkout = {
@@ -35,6 +36,23 @@ function ThankYouContent() {
   const isEbook = product === "ebook";
 
   const [checkout, setCheckout] = useState<Checkout | null>(null);
+
+  // Satış olayı: hangi kanalın para getirdiğini ancak burada ölçebiliyoruz —
+  // Stripe webhook'u sunucuda koştuğu için oturum ve referrer bilgisi taşımıyor.
+  // Ciro gerçeği ds_orders'ta; burada amount göndermiyoruz (indirimli fiyat
+  // istemciden güvenilir okunamaz), amaç yalnız kanal atfı.
+  useEffect(() => {
+    if (!product) return;
+    const anahtar = `ds_purchase_tracked_${product}`;
+    try {
+      if (sessionStorage.getItem(anahtar)) return; // sayfa yenilenince tekrar sayma
+      sessionStorage.setItem(anahtar, "1");
+    } catch {
+      /* sessionStorage yoksa yine de gönder */
+    }
+    track("purchase", { product_id: product });
+  }, [product]);
+
   const lang = useLang();
   const all = useT();
   const d = all.thankYouPage;
