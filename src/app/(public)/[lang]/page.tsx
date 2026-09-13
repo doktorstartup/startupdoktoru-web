@@ -25,33 +25,19 @@ import { BunnyEmbed } from "../../../components/BunnyEmbed";
 import { VcNetwork } from "../../../components/VcNetwork";
 import { Testimonials } from "../../../components/Testimonials";
 import { getTraining, trainingPoster } from "../../../lib/trainings";
+import { useHref, useT } from "../../../lib/i18n-client";
 
 export default function Home() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isAiOpen, setIsAiOpen] = useState(false);
+  const t = useT().home;
+  const href = useHref();
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      q: "Startup Doktoru tam olarak nedir?",
-      a: "Startup Doktoru, girişimcilerin fikir aşamasından yatırım aşamasına kadar olan yolculuğunu sistematik hale getiren bir eğitim, mentörlük ve büyüme platformudur. Amacımız sadece teorik bilgi değil, uygulanabilir iş modelleri ve büyüme hunileri kurmanızı sağlamaktır."
-    },
-    {
-      q: "E-Kitabı satın aldıktan sonra nasıl erişeceğim?",
-      a: "E-Kitap satın alma işlemi tamamlandığında, anında dijital PDF indirme bağlantınız ekranda belirecektir. Ayrıca kayıt olduğunuz e-posta adresinize de otomatik olarak öğrenci portalı erişim linkiniz iletilecektir."
-    },
-    {
-      q: "Yatırımcı Sunumu Eğitimi bana ne kazandırır?",
-      a: "Bu eğitim, yatırımcıların bir sunumda (pitch deck) aradığı 5 temel odağı (Metrikler, Ekip, Problem-Çözüm, Pazar Büyüklüğü ve Finansal Yol Haritası) detaylandırır. Eğitimi tamamladığınızda yatırımcıları ikna edebilecek seviyede profesyonel bir sunum hazırlamış olursunuz."
-    },
-    {
-      q: "Birebir danışmanlık hizmetini nasıl alabilirim?",
-      a: "Danışmanlık modelimiz 'Değer Merdiveni' prensibine dayanır. Ücretsiz eğitim veya e-kitabımızı edindikten sonra panelimizden veya iletişim formundan doğrudan Startup Check-Up ve Growth Danışmanlığı talebi gönderebilirsiniz."
-    }
-  ];
+  const faqs = t.faqSection.items;
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary pb-20 md:pb-0">
@@ -67,56 +53,51 @@ export default function Home() {
         <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-xs text-primary font-semibold uppercase tracking-wider mb-6">
             <Award className="h-3.5 w-3.5" />
-            10 Yıllık Startup ve Yatırım Tecrübesi
+            {t.hero.badge}
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 font-sans">
-            Hedef:<br />
+            {t.hero.titleLead}<br />
             <span className="bg-gradient-to-r from-primary via-[#38BDF8] to-accent bg-clip-text text-transparent">
-              Milyon Dolar
+              {t.hero.titleHighlight}
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-            10 yıllık bilgi birikimiyle, nasıl milyon dolarlık bir girişim kurulur — adım adım anlatıyorum.
+            {t.hero.subtitle}
           </p>
 
           {/* Primary CTA + risk reducer, e-book secondary */}
           <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <Link href="/free-training" className="btn btn-lg btn-primary w-full sm:w-auto">
+            <Link href={href("/free-training")} className="btn btn-lg btn-primary w-full sm:w-auto">
               <Play className="h-4 w-4 fill-current" />
-              Ücretsiz Eğitime Katıl
+              {t.hero.ctaFree}
             </Link>
             <p className="text-sm md:text-base text-muted-foreground flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-primary" />
-              Kredi kartı gerekmez · 2 dakikada erişim
+              {t.hero.riskReducer}
             </p>
             <Link
-              href="/ebook"
+              href={href("/ebook")}
               className="text-base md:text-lg font-semibold text-foreground/80 hover:text-primary transition-colors inline-flex items-center gap-2 mt-2"
             >
               <BookOpen className="h-5 w-5 text-primary" />
-              ya da e-kitabı incele · <span className="text-muted-foreground line-through">12 $</span> <span className="text-primary font-bold">6 $</span>
+              {t.hero.ebookLink} <span className="text-muted-foreground line-through">{t.ladder.steps[1].oldPrice}</span> <span className="text-primary font-bold">{t.ladder.steps[1].price}</span>
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           {/* Social proof strip */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center">
-            <div>
-              <p className="text-2xl font-extrabold font-mono text-primary">100+</p>
-              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Girişimci Mentorluk</p>
-            </div>
-            <div className="h-8 w-px bg-border/40 hidden sm:block" />
-            <div>
-              <p className="text-2xl font-extrabold font-mono text-primary">3</p>
-              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Girişim Kurulumu</p>
-            </div>
-            <div className="h-8 w-px bg-border/40 hidden sm:block" />
-            <div>
-              <p className="text-2xl font-extrabold font-mono text-primary">10+ Yıl</p>
-              <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">Saha Tecrübesi</p>
-            </div>
+            {t.hero.stats.map((s, i) => (
+              <React.Fragment key={s.label}>
+                {i > 0 && <div className="h-8 w-px bg-border/40 hidden sm:block" />}
+                <div>
+                  <p className="text-2xl font-extrabold font-mono text-primary">{s.value}</p>
+                  <p className="text-[11px] text-muted-foreground uppercase tracking-wider font-semibold">{s.label}</p>
+                </div>
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </section>
@@ -125,38 +106,17 @@ export default function Home() {
       <section id="problem" className="py-20 md:py-28 bg-black/30 border-y border-border/10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2 block">Temel Sorunlar</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Girişimciler Neden Başarısız Oluyor?</h2>
-            <p className="text-muted-foreground mt-4">Aylarca süren emeklerin heba olmasının ardındaki 4 ölümcül operasyonel gerçek:</p>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2 block">{t.problem.eyebrow}</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">{t.problem.title}</h2>
+            <p className="text-muted-foreground mt-4">{t.problem.lead}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: AlertTriangle,
-                title: "Yanlış Metrik Odaklılık",
-                desc: "Gerçek ciro ve kullanıcı yerine sadece 'beğeni' ve sahte büyüme rakamlarını takip etmek."
-              },
-              {
-                icon: AlertTriangle,
-                title: "Yetersiz Yatırımcı Sunumu",
-                desc: "Yatırımcının zihnindeki kritik 5 soruyu es geçerek 50 slaytlık sıkıcı sunumlar hazırlamak."
-              },
-              {
-                icon: AlertTriangle,
-                title: "Over-Engineering",
-                desc: "Pazarın doğrulamadığı özellikler için aylarca kod yazıp pazara çıkışı ertelemek."
-              },
-              {
-                icon: AlertTriangle,
-                title: "Sistemsiz Büyüme",
-                desc: "KPI, görev yönetimi ve doğru delegasyon kurmadan işin kendisini kaosa sürüklemek."
-              }
-            ].map((p, i) => (
+            {t.problem.items.map((p, i) => (
               <div key={i} className="glass-panel p-8 rounded-2xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 h-24 w-24 rounded-full bg-red-500/5 blur-xl group-hover:bg-red-500/10 transition-all duration-300" />
                 <div className="h-12 w-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-500 mb-6">
-                  <p.icon className="h-6 w-6" />
+                  <AlertTriangle className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{p.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
@@ -172,39 +132,16 @@ export default function Home() {
       {/* ─── VALUE LADDER (SOLUTION) ─── */}
       <section id="value-ladder" className="py-20 md:py-32 max-w-7xl mx-auto px-6 sm:px-8">
         <div className="max-w-3xl mx-auto text-center mb-20">
-          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">Güven Temelli Yolculuk</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Startup Değer Merdiveni</h2>
-          <p className="text-muted-foreground mt-4">Platformumuzda doğrudan yüksek bütçeli satışlar yapmayız. Sizinle güven bağımızı adım adım büyütürüz:</p>
+          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">{t.ladder.eyebrow}</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">{t.ladder.title}</h2>
+          <p className="text-muted-foreground mt-4">{t.ladder.lead}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {[
-            {
-              step: "Adım 01",
-              title: "Ücretsiz Eğitim",
-              desc: "Yatırımcıların karşısında yapılan en kritik hataları gösterip anında değer üretir.",
-              price: "Ücretsiz",
-              btnText: "Kayıt Ol",
-              link: "/free-training"
-            },
-            {
-              step: "Adım 02",
-              title: "E-Kitap",
-              desc: "13 kritik adımda milyon dolarlık bir startup kurmanın pratik el kitabını edinirsiniz.",
-              price: "6 USD",
-              oldPrice: "12 $",
-              btnText: "Hemen 6 $'a Al",
-              link: "/ebook",
-              highlight: true
-            },
-            {
-              step: "Adım 03",
-              title: "Video Eğitimler",
-              desc: "Yatırımcı sunumu, startup giriş rehberi ve değerleme eğitimleri. E-kitap alana her biri %50 indirimli.",
-              price: "70 $ / paket 99 $",
-              btnText: "Eğitimleri Gör",
-              link: "/egitimler"
-            }
+            { ...t.ladder.steps[0], link: "/free-training", highlight: false },
+            { ...t.ladder.steps[1], link: "/ebook", highlight: true },
+            { ...t.ladder.steps[2], link: "/egitimler", highlight: false },
           ].map((item, idx) => (
             <div 
               key={idx} 
@@ -214,7 +151,7 @@ export default function Home() {
             >
               {item.highlight && (
                 <div className="absolute top-0 right-0 bg-primary text-background font-bold text-[10px] px-3 py-1 rounded-bl-lg tracking-wider uppercase">
-                  En Popüler
+                  {t.ladder.popular}
                 </div>
               )}
               <div>
@@ -226,7 +163,7 @@ export default function Home() {
                 <div className="mb-6">
                   {item.oldPrice && (
                     <span className="inline-block font-sans text-[11px] font-extrabold text-primary bg-primary/15 border border-primary/30 rounded-full px-3 py-1 uppercase tracking-wide mb-3">
-                      %50 indirim
+                      {t.ladder.discountBadge}
                     </span>
                   )}
                   <div className="font-mono flex items-baseline gap-2">
@@ -237,7 +174,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Link
-                  href={item.link}
+                  href={href(item.link)}
                   className={`btn w-full ${item.highlight ? "btn-primary" : "btn-secondary"}`}
                 >
                   {item.btnText}
@@ -252,27 +189,16 @@ export default function Home() {
       <section id="ebook" className="py-20 md:py-32 bg-black/40 border-y border-border/10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2">Dijital Dönüşüm El Kitabı</span>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2">{t.ebookSection.eyebrow}</span>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-              13 Adımda Milyon Dolarlık Startup
+              {t.ebookSection.title}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-              Bu kitap, son 10 yılda edindiğimiz inovasyon, yatırımcılık ve büyüme tecrübelerinin damıtılmış bir özetidir. Adım adım şirketinizin omurgasını nasıl kuracağınızı örneklerle öğretir.
+              {t.ebookSection.body}
             </p>
 
             <div className="grid grid-cols-2 gap-4 w-full mb-8">
-              {[
-                "01. İnovasyon & Faydalı Fikir",
-                "02. Over-Engineering (Mühendis Hastalığı)",
-                "03. MVP ile Pazara Çıkış",
-                "04. Problem Doğrulama & Ürün-Pazar Uyumu",
-                "05. Marka Konumlandırma & Rakip Analizi",
-                "06. Ekip Kurma (CEO, COO, CFO)",
-                "07. Nakit Akışı Yönetimi",
-                "08. Şirket Değerleme (Berkus, Scorecard, DCF)",
-                "09. Melek Yatırımcı & Pazarlık",
-                "10. Yatırımcı Sunumu (Pitch)"
-              ].map((ch, i) => (
+              {t.ebookSection.chapters.map((ch, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-foreground">
                   <ShieldCheck className="h-4 w-4 text-primary shrink-0" />
                   <span>{ch}</span>
@@ -280,8 +206,8 @@ export default function Home() {
               ))}
             </div>
 
-            <Link href="/ebook" className="btn btn-lg btn-primary">
-              E-Kitabı İndir (6 $)
+            <Link href={href("/ebook")} className="btn btn-lg btn-primary">
+              {t.ebookSection.cta}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -292,16 +218,16 @@ export default function Home() {
               <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
               <div className="flex justify-between items-start">
                 <span className="text-xs font-bold text-primary font-mono tracking-widest uppercase">E-Book</span>
-                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">Sistem Kitabı</span>
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">{t.ebookSection.cardTag}</span>
               </div>
               <div className="my-8">
                 <h3 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground font-sans">
-                  13 Adımda<br />
-                  <span className="text-primary font-bold">Milyon Dolarlık</span><br />
-                  Startup
+                  {t.ebookSection.cardTitleTop}<br />
+                  <span className="text-primary font-bold">{t.ebookSection.cardTitleMid}</span><br />
+                  {t.ebookSection.cardTitleBottom}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-4 leading-relaxed">
-                  plansız kervan kurmaya son veren büyüme yol haritası.
+                  {t.ebookSection.cardNote}
                 </p>
               </div>
               <div className="flex justify-between items-center border-t border-border/40 pt-4">
@@ -311,7 +237,7 @@ export default function Home() {
                   </div>
                   <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Eser Memişoğlu</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-accent">6 $</div>
+                <div className="text-lg font-bold font-mono text-accent">{t.ladder.steps[1].price}</div>
               </div>
             </div>
           </div>
@@ -326,12 +252,12 @@ export default function Home() {
             <div className="w-full max-w-lg aspect-video rounded-2xl border border-border bg-[#0E1726]/40 overflow-hidden shadow-2xl">
               <BunnyEmbed
                 videoId={getTraining("investor_training")?.previewVideo || ""}
-                title="Yatırımcı Sunumu Eğitimi — Önizleme"
-                label="1 dakikalık önizlemeyi izle"
+                title={t.trainingSection.videoTitle}
+                label={t.trainingSection.videoLabel}
                 poster={{
-                  badge: "Ücretsiz Önizleme",
-                  title: "Yatırımcı Sunumu Nasıl Yapılır?",
-                  subtitle: "Yatırım almış gerçek bir sunum üzerinden",
+                  badge: t.trainingSection.posterBadge,
+                  title: t.trainingSection.posterTitle,
+                  subtitle: t.trainingSection.posterSubtitle,
                   accent: "cyan",
                 }}
               />
@@ -339,26 +265,20 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col items-start">
-            <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2">Video Eğitim · En Çok Aranan</span>
+            <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2">{t.trainingSection.eyebrow}</span>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-              Yatırımcı Sunumu Nasıl Yapılır?
+              {t.trainingSection.title}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-              Teoriyle değil, <strong className="text-foreground">gerçekten yatırım almış bir sunum üzerinden</strong> ilerliyoruz. Slaytları tek tek açıp yatırımcıyı ikna eden püf noktalarını gösteriyorum. 1 dakikalık önizleme ücretsiz.
+              {t.trainingSection.bodyBefore}<strong className="text-foreground">{t.trainingSection.bodyStrong}</strong>{t.trainingSection.bodyAfter}
             </p>
 
             <div className="space-y-4 mb-8 w-full">
-              {[
-                { m: "01", t: "Problem & Çözüm Anlatımı" },
-                { m: "02", t: "Pazar Büyüklüğü & Rakip Analizi" },
-                { m: "03", t: "Ekip Kurma & Yatırımcıya Güven" },
-                { m: "04", t: "İş Modeli & Gelir Mantığı" },
-                { m: "05", t: "Yatırım Almış Gerçek Sunum İncelemesi" }
-              ].map((mod, i) => (
+              {t.trainingSection.modules.map((mod, i) => (
                 <div key={i} className="flex items-center justify-between p-3.5 rounded-xl border border-border/60 bg-secondary/15 hover:border-primary/25 transition-all">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-bold font-mono text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/25">{mod.m}</span>
-                    <span className="text-sm font-bold text-foreground">{mod.t}</span>
+                    <span className="text-xs font-bold font-mono text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/25">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="text-sm font-bold text-foreground">{mod}</span>
                   </div>
                   <Play className="h-3.5 w-3.5 text-muted-foreground" />
                 </div>
@@ -366,12 +286,12 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-              <Link href="/investor-training" className="btn btn-lg btn-primary">
-                Önizlemeyi İzle & Eğitime Eriş
+              <Link href={href("/investor-training")} className="btn btn-lg btn-primary">
+                {t.trainingSection.cta}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <p className="text-xs text-muted-foreground mt-3">Tanıtım ücretsiz · Tam eğitim 70 $ (e-kitap alana 35 $)</p>
+            <p className="text-xs text-muted-foreground mt-3">{t.trainingSection.note}</p>
           </div>
         </div>
       </section>
@@ -380,30 +300,25 @@ export default function Home() {
       <section id="about" className="py-20 md:py-32 bg-black/40 border-y border-border/10">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 flex flex-col items-start">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2">Startup Doktoru Hakkında</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Eser Memişoğlu</h2>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-2">{t.about.eyebrow}</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">{t.about.name}</h2>
             <p className="text-muted-foreground leading-relaxed mb-6 text-base">
-              Son 10 yıldır startup, teknoloji, inovasyon ve yatırım ilişkileri alanlarında aktif rol oynamaktayım. Bugüne kadar 3 farklı teknoloji şirketinin kuruculuğunu üstlendim, onlarca girişimciye ve scale-up markaya sistem kurulumu konusunda yol arkadaşlığı yaptım.
+              {t.about.p1}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8 text-base">
-              İşlerin plansız ve 'kervan yolda düzülür' diyerek yürütülmesine karşıyım. Startup Doktoru platformu ile edindiğim en kritik dersleri ürünleştirerek, iş modelinizi yatırım alabilecek ve kârlı bir şekilde ölçeklenebilecek otonom bir sisteme dönüştürmeyi hedefliyorum.
+              {t.about.p2}
             </p>
             
             <div className="flex items-center gap-6">
-              <div>
-                <p className="text-3xl font-extrabold font-mono text-primary">10+</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mt-1">Yıl Tecrübe</p>
-              </div>
-              <div className="h-10 w-px bg-border/40" />
-              <div>
-                <p className="text-3xl font-extrabold font-mono text-primary">3</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mt-1">Girişim Kurulumu</p>
-              </div>
-              <div className="h-10 w-px bg-border/40" />
-              <div>
-                <p className="text-3xl font-extrabold font-mono text-primary">100+</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mt-1">Girişimci Mentorluk</p>
-              </div>
+              {t.about.stats.map((st, i) => (
+                <React.Fragment key={st.label}>
+                  {i > 0 && <div className="h-10 w-px bg-border/40" />}
+                  <div>
+                    <p className="text-3xl font-extrabold font-mono text-primary">{st.value}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mt-1">{st.label}</p>
+                  </div>
+                </React.Fragment>
+              ))}
             </div>
           </div>
 
@@ -412,7 +327,7 @@ export default function Home() {
             <div className="h-96 w-80 rounded-3xl gradient-panel border border-border shadow-2xl relative overflow-hidden flex flex-col justify-end p-8 group">
               <Image
                 src="/eser-memisoglu.png"
-                alt="Eser Memişoğlu — Kurucu & Girişim Danışmanı"
+                alt={t.about.portraitAlt}
                 fill
                 sizes="320px"
                 className="object-cover object-top z-0 transition-transform duration-500 group-hover:scale-105"
@@ -420,10 +335,10 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10" />
 
               <div className="relative z-20">
-                <span className="text-xs font-extrabold text-primary font-mono tracking-widest uppercase block mb-1">Kurucu & Girişim Danışmanı</span>
-                <h4 className="text-2xl font-bold text-foreground">Eser Memişoğlu</h4>
+                <span className="text-xs font-extrabold text-primary font-mono tracking-widest uppercase block mb-1">{t.about.role}</span>
+                <h4 className="text-2xl font-bold text-foreground">{t.about.name}</h4>
                 <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                  İnovasyon, Finansman, Yatırımcı İlişkileri ve Growth Sistemleri üzerine çalışmalarına devam ediyor.
+                  {t.about.roleNote}
                 </p>
               </div>
             </div>
@@ -431,10 +346,10 @@ export default function Home() {
             {/* Kişisel söz — fotoğrafın altında */}
             <figure className="max-w-80 text-center">
               <blockquote className="text-lg font-semibold italic text-foreground/90 leading-snug">
-                <span className="text-primary">“</span>Kervan yolda değil, stratejiyle düzülür.<span className="text-primary">”</span>
+                <span className="text-primary">“</span>{t.about.quote}<span className="text-primary">”</span>
               </blockquote>
               <figcaption className="mt-2 text-[11px] uppercase tracking-widest text-muted-foreground">
-                Eser Memişoğlu&apos;nun ilkesi
+                {t.about.quoteCaption}
               </figcaption>
             </figure>
           </div>
@@ -447,8 +362,8 @@ export default function Home() {
       {/* ─── FAQ SECTION ─── */}
       <section className="py-20 md:py-32 max-w-4xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-16">
-          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">Merak Edilenler</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Sıkça Sorulan Sorular</h2>
+          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">{t.faqSection.eyebrow}</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">{t.faqSection.title}</h2>
         </div>
 
         <div className="space-y-4">
@@ -481,21 +396,21 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-accent/5 blur-3xl -z-10" />
           
           <span className="text-accent text-xs font-extrabold tracking-widest uppercase mb-3 px-3 py-1 rounded-full border border-accent/20 bg-accent/5">
-            Otomatik Büyüme Makinesi
+            {t.finalCta.badge}
           </span>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight max-w-3xl mb-8">
-            Girişiminizi yatırım alınabilir, kârlı bir sisteme dönüştürmeye hazır mısınız?
+            {t.finalCta.title}
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed mb-12">
-            Teoride kalmayın. Startup Doktoru'nun pratik el kitapları, video eğitim modülleri ve otomatik büyüme stratejileri ile bugün işinizi bir üst kademeye taşıyın.
+            {t.finalCta.body}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link href="/free-training" className="btn btn-lg btn-primary w-full sm:w-auto">
-              Ücretsiz Eğitime Başla
+            <Link href={href("/free-training")} className="btn btn-lg btn-primary w-full sm:w-auto">
+              {t.finalCta.primary}
             </Link>
-            <Link href="/ebook" className="btn btn-lg btn-secondary w-full sm:w-auto">
-              E-Kitabı Edin (6 $)
+            <Link href={href("/ebook")} className="btn btn-lg btn-secondary w-full sm:w-auto">
+              {t.finalCta.secondary}
             </Link>
           </div>
         </div>
@@ -507,11 +422,11 @@ export default function Home() {
       {/* ─── MOBILE STICKY BUY BAR ─── */}
       <div className="md:hidden fixed bottom-0 inset-x-0 z-30 border-t border-border/40 bg-background/90 backdrop-blur-md px-4 py-3 flex items-center gap-3">
         <div className="flex-1 leading-tight">
-          <p className="text-sm font-bold text-foreground">13 Adımda Milyon Dolarlık Startup</p>
-          <p className="text-xs text-muted-foreground">E-Kitap · <span className="line-through">12 $</span> <span className="text-primary font-bold">6 $</span></p>
+          <p className="text-sm font-bold text-foreground">{t.stickyBar.title}</p>
+          <p className="text-xs text-muted-foreground">{t.stickyBar.meta} <span className="line-through">{t.ladder.steps[1].oldPrice}</span> <span className="text-primary font-bold">{t.ladder.steps[1].price}</span></p>
         </div>
-        <Link href="/ebook" className="btn btn-primary shrink-0">
-          Hemen Al · 6 $
+        <Link href={href("/ebook")} className="btn btn-primary shrink-0">
+          {t.stickyBar.cta}
         </Link>
       </div>
 

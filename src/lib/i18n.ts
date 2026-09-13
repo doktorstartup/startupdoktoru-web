@@ -17,3 +17,12 @@ export function localePath(lang: Locale, path: string): string {
   if (lang === DEFAULT_LOCALE) return p || "/";
   return `/en${p}`;
 }
+
+// Adresten dil önekini ayıklar: "/en/ebook" → "/ebook". Öneksiz adres aynen döner.
+export function stripLocale(pathname: string): string {
+  for (const l of LOCALES) {
+    if (pathname === `/${l}`) return "/";
+    if (pathname.startsWith(`/${l}/`)) return pathname.slice(l.length + 1);
+  }
+  return pathname;
+}
