@@ -24,6 +24,7 @@ import { SiteFooter } from "../../../components/SiteFooter";
 import { BunnyEmbed } from "../../../components/BunnyEmbed";
 import { VcNetwork } from "../../../components/VcNetwork";
 import { Testimonials } from "../../../components/Testimonials";
+import { KitapBolumu } from "../../../components/KitapBolumu";
 import { getTraining, trainingPoster } from "../../../lib/trainings";
 import { useHref, useT } from "../../../lib/i18n-client";
 
@@ -243,6 +244,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── BASILI KİTAP + E-KİTAPLA FARKI (kitap girilmemişse gizli, yalnız TR) ─── */}
+      <KitapBolumu />
 
       {/* ─── INVESTOR PITCH TRAINING SECTION ─── */}
       <section id="training" className="py-20 md:py-32 max-w-7xl mx-auto px-6 sm:px-8">
