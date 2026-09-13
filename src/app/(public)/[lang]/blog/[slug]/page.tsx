@@ -1,0 +1,153 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ChevronLeft } from "lucide-react";
+import { SiteHeader } from "../../../../../components/SiteHeader";
+import { SiteFooter } from "../../../../../components/SiteFooter";
+import { supabaseAdmin } from "../../../../../lib/supabase";
+import { verifyAdminPassword } from "../../../../../lib/adminAuth";
+import { getDict } from "../../../../../lib/dict";
+import { isLocale, localePath, DEFAULT_LOCALE, type Locale } from "../../../../../lib/i18n";
+
+export const dynamic = "force-dynamic";
+
+type Post = {
+  title: string;
+  slug: string;
+  content: string;
+  seo_title: string | null;
+  seo_description: string | null;
+  cover_image: string | null;
+  created_at: string;
+  durum: string;
+};
+
+type Arama = Promise<{ [k: string]: string | string[] | undefined }>;
+
+// Taslak yazı herkese kapalı. Tek istisna: admin panelindeki önizleme bağlantısı
+// ?onizleme=<yönetici şifresi> ile gelir — panel şifreyi zaten sorguda taşıyor.
+async function onizlemeMi(searchParams?: Arama) {
+  const sp = searchParams ? await searchParams : undefined;
+  const t = sp?.onizleme;
+  return verifyAdminPassword(Array.isArray(t) ? t[0] : t).ok;
+}
+
+// Yazının yayında olduğu diller — dil değiştirici çevirisi olmayan dile link vermesin.
+async function yayindakiDiller(slug: string): Promise<Locale[]> {
+  const { data } = await supabaseAdmin
+    .from("ds_blog_posts")
+    .select("lang")
+    .eq("slug", slug)
+    .eq("durum", "yayinda");
+  return ((data as { lang: Locale }[]) || []).map((r) => r.lang);
+}
+
+async function getPost(slug: string, lang: Locale): Promise<Post | null> {
+  const { data } = await supabaseAdmin
+    .from("ds_blog_posts")
+    .select("title, slug, content, seo_title, seo_description, cover_image, created_at, durum")
+    .eq("slug", slug)
+    .eq("lang", lang)
+    .maybeSingle();
+  return (data as Post) || null;
+}
+
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ lang: string; slug: string }>; searchParams: Arama }) {
+  const { lang: raw, slug } = await params;
+  const lang = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = getDict(lang).blog;
+  const post = await getPost(slug, lang);
+  if (!post) return { title: t.notFound };
+  if (post.durum !== "yayinda") {
+    if (!(await onizlemeMi(searchParams))) return { title: t.notFound };
+    // Önizleme: arama motorlarına kapalı.
+    return { title: `${t.draftPrefix} ${post.title}`, robots: { index: false, follow: false } };
+  }
+
+  const title = post.seo_title || `${post.title} — Startup Doktoru`;
+  const description = post.seo_description || undefined;
+  // Kapak varsa önizleme görseli o; yoksa kök layout'un varsayılanı devreye girer.
+  const images = post.cover_image ? [{ url: post.cover_image, alt: post.title }] : undefined;
+
+  return {
+    title,
+    description,
+    // hreflang yalnız gerçekten yayında olan diller için — olmayan adres 404 verir.
+    alternates: {
+      canonical: localePath(lang, `/blog/${post.slug}`),
+      languages: Object.fromEntries(
+        (await yayindakiDiller(post.slug)).map((l) => [l, localePath(l, `/blog/${post.slug}`)])
+      ),
+    },
+    openGraph: {
+      type: "article",
+      url: localePath(lang, `/blog/${post.slug}`),
+      title,
+      description,
+      publishedTime: post.created_at,
+      images,
+    },
+    twitter: { card: "summary_large_image", title, description, images: images?.map((i) => i.url) },
+  };
+}
+
+function fmtDate(iso: string, locale: string) {
+  try {
+    return new Date(iso).toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" });
+  } catch {
+    return iso;
+  }
+}
+
+export default async function BlogPost({ params, searchParams }: { params: Promise<{ lang: string; slug: string }>; searchParams: Arama }) {
+  const { lang: raw, slug } = await params;
+  const lang = isLocale(raw) ? raw : DEFAULT_LOCALE;
+  const t = getDict(lang).blog;
+  const post = await getPost(slug, lang);
+  if (!post) notFound();
+  const taslak = post.durum !== "yayinda";
+  if (taslak && !(await onizlemeMi(searchParams))) notFound();
+
+  const diller = await yayindakiDiller(slug);
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteHeader availableLocales={diller.includes(lang) ? diller : [...diller, lang]} />
+      <main className="max-w-3xl mx-auto px-6 sm:px-8 py-16 md:py-20">
+        <Link href={localePath(lang, "/blog")} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
+          <ChevronLeft className="h-4 w-4" /> {t.back}
+        </Link>
+
+        {taslak && (
+          <div className="mb-6 rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 text-sm text-amber-300">
+            <strong>{t.draftNoticeStrong}</strong>{t.draftNoticeBefore}<em>{t.draftNoticeEm}</em>{t.draftNoticeAfter}
+          </div>
+        )}
+
+        <p className="text-xs text-muted-foreground font-mono mb-3">{fmtDate(post.created_at, t.dateLocale)}</p>
+        <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-8">{post.title}</h1>
+
+        {post.cover_image && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={post.cover_image} alt={post.title} className="w-full rounded-2xl border border-border/40 mb-10" />
+        )}
+
+        {/* İçerik "<" ile başlıyorsa HTML olarak render edilir (haber paketleri böyle yazılır);
+            aksi halde eski yazıların düz metin davranışı aynen korunur.
+            HTML'i her zaman bizim şablonumuz üretir — model çıktısı içine kaçırılmış metin olarak girer. */}
+        {post.content.trimStart().startsWith("<") ? (
+          <div className="ds-prose" dangerouslySetInnerHTML={{ __html: post.content }} />
+        ) : (
+          <div className="text-foreground/90 leading-relaxed text-base whitespace-pre-wrap [&>*]:mb-4">
+            {post.content}
+          </div>
+        )}
+
+        <div className="mt-16 pt-8 border-t border-border/40 text-center">
+          <p className="text-muted-foreground mb-4">{t.ctaLead}</p>
+          <Link href={localePath(lang, "/ebook")} className="btn btn-lg btn-primary">{t.cta}</Link>
+        </div>
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}

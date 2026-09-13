@@ -4,37 +4,43 @@ import { Star, Quote } from "lucide-react";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 import { BunnyEmbed } from "./BunnyEmbed";
 import { TESTIMONIALS } from "../lib/socialproof";
+import { useLang, useT } from "../lib/i18n-client";
 
 // Öğrenci memnuniyet videoları. İçerik yoksa bölüm gizlenir.
 export function Testimonials() {
+  const t = useT().testimonials;
+  const lang = useLang();
+
   if (TESTIMONIALS.length === 0) return null;
 
   return (
     <section id="testimonials" className="py-20 md:py-32 bg-black/30 border-y border-border/10">
       <div className="container-page">
         <div className="max-w-3xl mx-auto text-center mb-14">
-          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">Öğrenci Sonuçları</span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">Eğitimi Alanlar Ne Diyor?</h2>
-          <p className="text-muted-foreground text-lg mt-4">Gerçek girişimcilerden, kendi ağızlarından.</p>
+          <span className="text-primary text-sm font-bold tracking-widest uppercase mb-2 block">{t.eyebrow}</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">{t.title}</h2>
+          <p className="text-muted-foreground text-lg mt-4">{t.lead}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t, i) => (
+          {TESTIMONIALS.map((item, i) => {
+            const quote = lang === "en" ? item.quoteEn : item.quote;
+            return (
             <div key={i} className="glass-panel rounded-2xl border border-border/40 overflow-hidden flex flex-col">
               <div className="aspect-video bg-black/40 border-b border-border/40">
-                {t.youTubeId ? (
+                {item.youTubeId ? (
                   <YouTubeEmbed
-                    videoId={t.youTubeId}
-                    title={`${t.name} — memnuniyet`}
-                    label="İzle"
-                    poster={{ title: t.name, subtitle: t.role, accent: "cyan" }}
+                    videoId={item.youTubeId}
+                    title={`${item.name} — ${t.videoTitleSuffix}`}
+                    label={t.watch}
+                    poster={{ title: item.name, subtitle: item.role, accent: "cyan" }}
                   />
-                ) : t.bunnyId ? (
+                ) : item.bunnyId ? (
                   <BunnyEmbed
-                    videoId={t.bunnyId}
-                    title={`${t.name} — memnuniyet`}
-                    label="İzle"
-                    poster={{ title: t.name, subtitle: t.role, accent: "cyan" }}
+                    videoId={item.bunnyId}
+                    title={`${item.name} — ${t.videoTitleSuffix}`}
+                    label={t.watch}
+                    poster={{ title: item.name, subtitle: item.role, accent: "cyan" }}
                   />
                 ) : null}
               </div>
@@ -44,19 +50,20 @@ export function Testimonials() {
                     <Star key={s} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                {t.quote && (
+                {quote && (
                   <p className="text-sm text-foreground/90 leading-relaxed flex-1">
                     <Quote className="h-4 w-4 text-primary inline mr-1 -mt-1" />
-                    {t.quote}
+                    {quote}
                   </p>
                 )}
                 <div className="mt-4">
-                  <p className="text-sm font-bold">{t.name}</p>
-                  {t.role && <p className="text-xs text-muted-foreground">{t.role}</p>}
+                  <p className="text-sm font-bold">{item.name}</p>
+                  {item.role && <p className="text-xs text-muted-foreground">{item.role}</p>}
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
