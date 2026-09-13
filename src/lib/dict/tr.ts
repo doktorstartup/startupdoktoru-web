@@ -529,6 +529,36 @@ export const tr = {
     upsellBodyAfter: " edinin.",
     upsellCta: "E-Kitabı Edin (6 $)",
   },
+  thankYouPage: {
+    loading: "Yükleniyor...",
+    badge: "Ödeme Başarılı",
+    titleEbook: "E-Kitabınız Hazır!",
+    titleCourse: "Erişiminiz Açıldı!",
+    bodyEbook:
+      "13 Adımda Milyon Dolarlık Startup e-kitabınız başarıyla satın alındı. Aşağıdan indirmeye başlayabilirsiniz. İndirme linki e-posta adresinize de iletildi.",
+    bodyCourse:
+      "Satın aldığınız eğitime tam erişiminiz açıldı. Öğrenci portalına giriş yaparak izlemeye başlayabilirsiniz.",
+    ctaEbook: "E-Kitabı İndir",
+    ctaCourse: "Eğitime Başla",
+    upsellEyebrow: "%50 İndirim Kazandınız",
+    upsellTitle: "Eğitimleri Sana Özel Fiyata Al",
+    upsellBodyBefore: "E-kitabı aldığın için tüm video eğitimler senin için ",
+    upsellBodyStrong: "%50 indirimli",
+    upsellBodyAfter: ". İki seçenek:",
+    option1: "Seçenek 1 · Bir eğitim seç",
+    option2: "Seçenek 2 · Hepsi birden — en avantajlı",
+    bundleNote: "3 eğitimin tamamı",
+    bundleCta: "{price} $ · Hepsini Al",
+    bundleOldPrice: "210 $",
+    noteDiscounted: "Video eğitim · e-kitap alana özel %50",
+    consultEyebrow: "Birebir Çalışma Fırsatı",
+    consultTitleTop: "Startup Check-Up ile",
+    consultTitleBottom: "Büyüme Planınızı Kuralım",
+    consultBodyBefore: "Eğitimi tamamlayan girişimcilere özel: Eser Memişoğlu ile birebir ",
+    consultBodyStrong: "Startup Check-Up ve Growth Danışmanlığı",
+    consultBodyAfter: " seansı için ön kayıt başlatın.",
+    consultCta: "Ücretsiz Ön Kayıt Yap",
+  },
 };
 
 export type Dict = typeof tr;
