@@ -20,18 +20,48 @@ function getSessionId(): string {
   }
 }
 
-function getUtm() {
+const ATTR_KEY = "ds_attr";
+const ATTR_GUN = 30;
+
+type Attr = { utm_source?: string; utm_medium?: string; utm_campaign?: string };
+
+// Kampanya kaynağı YALNIZ giriş adresinde bulunur; ziyaretçi ikinci sayfaya
+// geçtiğinde URL'den düşer. Böyle olunca lead ve satış olayları "kaynak yok"
+// diye kaydediliyordu — yani Instagram'dan gelen satış görünmüyordu.
+// Kaynak artık saklanıyor ve oturum boyunca her olaya ekleniyor.
+// Son dokunuş kazanır: yeni bir kampanya bağlantısıyla gelen ziyaretçinin
+// kaynağı güncellenir. 30 gün sonra düşer, eski kampanya yeni satışa yazılmasın.
+function getUtm(): Attr {
   if (typeof window === "undefined") return {};
+
+  let simdiki: Attr = {};
   try {
     const p = new URLSearchParams(window.location.search);
-    return {
-      utm_source: p.get("utm_source") || undefined,
-      utm_medium: p.get("utm_medium") || undefined,
-      utm_campaign: p.get("utm_campaign") || undefined,
-    };
+    const kaynak = p.get("utm_source") || undefined;
+    const arac = p.get("utm_medium") || undefined;
+    const kampanya = p.get("utm_campaign") || undefined;
+    if (kaynak || arac || kampanya) {
+      simdiki = { utm_source: kaynak, utm_medium: arac, utm_campaign: kampanya };
+    }
   } catch {
-    return {};
+    /* URL okunamadıysa saklanana bak */
   }
+
+  try {
+    if (simdiki.utm_source || simdiki.utm_medium || simdiki.utm_campaign) {
+      localStorage.setItem(ATTR_KEY, JSON.stringify({ ...simdiki, ts: Date.now() }));
+      return simdiki;
+    }
+    const kayitli = localStorage.getItem(ATTR_KEY);
+    if (kayitli) {
+      const { ts, ...attr } = JSON.parse(kayitli) as Attr & { ts?: number };
+      if (ts && Date.now() - ts < ATTR_GUN * 864e5) return attr;
+    }
+  } catch {
+    /* localStorage yoksa URL'dekiyle yetin */
+  }
+
+  return simdiki;
 }
 
 export function track(
