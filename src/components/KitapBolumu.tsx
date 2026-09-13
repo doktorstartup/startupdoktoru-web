@@ -13,7 +13,7 @@ export function KitapBolumu() {
   const all = useT();
   const href = useHref();
 
-  if (!KITAP || lang !== "tr") return null;
+  if (!KITAP || !KITAP.yayinda || lang !== "tr") return null;
   const cikti = KITAP.durum === "cikti";
 
   return (
@@ -22,15 +22,14 @@ export function KitapBolumu() {
         {/* Kitap tanıtımı */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-64 sm:w-72 aspect-[2/3] rounded-lg overflow-hidden shadow-2xl ring-1 ring-border/40">
-              <Image
-                src={KITAP.kapak}
-                alt={`${KITAP.baslik} — kitap kapağı`}
-                fill
-                sizes="288px"
-                className="object-cover"
-              />
-            </div>
+            <Image
+              src={KITAP.kapak}
+              alt={`${KITAP.baslik} — kitap kapağı`}
+              width={1000}
+              height={1445}
+              sizes="(max-width: 640px) 256px, 288px"
+              className="w-64 sm:w-72 h-auto rounded-lg shadow-2xl ring-1 ring-border/40"
+            />
           </div>
 
           <div className="lg:col-span-7 flex flex-col items-start">
@@ -45,6 +44,17 @@ export function KitapBolumu() {
             <p className="text-lg text-primary font-semibold mb-6">{KITAP.altBaslik}</p>
 
             <p className="text-muted-foreground leading-relaxed mb-6 text-base max-w-xl">{KITAP.ozet}</p>
+
+            {KITAP.sorular.length > 0 && (
+              <ul className="space-y-3 mb-8 max-w-xl">
+                {KITAP.sorular.map((q) => (
+                  <li key={q} className="flex items-start gap-3 text-sm text-foreground/90 leading-relaxed">
+                    <span className="text-accent font-bold shrink-0">?</span>
+                    <span>{q}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <p className="text-sm font-bold text-foreground mb-6">
               {cikti ? M.durumCikti : M.durumYakinda}
