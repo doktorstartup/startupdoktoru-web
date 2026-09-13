@@ -6,12 +6,16 @@ import { Sparkles, Menu, X, LogIn, LayoutDashboard, LogOut } from "lucide-react"
 import { useMember } from "../lib/member";
 import { useHref, useT } from "../lib/i18n-client";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import type { Locale } from "../lib/i18n";
 
 type Props = {
   onOpenAi?: () => void;
+  // Sayfanın hangi dillerde var olduğu. Blog yazısı gibi her dilde karşılığı
+  // olmayan sayfalarda verilir; verilmezse dil değiştirici tüm dilleri gösterir.
+  availableLocales?: Locale[];
 };
 
-export function SiteHeader({ onOpenAi }: Props) {
+export function SiteHeader({ onOpenAi, availableLocales }: Props) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { member, logout } = useMember();
   const initials = member?.email?.slice(0, 2).toUpperCase() || "";
@@ -44,7 +48,7 @@ export function SiteHeader({ onOpenAi }: Props) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LanguageSwitcher className="hidden sm:flex" />
+          <LanguageSwitcher className="hidden sm:flex" available={availableLocales} />
           {onOpenAi && (
             <button
               onClick={onOpenAi}
@@ -117,7 +121,7 @@ export function SiteHeader({ onOpenAi }: Props) {
               ))}
             </nav>
             <div className="mt-auto flex flex-col gap-3">
-              <LanguageSwitcher className="justify-center py-2" />
+              <LanguageSwitcher className="justify-center py-2" available={availableLocales} />
               {onOpenAi && (
                 <button
                   onClick={() => {

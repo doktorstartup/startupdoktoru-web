@@ -7,7 +7,6 @@ import { supabaseAdmin } from "../../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../../lib/adminAuth";
 import { getDict } from "../../../../../lib/dict";
 import { isLocale, localePath, DEFAULT_LOCALE, type Locale } from "../../../../../lib/i18n";
-import { altLanguages } from "../../../../../lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +29,16 @@ async function onizlemeMi(searchParams?: Arama) {
   const sp = searchParams ? await searchParams : undefined;
   const t = sp?.onizleme;
   return verifyAdminPassword(Array.isArray(t) ? t[0] : t).ok;
+}
+
+// Yazının yayında olduğu diller — dil değiştirici çevirisi olmayan dile link vermesin.
+async function yayindakiDiller(slug: string): Promise<Locale[]> {
+  const { data } = await supabaseAdmin
+    .from("ds_blog_posts")
+    .select("lang")
+    .eq("slug", slug)
+    .eq("durum", "yayinda");
+  return ((data as { lang: Locale }[]) || []).map((r) => r.lang);
 }
 
 async function getPost(slug: string, lang: Locale): Promise<Post | null> {
@@ -62,7 +71,13 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   return {
     title,
     description,
-    alternates: { canonical: localePath(lang, `/blog/${post.slug}`), languages: altLanguages(`/blog/${post.slug}`) },
+    // hreflang yalnız gerçekten yayında olan diller için — olmayan adres 404 verir.
+    alternates: {
+      canonical: localePath(lang, `/blog/${post.slug}`),
+      languages: Object.fromEntries(
+        (await yayindakiDiller(post.slug)).map((l) => [l, localePath(l, `/blog/${post.slug}`)])
+      ),
+    },
     openGraph: {
       type: "article",
       url: localePath(lang, `/blog/${post.slug}`),
@@ -92,9 +107,11 @@ export default async function BlogPost({ params, searchParams }: { params: Promi
   const taslak = post.durum !== "yayinda";
   if (taslak && !(await onizlemeMi(searchParams))) notFound();
 
+  const diller = await yayindakiDiller(slug);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <SiteHeader />
+      <SiteHeader availableLocales={diller.includes(lang) ? diller : [...diller, lang]} />
       <main className="max-w-3xl mx-auto px-6 sm:px-8 py-16 md:py-20">
         <Link href={localePath(lang, "/blog")} className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8">
           <ChevronLeft className="h-4 w-4" /> {t.back}
