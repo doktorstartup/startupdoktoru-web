@@ -441,4 +441,55 @@ export const en: Dict = {
     unsureNudge: "Not sure yet? Start with the free training.",
     freeCta: "Join the Free 12-Minute Training",
   },
+
+  investorTrainingPage: {
+    badge: "5-Module Video Course",
+    titleTop: "Building an Investor",
+    titleBottom: "Pitch Deck",
+    intro:
+      "90% of investor meetings are lost in the first four minutes. In this video course you learn, step by step, the five things investors look for in a pitch — and how to prepare each one.",
+    features: [
+      "134 minutes of content across 5 dedicated modules",
+      "A real pitch deck teardown and reusable slide templates",
+      "The 12 mistakes that make investors say no on the spot",
+      "Valuation methodologies and the TAM/SAM/SOM formulas",
+    ],
+    start: "Start the Course ($70)",
+    startNow: "Start the Course Now ($70)",
+    videoTitle: "Pitch Deck Course — Preview",
+    previewNote: "Preview is free · Full course 5 modules, $70 ($35 if you own the ebook)",
+    curriculumEyebrow: "Curriculum",
+    curriculumTitle: "Investor-Ready in 5 Modules",
+    curriculumLead: "Every module carries concrete examples from real investor meetings, plus templates you can use directly.",
+    modulePrefix: "Module",
+    modules: [
+      {
+        title: "What Investors Expect & the Right Metrics",
+        desc: "The five questions running through an investor's mind during a pitch — and a systematic way to prepare for each of them.",
+        duration: "28 min",
+      },
+      {
+        title: "Framing the Problem & Presenting the Solution",
+        desc: "How to tell the story of a painful problem and your systematic solution in a way that is built around how investors think.",
+        duration: "35 min",
+      },
+      {
+        title: "Competitor Analysis & Positioning Strategy",
+        desc: "The positioning-map method for building the strongest possible answer to the question investors always ask: why you?",
+        duration: "22 min",
+      },
+      {
+        title: "The Team Story & Building Trust",
+        desc: "The three qualities investors look for in a team, and a storytelling frame that proves your team has them.",
+        duration: "18 min",
+      },
+      {
+        title: "Critical Mistakes & Deck Optimization",
+        desc: "The most common deck mistakes collected from real investor meetings, with slide-by-slide fixes that remove them.",
+        duration: "31 min",
+      },
+    ],
+    checkoutTitle: "Investor Pitch Deck Course",
+    checkoutNote: "5 modules · 134 minutes, full access",
+  },
 };

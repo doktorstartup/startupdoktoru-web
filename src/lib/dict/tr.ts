@@ -437,6 +437,56 @@ export const tr = {
     unsureNudge: "Henüz emin değil misin? Önce ücretsiz eğitimle başla.",
     freeCta: "12 Dakikalık Ücretsiz Eğitime Katıl",
   },
+  investorTrainingPage: {
+    badge: "5 Modül Video Eğitim Paketi",
+    titleTop: "Yatırımcı Sunumu",
+    titleBottom: "Hazırlama Eğitimi",
+    intro:
+      "Yatırım görüşmelerinin %90'ı ilk 4 dakikada kaybedilir. Bu video eğitimde, yatırımcıların pitch'lerde aradığı 5 kritik bileşeni ve bunları nasıl hazırlayacağınızı adım adım öğreneceksiniz.",
+    features: [
+      "134 dakika toplam içerik, 5 özel modül",
+      "Gerçek pitch deck analizi ve örnek sunum şablonları",
+      "Yatırımcıların anında 'Hayır' dediği 12 kritik hata listesi",
+      "Değerleme hesaplama metodolojileri ve TAM/SAM/SOM formülleri",
+    ],
+    start: "Eğitime Başla (70 USD)",
+    startNow: "Eğitime Hemen Başla (70 USD)",
+    videoTitle: "Yatırımcı Sunumu Eğitimi — Tanıtım",
+    previewNote: "Önizleme ücretsiz · Tam eğitim 5 modül, 70 $ (e-kitap alana 35 $)",
+    curriculumEyebrow: "Müfredat",
+    curriculumTitle: "5 Modülde Yatırımcı Hazırlığı",
+    curriculumLead: "Her modül, gerçek pitch görüşmelerinden derlenen somut örnekler ve uygulanabilir şablonlar içerir.",
+    modulePrefix: "Modül",
+    modules: [
+      {
+        title: "Yatırımcı Beklentileri & Doğru Metrikler",
+        desc: "Bir yatırımcının pitch görüşmesinde zihninde döndürdüğü 5 kritik soruyu ve bu soruları hazırlamanın sistematik yolunu öğrenirsiniz.",
+        duration: "28 dk",
+      },
+      {
+        title: "Problem Anlatımı & Çözüm Sunumu",
+        desc: "Yatırımcı psikolojisine göre tasarlanmış, acı veren problemi ve şirketinizin sunduğu sistematik çözümü ikna edici şekilde nasıl anlatırsınız.",
+        duration: "35 dk",
+      },
+      {
+        title: "Rakip Analizi & Konumlandırma Stratejisi",
+        desc: "Yatırımcıların 'Neden Siz?' sorusuna verecekleri yanıtı en güçlü şekilde kurgulamanın konumlandırma haritası metodunu öğrenmek.",
+        duration: "22 dk",
+      },
+      {
+        title: "Ekip Hikayesi & Güven Kurulumu",
+        desc: "Yatırımcının bir ekipte aradığı 3 kritik niteliği ve ekibinizin bu özelliklere sahip olduğunu ispatlayan hikaye anlatım çerçevesi.",
+        duration: "18 dk",
+      },
+      {
+        title: "Kritik Hatalar & Sunum Optimizasyonu",
+        desc: "Gerçek yatırım görüşmelerinden derlenen en yaygın sunum hataları ve bunları ortadan kaldıracak slayt-bazlı düzeltme aksiyonları.",
+        duration: "31 dk",
+      },
+    ],
+    checkoutTitle: "Yatırımcı Sunumu Eğitimi",
+    checkoutNote: "5 Modül · 134 Dakika Tam Erişim",
+  },
 };
 
 export type Dict = typeof tr;
