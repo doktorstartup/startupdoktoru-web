@@ -79,6 +79,10 @@ export default function InvestorTraining() {
               ))}
             </div>
 
+            <p className="flex items-start gap-2 text-sm font-semibold text-accent mb-8 -mt-4">
+              <Sparkles className="h-4 w-4 shrink-0 mt-0.5" /> {all.trainingsPage.slideBonus}
+            </p>
+
             <div className="flex flex-wrap items-center gap-6">
               <button
                 onClick={() => setIsCheckoutOpen(true)}
