@@ -1,0 +1,131 @@
+{
+  "baslik": "Yatırımcı \"şirketin kaç eder?\" dediğinde ne cevap vermeli?",
+  "slug": "sirketin-kac-eder-degerleme-savunmasi",
+  "seo_title": "Şirket değerlemesi nasıl savunulur? Yatırımcı masasında doğru cevap",
+  "seo_description": "Yatırımcı değerlemeyi sorduğunda rakam değil yöntem savunulur. Berkus, puan kartı ve DCF hangi soruya cevap verir, masaya oturmadan önce neye hazırlanmak gerekir.",
+  "tip": "analiz",
+  "kapak_etiket": "Yatırımcı Masası",
+  "kapak_metin": "Yatırımcı rakamı sormaz. **Rakamı nasıl bulduğunu** sorar.",
+  "bolumler": [
+    {
+      "tip": "p",
+      "metin": "Görüşmenin bir yerinde mutlaka gelir: \"Peki, şirketin kaç eder?\" Çoğu kurucu bu soruya bir sayı söyleyerek cevap verir. Sayıyı söyler söylemez de pozisyonunu kaybeder — çünkü arkasında duramayacağı bir rakamı masaya koymuş olur."
+    },
+    {
+      "tip": "p",
+      "metin": "Yatırımcının o an test ettiği şey rakamın kendisi değil. **Rakama nasıl vardığın.** Bir kurucu \"bence şirketim şu kadar eder\" diyorsa, yatırımcı şunu öğrenmiş olur: bu kişi kendi işinin finansal mantığını kurmamış. Bundan sonrası artık değerleme pazarlığı değil, güven pazarlığıdır."
+    },
+    {
+      "tip": "h2",
+      "metin": "Rakam değil, yöntem savunulur"
+    },
+    {
+      "tip": "p",
+      "metin": "Değerleme bir gerçeği ölçmez, bir bağlamı ifade eder. Aynı şirket, aynı gün, iki farklı yatırımcı için farklı değerlenebilir — ve ikisi de yanlış olmayabilir. Çünkü değerleme \"bu şirket ne kadar para eder\" sorusunun değil, \"bu riski almak için ne kadar pay isterim\" sorusunun cevabıdır."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu yüzden masaya bir sayıyla değil, bir **yöntemle** gitmek gerekir. Yöntemini anlatabilen kurucu, rakamı tartışılsa bile pozisyonunu korur. Yöntemi olmayan kurucu, rakamı kabul edilse bile zayıf kalır."
+    },
+    {
+      "tip": "h2",
+      "metin": "Üç yöntem, üç farklı soru"
+    },
+    {
+      "tip": "p",
+      "metin": "Yaygın değerleme yöntemleri birbirinin alternatifi değil; farklı sorulara cevap verirler. Şirketinin bulunduğu aşama, hangisinin senin için anlamlı olduğunu belirler."
+    },
+    {
+      "tip": "liste",
+      "maddeler": [
+        "**Berkus yöntemi** — \"Henüz gelirim yok, elimdeki ne?\" sorusuna cevap verir. Fikir, prototip, ekip, ilişkiler ve ilk satışlar gibi somut varlıkları ayrı ayrı değerler. Geliri olmayan şirketler için tasarlanmıştır.",
+        "**Puan kartı (scorecard) yöntemi** — \"Benzerlerime göre neredeyim?\" sorusuna cevap verir. Aynı bölgede, aynı aşamadaki şirketlerin değerlerini referans alır; ekip, pazar ve rekabet gibi kriterlerde seni onlara göre konumlandırır.",
+        "**İndirgenmiş nakit akışı (DCF)** — \"Gelecekte üreteceğim nakit bugün ne eder?\" sorusuna cevap verir. Öngörülebilir geliri olan şirketler için anlamlıdır; geliri olmayan bir startup'ta varsayım üstüne varsayım kurmaya dönüşür."
+      ]
+    },
+    {
+      "tip": "p",
+      "metin": "Kurucuların sık düştüğü tuzak, aşamasına uymayan yöntemi seçmek. Geliri olmayan bir şirkette DCF tablosu açmak, yatırımcıya güç değil hazırlıksızlık gösterir — çünkü tablodaki her satır senin tahminindir ve yatırımcı bunu bilir."
+    },
+    {
+      "tip": "h2",
+      "metin": "Değerleme bir pazarlık pozisyonudur"
+    },
+    {
+      "tip": "p",
+      "metin": "Yüksek değerleme her zaman iyi değildir. Bugün yüksek tuttuğun değer, bir sonraki turda karşına çıkar: büyümen o değeri doğrulamazsa düşük değerli bir tur yapmak zorunda kalırsın ve bu, hem mevcut yatırımcını hem ekibinin hisse motivasyonunu vurur."
+    },
+    {
+      "tip": "alinti",
+      "metin": "Değerleme, alacağın paranın değil, **vereceğin payın** fiyatıdır. Soruyu böyle kurduğun an pazarlık değişir."
+    },
+    {
+      "tip": "p",
+      "metin": "Doğru soru \"en yükseği nasıl alırım\" değil, \"bu turda ne kadar paya, ne karşılığında razıyım\" olmalı. İhtiyacın olan parayı ve o parayla ulaşacağın kilometre taşını netleştirdiğinde değerleme kendiliğinden bir aralığa oturur."
+    },
+    {
+      "tip": "h2",
+      "metin": "Masaya oturmadan önce üç şey"
+    },
+    {
+      "tip": "liste",
+      "maddeler": [
+        "**Kendi rakamını kendin hesapla.** Yatırımcının söylediği rakama tepki vermek yerine, kendi aralığını önceden belirle. Aralık olsun, tek sayı olmasın.",
+        "**Neye ihtiyacın olduğunu bil.** \"Ne kadar istiyorsun\" sorusunun cevabı, bir sonraki kilometre taşına ulaşmak için gereken paradır. Fazlası gereksiz pay kaybı, azı yolda kalmaktır.",
+        "**Alt sınırını önceden çiz.** Hangi değerlemenin altına imza atmayacağını görüşmeden önce kararlaştır. Masada duygu yönetmek, hazırlıkla yönetilenden her zaman daha pahalıdır."
+      ]
+    },
+    {
+      "tip": "h2",
+      "metin": "Aralığı pratikte nasıl bulursun"
+    },
+    {
+      "tip": "p",
+      "metin": "Basit bir başlangıç noktası var: bir sonraki kilometre taşına ulaşmak için ihtiyacın olan parayı belirle, sonra bu tur için vermeye razı olduğun pay oranına böl. Payın beşte bir olduğu bir turda, şirketin yatırım sonrası değeri ihtiyacın olan paranın beş katıdır. Bu hesap sana kesin bir rakam vermez — bir **aralık** verir. O aralık da zaten pazarlığın gerçek konusu."
+    },
+    {
+      "tip": "p",
+      "metin": "Buradaki asıl disiplin, ihtiyacın olan parayı gerçekten hesaplamış olmak. Çoğu kurucu bu rakamı hissiyatla söyler; oysa ekip maliyeti, ürün yol haritası ve pazara çıkış planı toplandığında ortaya çok daha savunulabilir bir sayı çıkar. Yatırımcının ilk kontrol ettiği yerlerden biri de tam olarak budur."
+    },
+    {
+      "tip": "h2",
+      "metin": "En sık yapılan hata"
+    },
+    {
+      "tip": "p",
+      "metin": "En sık görülen hata, değerlemeyi bir gurur meselesi haline getirmek. Yatırımcı rakamı düşük bulduğunda kurucu savunmaya geçer, gerekçe yerine iddia üretir. Oysa o an yapılması gereken şey tersi: yatırımcının hangi varsayımda seninle ayrıştığını sormak."
+    },
+    {
+      "tip": "p",
+      "metin": "Çünkü ayrışma neredeyse hiçbir zaman rakamda değildir. Pazar büyüklüğünde, büyüme hızı varsayımında ya da ekibin bu işi yapabileceğine dair inançtadır. O varsayımı bulup konuşabilirsen, değerleme tartışması bir pazarlık olmaktan çıkıp ortak bir hesaba dönüşür — ve genelde senin lehine kapanır."
+    }
+  ],
+  "sorular_baslik": "Sık sorulanlar",
+  "sorular": [
+    {
+      "soru": "Şirket değerlemesi nasıl hesaplanır?",
+      "cevap": "Tek bir doğru formül yok; şirketin aşamasına göre yöntem seçilir. Geliri olmayan startup'larda Berkus ve puan kartı yöntemleri kullanılır — biri elindeki somut varlıkları, diğeri benzer şirketlere göre konumunu değerler. Öngörülebilir geliri olan şirketlerde indirgenmiş nakit akışı anlamlı hale gelir. Yatırımcı karşısında önemli olan seçtiğin yöntemi ve varsayımlarını açıklayabilmendir."
+    },
+    {
+      "soru": "Geliri olmayan bir startup nasıl değerlenir?",
+      "cevap": "Gelir yokken gelecekteki nakdi indirgemek varsayım yığını üretir. Bunun yerine elindeki somut varlıklar değerlenir: fikrin kendisi, çalışan bir prototip, kurulmuş ekip, sektördeki ilişkiler ve varsa ilk satışlar. Berkus yöntemi tam olarak bu mantık üzerine kuruludur; puan kartı yöntemi ise seni aynı aşamadaki benzer şirketlerle karşılaştırır."
+    },
+    {
+      "soru": "Yatırımcı değerlememi düşük bulursa ne yapmalıyım?",
+      "cevap": "Rakamı savunmak yerine ayrışmanın nerede olduğunu sor. Yatırımcı genelde rakamla değil, altındaki bir varsayımla — pazar büyüklüğü, büyüme hızı ya da ekibin uygulama gücü — hemfikir değildir. O varsayımı açığa çıkarırsan tartışma pazarlıktan çıkıp ortak bir hesaba döner."
+    },
+    {
+      "soru": "Değerlemeyi kurucu mu belirler, yatırımcı mı?",
+      "cevap": "Pratikte ikisi birlikte belirler ama başlangıç noktasını hazırlıklı olan taraf koyar. Kendi aralığını yöntemle hesaplamış bir kurucu masaya çıpayı kendi atar. Rakamı yatırımcıdan duymayı bekleyen kurucu ise pazarlığa karşı tarafın çizdiği zeminde başlar."
+    },
+    {
+      "soru": "Yüksek değerleme her zaman iyi midir?",
+      "cevap": "Hayır. Bugün yüksek tutulan değer bir sonraki turda karşına çıkar: büyüme o değeri doğrulamazsa daha düşük değerli bir tur yapmak zorunda kalırsın. Bu hem mevcut yatırımcıyı hem ekibin hisse motivasyonunu olumsuz etkiler. Sağlıklı değerleme, bir sonraki kilometre taşına ulaşmanı sağlayan ve doğrulanabilir olandır."
+    }
+  ],
+  "kaynaklar": [],
+  "cta_baslik": "Değerlemeyi kendi başına hesaplayabil",
+  "cta": "Berkus, puan kartı ve indirgenmiş nakit akışı yöntemlerinin nasıl uygulandığı, yatırımcıyla pazarlıkta masaya güçlü oturmanın yolları ve sözleşmelerdeki kritik maddeler — hepsi kitapta.",
+  "cta_link": "/ebook",
+  "cta_link_metin": "Kitabın dijital sürümünü incele"
+}
