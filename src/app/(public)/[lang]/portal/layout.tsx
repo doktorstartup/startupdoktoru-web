@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { useMember } from "../../../../lib/member";
 import { PhonePrompt } from "../../../../components/PhonePrompt";
+import { useHref, useT } from "../../../../lib/i18n-client";
+import { stripLocale } from "../../../../lib/i18n";
 
 export default function PortalLayout({
   children,
@@ -22,23 +24,25 @@ export default function PortalLayout({
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { member, logout } = useMember();
+  const t = useT().portal;
+  const href = useHref();
 
   const initials = member?.email?.slice(0, 2).toUpperCase() || "SD";
-  const displayEmail = member?.email || "Giriş yapılmadı";
+  const displayEmail = member?.email || t.notLoggedIn;
 
   const handleLogout = async () => {
     await logout(); // oturum tamamen silinene kadar bekle, sonra yönlendir
-    window.location.href = "/";
+    window.location.href = href("/");
   };
 
   const menuItems = [
     {
-      name: "Eğitim İçeriği",
+      name: t.navCourse,
       href: "/portal/course",
       icon: GraduationCap,
     },
     {
-      name: "E-Kitap İndir",
+      name: t.navEbook,
       href: "/portal/ebook",
       icon: Download,
     },
@@ -49,7 +53,7 @@ export default function PortalLayout({
       {/* SIDEBAR FOR DESKTOP */}
       <aside className="hidden md:flex md:flex-col md:w-64 glass-panel border-r border-border/40 shrink-0">
         <div className="p-6 border-b border-border/40 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={href("/")} className="flex items-center gap-2">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-primary-foreground flex items-center justify-center text-background font-black text-sm">
               SD
             </div>
@@ -67,7 +71,7 @@ export default function PortalLayout({
             </div>
             <div className="min-w-0">
               <div className="text-sm font-bold text-foreground truncate">{displayEmail}</div>
-              <div className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider">Öğrenci</div>
+              <div className="text-[10px] text-muted-foreground font-mono uppercase tracking-wider">{t.student}</div>
             </div>
           </div>
         </div>
@@ -75,12 +79,12 @@ export default function PortalLayout({
         {/* Navigation */}
         <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
           {menuItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = stripLocale(pathname) === item.href;
             const Icon = item.icon;
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={href(item.href)}
                 className={`flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   isActive
                     ? "bg-primary text-background shadow-lg shadow-primary/15"
@@ -97,25 +101,25 @@ export default function PortalLayout({
         {/* Footer Actions */}
         <div className="p-4 border-t border-border/40 space-y-1">
           <Link
-            href="/"
+            href={href("/")}
             className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-colors"
           >
             <Home className="h-4 w-4 shrink-0" />
-            Ana Sayfaya Dön
+            {t.backHome}
           </Link>
           <button
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 hover:text-red-300 hover:bg-red-950/20 w-full transition-colors text-left"
           >
             <LogOut className="h-4 w-4 shrink-0" />
-            Çıkış Yap
+            {t.logout}
           </button>
         </div>
       </aside>
 
       {/* MOBILE HEADER */}
       <div className="md:hidden absolute top-0 left-0 right-0 h-16 glass-panel border-b border-border/40 flex items-center justify-between px-6 z-40">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href={href("/")} className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-primary-foreground flex items-center justify-center text-background font-black text-xs">
             SD
           </div>
@@ -147,7 +151,7 @@ export default function PortalLayout({
                 </div>
                 <div className="min-w-0">
                   <div className="text-sm font-bold text-foreground truncate">{displayEmail}</div>
-                  <div className="text-[10px] text-muted-foreground">Öğrenci</div>
+                  <div className="text-[10px] text-muted-foreground">{t.student}</div>
                 </div>
               </div>
             </div>
@@ -155,12 +159,12 @@ export default function PortalLayout({
             {/* Mobile Nav */}
             <nav className="flex-1 px-4 py-6 space-y-1">
               {menuItems.map((item) => {
-                const isActive = pathname === item.href;
+                const isActive = stripLocale(pathname) === item.href;
                 const Icon = item.icon;
                 return (
                   <Link
                     key={item.href}
-                    href={item.href}
+                    href={href(item.href)}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold transition-all duration-200 ${
                       isActive
@@ -178,19 +182,19 @@ export default function PortalLayout({
             {/* Mobile Footer */}
             <div className="p-4 border-t border-border/20 space-y-1">
               <Link
-                href="/"
+                href={href("/")}
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-muted-foreground hover:text-foreground hover:bg-secondary/40 transition-colors"
               >
                 <Home className="h-4 w-4 shrink-0" />
-                Ana Sayfaya Dön
+                {t.backHome}
               </Link>
               <button
                 onClick={handleLogout}
                 className="flex items-center gap-3 px-4 h-11 rounded-xl text-sm font-semibold text-red-400 w-full transition-colors text-left"
               >
                 <LogOut className="h-4 w-4 shrink-0" />
-                Çıkış Yap
+                {t.logout}
               </button>
             </div>
           </aside>
