@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_freya-industries-63d7",
+  "durum": "hazir",
+  "puan": 44,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Freya Industries",
+    "domain": "freyaindustries.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 532000,
+      "birim": "EUR",
+      "usd": 574560
+    },
+    "lider": "Foundry",
+    "katilanlar": [
+      "Saminvest AB via Annexstruktur",
+      "Longswan Ventures",
+      "Schyssta Änglar",
+      "Propel Capital",
+      "Sting"
+    ],
+    "kurucular": [
+      "Jonas Åström",
+      "Marcus Gustring"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T09:05:37.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/freya-industries-raises-e532k/",
+      "baslik": "Sweden&#8217;s Freya Industries secures funding to deliver security sensors across five European markets",
+      "tarih": "Mon, 14 Sep 2026 09:05:37 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Freya Industries , a Stockholm-based security and defence technology company, has raised €532K (SEK 6 million) in an oversubscribed funding round backed by Foundry ventures , Longswan Ventures , Prope",
+      "kaynak_url": "https://arcticstartup.com/freya-industries-raises-e532k/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

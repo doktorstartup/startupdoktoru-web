@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-11_furo-f06b",
+  "durum": "hazir",
+  "puan": 47,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 9,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Furo",
+    "domain": "furoenergy.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3440000,
+      "birim": "EUR",
+      "usd": 3715200
+    },
+    "lider": "TQ Ventures",
+    "katilanlar": [
+      "CDTM Venture Capital"
+    ],
+    "kurucular": [
+      "Lena Sophia Voß",
+      "Leonie Wagner",
+      "Simon Wittner"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-11T06:46:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/munich-based-furo-raises-e3-44-million-to-make-industrial-battery-storage-economically-viable/",
+      "baslik": "Munich-based Furo raises €3.44 million to make industrial battery storage economically viable",
+      "tarih": "Fri, 11 Sep 2026 06:46:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Furo (formerly Lumera Energy), a Munich-based energy software company, today announced that it has closed a €3.44 million ($4 million) funding round to further develop its software, expand into additi",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/munich-based-furo-raises-e3-44-million-to-make-industrial-battery-storage-economically-viable/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

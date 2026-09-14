@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_ainative-8741",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "AI-native",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 500000,
+      "birim": "USD",
+      "usd": 500000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Barış Dikici",
+      "Tolga Dikici"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T06:26:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/14/ai-native-game-studio-arcustin-games-raises-500k-from-webrazzi-gsyf/",
+      "baslik": "AI-native game studio Arcustin Games raises $500K from Webrazzi GSYF",
+      "tarih": "Mon, 14 Sep 2026 06:26:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Istanbul-based mobile game studio Arcustin Games has raised $500,000 in pre-seed funding at a $10 million valuation from Webrazzi GSYF , a venture capital investment fund established jointly by İş Por",
+      "kaynak_url": "https://tech.eu/2026/09/14/ai-native-game-studio-arcustin-games-raises-500k-from-webrazzi-gsyf/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/14/ai-native-game-studio-arcustin-games-raises-500k-from-webrazzi-gsyf/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

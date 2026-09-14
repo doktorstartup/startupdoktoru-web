@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-11_agtech-gravity-gardens-adaa",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "AgTech Gravity Gardens",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2600000,
+      "birim": "EUR",
+      "usd": 2808000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Paulino Valdés",
+      "Robin Le Vigouroux",
+      "Gravity Gardens’"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-11T11:58:01.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/dutch-agtech-gravity-gardens-secures-e2-6-million-to-scale-its-dry-chemical-free-seed-activation-technology/",
+      "baslik": "Dutch AgTech Gravity Gardens secures €2.6 million to scale its dry, chemical-free seed activation technology",
+      "tarih": "Fri, 11 Sep 2026 11:58:01 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gravity Gardens , a Nijmegen-based AgTech startup developing a chemical-free seed activation technology for European arable and horticultural crops, has secured a €2.6 million Seed round to bring a ne",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/dutch-agtech-gravity-gardens-secures-e2-6-million-to-scale-its-dry-chemical-free-seed-activation-technology/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/dutch-agtech-gravity-gardens-secures-e2-6-million-to-scale-its-dry-chemical-free-seed-activation-technology/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

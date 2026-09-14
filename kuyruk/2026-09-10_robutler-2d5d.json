@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-10_robutler-2d5d",
+  "durum": "hazir",
+  "puan": 37,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 2,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Robutler",
+    "domain": "robutler.ai",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 400000,
+      "birim": "USD",
+      "usd": 400000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Volodymyr Seliuchenko"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-10T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/10/robutler-raises-400k-from-zas-ventures-to-build-the-youtube-of-software/",
+      "baslik": "Robutler raises $400K from ZAS Ventures to build the ‘YouTube of software’",
+      "tarih": "Thu, 10 Sep 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Robutler has raised $400,000 from ZAS Ventures , a US-based venture capital firm investing in AI, SaaS, and robotics companies founded by Ukrainians.",
+      "kaynak_url": "https://tech.eu/2026/09/10/robutler-raises-400k-from-zas-ventures-to-build-the-youtube-of-software/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

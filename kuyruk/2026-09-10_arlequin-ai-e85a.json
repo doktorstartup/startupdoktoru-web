@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-10_arlequin-ai-e85a",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Arlequin AI",
+    "domain": "arlq.ai",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 28000000,
+      "birim": "EUR",
+      "usd": 30240000
+    },
+    "lider": "OTB Ventures",
+    "katilanlar": [
+      "Bpifrance’s Defence Innovation Fund"
+    ],
+    "kurucular": [
+      "Hugo Micheron",
+      "Antoine Jardin"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-10T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/10/arlequin-ai-lands-eur28m-to-scale-topological-neural-network-technology/",
+      "baslik": "Arlequin AI lands €28M to scale topological neural network technology",
+      "tarih": "Thu, 10 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Paris-based AI company Arlequin AI has raised €28 million in Series A funding to accelerate the development of its topological neural network architecture and expand the international deployment of it",
+      "kaynak_url": "https://tech.eu/2026/09/10/arlequin-ai-lands-eur28m-to-scale-topological-neural-network-technology/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/10/arlequin-ai-lands-eur28m-to-scale-topological-neural-network-technology/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

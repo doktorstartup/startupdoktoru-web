@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_tandem-health-752a",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Tandem Health",
+    "domain": "tandemhealth.ai",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 86490000,
+      "birim": "EUR",
+      "usd": 93409200
+    },
+    "lider": "Scaleup Europe Fund",
+    "katilanlar": [
+      "Amino Collective",
+      "Visionaries",
+      "Northzone",
+      "Kinnevik",
+      "EQT"
+    ],
+    "kurucular": [
+      "Lukas Saari",
+      "Oliver Åstrand"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T06:21:04.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/stockholms-tandem-health-raises-e86-5-million-to-build-an-ai-native-operating-system-for-european-healthcare/",
+      "baslik": "Stockholm’s Tandem Health raises €86.5 million to build an AI-native operating system for European healthcare",
+      "tarih": "Mon, 14 Sep 2026 06:21:04 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/14/swedish-healthtech-tandem-health-scores-100m-series-b-led-by-eus-eur5bn-tech-startup-fund/",
+      "baslik": "Tandem Health scores $100M Series B, led by EU’s €5bn tech startup fund",
+      "tarih": "Mon, 14 Sep 2026 06:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Tandem Health , a Stockholm-based HealthTech startup building a complete AI medical assistant for European clinics, has raised €86.49 million ($100 million) in Series B funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/stockholms-tandem-health-raises-e86-5-million-to-build-an-ai-native-operating-system-for-european-healthcare/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/stockholms-tandem-health-raises-e86-5-million-to-build-an-ai-native-operating-system-for-european-healthcare/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

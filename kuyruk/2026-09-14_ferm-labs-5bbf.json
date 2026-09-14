@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_ferm-labs-5bbf",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Ferm Labs",
+    "domain": "fermlabs.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": "CDP Venture Capital",
+    "katilanlar": [
+      "Redstone",
+      "Loacker"
+    ],
+    "kurucular": [
+      "Stephanie Lüpold",
+      "Mattia Baroni"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T10:20:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/swiss-italian-startup-ferm-labs-secures-e3-million-to-scale-its-bioprocessing-based-b2b-ingredient-platform/",
+      "baslik": "Swiss-Italian startup Ferm Labs secures €3 million to scale its bioprocessing-based B2B ingredient platform",
+      "tarih": "Mon, 14 Sep 2026 10:20:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Ferm Labs , a Zug-based ingredient startup specialising in proprietary, high-yield bioprocessing platforms, has secured €3 million to scale its bioprocessing platform across the global clean-label ing",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/swiss-italian-startup-ferm-labs-secures-e3-million-to-scale-its-bioprocessing-based-b2b-ingredient-platform/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

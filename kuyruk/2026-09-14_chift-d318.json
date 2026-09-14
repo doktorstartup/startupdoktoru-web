@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_chift-d318",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Chift",
+    "domain": "chift.eu",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 10500000,
+      "birim": "EUR",
+      "usd": 11340000
+    },
+    "lider": "BlackFin Capital Partners",
+    "katilanlar": [
+      "Wallonie Entreprendre",
+      "Seeder Fund",
+      "Entourage",
+      "Shapers"
+    ],
+    "kurucular": [
+      "Gauthier Henroz",
+      "Henry Hertoghe"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/brussels-based-chift-raises-e10-5-million-series-a-to-become-europes-financial-connectivity-layer/",
+      "baslik": "Brussels-based Chift raises €10.5 million Series A to become Europe&#8217;s financial connectivity layer",
+      "tarih": "Mon, 14 Sep 2026 07:26:26 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/14/chift-raises-eur105m-series-a-to-scale-financial-connectivity-across-europe/",
+      "baslik": "Chift raises €10.5M Series A to scale financial connectivity across Europe",
+      "tarih": "Mon, 14 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Chift , a Brussels-based startup that provides a financial connectivity layer for European software, helping software vendors connect their products to the financial tools their users rely on, has rai",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/brussels-based-chift-raises-e10-5-million-series-a-to-become-europes-financial-connectivity-layer/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/brussels-based-chift-raises-e10-5-million-series-a-to-become-europes-financial-connectivity-layer/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

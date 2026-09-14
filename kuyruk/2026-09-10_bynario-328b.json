@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-09-10_bynario-328b",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Bynario",
+    "domain": "bynar.io",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2100000,
+      "birim": "EUR",
+      "usd": 2268000
+    },
+    "lider": "360 CapitalPartners",
+    "katilanlar": [
+      "Prana Ventures"
+    ],
+    "kurucular": [
+      "Alfredo Pesoli"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-10T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/10/bynario-raises-eur21m-to-develop-ai-powered-platform-for-software-vulnerabilities/",
+      "baslik": "Bynario raises €2.1M to develop AI-powered platform for software vulnerabilities",
+      "tarih": "Thu, 10 Sep 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Cybersecurity company Bynario has raised €2.1 million in a pre-seed round to develop its AI-powered platform for identifying, prioritising and addressing software vulnerabilities.",
+      "kaynak_url": "https://tech.eu/2026/09/10/bynario-raises-eur21m-to-develop-ai-powered-platform-for-software-vulnerabilities/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/10/bynario-raises-eur21m-to-develop-ai-powered-platform-for-software-vulnerabilities/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-09-10_lightfield-f83d",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 9,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Lightfield",
+    "domain": "lightfield.app",
+    "ulke": "TR",
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 47000000,
+      "birim": "USD",
+      "usd": 47000000
+    },
+    "lider": "Andreessen Horowitz",
+    "katilanlar": [
+      "Lightspeed Venture Partners",
+      "Maverick Capital",
+      "Alumni Ventures",
+      "Audacious",
+      "Greylock",
+      "Coatue"
+    ],
+    "kurucular": [
+      "Keith Peiris",
+      "Henri Liriani"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-10T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/10/yapay-zeka-destekli-crm-platformu-gelistiren-lightfield-47-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli CRM platformu geliştiren Lightfield, 47 milyon dolar yatırım aldı",
+      "tarih": "Thu, 10 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli CRM platformu geliştiren Lightfield , 47 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/10/yapay-zeka-destekli-crm-platformu-gelistiren-lightfield-47-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/10/yapay-zeka-destekli-crm-platformu-gelistiren-lightfield-47-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

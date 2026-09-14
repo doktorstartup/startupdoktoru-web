@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-11_after-1b6e",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "After",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 387000000,
+      "birim": "EUR",
+      "usd": 417960000
+    },
+    "lider": "European Space Agency (ESA) worth €760",
+    "katilanlar": [],
+    "kurucular": [
+      "Hélène Huby",
+      "Exploration Company"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-11T07:33:18.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/after-e387-million-raise-the-exploration-company-wins-esas-aladdin-cargo-capsule-contract-worth-e760-million/",
+      "baslik": "After €387 million raise, The Exploration Company wins ESA’s &#8220;ALADDIN&#8221; cargo capsule contract worth €760 million",
+      "tarih": "Fri, 11 Sep 2026 07:33:18 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The contract comes just days after TEC closed a €387 million ($450 million) Series C round , which it said would fund the final development of its Nyx reusable capsule and accelerate work on Storm, a",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/after-e387-million-raise-the-exploration-company-wins-esas-aladdin-cargo-capsule-contract-worth-e760-million/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/after-e387-million-raise-the-exploration-company-wins-esas-aladdin-cargo-capsule-contract-worth-e760-million/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

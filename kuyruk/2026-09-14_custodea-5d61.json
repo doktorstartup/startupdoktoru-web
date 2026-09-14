@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_custodea-5d61",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 2,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Custodea",
+    "domain": "custodea.eu",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 350000,
+      "birim": "EUR",
+      "usd": 378000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Gregory Aerts"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T06:56:35.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/14/custodea-secures-eur350k-to-give-european-smes-greater-control-over-their-data/",
+      "baslik": "Custodea secures €350K to give European SMEs greater control over their data",
+      "tarih": "Mon, 14 Sep 2026 06:56:35 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Custodea , a European AI data platform designed to help SMEs centralise and manage their business data, has raised €350,000 in seed funding from investors in Custodea’s network.",
+      "kaynak_url": "https://tech.eu/2026/09/14/custodea-secures-eur350k-to-give-european-smes-greater-control-over-their-data/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/14/custodea-secures-eur350k-to-give-european-smes-greater-control-over-their-data/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}

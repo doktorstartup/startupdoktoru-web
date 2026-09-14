@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-11_boring-company-2056",
+  "durum": "hazir",
+  "puan": 81,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "The Boring Company",
+    "domain": "boringcompany.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000000,
+      "birim": "USD",
+      "usd": 3000000000
+    },
+    "lider": "Birleşik Arap Emirlikleri",
+    "katilanlar": [
+      "Valor Equity Partners",
+      "Andreessen Horowitz",
+      "Sequoia Capital",
+      "Shamal Holding",
+      "Human Capital",
+      "Baron Capital",
+      "Vy Capital",
+      "Temasek"
+    ],
+    "kurucular": [
+      "Elon Musk"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-11T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/11/the-boring-company-23-milyar-dolar-degerleme-uzerinden-3-milyar-dolar-yatirim-aldi/",
+      "baslik": "The Boring Company, 23 milyar dolar değerleme üzerinden 3 milyar dolar yatırım aldı",
+      "tarih": "Fri, 11 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The Boring Company , 23 milyar dolar değerleme üzerinden 3 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/11/the-boring-company-23-milyar-dolar-degerleme-uzerinden-3-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "D serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/11/the-boring-company-23-milyar-dolar-degerleme-uzerinden-3-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-14T10:33:57.802Z"
+}
