@@ -22,14 +22,18 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
   const t = useT();
   const href = useHref();
 
-  // "#" ile başlayanlar ana sayfa içi çapa; diğerleri ayrı sayfa (dile göre üretilir).
+  // Çapalar ana sayfaya MUTLAK bağlanır: "#problem" biçimi yalnız ana sayfada
+  // çalışıyordu, blog gibi iç sayfalarda tıklayınca hiçbir şey olmuyordu.
+  // E-Kitap ve Eğitimler'in kendi satış sayfaları var; menü onlara gitsin —
+  // ana sayfadaki tanıtım bölümüne kaydırmak bir adım fazladan yol demekti.
+  const ev = href("/");
   const navLinks = [
-    { href: "#problem", label: t.nav.problem },
-    { href: "#value-ladder", label: t.nav.solution },
-    { href: "#ebook", label: t.nav.ebook },
-    { href: "#training", label: t.nav.training },
+    { href: `${ev}#problem`, label: t.nav.problem },
+    { href: `${ev}#value-ladder`, label: t.nav.solution },
+    { href: href("/ebook"), label: t.nav.ebook },
+    { href: href("/egitimler"), label: t.nav.training },
     { href: href("/blog"), label: t.nav.blog },
-    { href: "#about", label: t.nav.about },
+    { href: `${ev}#about`, label: t.nav.about },
   ];
 
   return (
@@ -43,7 +47,7 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
           {navLinks.map((l) =>
-            l.href.startsWith("#") ? (
+            l.href.includes("#") ? (
               <a key={l.href} href={l.href} className="hover:text-primary transition-colors">
                 {l.label}
               </a>
@@ -118,7 +122,7 @@ export function SiteHeader({ onOpenAi, availableLocales }: Props) {
             </div>
             <nav className="flex flex-col gap-1 text-base font-semibold text-foreground">
               {navLinks.map((l) =>
-                l.href.startsWith("#") ? (
+                l.href.includes("#") ? (
                   <a
                     key={l.href}
                     href={l.href}
