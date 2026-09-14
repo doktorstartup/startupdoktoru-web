@@ -1,0 +1,77 @@
+{
+  "surum": 1,
+  "id": "2026-09-14_open-cosmos-082a",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Open Cosmos",
+    "domain": "open-cosmos.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 300000000,
+      "birim": "EUR",
+      "usd": 324000000
+    },
+    "lider": "ETF Partners",
+    "katilanlar": [
+      "British Columbia Investment Management Corporation",
+      "National Security Strategic Investment Fund",
+      "Santander Alternative Investments",
+      "Institut Català de Finances",
+      "Sustainable Forward Capital",
+      "Claret Capital Partners",
+      "Endeavor Catalyst Fund",
+      "A&G Global Investors",
+      "Entrepreneurs First",
+      "Iberis Capital",
+      "Amena Ventures",
+      "Phoenix Court"
+    ],
+    "kurucular": [
+      "Rafel Jorda Siquier"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-14T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/14/uydu-altyapilari-gelistiren-open-cosmos-300-milyon-euro-yatirim-aldi/",
+      "baslik": "Uydu altyapıları geliştiren Open Cosmos, 300 milyon euro yatırım aldı",
+      "tarih": "Mon, 14 Sep 2026 13:00:00 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/14/open-cosmos-secures-eur300m-to-expand-satellite-intelligence-and-connectivity/",
+      "baslik": "Open Cosmos secures €300M to expand satellite intelligence and connectivity",
+      "tarih": "Mon, 14 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Uydu teknolojilerine odaklanan Open Cosmos , 300 milyon euro yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/14/uydu-altyapilari-gelistiren-open-cosmos-300-milyon-euro-yatirim-aldi/"
+    },
+    {
+      "metin": "European satellite company Open Cosmos has secured €300 million in funding to expand its satellite manufacturing capacity and accelerate the deployment of its connectivity and Earth observation servic",
+      "kaynak_url": "https://tech.eu/2026/09/14/open-cosmos-secures-eur300m-to-expand-satellite-intelligence-and-connectivity/"
+    }
+  ],
+  "olusturma": "2026-09-14T19:17:54.100Z"
+}
