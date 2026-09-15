@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_euclyd-41cb",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "EUCLYD",
+    "domain": "euclyd.ai",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 200000000,
+      "birim": "EUR",
+      "usd": 216000000
+    },
+    "lider": "Samsung",
+    "katilanlar": [
+      "EQT-managed Scaleup Europe Fund",
+      "Euclyd's board as Chairman",
+      "Somerset Capital Partners",
+      "Innovation Industries",
+      "Peter Wennink",
+      "ASML"
+    ],
+    "kurucular": [
+      "Bernardo Kastrup"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T06:08:58.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/dutch-ai-chip-startup-euclyd-lands-e200-million-series-a-taps-ex-asml-chief-peter-wennink-as-chairman/",
+      "baslik": "Dutch AI chip startup EUCLYD lands over €200 million Series A, taps ex-ASML chief Peter Wennink as Chairman",
+      "tarih": "Tue, 15 Sep 2026 06:08:58 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "EUCLYD , an Eindhoven-based semiconductor systems startup, has raised a Series A funding round of more than €200 million to accelerate development of \"ultra-efficient\" infrastructure for foundation AI",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/dutch-ai-chip-startup-euclyd-lands-e200-million-series-a-taps-ex-asml-chief-peter-wennink-as-chairman/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/dutch-ai-chip-startup-euclyd-lands-e200-million-series-a-taps-ex-asml-chief-peter-wennink-as-chairman/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

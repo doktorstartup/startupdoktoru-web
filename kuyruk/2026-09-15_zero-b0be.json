@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_zero-b0be",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Zero",
+    "domain": "zero.inc",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 8930000,
+      "birim": "EUR",
+      "usd": 9644400
+    },
+    "lider": "New York-based Primary Venture Partners",
+    "katilanlar": [
+      "Inception Fund",
+      "Supercell",
+      "Langdock",
+      "Defiant",
+      "Lovable",
+      "Silo AI",
+      "Greens"
+    ],
+    "kurucular": [
+      "Tuomo Riekki"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T07:00:44.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/helsinkis-zero-raises-e8-93-million-with-backing-from-lovable-and-supercell-founders-to-make-crm-history/",
+      "baslik": "Helsinki’s Zero raises €8.93 million with backing from Lovable and Supercell founders to make CRM history",
+      "tarih": "Tue, 15 Sep 2026 07:00:44 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Zero , a Helsinki-based startup building the GTM operating system for the AI era, today announced an €8.93 million ($10.3 million) Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/helsinkis-zero-raises-e8-93-million-with-backing-from-lovable-and-supercell-founders-to-make-crm-history/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/helsinkis-zero-raises-e8-93-million-with-backing-from-lovable-and-supercell-founders-to-make-crm-history/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

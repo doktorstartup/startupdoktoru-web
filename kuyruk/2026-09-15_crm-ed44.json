@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_crm-ed44",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "CRM",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 10300000,
+      "birim": "USD",
+      "usd": 10300000
+    },
+    "lider": "New York-based Primary Venture Partners",
+    "katilanlar": [
+      "Inception Fund",
+      "Supercell",
+      "Langdock",
+      "Defiant",
+      "Lovable",
+      "Silo AI",
+      "Greens"
+    ],
+    "kurucular": [
+      "Tuomo Riekki"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/15/crm-challenger-zero-gets-backing-from-lovable-and-langdock-founders-in-10m-raise/",
+      "baslik": "CRM challenger Zero gets backing from Lovable and Langdock founders in $10M raise",
+      "tarih": "Tue, 15 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Zero has clinched a $10.3m seed round led by New York-based Primary Venture Partners, with participation from Inception Fund, Defiant, Greens and founders of Lovable, Supercell, Langdock and Silo AI.",
+      "kaynak_url": "https://tech.eu/2026/09/15/crm-challenger-zero-gets-backing-from-lovable-and-langdock-founders-in-10m-raise/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/15/crm-challenger-zero-gets-backing-from-lovable-and-langdock-founders-in-10m-raise/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

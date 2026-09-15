@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_enforceshield-4465",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "EnforceShield",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1700000,
+      "birim": "EUR",
+      "usd": 1836000
+    },
+    "lider": "Vendep Capital",
+    "katilanlar": [
+      "FIRSTPICK VC",
+      "IP"
+    ],
+    "kurucular": [
+      "Rytis Rudzinskas"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T08:25:57.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/vilnius-based-enforceshield-raises-e1-7-million-seed-round-to-fight-ai-powered-ip-abuse-with-autonomous-enforcement/",
+      "baslik": "Vilnius-based EnforceShield raises €1.7 million Seed round to fight AI-powered IP abuse with autonomous enforcement",
+      "tarih": "Tue, 15 Sep 2026 08:25:57 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "EnforceShield , a Vilnius-based LegalTech startup that shields businesses from intellectual property violations, has raised a €1.7 million Seed round for its attorney-built, autonomous intellectual pr",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/vilnius-based-enforceshield-raises-e1-7-million-seed-round-to-fight-ai-powered-ip-abuse-with-autonomous-enforcement/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/vilnius-based-enforceshield-raises-e1-7-million-seed-round-to-fight-ai-powered-ip-abuse-with-autonomous-enforcement/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

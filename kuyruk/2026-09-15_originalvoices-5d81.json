@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_originalvoices-5d81",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "OriginalVoices",
+    "domain": "originalvoices.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "GBP",
+      "usd": 1270000
+    },
+    "lider": "Iona Star",
+    "katilanlar": [],
+    "kurucular": [
+      "David Dobrin"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T08:18:25.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/15/originalvoices-raises-ps1m-pre-seed-round-led-by-iona-star/",
+      "baslik": "OriginalVoices raises £1M pre-seed round led by Iona Star",
+      "tarih": "Tue, 15 Sep 2026 08:18:25 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "OriginalVoices , a platform providing human-generated data and insights for AI systems, has raised £1 million in a pre-seed funding round led by venture capital firm Iona Star .",
+      "kaynak_url": "https://tech.eu/2026/09/15/originalvoices-raises-ps1m-pre-seed-round-led-by-iona-star/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/15/originalvoices-raises-ps1m-pre-seed-round-led-by-iona-star/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

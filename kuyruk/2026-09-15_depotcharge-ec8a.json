@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_depotcharge-ec8a",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Depotcharge",
+    "domain": "depotcharge.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2700000,
+      "birim": "EUR",
+      "usd": 2916000
+    },
+    "lider": "High-Tech Gründerfonds (HTGF)",
+    "katilanlar": [
+      "Prequel Ventures",
+      "Kopa Ventures"
+    ],
+    "kurucular": [
+      "Joscha Specks"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T07:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/15/depotcharge-lands-eur27m-and-bgl-partnership-to-scale-electric-truck-charging/",
+      "baslik": "Depotcharge lands €2.7M and BGL partnership to scale electric truck charging",
+      "tarih": "Tue, 15 Sep 2026 07:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Munich-based Depotcharge has raised €2.7 million in a pre-seed funding round to expand its shared charging infrastructure platform for electric road freight and support its international growth.",
+      "kaynak_url": "https://tech.eu/2026/09/15/depotcharge-lands-eur27m-and-bgl-partnership-to-scale-electric-truck-charging/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/15/depotcharge-lands-eur27m-and-bgl-partnership-to-scale-electric-truck-charging/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}

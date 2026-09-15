@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_boxd-bfb7",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Boxd",
+    "domain": "boxd.sh",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "USD",
+      "usd": 2000000
+    },
+    "lider": "BlueYard Capital",
+    "katilanlar": [
+      "Script Capital",
+      "OVNI Capital",
+      "Antler",
+      "S20"
+    ],
+    "kurucular": [
+      "Michiel Voortman",
+      "Laurentiu Ciobanu",
+      "Hidde Kehrer"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T07:12:09.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/15/boxd-raises-2m-to-build-cloud-infrastructure-for-ai-coding-agents/",
+      "baslik": "Boxd raises $2M to build cloud infrastructure for AI coding agents",
+      "tarih": "Tue, 15 Sep 2026 07:12:09 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Dutch startup Boxd has raised $2 million in a pre-seed funding round to develop its cloud computing infrastructure for developers and AI coding agents.",
+      "kaynak_url": "https://tech.eu/2026/09/15/boxd-raises-2m-to-build-cloud-infrastructure-for-ai-coding-agents/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/15/boxd-raises-2m-to-build-cloud-infrastructure-for-ai-coding-agents/"
+    }
+  ],
+  "olusturma": "2026-09-15T10:01:24.701Z"
+}
