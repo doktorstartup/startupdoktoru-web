@@ -9,6 +9,7 @@ type Investor = { firm_name: string; partner_name: string | null; thesis: string
 type Startup = {
   id: string; startup_name: string; one_liner: string | null; value_prop: string | null;
   deck_url: string | null; website: string | null; sectors: string[]; stage: string | null; team_size: number | null; city: string | null;
+  product_stage: string | null; valuation: string | null;
 };
 
 export default function InvestorPortal() {
@@ -110,7 +111,8 @@ export default function InvestorPortal() {
                         {s.sectors?.map((x) => <span key={x} className="text-[11px] px-2 py-0.5 rounded bg-secondary/40 border border-border/40 text-muted-foreground">{x}</span>)}
                       </div>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground mt-4">
-                        {s.stage && <span className="inline-flex items-center gap-1"><Layers className="h-3.5 w-3.5" /> {s.stage}</span>}
+                        {s.product_stage && <span className="inline-flex items-center gap-1 text-foreground/90"><Layers className="h-3.5 w-3.5" /> {s.product_stage}</span>}
+                        {s.valuation && <span className="inline-flex items-center gap-1 text-emerald-400">Valuation: {s.valuation}</span>}
                         {s.team_size != null && <span className="inline-flex items-center gap-1"><Users className="h-3.5 w-3.5" /> {s.team_size} people</span>}
                         {s.city && <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {s.city}</span>}
                       </div>

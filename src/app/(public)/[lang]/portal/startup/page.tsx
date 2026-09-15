@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Rocket, Save, CheckCircle2, Clock, XCircle, GraduationCap, ArrowRight, ArrowLeft } from "lucide-react";
+import { Loader2, Rocket, Save, CheckCircle2, Clock, XCircle, GraduationCap, ArrowRight, ArrowLeft, AlertTriangle } from "lucide-react";
 import { MemberLogin } from "../../../../../components/MemberLogin";
 import { useMember } from "../../../../../lib/member";
 import { supabase } from "../../../../../lib/supabase";
@@ -15,18 +15,21 @@ type Profile = {
   deck_url: string;
   website: string;
   sectors: string[];
-  stage: string;
   team_size: number | null;
   city: string;
+  product_stage: string;
+  valuation: string;
   status?: "submitted" | "approved" | "rejected";
 };
 
-const EMPTY: Profile = { startup_name: "", one_liner: "", value_prop: "", deck_url: "", website: "", sectors: [], stage: "", team_size: null, city: "" };
+const EMPTY: Profile = { startup_name: "", one_liner: "", value_prop: "", deck_url: "", website: "", sectors: [], team_size: null, city: "", product_stage: "", valuation: "" };
 const inputCls = "w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all";
 const areaCls = "w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all resize-y";
 const labelCls = "text-[11px] font-bold text-muted-foreground uppercase tracking-wider block mb-1.5";
 
-const STEPS = ["Girişim", "Değer & Sunum", "Ekip"];
+const STEPS = ["Girişim", "Ürün & Değer", "Değerleme", "Sunum & Ekip"];
+const PRODUCT_STAGES = ["Fikir", "MVP", "İlk müşteriler geldi", "MRR (düzenli gelir)", "Growth (büyüme)"];
+
 const STATUS: Record<string, { label: string; cls: string; icon: typeof Clock }> = {
   submitted: { label: "İncelemede — onaylandığında yatırımcılara gösterilir", cls: "bg-amber-500/10 text-amber-400 border-amber-500/20", icon: Clock },
   approved: { label: "Onaylandı — yatırıma hazır, yatırımcılara gösterilebilir", cls: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", icon: CheckCircle2 },
@@ -38,11 +41,28 @@ async function token(): Promise<string> {
   return data.session?.access_token || "";
 }
 
+// Yumuşak öneri kutusu: uyar, eğitimi belirgin ama zorlamayan bir öneri olarak sun. Devam engellenmez.
+function Upsell({ warn, cta, to }: { warn: string; cta: string; to: string }) {
+  return (
+    <div className="rounded-xl border border-amber-500/25 bg-amber-500/[0.06] p-4 space-y-3">
+      <p className="text-sm text-amber-200/90 flex items-start gap-2">
+        <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0 text-amber-400" /> {warn}
+      </p>
+      <Link href={to} className="btn btn-primary w-full sm:w-auto">
+        <GraduationCap className="h-4 w-4" /> {cta}
+      </Link>
+      <p className="text-[11px] text-muted-foreground">İstersen eğitim almadan da devam edebilirsin — bu yalnızca bir öneri.</p>
+    </div>
+  );
+}
+
 export default function StartupProfilePage() {
-  const { member, loading } = useMember();
+  const { member, loading, hasAccess } = useMember();
   const href = useHref();
   const [p, setP] = useState<Profile>(EMPTY);
   const [step, setStep] = useState(0);
+  const [valDone, setValDone] = useState<boolean | null>(null); // Değerleme yapıldı mı?
+  const [deckHas, setDeckHas] = useState<boolean | null>(null); // Yatırımcı sunumu var mı?
   const [loadingProfile, setLoadingProfile] = useState(true);
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");
@@ -54,7 +74,11 @@ export default function StartupProfilePage() {
     try {
       const res = await fetch("/api/me/startup", { headers: { Authorization: `Bearer ${await token()}` } });
       const d = await res.json();
-      if (d.profile) setP({ ...EMPTY, ...d.profile, sectors: d.profile.sectors || [] });
+      if (d.profile) {
+        setP({ ...EMPTY, ...d.profile, sectors: d.profile.sectors || [] });
+        if (d.profile.valuation) setValDone(true);
+        if (d.profile.deck_url) setDeckHas(true);
+      }
     } catch { /* boş bırak */ }
     finally { setLoadingProfile(false); }
   }, []);
@@ -72,7 +96,7 @@ export default function StartupProfilePage() {
       });
       const d = await res.json();
       if (d.error) setMsg(d.error);
-      else { setMsg("Kaydedildi ✓"); load(); }
+      else { setMsg("Kaydedildi ✓ — profilin incelemeye alındı."); load(); }
     } catch { setMsg("Bağlantı hatası."); }
     finally { setSaving(false); }
   };
@@ -83,6 +107,8 @@ export default function StartupProfilePage() {
   const st = p.status ? STATUS[p.status] : null;
   const StIcon = st?.icon;
   const canNext = step !== 0 || !!p.startup_name.trim();
+  const valTo = hasAccess("degerleme") ? href("/portal/course") : href("/degerleme");
+  const deckTo = hasAccess("investor_training") ? href("/portal/course") : href("/investor-training");
 
   return (
     <div className="space-y-8 max-w-2xl">
@@ -92,7 +118,7 @@ export default function StartupProfilePage() {
           <Rocket className="h-6 w-6 text-primary" /> Girişimini Yatırımcılara Aç
         </h1>
         <p className="text-sm text-muted-foreground mt-2">
-          Birkaç adımda profilini oluştur. Onayladıktan sonra tezine uyan yatırımcılarla eşleştiririz. Net ve dürüst yaz — yatırımcılar bunu görecek.
+          Birkaç adımda profilini oluştur. Onayladıktan sonra sistemimize kayıtlı yatırımcılarla eşleştiririz. Net ve dürüst yaz — yatırımcılar bunu görecek.
         </p>
       </div>
 
@@ -111,7 +137,7 @@ export default function StartupProfilePage() {
             {STEPS.map((label, i) => (
               <button key={label} onClick={() => setStep(i)} className="flex-1 text-left group">
                 <div className={`h-1.5 rounded-full transition-all ${i <= step ? "bg-primary" : "bg-secondary/50"}`} />
-                <span className={`text-[11px] font-semibold mt-1.5 inline-block transition-colors ${i === step ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}`}>
+                <span className={`text-[10px] sm:text-[11px] font-semibold mt-1.5 inline-block transition-colors ${i === step ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"}`}>
                   {i + 1}. {label}
                 </span>
               </button>
@@ -137,43 +163,95 @@ export default function StartupProfilePage() {
             </div>
           )}
 
-          {/* Adım 2: Değer & Sunum */}
+          {/* Adım 2: Ürün durumu + değer önerisi */}
           {step === 1 && (
             <div className="space-y-5">
               <div>
-                <label className={labelCls}>Değer önerisi <span className="normal-case font-normal text-muted-foreground/60">(hangi sorunu, kime, neden sizinle)</span></label>
-                <textarea value={p.value_prop} onChange={(e) => set("value_prop", e.target.value)} rows={5}
-                  placeholder="Problem, çözüm, neden şimdi, sizi farklı kılan…" className={areaCls} />
+                <label className={labelCls}>Ürün durumu</label>
+                <div className="flex flex-wrap gap-2">
+                  {PRODUCT_STAGES.map((s) => (
+                    <button key={s} onClick={() => set("product_stage", s)}
+                      className={`px-3.5 h-10 rounded-xl border text-sm font-semibold transition-all ${p.product_stage === s ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground hover:border-border"}`}>
+                      {s}
+                    </button>
+                  ))}
+                </div>
               </div>
               <div>
-                <label className={labelCls}>Sunum / pitch deck bağlantısı <span className="normal-case font-normal text-muted-foreground/60">(Google Drive / DocSend / PDF)</span></label>
-                <input value={p.deck_url} onChange={(e) => set("deck_url", e.target.value)} placeholder="https://docsend.com/…" className={inputCls} />
+                <label className={labelCls}>Değer önerisi <span className="normal-case font-normal text-muted-foreground/60">(hangi sorunu, kime, neden sizinle)</span></label>
+                <textarea value={p.value_prop} onChange={(e) => set("value_prop", e.target.value)} rows={4}
+                  placeholder="Problem, çözüm, neden şimdi, sizi farklı kılan…" className={areaCls} />
               </div>
             </div>
           )}
 
-          {/* Adım 3: Ekip & detay */}
+          {/* Adım 3: Değerleme */}
           {step === 2 && (
             <div className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className={labelCls}>Değerleme yapıldı mı?</label>
+                <div className="flex gap-2">
+                  <button onClick={() => setValDone(true)} className={`flex-1 h-11 rounded-xl border text-sm font-semibold transition-all ${valDone === true ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground"}`}>Evet</button>
+                  <button onClick={() => { setValDone(false); set("valuation", ""); }} className={`flex-1 h-11 rounded-xl border text-sm font-semibold transition-all ${valDone === false ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground"}`}>Hayır</button>
+                </div>
+              </div>
+
+              {valDone === true && (
+                <div>
+                  <label className={labelCls}>Değerleme rakamı</label>
+                  <input value={p.valuation} onChange={(e) => set("valuation", e.target.value)} placeholder="Örn. $500K / 15.000.000 ₺" className={inputCls} />
+                </div>
+              )}
+
+              {valDone === false && (
+                <Upsell
+                  warn="Değerleme yapmadan yatırımcılara şirketini satamazsın — kaç para istediğini ve neden o rakama değdiğini bilmen gerekir. Değerleme eğitiminde Berkus, Puan Kartı, DCF ve pazarlığı öğreniyorsun."
+                  cta="Değerleme eğitimini izle"
+                  to={valTo}
+                />
+              )}
+            </div>
+          )}
+
+          {/* Adım 4: Yatırımcı sunumu + ekip */}
+          {step === 3 && (
+            <div className="space-y-5">
+              <div>
+                <label className={labelCls}>Yatırımcı sunumun (pitch deck) var mı?</label>
+                <div className="flex gap-2">
+                  <button onClick={() => setDeckHas(true)} className={`flex-1 h-11 rounded-xl border text-sm font-semibold transition-all ${deckHas === true ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground"}`}>Evet</button>
+                  <button onClick={() => { setDeckHas(false); set("deck_url", ""); }} className={`flex-1 h-11 rounded-xl border text-sm font-semibold transition-all ${deckHas === false ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground"}`}>Hayır</button>
+                </div>
+              </div>
+
+              {deckHas === true && (
+                <div>
+                  <label className={labelCls}>Sunum bağlantısı <span className="normal-case font-normal text-muted-foreground/60">(Google Drive / DocSend / PDF)</span></label>
+                  <input value={p.deck_url} onChange={(e) => set("deck_url", e.target.value)} placeholder="https://drive.google.com/…" className={inputCls} />
+                </div>
+              )}
+
+              {deckHas === false && (
+                <Upsell
+                  warn="Yatırımcı sunumu olmadan kendini yatırımcılara anlatamazsın — ilk izlenim burada oluşuyor. Yatırımcı Sunumu eğitiminde problem-çözüm, rakip analizi, ekip ve gerçek sunum incelemesiyle sıfırdan bir deck kuruyorsun."
+                  cta="Yatırımcı Sunumu eğitimini al"
+                  to={deckTo}
+                />
+              )}
+
+              <div className="grid sm:grid-cols-2 gap-4 pt-2 border-t border-border/20">
                 <div>
                   <label className={labelCls}>Ekipte kaç kişi?</label>
                   <input type="number" min={1} value={p.team_size ?? ""} onChange={(e) => set("team_size", e.target.value === "" ? null : Number(e.target.value))} placeholder="Örn. 4" className={inputCls} />
                 </div>
                 <div>
-                  <label className={labelCls}>Aşama</label>
-                  <input value={p.stage} onChange={(e) => set("stage", e.target.value)} placeholder="pre-seed / seed" className={inputCls} />
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className={labelCls}>Sektör(ler) <span className="normal-case font-normal text-muted-foreground/60">(virgülle)</span></label>
-                  <input defaultValue={p.sectors.join(", ")} onBlur={(e) => set("sectors", e.target.value.split(",").map((x) => x.trim()).filter(Boolean))} placeholder="fintech, saas" className={inputCls} />
-                </div>
-                <div>
                   <label className={labelCls}>Şehir</label>
                   <input value={p.city} onChange={(e) => set("city", e.target.value)} placeholder="İstanbul" className={inputCls} />
                 </div>
+              </div>
+              <div>
+                <label className={labelCls}>Sektör(ler) <span className="normal-case font-normal text-muted-foreground/60">(virgülle)</span></label>
+                <input defaultValue={p.sectors.join(", ")} onBlur={(e) => set("sectors", e.target.value.split(",").map((x) => x.trim()).filter(Boolean))} placeholder="fintech, saas" className={inputCls} />
               </div>
             </div>
           )}

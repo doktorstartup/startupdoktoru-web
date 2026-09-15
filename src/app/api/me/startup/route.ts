@@ -4,7 +4,7 @@ import { verifyMember } from "../../../../lib/memberAuth";
 
 // Girişimcinin kendi girişim profili — giriş yapmış üyeye özel (Bearer token).
 // Bir üye = bir profil (user_id unique). GET: kendi profilini getir. POST: oluştur/güncelle.
-const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city"];
+const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city", "product_stage", "valuation"];
 
 export async function GET(req: NextRequest) {
   const { user, error, status } = await verifyMember(req);

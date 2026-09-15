@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
   if (ids.length) {
     const { data } = await supabaseAdmin
       .from("inv_startup_profiles")
-      .select("id, startup_name, one_liner, value_prop, deck_url, website, sectors, stage, team_size, city")
+      .select("id, startup_name, one_liner, value_prop, deck_url, website, sectors, stage, team_size, city, product_stage, valuation")
       .in("id", ids)
       .eq("status", "approved")
       .order("updated_at", { ascending: false });

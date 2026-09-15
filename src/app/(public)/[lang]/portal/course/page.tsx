@@ -95,6 +95,29 @@ export default function CoursePortal() {
             poster={{ badge: t.freePosterBadge, title: t.freeHeading, accent: "emerald" }}
           />
         </div>
+
+        {/* Videonun altında: yatırımcı ağına giriş — kayıtlı herkese açık */}
+        <Link href={href("/portal/startup")}
+          className="block max-w-4xl glass-panel rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] to-accent/[0.05] hover:border-primary/50 transition-all p-6 group">
+          <div className="flex items-start sm:items-center gap-4 flex-col sm:flex-row">
+            <div className="h-12 w-12 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center text-primary shrink-0">
+              <Rocket className="h-6 w-6" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <h3 className="font-extrabold text-foreground text-lg">
+                {lang === "en" ? "Start meeting hundreds of investors in our network" : "Sistemimize kayıtlı yüzlerce yatırımcıyla görüşmeye hemen başla"}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {lang === "en"
+                  ? "Create your startup profile step by step — we'll match you with the right investors."
+                  : "Girişim profilini adım adım oluştur — sana uygun yatırımcılarla eşleştirelim."}
+              </p>
+            </div>
+            <span className="btn btn-primary shrink-0 pointer-events-none">
+              {lang === "en" ? "Get started" : "Hemen başla"} <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </div>
+        </Link>
       </div>
     );
   }

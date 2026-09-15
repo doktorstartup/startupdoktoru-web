@@ -15,6 +15,8 @@ type Startup = {
   stage: string | null;
   team_size: number | null;
   city: string | null;
+  product_stage: string | null;
+  valuation: string | null;
   status: "submitted" | "approved" | "rejected";
   notes: string | null;
   updated_at: string;
@@ -152,7 +154,8 @@ export default function StartupsAdmin() {
                     <div className="text-xs text-muted-foreground">{s.email}</div>
                     {s.value_prop && <div><div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Değer önerisi</div><p className="whitespace-pre-line text-foreground/90">{s.value_prop}</p></div>}
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
-                      {s.stage && <span className="inline-flex items-center gap-1"><Layers className="h-3.5 w-3.5" /> {s.stage}</span>}
+                      {s.product_stage && <span className="inline-flex items-center gap-1 text-foreground/90"><Layers className="h-3.5 w-3.5" /> {s.product_stage}</span>}
+                      {s.valuation && <span className="inline-flex items-center gap-1 text-emerald-400">Değerleme: {s.valuation}</span>}
                       {s.team_size != null && <span className="inline-flex items-center gap-1"><Users className="h-3.5 w-3.5" /> {s.team_size} kişi</span>}
                       {s.city && <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {s.city}</span>}
                     </div>
