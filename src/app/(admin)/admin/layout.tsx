@@ -20,7 +20,9 @@ import {
   Loader2,
   Megaphone,
   Building2,
-  Mail
+  Mail,
+  Rocket,
+  Handshake
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -176,6 +178,16 @@ export default function AdminLayout({
       name: "Yatırımcı Ağı (INVEST)",
       href: "/admin/invest",
       icon: Building2,
+    },
+    {
+      name: "Girişim Profilleri",
+      href: "/admin/startups",
+      icon: Rocket,
+    },
+    {
+      name: "Eşleştirme",
+      href: "/admin/match",
+      icon: Handshake,
     },
   ];
 

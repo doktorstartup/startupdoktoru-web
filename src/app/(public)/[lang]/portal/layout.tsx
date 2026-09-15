@@ -10,10 +10,11 @@ import {
   LogOut,
   Home,
   GraduationCap,
+  Rocket,
 } from "lucide-react";
 import { useMember } from "../../../../lib/member";
 import { PhonePrompt } from "../../../../components/PhonePrompt";
-import { useHref, useT } from "../../../../lib/i18n-client";
+import { useHref, useT, useLang } from "../../../../lib/i18n-client";
 import { stripLocale } from "../../../../lib/i18n";
 
 export default function PortalLayout({
@@ -26,6 +27,7 @@ export default function PortalLayout({
   const { member, logout } = useMember();
   const t = useT().portal;
   const href = useHref();
+  const lang = useLang();
 
   const initials = member?.email?.slice(0, 2).toUpperCase() || "SD";
   const displayEmail = member?.email || t.notLoggedIn;
@@ -40,6 +42,11 @@ export default function PortalLayout({
       name: t.navCourse,
       href: "/portal/course",
       icon: GraduationCap,
+    },
+    {
+      name: lang === "en" ? "My Startup" : "Girişim Profilim",
+      href: "/portal/startup",
+      icon: Rocket,
     },
     {
       name: t.navEbook,
