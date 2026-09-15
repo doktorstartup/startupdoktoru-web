@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_exein-e42d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Exein",
+    "domain": "exein.io",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 270000000,
+      "birim": "USD",
+      "usd": 270000000
+    },
+    "lider": "Headline",
+    "katilanlar": [],
+    "kurucular": [
+      "Gianni Cuozzo"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T10:17:41.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/15/fiziksel-yapay-zeka-sistemlerini-koruyan-exein-270-milyon-dolar-yatirim-aldi/",
+      "baslik": "Fiziksel yapay zeka sistemlerini koruyan Exein, 270 milyon dolar yatırım aldı",
+      "tarih": "Tue, 15 Sep 2026 10:17:41 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bağlantılı cihazlara yönelik gömülü siber güvenlik çözümleri geliştiren İtalya merkezli Exein , 270 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/15/fiziksel-yapay-zeka-sistemlerini-koruyan-exein-270-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-15T18:08:44.323Z"
+}

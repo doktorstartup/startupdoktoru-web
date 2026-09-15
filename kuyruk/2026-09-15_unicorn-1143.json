@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_unicorn-1143",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Unicorn",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 234000000,
+      "birim": "EUR",
+      "usd": 252720000
+    },
+    "lider": "J.P",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-15T09:20:04.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/facing-5000-new-attacks-weekly-italys-exein-raises-e234-million-for-physical-ai-cybersecurity/",
+      "baslik": "Exein reaches Unicorn status as it faces 5,000 attacks weekly and raises €234 million for Physical AI cybersecurity",
+      "tarih": "Tue, 15 Sep 2026 09:20:04 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Exein , a Physical AI cybersecurity company out of Rome, today announced €234 million ($270 million) in new funding at a €1.4 billion ($1.7 billion) valuation, reportedly making it the most valuable c",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/facing-5000-new-attacks-weekly-italys-exein-raises-e234-million-for-physical-ai-cybersecurity/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/facing-5000-new-attacks-weekly-italys-exein-raises-e234-million-for-physical-ai-cybersecurity/"
+    }
+  ],
+  "olusturma": "2026-09-15T18:08:44.323Z"
+}

@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_isometric-fcd4",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Isometric",
+    "domain": "isometric.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 43000000,
+      "birim": "EUR",
+      "usd": 46440000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Eamon Jubbawy"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T14:54:04.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/uk-climatetech-startup-isometric-brings-series-a-to-e43-million-as-it-expands-beyond-carbon-removal/",
+      "baslik": "UK ClimateTech startup Isometric brings Series A to €43 million as it expands beyond carbon removal",
+      "tarih": "Tue, 15 Sep 2026 14:54:04 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Isometric , a London-based certifier for the industrial economy, today announced that their Series A has reached €43 million ($50 million) to accelerate its expansion with the help of new investors.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/uk-climatetech-startup-isometric-brings-series-a-to-e43-million-as-it-expands-beyond-carbon-removal/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/uk-climatetech-startup-isometric-brings-series-a-to-e43-million-as-it-expands-beyond-carbon-removal/"
+    }
+  ],
+  "olusturma": "2026-09-15T18:08:44.323Z"
+}

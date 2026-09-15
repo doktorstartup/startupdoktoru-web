@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_academyai-588c",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "AcademyAI",
+    "domain": "academyai.co",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1650000,
+      "birim": "GBP",
+      "usd": 2095500
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Alex Packham",
+      "Andy Lambert",
+      "Michael Walton",
+      "Rob Barnett"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T10:19:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/15/academyai-raises-ps165m-to-close-the-workplace-ai-skills-gap/",
+      "baslik": "AcademyAI raises £1.65M to close the workplace AI skills gap",
+      "tarih": "Tue, 15 Sep 2026 10:19:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AcademyAI has raised £1.65 million in an oversubscribed pre-seed funding round to develop its platform for assessing employees' AI skills and providing training tailored to their roles.",
+      "kaynak_url": "https://tech.eu/2026/09/15/academyai-raises-ps165m-to-close-the-workplace-ai-skills-gap/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/15/academyai-raises-ps165m-to-close-the-workplace-ai-skills-gap/"
+    }
+  ],
+  "olusturma": "2026-09-15T18:08:44.323Z"
+}

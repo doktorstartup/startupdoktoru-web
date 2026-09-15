@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-15_jack-jill-9e9a",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Jack Jill",
+    "domain": "jackandjill.ai",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 34680000,
+      "birim": "EUR",
+      "usd": 37454400
+    },
+    "lider": "Air Street Capital",
+    "katilanlar": [
+      "2016 Formula One World Champion Nico Rosberg",
+      "Dig Ventures",
+      "ElevenLabs",
+      "Episode 1",
+      "Anthropic",
+      "Firedrop",
+      "Playfair",
+      "Madrona",
+      "Lovable",
+      "Antler"
+    ],
+    "kurucular": [
+      "Matt Wilson",
+      "Saaras Mehan"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-15T10:22:59.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/",
+      "baslik": "London-based Jack &#038; Jill raises €34.68 million Series A to scale its AI agents for jobseekers and employers",
+      "tarih": "Tue, 15 Sep 2026 10:22:59 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Jack & Jill , the London-based startup that puts an AI agent on each side of the hiring table, has raised €34.68 million ($40 million) in a Series A round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/london-based-jack-jill-raises-e34-68-million-series-a-to-scale-its-ai-agents-for-jobseekers-and-employers/"
+    }
+  ],
+  "olusturma": "2026-09-15T18:08:44.323Z"
+}
