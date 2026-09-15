@@ -100,6 +100,41 @@ export async function buildDigest(): Promise<Digest> {
     if (sent >= 20 && bounceRate > 5) alerts.push(`Bounce oranı yüksek (%${bounceRate.toFixed(1)}) — liste kalitesi/ısıtma kontrol edilmeli.`);
   }
 
+  // ── LLM sağlayıcıları ── AI mentör ve blog çevirisi buna bağlı.
+  // Kredisi biten sağlayıcı sessizce özelliği öldürebiliyordu; artık burada görünür.
+  const { data: llm } = await supabaseAdmin
+    .from("ds_llm_saglik")
+    .select("saglayici, son_basari, son_hata, son_hata_kod, son_hata_at, kota_bitti");
+
+  const llmKayit = llm || [];
+  if (llmKayit.length) {
+    const kotasiBiten = llmKayit.filter((p) => p.kota_bitti);
+    // Son 24 saatte hiç başarısı olmayan = fiilen çalışmayan sağlayıcı.
+    const calisan = llmKayit.filter((p) => p.son_basari && p.son_basari >= since);
+    const bozuk = llmKayit.filter((p) => !p.son_basari || p.son_basari < since);
+
+    if (kotasiBiten.length) {
+      alerts.push(
+        `${kotasiBiten.map((p) => p.saglayici).join(", ")} kotası/bakiyesi bitmiş — bakiye yüklenmeli.`
+      );
+    }
+    // Hiç başarı yoksa AI mentör ve blog çevirisi tamamen durmuş demektir.
+    if (calisan.length === 0 && llmKayit.some((p) => p.son_hata_at && p.son_hata_at >= since)) {
+      alerts.push(
+        `Hiçbir LLM sağlayıcısı çalışmıyor — AI mentör ve blog çevirisi DURDU. ` +
+          llmKayit.map((p) => `${p.saglayici}: ${p.son_hata_kod || "?"}`).join(", ")
+      );
+    } else if (bozuk.length && calisan.length) {
+      // Zincir hâlâ ayakta ama yedek eridi — sessiz kalmayalım.
+      lines.push(
+        `LLM: ${calisan.map((p) => p.saglayici).join(", ")} çalışıyor; ` +
+          `${bozuk.map((p) => p.saglayici).join(", ")} cevap vermiyor (yedek azaldı).`
+      );
+    } else if (calisan.length) {
+      lines.push(`LLM: ${calisan.map((p) => p.saglayici).join(", ")} çalışıyor.`);
+    }
+  }
+
   // ── Özet mail derle ──
   const dateStr = new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10);
   const alertBlock = alerts.length

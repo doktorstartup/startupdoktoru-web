@@ -1,9 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+import { llmUret } from "../../../lib/llm";
 
 const SYSTEM_PROMPT_TR = `Sen Startup Doktoru'nun yapay zeka mentör asistanısın. Eser Memişoğlu'nun 10+ yıllık startup, inovasyon ve yatırımcı ilişkileri tecrübesiyle beslenen bir mentörsün.
 
@@ -54,29 +50,29 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === "placeholder-openai-key") {
-      // Elegant fallback when API key is not configured
-      if (lang === "en") {
-        return NextResponse.json({
-          reply: `Good question. Being systematic about your startup process matters more than almost anything else.\n\nWhere I'd start:\n\n1. **Problem validation:** Have 10 conversations with potential customers first. Don't sell — just listen.\n\n2. **Keep the MVP small:** Ship the simplest version that solves one problem. Over-engineering is the most common mistake.\n\n3. **Build a funnel:** Free value → small paid product → big product → advisory. Trust compounds in that order.\n\nFor the full growth strategy, I'd suggest joining [our free training](/en/free-training).`
-        });
-      }
-      return NextResponse.json({
-        reply: `Harika bir soru! Startup sürecinizde sistematik bir yaklaşım benimsemek kritik önemde.\n\nBaşlangıç için önerilerim:\n\n1. **Problem Doğrulama:** Önce potansiyel müşterilerinizle 10 görüşme yapın. Ürününüzü satmaya çalışmayın — sadece dinleyin.\n\n2. **MVP'yi küçük tutun:** Tek bir problemi çözen, en basit versiyonu çıkarın. Over-engineering en yaygın hata.\n\n3. **Funnel kurun:** Ücretsiz değer → küçük ücretli ürün → büyük ürün → danışmanlık sıralamasıyla güven inşa edin.\n\nDetaylı büyüme stratejisi için [ücretsiz eğitimimize](/free-training) katılmanızı öneririm.`
+    let reply: string;
+    try {
+      const sonuc = await llmUret({
+        sistem: systemPrompt,
+        mesajlar: messages,
+        maxToken: 600,
       });
+      reply = sonuc.metin;
+    } catch (e) {
+      // Sağlayıcıların hepsi düştü. Eskiden burada hazır bir metin dönüyordu:
+      // ziyaretçi cevap aldığını sanıyor, bozukluk hiçbir yerden belli olmuyordu.
+      // Artık dürüst hata dönüyoruz; bekçi de ds_llm_saglik'ten uyarıyor.
+      console.error("LLM zinciri düştü:", e instanceof Error ? e.message : e);
+      return NextResponse.json(
+        {
+          error:
+            lang === "en"
+              ? "The AI mentor is temporarily unavailable. Please try again shortly."
+              : "AI mentör şu anda geçici olarak kullanılamıyor. Birazdan tekrar dener misin?",
+        },
+        { status: 503 }
+      );
     }
-
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: systemPrompt },
-        ...messages
-      ],
-      max_tokens: 600,
-      temperature: 0.7
-    });
-
-    const reply = completion.choices[0]?.message?.content || "Şu anda yanıt üretemiyorum, lütfen tekrar deneyin.";
 
     return NextResponse.json({ reply });
   } catch (error) {

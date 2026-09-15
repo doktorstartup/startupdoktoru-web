@@ -264,3 +264,18 @@ CREATE INDEX IF NOT EXISTS ds_ebook_en_interest_created_idx ON public.ds_ebook_e
 
 -- Politika yok: listeye yalnız service-role erişir.
 ALTER TABLE public.ds_ebook_en_interest ENABLE ROW LEVEL SECURITY;
+
+-- 13. LLM SAĞLAYICI SAĞLIĞI
+-- Zincir (gemini → kimi → openai) hangi sağlayıcıda takıldı, kota bitti mi.
+-- Bekçi buradan okuyup uyarır; kota bitince anlık mail gider.
+CREATE TABLE IF NOT EXISTS public.ds_llm_saglik (
+  saglayici TEXT PRIMARY KEY,
+  son_basari TIMESTAMP WITH TIME ZONE,
+  son_hata TEXT,
+  son_hata_kod INTEGER,
+  son_hata_at TIMESTAMP WITH TIME ZONE,
+  kota_bitti BOOLEAN NOT NULL DEFAULT false,
+  son_bildirim TIMESTAMP WITH TIME ZONE
+);
+
+ALTER TABLE public.ds_llm_saglik ENABLE ROW LEVEL SECURITY;

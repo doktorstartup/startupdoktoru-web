@@ -112,24 +112,17 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
         }),
       });
 
-      if (!res.ok) {
-        throw new Error("API hatası");
-      }
-
       const data = await res.json();
+      if (!res.ok || !data.reply) throw new Error(data.error || "API hatası");
+
       setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
     } catch (error) {
+      // Burada eskiden HAZIR bir cevap gösteriliyordu: ziyaretçi mentörün
+      // cevapladığını sanıyor, servisin bozuk olduğu hiçbir yerden anlaşılmıyordu.
+      // Artık dürüst hata gösteriliyor.
       console.error("AI Error:", error);
-      // Simulated/Fallback high-quality response if API keys are missing or offline
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: "assistant",
-            content: t.fallbackIntro.replace("{snippet}", userMessage.substring(0, 40))
-          }
-        ]);
-      }, 1000);
+      const mesaj = error instanceof Error && error.message !== "API hatası" ? error.message : t.hata;
+      setMessages((prev) => [...prev, { role: "assistant", content: mesaj }]);
     } finally {
       setIsLoading(false);
     }

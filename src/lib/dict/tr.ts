@@ -630,7 +630,7 @@ export const tr = {
     roleAssistant: "Dr. Startup AI",
     thinking: "Fikir analizi yapılıyor ve büyüme hunisi planlanıyor...",
     inputPlaceholder: "Girişim projenizi veya takıldığınız konuyu yazın...",
-    fallbackIntro: "Girişim fikrinizi ('{snippet}...') çok değerli buldum. \n\nSistem kurmadan büyümeye çalışmak en büyük hatadır. Startup Doktoru olarak bu fikri hayata geçirirken takip etmeniz gereken ilk 3 kritik adımı paylaşıyorum:\n\n1. **Problem Doğrulama:** Potansiyel 10 müşteri adayınızla görüşerek bu sorunun onlar için 'gerçekten acı veren' bir sorun olup olmadığını test edin.\n2. **MVP Geliştirme:** Fikrinizdeki tüm gereksiz özellikleri çıkarıp, sadece ana vaadi sunan en basit sürümü (MVP) kurgulayın.\n3. **Değer Merdiveni:** Müşteriye hemen büyük satışı yapmak yerine, önce ücretsiz bir eğitim veya doküman (6 $'lık E-Book gibi) ile güven kazanın.\n\nE-Kitabımızı indirerek veya ders portalımıza katılarak bu adımların detaylı rehberlerine ulaşabilirsiniz. Sorunuz varsa yanıtlamaya devam edebilirim!",
+    hata: "Şu anda cevap veremiyorum — mentör servisine ulaşılamıyor. Birazdan tekrar dener misin?",
     disclaimer:
       "Startup Doktoru AI mentorunun yönlendirmeleri yatırım tavsiyesi içermez. \u201CKervan yolda değil, stratejiyle düzülür.\u201D",
   },

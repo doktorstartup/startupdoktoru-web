@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
+import { llmUret } from "../../../../lib/llm";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
 
@@ -121,10 +121,6 @@ export async function PUT(req: NextRequest) {
 
   const { id } = body;
   if (!id) return NextResponse.json({ error: "id gerekli." }, { status: 400 });
-  if (!process.env.OPENAI_API_KEY) {
-    return NextResponse.json({ error: "OPENAI_API_KEY tanımlı değil." }, { status: 500 });
-  }
-
   const { data: kaynak } = await supabaseAdmin
     .from("ds_blog_posts")
     .select("title, slug, content, seo_title, seo_description, cover_image, lang")
@@ -133,35 +129,44 @@ export async function PUT(req: NextRequest) {
   if (!kaynak) return NextResponse.json({ error: "Yazı bulunamadı." }, { status: 404 });
   if (kaynak.lang !== "tr") return NextResponse.json({ error: "Yalnız Türkçe yazılar çevrilir." }, { status: 400 });
 
-  const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o",
-    messages: [
-      {
-        role: "system",
-        content:
-          "Translate Turkish startup blog posts into natural, idiomatic English for a founder audience. " +
-          "Keep the HTML structure and tags byte-identical; translate only the text between them. " +
-          "Do not add or remove sections. Reply with JSON only: " +
-          '{"title": string, "content": string, "seo_title": string, "seo_description": string}',
-      },
-      {
-        role: "user",
-        content: JSON.stringify({
-          title: kaynak.title,
-          content: kaynak.content,
-          seo_title: kaynak.seo_title || "",
-          seo_description: kaynak.seo_description || "",
-        }),
-      },
-    ],
-    response_format: { type: "json_object" },
-    temperature: 0.3,
-  });
+  const sistem =
+    "Translate Turkish startup blog posts into natural, idiomatic English for a founder audience. " +
+    "Keep the HTML structure and tags byte-identical; translate only the text between them. " +
+    "Do not add or remove sections. Reply with JSON only: " +
+    '{"title": string, "content": string, "seo_title": string, "seo_description": string}';
+
+  let ham: string;
+  try {
+    const sonuc = await llmUret({
+      sistem,
+      mesajlar: [
+        {
+          role: "user",
+          content: JSON.stringify({
+            title: kaynak.title,
+            content: kaynak.content,
+            seo_title: kaynak.seo_title || "",
+            seo_description: kaynak.seo_description || "",
+          }),
+        },
+      ],
+      json: true,
+      // Uzun yazılar kırpılmasın: çeviri kaynak metinden biraz uzun olabiliyor.
+      maxToken: 8000,
+    });
+    ham = sonuc.metin;
+  } catch (e) {
+    const mesaj = e instanceof Error ? e.message : String(e);
+    return NextResponse.json({ error: `Çeviri yapılamadı — ${mesaj}` }, { status: 503 });
+  }
 
   let ceviri: { title?: string; content?: string; seo_title?: string; seo_description?: string };
   try {
-    ceviri = JSON.parse(completion.choices[0]?.message?.content || "{}");
+    // Bazı modeller JSON'u ``` bloğu içinde döndürüyor; ilk { ile son } arası alınır.
+    const temiz = ham.trim().replace(/^```(?:json)?|```$/g, "").trim();
+    const bas = temiz.indexOf("{");
+    const son = temiz.lastIndexOf("}");
+    ceviri = JSON.parse(bas >= 0 && son > bas ? temiz.slice(bas, son + 1) : temiz);
   } catch {
     return NextResponse.json({ error: "Çeviri çözümlenemedi." }, { status: 500 });
   }
