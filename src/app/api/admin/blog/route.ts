@@ -153,9 +153,10 @@ export async function PUT(req: NextRequest) {
       json: true,
       // Uzun yazılar kırpılmasın: çeviri kaynak metinden biraz uzun olabiliyor.
       maxToken: 8000,
-      // Çeviri yayına giden, imza taşıyan metin: kaliteyi ücretsiz katmana
-      // bırakmıyoruz. Kimi başta; düşerse zincir gemini/openai ile devam eder.
-      oncelik: ["kimi"],
+      // Öncelik verilmiyor: varsayılan sıra (gemini → openai) geçerli.
+      // Aynı yazı ikisine de çevirtilip karşılaştırıldı; ücretli model belirgin
+      // şekilde daha iyi değildi, ücretsiz katman yayınlanabilir kalitede.
+      // Kalite yetmezse burada oncelik: ["openai"] tek satırlık değişiklik.
     });
     ham = sonuc.metin;
   } catch (e) {
