@@ -24,6 +24,7 @@ import { SiteFooter } from "../../../components/SiteFooter";
 import { BunnyEmbed } from "../../../components/BunnyEmbed";
 import { VcNetwork } from "../../../components/VcNetwork";
 import { Testimonials } from "../../../components/Testimonials";
+import { InvestorNetworkCta } from "../../../components/InvestorNetworkCta";
 import { KitapBolumu } from "../../../components/KitapBolumu";
 import { getTraining, trainingPoster } from "../../../lib/trainings";
 import { useHref, useLang, useT } from "../../../lib/i18n-client";
@@ -138,6 +139,9 @@ export default function Home() {
 
       {/* ─── ÖĞRENCİ MEMNUNİYET VİDEOLARI — ikna önce, teklif sonra ─── */}
       <Testimonials />
+
+      {/* ─── YATIRIMCI AĞI KAYIT CTA — "içeride yüzlerce yatırımcı" kancasıyla kayda çevir ─── */}
+      <InvestorNetworkCta />
 
       {/* ─── VALUE LADDER (SOLUTION) ─── */}
       <section id="value-ladder" className="py-20 md:py-32 max-w-7xl mx-auto px-6 sm:px-8">

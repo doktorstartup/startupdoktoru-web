@@ -11,7 +11,10 @@ type Mode = "login" | "signup" | "forgot";
 export function MemberLogin() {
   const { signIn, signUp, signInWithGoogle, resetPassword } = useMember();
   const t = useT().auth;
-  const [mode, setMode] = useState<Mode>("login");
+  // #kayit hash'i ile gelen (ör. ana sayfa "Ücretsiz Kayıt Ol") doğrudan kayıt formunda açılır.
+  const [mode, setMode] = useState<Mode>(() =>
+    typeof window !== "undefined" && window.location.hash === "#kayit" ? "signup" : "login"
+  );
   const [form, setForm] = useState({ name: "", email: "", phone: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
