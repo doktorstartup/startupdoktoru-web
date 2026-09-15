@@ -28,6 +28,9 @@ export type Istem = {
   mesajlar: { role: "user" | "assistant"; content: string }[];
   json?: boolean; // model JSON nesnesi döndürsün
   maxToken?: number;
+  // Bu sağlayıcılar zincirin başına alınır. Varsayılan sıra ucuzdan pahalıya
+  // (ücretsiz katman önce); ama yayına giden metinde kalite fiyattan önemli.
+  oncelik?: string[];
 };
 
 const ZAMAN_ASIMI = 60_000;
@@ -193,7 +196,18 @@ export async function llmUret(istem: Istem): Promise<LlmSonuc> {
   const hatalar: string[] = [];
   let denenen = 0;
 
-  for (const s of SAGLAYICILAR) {
+  // Öncelikli sağlayıcılar başa; kalanlar varsayılan sırada arkada kalır.
+  // Böylece öncelikli olan düşerse zincir yine de çalışmaya devam eder.
+  const sira = istem.oncelik?.length
+    ? [
+        ...istem.oncelik
+          .map((ad) => SAGLAYICILAR.find((s) => s.ad === ad))
+          .filter((s): s is Saglayici => !!s),
+        ...SAGLAYICILAR.filter((s) => !istem.oncelik!.includes(s.ad)),
+      ]
+    : SAGLAYICILAR;
+
+  for (const s of sira) {
     const anahtar = s.anahtar();
     if (!anahtar) continue;
 
