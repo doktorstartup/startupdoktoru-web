@@ -6,6 +6,7 @@ import { Loader2, Handshake, Search, Check, Mail, CheckCircle2, Building2 } from
 type Investor = {
   id: string; firm_name: string; partner_name: string | null; email: string | null;
   sectors: string[]; stages: string[]; thesis: string | null;
+  status?: string; interest_at?: string | null;
   portal_enabled?: boolean; invited_at?: string | null;
 };
 type Startup = { id: string; startup_name: string; one_liner: string | null; sectors: string[]; stage: string | null };
@@ -22,14 +23,21 @@ export default function MatchAdmin() {
   const [busy, setBusy] = useState(false);
   const [inviteMsg, setInviteMsg] = useState("");
 
-  // Yatırımcılar + onaylı girişimler
+  // Yalnız EŞLEŞTİRMEYE UYGUN yatırımcılar: ilgi gösteren (interest_at) + onaylı (verified).
+  // Binlerce ham/pending kayıt burada gösterilmez. + onaylı girişimler.
   useEffect(() => {
     const pw = getPw();
     Promise.all([
-      fetch(`/api/admin/invest?password=${encodeURIComponent(pw)}`).then((r) => r.json()),
+      fetch(`/api/admin/invest?password=${encodeURIComponent(pw)}&interested=1`).then((r) => r.json()),
+      fetch(`/api/admin/invest?password=${encodeURIComponent(pw)}&status=verified`).then((r) => r.json()),
       fetch(`/api/admin/startups?password=${encodeURIComponent(pw)}&status=approved`).then((r) => r.json()),
-    ]).then(([inv, st]) => {
-      setInvestors(inv.investors || []);
+    ]).then(([intr, ver, st]) => {
+      const map = new Map<string, Investor>();
+      for (const i of (intr.investors || [])) map.set(i.id, i);
+      for (const i of (ver.investors || [])) if (!map.has(i.id)) map.set(i.id, i);
+      // İlgi gösterenler üstte.
+      const list = [...map.values()].sort((a, b) => (b.interest_at ? 1 : 0) - (a.interest_at ? 1 : 0));
+      setInvestors(list);
       setStartups(st.startups || []);
     }).catch(() => {}).finally(() => setLoading(false));
   }, []);
@@ -86,7 +94,7 @@ export default function MatchAdmin() {
           <Handshake className="h-6 w-6 text-primary" /> Eşleştirme
         </h1>
         <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
-          Yatırımcı seç, tezine uyan <strong className="text-foreground">onaylı</strong> girişimleri işaretle. Sonra portala davet et — giriş yaptığında bu girişimleri görecek.
+          Liste yalnız <strong className="text-foreground">ilgi gösteren</strong> ve <strong className="text-foreground">onaylı</strong> yatırımcıları içerir (ilgilenenler üstte). Yatırımcı seç, tezine uyan onaylı girişimleri işaretle, sonra portala davet et — giriş yaptığında bu girişimleri görecek.
         </p>
       </div>
 
@@ -107,14 +115,22 @@ export default function MatchAdmin() {
                   className={`w-full text-left glass-panel rounded-xl border p-3 transition-all ${sel?.id === inv.id ? "border-primary/50 bg-primary/[0.06]" : "border-border/40 hover:border-border"}`}>
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-bold text-sm text-foreground truncate">{inv.firm_name}</span>
-                    {inv.portal_enabled && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shrink-0">davetli</span>}
+                    <span className="flex items-center gap-1 shrink-0">
+                      {inv.interest_at && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-primary/10 text-primary border-primary/20">ilgilendi</span>}
+                      {inv.status === "verified" && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-sky-500/10 text-sky-400 border-sky-500/20">onaylı</span>}
+                      {inv.portal_enabled && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">davetli</span>}
+                    </span>
                   </div>
                   <div className="text-[11px] text-muted-foreground truncate mt-0.5">
                     {[inv.partner_name, inv.sectors?.join(", ")].filter(Boolean).join(" · ") || inv.email}
                   </div>
                 </button>
               ))}
-              {filtered.length === 0 && <div className="text-center text-sm text-muted-foreground py-8">Yatırımcı bulunamadı.</div>}
+              {filtered.length === 0 && (
+                <div className="text-center text-sm text-muted-foreground py-8">
+                  {q.trim() ? "Yatırımcı bulunamadı." : "Henüz ilgilenen ya da onaylı yatırımcı yok. Yatırımcı, outreach mailindeki linke tıklayıp ilgilenince burada görünür."}
+                </div>
+              )}
             </div>
           </div>
 

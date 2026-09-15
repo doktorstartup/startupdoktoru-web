@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Lock, CheckCircle2, Circle, Play, Loader2, ShoppingCart, GraduationCap, ChevronLeft, ChevronDown, BookOpen, ArrowRight } from "lucide-react";
+import { Lock, CheckCircle2, Circle, Play, Loader2, ShoppingCart, GraduationCap, ChevronLeft, ChevronDown, BookOpen, ArrowRight, Rocket } from "lucide-react";
 import { BunnyEmbed } from "../../../../../components/BunnyEmbed";
 import { YouTubeEmbed } from "../../../../../components/YouTubeEmbed";
 import { MemberLogin } from "../../../../../components/MemberLogin";
@@ -183,6 +183,29 @@ export default function CoursePortal() {
         <span className="text-primary text-xs font-bold font-mono tracking-widest uppercase">{t.dashboardEyebrow}</span>
         <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1">{t.welcome}</h1>
       </div>
+
+      {/* Yatırıma hazırlan CTA — girişimini yatırımcılara aç */}
+      <Link href={href("/portal/startup")}
+        className="block glass-panel rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] to-accent/[0.05] hover:border-primary/50 transition-all p-6 group">
+        <div className="flex items-start sm:items-center gap-4 flex-col sm:flex-row">
+          <div className="h-12 w-12 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center text-primary shrink-0">
+            <Rocket className="h-6 w-6" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-extrabold text-foreground text-lg">
+              {lang === "en" ? "Ready to raise? Open your startup to investors" : "Yatırım almak ister misin? Girişimini yatırımcılara aç"}
+            </h3>
+            <p className="text-sm text-muted-foreground mt-1">
+              {lang === "en"
+                ? "Add your elevator pitch, value proposition and team step by step — we'll match you with the right investors."
+                : "Asansör konuşmanı, değer önerini ve ekibini adım adım gir — sana uygun yatırımcılarla eşleştirelim."}
+            </p>
+          </div>
+          <span className="btn btn-primary shrink-0 pointer-events-none">
+            {lang === "en" ? "Get started" : "Hemen başla"} <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </div>
+      </Link>
 
       {/* Eğitimlerim */}
       <div>
