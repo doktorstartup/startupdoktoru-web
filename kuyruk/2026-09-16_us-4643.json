@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_us-4643",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "U.S",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4500000,
+      "birim": "EUR",
+      "usd": 4860000
+    },
+    "lider": "Crane Venture Partners",
+    "katilanlar": [
+      "PXN Ventures",
+      "AIP Seed",
+      "DeepMind"
+    ],
+    "kurucular": [
+      "Ismaeel Bashir"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T15:04:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/u-s-and-u-k-based-expanse-raises-e4-5-million-for-predictive-ai-infrastructure-platform/",
+      "baslik": "U.S. and U.K.-based Expanse raises €4.5 million for predictive AI infrastructure platform",
+      "tarih": "Wed, 16 Sep 2026 15:04:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Expanse , an AI infrastructure company, today announced a €4.5 million ($5.3 million) Seed funding round in order to expand its engineering team, accelerate product development and reach wider industr",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/u-s-and-u-k-based-expanse-raises-e4-5-million-for-predictive-ai-infrastructure-platform/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/u-s-and-u-k-based-expanse-raises-e4-5-million-for-predictive-ai-infrastructure-platform/"
+    }
+  ],
+  "olusturma": "2026-09-16T18:09:51.367Z"
+}

@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_profound-579f",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Profound",
+    "domain": "tryprofound.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 180000000,
+      "birim": "USD",
+      "usd": 180000000
+    },
+    "lider": "Sequoia Capital",
+    "katilanlar": [
+      "Kleiner Perkins"
+    ],
+    "kurucular": [
+      "James Cadwallader",
+      "Dylan Babbs"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T10:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/16/yapay-zeka-pazarlama-girisimi-profound-180-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka pazarlama girişimi Profound, 180 milyon dolar yatırım aldı",
+      "tarih": "Wed, 16 Sep 2026 10:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli arama sonuçlarında markaların görünürlüğünü artırmaya odaklanan pazarlama teknolojileri girişimi Profound , 180 milyon dolarlık Seri D yatırım turunu tamamladı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/16/yapay-zeka-pazarlama-girisimi-profound-180-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-16T18:09:51.367Z"
+}

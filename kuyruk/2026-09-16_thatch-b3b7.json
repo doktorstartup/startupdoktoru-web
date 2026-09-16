@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_thatch-b3b7",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Thatch",
+    "domain": "thatch.com",
+    "ulke": "TR",
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 108000000,
+      "birim": "USD",
+      "usd": 108000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-16T13:30:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/16/saglik-sigortasi-platformu-thatch-1-milyar-dolar-degerleme-ile-108-milyon-dolar-yatirim-aldi/",
+      "baslik": "Sağlık sigortası platformu Thatch, 1 milyar dolar değerleme ile 108 milyon dolar yatırım aldı",
+      "tarih": "Wed, 16 Sep 2026 13:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "ABD merkezli sağlık sigortası ve yan haklar platformu Thatch , 1 milyar dolar değerleme üzerinden 108 milyon dolar yatırım aldı .",
+      "kaynak_url": "https://webrazzi.com/2026/09/16/saglik-sigortasi-platformu-thatch-1-milyar-dolar-degerleme-ile-108-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/16/saglik-sigortasi-platformu-thatch-1-milyar-dolar-degerleme-ile-108-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-16T18:09:51.367Z"
+}
