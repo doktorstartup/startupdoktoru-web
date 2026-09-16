@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_integral-ec73",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Integral",
+    "domain": "integral.de",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 18000000,
+      "birim": "EUR",
+      "usd": 19440000
+    },
+    "lider": "Mosaic Ventures",
+    "katilanlar": [
+      "General Catalyst",
+      "Cherry Ventures",
+      "Puzzle Ventures",
+      "Reid Hoffman"
+    ],
+    "kurucular": [
+      "Lukas Zörner",
+      "Anil Can Baykal"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T08:50:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/integral-lands-eur18m-series-a-for-ai-native-accounting-and-tax-services/",
+      "baslik": "Integral lands €18M Series A for AI-native accounting and tax services",
+      "tarih": "Wed, 16 Sep 2026 08:50:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Berlin-based accounting technology company Integral has raised €18 million in a Series A round to expand its AI-powered accounting, tax and payroll services for small and medium-sized businesses.",
+      "kaynak_url": "https://tech.eu/2026/09/16/integral-lands-eur18m-series-a-for-ai-native-accounting-and-tax-services/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/16/integral-lands-eur18m-series-a-for-ai-native-accounting-and-tax-services/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_acoubatt-cce6",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "AcouBatt",
+    "domain": "acoubatt.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1100000,
+      "birim": "GBP",
+      "usd": 1397000
+    },
+    "lider": "Creator Fund",
+    "katilanlar": [
+      "Ada Ventures"
+    ],
+    "kurucular": [
+      "Arthur Fordham",
+      "Chris Haoxin Xu"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/acoubatt-raises-ps11m-to-improve-battery-manufacturing-safety-and-reliability/",
+      "baslik": "AcouBatt raises £1.1M to improve battery manufacturing safety and reliability",
+      "tarih": "Wed, 16 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based deeptech startup AcouBatt has raised £1.1 million in pre-seed funding to develop its battery diagnostics technology and advance industrial pilots with battery manufacturers.",
+      "kaynak_url": "https://tech.eu/2026/09/16/acoubatt-raises-ps11m-to-improve-battery-manufacturing-safety-and-reliability/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/16/acoubatt-raises-ps11m-to-improve-battery-manufacturing-safety-and-reliability/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

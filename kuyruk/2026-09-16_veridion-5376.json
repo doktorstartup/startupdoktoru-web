@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_veridion-5376",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Veridion",
+    "domain": "veridion.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 17500000,
+      "birim": "EUR",
+      "usd": 18900000
+    },
+    "lider": "Hoxton Ventures",
+    "katilanlar": [
+      "Underline Ventures",
+      "Day One Capital",
+      "OTB Ventures",
+      "Gapminder",
+      "Launchub"
+    ],
+    "kurucular": [
+      "Florin Tufan"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/",
+      "baslik": "Bucharest-based Veridion raises €17.5 million to scale its real-time map of the world&#8217;s businesses",
+      "tarih": "Wed, 16 Sep 2026 07:21:48 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/veridion-lands-20m-to-take-business-intelligence-beyond-static-data/",
+      "baslik": "Veridion lands $20M to take business intelligence beyond static data",
+      "tarih": "Wed, 16 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Veridion (formerly known as Soleadify), a Bucharest-based business intelligence startup, has raised €17.5 million ($20 million) in Series A funding to expand its AI-powered, continuously updated digit",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/bucharest-based-veridion-raises-e17-5-million-to-scale-its-real-time-map-of-the-worlds-businesses/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

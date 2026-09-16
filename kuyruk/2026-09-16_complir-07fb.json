@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_complir-07fb",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Complir",
+    "domain": "complir.io",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 11000000,
+      "birim": "USD",
+      "usd": 11000000
+    },
+    "lider": "General Catalyst",
+    "katilanlar": [],
+    "kurucular": [
+      "Gustav Bang",
+      "Tine Kühnel",
+      "Marc Brejner"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T05:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/copenhagens-complir-raises-11m-to-tackle-product-compliance-bottlenecks/",
+      "baslik": "Copenhagen’s Complir raises $11M to tackle product compliance bottlenecks",
+      "tarih": "Wed, 16 Sep 2026 05:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Product compliance technology company Complir has raised $11 million in seed funding to expand its AI-powered platform that helps retailers and brands manage regulatory requirements.",
+      "kaynak_url": "https://tech.eu/2026/09/16/copenhagens-complir-raises-11m-to-tackle-product-compliance-bottlenecks/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/16/copenhagens-complir-raises-11m-to-tackle-product-compliance-bottlenecks/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

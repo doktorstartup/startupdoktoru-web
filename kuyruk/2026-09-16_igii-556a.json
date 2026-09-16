@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_igii-556a",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "iGii",
+    "domain": "igii.uk",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 26490000,
+      "birim": "EUR",
+      "usd": 28609200
+    },
+    "lider": "Scottish National Investment Bank",
+    "katilanlar": [
+      "PXN Ventures",
+      "Archangels"
+    ],
+    "kurucular": [
+      "Jean-Christophe Granier"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T09:17:31.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/stirling-based-igii-secures-e26-5-million-to-commercialise-its-proprietary-carbon-nanomaterial/",
+      "baslik": "Stirling-based iGii secures €26.5 million to commercialise its proprietary carbon nanomaterial",
+      "tarih": "Wed, 16 Sep 2026 09:17:31 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "iGii , a Stirling-based DeepTech advanced materials company behind the proprietary carbon nanomaterial Gii, today announced €26.49 million (£22.7 million) in new funding to accelerate the commercialis",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/stirling-based-igii-secures-e26-5-million-to-commercialise-its-proprietary-carbon-nanomaterial/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/stirling-based-igii-secures-e26-5-million-to-commercialise-its-proprietary-carbon-nanomaterial/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

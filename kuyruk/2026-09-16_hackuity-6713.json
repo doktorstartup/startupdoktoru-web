@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_hackuity-6713",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Hackuity",
+    "domain": "hackuity.io",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 19000000,
+      "birim": "USD",
+      "usd": 19000000
+    },
+    "lider": "Forgepoint Capital International",
+    "katilanlar": [
+      "Seventure Partners",
+      "Bright Pixel",
+      "Bpifrance"
+    ],
+    "kurucular": [
+      "Patrick Ragaru"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T07:05:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/hackuity-secures-19m-to-address-rising-ai-driven-security-vulnerabilities/",
+      "baslik": "Hackuity secures $19M to address rising AI-driven security vulnerabilities",
+      "tarih": "Wed, 16 Sep 2026 07:05:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "France-based cybersecurity company Hackuity has raised $19 million in funding to further develop its vulnerability management platform and expand internationally.",
+      "kaynak_url": "https://tech.eu/2026/09/16/hackuity-secures-19m-to-address-rising-ai-driven-security-vulnerabilities/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

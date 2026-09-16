@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_etfbook-5f6c",
+  "durum": "hazir",
+  "puan": 46,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "ETFBOOK",
+    "domain": "etfbook.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 13000000,
+      "birim": "USD",
+      "usd": 13000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "BlackFin Capital Partners"
+    ],
+    "kurucular": [
+      "Pawel Janus",
+      "Bartlomiej Igla"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T09:12:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/16/etfbook-raises-13m-to-expand-etf-data-and-analytics-globally/",
+      "baslik": "ETFBOOK raises $13M to expand ETF data and analytics globally",
+      "tarih": "Wed, 16 Sep 2026 09:12:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "ETFBOOK (SquaredData AG) has raised $13 million in a funding round to expand its ETF data and analytics platform into the Americas and Asia-Pacific.",
+      "kaynak_url": "https://tech.eu/2026/09/16/etfbook-raises-13m-to-expand-etf-data-and-analytics-globally/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}

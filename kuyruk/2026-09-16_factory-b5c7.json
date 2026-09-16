@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-16_factory-b5c7",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Factory",
+    "domain": "factory.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 200000000,
+      "birim": "USD",
+      "usd": 200000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Matan Grinberg",
+      "Eno Reyes"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-16T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/16/yapay-zeka-destekli-yazilim-gelistirme-platformu-factory-200-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli yazılım geliştirme platformu Factory, 200 milyon dolar yatırım aldı",
+      "tarih": "Wed, 16 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli yazılım geliştirme platformu Factory , 200 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/16/yapay-zeka-destekli-yazilim-gelistirme-platformu-factory-200-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-16T09:52:58.179Z"
+}
