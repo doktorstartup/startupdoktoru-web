@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_magentic-56fc",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Magentic",
+    "domain": "magentic.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 18000000,
+      "birim": "USD",
+      "usd": 18000000
+    },
+    "lider": "Felicis",
+    "katilanlar": [
+      "Sequoia Capital",
+      "Westly Group"
+    ],
+    "kurucular": [
+      "Robin Van Aeken",
+      "Odhran O'Donoghue"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/magentic-raises-18m-to-automate-industrial-operations-with-ai-agents/",
+      "baslik": "Magentic raises $18M to automate industrial operations with AI agents",
+      "tarih": "Thu, 17 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Magentic , a provider of AI-powered digital workers for industrial companies, has raised $18 million in Series A funding, a year after its launch.",
+      "kaynak_url": "https://tech.eu/2026/09/17/magentic-raises-18m-to-automate-industrial-operations-with-ai-agents/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/17/magentic-raises-18m-to-automate-industrial-operations-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-09-17T18:09:57.470Z"
+}

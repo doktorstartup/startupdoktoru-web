@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_ryft-2ba3",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Ryft",
+    "domain": "ryftpay.com",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 23000000,
+      "birim": "EUR",
+      "usd": 24840000
+    },
+    "lider": "Gresham House Ventures",
+    "katilanlar": [
+      "Ingenii Capital",
+      "Pembroke VCT"
+    ],
+    "kurucular": [
+      "Alex Mackenzie",
+      "Richard Kirby",
+      "Sadra Hosseini"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T14:21:31.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/uk-fintech-startup-ryft-secures-e23-million-to-accelerate-european-expansion/",
+      "baslik": "UK FinTech startup Ryft secures €23 million to accelerate European expansion",
+      "tarih": "Thu, 17 Sep 2026 14:21:31 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Manchester-based payments company Ryft has secured a €23 million (£20 million) Series B amid broader efforts to promote British tech companies and strengthen sovereign payments infrastructure across E",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/uk-fintech-startup-ryft-secures-e23-million-to-accelerate-european-expansion/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/uk-fintech-startup-ryft-secures-e23-million-to-accelerate-european-expansion/"
+    }
+  ],
+  "olusturma": "2026-09-17T18:09:57.470Z"
+}
