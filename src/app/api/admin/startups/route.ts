@@ -5,7 +5,7 @@ import { verifyAdminPassword } from "../../../../lib/adminAuth";
 // Girişim profillerinin yönetimi — şifre korumalı. Girişimciler /api/me/startup ile
 // kendi profillerini oluşturur; burada admin inceler (onayla/reddet) ve düzenler.
 // Yalnız 'approved' profiller eşleştirmeye ve yatırımcı deal-flow'una girer.
-const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city", "notes"];
+const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city", "product_stage", "valuation", "email", "notes"];
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
@@ -35,6 +35,17 @@ export async function POST(req: NextRequest) {
   const T = supabaseAdmin.from("inv_startup_profiles");
 
   try {
+    if (action === "create") {
+      // Admin-eklenen profil (üye hesabı yok → user_id null). Founder self-servis akışından ayrı.
+      const name = String(body.startup_name || "").trim();
+      if (!name) return NextResponse.json({ error: "Girişim adı gerekli." }, { status: 400 });
+      const row: Record<string, unknown> = { startup_name: name, status: body.status || "submitted", email: body.email || null };
+      for (const f of FIELDS) if (body[f] !== undefined) row[f] = body[f];
+      const { data, error } = await T.insert([row]).select("id");
+      if (error) throw error;
+      return NextResponse.json({ ok: true, id: data?.[0]?.id });
+    }
+
     if (action === "update") {
       if (!body.id) return NextResponse.json({ error: "id gerekli." }, { status: 400 });
       const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };

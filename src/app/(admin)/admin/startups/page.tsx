@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Users, MapPin, Layers } from "lucide-react";
+import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus } from "lucide-react";
 
 type Startup = {
   id: string;
@@ -23,6 +23,7 @@ type Startup = {
 };
 
 function getPw() { try { return sessionStorage.getItem("ds_admin_pw") || ""; } catch { return ""; } }
+const csv = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
 
 const STATUSES = [
   { v: "all", label: "Tümü" },
@@ -42,6 +43,8 @@ export default function StartupsAdmin() {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [creating, setCreating] = useState(false);
+  const [newName, setNewName] = useState("");
   const [fStatus, setFStatus] = useState("all");
   const [q, setQ] = useState("");
 
@@ -58,7 +61,10 @@ export default function StartupsAdmin() {
   };
   useEffect(() => { load(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [fStatus]);
 
-  const act = async (payload: Record<string, unknown>) => {
+  const patchItem = (id: string, patch: Partial<Startup>) =>
+    setItems((prev) => prev.map((it) => (it.id === id ? { ...it, ...patch } : it)));
+
+  const act = async (payload: Record<string, unknown>, opts?: { refresh?: boolean }) => {
     setBusy(true);
     try {
       const r = await fetch("/api/admin/startups", {
@@ -66,9 +72,17 @@ export default function StartupsAdmin() {
         body: JSON.stringify({ password: getPw(), ...payload }),
       });
       const d = await r.json().catch(() => ({}));
-      if (d.error) { alert(d.error); }
-      load(true);
+      if (d.error) { alert(d.error); load(true); return d; }
+      if (opts?.refresh !== false) load(true);
+      return d;
     } finally { setBusy(false); }
+  };
+
+  const createStartup = async () => {
+    if (!newName.trim()) return;
+    const d = await act({ action: "create", startup_name: newName.trim() });
+    setNewName(""); setCreating(false);
+    if (d?.id) setOpenId(d.id);
   };
 
   const counts = {
@@ -79,14 +93,19 @@ export default function StartupsAdmin() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <span className="text-primary text-xs font-bold font-mono tracking-widest uppercase">INVEST</span>
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 flex items-center gap-2">
-          <Rocket className="h-6 w-6 text-primary" /> Girişim Profilleri
-        </h1>
-        <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
-          Topluluktaki girişimcilerin kendi doldurduğu profiller. <strong className="text-foreground">Onayladıkların</strong> yatırımcı eşleştirmesine ve deal-flow&apos;una girer.
-        </p>
+      <div className="flex justify-between items-start gap-4">
+        <div>
+          <span className="text-primary text-xs font-bold font-mono tracking-widest uppercase">INVEST</span>
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight mt-1 flex items-center gap-2">
+            <Rocket className="h-6 w-6 text-primary" /> Girişim Profilleri
+          </h1>
+          <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
+            Girişimciler kendi profilini doldurur; buradan da <strong className="text-foreground">elle ekleyebilirsin</strong> (kayıt olmayan founder'lar için). <strong className="text-foreground">Onayladıkların</strong> eşleştirmeye ve yatırımcı deal-flow&apos;una girer.
+          </p>
+        </div>
+        <button onClick={() => setCreating((v) => !v)} disabled={busy} className="btn btn-primary shrink-0">
+          <Plus className="h-4 w-4" /> Girişim Ekle
+        </button>
       </div>
 
       <div className="flex flex-wrap gap-3">
@@ -101,6 +120,18 @@ export default function StartupsAdmin() {
           </div>
         ))}
       </div>
+
+      {creating && (
+        <div className="glass-panel rounded-2xl border border-primary/30 p-4 flex flex-col sm:flex-row gap-3">
+          <input autoFocus value={newName} onChange={(e) => setNewName(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && createStartup()}
+            placeholder="Girişim adı (ör. Creato AI)"
+            className="flex-1 h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none" />
+          <button onClick={createStartup} disabled={busy || !newName.trim()} className="btn btn-primary">
+            {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Ekle & Düzenle"}
+          </button>
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-2">
         <div className="relative flex-1 min-w-[200px]">
@@ -117,7 +148,7 @@ export default function StartupsAdmin() {
       {loading ? (
         <div className="flex items-center justify-center py-16 text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin" /></div>
       ) : items.length === 0 ? (
-        <div className="text-center py-16 text-muted-foreground text-sm">Henüz girişim profili yok. Girişimciler /portal/startup&apos;tan doldurur.</div>
+        <div className="text-center py-16 text-muted-foreground text-sm">Henüz girişim profili yok. <strong className="text-foreground">Girişim Ekle</strong> ile ekle ya da girişimciler /portal/startup&apos;tan doldursun.</div>
       ) : (
         <div className="space-y-3">
           {items.map((s) => {
@@ -129,11 +160,12 @@ export default function StartupsAdmin() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-bold text-foreground truncate">{s.startup_name || "(isimsiz)"}</span>
                       <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${BADGE[s.status]}`}>{TR[s.status]}</span>
+                      {s.valuation && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">{s.valuation.slice(0, 24)}</span>}
                     </div>
                     <p className="text-xs text-muted-foreground mt-1 truncate">
                       {s.one_liner || s.email}
+                      {s.product_stage ? ` · ${s.product_stage}` : ""}
                       {s.sectors?.length ? ` · ${s.sectors.join(", ")}` : ""}
-                      {s.stage ? ` · ${s.stage}` : ""}
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 shrink-0">
@@ -149,36 +181,104 @@ export default function StartupsAdmin() {
                   </div>
                 </div>
 
-                {open && (
-                  <div className="border-t border-border/30 p-5 space-y-4 bg-background/30 text-sm">
-                    <div className="text-xs text-muted-foreground">{s.email}</div>
-                    {s.value_prop && <div><div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1">Değer önerisi</div><p className="whitespace-pre-line text-foreground/90">{s.value_prop}</p></div>}
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
-                      {s.product_stage && <span className="inline-flex items-center gap-1 text-foreground/90"><Layers className="h-3.5 w-3.5" /> {s.product_stage}</span>}
-                      {s.valuation && <span className="inline-flex items-center gap-1 text-emerald-400">Değerleme: {s.valuation}</span>}
-                      {s.team_size != null && <span className="inline-flex items-center gap-1"><Users className="h-3.5 w-3.5" /> {s.team_size} kişi</span>}
-                      {s.city && <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {s.city}</span>}
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {s.deck_url && <a href={s.deck_url} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm"><ExternalLink className="h-3.5 w-3.5" /> Sunum</a>}
-                      {s.website && <a href={s.website} target="_blank" rel="noreferrer" className="btn btn-secondary btn-sm"><ExternalLink className="h-3.5 w-3.5" /> Website</a>}
-                    </div>
-                    <div>
-                      <label className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1">İç not</label>
-                      <input defaultValue={s.notes || ""} onBlur={(e) => e.target.value !== (s.notes || "") && act({ action: "update", id: s.id, notes: e.target.value || null })}
-                        placeholder="Admin notu…" className="w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none" />
-                    </div>
-                    <div className="pt-2 border-t border-border/20 flex justify-end">
-                      <button onClick={() => { if (confirm(`${s.startup_name} profili silinsin mi?`)) act({ action: "delete", id: s.id }); }} disabled={busy}
-                        className="text-xs text-red-400 hover:text-red-300 inline-flex items-center gap-1.5"><Trash2 className="h-3.5 w-3.5" /> Sil</button>
-                    </div>
-                  </div>
-                )}
+                {open && <EditPanel s={s} act={act} busy={busy} patchItem={patchItem} />}
               </div>
             );
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+// Alan bileşenleri MODÜL seviyesinde (render içinde tanımlanırsa odak kaybı olur — invest deseni).
+const inputCls = "w-full h-10 px-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none";
+const labelCls = "text-[10px] font-bold text-muted-foreground uppercase tracking-wider block mb-1";
+
+function Field({ label, value, ph, onSave }: { label: string; value: string; ph?: string; onSave: (v: string) => void }) {
+  return (
+    <div>
+      <label className={labelCls}>{label}</label>
+      <input defaultValue={value} placeholder={ph} onBlur={(e) => e.target.value !== value && onSave(e.target.value)} className={inputCls} />
+    </div>
+  );
+}
+
+function ArrField({ label, value, ph, onSave }: { label: string; value: string[]; ph?: string; onSave: (v: string[]) => void }) {
+  return (
+    <div>
+      <label className={labelCls}>{label} <span className="normal-case font-normal text-muted-foreground/60">(virgülle)</span></label>
+      <input defaultValue={value.join(", ")} placeholder={ph}
+        onBlur={(e) => { const a = csv(e.target.value); if (a.join(",") !== value.join(",")) onSave(a); }} className={inputCls} />
+    </div>
+  );
+}
+
+function EditPanel({ s, act, busy, patchItem }: {
+  s: Startup;
+  act: (p: Record<string, unknown>, o?: { refresh?: boolean }) => void;
+  busy: boolean;
+  patchItem: (id: string, patch: Partial<Startup>) => void;
+}) {
+  const save = (field: string, value: unknown) => {
+    patchItem(s.id, { [field]: value } as Partial<Startup>);
+    act({ action: "update", id: s.id, [field]: value }, { refresh: false });
+  };
+
+  return (
+    <div className="border-t border-border/30 p-5 space-y-4 bg-background/30">
+      <div className="grid sm:grid-cols-2 gap-3">
+        <Field label="Girişim adı" value={s.startup_name || ""} onSave={(v) => v.trim() && save("startup_name", v.trim())} />
+        <Field label="Website" value={s.website || ""} ph="https://" onSave={(v) => save("website", v || null)} />
+      </div>
+
+      <div>
+        <label className={labelCls}>Asansör konuşması (tek cümle)</label>
+        <textarea defaultValue={s.one_liner || ""} onBlur={(e) => e.target.value !== (s.one_liner || "") && save("one_liner", e.target.value || null)}
+          placeholder="Tek cümlede ne yapıyor…" className="w-full h-16 p-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none resize-y" />
+      </div>
+
+      <div>
+        <label className={labelCls}>Değer önerisi</label>
+        <textarea defaultValue={s.value_prop || ""} onBlur={(e) => e.target.value !== (s.value_prop || "") && save("value_prop", e.target.value || null)}
+          placeholder="Problem, çözüm, neden şimdi, farkı…" className="w-full h-24 p-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none resize-y" />
+      </div>
+
+      <div className="grid sm:grid-cols-3 gap-3">
+        <Field label="Ürün durumu" value={s.product_stage || ""} ph="MVP / MRR / Growth" onSave={(v) => save("product_stage", v || null)} />
+        <Field label="Değerleme" value={s.valuation || ""} ph="$500K / DCF…" onSave={(v) => save("valuation", v || null)} />
+        <div>
+          <label className={labelCls}>Ekip (kişi)</label>
+          <input type="number" min={1} defaultValue={s.team_size ?? ""} placeholder="4"
+            onBlur={(e) => { const n = e.target.value === "" ? null : Number(e.target.value); if (n !== s.team_size) save("team_size", n); }} className={inputCls} />
+        </div>
+      </div>
+
+      <div className="grid sm:grid-cols-3 gap-3">
+        <ArrField label="Sektörler" value={s.sectors || []} ph="ecommerce, ai" onSave={(v) => save("sectors", v)} />
+        <Field label="Şehir" value={s.city || ""} ph="İstanbul" onSave={(v) => save("city", v || null)} />
+        <Field label="E-posta" value={s.email || ""} ph="founder@…" onSave={(v) => save("email", v || null)} />
+      </div>
+
+      <div className="rounded-xl border border-primary/25 bg-primary/[0.04] p-3">
+        <label className={labelCls}>Sunum / pitch deck linki</label>
+        <div className="flex items-center gap-2">
+          <input defaultValue={s.deck_url || ""} placeholder="https://drive.google.com/…"
+            onBlur={(e) => e.target.value !== (s.deck_url || "") && save("deck_url", e.target.value || null)} className={inputCls} />
+          {s.deck_url && <a href={s.deck_url} target="_blank" rel="noreferrer" className="h-10 w-10 shrink-0 rounded-lg bg-secondary/40 border border-border inline-flex items-center justify-center text-muted-foreground hover:text-foreground"><ExternalLink className="h-4 w-4" /></a>}
+        </div>
+      </div>
+
+      <div>
+        <label className={labelCls}>İç not (admin)</label>
+        <input defaultValue={s.notes || ""} onBlur={(e) => e.target.value !== (s.notes || "") && save("notes", e.target.value || null)} placeholder="Admin notu…" className={inputCls} />
+      </div>
+
+      <div className="pt-2 border-t border-border/20 flex items-center justify-between">
+        <span className="text-[11px] text-muted-foreground">Değişiklikler otomatik kaydedilir (alan dışına tıkla).</span>
+        <button onClick={() => { if (confirm(`${s.startup_name} profili silinsin mi?`)) act({ action: "delete", id: s.id }); }} disabled={busy}
+          className="text-xs text-red-400 hover:text-red-300 inline-flex items-center gap-1.5"><Trash2 className="h-3.5 w-3.5" /> Sil</button>
+      </div>
     </div>
   );
 }
