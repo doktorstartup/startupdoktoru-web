@@ -22,7 +22,7 @@ import { track } from "../../../../lib/track";
 import { YouTubeEmbed } from "../../../../components/YouTubeEmbed";
 import { VIDEOS } from "../../../../lib/videos";
 import { useMember } from "../../../../lib/member";
-import { useHref, useT } from "../../../../lib/i18n-client";
+import { useHref, useT, useLang } from "../../../../lib/i18n-client";
 
 export default function FreeTraining() {
   const [formData, setFormData] = useState({
@@ -39,6 +39,7 @@ export default function FreeTraining() {
   const all = useT();
   const d = all.freeTrainingPage;
   const href = useHref();
+  const en = useLang() === "en";
 
   // Giriş yapmış üyeye formu sorma — doğrudan videoyu göster.
   const { member } = useMember();
@@ -299,6 +300,30 @@ export default function FreeTraining() {
                     accent: "emerald",
                   }}
                 />
+              </div>
+
+              {/* GİRİŞİM PROFİLİ CTA — yatırımcı ağına giriş (birincil sonraki adım) */}
+              <Link href={`${href("/portal/startup")}#kayit`}
+                className="w-full p-8 rounded-2xl bg-gradient-to-br from-primary/[0.12] via-[#0F213A] to-accent/[0.06] border border-primary/30 hover:border-primary/50 transition-all relative overflow-hidden flex flex-col items-center text-center shadow-lg group mb-6">
+                <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-primary/10 blur-2xl -z-10" />
+                <div className="h-12 w-12 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center text-primary mb-3"><Rocket className="h-6 w-6" /></div>
+                <span className="text-primary text-[10px] font-extrabold tracking-widest uppercase mb-2">{en ? "Reach investors" : "Yatırımcılara ulaş"}</span>
+                <h3 className="text-xl font-bold mb-2">{en ? "Create your startup profile, connect with investors" : "Girişim profilini oluştur, yatırımcılarla iletişime geç"}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed max-w-lg mb-6">
+                  {en
+                    ? "Hundreds of investors in our system are looking for the right startup. Fill your profile and we'll match you."
+                    : "Sistemimizde kayıtlı yüzlerce yatırımcı doğru girişimi arıyor. Profilini doldur, sana uygun yatırımcılarla eşleştirelim."}
+                </p>
+                <span className="btn btn-primary btn-lg pointer-events-none">
+                  {en ? "Create startup profile" : "Girişim Profili Oluştur"} <ArrowRight className="h-5 w-5 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+
+              {/* ayırıcı: profili doldur YA DA kitabı al */}
+              <div className="flex items-center gap-3 w-full max-w-md mb-6">
+                <div className="h-px flex-1 bg-border/40" />
+                <span className="text-[11px] text-muted-foreground uppercase tracking-wider">{en ? "or" : "ya da"}</span>
+                <div className="h-px flex-1 bg-border/40" />
               </div>
 
               {/* DYNAMIC FUNNEL UPSELL CTA PANEL */}
