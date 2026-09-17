@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_treble-a12a",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Treble",
+    "domain": "treble.tech",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 18000000,
+      "birim": "USD",
+      "usd": 18000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "European Innovation Council (EIC) Fund",
+      "Frumtak Ventures",
+      "KOMPAS VC"
+    ],
+    "kurucular": [
+      "Finnur Pind"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/treble-raises-18m-to-scale-acoustic-simulation-for-physical-ai/",
+      "baslik": "Treble raises $18M to scale acoustic simulation for physical AI",
+      "tarih": "Thu, 17 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Treble Technologies , a sound simulation and synthetic acoustic data company, has raised $18 million in a Series A-2 round to expand its technology for developing and testing audio-enabled products an",
+      "kaynak_url": "https://tech.eu/2026/09/17/treble-raises-18m-to-scale-acoustic-simulation-for-physical-ai/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/17/treble-raises-18m-to-scale-acoustic-simulation-for-physical-ai/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_munsterbased-93dc",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Münster-based",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 9000000,
+      "birim": "EUR",
+      "usd": 9720000
+    },
+    "lider": "Cooperative Financial Group Volksbanken Raiffeisenbanken",
+    "katilanlar": [],
+    "kurucular": [
+      "David Nellessen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T08:01:17.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/munster-based-syte-raises-e9-million-to-expand-its-ai-powered-real-estate-analytics-platform/",
+      "baslik": "Münster-based syte raises €9 million to expand its AI-powered real estate analytics platform",
+      "tarih": "Thu, 17 Sep 2026 08:01:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "syte , a Münster-based PropTech startup providing a platform for land and real estate analytics, has closed a €9 million Series A round to drive its European expansion.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/munster-based-syte-raises-e9-million-to-expand-its-ai-powered-real-estate-analytics-platform/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/munster-based-syte-raises-e9-million-to-expand-its-ai-powered-real-estate-analytics-platform/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

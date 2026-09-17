@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_health-force-0ecf",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Health Force",
+    "domain": "healthforce.ai",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4200000,
+      "birim": "EUR",
+      "usd": 4536000
+    },
+    "lider": "LUMO Labs",
+    "katilanlar": [
+      "Next Tier Ventures",
+      "Target Global",
+      "Step Venture",
+      "Calm/Storm"
+    ],
+    "kurucular": [
+      "Fadi Haddad",
+      "Juan Suárez"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T05:52:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/barcelona-based-health-force-raises-e4-2-million-to-streamline-hospital-operations-with-ai-agents/",
+      "baslik": "Barcelona-based Health Force raises €4.2 million to streamline hospital operations with AI agents",
+      "tarih": "Thu, 17 Sep 2026 05:52:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Health Force , a Barcelona-based HealthTech startup building enterprise-grade AI agents for hospital operations, has raised €4.2 million in Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/barcelona-based-health-force-raises-e4-2-million-to-streamline-hospital-operations-with-ai-agents/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/barcelona-based-health-force-raises-e4-2-million-to-streamline-hospital-operations-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

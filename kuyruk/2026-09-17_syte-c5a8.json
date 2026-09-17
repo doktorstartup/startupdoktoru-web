@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_syte-c5a8",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "syte",
+    "domain": "syte.ms",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 9000000,
+      "birim": "EUR",
+      "usd": 9720000
+    },
+    "lider": "Cooperative Financial Group Volksbanken Raiffeisenbanken",
+    "katilanlar": [],
+    "kurucular": [
+      "Matthias Zühlke"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/syte-raises-eur9m-to-automate-early-stage-real-estate-planning/",
+      "baslik": "syte raises €9M to automate early-stage real estate planning",
+      "tarih": "Thu, 17 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "German real estate technology company syte has raised €9 million in Series A funding to expand its land and property analytics platform.",
+      "kaynak_url": "https://tech.eu/2026/09/17/syte-raises-eur9m-to-automate-early-stage-real-estate-planning/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/17/syte-raises-eur9m-to-automate-early-stage-real-estate-planning/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

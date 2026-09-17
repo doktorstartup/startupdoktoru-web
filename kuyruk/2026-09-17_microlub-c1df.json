@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_microlub-c1df",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "MicroLub",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "USD",
+      "usd": 10000000
+    },
+    "lider": "Northern Gritstone",
+    "katilanlar": [],
+    "kurucular": [
+      "David Peters"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/microlub-raises-10m-to-cut-fat-and-calories-without-compromising-taste/",
+      "baslik": "MicroLub raises $10M to cut fat and calories without compromising taste",
+      "tarih": "Thu, 17 Sep 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "MicroLub, a deeptech ingredient solutions company spun out from the University of Leeds, has completed a $10 million funding round led by Northern Gritstone.",
+      "kaynak_url": "https://tech.eu/2026/09/17/microlub-raises-10m-to-cut-fat-and-calories-without-compromising-taste/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

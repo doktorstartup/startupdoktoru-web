@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_creem-8548",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Creem",
+    "domain": "creem.io",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": "Inovo VC",
+    "katilanlar": [
+      "Practica Capital",
+      "Antler"
+    ],
+    "kurucular": [
+      "Gabriel Ferraz"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T05:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/creem-secures-eur5m-to-build-financial-infrastructure-for-ai-native-startups/",
+      "baslik": "Creem secures €5M to build financial infrastructure for AI-native startups",
+      "tarih": "Thu, 17 Sep 2026 05:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Creem , a billing and monetisation platform for AI-native companies, has raised €5 million in seed funding to develop its platform and expand its financial and revenue tools for software businesses.",
+      "kaynak_url": "https://tech.eu/2026/09/17/creem-secures-eur5m-to-build-financial-infrastructure-for-ai-native-startups/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/17/creem-secures-eur5m-to-build-financial-infrastructure-for-ai-native-startups/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

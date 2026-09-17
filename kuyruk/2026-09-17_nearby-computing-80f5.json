@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_nearby-computing-80f5",
+  "durum": "hazir",
+  "puan": 41,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Nearby Computing",
+    "domain": "nearbycomputing.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 680000,
+      "birim": "EUR",
+      "usd": 734400
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Josep Marti"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T04:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/nearby-computing-secures-eur680k-to-scale-cloud-to-edge-orchestration-platform/",
+      "baslik": "Nearby Computing secures €680K to scale cloud-to-edge orchestration platform",
+      "tarih": "Thu, 17 Sep 2026 04:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Nearby Computing , a deeptech company that orchestrates and automates distributed cloud-to-edge environments across networks, infrastructure, applications, and AI, has secured a €680,000 investment fr",
+      "kaynak_url": "https://tech.eu/2026/09/17/nearby-computing-secures-eur680k-to-scale-cloud-to-edge-orchestration-platform/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

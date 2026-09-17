@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_reykjavikbased-treble-72f1",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Reykjavík-based Treble",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "Paladin Capital Group",
+    "katilanlar": [
+      "European Innovation Council (EIC) Fund",
+      "Frumtak Ventures",
+      "KOMPAS VC"
+    ],
+    "kurucular": [
+      "Finnur Pind",
+      "Jesper Pedersen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T07:00:17.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/reykjavik-based-treble-raises-e15-million-to-bring-sound-and-voice-to-physical-ai/",
+      "baslik": "Reykjavík-based Treble raises nearly €15 million to bring sound and voice to physical AI",
+      "tarih": "Thu, 17 Sep 2026 07:00:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Treble , a Reykjavík-based sound simulation and synthetic acoustic data company, has raised approximately €15 million ($18 million) in a Series A-2 round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/reykjavik-based-treble-raises-e15-million-to-bring-sound-and-voice-to-physical-ai/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/reykjavik-based-treble-raises-e15-million-to-bring-sound-and-voice-to-physical-ai/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}

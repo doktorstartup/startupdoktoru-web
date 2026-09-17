@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-17_logibot-c5f9",
+  "durum": "hazir",
+  "puan": 48,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Logibot",
+    "domain": "logibot.eu",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1400000,
+      "birim": "EUR",
+      "usd": 1512000
+    },
+    "lider": "BeamBerlin",
+    "katilanlar": [
+      "BEUMER (BG)"
+    ],
+    "kurucular": [
+      "Louis Verspreeuwen",
+      "Salimzhan Gafurov"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-17T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/17/logibot-bags-eur14m-to-build-a-temp-agency-for-robots/",
+      "baslik": "Logibot bags €1.4M to build a ‘temp agency for robots’",
+      "tarih": "Thu, 17 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Logibot , the Belgian software platform that adds an intelligent layer to humanlike robots in logistics, has raised €1.4 million in a round led by BeamBerlin, the startup studio of German family group",
+      "kaynak_url": "https://tech.eu/2026/09/17/logibot-bags-eur14m-to-build-a-temp-agency-for-robots/"
+    }
+  ],
+  "olusturma": "2026-09-17T09:57:24.189Z"
+}
