@@ -64,9 +64,13 @@ export async function POST(req: NextRequest) {
   const inv = await findInvestor(user.email);
   if (!inv) return NextResponse.json({ error: "Yetkisiz." }, { status: 403 });
 
+  const patch: Record<string, unknown> = { investor_action: body.action, action_at: new Date().toISOString() };
+  if (body.action === "skipped") {
+    patch.skip_reason = typeof body.reason === "string" && body.reason.trim() ? body.reason.trim().slice(0, 300) : null;
+  }
   const { error: dbErr } = await supabaseAdmin
     .from("inv_matches")
-    .update({ investor_action: body.action, action_at: new Date().toISOString() })
+    .update(patch)
     .eq("investor_id", inv.id)
     .eq("startup_id", body.startup_id);
   if (dbErr) return NextResponse.json({ error: dbErr.message }, { status: 500 });

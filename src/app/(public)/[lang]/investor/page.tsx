@@ -17,12 +17,22 @@ async function token(): Promise<string> {
   return data.session?.access_token || "";
 }
 
+const SKIP_REASONS = [
+  "Not in my sector / thesis",
+  "Too early stage",
+  "Valuation / ask doesn't fit",
+  "Not enough traction yet",
+  "Team isn't a fit",
+  "Other",
+];
+
 export default function InvestorPortal() {
   const [phase, setPhase] = useState<"loading" | "anon" | "denied" | "ready">("loading");
   const [investor, setInvestor] = useState<Investor | null>(null);
   const [startups, setStartups] = useState<Startup[]>([]);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [skipMsg, setSkipMsg] = useState(false);
+  const [skippingId, setSkippingId] = useState<string | null>(null); // "neden geçtin?" panelini açan kart
 
   const loadDealflow = useCallback(async (accessToken: string) => {
     try {
@@ -48,16 +58,17 @@ export default function InvestorPortal() {
     return () => sub.subscription.unsubscribe();
   }, [loadDealflow]);
 
-  const act = async (startupId: string, action: "requested" | "skipped") => {
+  const act = async (startupId: string, action: "requested" | "skipped", reason?: string) => {
     setBusyId(startupId);
     try {
       await fetch("/api/me/dealflow", {
         method: "POST",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${await token()}` },
-        body: JSON.stringify({ startup_id: startupId, action }),
+        body: JSON.stringify({ startup_id: startupId, action, reason }),
       });
       if (action === "skipped") {
         setStartups((prev) => prev.filter((s) => s.id !== startupId));
+        setSkippingId(null);
         setSkipMsg(true);
       } else {
         setStartups((prev) => prev.map((s) => (s.id === startupId ? { ...s, action: "requested" } : s)));
@@ -154,12 +165,28 @@ export default function InvestorPortal() {
                           <div className="flex items-center justify-center gap-2 text-sm font-semibold text-emerald-400 py-1.5">
                             <CheckCircle2 className="h-4 w-4" /> Meeting requested — we&apos;ll coordinate
                           </div>
+                        ) : skippingId === s.id ? (
+                          <div className="space-y-2.5">
+                            <p className="text-xs text-muted-foreground">Why are you passing? Your answer helps our algorithm send you better startups next time.</p>
+                            <div className="flex flex-wrap gap-1.5">
+                              {SKIP_REASONS.map((r) => (
+                                <button key={r} onClick={() => act(s.id, "skipped", r)} disabled={busyId === s.id}
+                                  className="text-[11px] px-2.5 py-1 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 transition-colors disabled:opacity-50">
+                                  {r}
+                                </button>
+                              ))}
+                            </div>
+                            <div className="flex items-center gap-4 pt-0.5">
+                              <button onClick={() => act(s.id, "skipped")} disabled={busyId === s.id} className="text-[11px] text-muted-foreground hover:text-foreground underline">Skip without a reason</button>
+                              <button onClick={() => setSkippingId(null)} className="text-[11px] text-muted-foreground hover:text-foreground">Cancel</button>
+                            </div>
+                          </div>
                         ) : (
                           <div className="flex items-center gap-2">
                             <button onClick={() => act(s.id, "requested")} disabled={busyId === s.id} className="btn btn-primary btn-sm flex-1">
                               {busyId === s.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Handshake className="h-4 w-4" />} Request a meeting
                             </button>
-                            <button onClick={() => act(s.id, "skipped")} disabled={busyId === s.id} title="Skip for now"
+                            <button onClick={() => setSkippingId(s.id)} disabled={busyId === s.id} title="Skip for now"
                               className="h-9 px-3 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-border inline-flex items-center gap-1.5 text-sm">
                               <X className="h-4 w-4" /> Skip
                             </button>
