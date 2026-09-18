@@ -16,7 +16,17 @@ export async function GET(req: NextRequest) {
     .eq("user_id", user.id)
     .maybeSingle();
   if (dbErr) return NextResponse.json({ error: dbErr.message }, { status: 500 });
-  return NextResponse.json({ profile: data || null });
+  if (data) return NextResponse.json({ profile: data });
+
+  // Profil yoksa: kayıt/lead bilgilerinden ön-doldurma (kullanıcı aynı şeyi tekrar yazmasın).
+  const { data: lead } = await supabaseAdmin
+    .from("ds_leads")
+    .select("name, company, phone")
+    .ilike("email", user.email)
+    .order("created_at", { ascending: false })
+    .limit(1);
+  const l = lead?.[0];
+  return NextResponse.json({ profile: null, prefill: l ? { name: l.name || "", company: l.company || "", phone: l.phone || "" } : null });
 }
 
 export async function POST(req: NextRequest) {

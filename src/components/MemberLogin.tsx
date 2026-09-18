@@ -38,8 +38,12 @@ export function MemberLogin() {
           return;
         }
         const r = await signUp(form);
-        if (!r.ok) setErr(r.error?.includes("already") ? t.errAlreadyRegistered : r.error || t.errSignupFailed);
-        else if (r.needsConfirm) setInfo(t.infoConfirm);
+        if (!r.ok) {
+          // E-posta zaten kayıtlıysa: yeniden "hesap oluştur" dayatma → giriş moduna geç,
+          // e-posta+şifre formda kalır, "Giriş Yap"a basması yeter.
+          if (r.error?.includes("already")) { setMode("login"); setInfo(t.errAlreadyRegistered); }
+          else setErr(r.error || t.errSignupFailed);
+        } else if (r.needsConfirm) setInfo(t.infoConfirm);
       } else {
         const r = await resetPassword(form.email);
         if (!r.ok) setErr(r.error || t.errGeneric);

@@ -51,6 +51,7 @@ export default function StartupProfilePage() {
   const [loadingProfile, setLoadingProfile] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false); // kaydettikten sonra analiz görünümü
+  const [prefilled, setPrefilled] = useState(false); // girişim adı kayıttan çekildi
   const [msg, setMsg] = useState("");
 
   const set = (k: keyof Profile, v: unknown) => setP((prev) => ({ ...prev, [k]: v as never }));
@@ -64,6 +65,10 @@ export default function StartupProfilePage() {
         setP({ ...EMPTY, ...d.profile, sectors: d.profile.sectors || [] });
         if (d.profile.valuation) setValDone(true);
         if (d.profile.deck_url) setDeckHas(true);
+      } else if (d.prefill?.company) {
+        // Hesabındaki kayıt bilgisinden girişim adını ön-doldur (tekrar yazmasın).
+        setP((prev) => ({ ...prev, startup_name: d.prefill.company }));
+        setPrefilled(true);
       }
     } catch { /* boş bırak */ }
     finally { setLoadingProfile(false); }
@@ -194,6 +199,7 @@ export default function StartupProfilePage() {
               <div>
                 <label className={labelCls}>Girişim adı *</label>
                 <input value={p.startup_name} onChange={(e) => set("startup_name", e.target.value)} placeholder="Örn. Creato AI" className={inputCls} autoFocus />
+                {prefilled && <p className="text-[11px] text-emerald-400/80 mt-1.5">Kayıt bilgilerinden çekildi — istersen düzenle.</p>}
               </div>
               <div>
                 <label className={labelCls}>Web sitesi</label>
