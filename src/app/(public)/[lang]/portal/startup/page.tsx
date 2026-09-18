@@ -62,9 +62,23 @@ export default function StartupProfilePage() {
       const res = await fetch("/api/me/startup", { headers: { Authorization: `Bearer ${await token()}` } });
       const d = await res.json();
       if (d.profile) {
-        setP({ ...EMPTY, ...d.profile, sectors: d.profile.sectors || [] });
-        if (d.profile.valuation) setValDone(true);
-        if (d.profile.deck_url) setDeckHas(true);
+        const pr = d.profile;
+        // DB'den gelen null string alanları "" yap — aksi halde .trim() çökertir.
+        setP({
+          ...EMPTY,
+          ...pr,
+          startup_name: pr.startup_name ?? "",
+          one_liner: pr.one_liner ?? "",
+          value_prop: pr.value_prop ?? "",
+          deck_url: pr.deck_url ?? "",
+          website: pr.website ?? "",
+          city: pr.city ?? "",
+          product_stage: pr.product_stage ?? "",
+          valuation: pr.valuation ?? "",
+          sectors: pr.sectors || [],
+        });
+        if (pr.valuation) setValDone(true);
+        if (pr.deck_url) setDeckHas(true);
       } else if (d.prefill?.company) {
         // Hesabındaki kayıt bilgisinden girişim adını ön-doldur (tekrar yazmasın).
         setP((prev) => ({ ...prev, startup_name: d.prefill.company }));
@@ -77,7 +91,7 @@ export default function StartupProfilePage() {
   useEffect(() => { if (member) load(); }, [member, load]);
 
   const save = async () => {
-    if (!p.startup_name.trim()) { setStep(0); setMsg("Girişim adı gerekli."); return; }
+    if (!(p.startup_name || "").trim()) { setStep(0); setMsg("Girişim adı gerekli."); return; }
     setSaving(true); setMsg("");
     try {
       const res = await fetch("/api/me/startup", {
@@ -97,24 +111,24 @@ export default function StartupProfilePage() {
 
   const st = p.status ? STATUS[p.status] : null;
   const StIcon = st?.icon;
-  const canNext = step !== 0 || !!p.startup_name.trim();
+  const canNext = step !== 0 || !!(p.startup_name || "").trim();
   const valTo = hasAccess("degerleme") ? href("/portal/course") : href("/degerleme");
   const deckTo = hasAccess("investor_training") ? href("/portal/course") : href("/investor-training");
 
   // ── Kaydettikten sonra: PROFİL ANALİZİ + yumuşak eğitim önerisi (adımlarda değil, sonda) ──
   if (saved) {
     const recs: { title: string; why: string; cta: string; to: string }[] = [];
-    if (!p.valuation.trim())
+    if (!(p.valuation || "").trim())
       recs.push({ title: "Değerleme", why: "Yatırımcılar “ne kadar para, hangi değerleme?” diye sorar. Değerleme yapmadan pazarlığa oturamazsın.", cta: "Değerleme eğitimini incele", to: valTo });
-    if (!p.deck_url.trim())
+    if (!(p.deck_url || "").trim())
       recs.push({ title: "Yatırımcı sunumu", why: "İlk izlenim sunumda oluşur; sunum olmadan yatırımcıların dikkatini çekmek zor.", cta: "Yatırımcı Sunumu eğitimini incele", to: deckTo });
 
     const strengths = [
       p.product_stage && `Ürün: ${p.product_stage}`,
-      p.valuation.trim() && `Değerleme: ${p.valuation}`,
-      p.deck_url.trim() && "Yatırımcı sunumu ✓",
+      (p.valuation || "").trim() && `Değerleme: ${p.valuation}`,
+      (p.deck_url || "").trim() && "Yatırımcı sunumu ✓",
       p.team_size != null && `${p.team_size} kişilik ekip`,
-      p.one_liner.trim() && "Asansör konuşması ✓",
+      (p.one_liner || "").trim() && "Asansör konuşması ✓",
     ].filter(Boolean) as string[];
 
     return (
