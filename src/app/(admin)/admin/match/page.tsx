@@ -18,6 +18,7 @@ export default function MatchAdmin() {
   const [startups, setStartups] = useState<Startup[]>([]);
   const [sel, setSel] = useState<Investor | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
+  const [actions, setActions] = useState<Record<string, string>>({}); // startup_id -> requested/skipped
   const [q, setQ] = useState("");
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -45,7 +46,9 @@ export default function MatchAdmin() {
   const loadMatches = useCallback(async (investorId: string) => {
     const r = await fetch(`/api/admin/match?password=${encodeURIComponent(getPw())}&investorId=${investorId}`);
     const d = await r.json();
-    setMatched(new Set((d.matches || []).map((m: { startup_id: string }) => m.startup_id)));
+    const rows: { startup_id: string; investor_action?: string | null }[] = d.matches || [];
+    setMatched(new Set(rows.map((m) => m.startup_id)));
+    setActions(Object.fromEntries(rows.filter((m) => m.investor_action).map((m) => [m.startup_id, m.investor_action as string])));
   }, []);
 
   const selectInvestor = (inv: Investor) => { setSel(inv); setInviteMsg(""); loadMatches(inv.id); };
@@ -172,7 +175,11 @@ export default function MatchAdmin() {
                               {on && <Check className="h-3.5 w-3.5" />}
                             </span>
                             <span className="min-w-0">
-                              <span className="block font-semibold text-sm text-foreground truncate">{s.startup_name}</span>
+                              <span className="flex items-center gap-2">
+                                <span className="font-semibold text-sm text-foreground truncate">{s.startup_name}</span>
+                                {on && actions[s.id] === "requested" && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 shrink-0">🤝 görüşme istedi</span>}
+                                {on && actions[s.id] === "skipped" && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-secondary/40 text-muted-foreground border-border/40 shrink-0">geçti</span>}
+                              </span>
                               <span className="block text-[11px] text-muted-foreground truncate">{s.one_liner || (s.sectors || []).join(", ")}</span>
                             </span>
                           </button>
