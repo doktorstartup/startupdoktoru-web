@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-18_arcos-60a7",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Arcos",
+    "domain": "arcos.eu",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5500000,
+      "birim": "EUR",
+      "usd": 5940000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Louis Wübben",
+      "Moritz Steigerwald"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-18T06:55:27.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/18/arcos-secures-eur55m-to-protect-critical-infrastructure-from-physical-threats/",
+      "baslik": "Arcos secures €5.5M to protect critical infrastructure from physical threats",
+      "tarih": "Fri, 18 Sep 2026 06:55:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "German security technology company Arcos has raised €5.5 million in seed funding to expand its platform for monitoring and responding to security incidents across critical infrastructure and other phy",
+      "kaynak_url": "https://tech.eu/2026/09/18/arcos-secures-eur55m-to-protect-critical-infrastructure-from-physical-threats/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/18/arcos-secures-eur55m-to-protect-critical-infrastructure-from-physical-threats/"
+    }
+  ],
+  "olusturma": "2026-09-18T09:40:34.566Z"
+}

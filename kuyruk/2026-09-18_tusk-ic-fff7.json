@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-18_tusk-ic-fff7",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "TUSK IC",
+    "domain": "tusk-ic.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "Matterwave Ventures",
+    "katilanlar": [
+      "Flanders Future Tech Fund",
+      "FORWARD.one"
+    ],
+    "kurucular": [
+      "Kathleen Philips"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-18T06:18:46.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/antwerp-based-tusk-ic-secures-e15-million-to-move-its-ka-band-satellite-chips-into-mass-production/",
+      "baslik": "Antwerp-based TUSK IC secures €15 million to move its Ka-band satellite chips into mass production",
+      "tarih": "Fri, 18 Sep 2026 06:18:46 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "TUSK IC , an Antwerp-based fabless semiconductor company spun out of KU Leuven, has closed a €15 million Series A funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/antwerp-based-tusk-ic-secures-e15-million-to-move-its-ka-band-satellite-chips-into-mass-production/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/antwerp-based-tusk-ic-secures-e15-million-to-move-its-ka-band-satellite-chips-into-mass-production/"
+    }
+  ],
+  "olusturma": "2026-09-18T09:40:34.566Z"
+}

@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-18_phosphoenix-8d17",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Phosphoenix",
+    "domain": "phosphoenix.nl",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1300000,
+      "birim": "EUR",
+      "usd": 1404000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Innovatiefonds Noord-Holland",
+      "TTT Medtech Fund",
+      "FIRST Fund",
+      "ROM InWest",
+      "Series A"
+    ],
+    "kurucular": [
+      "Hans Brons",
+      "Pieter Roelfsema",
+      "Xing Chen",
+      "Bert Monna"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-18T07:22:14.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/amsterdams-phosphoenix-raises-e1-3-million-to-advance-neuroprosthetic-system-for-people-with-profound-blindness/",
+      "baslik": "Amsterdam’s Phosphoenix raises €1.3 million to advance neuroprosthesis for profound blindness",
+      "tarih": "Fri, 18 Sep 2026 07:22:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Phosphoenix , an Amsterdam-based MedTech startup developing a neuroprosthetic system for people with profound blindness, has completed a €1.3 million financing round to support preparations for its fi",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/amsterdams-phosphoenix-raises-e1-3-million-to-advance-neuroprosthetic-system-for-people-with-profound-blindness/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/amsterdams-phosphoenix-raises-e1-3-million-to-advance-neuroprosthetic-system-for-people-with-profound-blindness/"
+    }
+  ],
+  "olusturma": "2026-09-18T09:40:34.566Z"
+}
