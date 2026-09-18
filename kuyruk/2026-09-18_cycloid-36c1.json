@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-18_cycloid-36c1",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Cycloid",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 180000000,
+      "birim": "EUR",
+      "usd": 194400000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Benjamin Brial"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-18T13:24:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/paris-based-cycloid-plugs-into-european-commissions-e180-million-sovereign-cloud-framework-following-series-a/",
+      "baslik": "Cycloid plugs into European Commission’s €180 million sovereign cloud framework following Series A",
+      "tarih": "Fri, 18 Sep 2026 13:24:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Announced on 17 April 2026, the six-year, €180 million framework gives EU institutions, bodies and agencies access to cloud services from four European providers: Post Telecom, with partners CleverClo",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/paris-based-cycloid-plugs-into-european-commissions-e180-million-sovereign-cloud-framework-following-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/paris-based-cycloid-plugs-into-european-commissions-e180-million-sovereign-cloud-framework-following-series-a/"
+    }
+  ],
+  "olusturma": "2026-09-18T17:39:07.155Z"
+}

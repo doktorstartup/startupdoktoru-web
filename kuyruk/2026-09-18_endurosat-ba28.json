@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-18_endurosat-ba28",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "EnduroSat",
+    "domain": "endurosat.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 205000000,
+      "birim": "USD",
+      "usd": 205000000
+    },
+    "lider": "Girişimin 2023 yılında CEECAT Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Raycho Raychev"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-18T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/18/uydu-ureticisi-endurosat-205-milyon-dolar-yatirim-aldi/",
+      "baslik": "Uydu üreticisi EnduroSat, 205 milyon dolar yatırım aldı",
+      "tarih": "Fri, 18 Sep 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bulgaristan merkezli uydu üreticisi EnduroSat , 205 milyon dolar yatırım aldığını duyurdu .",
+      "kaynak_url": "https://webrazzi.com/2026/09/18/uydu-ureticisi-endurosat-205-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-18T17:39:07.155Z"
+}
