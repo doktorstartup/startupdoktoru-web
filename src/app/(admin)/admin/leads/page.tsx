@@ -12,6 +12,11 @@ import {
   Phone,
   Building2,
   Loader2,
+  ChevronDown,
+  GraduationCap,
+  Rocket,
+  ExternalLink,
+  MailOpen,
 } from "lucide-react";
 
 type Lead = {
@@ -27,6 +32,23 @@ type Lead = {
   source: string | null;
   created_at: string;
 };
+
+type Detail = {
+  orders: { product_id: string; name: string; amount: number | null; currency: string | null; created_at: string }[];
+  profile: null | {
+    startup_name: string; status: string; one_liner: string | null; value_prop: string | null;
+    product_stage: string | null; valuation: string | null; team_size: number | null;
+    deck_url: string | null; website: string | null; sectors: string[] | null; city: string | null;
+  };
+  mail: { total: number; opened: number; clicked: number; lastAt: string | null; recent: { subject: string; status: string; opened: boolean; clicked: boolean; created_at: string }[] };
+};
+
+const PROFILE_BADGE: Record<string, string> = {
+  submitted: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  approved: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  rejected: "bg-red-500/10 text-red-400 border-red-500/20",
+};
+const PROFILE_TR: Record<string, string> = { submitted: "İncelemede", approved: "Onaylı", rejected: "Reddedildi" };
 
 function getPw() {
   try {
@@ -54,6 +76,21 @@ export default function LeadsCRM() {
   const [editStatus, setEditStatus] = useState("");
   const [editStage, setEditStage] = useState("");
   const [saving, setSaving] = useState(false);
+  const [openId, setOpenId] = useState<string | null>(null);
+  const [details, setDetails] = useState<Record<string, Detail>>({});
+  const [detailLoading, setDetailLoading] = useState<string | null>(null);
+
+  const toggleDetail = (lead: Lead) => {
+    if (openId === lead.id) { setOpenId(null); return; }
+    setOpenId(lead.id);
+    if (details[lead.id] || !lead.email) return;
+    setDetailLoading(lead.id);
+    fetch(`/api/admin/lead-detail?password=${encodeURIComponent(getPw())}&email=${encodeURIComponent(lead.email)}`)
+      .then((r) => r.json())
+      .then((d) => { if (!d.error) setDetails((prev) => ({ ...prev, [lead.id]: d })); })
+      .catch(() => {})
+      .finally(() => setDetailLoading(null));
+  };
 
   const load = () => {
     setLoading(true);
@@ -139,7 +176,7 @@ export default function LeadsCRM() {
           <span className="text-primary text-xs font-bold font-mono tracking-widest uppercase">CRM Müşteri Yönetimi</span>
           <h1 className="text-3xl font-extrabold tracking-tight mt-1 text-foreground">Lead Adayı Takip Paneli</h1>
           <p className="text-sm text-muted-foreground mt-1">
-            Tüm kayıtlar gerçek veriden gelir. Aşama/durum/not güncelleyebilir, kaydı silebilirsin.
+            Tüm kayıtlar gerçek veriden gelir. Satırdaki <strong className="text-foreground">▾ oka</strong> tıkla → 360° görünüm: aldığı eğitimler, girişim profili ve mail aktivitesi.
           </p>
         </div>
         <button
@@ -201,7 +238,8 @@ export default function LeadsCRM() {
                 {filteredLeads.map((lead) => {
                   const isEditing = editingLeadId === lead.id;
                   return (
-                    <tr key={lead.id} className="hover:bg-secondary/10 transition-colors">
+                    <React.Fragment key={lead.id}>
+                    <tr className="hover:bg-secondary/10 transition-colors">
                       <td className="p-4">
                         <div className="font-bold text-foreground text-sm">{lead.name}</div>
                         {lead.company && (
@@ -297,6 +335,13 @@ export default function LeadsCRM() {
                         ) : (
                           <div className="flex justify-end gap-2">
                             <button
+                              onClick={() => toggleDetail(lead)}
+                              title="360° görünüm"
+                              className="h-8 w-8 rounded-lg bg-secondary/80 hover:bg-primary/10 border border-border/80 hover:border-primary/30 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all"
+                            >
+                              <ChevronDown className={`h-4 w-4 transition-transform ${openId === lead.id ? "rotate-180" : ""}`} />
+                            </button>
+                            <button
                               onClick={() => handleEditClick(lead)}
                               className="h-8 w-8 rounded-lg bg-secondary/80 hover:bg-primary/10 border border-border/80 hover:border-primary/30 text-muted-foreground hover:text-primary inline-flex items-center justify-center transition-all"
                             >
@@ -312,6 +357,14 @@ export default function LeadsCRM() {
                         )}
                       </td>
                     </tr>
+                    {openId === lead.id && (
+                      <tr className="bg-black/20 border-b border-border/30">
+                        <td colSpan={7} className="p-0">
+                          <LeadDetail detail={details[lead.id]} loading={detailLoading === lead.id} />
+                        </td>
+                      </tr>
+                    )}
+                    </React.Fragment>
                   );
                 })}
               </tbody>
@@ -321,6 +374,83 @@ export default function LeadsCRM() {
 
         {!loading && filteredLeads.length === 0 && (
           <div className="text-center py-12 text-muted-foreground text-sm">Kayıt bulunamadı.</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── CRM 360 detay paneli: kişinin içeride ne yaptığı (eğitimler + girişim profili + mail) ──
+function LeadDetail({ detail, loading }: { detail?: Detail; loading: boolean }) {
+  if (loading || !detail) {
+    return <div className="flex items-center justify-center py-8 text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin" /></div>;
+  }
+  const { orders, profile, mail } = detail;
+  const fmt = (iso: string) => { try { return new Date(iso).toLocaleDateString("tr-TR", { day: "2-digit", month: "2-digit" }); } catch { return ""; } };
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-5">
+      {/* Aldığı eğitimler / siparişler */}
+      <div className="glass-panel rounded-xl border border-border/40 p-4">
+        <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5"><GraduationCap className="h-3.5 w-3.5 text-primary" /> Aldığı Eğitimler</div>
+        {orders.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Henüz satın alma yok.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {orders.map((o, i) => (
+              <div key={i} className="flex items-center justify-between gap-2 text-xs">
+                <span className="text-foreground truncate">{o.name}</span>
+                <span className="text-muted-foreground font-mono shrink-0">{o.amount ? `${o.amount} ${o.currency || ""}` : ""}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Girişim profili */}
+      <div className="glass-panel rounded-xl border border-border/40 p-4">
+        <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5"><Rocket className="h-3.5 w-3.5 text-primary" /> Girişim Profili</div>
+        {!profile ? (
+          <p className="text-xs text-muted-foreground">Girişim profili doldurmadı.</p>
+        ) : (
+          <div className="space-y-2 text-xs">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="font-bold text-foreground">{profile.startup_name || "(isimsiz)"}</span>
+              <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${PROFILE_BADGE[profile.status] || "bg-secondary/40 text-muted-foreground border-border/40"}`}>{PROFILE_TR[profile.status] || profile.status}</span>
+            </div>
+            {profile.one_liner && <p className="text-muted-foreground line-clamp-2">{profile.one_liner}</p>}
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-muted-foreground">
+              {profile.product_stage && <span>{profile.product_stage}</span>}
+              {profile.valuation && <span className="text-emerald-400">{profile.valuation}</span>}
+              {profile.team_size != null && <span>{profile.team_size} kişi</span>}
+              {profile.city && <span>{profile.city}</span>}
+            </div>
+            <div className="flex gap-3 pt-1">
+              {profile.deck_url && <a href={profile.deck_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline"><ExternalLink className="h-3 w-3" /> Sunum</a>}
+              {profile.website && <a href={profile.website} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-primary hover:underline"><ExternalLink className="h-3 w-3" /> Web</a>}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Mail aktivitesi */}
+      <div className="glass-panel rounded-xl border border-border/40 p-4">
+        <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-1.5"><MailOpen className="h-3.5 w-3.5 text-primary" /> Mail Aktivitesi</div>
+        <div className="flex gap-4 mb-3">
+          <div><div className="text-base font-extrabold font-mono text-foreground">{mail.total}</div><div className="text-[9px] uppercase text-muted-foreground">gönderim</div></div>
+          <div><div className="text-base font-extrabold font-mono text-emerald-400">{mail.opened}</div><div className="text-[9px] uppercase text-muted-foreground">açıldı</div></div>
+          <div><div className="text-base font-extrabold font-mono text-primary">{mail.clicked}</div><div className="text-[9px] uppercase text-muted-foreground">tıklandı</div></div>
+        </div>
+        {mail.recent.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Mail yok.</p>
+        ) : (
+          <div className="space-y-1">
+            {mail.recent.map((m, i) => (
+              <div key={i} className="flex items-center justify-between gap-2 text-[11px]">
+                <span className="text-muted-foreground truncate">{m.subject}</span>
+                <span className="shrink-0 text-muted-foreground">{m.clicked ? "🖱️" : m.opened ? "👁️" : "✉️"} {fmt(m.created_at)}</span>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>
