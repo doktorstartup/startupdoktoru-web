@@ -17,7 +17,17 @@ const SEGMENT = "tier1-invite";
 
 type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null; country: string | null; sectors: string[] | null; stages: string[] | null; role: string | null };
 
+// ⏸ KAMPANYA DURAKLATILDI (2026-09-19): hafta sonu molası + eldeki yatırımcıları işleme.
+// Sistemi düzenleyip içeriye iyi girişimler alınınca DEVAM: PAUSED'ı false yapıp deploy et.
+// Nerede kaldığımız inv_outreach (segment='tier1-invite') dedup'ında saklı → resume otomatik
+// sıradaki temaslanmamış partiden devam eder, kimseye tekrar gitmez.
+const PAUSED = true;
+
 export async function GET(req: NextRequest) {
+  if (PAUSED) {
+    return NextResponse.json({ ok: true, paused: true, sent: 0, note: "invest campaign paused" });
+  }
+
   const secret = process.env.CRON_SECRET;
   if (secret && req.headers.get("authorization") !== `Bearer ${secret}`) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
