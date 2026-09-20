@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus } from "lucide-react";
+import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus, Send } from "lucide-react";
 
 type Startup = {
   id: string;
@@ -19,11 +19,24 @@ type Startup = {
   valuation: string | null;
   status: "submitted" | "approved" | "rejected";
   notes: string | null;
+  review_feedback: string | null;
   updated_at: string;
 };
 
 function getPw() { try { return sessionStorage.getItem("ds_admin_pw") || ""; } catch { return ""; } }
 const csv = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
+
+// Otomatik eksik raporunun (founder'a gidecek) önizlemesi.
+function gapsOf(s: Startup): string[] {
+  const g: string[] = [];
+  if (!(s.one_liner || "").trim()) g.push("Asansör konuşması");
+  if (!(s.value_prop || "").trim()) g.push("Değer önerisi");
+  if (!(s.product_stage || "").trim()) g.push("Ürün durumu");
+  if (!(s.valuation || "").trim()) g.push("Değerleme");
+  if (!(s.deck_url || "").trim()) g.push("Yatırımcı sunumu");
+  if (s.team_size == null) g.push("Ekip sayısı");
+  return g;
+}
 
 const STATUSES = [
   { v: "all", label: "Tümü" },
@@ -43,6 +56,7 @@ export default function StartupsAdmin() {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [openId, setOpenId] = useState<string | null>(null);
+  const [rejectingId, setRejectingId] = useState<string | null>(null);
   const [creating, setCreating] = useState(false);
   const [newName, setNewName] = useState("");
   const [fStatus, setFStatus] = useState("all");
@@ -83,6 +97,20 @@ export default function StartupsAdmin() {
     const d = await act({ action: "create", startup_name: newName.trim() });
     setNewName(""); setCreating(false);
     if (d?.id) setOpenId(d.id);
+  };
+
+  const doReject = async (id: string, message: string, notify: boolean) => {
+    if (notify) {
+      const d = await act({ action: "reject_notify", id, message });
+      if (d && !d.error) {
+        if (d.emailed && d.sent) alert("Reddedildi ✓ Founder'a eksik raporu + notun gönderildi.");
+        else if (d.emailed && !d.sent) alert("Reddedildi. Ama mail gönderilemedi (Resend yapılandırması?).");
+        else alert("Reddedildi. Bu profilin e-postası yok — mail gitmedi.");
+      }
+    } else {
+      await act({ action: "set_status", id, status: "rejected" });
+    }
+    setRejectingId(null);
   };
 
   const counts = {
@@ -174,19 +202,60 @@ export default function StartupsAdmin() {
                         className="h-8 w-8 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 inline-flex items-center justify-center hover:bg-emerald-500/20"><Check className="h-4 w-4" /></button>
                     )}
                     {s.status !== "rejected" && (
-                      <button onClick={() => act({ action: "set_status", id: s.id, status: "rejected" })} disabled={busy} title="Reddet"
+                      <button onClick={() => { setRejectingId(rejectingId === s.id ? null : s.id); setOpenId(null); }} disabled={busy} title="Reddet & geri bildir"
                         className="h-8 w-8 rounded-lg bg-red-500/10 border border-red-500/25 text-red-400 inline-flex items-center justify-center hover:bg-red-500/20"><X className="h-4 w-4" /></button>
                     )}
                     <button onClick={() => setOpenId(open ? null : s.id)} className="h-8 w-8 rounded-lg text-muted-foreground hover:text-foreground inline-flex items-center justify-center"><ChevronDown className={`h-5 w-5 transition-transform ${open ? "rotate-180" : ""}`} /></button>
                   </div>
                 </div>
 
+                {rejectingId === s.id && <RejectPanel s={s} busy={busy} onReject={doReject} onClose={() => setRejectingId(null)} />}
                 {open && <EditPanel s={s} act={act} busy={busy} patchItem={patchItem} />}
               </div>
             );
           })}
         </div>
       )}
+    </div>
+  );
+}
+
+// Reddet & geri bildir paneli: otomatik eksik raporu önizlemesi + admin notu → founder'a mail.
+function RejectPanel({ s, busy, onReject, onClose }: {
+  s: Startup;
+  busy: boolean;
+  onReject: (id: string, message: string, notify: boolean) => void;
+  onClose: () => void;
+}) {
+  const [msg, setMsg] = useState(s.review_feedback || "");
+  const gaps = gapsOf(s);
+  const canMail = !!(s.email && s.email.includes("@"));
+  return (
+    <div className="border-t border-border/30 p-5 space-y-3 bg-red-500/[0.03]">
+      <div className="flex items-center justify-between">
+        <div className="text-sm font-bold flex items-center gap-2 text-red-400"><X className="h-4 w-4" /> Reddet &amp; Founder&apos;a Bildir</div>
+        <button onClick={onClose} className="text-muted-foreground hover:text-foreground"><X className="h-4 w-4" /></button>
+      </div>
+      <p className="text-xs text-muted-foreground">
+        Founder&apos;a giden mailde <strong className="text-foreground">otomatik eksik raporu</strong> + <strong className="text-foreground">notun</strong> + ilgili <strong className="text-foreground">eğitim linkleri</strong> + &quot;güncelle &amp; tekrar gönder&quot; çağrısı olur.
+      </p>
+      {gaps.length > 0 ? (
+        <div className="text-[11px] text-amber-400/90 bg-amber-500/[0.06] border border-amber-500/20 rounded-lg px-3 py-2">
+          Otomatik raporun içereceği eksikler: <strong>{gaps.join(" · ")}</strong>
+        </div>
+      ) : (
+        <div className="text-[11px] text-emerald-400/90">Belirgin otomatik eksik yok — notunla yönlendirebilirsin.</div>
+      )}
+      <textarea value={msg} onChange={(e) => setMsg(e.target.value)} rows={4}
+        placeholder="Kişisel notun (founder'a gidecek)… ör. 'Traction verilerini de ekle; güncelleyince tekrar bakalım.'"
+        className="w-full p-3 rounded-lg bg-background border border-border focus:border-primary/50 text-sm outline-none resize-y" />
+      <div className="flex flex-wrap items-center gap-2">
+        <button onClick={() => onReject(s.id, msg, true)} disabled={busy || !canMail} className="btn btn-primary btn-sm disabled:opacity-50">
+          {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />} Reddet &amp; Founder&apos;a Bildir
+        </button>
+        <button onClick={() => onReject(s.id, "", false)} disabled={busy} className="btn btn-secondary btn-sm">Sadece Reddet</button>
+        {!canMail && <span className="text-[11px] text-amber-400">E-postası yok — mail gönderilemez.</span>}
+      </div>
     </div>
   );
 }
