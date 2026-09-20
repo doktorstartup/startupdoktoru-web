@@ -399,10 +399,17 @@ export async function varlikCek({ domain, sirketAdi, slug, dizin = PAKET_DIR }) 
     if (v916.hata) {
       qc.kapilar.video_9x16 = { gecti: false, neden: v916.hata };
     } else {
-      // Kalite kapısı: dört sinyal. Tek eşik yetmiyor — Cloudflare doğrulama ekranı
-      // 144 benzersiz gri seviye alıp kusursuz bir mp4 üretebiliyor.
+      // Kalite kapısı. Eskiden bit hızı >= 1000 kb/s aranıyordu; o eşik "sayfa
+      // hiç kaymadı" durumunun VEKİLİYDİ. O durum artık doğrudan ölçülüyor:
+      // kaydirmaVideosu kare kare konum okuyor ve kıpırdamayan sayfaya
+      // "sayfa kaydırılamadı" hatası veriyor. Vekili tutmanın bedeli gerçek:
+      // 2026-09-20'de endurosat.com (baştan sona siyah uzay teması) 864 kb/s
+      // ölçüldü ve elendi — oysa gri seviyesi 140'tı ve kareler sayfanın üç
+      // ayrı bölümünü gösteriyordu. Koyu tasarım iyi sıkışıyor, bozuk değil.
+      // Geriye kalan iki sinyal ayrı şeyleri koruyor: gri seviye boş sayfayı,
+      // botMu doğrulama ekranını. Bit hızı yalnız raporlanıyor.
       const botMu = BOT_DUVARI.test(v916.olcum.metin);
-      const gecti = !botMu && v916.gri >= 20 && v916.kb >= 1000;
+      const gecti = !botMu && v916.gri >= 20 && v916.kb > 0;
       qc.kapilar.video_9x16 = { gecti, gri_seviye: v916.gri, bit_hizi_kbs: v916.kb,
         sayfa_yuksekligi: v916.olcum.yukseklik, bot_duvari: botMu,
         sure_sn: v916.sure, kaydirma_px: v916.menzil, hiz_px_sn: v916.gercekHiz, sayfa_kapsami: `%${v916.kapsam}` };

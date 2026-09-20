@@ -203,6 +203,31 @@ t("yatırımcı adı tam hâliyle korunuyor",
   t("soru-cevap uydurma adı eliyor", duser.sorunlar.length === 1 && !duser.metinler.sorular);
 }
 
+
+// ── TR "ortak liderliğinde" + "turuna ... katıldı" + geçmiş tur ─────────
+// 2026-09-20 EnduroSat: lider "Girişimin 2023 yılında CEECAT Capital" çıktı.
+// Üç ayrı eksik üst üste bindi: (1) "X ve Y ortak liderliğinde" kalıbı yoktu,
+// (2) "yatırım turuna A, B, C katıldı" kalıbı yoktu, (3) geçmiş tur süzgeci
+// TR'de yalnız "daha önce/geçen yıl" tanıyordu, "2023 yılında ... yatırım
+// aldığını hatırlatmakta fayda var" süzülmüyordu. Sonuç: ÖNCEKİ turun
+// yatırımcısı, üstüne cümle başı yapışmış hâlde lider diye basılacaktı.
+{
+  const metin = "Bulgaristan merkezli uydu üreticisi EnduroSat, 205 milyon dolar yatırım aldığını duyurdu. "
+    + "Riot Ventures ve Atreides Management ortak liderliğinde gerçekleşen yatırım turuna "
+    + "European Innovation Council, Google Ventures, Founders Fund ve Lux Capital katıldı. "
+    + "Girişimin 2023 yılında CEECAT Capital'den yatırım aldığını da hatırlatmakta fayda var. "
+    + "2015 yılında kurulan ve CEO Raycho Raychev liderliğinde faaliyet gösteren EnduroSat, uydu üretiyor.";
+  const r = kisilerCikar(metin);
+  const kat = r.katilan_yatirimcilar ?? [];
+  t("lider: ortak liderliğinde kalıbı", r.lider_yatirimci === "Riot Ventures");
+  t("eş-lider katılanlara geçiyor", kat.includes("Atreides Management"));
+  t("turuna...katıldı listesi alınıyor",
+     ["European Innovation Council","Google Ventures","Founders Fund","Lux Capital"].every((x) => kat.includes(x)));
+  t("geçmiş turun yatırımcısı elenir",
+     r.lider_yatirimci !== "CEECAT Capital" && !kat.includes("CEECAT Capital")
+     && !JSON.stringify(r).includes("Girişimin 2023"));
+}
+
 // ── Rapor ──
 let bad = 0;
 for (const [ad, ok] of R) {

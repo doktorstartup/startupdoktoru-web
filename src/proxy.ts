@@ -8,14 +8,21 @@ import { DEFAULT_LOCALE, LOCALES } from "./lib/i18n";
 export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // new URL(pathname, req.url) sorgu dizesini DÜŞÜRÜR: yalnız yolu taşır.
+  // Bu yüzden ?onizleme=... sayfaya hiç ulaşmıyordu ve taslak önizlemesi
+  // 404 veriyordu. nextUrl.clone() sorguyu olduğu gibi korur.
   if (pathname === `/${DEFAULT_LOCALE}` || pathname.startsWith(`/${DEFAULT_LOCALE}/`)) {
-    return NextResponse.redirect(new URL(pathname.slice(3) || "/", req.url));
+    const hedef = req.nextUrl.clone();
+    hedef.pathname = pathname.slice(3) || "/";
+    return NextResponse.redirect(hedef);
   }
 
   const hasLocale = LOCALES.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`));
   if (hasLocale) return NextResponse.next();
 
-  return NextResponse.rewrite(new URL(`/${DEFAULT_LOCALE}${pathname}`, req.url));
+  const hedef = req.nextUrl.clone();
+  hedef.pathname = `/${DEFAULT_LOCALE}${pathname}`;
+  return NextResponse.rewrite(hedef);
 }
 
 export const config = {

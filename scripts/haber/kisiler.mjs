@@ -237,7 +237,7 @@ export function cumleAyir(metin) {
 const FON_IPUCU = /\b(raise[ds]?|round|funding|financing|investment|invested|investors?|grant|award(?:ed)?|participation|led by|loan)\b|yatırım|finansman|tur(?:una|unda|unu)\b/i;
 // D13: ONCEKI turu anlatan cumle bu turun yatirimcisini vermez. Callosum: "The Seed round follows an €8.76M
 // pre-Seed raise …, which was led by Plural with participation from 22 investors and support from … (ARIA)."
-const GECMIS_TUR = /\b(?:follows?|followed|previous(?:ly)?|earlier|prior|last year|back in|had (?:raised|secured)|in (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4})\b|daha önce|geçen yıl/i;
+const GECMIS_TUR = /\b(?:follows?|followed|previous(?:ly)?|earlier|prior|last year|back in|had (?:raised|secured)|in (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4})\b|daha önce|geçen yıl|\d{4} yılında[^.]{0,60}?yatırım al|hatırlatmakta fayda/i;
 
 // Lider kalıpları — cümle içinde, span cümlenin kalanı.
 const LIDER_KALIP = [
@@ -245,6 +245,10 @@ const LIDER_KALIP = [
   /\bbacked by\s+(?:an?\s+[^.]{0,60}?\b(?:investment|round|funding)\s+from\s+)?(.+)$/gi,
   /\breceived a grant[^,]{0,80}?\bfrom\s+(.+)$/gi,
   /\bturuna\s+(.+?)\s+(?:ortaklaşa\s+)?liderlik etti/gi,
+  // TR: "X ve Y ortak liderliğinde gerçekleşen yatırım turuna ..." — "liderlik etti"
+  // kalıbından farklı ve Webrazzi'de sık. Cümle başına/son virgüle demirlenir,
+  // yoksa lazy grup cümlenin başındaki tanım öbeğini de içine alıyor.
+  /(?:^|,\s*)([^,;]{2,90}?)\s+ortak(?:laşa)?\s+liderliğinde/gi,
   /\b(?:has been |was |been )?awarded\s+[^;]{0,60}?\bby\s+(.+)$/gi,
   /\b(?:secured|received|raised|gets?)\s+[^.]{0,50}?\b(?:loan|grant|award|facility)\s+from\s+(.+)$/gi,
   // TR: "X'tan ... yatırım aldı" — "liderlik etti" kalıbı olmayan haberler (HubX).
@@ -272,6 +276,7 @@ const KATILAN_KALIP = [
   /\bas well as\s+(?:an?\s+)?[€$£]?[\d.,]*\s*(?:million\s+|bin\s+)?(?:match loan|loan|grant|credit|facility)\s+from\s+(.+)$/gi,
   /\b(?:existing\s+)?(?:investors?|backers?|shareholders?)\s+(.+?)\s+(?:also\s+)?(?:reinvested|re-invested|doubling down|doubled down)/gi,
   /\byatırım turunda\s+(.+?)\s+yer ald/gi,
+  /\byatırım turuna\s+(.+?)\s+katıld/gi,
   /\bkatılım(?:ıyla|ı ile)\s+(.+)$/gi,
 ];
 
