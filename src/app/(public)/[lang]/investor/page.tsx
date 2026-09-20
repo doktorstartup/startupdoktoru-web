@@ -2,14 +2,14 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2 } from "lucide-react";
+import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame } from "lucide-react";
 import { supabase } from "../../../../lib/supabase";
 
 type Investor = { firm_name: string; partner_name: string | null; thesis: string | null; sectors: string[]; stages: string[]; ticket: string | null };
 type Startup = {
   id: string; startup_name: string; one_liner: string | null; value_prop: string | null;
   deck_url: string | null; website: string | null; sectors: string[]; stage: string | null; team_size: number | null; city: string | null;
-  product_stage: string | null; valuation: string | null; action: "requested" | "skipped" | null;
+  product_stage: string | null; valuation: string | null; action: "requested" | "skipped" | null; interest_count?: number;
 };
 
 async function token(): Promise<string> {
@@ -138,8 +138,15 @@ export default function InvestorPortal() {
                   const requested = s.action === "requested";
                   return (
                     <div key={s.id} className="w-full sm:w-[340px] glass-panel rounded-2xl border border-primary/25 p-6 flex flex-col">
-                      <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary uppercase tracking-wider mb-3">
-                        <Sparkles className="h-3.5 w-3.5" /> Matched for you
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary uppercase tracking-wider">
+                          <Sparkles className="h-3.5 w-3.5" /> Matched for you
+                        </span>
+                        {(s.interest_count || 0) >= 2 && (
+                          <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-orange-500/10 text-orange-400 border-orange-500/20">
+                            <Flame className="h-3 w-3" /> Trending
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-bold text-lg text-foreground">{s.startup_name}</h3>
                       {s.one_liner && <p className="text-sm text-primary/90 mt-1">{s.one_liner}</p>}

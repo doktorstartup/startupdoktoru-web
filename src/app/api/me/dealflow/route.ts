@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyMember } from "../../../../lib/memberAuth";
+import { shell, esc, notifyAdmin } from "../../../../lib/email";
+import { sendLogged } from "../../../../lib/mailer";
+
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
 // Yatırımcı deal-flow'u — giriş yapmış ve portala davet edilmiş yatırımcıya özel.
 // Kimlik: oturumdaki e-posta = inv_investors.email/email_secondary + portal_enabled.
@@ -46,7 +50,20 @@ export async function GET(req: NextRequest) {
       .in("id", ids)
       .eq("status", "approved")
       .order("updated_at", { ascending: false });
-    startups = (data || []).map((s) => ({ ...s, action: actionByStartup.get(s.id) || null }));
+    const list = data || [];
+
+    // Global ilgi (tüm yatırımcılardan gelen "görüşme talebi") → trend vitrini: popüler üste.
+    const { data: allReq } = await supabaseAdmin
+      .from("inv_matches")
+      .select("startup_id")
+      .eq("investor_action", "requested")
+      .in("startup_id", list.map((s) => s.id));
+    const cmap: Record<string, number> = {};
+    for (const r of allReq || []) cmap[r.startup_id as string] = (cmap[r.startup_id as string] || 0) + 1;
+
+    startups = list
+      .map((s) => ({ ...s, action: actionByStartup.get(s.id) || null, interest_count: cmap[s.id] || 0 }))
+      .sort((a, b) => (b.interest_count as number) - (a.interest_count as number));
   }
 
   return NextResponse.json({ investor: inv, startups });
@@ -74,6 +91,40 @@ export async function POST(req: NextRequest) {
     .eq("investor_id", inv.id)
     .eq("startup_id", body.startup_id);
   if (dbErr) return NextResponse.json({ error: dbErr.message }, { status: 500 });
+
+  // Görüşme talebinde bildirim: admin (koordinasyon) + girişimci (motivasyon).
+  if (body.action === "requested") {
+    try {
+      const { data: sp } = await supabaseAdmin
+        .from("inv_startup_profiles")
+        .select("startup_name, email")
+        .eq("id", body.startup_id)
+        .maybeSingle();
+      const invName = inv.partner_name || inv.firm_name;
+      const startupName = sp?.startup_name || "bir girişim";
+
+      await notifyAdmin(
+        "Yeni görüşme talebi 🤝",
+        `<p><strong>${esc(invName)}</strong> (${esc(inv.firm_name)}) — <strong>${esc(startupName)}</strong> ile görüşmek istedi.</p><p>Eşleştirme panelinden koordine et: ${SITE}/admin/match</p>`,
+      );
+
+      if (sp?.email && sp.email.includes("@")) {
+        await sendLogged(
+          {
+            to: sp.email,
+            subject: "Bir yatırımcı seninle görüşmek istiyor 🎉",
+            html: shell(`
+              <p>Harika haber!</p>
+              <p><strong>${esc(inv.firm_name)}</strong>, <strong>${esc(startupName)}</strong> ile görüşmek istedi. Bu güçlü bir sinyal — en kısa sürede koordinasyon için seninle iletişime geçeceğiz.</p>
+              <p>Bu arada <a href="${SITE}/portal/startup">profilini</a> güncel ve güçlü tuttuğundan emin ol.</p>
+              <p>Başarılar,<br/>Startup Doktoru</p>
+            `),
+          },
+          { context: "transactional", contextRef: body.startup_id, personal: true },
+        );
+      }
+    } catch { /* bildirim best-effort; talep zaten kaydedildi */ }
+  }
 
   return NextResponse.json({ ok: true });
 }
