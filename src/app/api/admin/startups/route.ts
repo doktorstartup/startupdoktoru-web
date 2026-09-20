@@ -62,7 +62,14 @@ export async function GET(req: NextRequest) {
 
   const { data, error } = await query;
   if (error) return NextResponse.json({ error: error.message, startups: [] }, { status: 500 });
-  return NextResponse.json({ startups: data || [] });
+  const startups = data || [];
+
+  // İlgi sayısı: her girişim için "görüşme talep eden" (requested) yatırımcı sayısı → trend.
+  const { data: reqs } = await supabaseAdmin.from("inv_matches").select("startup_id").eq("investor_action", "requested");
+  const countMap: Record<string, number> = {};
+  for (const r of reqs || []) countMap[r.startup_id as string] = (countMap[r.startup_id as string] || 0) + 1;
+
+  return NextResponse.json({ startups: startups.map((s) => ({ ...s, interest_count: countMap[s.id] || 0 })) });
 }
 
 export async function POST(req: NextRequest) {

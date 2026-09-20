@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus, Send } from "lucide-react";
+import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus, Send, Flame } from "lucide-react";
 
 type Startup = {
   id: string;
@@ -20,6 +20,7 @@ type Startup = {
   status: "submitted" | "approved" | "rejected";
   notes: string | null;
   review_feedback: string | null;
+  interest_count?: number;
   updated_at: string;
 };
 
@@ -61,6 +62,7 @@ export default function StartupsAdmin() {
   const [newName, setNewName] = useState("");
   const [fStatus, setFStatus] = useState("all");
   const [q, setQ] = useState("");
+  const [sortByInterest, setSortByInterest] = useState(false);
 
   const load = (silent = false) => {
     if (!silent) setLoading(true);
@@ -171,6 +173,10 @@ export default function StartupsAdmin() {
         <select value={fStatus} onChange={(e) => setFStatus(e.target.value)} className="h-10 px-3 rounded-lg bg-background border border-border text-sm outline-none focus:border-primary/50">
           {STATUSES.map((s) => <option key={s.v} value={s.v}>{s.label}</option>)}
         </select>
+        <button onClick={() => setSortByInterest((v) => !v)} title="İlgiye göre sırala (trend yukarı)"
+          className={`h-10 px-3 rounded-lg border text-sm inline-flex items-center gap-1.5 transition-colors ${sortByInterest ? "bg-primary text-background border-primary" : "bg-background border-border text-muted-foreground hover:text-foreground"}`}>
+          <Flame className="h-4 w-4" /> Trend
+        </button>
       </div>
 
       {loading ? (
@@ -179,7 +185,7 @@ export default function StartupsAdmin() {
         <div className="text-center py-16 text-muted-foreground text-sm">Henüz girişim profili yok. <strong className="text-foreground">Girişim Ekle</strong> ile ekle ya da girişimciler /portal/startup&apos;tan doldursun.</div>
       ) : (
         <div className="space-y-3">
-          {items.map((s) => {
+          {(sortByInterest ? [...items].sort((a, b) => (b.interest_count || 0) - (a.interest_count || 0)) : items).map((s) => {
             const open = openId === s.id;
             return (
               <div key={s.id} className="glass-panel rounded-2xl border border-border/40 overflow-hidden">
@@ -188,6 +194,7 @@ export default function StartupsAdmin() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-bold text-foreground truncate">{s.startup_name || "(isimsiz)"}</span>
                       <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${BADGE[s.status]}`}>{TR[s.status]}</span>
+                      {(s.interest_count || 0) > 0 && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-orange-500/10 text-orange-400 border-orange-500/20 inline-flex items-center gap-0.5"><Flame className="h-2.5 w-2.5" /> {s.interest_count} ilgilenen</span>}
                       {s.valuation && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">{s.valuation.slice(0, 24)}</span>}
                     </div>
                     <p className="text-xs text-muted-foreground mt-1 truncate">

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Rocket, Save, CheckCircle2, Clock, XCircle, GraduationCap, ArrowRight, ArrowLeft, Lightbulb, Sparkles } from "lucide-react";
+import { Loader2, Rocket, Save, CheckCircle2, Clock, XCircle, GraduationCap, ArrowRight, ArrowLeft, Lightbulb, Sparkles, Flame } from "lucide-react";
 import { MemberLogin } from "../../../../../components/MemberLogin";
 import { useMember } from "../../../../../lib/member";
 import { supabase } from "../../../../../lib/supabase";
@@ -52,6 +52,7 @@ export default function StartupProfilePage() {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false); // kaydettikten sonra analiz görünümü
   const [prefilled, setPrefilled] = useState(false); // girişim adı kayıttan çekildi
+  const [interest, setInterest] = useState<{ count: number; investors: { firm_name: string; partner_name: string | null; country: string | null }[] } | null>(null);
   const [msg, setMsg] = useState("");
 
   const set = (k: keyof Profile, v: unknown) => setP((prev) => ({ ...prev, [k]: v as never }));
@@ -79,6 +80,7 @@ export default function StartupProfilePage() {
         });
         if (pr.valuation) setValDone(true);
         if (pr.deck_url) setDeckHas(true);
+        setInterest(d.interest || null);
       } else if (d.prefill?.company) {
         // Hesabındaki kayıt bilgisinden girişim adını ön-doldur (tekrar yazmasın).
         setP((prev) => ({ ...prev, startup_name: d.prefill.company }));
@@ -115,6 +117,19 @@ export default function StartupProfilePage() {
   const valTo = hasAccess("degerleme") ? href("/portal/course") : href("/degerleme");
   const deckTo = hasAccess("investor_training") ? href("/portal/course") : href("/investor-training");
 
+  const interestCard = interest && interest.count > 0 ? (
+    <div className="glass-panel rounded-2xl border border-primary/30 bg-primary/[0.05] p-4">
+      <div className="flex items-center gap-2 text-primary font-bold text-sm">
+        <Flame className="h-4 w-4" /> {interest.count} yatırımcı seninle görüşmek istedi
+      </div>
+      {interest.investors.length > 0 && (
+        <p className="text-xs text-muted-foreground mt-1.5">
+          {interest.investors.map((i) => `${i.firm_name}${i.country ? ` · ${i.country}` : ""}`).join("   •   ")}
+        </p>
+      )}
+    </div>
+  ) : null;
+
   // ── Kaydettikten sonra: PROFİL ANALİZİ + yumuşak eğitim önerisi (adımlarda değil, sonda) ──
   if (saved) {
     const recs: { title: string; why: string; cta: string; to: string }[] = [];
@@ -133,6 +148,7 @@ export default function StartupProfilePage() {
 
     return (
       <div className="space-y-6 max-w-2xl">
+        {interestCard}
         <div className="glass-panel rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.04] p-6">
           <div className="flex items-center gap-2 text-emerald-400 font-bold"><CheckCircle2 className="h-5 w-5" /> Bilgilerini aldık — profilin incelemeye alındı.</div>
           <p className="text-sm text-muted-foreground mt-2">Onaylandığında sistemimize kayıtlı yatırımcılarla eşleştirilirsin.</p>
@@ -190,6 +206,8 @@ export default function StartupProfilePage() {
           <StIcon className="h-4 w-4" /> {st.label}
         </div>
       )}
+
+      {interestCard}
 
       {loadingProfile ? (
         <div className="flex items-center justify-center py-16 text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin" /></div>

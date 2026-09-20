@@ -16,7 +16,25 @@ export async function GET(req: NextRequest) {
     .eq("user_id", user.id)
     .maybeSingle();
   if (dbErr) return NextResponse.json({ error: dbErr.message }, { status: 500 });
-  if (data) return NextResponse.json({ profile: data });
+  if (data) {
+    // Bu girişimle görüşmek isteyen (Request a meeting) yatırımcılar — sosyal kanıt/motivasyon.
+    const { data: reqs } = await supabaseAdmin
+      .from("inv_matches")
+      .select("investor_id")
+      .eq("startup_id", data.id)
+      .eq("investor_action", "requested");
+    const ids = (reqs || []).map((r) => r.investor_id);
+    let investors: { firm_name: string; partner_name: string | null; country: string | null }[] = [];
+    if (ids.length) {
+      const { data: invs } = await supabaseAdmin
+        .from("inv_investors")
+        .select("firm_name, partner_name, country")
+        .in("id", ids)
+        .limit(20);
+      investors = invs || [];
+    }
+    return NextResponse.json({ profile: data, interest: { count: ids.length, investors } });
+  }
 
   // Profil yoksa: kayıt/lead bilgilerinden ön-doldurma (kullanıcı aynı şeyi tekrar yazmasın).
   const { data: lead } = await supabaseAdmin
