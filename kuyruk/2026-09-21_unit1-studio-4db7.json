@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-21_unit1-studio-4db7",
+  "durum": "hazir",
+  "puan": 54,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Unit1 Studio",
+    "domain": "unit1.studio",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 23300000,
+      "birim": "EUR",
+      "usd": 25164000
+    },
+    "lider": "Balderton Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Barney Wragg"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-21T06:00:39.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/londons-unit1-studio-secures-e23-3-million-to-scale-avatar-concerts-beyond-the-one-venue-abba-voyage-model/",
+      "baslik": "London’s Unit1 Studio secures €23.3 million to scale avatar concerts beyond the one-venue ABBA Voyage model",
+      "tarih": "Mon, 21 Sep 2026 06:00:39 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/21/unit1-studio-raises-ps20m-to-scale-avatar-concert-technology/",
+      "baslik": "Unit1 Studio raises £20M to scale avatar concert technology",
+      "tarih": "Mon, 21 Sep 2026 06:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Unit1 Studio , the London-based end-to-end avatar concert producer, has raised €23.3 million (£20 million) in new financing.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/londons-unit1-studio-secures-e23-3-million-to-scale-avatar-concerts-beyond-the-one-venue-abba-voyage-model/"
+    },
+    {
+      "metin": "Unit1 Studio , a UK company producing mixed-reality avatar concerts, has secured £20 million in new funding to expand its technology and grow its roster of avatar concert productions.",
+      "kaynak_url": "https://tech.eu/2026/09/21/unit1-studio-raises-ps20m-to-scale-avatar-concert-technology/"
+    }
+  ],
+  "olusturma": "2026-09-21T10:38:36.156Z"
+}

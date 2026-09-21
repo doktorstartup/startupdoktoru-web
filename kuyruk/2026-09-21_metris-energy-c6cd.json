@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-21_metris-energy-c6cd",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Metris Energy",
+    "domain": "metrisenergy.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4350000,
+      "birim": "EUR",
+      "usd": 4698000
+    },
+    "lider": "PT1 Ventures",
+    "katilanlar": [
+      "Play and Love Ventures",
+      "Blackfinch Ventures",
+      "Octopus Ventures",
+      "AENU",
+      "Plug"
+    ],
+    "kurucular": [
+      "William Whatley"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-21T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/londons-metris-energy-raises-e4-35-million-to-scale-ai-platform-for-managing-renewable-energy-assets/",
+      "baslik": "London’s Metris Energy raises €4.35 million to scale AI platform for managing renewable energy assets",
+      "tarih": "Mon, 21 Sep 2026 07:15:35 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/21/metris-secures-5m-to-build-a-unified-data-layer-for-energy-assets/",
+      "baslik": "Metris secures $5M to build a unified data layer for energy assets",
+      "tarih": "Mon, 21 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Metris Energy , a London-based AI‑native platform for managing energy assets at scale, has raised a €4.35 million ($5 million) Seed round and unveiled Metria AI, the company’s new AI interface that ex",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/londons-metris-energy-raises-e4-35-million-to-scale-ai-platform-for-managing-renewable-energy-assets/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/londons-metris-energy-raises-e4-35-million-to-scale-ai-platform-for-managing-renewable-energy-assets/"
+    }
+  ],
+  "olusturma": "2026-09-21T10:38:36.156Z"
+}
