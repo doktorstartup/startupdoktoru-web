@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-21_fintechos-4263",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "FintechOS",
+    "domain": "fintechos.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 28000000,
+      "birim": "USD",
+      "usd": 28000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Santander Corporate Investment Banking",
+      "Molten Ventures",
+      "Cipio Partners",
+      "Bek Ventures",
+      "IFC"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-21T15:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/21/fintechos-raises-28m-in-equity-and-debt/",
+      "baslik": "FintechOS raises $28M in equity and debt",
+      "tarih": "Mon, 21 Sep 2026 15:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Romania-founded startup FintechOS , which provides AI and software services for banks and insurance firms, has raised $28m in equity and debt funding from its current investors, it said today.",
+      "kaynak_url": "https://tech.eu/2026/09/21/fintechos-raises-28m-in-equity-and-debt/"
+    },
+    {
+      "metin": "debt funding",
+      "kaynak_url": "https://tech.eu/2026/09/21/fintechos-raises-28m-in-equity-and-debt/"
+    }
+  ],
+  "olusturma": "2026-09-21T18:40:14.180Z"
+}

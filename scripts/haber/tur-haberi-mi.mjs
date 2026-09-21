@@ -72,7 +72,10 @@ const VETOLAR = [
   // "recap" ve "last week, we tracked": tech.eu'nun HAFTALIK derleme formati.
   // Bunlar olmadan 16 derlemenin 15'i yalniz 1 puanlik marjla eleniyordu.
   ["derleme", /round-?up|\bwrap\b|\brecap\b|deals of the week|(?:this|last) week,? we (tracked|covered)|weekly funding|haftan[ıi]n (yat[ıi]r[ıi]m|haber)|g[üu]ndem[ıi]? ?#\s?\d|bu hafta(?:ki)? (?:öne ç[ıi]kan|yat[ıi]r[ıi]m|haber|gündem)|top-?funded|\btop \d+\b|\bH[12] 20\d\d\b/i],
-  ["fon kapanışı", /\b(launch\w*|unveil\w*|clos\w*|rais\w*|announc\w*)\b[^.]{0,60}\b(venture (firm|fund)|vc (firm|fund)|new fund|fund I{1,3}\b|\d(?:st|nd|rd|th) fund)\b|targeting [€$£][^.]{0,60}to invest|fon(unu)? kapat|yeni fonu(nu)?/i],
+  // "led by" araya girerse veto DÜŞER: orada fon, turu kapatan taraf değil turu
+  // YÖNETEN yatırımcıdır. ("BOOKR Kids closes €6.1M Series A … raise was led by
+  // TCEE Fund IV" gerçek bir turdur ve eleniyordu.)
+  ["fon kapanışı", /\b(launch\w*|unveil\w*|clos\w*|rais\w*|announc\w*)\b(?:(?!\bled by\b)[^.]){0,60}\b(venture (firm|fund)|vc (firm|fund)|new fund|fund\s+[IVXL]+\b|fund\s+\d+\b|\d(?:st|nd|rd|th) fund)\b|targeting [€$£][^.]{0,60}to invest|fon(unu)? kapat|yeni fonu(nu)?/i],
   ["satın alma/birleşme", /\bacquir\w+|\bacquisition\b|\bto buy\b|\bbuys\b|\bmerger\b|\btakeover\b|sat[ıi]n al|birleşme|devral/i],
   // "IPO founder" bir KİŞİ tanımıdır, olay değil (arctic: "Denmark's youngest IPO founder raises $7.5M").
   ["halka arz", /\bIPO\b(?!\s+(?:founder|co-?founder|veteran|alumn))|halka arz|nasdaq|business combination|begins? trading|goes? public|borsaya/i],

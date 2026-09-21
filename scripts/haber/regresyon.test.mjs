@@ -228,6 +228,53 @@ t("yatırımcı adı tam hâliyle korunuyor",
      && !JSON.stringify(r).includes("Girişimin 2023"));
 }
 
+
+// ── Şirket adı: 2026-09-21'de ölçülen altı ayrı kök neden ────────────────
+// 109 kayıtlık kuyrukta 6 bozuk ad ve 3 yinelenen grup vardı; yinelenenlerin
+// her birinde bir iyi + bir bozuk ad, yani gruplamayı bozan da buydu.
+{
+  const V = [
+    // [başlık, beklenen] — her satır gerçek bir kuyruk kaydından
+    ["UK startup AI Score raises $5.4M to scale its enterprise AI governance platform", "AI Score"],          // "scores?" fiili adı bölüyordu
+    ["Münster-based syte raises €9 million to expand its analytics platform", "syte"],                        // \w Türkçe/İzlandaca harfi tutmuyordu
+    ["Reykjavík-based Treble raises nearly €15 million to bring sound to physical AI", "Treble"],
+    ["Lithuanian legaltech EnforceShield secures €1.7M for automated IP enforcement", "EnforceShield"],       // baştaki küçük harfli tanımlayıcı
+    ["CRM challenger Zero gets backing from Lovable founders in $10M raise", "Zero"],
+    ["Finnish startup raises $10.3 million seed to replace the traditional CRM with AI agents", null],        // başlıkta ad YOK
+    ["Icelandic audio simulation startup lands $18 million to expand in the US", null],
+    ["Gen Z influencer-founders land oversubscribed $4.3M pre-seed", null],                                   // kişi öznesi sonda
+    // Bozulmaması gerekenler
+    ["Vilnius-based EnforceShield raises €1.7 million Seed round", "EnforceShield"],
+    ["Norway's Volve raises €4 million", "Volve"],
+  ];
+  let ok = true;
+  for (const [b, bekle] of V) {
+    const g = sirketAdiCikar(b);
+    if (g !== bekle) { ok = false; console.log(`     ✗ ${JSON.stringify(b.slice(0,50))} → ${JSON.stringify(g)} (beklenen ${JSON.stringify(bekle)})`); }
+  }
+  t("şirket adı: 10/10 yeni vaka", ok);
+}
+
+// ── Fon kapanışı startup turu değildir ───────────────────────────────────
+// Veto vardı ama roma rakamı kalıbı yalnız I/II/III tutuyordu; "Fund IV" ve
+// "Fund V" kaçıyordu. Genişletince gerçek bir tur elendi: lider yatırımcısı
+// "TCEE Fund IV" olan BOOKR Kids turu. "led by" araya girerse veto düşer.
+{
+  const ele = [
+    "London's Claret Capital Partners closes Fund IV at €575 million to back European tech",
+    "Seed Capital closes €130M Fund V to expand across the Nordics",
+    "Atlantic Labs closes Fund III at €100 million",
+  ];
+  const tur = [
+    ["Hungary's BOOKR Kids closes €6.1 million Series A for global EdTech expansion",
+     "The raise was led by TCEE Fund IV, with participation from existing investors."],
+  ];
+  let ok = true;
+  for (const b of ele) if (turHaberiMi(b, {}).evet) { ok = false; console.log(`     ✗ elenmeliydi: ${b.slice(0,50)}`); }
+  for (const [b, m] of tur) if (!turHaberiMi(b, { metin: m }).evet) { ok = false; console.log(`     ✗ tur sayılmalıydı: ${b.slice(0,50)}`); }
+  t("fon kapanışı eleniyor, fon-liderli tur elenmiyor", ok);
+}
+
 // ── Rapor ──
 let bad = 0;
 for (const [ad, ok] of R) {

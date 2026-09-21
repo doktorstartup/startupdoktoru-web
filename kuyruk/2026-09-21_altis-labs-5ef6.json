@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-21_altis-labs-5ef6",
+  "durum": "hazir",
+  "puan": 85,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Altis Labs",
+    "domain": "altislabs.com",
+    "ulke": "TR",
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 25000000,
+      "birim": "USD",
+      "usd": 25000000
+    },
+    "lider": "OrbiMed",
+    "katilanlar": [
+      "Qiming Venture Partners USA",
+      "Cancer Breakthrough Fund",
+      "Innovation Endeavors",
+      "Benchstrength",
+      "Fusion Fund"
+    ],
+    "kurucular": [
+      "Felix Baldauf-Lenschen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-21T13:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/21/onkoloji-ve-klinik-arastirmalari-icin-yapay-zeka-gelistiren-altis-labs-25-milyon-dolar-yatirim-aldi/",
+      "baslik": "Onkoloji ve klinik araştırmaları için yapay zeka geliştiren Altis Labs, 25 milyon dolar yatırım aldı",
+      "tarih": "Mon, 21 Sep 2026 13:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Onkoloji ve klinik araştırmaları için yapay zeka geliştiren Altis Labs , 25 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/21/onkoloji-ve-klinik-arastirmalari-icin-yapay-zeka-gelistiren-altis-labs-25-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/21/onkoloji-ve-klinik-arastirmalari-icin-yapay-zeka-gelistiren-altis-labs-25-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-21T18:40:14.180Z"
+}

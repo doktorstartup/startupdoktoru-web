@@ -76,16 +76,21 @@ async function cek(url) {
 // Başlıktan atılacak ön ekler — sırayla uygulanır.
 const ON_EKLER = [
   /^\s*[A-ZÀ-Ý][\w.'-]*(?:['’]s)\s+/,                       // "Norway's Volve"
-  /^\s*[A-ZÀ-Ý][\w-]*-based\s+/i,                            // "Berlin-based Nanolope"
+  /^\s*[\p{L}][\p{L}\p{N}_'’-]*-based\s+/iu,                            // "Berlin-based Nanolope"
   /^\s*(?:danish|swedish|norwegian|finnish|icelandic|dutch|german|french|spanish|italian|portuguese|polish|estonian|latvian|lithuanian|belgian|austrian|swiss|irish|greek|czech|romanian|bulgarian|croatian|slovenian|slovak|hungarian|turkish|british|uk|us|european|nordic|baltic)\s+/i,
 ];
 // "…startup/company/firm X" — tanımlayıcı öbek adın ÖNÜNDE durur, adı ondan sonrası verir.
-const TANIMLAYICI = /\b(?:startup|scale-?up|company|firm|platform|venture|girişimi|şirketi|geliştiren|sunan|kuran)\s+/i;
+const TANIMLAYICI = /\b(?:startup|scale-?up|company|firm|platform|venture|challenger|rival|maker|girişimi|şirketi|geliştiren|sunan|kuran)\s+/i;
 // Öznesi ŞİRKET değil KİŞİ olan başlıklar: "Former Lunar executives land €8.2M…"
 // Burada şirketin adı başlıkta hiç geçmiyor; uydurmak yerine null dönülür.
-const KISI_OZNE = /^\s*(?:former|ex-)\s|\b(?:co-?founders?|executives?|founders?|alumni|veterans?)\s+(?:launch|land|raise|secure|start|build)/i;
-// Fiil / rakam: adın bittiği yer.
-const FIIL = /\s+\b(?:raises?|raised|raising|secures?|secured|lands?|landed|nets?|netted|bags?|bagged|closes?|closed|closing|scores?|snaps?\s+up|picks?\s+up|gets?|receives?|launches|attracts?)\b|\s+\b(?:yat[ıi]r[ıi]m|milyon|milyar)\b/i;
+const KISI_OZNE = /^\s*(?:former|ex-)\s|\b(?:co-?founders?|executives?|founders?|alumni|veterans?)\s+(?:launch|land|raise|secure|start|build)|\b(?:co-?founders?|executives?|founders?|alumni|veterans?)\s*$/i;
+// Fiil / rakam: adın bittiği yer. Büyük/küçük harfe DUYARLI: bu başlıklarda fiil
+// küçük, şirket adı büyük harflidir. "i" bayrağıyla "scores?" kalıbı "AI Score"u
+// fiilden bölüp geriye "AI" bırakıyordu.
+const FIIL = /\s+\b(?:raises?|raised|raising|secures?|secured|lands?|landed|nets?|netted|bags?|bagged|closes?|closed|closing|scores?|snaps?\s+up|picks?\s+up|gets?|receives?|launches|attracts?)\b|\s+\b(?:[Yy]at[ıi]r[ıi]m|[Mm]ilyon|[Mm]ilyar)\b/;
+
+// Başlıkta şirket adı yokken geriye kalan jenerik sözcükler — bunlar ad değildir.
+const JENERIK_AD = /^(?:startup|scale-?up|company|firm|platform|venture|audio|tech|app|data|the|new|gen\s*z|ai|vc|crm)$/i;
 
 // Bir metin parçasındaki SON bitişik büyük-harfle-başlayan kelime öbeği.
 // Türkçe başlıklarda tanımlayıcı önde, ad sonda: "Yapay zeka girişimi Deep Cogito" → "Deep Cogito".
@@ -131,7 +136,16 @@ export function sirketAdiCikar(baslik) {
   }
 
   const govde = ozne.split(/\s*[,–—:]\s*/)[0] ?? ozne;
-  const kelimeler = govde.trim().split(/\s+/).filter(Boolean);
+  let kelimeler = govde.trim().split(/\s+/).filter(Boolean);
+
+  // Baştaki küçük harfli sözcük, ARDINDAN büyük harfli bir sözcük geliyorsa
+  // tanımlayıcıdır, ad değil: "legaltech EnforceShield" → "EnforceShield".
+  // Tek başına duruyorsa ad olabilir ve korunur: "syte", "os.energy", "byFounders".
+  while (kelimeler.length > 1
+         && !/^[A-ZÀ-ÝÇĞİÖŞÜ0-9]/.test(kelimeler[0])
+         && kelimeler.slice(1).some((k) => /^[A-ZÀ-ÝÇĞİÖŞÜ]/.test(k))) {
+    kelimeler = kelimeler.slice(1);
+  }
 
   // Baştan itibaren özel ad öbeği. İlk kelime küçük harfle başlayabilir (os.energy, byFounders).
   const ad = [];
@@ -141,6 +155,10 @@ export function sirketAdiCikar(baslik) {
     if (ad.length >= 4) break;                               // "Revier Therapeutics" evet, cümle hayır
   }
   const sonuc = ad.join(" ").replace(/[.,;:]$/, "");
+  // Başlıkta şirket adı yokken jenerik sözcük ad sanılıyordu: "Finnish startup
+  // raises…" → "startup", "Icelandic audio simulation startup…" → "audio".
+  // Ad yoksa null: kayıt "künye eksik" diye atlanır, uydurma ad üretilmez.
+  if (JENERIK_AD.test(sonuc.trim())) return null;
   return sonuc.length > 1 ? sonuc.slice(0, 60) : null;
 }
 
