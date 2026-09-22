@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_verda-e9cc",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Verda",
+    "domain": "verda.com",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 189000000,
+      "birim": "USD",
+      "usd": 189000000
+    },
+    "lider": "Emergence Capital",
+    "katilanlar": [
+      "Mark Saroufim of Core Auto and GPUMODE",
+      "Ola Tørudbakken of Meta"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-22T08:03:36.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/verda-raises-189m-to-advance-its-ai-cloud-and-expand-compute-capacity/",
+      "baslik": "Verda raises $189M to advance its AI cloud and expand compute capacity",
+      "tarih": "Tue, 22 Sep 2026 08:03:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "European technology company Verda has raised $189 million in new funding to scale its full-stack AI cloud and expand its compute capacity.",
+      "kaynak_url": "https://tech.eu/2026/09/22/verda-raises-189m-to-advance-its-ai-cloud-and-expand-compute-capacity/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/09/22/verda-raises-189m-to-advance-its-ai-cloud-and-expand-compute-capacity/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

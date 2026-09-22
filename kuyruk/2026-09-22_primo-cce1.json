@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_primo-cce1",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Primo",
+    "domain": "getprimo.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 8000000,
+      "birim": "USD",
+      "usd": 8000000
+    },
+    "lider": "Headline",
+    "katilanlar": [
+      "Global Founders Capital"
+    ],
+    "kurucular": [
+      "Arthur Waller",
+      "Romain Niccoli",
+      "Martin Pannier"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T07:00:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/primo-raises-8m-to-bring-autonomous-ai-agents-to-it-operations/",
+      "baslik": "Primo raises $8M to bring autonomous AI agents to IT operations",
+      "tarih": "Tue, 22 Sep 2026 07:30:00 +0000"
+    },
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/paris-based-primo-raises-e6-9-million-to-deploy-autonomous-ai-agents-for-it-teams/",
+      "baslik": "Paris-based Primo raises €6.9 million to deploy autonomous AI agents for IT teams",
+      "tarih": "Tue, 22 Sep 2026 07:00:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Primo , an AI platform for managing corporate IT, has raised $8 million in a funding round led by Headline and Global Founders Capital .",
+      "kaynak_url": "https://tech.eu/2026/09/22/primo-raises-8m-to-bring-autonomous-ai-agents-to-it-operations/"
+    },
+    {
+      "metin": "Primo , a Paris-based AI platform that unifies device management, SaaS applications, identity and IT support, has raised €6.9 million ($8 million) in a funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/paris-based-primo-raises-e6-9-million-to-deploy-autonomous-ai-agents-for-it-teams/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_gamindo-c451",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Gamindo",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1400000,
+      "birim": "EUR",
+      "usd": 1512000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Club degli Investitori",
+      "Zanichelli Venture",
+      "Riccardo Zacconi",
+      "Alessio Artuffo",
+      "Bending Spoons",
+      "Duccio Vitali",
+      "Luca Maestri",
+      "Claudio Erba",
+      "King.com",
+      "Doorway",
+      "Docebo",
+      "Vento"
+    ],
+    "kurucular": [
+      "Matteo Albrizio"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T05:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/gamindo-raises-eur14m-to-make-corporate-training-more-interactive/",
+      "baslik": "Gamindo raises €1.4M to make corporate training more interactive",
+      "tarih": "Tue, 22 Sep 2026 05:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Corporate training platform Gamindo has raised €1.4 million Seed funding.",
+      "kaynak_url": "https://tech.eu/2026/09/22/gamindo-raises-eur14m-to-make-corporate-training-more-interactive/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://tech.eu/2026/09/22/gamindo-raises-eur14m-to-make-corporate-training-more-interactive/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

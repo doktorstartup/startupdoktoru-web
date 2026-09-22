@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_biolevate-7ac1",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Biolevate",
+    "domain": "biolevate.com",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 30000000,
+      "birim": "EUR",
+      "usd": 32400000
+    },
+    "lider": "RAISE France",
+    "katilanlar": [
+      "MSD Global Health Innovation Fund (MGHIF)",
+      "Orange Ventures",
+      "EQT Ventures",
+      "Station F"
+    ],
+    "kurucular": [
+      "Joël Belafa"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T07:50:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/biolevate-lands-eur30m-series-a-to-scale-life-sciences-ai/",
+      "baslik": "Biolevate lands €30M Series A to scale life sciences AI",
+      "tarih": "Tue, 22 Sep 2026 07:50:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Life sciences AI company Biolevate has raised €30 million in Series A funding to expand its platform for automating scientific and regulatory workflows and support its international growth.",
+      "kaynak_url": "https://tech.eu/2026/09/22/biolevate-lands-eur30m-series-a-to-scale-life-sciences-ai/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/22/biolevate-lands-eur30m-series-a-to-scale-life-sciences-ai/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

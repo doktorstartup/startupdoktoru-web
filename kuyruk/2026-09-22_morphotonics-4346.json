@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_morphotonics-4346",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Morphotonics",
+    "domain": "morphotonics.com",
+    "ulke": null,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 40000000,
+      "birim": "EUR",
+      "usd": 43200000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Hugo da Silva"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T07:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/morphotonics-closes-eur40m-series-b-to-tackle-ai-devices-hidden-manufacturing-bottleneck/",
+      "baslik": "Morphotonics closes €40M+ Series B to tackle AI devices’ hidden manufacturing bottleneck",
+      "tarih": "Tue, 22 Sep 2026 07:20:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Netherlands-based deeptech company Morphotonics has raised more than €40 million in Series B funding to scale its manufacturing technology for AI glasses, augmented reality waveguides and advanced pho",
+      "kaynak_url": "https://tech.eu/2026/09/22/morphotonics-closes-eur40m-series-b-to-tackle-ai-devices-hidden-manufacturing-bottleneck/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/09/22/morphotonics-closes-eur40m-series-b-to-tackle-ai-devices-hidden-manufacturing-bottleneck/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

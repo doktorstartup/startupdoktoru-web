@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_benford-adf0",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Benford",
+    "domain": "benford.tech",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": "Global Founders Capital",
+    "katilanlar": [
+      "today: Peter ter Maaten (HSO)",
+      "Quentin de Metz",
+      "Alexandre Prot",
+      "Arthur Waller",
+      "Spandow",
+      "Sondo"
+    ],
+    "kurucular": [
+      "Mads Bogen Øye",
+      "Thibault Mallion",
+      "Andreas Rystad",
+      "Goldman Sachs",
+      "One Peak"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T05:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/benford-raises-eur5m-to-rebuild-financial-audit-from-the-ground-up/",
+      "baslik": "Benford raises €5M to rebuild financial audit from the ground up",
+      "tarih": "Tue, 22 Sep 2026 05:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fintech Benford announced today that it raised €5m in pre-seed funding to build a new-generation, tech-native financial audit firm that runs statutory audits end to end, from clients’ systems to the s",
+      "kaynak_url": "https://tech.eu/2026/09/22/benford-raises-eur5m-to-rebuild-financial-audit-from-the-ground-up/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/22/benford-raises-eur5m-to-rebuild-financial-audit-from-the-ground-up/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

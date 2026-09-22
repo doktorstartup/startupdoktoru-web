@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_zeliq-f4a4",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Zeliq",
+    "domain": "zeliq.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7000000,
+      "birim": "EUR",
+      "usd": 7560000
+    },
+    "lider": "Moon Venture",
+    "katilanlar": [
+      "Zeliq has launched the beta version of Zelia",
+      "Sylvestre Blavet",
+      "Julien Jean",
+      "AI"
+    ],
+    "kurucular": [
+      "Dorian Ciavarella"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/zeliq-raises-eur7m-to-build-an-agentic-revenue-workspace/",
+      "baslik": "Zeliq raises €7M to build an agentic revenue workspace",
+      "tarih": "Tue, 22 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sales prospecting platform Zeliq has raised a €7 million seed extension led by The Moon Venture , with participation from Julien Jean ( JJCapinvest ) and Sylvestre Blavet ( Freelance.com ).",
+      "kaynak_url": "https://tech.eu/2026/09/22/zeliq-raises-eur7m-to-build-an-agentic-revenue-workspace/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/22/zeliq-raises-eur7m-to-build-an-agentic-revenue-workspace/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_spott-e2d9",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Spott",
+    "domain": "spott.io",
+    "ulke": null,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 18300000,
+      "birim": "EUR",
+      "usd": 19764000
+    },
+    "lider": "Balderton Capital",
+    "katilanlar": [
+      "Base10 Partners",
+      "Y Combinator",
+      "Fortino"
+    ],
+    "kurucular": [
+      "Lander Degreve",
+      "Manu Vanderveeren",
+      "Samuel Smeys"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T05:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/leuven-based-spott-raises-e18-3-million-to-build-the-ai-native-operating-system-for-recruitment-agencies/",
+      "baslik": "Leuven-based Spott raises €18.3 million to build the AI-native operating system for recruitment agencies",
+      "tarih": "Tue, 22 Sep 2026 05:36:42 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/spott-secures-21m-series-a-to-expand-its-ai-platform-for-recruitment-agencies/",
+      "baslik": "Spott secures $21M Series A to expand its AI platform for recruitment agencies",
+      "tarih": "Tue, 22 Sep 2026 05:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Spott , a Leuven-based AI-native applicant tracking system (ATS) and customer relationship management (CRM) platform for recruitment agencies, has raised €18.3 million ($21 million) in a Series A roun",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/leuven-based-spott-raises-e18-3-million-to-build-the-ai-native-operating-system-for-recruitment-agencies/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/leuven-based-spott-raises-e18-3-million-to-build-the-ai-native-operating-system-for-recruitment-agencies/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

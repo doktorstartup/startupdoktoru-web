@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_lightspring-72f6",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Lightspring",
+    "domain": "light-spring.com",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3100000,
+      "birim": "EUR",
+      "usd": 3348000
+    },
+    "lider": "Atlantic",
+    "katilanlar": [
+      "Concept Ventures",
+      "OVNI Capital",
+      "Ixcore",
+      "Plug",
+      "Seed",
+      "3D"
+    ],
+    "kurucular": [
+      "Daniel Brunner"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-22T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/besancon-based-lightspring-raises-over-e3-5-million-to-industrialise-photonic-chip-packaging/",
+      "baslik": "Besançon-based Lightspring raises over €3.5 million to industrialise photonic chip packaging",
+      "tarih": "Tue, 22 Sep 2026 08:21:24 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/lightspring-raises-eur35m-to-tackle-photonic-chip-manufacturing-bottleneck/",
+      "baslik": "Lightspring raises €3.5M to tackle photonic chip manufacturing bottleneck",
+      "tarih": "Tue, 22 Sep 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lightspring , a Besançon-based DeepTech startup that designs and manufactures the optical interfaces of photonic integrated circuits, today announced the close of a €3.1 million Seed round to tackle o",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/besancon-based-lightspring-raises-over-e3-5-million-to-industrialise-photonic-chip-packaging/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/besancon-based-lightspring-raises-over-e3-5-million-to-industrialise-photonic-chip-packaging/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}

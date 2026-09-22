@@ -1,0 +1,49 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_eevi-f2fb",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 0,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Eevi",
+    "domain": "eevi.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": null,
+      "birim": null,
+      "usd": null
+    },
+    "lider": "Rockstart",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-22T05:00:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/eevi-raises-pre-seed-funding-to-get-language-learners-speaking-from-day-one/",
+      "baslik": "Eevi raises pre-seed funding to get language learners speaking from day one",
+      "tarih": "Tue, 22 Sep 2026 05:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/22/eevi-raises-pre-seed-funding-to-get-language-learners-speaking-from-day-one/"
+    }
+  ],
+  "olusturma": "2026-09-22T09:53:44.874Z"
+}
