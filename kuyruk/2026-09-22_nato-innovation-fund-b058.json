@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-22_nato-innovation-fund-b058",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "NATO Innovation Fund",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 11000000,
+      "birim": "EUR",
+      "usd": 11880000
+    },
+    "lider": "Join Capital",
+    "katilanlar": [
+      "Further Than Capital",
+      "Navigare Ventures",
+      "Onsight Ventures",
+      "KTH Ventures",
+      "Almi Invest",
+      "In-Q-Tel",
+      "D3"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-22T14:31:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/22/nato-innovation-fund-co-leads-eur11m-investment-in-defencetech-outfit-terasi/",
+      "baslik": "NATO Innovation Fund co-leads €11M investment in Swedish defence tech outfit Terasi",
+      "tarih": "Tue, 22 Sep 2026 14:31:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based defence startup Terasi has won an €11 million seed investment, co-led by the NATO Innovation Fund, the startup said today.",
+      "kaynak_url": "https://tech.eu/2026/09/22/nato-innovation-fund-co-leads-eur11m-investment-in-defencetech-outfit-terasi/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/22/nato-innovation-fund-co-leads-eur11m-investment-in-defencetech-outfit-terasi/"
+    }
+  ],
+  "olusturma": "2026-09-22T18:02:51.680Z"
+}
