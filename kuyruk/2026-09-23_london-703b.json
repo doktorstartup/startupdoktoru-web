@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_london-703b",
+  "durum": "hazir",
+  "puan": 44,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "London",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "GBP",
+      "usd": 3810000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Jacob Wedderburn-Day",
+      "Anthony Collias"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T12:36:44.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/london-traveltech-stasher-secures-ps3m-for-global-expansion/",
+      "baslik": "London traveltech Stasher secures £3M for global expansion",
+      "tarih": "Wed, 23 Sep 2026 12:36:44 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-founded traveltech company Stasher has secured £3 million in new funding to expand its global luggage storage marketplace and smart locker network.",
+      "kaynak_url": "https://tech.eu/2026/09/23/london-traveltech-stasher-secures-ps3m-for-global-expansion/"
+    }
+  ],
+  "olusturma": "2026-09-23T18:22:28.194Z"
+}

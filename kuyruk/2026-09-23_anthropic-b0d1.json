@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_anthropic-b0d1",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Anthropic",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 140000000,
+      "birim": "USD",
+      "usd": 140000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Bill Maris",
+      "Glen Gowers",
+      "Oliver Vince"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/anthropic-and-nvidia-back-basecamp-research-in-140m-series-c/",
+      "baslik": "Anthropic and Nvidia back Basecamp Research in $140M Series C",
+      "tarih": "Wed, 23 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A UK life sciences startup using AI to develop new medicines faster to treat diseases has raised $140m in funding, in an investment round featuring AI powerhouses Nvidia and new investor Anthropic.",
+      "kaynak_url": "https://tech.eu/2026/09/23/anthropic-and-nvidia-back-basecamp-research-in-140m-series-c/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/09/23/anthropic-and-nvidia-back-basecamp-research-in-140m-series-c/"
+    }
+  ],
+  "olusturma": "2026-09-23T18:22:28.194Z"
+}

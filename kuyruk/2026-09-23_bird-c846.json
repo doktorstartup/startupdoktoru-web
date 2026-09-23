@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_bird-c846",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Bird",
+    "domain": "bird.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 450000000,
+      "birim": "USD",
+      "usd": 450000000
+    },
+    "lider": "JP Morgan",
+    "katilanlar": [
+      "Capital One",
+      "Citi"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-23T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/bird-raises-450m-in-debt-headcount-cut-from-1000-to-120/",
+      "baslik": "Bird raises $450M in debt, headcount cut from 1,000 peak to 120",
+      "tarih": "Wed, 23 Sep 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bird , the business communications platform once seen as a European rival to the US's Twilio, has raised $450m in debt financing, as it underscored its repositioning as an AI business, a shift which h",
+      "kaynak_url": "https://tech.eu/2026/09/23/bird-raises-450m-in-debt-headcount-cut-from-1000-to-120/"
+    },
+    {
+      "metin": "debt financing",
+      "kaynak_url": "https://tech.eu/2026/09/23/bird-raises-450m-in-debt-headcount-cut-from-1000-to-120/"
+    }
+  ],
+  "olusturma": "2026-09-23T18:22:28.194Z"
+}
