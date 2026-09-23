@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_f13-c8ca",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "F13",
+    "domain": "f13.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "USD",
+      "usd": 5000000
+    },
+    "lider": "Credo Ventures",
+    "katilanlar": [
+      "Baobab Ventures’ Carles Reina",
+      "Point Nine Capital",
+      "Jack Richardson"
+    ],
+    "kurucular": [
+      "Gregory Janik",
+      "Ingimar Tomasson"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/f13-emerges-from-stealth-with-5m-for-vector-graphics-ai/",
+      "baslik": "F13 emerges from stealth with $5M for vector graphics AI",
+      "tarih": "Wed, 23 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "F13 , an AI company developing foundation models for generating vector graphics, has emerged from stealth with $5 million in pre-seed funding.",
+      "kaynak_url": "https://tech.eu/2026/09/23/f13-emerges-from-stealth-with-5m-for-vector-graphics-ai/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/23/f13-emerges-from-stealth-with-5m-for-vector-graphics-ai/"
+    }
+  ],
+  "olusturma": "2026-09-23T09:55:04.743Z"
+}

@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_palmaai-ad74",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Palma.ai",
+    "domain": "palma.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1800000,
+      "birim": "USD",
+      "usd": 1800000
+    },
+    "lider": "D11Z",
+    "katilanlar": [
+      "Scale Now Ventures",
+      "Play Ventures",
+      "Plug",
+      "Deel"
+    ],
+    "kurucular": [
+      "Patrick Eden",
+      "Julian Kolbe"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T07:09:34.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/palmaai-raises-18m-to-bring-governed-ai-agents-to-more-enterprises/",
+      "baslik": "Palma.ai raises $1.8M to bring governed AI agents to more enterprises",
+      "tarih": "Wed, 23 Sep 2026 07:09:34 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Palma.ai , an enterprise platform for governing AI agents at runtime, has raised $1.8 million in pre-seed funding.",
+      "kaynak_url": "https://tech.eu/2026/09/23/palmaai-raises-18m-to-bring-governed-ai-agents-to-more-enterprises/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/23/palmaai-raises-18m-to-bring-governed-ai-agents-to-more-enterprises/"
+    }
+  ],
+  "olusturma": "2026-09-23T09:55:04.743Z"
+}

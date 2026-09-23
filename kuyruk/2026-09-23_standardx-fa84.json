@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_standardx-fa84",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "StandardX",
+    "domain": "standardx.tech",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "GBP",
+      "usd": 12700000
+    },
+    "lider": "Vsquared Ventures",
+    "katilanlar": [
+      "Brevan Howard Macro Venture",
+      "East X Ventures",
+      "Geometry",
+      "UKI2S"
+    ],
+    "kurucular": [
+      "Richard Pearson",
+      "Ross Allen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/standardx-launches-with-ps10m-to-expand-isotope-production-for-medicine-and-fusion/",
+      "baslik": "StandardX launches with £10M to expand isotope production for medicine and fusion",
+      "tarih": "Wed, 23 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Deeptech company StandardX has raised £10 million in seed funding to develop its accelerator-based isotope refinery and increase production of rare isotopes used in medicine and energy.",
+      "kaynak_url": "https://tech.eu/2026/09/23/standardx-launches-with-ps10m-to-expand-isotope-production-for-medicine-and-fusion/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/23/standardx-launches-with-ps10m-to-expand-isotope-production-for-medicine-and-fusion/"
+    }
+  ],
+  "olusturma": "2026-09-23T09:55:04.743Z"
+}

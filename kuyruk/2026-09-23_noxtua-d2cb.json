@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-09-23_noxtua-d2cb",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Noxtua",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "EUR",
+      "usd": 108000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Leif-Nissen Lundbæk"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-23T04:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/",
+      "baslik": "Noxtua raises more than €100M as C.H.BECK takes majority stake German legaltech",
+      "tarih": "Wed, 23 Sep 2026 04:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "“We appreciate that Noxtua doesn’t have this “move fast and break things” mentality but is interested in sustainable long-term success.” €100M to accelerate European expansion Noxtua founder and CEO D",
+      "kaynak_url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/09/23/noxtua-raises-more-than-eur100m-as-chbeck-takes-majority-stake-german-legaltech/"
+    }
+  ],
+  "olusturma": "2026-09-23T09:55:04.743Z"
+}
