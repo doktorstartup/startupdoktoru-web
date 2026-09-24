@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_duqu-a433",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Duqu",
+    "domain": "duqu.ai",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1500000,
+      "birim": "EUR",
+      "usd": 1620000
+    },
+    "lider": null,
+    "katilanlar": [
+      "AI"
+    ],
+    "kurucular": [
+      "Maas de Goede"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/duqu-raises-eur15m-to-give-businesses-faster-access-to-working-capital/",
+      "baslik": "Duqu raises €1.5M to give businesses faster access to working capital",
+      "tarih": "Thu, 24 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Amsterdam-based fintech Duqu has raised €1.5 million in pre-seed funding from Curiosity VC and No Such Ventures .",
+      "kaynak_url": "https://tech.eu/2026/09/24/duqu-raises-eur15m-to-give-businesses-faster-access-to-working-capital/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/24/duqu-raises-eur15m-to-give-businesses-faster-access-to-working-capital/"
+    }
+  ],
+  "olusturma": "2026-09-24T09:56:22.840Z"
+}

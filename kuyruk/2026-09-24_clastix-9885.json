@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_clastix-9885",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Clastix",
+    "domain": "clastix.io",
+    "ulke": null,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2900000,
+      "birim": "EUR",
+      "usd": 3132000
+    },
+    "lider": "CDP Venture Capital Sgr",
+    "katilanlar": [
+      "Vertis SGR",
+      "Mistral"
+    ],
+    "kurucular": [
+      "Adriano Pezzuto",
+      "Dario Tranchitella"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/",
+      "baslik": "Italy&#8217;s Clastix raises €2.9 million with Mistral backing to build sovereign Kubernetes infrastructure for Europe",
+      "tarih": "Thu, 24 Sep 2026 07:48:46 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/clastix-bags-eur29m-to-tackle-the-complexity-of-kubernetes-at-scale/",
+      "baslik": "Clastix bags €2.9M to tackle the complexity of Kubernetes at scale",
+      "tarih": "Thu, 24 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Clastix , a Naples-based infrastructure software company helping enterprises run Kubernetes more efficiently at scale , has raised €2.9 million in a Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/italys-clastix-raises-e2-9-million-with-mistral-backing-to-build-sovereign-kubernetes-infrastructure-for-europe/"
+    }
+  ],
+  "olusturma": "2026-09-24T09:56:22.840Z"
+}

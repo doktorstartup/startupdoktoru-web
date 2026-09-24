@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_50skills-b2ee",
+  "durum": "hazir",
+  "puan": 46,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "50skills",
+    "domain": "50skills.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5300000,
+      "birim": "EUR",
+      "usd": 5724000
+    },
+    "lider": "Frumtak Ventures",
+    "katilanlar": [
+      "American family office DRD Investments",
+      "Swiss Post Ventures",
+      "Avant",
+      "HR"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-24T05:19:04.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/reykjavik-based-50skills-raises-e5-3-million-to-scale-its-ai-powered-hr-workflow-automation-platform/",
+      "baslik": "Reykjavík-based 50skills raises €5.3 million to scale its AI-powered HR workflow automation platform",
+      "tarih": "Thu, 24 Sep 2026 06:57:37 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/50skills-raises-6m-to-scale-its-ai-operating-system-for-people-workflows/",
+      "baslik": "50skills raises $6M to scale its AI operating system for people workflows",
+      "tarih": "Thu, 24 Sep 2026 05:19:04 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "50skills , a Reykjavík-based startup building the operating system for people workflows, has raised a €5.3 million ($6 million) funding round to accelerate hiring in sales, marketing, and community, w",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/reykjavik-based-50skills-raises-e5-3-million-to-scale-its-ai-powered-hr-workflow-automation-platform/"
+    },
+    {
+      "metin": "50skills , the AI operating system for people workflows , has raised $6 million in funding to expand its platform for automating HR and people workflows.",
+      "kaynak_url": "https://tech.eu/2026/09/24/50skills-raises-6m-to-scale-its-ai-operating-system-for-people-workflows/"
+    }
+  ],
+  "olusturma": "2026-09-24T09:56:22.840Z"
+}

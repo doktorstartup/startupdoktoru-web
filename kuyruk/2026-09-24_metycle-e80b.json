@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_metycle-e80b",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Metycle",
+    "domain": "metycle.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 131700000,
+      "birim": "EUR",
+      "usd": 142236000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Rivonia Road Capital"
+    ],
+    "kurucular": [
+      "Rafael Suchan",
+      "Sebastian Brenner"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T06:28:36.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/cologne-based-metycle-secures-e131-7-million-credit-facility-to-scale-secondary-copper-and-aluminium-supply/",
+      "baslik": "Cologne-based Metycle secures €131.7 million credit facility to scale secondary copper and aluminium supply",
+      "tarih": "Thu, 24 Sep 2026 06:28:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Metycle , a Cologne-based supplier of secondary copper and aluminium, has secured a €131.7 million ($150 million) credit facility.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/cologne-based-metycle-secures-e131-7-million-credit-facility-to-scale-secondary-copper-and-aluminium-supply/"
+    },
+    {
+      "metin": "credit facility",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/cologne-based-metycle-secures-e131-7-million-credit-facility-to-scale-secondary-copper-and-aluminium-supply/"
+    }
+  ],
+  "olusturma": "2026-09-24T09:56:22.840Z"
+}
