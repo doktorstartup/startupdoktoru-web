@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_hubble-network-ff37",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Hubble Network",
+    "domain": "hubble.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 200000000,
+      "birim": "USD",
+      "usd": 200000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Earthshot Ventures",
+      "Carthona Capital",
+      "Y Combinator",
+      "RPM Ventures",
+      "Seraphim"
+    ],
+    "kurucular": [
+      "Alex Haro",
+      "Ben Wild"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/24/hubble-network-1-6-milyar-dolar-degerlemeyle-200-milyon-dolar-yatirim-aldi/",
+      "baslik": "Hubble Network, 1,6 milyar dolar değerlemeyle 200 milyon dolar yatırım aldı",
+      "tarih": "Thu, 24 Sep 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Uydu tabanlı Bluetooth ağı geliştiren Hubble Network , C serisi yatırım turunda 200 milyon dolar yatırım aldı .",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/hubble-network-1-6-milyar-dolar-degerlemeyle-200-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/hubble-network-1-6-milyar-dolar-degerlemeyle-200-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}

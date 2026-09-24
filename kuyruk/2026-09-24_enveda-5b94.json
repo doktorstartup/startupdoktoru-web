@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_enveda-5b94",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Enveda",
+    "domain": "enveda.com",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 311000000,
+      "birim": "USD",
+      "usd": 311000000
+    },
+    "lider": "Catalio Capital Management",
+    "katilanlar": [
+      "Durable Capital Partners",
+      "Sovereign Wealth Fund",
+      "Digitalis Ventures",
+      "Lifeforce Capital",
+      "Surveyor Capital",
+      "Alderline Group",
+      "Baillie Gifford",
+      "Premji Invest",
+      "True Ventures",
+      "FPV Ventures",
+      "Lux Capital",
+      "Lightspeed"
+    ],
+    "kurucular": [
+      "Viswa Colluru"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/24/yapay-zeka-destekli-biyoteknoloji-sirketi-enveda-311-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli biyoteknoloji şirketi Enveda, 311 milyon dolar yatırım aldı",
+      "tarih": "Thu, 24 Sep 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli biyoteknoloji şirketi Enveda , 311 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/yapay-zeka-destekli-biyoteknoloji-sirketi-enveda-311-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "E serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/yapay-zeka-destekli-biyoteknoloji-sirketi-enveda-311-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}

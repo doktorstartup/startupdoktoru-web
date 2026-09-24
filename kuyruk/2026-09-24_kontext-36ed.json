@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_kontext-36ed",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Kontext",
+    "domain": "kontext.security",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "USD",
+      "usd": 4000000
+    },
+    "lider": "42CAP",
+    "katilanlar": [
+      "HTGF",
+      "CSX"
+    ],
+    "kurucular": [
+      "Jens Ernstberger",
+      "Michel Osswald"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents/",
+      "baslik": "Kontext raises $4M for runtime security platform for AI agents",
+      "tarih": "Thu, 24 Sep 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI security company Kontext has raised $4 million in funding to expand its runtime security platform for AI agents.",
+      "kaynak_url": "https://tech.eu/2026/09/24/kontext-raises-4m-for-runtime-security-platform-for-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}

@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_europeans-7770",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Europeans",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1200000,
+      "birim": "USD",
+      "usd": 1200000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Humanoid Guide",
+      "Hustle Fund",
+      "Techstars"
+    ],
+    "kurucular": [
+      "Stian Jakobsen",
+      "Simon Gormuzov"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T14:17:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/brits-in-japan-raise-1m-to-put-modular-humanoid-robots-to-work/",
+      "baslik": "Europeans in Japan raise $1.2M to put modular humanoid robots to work",
+      "tarih": "Thu, 24 Sep 2026 14:17:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "O-ID , a Tokyo-based company founded by two Europeans building one of the world’s first fully modular humanoid robots for industrial manufacturing and logistics, has raised $1.2 million in pre-seed fu",
+      "kaynak_url": "https://tech.eu/2026/09/24/brits-in-japan-raise-1m-to-put-modular-humanoid-robots-to-work/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/24/brits-in-japan-raise-1m-to-put-modular-humanoid-robots-to-work/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}

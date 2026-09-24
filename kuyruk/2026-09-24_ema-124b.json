@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_ema-124b",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Ema",
+    "domain": "ema.ai",
+    "ulke": "TR",
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 77000000,
+      "birim": "USD",
+      "usd": 77000000
+    },
+    "lider": "Creaegis",
+    "katilanlar": [
+      "Prosus",
+      "Accel",
+      "S32"
+    ],
+    "kurucular": [
+      "Surojit Chatterjee",
+      "Souvik Sen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/24/kurumsal-yapay-zeka-alaninda-calisan-ema-77-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kurumsal yapay zeka alanında çalışan Ema, 77 milyon dolar yatırım aldı",
+      "tarih": "Thu, 24 Sep 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kurumsal yapay zeka alanında çalışan Ema , 77 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/kurumsal-yapay-zeka-alaninda-calisan-ema-77-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/24/kurumsal-yapay-zeka-alaninda-calisan-ema-77-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}

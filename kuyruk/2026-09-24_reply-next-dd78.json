@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_reply-next-dd78",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Reply Next",
+    "domain": "replynext.com",
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 400000,
+      "birim": "EUR",
+      "usd": 432000
+    },
+    "lider": "4Founders Capital",
+    "katilanlar": [
+      "Juanjo Mostazo",
+      "David Alcobero"
+    ],
+    "kurucular": [
+      "Miguel Peñate"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-24T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/24/ai-platform-reply-next-secures-eur400k-pre-seed-funding/",
+      "baslik": "AI platform Reply Next secures €400K pre-seed funding",
+      "tarih": "Thu, 24 Sep 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Reply Next , an AI platform for managing the digital presence of businesses with multiple locations, has raised €400,000 in pre-seed funding.",
+      "kaynak_url": "https://tech.eu/2026/09/24/ai-platform-reply-next-secures-eur400k-pre-seed-funding/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/24/ai-platform-reply-next-secures-eur400k-pre-seed-funding/"
+    }
+  ],
+  "olusturma": "2026-09-24T18:24:19.788Z"
+}
