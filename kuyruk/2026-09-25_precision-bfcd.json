@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-09-25_precision-bfcd",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Precision",
+    "domain": "precisionneuro.io",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 250000000,
+      "birim": "USD",
+      "usd": 250000000
+    },
+    "lider": "Pershing Square",
+    "katilanlar": [
+      "Korea Investment Partners",
+      "Ackman Oxman Institute",
+      "Duquesne Family Office",
+      "Mirae Asset Capital",
+      "JSL Health Capital",
+      "Hitachi Ventures",
+      "Mubadala Capital",
+      "ARK Invest",
+      "B Capital",
+      "Invus"
+    ],
+    "kurucular": [
+      "Demetrios Papageorgiou",
+      "Mark Hettick"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-25T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/25/beyin-bilgisayar-ara-yuzleri-alanina-odaklanan-precision-250-milyon-dolar-yatirim-aldi/",
+      "baslik": "Beyin-bilgisayar ara yüzleri alanına odaklanan Precision, 250 milyon dolar yatırım aldı",
+      "tarih": "Fri, 25 Sep 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Neuralink'in rakibi Precision , 250 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/25/beyin-bilgisayar-ara-yuzleri-alanina-odaklanan-precision-250-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "D serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/25/beyin-bilgisayar-ara-yuzleri-alanina-odaklanan-precision-250-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-25T18:31:54.320Z"
+}
