@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-25_island-ad55",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Island",
+    "domain": "island.io",
+    "ulke": "TR",
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 400000000,
+      "birim": "USD",
+      "usd": 400000000
+    },
+    "lider": "Evolution Equity Partners",
+    "katilanlar": [],
+    "kurucular": [
+      "Dan Amiga",
+      "Micheal Fey"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-25T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/25/island-6-4-milyar-dolar-degerleme-uzerinden-400-milyon-dolar-yatirim-aldi/",
+      "baslik": "Island, 6.4 milyar dolar değerleme üzerinden 400 milyon dolar yatırım aldı",
+      "tarih": "Fri, 25 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Island, 400 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/25/island-6-4-milyar-dolar-degerleme-uzerinden-400-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "F serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/25/island-6-4-milyar-dolar-degerleme-uzerinden-400-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-25T10:09:15.663Z"
+}
