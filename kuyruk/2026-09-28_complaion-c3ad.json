@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_complaion-c3ad",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Complaion",
+    "domain": "complaion.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 13500000,
+      "birim": "EUR",
+      "usd": 14580000
+    },
+    "lider": "Eurazeo",
+    "katilanlar": [
+      "Italian Founders Fund",
+      "Sella Direct Ventures",
+      "2100 Ventures",
+      "Enzo Ventures",
+      "Shapers",
+      "Kfund"
+    ],
+    "kurucular": [
+      "Edoardo Tarricone",
+      "Marco Cortinovis",
+      "Alessandro Vaccarino"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/28/complaion-raises-eur135m-to-simplify-compliance-for-european-smes/",
+      "baslik": "Complaion raises €13.5M to simplify compliance for European SMEs",
+      "tarih": "Mon, 28 Sep 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Complaion , an Italian company helping SMEs manage certifications and regulatory compliance, has raised €13.5 million in funding to expand its team, develop its technology and support its internationa",
+      "kaynak_url": "https://tech.eu/2026/09/28/complaion-raises-eur135m-to-simplify-compliance-for-european-smes/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}

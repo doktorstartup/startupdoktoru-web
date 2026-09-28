@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_reactive-69e6",
+  "durum": "hazir",
+  "puan": 48,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Reactive Technologies",
+    "domain": "reactive-technologies.com",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 19000000,
+      "birim": "EUR",
+      "usd": 20520000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Heikki Huomo"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T07:01:48.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/londons-reactive-technologies-secures-e19-million-eib-financing-to-strengthen-europes-power-grids/",
+      "baslik": "London’s Reactive Technologies secures €19 million EIB financing to strengthen Europe’s power grids",
+      "tarih": "Mon, 28 Sep 2026 07:01:48 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Reactive Technologies , a London-based power-grid technology company, has secured €19 million in financing from the European Investment Bank (EIB) to promote its platform, which aims to reduce the ris",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/londons-reactive-technologies-secures-e19-million-eib-financing-to-strengthen-europes-power-grids/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}

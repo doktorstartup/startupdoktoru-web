@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_shopify-f874",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Shopify",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 700000,
+      "birim": "USD",
+      "usd": 700000
+    },
+    "lider": "Superhero Capital",
+    "katilanlar": [
+      "Markus Villig",
+      "Martin Sokk"
+    ],
+    "kurucular": [
+      "Uku Joost Annus",
+      "Kevin Akkermann",
+      "Karl Kiilaspää"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T07:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/28/shopify-of-mobile-apps-biltme-raises-700k-to-turn-ideas-into-mobile-businesses/",
+      "baslik": "‘Shopify of mobile apps’ bilt.me raises $700K to turn ideas into mobile businesses",
+      "tarih": "Mon, 28 Sep 2026 07:20:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Estonian AI app-building platform bilt.me has raised $700,000 in pre-seed funding in a round led by Superhero Capital , with backing from Bolt founder Markus Villig and Lightyear founder Martin Sokk .",
+      "kaynak_url": "https://tech.eu/2026/09/28/shopify-of-mobile-apps-biltme-raises-700k-to-turn-ideas-into-mobile-businesses/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/28/shopify-of-mobile-apps-biltme-raises-700k-to-turn-ideas-into-mobile-businesses/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}

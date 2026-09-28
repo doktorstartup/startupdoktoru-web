@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_klang-cee2",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Klang",
+    "domain": "klang.ai",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1320000,
+      "birim": "EUR",
+      "usd": 1425600
+    },
+    "lider": "Johan Lenander",
+    "katilanlar": [
+      "Position Green",
+      "Emil Sjödin",
+      "Daniel Gadd",
+      "Refined"
+    ],
+    "kurucular": [
+      "Niklas Silfverström",
+      "Viktor Silfverström",
+      "Andreas Argelius",
+      "Mattias Fält",
+      "Jacob Andersson"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T11:25:39.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/helsingborgs-conversation-ai-startup-klang-raises-e1-32-million-and-releases-open-speech-to-text-model-for-swedish/",
+      "baslik": "Helsingborg’s conversation AI startup Klang raises €1.32 million and releases open speech-to-text model for Swedish",
+      "tarih": "Mon, 28 Sep 2026 11:25:39 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Klang , a Helsingborg-based AI company that transcribes, summarises and analyses interviews, meetings and dialogues, has raised €1.32 million (SEK 15 million) in fresh capital at a valuation of €13.2",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/helsingborgs-conversation-ai-startup-klang-raises-e1-32-million-and-releases-open-speech-to-text-model-for-swedish/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}

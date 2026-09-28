@@ -1,0 +1,53 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_granite-b8df",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Granite",
+    "domain": "graniteinfra.ai",
+    "ulke": null,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "Bifrost Studios",
+    "katilanlar": [],
+    "kurucular": [
+      "Peter Damm"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T11:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/28/granite-raises-eur4m-to-bring-its-agentic-cloud-infrastructure-to-market/",
+      "baslik": "Granite raises €4M to bring its agentic cloud infrastructure to market",
+      "tarih": "Mon, 28 Sep 2026 11:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI infrastructure company Granite has secured €4 million in funding in a round led by Bifrost Studios , alongside private investors, to commercialise its technology and bring its software and hardware",
+      "kaynak_url": "https://tech.eu/2026/09/28/granite-raises-eur4m-to-bring-its-agentic-cloud-infrastructure-to-market/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}

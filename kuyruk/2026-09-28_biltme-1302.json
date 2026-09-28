@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_biltme-1302",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "bilt.me",
+    "domain": null,
+    "ulke": null,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 614900,
+      "birim": "EUR",
+      "usd": 664092
+    },
+    "lider": "Superhero Capital",
+    "katilanlar": [
+      "Seed-stage VC backing software-driven startups across Finland",
+      "Lithuania",
+      "Estonia",
+      "Latvia"
+    ],
+    "kurucular": [
+      "Kevin Akkermann",
+      "Uku Joost Annus"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T06:30:51.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/estonias-bilt-me-raises-e615k-with-backing-from-bolt-and-lightyear-founders-to-scale-its-ai-native-mobile-app-builder/",
+      "baslik": "Estonia&#8217;s bilt.me raises €615k with backing from Bolt and Lightyear founders to scale its AI-native mobile app builder",
+      "tarih": "Mon, 28 Sep 2026 06:30:51 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "bilt.me , a Tallinn-based AI-native mobile app builder, has raised €614.9k ($700k) in a pre-Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/estonias-bilt-me-raises-e615k-with-backing-from-bolt-and-lightyear-founders-to-scale-its-ai-native-mobile-app-builder/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/estonias-bilt-me-raises-e615k-with-backing-from-bolt-and-lightyear-founders-to-scale-its-ai-native-mobile-app-builder/"
+    }
+  ],
+  "olusturma": "2026-09-28T11:38:44.680Z"
+}
