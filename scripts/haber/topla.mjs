@@ -90,7 +90,9 @@ const KISI_OZNE = /^\s*(?:former|ex-)\s|\b(?:co-?founders?|executives?|founders?
 const FIIL = /\s+\b(?:raises?|raised|raising|secures?|secured|lands?|landed|nets?|netted|bags?|bagged|closes?|closed|closing|scores?|snaps?\s+up|picks?\s+up|gets?|receives?|launches|attracts?)\b|\s+\b(?:[Yy]at[ıi]r[ıi]m|[Mm]ilyon|[Mm]ilyar)\b/;
 
 // Başlıkta şirket adı yokken geriye kalan jenerik sözcükler — bunlar ad değildir.
-const JENERIK_AD = /^(?:startup|scale-?up|company|firm|platform|venture|audio|tech|app|data|the|new|gen\s*z|ai|vc|crm)$/i;
+// Cümle başı edatları da ad sanılıyordu: "After €387 million raise, The
+// Exploration Company wins …" → "After". Şirket adı cümlenin ilerisinde.
+const JENERIK_AD = /^(?:startup|scale-?up|company|firm|platform|venture|audio|tech|app|data|the|new|gen\s*z|ai|vc|crm|after|following|despite|amid|amidst|with|as|from|over|inside|meet|why|how|what|when)$/i;
 
 // Bir metin parçasındaki SON bitişik büyük-harfle-başlayan kelime öbeği.
 // Türkçe başlıklarda tanımlayıcı önde, ad sonda: "Yapay zeka girişimi Deep Cogito" → "Deep Cogito".

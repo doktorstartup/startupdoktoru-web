@@ -1,0 +1,364 @@
+{
+  "baslik": "Tekno feodallere karşı devletler komünizmi mi savunacak?",
+  "slug": "tekno-feodalizm-devletler-komunizmi-mi",
+  "tip": "analiz",
+  "seo_title": "Tekno feodalizm nedir? Devletler komünizmi mi savunacak? — 2026 tablosu",
+  "seo_description": "Yapay zeka kurucuları G7'de, G20'de ve BM Güvenlik Konseyi'nde konuşuyor. İki şirket tüm startup yatırımının %43'ünü aldı, işten çıkarmaların baş sebebi artık yapay zeka. Devletlerin cevabı temel gelir. Peki bu komünizm mi?",
+  "kapak_etiket": "Tartışma",
+  "kapak_metin": "Derebeyi toprağı elinde tutuyordu. Yenisi **bulutu** tutuyor. Ve temel geliri savunan da o.",
+  "bolumler": [
+    {
+      "tip": "p",
+      "metin": "23 Eylül 2026'da BM Güvenlik Konseyi'nde iki isim konuştu: OpenAI'den **Sam Altman** ve Anthropic'ten **Dario Amodei**. Üç hafta önce Altman G20 İnovasyon Bakanlar Toplantısı'nda sahnedeydi. Haziranda ikisi de G7 zirvesindeki liderler masasındaydı."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu cümleleri bir kez daha okumakta fayda var. Bunlar seçilmiş kişiler değil. Bir ülkeyi temsil etmiyorlar. Hiçbir seçmene hesap vermiyorlar. Ama devletlerin masasında oturuyorlar."
+    },
+    {
+      "tip": "p",
+      "metin": "Bir şeyin adını koymak gerekiyor ve birileri koydu bile: **tekno feodalizm**."
+    },
+    {
+      "tip": "h2",
+      "metin": "Önce feodalizm neydi?"
+    },
+    {
+      "tip": "p",
+      "metin": "Feodalizmde zenginlik üretimden değil, **mülkiyetten** gelirdi. Derebeyinin toprağı vardı. Köylü o toprağı işler, ürünün bir kısmını beye verirdi. Bey daha iyi bir şey üretmezdi, daha ucuza satmazdı, rekabet etmezdi. Sadece geçilmesi zorunlu olan yere sahipti."
+    },
+    {
+      "tip": "p",
+      "metin": "Kazancın adı kârdı değil, **rant**tı. Kâr rekabetten doğar; rant, kaçınılmazlıktan."
+    },
+    {
+      "tip": "p",
+      "metin": "Kapitalizm bunu yıktı. Pazar geldi, rekabet geldi, kâr geldi. Malını daha iyi yapan kazandı. En azından teori böyleydi."
+    },
+    {
+      "tip": "h2",
+      "metin": "Peki tekno feodalizm ne?"
+    },
+    {
+      "tip": "p",
+      "metin": "Yunan ekonomist **Yanis Varoufakis** 2023'te bu kavramı ortaya attı. Tezi şu: kapitalizm ölmedi, aşıldı. Yerine geçen şey daha eski bir şeye benziyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Varoufakis'in tarifiyle yeni derebeyleri toprağa değil **bulut sermayesine** sahip. Uygulama mağazası, arama motoru, sosyal ağ, bulut altyapısı, model API'si — hepsi geçilmesi zorunlu yerler. Onların üzerinden satış yapan şirket, ürünü kendi yapsa bile geçiş bedelini ödüyor."
+    },
+    {
+      "tip": "alinti",
+      "metin": "Tekno feodalizm kârın yerine rantı, pazar rekabetinin yerine tekel gücünü koyar.",
+      "kaynak": "Yanis Varoufakis, Technofeudalism"
+    },
+    {
+      "tip": "p",
+      "metin": "Varoufakis iki yeni sınıftan söz ediyor. **Bulut proleteri**: ücretini alan ama işini bir algoritmanın yönettiği çalışan. **Bulut serfi**: yani hepimiz. Platformu kullanırken içeriğini, davranışını, verisini karşılıksız üretiyoruz ve o sermayeyi büyütüyoruz."
+    },
+    {
+      "tip": "p",
+      "metin": "Serf kelimesi sert geliyor olabilir. Ama şunu sor: bugün ürettiğin verinin karşılığında ne aldın?"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Aynı mantık, değişen mülk.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "Karşılaştırma",
+        "baslik": "Feodalizm ve tekno feodalizm",
+        "sutunlar": ["Klasik feodalizm", "Tekno feodalizm"],
+        "satirlar": [
+          ["Mülk: **toprak**", "Mülk: **bulut sermayesi**"],
+          ["Geçiş bedeli: ürünün payı", "Geçiş bedeli: **komisyon ve abonelik**"],
+          ["Kazanç: rant", "Kazanç: **yine rant**"],
+          ["Bağlı olan: serf", "Bağlı olan: **kullanıcı ve geliştirici**"],
+          ["Sınır: derebeyinin arazisi", "Sınır: **platformun kuralları**"]
+        ]
+      }
+    },
+    {
+      "tip": "h2",
+      "metin": "Rakamlar ne diyor?"
+    },
+    {
+      "tip": "p",
+      "metin": "Kavram tartışılır ama yoğunlaşma tartışılmaz. 2026'nın ilk yarısında OpenAI ve Anthropic ikisi birlikte **217 milyar dolar** topladı. Bu, o altı ayda dünyadaki tüm startup yatırımlarının **%43'ü** demek."
+    },
+    {
+      "tip": "p",
+      "metin": "İki şirket. Tüm paranın neredeyse yarısı."
+    },
+    {
+      "tip": "p",
+      "metin": "Mart 2026'da OpenAI yaklaşık **122 milyar dolar** topladı; kayıtlara geçmiş en büyük özel finansman turu. Mayısta Anthropic **965 milyar dolar** değerlemeye ulaşıp OpenAI'yi geçti. xAI, SpaceX'e tamamı hisse takasıyla katıldı ve **250 milyar dolar** değerlendi."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu şirketler artık startup ölçeğinde konuşulmuyor. Bazı ülkelerin milli gelirinden büyük sayılardan söz ediyoruz."
+    },
+    {
+      "tip": "h2",
+      "metin": "Diğer uçta işten çıkarma dalgası"
+    },
+    {
+      "tip": "p",
+      "metin": "Sermaye birkaç şirkette toplanırken istihdam ters yöne gidiyor. Ve bu artık bir tahmin değil, şirketlerin kendi beyanı."
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Şirketlerin işten çıkarma gerekçesi olarak yapay zekayı göstermesi.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "ABD verisi",
+        "baslik": "Gerekçesi yapay zeka olan işten çıkarmalar",
+        "sutunlar": ["Dönem", "Kişi"],
+        "satirlar": [
+          ["2024 (tüm yıl)", "12.742"],
+          ["2025 (tüm yıl)", "54.836"],
+          ["2026 (ilk altı ay)", "**101.743**"]
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "İki yılda **sekiz katına** çıktı. Üstelik 2026'nın yalnız ilk yarısı, 2025'in tamamının neredeyse iki katı."
+    },
+    {
+      "tip": "p",
+      "metin": "Mayıs 2026 rekor aydı: tek ayda **38.579** kişi. O ay açıklanan tüm işten çıkarmaların **%40'ı**. Yılın tamamında teknoloji sektöründe 519 ayrı olayda **225 binden fazla** kişi işini kaybetti."
+    },
+    {
+      "tip": "p",
+      "metin": "Tek tek şirketlere bakınca tablo daha somut. Mart 2026'da Block, küresel çalışanlarının yaklaşık **%40'ını** — 4.000 kişiyi — çıkardı; gerekçe olarak yapay zeka araçlarının yeteneklerini gösterdi. Oracle'ın kesintileri yaklaşık **21.000** kişiye ulaştı."
+    },
+    {
+      "tip": "p",
+      "metin": "Burada dikkat edilmesi gereken bir ayrıntı var: bu şirketlerin çoğu zarar etmiyor. Kâr ediyor ve kesiyor. Çünkü kesilen para, aynı yapay zeka altyapısına yatırılıyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Devletlerin cevabı: temel gelir"
+    },
+    {
+      "tip": "p",
+      "metin": "Burada senin sorduğun soru devreye giriyor. İşsiz kalan kitleye ne olacak?"
+    },
+    {
+      "tip": "p",
+      "metin": "Devletlerin masadaki cevabı **temel gelir**. İngiltere Yatırım Bakanı **Lord Jason Stockwood**, yapay zekanın tehdit ettiği sektörlerdeki çalışanlar için evrensel temel gelir seçeneğini değerlendirdiklerini söyledi. Kullandığı ifade dikkat çekici: kaybolacak sektörleri **yumuşak indirmek**."
+    },
+    {
+      "tip": "p",
+      "metin": "Finansman için önerdiği kaynak daha da dikkat çekici: teknoloji şirketlerinin vergilendirilmesi."
+    },
+    {
+      "tip": "p",
+      "metin": "Senin bahsettiğin model — bir bölgede yaşayanın yaşamsal ihtiyaçlarını karşılayan ama lüksü kapsamayan sistem — literatürde **evrensel temel hizmetler** diye geçiyor. Nakit yerine barınma, ulaşım, sağlık, iletişim gibi kalemleri doğrudan sağlama fikri. Stanford Temel Gelir Laboratuvarı'nın verisine göre yalnız ABD'de bugüne kadar **163** temel gelir pilotu yürütüldü, **41'i** hâlâ aktif."
+    },
+    {
+      "tip": "p",
+      "metin": "Pilotların ortak bulgusu şu: düzenli ödeme alan insanlar parayı temel ihtiyaçlara harcıyor ve çalışmayı bırakmıyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Peki bu komünizm mi?"
+    },
+    {
+      "tip": "p",
+      "metin": "Kısa cevap: hayır. Ve asıl ilginç kısım burada başlıyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Komünizm üretim araçlarının ortak mülkiyetidir. Temel gelirde böyle bir şey yok. Fabrika kimin, model kimin, veri merkezi kimin — hepsi aynı kalıyor. Değişen tek şey, kazancın bir kısmının vergiyle toplanıp dağıtılması. Bu mülkiyeti devretmek değil, **mülkiyeti sürdürülebilir kılmak**."
+    },
+    {
+      "tip": "p",
+      "metin": "Şunu fark et: temel geliri en yüksek sesle savunanlar arasında **Elon Musk** ve **Sam Altman** var. Musk düzenli devlet ödemeleriyle bir evrensel yüksek gelir fikrini destekliyor, Altman benzer bir kavramı savunuyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Neden? Çünkü müşterisi olmayan bir platformun rantı da olmaz. Serfin ekmek parası yoksa abonelik ödeyemez. Temel gelir, sistemin düşmanı değil; **sigortası**."
+    },
+    {
+      "tip": "alinti",
+      "metin": "Derebeyi köylünün aç kalmasını istemez. Sadece topraktan ayrılmasını istemez.",
+      "kaynak": "Startup Doktoru"
+    },
+    {
+      "tip": "p",
+      "metin": "Yani soru \"devletler komünizmi mi savunacak\" değil. Soru şu: devletler, rantın bir kısmını topluma geri döndürecek gücü hâlâ elinde tutuyor mu? Trump'ın uluslararası yapay zeka denetimini bir **küreselci düzen** olarak nitelemesi, bu gücün ne kadar tartışmalı olduğunu gösteriyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Karşı görüş de var"
+    },
+    {
+      "tip": "p",
+      "metin": "Dürüst olmak gerekirse tekno feodalizm kavramı tartışmasız kabul görmüş değil. Jacobin'de ve akademik literatürde ciddi bir itiraz var: yaşadığımız şey feodalizm değil, sadece **çok yoğunlaşmış kapitalizm**."
+    },
+    {
+      "tip": "p",
+      "metin": "İtirazın mantığı güçlü. Bu şirketler hâlâ rekabet ediyor, hâlâ pazarda fiyatlanıyor, hâlâ batabiliyor. Derebeyi batmazdı. Ayrıca serfin toprağı terk etme hakkı yoktu; senin uygulamayı silme hakkın var."
+    },
+    {
+      "tip": "p",
+      "metin": "Ben de kavramı bir teşhis değil, bir **mercek** olarak kullanmanın doğru olduğunu düşünüyorum. Feodalizm midir bilmiyorum. Ama \"geçmek zorunda olduğun kapıya sahip olmak\" bugün en kârlı iş modeli — bundan eminim."
+    },
+    {
+      "tip": "h2",
+      "metin": "Bu tablo bir kurucuya ne söylüyor?"
+    },
+    {
+      "tip": "p",
+      "metin": "Uzaktan bakınca ezici bir tablo. Yakından bakınca üç tane çok somut sonucu var."
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Tablonun kurucu için pratik karşılığı.",
+      "gorsel": {
+        "tip": "liste",
+        "etiket": "Çıkarım",
+        "baslik": "Bu dönemde üç kural",
+        "maddeler": [
+          "**Kapının kirasını hesapla.** Hangi platformun üstünde duruyorsun ve o platform yarın kuralını değiştirse ne olur? Bunu bir sayfada yaz.",
+          "**Modele değil, veriye sahip ol.** Model herkese açık ve ucuzluyor. Senin sektörüne özel, başkasında olmayan veri ucuzlamıyor.",
+          "**Müşteri ilişkisini aracıya devretme.** Rantın alındığı yer tam olarak orası: müşterinle aranda duran her katman, senden pay alır."
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "İşten çıkarma dalgasının kurucu için ikinci bir yüzü de var. Piyasada, kariyerinin ortasında, deneyimli ve işsiz kalmış çok sayıda insan var. Büyük şirketin bugün fazlalık saydığı kişi, senin kuracağın ekibin ilk üyesi olabilir."
+    },
+    {
+      "tip": "p",
+      "metin": "Bir dönemin en büyük fırsatı, genelde o dönemin en büyük acısının hemen yanında durur."
+    },
+    {
+      "tip": "h2",
+      "metin": "Önümüzdeki beş yıl"
+    },
+    {
+      "tip": "p",
+      "metin": "Tahmin yürütmeyeceğim, ama izlenmesi gereken üç eşik var."
+    },
+    {
+      "tip": "p",
+      "metin": "Birincisi **vergi**. Stockwood'un önerdiği gibi teknoloji şirketlerine yönelik bir finansman modeli gerçekten kurulursa, devletlerin gücü hâlâ yerinde demektir. Kurulamazsa cevap da net olur."
+    },
+    {
+      "tip": "p",
+      "metin": "İkincisi **yoğunlaşma**. %43 oranı artmaya devam eder mi, yoksa açık kaynak modeller bu payı aşağı çeker mi? Bu oran, tekno feodalizm tartışmasının sayısal karşılığı."
+    },
+    {
+      "tip": "p",
+      "metin": "Üçüncüsü **istihdam**. İşten çıkarmalar yapay zekanın yarattığı yeni işlerle dengelenecek mi? Sanayi devriminde dengelendi, ama arada bir kuşak eridi. Bu sefer aradaki süre ne kadar olacak — asıl soru bu."
+    },
+    {
+      "tip": "p",
+      "metin": "Ve senin için asıl soru şu: bu değişimde kapıyı tutanlardan mı olacaksın, kapıdan geçenlerden mi?"
+    }
+  ],
+  "sorular": [
+    {
+      "soru": "Tekno feodalizm nedir?",
+      "cevap": "Ekonomist Yanis Varoufakis'in 2023'te ortaya attığı kavram. Tezi, kapitalizmin yerini bulut sermayesine dayalı bir düzenin aldığı. Bu düzende kazanç rekabetten doğan kârdan değil, geçilmesi zorunlu dijital altyapılara sahip olmaktan doğan ranttan geliyor. Varoufakis bu altyapıları elinde tutanlara bulut sahipleri, platformları karşılıksız besleyen kullanıcılara ise bulut serfleri diyor."
+    },
+    {
+      "soru": "Yapay zeka yüzünden kaç kişi işini kaybetti?",
+      "cevap": "ABD'de şirketlerin doğrudan yapay zekaya bağladığı işten çıkarma sayısı 2024'te 12.742, 2025'te 54.836 iken 2026'nın yalnız ilk altı ayında 101.743'e çıktı. Teknoloji sektörünün tamamında 2026 boyunca 519 ayrı olayda 225 binden fazla kişi işini kaybetti. Mayıs 2026 tek ayda 38.579 kişiyle rekor kırdı; o ayki tüm işten çıkarmaların %40'ı."
+    },
+    {
+      "soru": "Yapay zeka yatırımları gerçekten birkaç şirkette mi toplanıyor?",
+      "cevap": "Evet. 2026'nın ilk yarısında OpenAI ve Anthropic birlikte 217 milyar dolar topladı; bu, o dönemde dünyadaki tüm startup yatırımlarının %43'ü. Aynı dönemde küresel girişim sermayesi ilk kez altı ayda 510 milyar doları aştı, ama bu rakamın manşetini dört mega tur oluşturuyor."
+    },
+    {
+      "soru": "Evrensel temel gelir komünizm mi?",
+      "cevap": "Hayır. Komünizm üretim araçlarının ortak mülkiyetini öngörür; temel gelirde mülkiyet el değiştirmez, yalnız kazancın bir kısmı vergiyle toplanıp dağıtılır. Nitekim bu fikri en çok savunanlar arasında Elon Musk ve Sam Altman gibi teknoloji kurucuları var — çünkü alım gücü olmayan bir toplumda platform geliri de sürmez."
+    },
+    {
+      "soru": "Evrensel temel gelir ile evrensel temel hizmetler arasındaki fark ne?",
+      "cevap": "Temel gelir nakit verir, kişi harcamasını kendi seçer. Temel hizmetler nakit yerine barınma, ulaşım, sağlık, eğitim gibi kalemleri doğrudan sağlar; yaşamsal ihtiyaçları kapsar ama lüksü kapsamaz. İkisi farklı felsefelere dayanır: biri seçim özgürlüğünü, diğeri ihtiyacın garantisini önceler."
+    },
+    {
+      "soru": "Yapay zeka kurucuları gerçekten devlet düzeyinde temsil ediliyor mu?",
+      "cevap": "Seçilmiş temsilci değiller ama üst düzey masalarda yer alıyorlar. 2026'da Sam Altman ve Dario Amodei Haziran'da G7 zirvesindeki bir yönetici toplantısına katıldı, Altman 2 Eylül'de G20 İnovasyon Bakanlar Toplantısı'nda konuştu, ikisi de 23 Eylül'de BM Güvenlik Konseyi'nde yapay zeka riskleri üzerine sunum yaptı."
+    },
+    {
+      "soru": "Bu tablo yeni kurulan bir girişim için ne anlama geliyor?",
+      "cevap": "Üç pratik sonucu var. Birincisi, hangi platformun üstünde durduğunu ve o platform kural değiştirirse ne olacağını bilmek gerekiyor. İkincisi, model ucuzlarken sektöre özel veri ucuzlamıyor; değer orada birikiyor. Üçüncüsü, müşteriyle aranda duran her katman senden pay alıyor, o yüzden müşteri ilişkisinin sahibi olmak kritik."
+    }
+  ],
+  "kaynaklar": [
+    {
+      "ad": "Altman, Amodei push for AI cooperation at UN — CNBC",
+      "url": "https://www.cnbc.com/2026/09/23/altman-amodei-un-ai-safety.html",
+      "not": "23 Eylül 2026 BM Güvenlik Konseyi sunumu"
+    },
+    {
+      "ad": "G20 tech takeaways: Innovation Ministerial — CNBC",
+      "url": "https://www.cnbc.com/2026/09/02/g20-innovation-ministerial-live-updates.html",
+      "not": "Altman'ın 2 Eylül 2026 G20 konuşması; Huang ve Brown'ın katılımı"
+    },
+    {
+      "ad": "Anthropic and Google DeepMind CEOs at G7 — CNBC",
+      "url": "https://www.cnbc.com/2026/06/17/anthropic-amodei-google-hassabis-us-ai-coalition-g7.html",
+      "not": "Haziran 2026 G7 zirvesindeki yönetici toplantısı"
+    },
+    {
+      "ad": "Trump calls AI oversight a 'globalist scheme' — Fortune",
+      "url": "https://fortune.com/2026/09/23/trump-un-ai-globalist-scheme-altman-amodei-security-council/",
+      "not": "Devlet-platform gerilimi"
+    },
+    {
+      "ad": "OpenAI and Anthropic Take 43% of H1 2026 Venture Funding — AI Weekly",
+      "url": "https://aiweekly.co/alerts/openai-and-anthropic-take-43-of-h1-2026-venture-funding",
+      "not": "217 milyar dolar ve %43 yoğunlaşma oranı"
+    },
+    {
+      "ad": "Anthropic tops OpenAI as most valuable AI startup — CNBC",
+      "url": "https://www.cnbc.com/2026/05/28/anthropic-open-ai-startup-value.html",
+      "not": "965 milyar dolar değerleme"
+    },
+    {
+      "ad": "Tech Layoffs Top 225,000 in 2026 — Startup Fortune",
+      "url": "https://startupfortune.com/tech-layoffs-top-225000-in-2026-as-companies-blame-the-same-ai-theyre-funding/",
+      "not": "225.122 kişi, 519 olay; Block ve Oracle kesintileri"
+    },
+    {
+      "ad": "AI Layoffs Tracker — Founder Reports",
+      "url": "https://founderreports.com/ai-layoffs-tracker/",
+      "not": "2024-2026 yapay zekaya atfedilen işten çıkarma serisi ve Mayıs 2026 rekoru"
+    },
+    {
+      "ad": "Elon Musk, optional work and UBI — Fortune",
+      "url": "https://fortune.com/2026/02/01/elon-musk-optional-work-fantasy-universal-basic-income-uk-minister-jason-stockwood/",
+      "not": "Lord Jason Stockwood'un temel gelir ve teknoloji vergisi açıklamaları"
+    },
+    {
+      "ad": "Radical Proposal: Universal Basic Income — Stanford HAI",
+      "url": "https://hai.stanford.edu/news/radical-proposal-universal-basic-income-offset-job-losses-due-automation",
+      "not": "Stanford Basic Income Lab: 163 pilot, 41 aktif"
+    },
+    {
+      "ad": "Universal basic services — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Universal_basic_services",
+      "not": "Nakit yerine hizmet sağlayan model"
+    },
+    {
+      "ad": "Technofeudalism: What Killed Capitalism — Varoufakis (Jacobin eleştirisi)",
+      "url": "https://jacobin.com/2023/10/cloud-capitalism-technofeudalism-serfs-cloud-big-data-yanis-varoufakis",
+      "not": "Kavramın tanımı ve ona yöneltilen temel itiraz"
+    },
+    {
+      "ad": "Capitalism is capitalism, not technofeudalism — Nicholas Gane",
+      "url": "https://journals.sagepub.com/doi/10.1177/1468795X241269293",
+      "not": "Akademik karşı görüş"
+    }
+  ],
+  "cta_baslik": "Kapıyı tutanlardan mı olacaksın?",
+  "cta": "Bu dönemde yatırım almak, sadece para bulmak değil; doğru tarafta konumlanmak. Yatırımcı karşısına çıkmadan önce bilmen gerekenleri ücretsiz eğitimde anlatıyorum.",
+  "cta_link": "/free-training",
+  "cta_link_metin": "Ücretsiz eğitime göz at"
+}

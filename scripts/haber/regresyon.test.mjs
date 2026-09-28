@@ -12,6 +12,7 @@ import { sirketAdiCikar } from "./topla.mjs";
 // varlik.mjs playwright'a bağlı ve CI'da kurulmuyor; saf fonksiyon ayrı modülde.
 import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
+import { govde } from "./gorsel.mjs";
 
 const R = [];
 const t = (ad, ok) => R.push([ad, !!ok]);
@@ -273,6 +274,29 @@ t("yatırımcı adı tam hâliyle korunuyor",
   for (const b of ele) if (turHaberiMi(b, {}).evet) { ok = false; console.log(`     ✗ elenmeliydi: ${b.slice(0,50)}`); }
   for (const [b, m] of tur) if (!turHaberiMi(b, { metin: m }).evet) { ok = false; console.log(`     ✗ tur sayılmalıydı: ${b.slice(0,50)}`); }
   t("fon kapanışı eleniyor, fon-liderli tur elenmiyor", ok);
+}
+
+
+// ── Tablo görseli: sütun sayısı VERİDEN gelmeli ──────────────────────────
+// 2026-09-28: tablo çizici sutunlar[0] ve sutunlar[1]'e sabitti. Dört sütunlu
+// "Aşamaya göre medyan tur" tablosu iki sütun basıldı; Medyan ve Aralık
+// sessizce düştü. Okuyucu tabloyu eksiksiz sanıyordu.
+{
+  const h = govde({
+    tip: "tablo", baslik: "T",
+    sutunlar: ["Aşama", "Tur", "Medyan", "Aralık"],
+    satirlar: [["Seed", "23", "5,4M $", "0,4 – 15M"], ["Series A", "19", "19,4M $", "0,6 – 216M"]],
+  });
+  const hepsi = ["Aşama", "Tur", "Medyan", "Aralık", "5,4M $", "0,4 – 15M", "19,4M $", "0,6 – 216M"];
+  const eksik = hepsi.filter((x) => !h.includes(x));
+  t("tablo: 4 sütunun hepsi basılıyor", eksik.length === 0 && h.includes("--kolon:4"));
+  if (eksik.length) console.log(`     ✗ eksik: ${eksik.join(", ")}`);
+
+  // İki sütunlu tablo bozulmamalı; başlıksız tablo başlık satırı basmamalı.
+  const iki = govde({ tip: "tablo", satirlar: [["a", "b"]] });
+  t("tablo: 2 sütun bozulmadı", iki.includes("--kolon:2") && iki.includes(">a<") && iki.includes(">b<"));
+  t("tablo: boş başlık satırı basılmıyor",
+    !govde({ tip: "tablo", sutunlar: ["", ""], satirlar: [["a", "b"]] }).includes("tbaslik"));
 }
 
 // ── Rapor ──

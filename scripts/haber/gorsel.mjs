@@ -42,7 +42,7 @@ const kacar = (s) => String(s ?? "").replace(/[&<>"]/g, (c) =>
 const kalin = (s) => kacar(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 
 // ── Görsel tipleri ────────────────────────────────────────────────────────
-function govde(g) {
+export function govde(g) {
   const b = [];
   if (g.etiket) b.push(`<span class="rozet">${kacar(g.etiket)}</span>`);
   if (g.baslik) b.push(`<h1>${kalin(g.baslik)}</h1>`);
@@ -54,9 +54,18 @@ function govde(g) {
 
   if (g.tip === "tablo") {
     const s = g.satirlar ?? [];
-    b.push(`<div class="tablo">
-      ${g.sutunlar ? `<div class="tsatir tbaslik"><div>${kacar(g.sutunlar[0])}</div><div>${kacar(g.sutunlar[1])}</div></div>` : ""}
-      ${s.map((r) => `<div class="tsatir"><div class="sol">${kalin(r[0])}</div><div class="sag">${kalin(r[1])}</div></div>`).join("")}
+    // Sütun sayısı VERİDEN gelir. Eskiden [0] ve [1]'e sabitti: dört sütunlu bir
+    // tablo iki sütun basılıyor, kalan iki sütun sessizce düşüyordu. Okuyucu
+    // tabloyu eksiksiz sanıyordu — en kötü hata türü.
+    const kolon = Math.max(g.sutunlar?.length ?? 0, ...s.map((r) => r.length), 2);
+    const hucre = (r) => Array.from({ length: kolon }, (_, i) =>
+      `<div class="${i === 0 ? "sol" : "sag"}">${kalin(r[i] ?? "")}</div>`).join("");
+    b.push(`<div class="tablo" style="--kolon:${kolon}">
+      ${g.sutunlar?.some((x) => String(x).trim())
+        ? `<div class="tsatir tbaslik">${Array.from({ length: kolon }, (_, i) =>
+            `<div>${kacar(g.sutunlar[i] ?? "")}</div>`).join("")}</div>`
+        : ""}
+      ${s.map((r) => `<div class="tsatir">${hucre(r)}</div>`).join("")}
     </div>`);
   }
 
@@ -104,7 +113,7 @@ const stil = (koyu, olcu) => `
 
   .tablo { display: flex; flex-direction: column; border: 3px solid ${koyu ? "#1E293B" : RENK.cizgi};
            border-radius: 20px; overflow: hidden; }
-  .tsatir { display: grid; grid-template-columns: 1fr 1fr;
+  .tsatir { display: grid; grid-template-columns: repeat(var(--kolon, 2), 1fr);
             border-bottom: 2px solid ${koyu ? "#1E293B" : RENK.cizgi}; }
   .tsatir:last-child { border-bottom: 0; }
   .tsatir > div { padding: 20px 24px; font-size: ${olcu.h > 900 ? "30px" : "26px"}; line-height: 1.3; }

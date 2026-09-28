@@ -1,0 +1,343 @@
+{
+  "baslik": "Seed turu ne kadar oluyor? Eylül 2026'nın 117 turunu tek tek saydık",
+  "slug": "avrupa-yatirim-turlari-eylul-2026",
+  "tip": "analiz",
+  "seo_title": "Eylül 2026 Avrupa yatırım turları: 117 tur, medyan 11,3 milyon dolar",
+  "seo_description": "Eylül 2026'da açıklanan 117 yatırım turunu topladık. Pre-seed medyanı 2, seed 5,4, Series A 19,4 milyon dolar. En büyük 5 tur, tüm paranın %56'sını aldı. Aylık seri.",
+  "kapak_etiket": "Veri",
+  "kapak_metin": "117 tur, **13,1 milyar dolar**. Ama en büyük beş tur, paranın yarısından fazlasını aldı.",
+  "bolumler": [
+    {
+      "tip": "p",
+      "metin": "Kurucularla konuşurken en sık duyduğum sorulardan biri şu: \"Ben ne kadar istemeliyim?\" Cevap genelde kulaktan dolma oluyor. Birinin duyduğu bir tur, bir podcast'te geçen bir rakam, LinkedIn'de görülen bir manşet."
+    },
+    {
+      "tip": "p",
+      "metin": "Manşetler yanıltıcı, çünkü yalnız büyük turlar manşet oluyor. Bu yazıda tam tersini yapacağız: bir ayın **tamamını** sayacağız."
+    },
+    {
+      "tip": "p",
+      "metin": "Eylül 2026'da açıklanan ve tutarı belli olan **117 yatırım turunu** kaydettik. Aşağıdaki rakamların hepsi o kayıttan geliyor. Bu, her ay tekrarlayacağımız bir serinin ilk yazısı."
+    },
+    {
+      "tip": "h2",
+      "metin": "Ayın tablosu"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Eylül 2026, tutarı açıklanmış turlar.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "Eylül 2026",
+        "baslik": "Ayın özeti",
+        "satirlar": [
+          [
+            "Tur sayısı",
+            "**117**"
+          ],
+          [
+            "Toplam",
+            "**13,1 milyar dolar**"
+          ],
+          [
+            "Medyan tur",
+            "**11,3 milyon dolar**"
+          ],
+          [
+            "Ortalama tur",
+            "112 milyon dolar"
+          ],
+          [
+            "En büyük 5 turun payı",
+            "**%56**"
+          ]
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "İlk dikkat edilmesi gereken şey medyan ile ortalama arasındaki uçurum. Medyan **11,3 milyon**, ortalama **112 milyon**. Arada on kat var."
+    },
+    {
+      "tip": "p",
+      "metin": "Bu fark tesadüf değil, ayın en önemli bulgusu. Birkaç dev tur ortalamayı yukarı çekiyor ve gerçek resmi gizliyor. Sen turunu ortalamaya göre planlarsan yanlış yerden başlarsın. **Medyana bak.**"
+    },
+    {
+      "tip": "h2",
+      "metin": "Aşamaya göre gerçek rakamlar"
+    },
+    {
+      "tip": "p",
+      "metin": "Asıl işe yarayan kısım burası. 117 turun 74'ünde tur tipi açıkça belirtilmişti. Aşağıdaki medyanlar yalnız o 74 tura ait."
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Tur tipi açıkça belirtilen 74 tur.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "Aşama",
+        "baslik": "Aşamaya göre medyan tur",
+        "sutunlar": [
+          "Aşama",
+          "Tur",
+          "Medyan",
+          "Aralık"
+        ],
+        "satirlar": [
+          [
+            "Pre-seed",
+            "22",
+            "**2,0M $**",
+            "0,4 – 5M"
+          ],
+          [
+            "Seed",
+            "23",
+            "**5,4M $**",
+            "0,4 – 15M"
+          ],
+          [
+            "Series A",
+            "19",
+            "**19,4M $**",
+            "0,6 – 216M"
+          ],
+          [
+            "Series B",
+            "10",
+            "**100M $**",
+            "24,8 – 253M"
+          ]
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Bu tabloyu bir kenara not et. Pre-seed'de **2 milyon dolar**, seed'de **5,4 milyon dolar** istiyorsan pazarın ortasındasın demektir. On beş milyon dolarlık bir seed turu mümkün ama o, seed'in en üst ucu — ayın tamamında o bantta sayılı şirket var."
+    },
+    {
+      "tip": "p",
+      "metin": "Aralık sütununa da bak. Series A'da en küçük tur 600 bin dolar, en büyüğü 216 milyon. Yani \"Series A\" bir rakam değil, bir aşama adı. Yatırımcıya \"Series A yapıyoruz\" demek tek başına hiçbir şey anlatmıyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Turların büyüklüğü nasıl dağılıyor?"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "117 turun büyüklük bantlarına dağılımı.",
+      "gorsel": {
+        "tip": "tablo",
+        "etiket": "Dağılım",
+        "baslik": "Tur büyüklüğü",
+        "sutunlar": [
+          "Bant",
+          "Tur",
+          "Pay"
+        ],
+        "satirlar": [
+          [
+            "2 milyon doların altı",
+            "20",
+            "%17"
+          ],
+          [
+            "2 – 5 milyon",
+            "22",
+            "%19"
+          ],
+          [
+            "5 – 15 milyon",
+            "21",
+            "%18"
+          ],
+          [
+            "15 – 50 milyon",
+            "22",
+            "%19"
+          ],
+          [
+            "50 milyon üstü",
+            "32",
+            "**%27**"
+          ]
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Dağılım şaşırtıcı biçimde dengeli. Küçük turlar kaybolmuş değil: ayın **%36'sı 5 milyon doların altında**. Yani erken aşamada para hâlâ akıyor."
+    },
+    {
+      "tip": "p",
+      "metin": "Ama sayıca dengeli olan bu tablo, para söz konusu olunca dengeli değil."
+    },
+    {
+      "tip": "h2",
+      "metin": "Asıl hikâye: paranın yoğunlaşması"
+    },
+    {
+      "tip": "p",
+      "metin": "117 turun **en büyük beşi**, ayın toplam parasının **%56'sını** aldı. Beş şirket, on üç milyar doların yarısından fazlası."
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Ayın en büyük beş turu.",
+      "gorsel": {
+        "tip": "liste",
+        "etiket": "En büyük 5",
+        "baslik": "Eylül 2026'nın dev turları",
+        "maddeler": [
+          "**Crusoe** — 3 milyar dolar (Atreides Management)",
+          "**The Boring Company** — 3 milyar dolar",
+          "**Wonderful** — 550 milyon dolar (Insight Partners)",
+          "**Bird** — 450 milyon dolar (JP Morgan, borç finansmanı)",
+          "**Island** — 400 milyon dolar (Evolution Equity Partners)"
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Bu yoğunlaşma tek bir ayın kazası değil. Aynı eğilim daha büyük ölçekte de var: 2026'nın ilk yarısında OpenAI ve Anthropic ikisi birlikte dünyadaki tüm startup yatırımlarının **%43'ünü** aldı."
+    },
+    {
+      "tip": "p",
+      "metin": "Kurucu için anlamı şu: \"piyasada çok para var\" cümlesi doğru ama seni ilgilendiren kısmı değil. O paranın çoğu senin bulunduğun bantta dolaşmıyor. Senin bandındaki rekabet, medyan turun etrafında dönüyor."
+    },
+    {
+      "tip": "h2",
+      "metin": "Ayın en aktif yatırımcıları"
+    },
+    {
+      "tip": "p",
+      "metin": "Tur sayısına göre — tutara göre değil. Erken aşamadaki bir kurucu için asıl anlamlı olan bu: kim çok sayıda çek yazıyor?"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Eylül 2026'da birden fazla turda adı geçen yatırımcılar.",
+      "gorsel": {
+        "tip": "liste",
+        "etiket": "Aktif",
+        "baslik": "Ayda birden fazla tura katılanlar",
+        "maddeler": [
+          "**Antler** — 4 tur",
+          "**Andreessen Horowitz** — 3 tur",
+          "**Sequoia Capital** — 3 tur",
+          "**Atreides Management** — 3 tur",
+          "**Frumtak Ventures** — 3 tur",
+          "**Accel**, **Fortino**, **Fuel Ventures** — 2'şer tur"
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Antler'ın listenin başında olması anlamlı: erken aşamaya çok sayıda küçük çek yazan bir model. Bir sonraki turunu arıyorsan, tek bir dev fonun peşinde koşmak yerine bu listeye bakmak daha verimli."
+    },
+    {
+      "tip": "h2",
+      "metin": "Bu veriyi nasıl topladık — ve neyi kapsamıyor"
+    },
+    {
+      "tip": "p",
+      "metin": "Şeffaf olmak gerekiyor, çünkü bu rakamlara dayanıp karar vereceksen sınırlarını bilmelisin."
+    },
+    {
+      "tip": "liste",
+      "maddeler": [
+        "Kaynak: Tech.eu, EU-Startups, ArcticStartup ve Webrazzi'nin açık haber akışları. Ücretli veritabanı kullanmıyoruz.",
+        "Yalnız **tutarı açıklanmış** turlar sayıldı. Tutarını gizleyen turlar tabloda yok.",
+        "Euro tutarlar dolara çevrildi, o yüzden kur etkisi var.",
+        "Tur tipi 117 turun **74'ünde** belirtilmişti; aşama medyanları yalnız o 74 tura dayanıyor.",
+        "Kapsam ağırlıklı olarak **Avrupa**. ABD ve Asya turları yalnız bu kaynaklara düştüğü kadar var.",
+        "Fon kapanışları, satın almalar, ihale ve hibe haberleri elendi — bunlar yatırım turu değil."
+      ]
+    },
+    {
+      "tip": "p",
+      "metin": "Yani bu, piyasanın tamamının sayımı değil. Bir ayın açık haber akışına düşen kısmının **tam sayımı**. Farkı bilerek okumak lazım."
+    },
+    {
+      "tip": "h2",
+      "metin": "Bu tabloyla ne yapmalısın?"
+    },
+    {
+      "tip": "gorsel",
+      "altyazi": "Rakamların pratik karşılığı.",
+      "gorsel": {
+        "tip": "liste",
+        "etiket": "Uygulama",
+        "baslik": "Üç somut adım",
+        "maddeler": [
+          "**Rakamını medyana göre kur.** Pre-seed'de 2, seed'de 5,4 milyon dolar bandın ortası. Üç katını isteyeceksen gerekçesini de yanında getir.",
+          "**Aşama adını rakamla birlikte söyle.** Series A'nın aralığı 0,6 ile 216 milyon arasında; tek başına aşama adı hiçbir şey anlatmıyor.",
+          "**Çok çek yazana git.** Ayda bir tur yapan fon yerine, ayda üç dört tur yapan fonun takvimi sana daha açık."
+        ]
+      }
+    },
+    {
+      "tip": "p",
+      "metin": "Son olarak şunu ekleyeyim. Bu rakamlar pazarlık gücü değil, **başlangıç noktası** verir. Turunun büyüklüğünü sonunda değerlemen ve ihtiyacın belirler; medyan sadece nerede durduğunu gösterir."
+    },
+    {
+      "tip": "p",
+      "metin": "Önümüzdeki ay aynı sayımı tekrar yapacağız. Zamanla asıl değerli olan tek bir ayın rakamı değil, aylar arasındaki **değişim** olacak."
+    }
+  ],
+  "sorular": [
+    {
+      "soru": "Seed turu ne kadar oluyor?",
+      "cevap": "Eylül 2026'da açıklanan ve seed olduğu belirtilen 23 turun medyanı 5,4 milyon dolar, aralığı 400 bin ile 15 milyon dolar arasındaydı. Yani seed için tipik bant 5 milyon dolar civarı; 15 milyon dolarlık seed turları mümkün ama seed'in en üst ucunda kalıyor."
+    },
+    {
+      "soru": "Pre-seed turu ne kadar olmalı?",
+      "cevap": "Eylül 2026'da pre-seed olarak açıklanan 22 turun medyanı 2 milyon dolar, aralığı 400 bin ile 5 milyon dolar arasındaydı. Pre-seed'de 2 milyon dolar istemek pazarın ortasında durmak demek."
+    },
+    {
+      "soru": "Series A ne kadar yatırım demek?",
+      "cevap": "Eylül 2026'da Series A olarak açıklanan 19 turun medyanı 19,4 milyon dolardı, ama aralık 600 bin ile 216 milyon dolar arasında değişiyordu. Bu yüzden Series A tek başına bir rakam anlatmıyor; aşama adını mutlaka tutarla birlikte söylemek gerekiyor."
+    },
+    {
+      "soru": "Eylül 2026'da toplam ne kadar yatırım yapıldı?",
+      "cevap": "Takip ettiğimiz açık haber akışlarında tutarı açıklanan 117 turda toplam 13,1 milyar dolar. Bunun %56'sı yalnız en büyük beş tura gitti: Crusoe, The Boring Company, Wonderful, Bird ve Island."
+    },
+    {
+      "soru": "Medyan mı ortalama mı dikkate alınmalı?",
+      "cevap": "Medyan. Eylül 2026'da medyan tur 11,3 milyon dolar, ortalama ise 112 milyon dolardı — arada on kat fark var. Bu farkı birkaç dev tur yaratıyor. Kendi turunu ortalamaya göre planlarsan gerçekçi olmayan bir yerden başlarsın."
+    },
+    {
+      "soru": "Bu veriler nereden geliyor?",
+      "cevap": "Tech.eu, EU-Startups, ArcticStartup ve Webrazzi'nin herkese açık haber akışlarından günlük olarak topluyoruz. Yalnız tutarı açıklanmış turlar sayılıyor; fon kapanışları, satın almalar, ihale ve hibe haberleri eleniyor. Ücretli veritabanı kullanmıyoruz, o yüzden kapsam bu dört kaynağın yayınladığı kadar."
+    }
+  ],
+  "kaynaklar": [
+    {
+      "ad": "Tech.eu — Avrupa teknoloji haber akışı",
+      "url": "https://tech.eu/",
+      "not": "Tur haberlerinin ana kaynaklarından biri"
+    },
+    {
+      "ad": "EU-Startups",
+      "url": "https://www.eu-startups.com/",
+      "not": "Avrupa erken aşama tur haberleri"
+    },
+    {
+      "ad": "ArcticStartup",
+      "url": "https://arcticstartup.com/",
+      "not": "İskandinavya ve Baltık turları"
+    },
+    {
+      "ad": "Webrazzi",
+      "url": "https://webrazzi.com/",
+      "not": "Türkçe teknoloji ve yatırım haberleri"
+    },
+    {
+      "ad": "OpenAI and Anthropic Take 43% of H1 2026 Venture Funding — AI Weekly",
+      "url": "https://aiweekly.co/alerts/openai-and-anthropic-take-43-of-h1-2026-venture-funding",
+      "not": "Küresel ölçekteki yoğunlaşma oranı"
+    }
+  ],
+  "cta_baslik": "Rakamını savunabiliyor musun?",
+  "cta": "Medyanı bilmek başlangıç. Yatırımcı karşısında asıl soru, istediğin rakamın gerekçesi. Değerlemeni nasıl kuracağını ücretsiz eğitimde anlatıyorum.",
+  "cta_link": "/free-training",
+  "cta_link_metin": "Ücretsiz eğitime göz at"
+}
