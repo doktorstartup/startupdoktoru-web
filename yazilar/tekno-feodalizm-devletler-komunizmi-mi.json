@@ -67,13 +67,31 @@
         "tip": "tablo",
         "etiket": "Karşılaştırma",
         "baslik": "Feodalizm ve tekno feodalizm",
-        "sutunlar": ["Klasik feodalizm", "Tekno feodalizm"],
+        "sutunlar": [
+          "Klasik feodalizm",
+          "Tekno feodalizm"
+        ],
         "satirlar": [
-          ["Mülk: **toprak**", "Mülk: **bulut sermayesi**"],
-          ["Geçiş bedeli: ürünün payı", "Geçiş bedeli: **komisyon ve abonelik**"],
-          ["Kazanç: rant", "Kazanç: **yine rant**"],
-          ["Bağlı olan: serf", "Bağlı olan: **kullanıcı ve geliştirici**"],
-          ["Sınır: derebeyinin arazisi", "Sınır: **platformun kuralları**"]
+          [
+            "Mülk: **toprak**",
+            "Mülk: **bulut sermayesi**"
+          ],
+          [
+            "Geçiş bedeli: ürünün payı",
+            "Geçiş bedeli: **komisyon ve abonelik**"
+          ],
+          [
+            "Kazanç: rant",
+            "Kazanç: **yine rant**"
+          ],
+          [
+            "Bağlı olan: serf",
+            "Bağlı olan: **kullanıcı ve geliştirici**"
+          ],
+          [
+            "Sınır: derebeyinin arazisi",
+            "Sınır: **platformun kuralları**"
+          ]
         ]
       }
     },
@@ -112,11 +130,23 @@
         "tip": "tablo",
         "etiket": "ABD verisi",
         "baslik": "Gerekçesi yapay zeka olan işten çıkarmalar",
-        "sutunlar": ["Dönem", "Kişi"],
+        "sutunlar": [
+          "Dönem",
+          "Kişi"
+        ],
         "satirlar": [
-          ["2024 (tüm yıl)", "12.742"],
-          ["2025 (tüm yıl)", "54.836"],
-          ["2026 (ilk altı ay)", "**101.743**"]
+          [
+            "2024 (tüm yıl)",
+            "12.742"
+          ],
+          [
+            "2025 (tüm yıl)",
+            "54.836"
+          ],
+          [
+            "2026 (ilk altı ay)",
+            "**101.743**"
+          ]
         ]
       }
     },
@@ -142,7 +172,7 @@
     },
     {
       "tip": "p",
-      "metin": "Burada senin sorduğun soru devreye giriyor. İşsiz kalan kitleye ne olacak?"
+      "metin": "Burada kaçınılmaz soru devreye giriyor: işsiz kalan kitleye ne olacak?"
     },
     {
       "tip": "p",
@@ -154,7 +184,7 @@
     },
     {
       "tip": "p",
-      "metin": "Senin bahsettiğin model — bir bölgede yaşayanın yaşamsal ihtiyaçlarını karşılayan ama lüksü kapsamayan sistem — literatürde **evrensel temel hizmetler** diye geçiyor. Nakit yerine barınma, ulaşım, sağlık, iletişim gibi kalemleri doğrudan sağlama fikri. Stanford Temel Gelir Laboratuvarı'nın verisine göre yalnız ABD'de bugüne kadar **163** temel gelir pilotu yürütüldü, **41'i** hâlâ aktif."
+      "metin": "Tartışılan bir başka model daha var: bir bölgede yaşayanın yaşamsal ihtiyaçlarını karşılayan ama lüksü kapsamayan sistem. Literatürde **evrensel temel hizmetler** diye geçiyor. Nakit yerine barınma, ulaşım, sağlık, iletişim gibi kalemleri doğrudan sağlama fikri. Stanford Temel Gelir Laboratuvarı'nın verisine göre yalnız ABD'de bugüne kadar **163** temel gelir pilotu yürütüldü, **41'i** hâlâ aktif."
     },
     {
       "tip": "p",

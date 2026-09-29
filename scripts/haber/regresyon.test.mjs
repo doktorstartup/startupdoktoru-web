@@ -13,6 +13,7 @@ import { sirketAdiCikar } from "./topla.mjs";
 import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
 import { govde } from "./gorsel.mjs";
+import { dogrulaHitap } from "./yazi.mjs";
 
 const R = [];
 const t = (ad, ok) => R.push([ad, !!ok]);
@@ -297,6 +298,40 @@ t("yatırımcı adı tam hâliyle korunuyor",
   t("tablo: 2 sütun bozulmadı", iki.includes("--kolon:2") && iki.includes(">a<") && iki.includes(">b<"));
   t("tablo: boş başlık satırı basılmıyor",
     !govde({ tip: "tablo", sutunlar: ["", ""], satirlar: [["a", "b"]] }).includes("tbaslik"));
+}
+
+
+// ── Hitap kapısı: okuyucuya brief atfı ───────────────────────────────────
+// 2026-09-29: tekno feodalizm yazısında "Burada senin sorduğun soru devreye
+// giriyor" ve "Senin bahsettiğin model" cümleleri yayına gitti. Yazılar
+// Eser'in brief'inden doğuyor; okuyucu o brief'i vermedi. İkinci tekil
+// hitabın kendisi KALMALI (üslup o), yalnız brief atfı elenmeli.
+{
+  const yak = (m) => dogrulaHitap({ bolumler: [{ tip: "p", metin: m }] }).length > 0;
+  const elenecek = [
+    "Burada senin sorduğun soru devreye giriyor.",
+    "Senin bahsettiğin model literatürde şöyle geçiyor.",
+    "Dediğin gibi rakamlarla örnekleyelim.",
+    "Bana gönderdiğin linkteki yazıya göre böyle.",
+    "Senin fikrin doğrultusunda ilerledim.",
+  ];
+  const kalacak = [
+    "Ama şunu sor: bugün ürettiğin verinin karşılığında ne aldın?",
+    "Serfin toprağı terk etme hakkı yoktu; senin uygulamayı silme hakkın var.",
+    "Büyük şirketin fazlalık saydığı kişi, senin kuracağın ekibin ilk üyesi olabilir.",
+    "Ve senin için asıl soru şu: kapıyı tutanlardan mı olacaksın?",
+    "Şirketini istediğin gibi kurabilirsin.",
+  ];
+  let ok = true;
+  for (const m of elenecek) if (!yak(m)) { ok = false; console.log(`     ✗ kaçtı: ${m.slice(0,50)}`); }
+  for (const m of kalacak) if (yak(m)) { ok = false; console.log(`     ✗ yanlış pozitif: ${m.slice(0,50)}`); }
+  t("hitap kapısı: 5 ret + 5 kabul", ok);
+
+  // Soru-cevap, CTA ve kapak metni de taranmalı — yalnız bölümler değil.
+  t("hitap kapısı tüm alanları tarıyor",
+    dogrulaHitap({ sorular: [{ soru: "S", cevap: "Senin sorduğun gibi." }] }).length === 1
+    && dogrulaHitap({ cta: "Senin bahsettiğin eğitim." }).length === 1
+    && dogrulaHitap({ kapak_metin: "Dediğin gibi." }).length === 1);
 }
 
 // ── Rapor ──
