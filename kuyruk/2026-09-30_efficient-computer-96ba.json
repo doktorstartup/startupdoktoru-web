@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_efficient-computer-96ba",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Efficient Computer",
+    "domain": "efficient.computer",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 97000000,
+      "birim": "USD",
+      "usd": 97000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-30T14:00:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/30/efficient-computer-650-milyon-dolar-degerlemeyle-97-milyon-dolar-yatirim-aldi/",
+      "baslik": "Efficient Computer, 650 milyon dolar değerlemeyle 97 milyon dolar yatırım aldı",
+      "tarih": "Wed, 30 Sep 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Enerji verimli işlemciler geliştiren Efficient Computer , Seri B yatırım turunda 97 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/30/efficient-computer-650-milyon-dolar-degerlemeyle-97-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-30T19:12:11.285Z"
+}

@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_jeeves-c7f2",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Jeeves",
+    "domain": "tryjeeves.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 110000000,
+      "birim": "USD",
+      "usd": 110000000
+    },
+    "lider": "CoinFund",
+    "katilanlar": [
+      "Global PayTech Ventures",
+      "Andreessen Horowitz",
+      "AllianceBernstein",
+      "Coinbase Ventures",
+      "Y Combinator",
+      "Wintermute",
+      "ParaFi",
+      "Vista",
+      "CRV",
+      "GIC"
+    ],
+    "kurucular": [
+      "Dileep Thazhmon",
+      "Sherwin Gandhi"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/30/kurumsal-harcama-yonetimi-girisimi-jeeves-110-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kurumsal harcama yönetimi girişimi Jeeves, 110 milyon dolar yatırım aldı",
+      "tarih": "Wed, 30 Sep 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kurumsal harcama yönetimi girişimi Jeeves , 110 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/30/kurumsal-harcama-yonetimi-girisimi-jeeves-110-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-30T19:12:11.285Z"
+}

@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_blackswan-space-eb9e",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Blackswan Space",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2500000,
+      "birim": "EUR",
+      "usd": 2700000
+    },
+    "lider": "Iron Wolf Capital",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-30T12:27:42.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/30/blackswan-space-raises-eur25m-to-take-autonomous-spacecraft-navigation-into-orbit/",
+      "baslik": "Blackswan Space raises €2.5M to take autonomous spacecraft navigation into orbit",
+      "tarih": "Wed, 30 Sep 2026 12:27:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lithuania’s Blackswan Space , has successfully closed its second investment round, led by Iron Wolf Capital , raising €2.5 million.",
+      "kaynak_url": "https://tech.eu/2026/09/30/blackswan-space-raises-eur25m-to-take-autonomous-spacecraft-navigation-into-orbit/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/30/blackswan-space-raises-eur25m-to-take-autonomous-spacecraft-navigation-into-orbit/"
+    }
+  ],
+  "olusturma": "2026-09-30T19:12:11.285Z"
+}

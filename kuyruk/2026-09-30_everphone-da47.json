@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_everphone-da47",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Everphone",
+    "domain": "everphone.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Everphone's"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-30T14:25:14.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/everphone-secures-e15-million-to-finance-new-devices-for-corporate-customers/",
+      "baslik": "Everphone secures €15 million to finance new devices for corporate customers",
+      "tarih": "Wed, 30 Sep 2026 14:25:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Berlin-based Everphone , a Device-as-a-Service provider, today secured €15 million in refinancing in order to issue employees of client companies new workplace devices as part of long-term leases.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/everphone-secures-e15-million-to-finance-new-devices-for-corporate-customers/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/everphone-secures-e15-million-to-finance-new-devices-for-corporate-customers/"
+    }
+  ],
+  "olusturma": "2026-09-30T19:12:11.285Z"
+}

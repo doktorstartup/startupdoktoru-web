@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_restate-c5c1",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Restate",
+    "domain": "restate.dev",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "USD",
+      "usd": 20000000
+    },
+    "lider": "European VC Singular",
+    "katilanlar": [
+      "Capital One Ventures",
+      "Redpoint Ventures"
+    ],
+    "kurucular": [
+      "Stephan Ewen"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/30/berlin-based-restate-raises-20m/",
+      "baslik": "Berlin-based Restate raises $20M",
+      "tarih": "Wed, 30 Sep 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The team behind a technology that underpins real-time data use in banking has raised $20m in a Series A funding round for a startup, which carries out the plumbing work behind AI agents.",
+      "kaynak_url": "https://tech.eu/2026/09/30/berlin-based-restate-raises-20m/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/30/berlin-based-restate-raises-20m/"
+    }
+  ],
+  "olusturma": "2026-09-30T19:12:11.285Z"
+}
