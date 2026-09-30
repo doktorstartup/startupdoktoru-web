@@ -244,13 +244,22 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   }
   const kayit = JSON.parse(readFileSync(dosya, "utf8"));
   const paket = join(PAKET_DIR, kayit.id);
-  if (!existsSync(paket)) {
-    console.error(`Paket yok: ${paket}\nÖnce: node scripts/haber/varlik.mjs ${dosya}`);
+  const metinYolu = join(paket, "metin.json");
+
+  // İKİ ŞERİT. Türk girişimi → tam paket (B-roll + carousel + görseller).
+  // Yabancı girişim → yalnız metin; görsel üretilmez. Gerekçe ölçüldü: Türk
+  // şirketi haberi yabancının ~40 katı okunuyor, görsel emeği yabancıda
+  // karşılığını bulmuyor. Bu yüzden ARTIK PAKET ZORUNLU DEĞİL — zorunlu olan
+  // metin.json. Görsel klasörü yoksa yazı görselsiz yayınlanır.
+  if (!existsSync(metinYolu)) {
+    console.error(`metin.json yok: ${metinYolu}`);
+    console.error(`  Metni yazdır:  node scripts/haber/metin.mjs ${dosya} --prompt`);
+    console.error(`  Türk girişimiyse önce paketi çek: node scripts/haber/varlik.mjs ${dosya}`);
     process.exit(1);
   }
-  const metinYolu = join(paket, "metin.json");
-  const metinler = existsSync(metinYolu) ? JSON.parse(readFileSync(metinYolu, "utf8")) : {};
-  if (!existsSync(metinYolu)) console.log("⚠  metin.json yok — yalnız künye ve yatırım bölümleri yazılacak.\n");
+  const metinler = JSON.parse(readFileSync(metinYolu, "utf8"));
+  const gorselVar = existsSync(join(paket, "02_gorsel"));
+  if (!gorselVar) console.log("ℹ  görsel klasörü yok — yazı GÖRSELSİZ yayınlanacak (yabancı girişim şeridi).\n");
 
   if (!kuru && !process.env.SUPABASE_SERVICE_ROLE_KEY) {
     console.error("SUPABASE_SERVICE_ROLE_KEY yok. --env-file=.env.local ile çalıştır ya da --kuru kullan.");

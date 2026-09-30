@@ -14,6 +14,7 @@ import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
 import { govde } from "./gorsel-govde.mjs";
 import { dogrulaHitap } from "./yazi-kapi.mjs";
+import { turkMu } from "./turk.mjs";
 
 const R = [];
 const t = (ad, ok) => R.push([ad, !!ok]);
@@ -332,6 +333,43 @@ t("yatırımcı adı tam hâliyle korunuyor",
     dogrulaHitap({ sorular: [{ soru: "S", cevap: "Senin sorduğun gibi." }] }).length === 1
     && dogrulaHitap({ cta: "Senin bahsettiğin eğitim." }).length === 1
     && dogrulaHitap({ kapak_metin: "Dediğin gibi." }).length === 1);
+}
+
+
+// ── Şirket Türk mü? ──────────────────────────────────────────────────────
+// 2026-09-30: Türk şirketi haberi yabancının ~40 katı okunuyor (HubX 86;
+// Crusoe/EnduroSat/Vantora 0-2), o yüzden tam paket yalnız Türk turuna
+// üretiliyor. kunye.ulke bu iş için KULLANILAMAZ: o alan KAYNAĞIN ülkesi,
+// Webrazzi "TR" olduğu için ABD şirketleri de TR görünüyor.
+//
+// İlk sürüm HubX'i kaçırdı: regexler \b sınırı kullanıyordu, oysa \b
+// [A-Za-z0-9_]'e göre tanımlı ve "İ" \w değil — \bİstanbul hiç eşleşmiyor.
+{
+  const V = [
+    // [not, metin, domain, beklenen]
+    ["HubX: İzmir'de kurulan", "2022 yılında İzmir’de kurulan HubX için bu ilk dış finansman.", "hubx.co", true],
+    ["düz kesme işareti", "2022 yılında İzmir'de kurulan şirket.", "acme.com", true],
+    ["İstanbul merkezli", "İstanbul merkezli fintech 5 milyon dolar aldı.", "acme.com", true],
+    ["Türkiye merkezli", "Türkiye merkezli girişim yatırım aldı.", "acme.com", true],
+    ["Istanbul-based", "Istanbul-based Acme raises $5M.", "acme.com", true],
+    ["Turkish startup", "Turkish startup Acme raises $5M.", "acme.com", true],
+    [".tr domaini tek başına yeter", "Şirket hakkında bilgi yok.", "getir.com.tr", true],
+    ["iki zayıf işaret yeter", "İzmir’deki ofisleri var, Acme Anonim Şirketi olarak kayıtlı.", "acme.com", true],
+    // Yanlış pozitif olmamalı — Webrazzi yabancı şirketleri Türkçe yazıyor
+    ["yabancı: pazara açılma", "Şirket yeni pazar olarak İstanbul’a açılmayı planlıyor.", "acme.com", false],
+    ["yabancı: tek zayıf işaret", "Şirketin İstanbul’daki ofisi 2024’te açıldı.", "acme.com", false],
+    ["yabancı: Kanada merkezli", "Kanada merkezli Altis Labs 25 milyon dolar aldı.", "altislabs.com", false],
+    ["yabancı: sade metin", "ABD merkezli şirket yatırım aldı.", "crusoe.ai", false],
+  ];
+  let ok = true;
+  for (const [not, m, d, bekle] of V) {
+    const r = turkMu(m, d);
+    if (r.turk !== bekle) { ok = false; console.log(`     ✗ ${not} → ${r.turk ? "TÜRK" : "yabancı"} (beklenen ${bekle ? "TÜRK" : "yabancı"})`); }
+  }
+  t("türk girişimi tespiti: 12/12", ok);
+  t("turkMu çökmüyor (bozuk girdi)", (() => {
+    try { turkMu(undefined, undefined); turkMu(123, {}); return true; } catch { return false; }
+  })());
 }
 
 // ── Rapor ──

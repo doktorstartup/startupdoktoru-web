@@ -41,7 +41,10 @@ export function promptYaz(kayit, makale) {
     `şirket: ${u.sirket}`,
     u.domain && `site: ${u.domain}`,
     u.kurucular?.length && `kurucular: ${u.kurucular.join(", ")}`,
-    u.ulke && `ülke: ${u.ulke}`,
+    // u.ulke KAYNAĞIN ülkesi (Webrazzi = TR). Prompt'a konursa model, ABD'li bir
+    // şirket için "Türkiye'de kurulan" yazmaya meyledebiliyor. Gerçek işaret
+    // kunye.turk; ülke bilgisi zaten kaynak metinde geçiyor, oradan okunacak.
+    u.turk === true && "şirket Türk girişimi",
   ].filter(Boolean).join("\n");
 
   return `Bir yatırım haberinden Instagram kaydırmalı postu için TÜRKÇE yorum cümleleri yazacaksın.

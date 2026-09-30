@@ -23,9 +23,33 @@ node scripts/haber/metin.mjs $K              # ya da ücretsiz LLM (anahtar gere
 # 3) Kaydırmalı post (6 slayt, 1080×1350)
 node scripts/haber/carousel.mjs $K
 
-# 4) Blog yazısı + görseller  → siteye TASLAK olarak düşer
+# 4) Blog yazısı → siteye TASLAK olarak düşer
 node --env-file=.env.local scripts/haber/yayinla.mjs $K
 ```
+
+## İKİ ŞERİT — hangi haberde ne üretilir
+
+Ölçüldü (30 Eylül 2026, sahip ziyaretleri ayıklanmış): **Türk şirketi haberi
+yabancının ~40 katı okunuyor.** HubX 86 okunma; Crusoe 2, Vantora 1,
+EnduroSat 0, Altis Labs 0. Sebebi arama: insanlar Türk kurucuyu ADIYLA
+arıyor ("hubx kurucusu", "cem ortabaş kimdir"), yabancı kurucuyu aramıyor.
+
+| | Yabancı girişim | 🇹🇷 Türk girişimi |
+|---|---|---|
+| Adım 1 — `varlik.mjs` (B-roll, foto) | **atla** | çalıştır |
+| Adım 2 — metin | yaz | yaz |
+| Adım 3 — `carousel.mjs` | **atla** | çalıştır |
+| Adım 4 — `yayinla.mjs` | çalıştır (görselsiz) | çalıştır |
+
+Görselsiz yayın için paket klasörü gerekmez; yeterli olan `metin.json`.
+Elle oluştur: `mkdir -p paketler/<id> && <metin.json yaz>`.
+
+Türk girişimi **otomatik işaretlenir**: `topla.mjs` çıktısında satır başında
+🇹🇷 çıkar ve koşunun sonunda ayrı bir uyarı basılır. Kayıtta `kunye.turk`.
+
+> `kunye.ulke` bu iş için **kullanılamaz** — o alan KAYNAĞIN ülkesi. Webrazzi
+> "TR" olduğu için Crusoe, EnduroSat, Vantora gibi ABD şirketleri de TR
+> görünüyor. Gerçek işaret `turk.mjs` içinde ölçülüyor.
 
 # 5) Yayın onayı — /admin/blog
 

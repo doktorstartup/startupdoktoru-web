@@ -224,6 +224,8 @@ export function kayitYap(grup, simdi = new Date()) {
       sirket: ad,
       domain: dom,
       ulke: kirpAd(ilk("ulke")),
+      // Şirket Türk mü? Kaynakların herhangi biri Türk diyorsa Türk sayılır.
+      turk: uyeler.some((u) => u.turk === true),
       tur_tipi: tabloda(TUR_PUAN, ilk("tur_tipi"), null) === null ? "bilinmiyor" : ilk("tur_tipi"),
       tutar: { deger: tutarUye.tutar_deger ?? null, birim: tutarUye.tutar_birim ?? null,
                usd: Number.isFinite(tutarUye.tutar_usd) && tutarUye.tutar_usd > 0 ? tutarUye.tutar_usd : null },

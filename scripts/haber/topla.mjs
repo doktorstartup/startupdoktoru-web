@@ -19,6 +19,7 @@ import { turHaberiMi, duzMetin } from "./tur-haberi-mi.mjs";
 import { kunyeCikar } from "./kunye.mjs";
 import { kisilerCikar } from "./kisiler.mjs";
 import { resolveCompanyDomain } from "./domain.mjs";
+import { turkMu } from "./turk.mjs";
 import { isle } from "./kuyruk.mjs";
 
 // ── Kaynaklar ────────────────────────────────────────────────────────────
@@ -213,7 +214,10 @@ export async function adayUret(item, kaynak, { domainCoz = true } = {}) {
     // kuyruk.mjs'in beklediği alan adları — sözleşme burada
     sirket_adi: ad,
     sirket_domain: dom,
+    // ulke KAYNAĞIN ülkesi (Webrazzi = TR), şirketin değil. Şirketin Türk olup
+    // olmadığı ayrı ölçülür: Türk turu tam paket alır, yabancı tur yalnız metin.
     ulke: kaynak.ulke ?? null,
+    turk: turkMu(duzMetin(item.icerik ?? "") + " " + (item.baslik ?? ""), dom).turk,
     sektor: null,                        // Faz 2: LLM sınıflandırması
     tarih: item.tarih || null,
     tutar_deger: tutar,
@@ -305,9 +309,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   for (const k of s.yeni) {
     const u = k.kunye;
     const tutar = u.tutar.deger ? `${u.tutar.deger} ${u.tutar.birim}` : "tutar yok";
-    console.log(`  ${String(k.puan).padStart(3)}  ${(u.sirket ?? "?").padEnd(22)} ${tutar.padEnd(16)} ${(u.tur_tipi ?? "-").padEnd(10)} ${u.domain ?? "domain yok"}`);
+    console.log(`  ${u.turk ? "🇹🇷" : "  "} ${String(k.puan).padStart(3)}  ${(u.sirket ?? "?").padEnd(22)} ${tutar.padEnd(16)} ${(u.tur_tipi ?? "-").padEnd(10)} ${u.domain ?? "domain yok"}`);
   }
   for (const a of s.atlanan) console.log(`  ---  ${a.id}: ${a.neden}`);
+
+  // TÜRK TURU UYARISI. Ölçüldü: Türk şirketi haberi yabancının ~40 katı
+  // okunuyor. Bu satır gözden kaçmasın diye en sona, ayrı basılıyor.
+  const turkler = s.yeni.filter((k) => k.kunye?.turk);
+  if (turkler.length) {
+    console.log(`\n🇹🇷  TÜRK GİRİŞİMİ — tam paket üret (B-roll + carousel): ${turkler.length} kayıt`);
+    for (const k of turkler) console.log(`    ${k.kunye.sirket} — kuyruk/${k.id}.json`);
+  }
 
   if (!yaz) console.log("\n(kuru koşu — yazmak için --yaz)");
 }
