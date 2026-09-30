@@ -10,8 +10,17 @@ type Investor = {
   portal_enabled?: boolean; invited_at?: string | null;
 };
 type Startup = { id: string; startup_name: string; one_liner: string | null; sectors: string[]; stage: string | null };
+type Pending = {
+  id: string; investor_id: string; startup_id: string; action_at: string | null;
+  investor: { firm_name: string; partner_name: string | null; country: string | null } | null;
+  startup: { startup_name: string } | null;
+};
 
 function getPw() { try { return sessionStorage.getItem("ds_admin_pw") || ""; } catch { return ""; } }
+function fmtDate(iso: string | null) {
+  if (!iso) return "";
+  try { return new Date(iso).toLocaleDateString("tr-TR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); } catch { return ""; }
+}
 
 export default function MatchAdmin() {
   const [investors, setInvestors] = useState<Investor[]>([]);
@@ -24,6 +33,7 @@ export default function MatchAdmin() {
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
   const [inviteMsg, setInviteMsg] = useState("");
+  const [pending, setPending] = useState<Pending[]>([]);
 
   // Yalnız EŞLEŞTİRMEYE UYGUN yatırımcılar: ilgi gösteren (interest_at) + onaylı (verified).
   // Binlerce ham/pending kayıt burada gösterilmez. + onaylı girişimler.
@@ -33,7 +43,8 @@ export default function MatchAdmin() {
       fetch(`/api/admin/invest?password=${encodeURIComponent(pw)}&interested=1`).then((r) => r.json()),
       fetch(`/api/admin/invest?password=${encodeURIComponent(pw)}&status=verified`).then((r) => r.json()),
       fetch(`/api/admin/startups?password=${encodeURIComponent(pw)}&status=approved`).then((r) => r.json()),
-    ]).then(([intr, ver, st]) => {
+      fetch(`/api/admin/match?password=${encodeURIComponent(pw)}&pending=1`).then((r) => r.json()),
+    ]).then(([intr, ver, st, pend]) => {
       const map = new Map<string, Investor>();
       for (const i of (intr.investors || [])) map.set(i.id, i);
       for (const i of (ver.investors || [])) if (!map.has(i.id)) map.set(i.id, i);
@@ -41,8 +52,17 @@ export default function MatchAdmin() {
       const list = [...map.values()].sort((a, b) => (b.interest_at ? 1 : 0) - (a.interest_at ? 1 : 0));
       setInvestors(list);
       setStartups(st.startups || []);
+      setPending(pend.pending || []);
     }).catch(() => {}).finally(() => setLoading(false));
   }, []);
+
+  const setMeeting = async (id: string, status: "scheduled" | "done" | "passed") => {
+    setPending((prev) => prev.filter((p) => p.id !== id)); // optimistik: kuyruktan düş
+    await fetch("/api/admin/match", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: getPw(), action: "set_meeting", id, status }),
+    }).catch(() => {});
+  };
 
   const loadMatches = useCallback(async (investorId: string) => {
     const r = await fetch(`/api/admin/match?password=${encodeURIComponent(getPw())}&investorId=${investorId}`);
@@ -90,6 +110,7 @@ export default function MatchAdmin() {
     const s = `${i.firm_name} ${i.partner_name || ""} ${i.email || ""} ${(i.sectors || []).join(" ")}`.toLowerCase();
     return s.includes(q.trim().toLowerCase());
   });
+  const pendingInvestorIds = new Set(pending.map((p) => p.investor_id));
 
   return (
     <div className="space-y-6">
@@ -102,6 +123,32 @@ export default function MatchAdmin() {
           Liste yalnız <strong className="text-foreground">ilgi gösteren</strong> ve <strong className="text-foreground">onaylı</strong> yatırımcıları içerir (ilgilenenler üstte). Yatırımcı seç, tezine uyan onaylı girişimleri işaretle, sonra portala davet et — giriş yaptığında bu girişimleri görecek.
         </p>
       </div>
+
+      {/* Bekleyen görüşme talepleri — süreç takibi (işlenene kadar hatırlatır) */}
+      {pending.length > 0 && (
+        <div className="glass-panel rounded-2xl border border-orange-500/30 bg-orange-500/[0.05] p-5">
+          <div className="flex items-center gap-2 text-orange-400 font-bold mb-3">
+            <Handshake className="h-5 w-5" /> Bekleyen Görüşme Talepleri ({pending.length})
+          </div>
+          <div className="space-y-2">
+            {pending.map((p) => (
+              <div key={p.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-xl border border-border/40 bg-background/40 p-3">
+                <div className="min-w-0">
+                  <div className="text-sm text-foreground truncate">
+                    <strong>{p.investor?.firm_name || "?"}</strong>{p.investor?.country ? ` · ${p.investor.country}` : ""} <span className="text-muted-foreground">→</span> <strong>{p.startup?.startup_name || "?"}</strong>
+                  </div>
+                  <div className="text-[11px] text-muted-foreground">{[p.investor?.partner_name, fmtDate(p.action_at)].filter(Boolean).join(" · ")}</div>
+                </div>
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <button onClick={() => setMeeting(p.id, "scheduled")} className="btn btn-secondary btn-sm">Ayarlandı</button>
+                  <button onClick={() => setMeeting(p.id, "done")} className="btn btn-primary btn-sm"><CheckCircle2 className="h-4 w-4" /> Tamamlandı</button>
+                  <button onClick={() => setMeeting(p.id, "passed")} className="text-xs text-muted-foreground hover:text-foreground px-2">Vazgeç</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {loading ? (
         <div className="flex items-center justify-center py-16 text-muted-foreground"><Loader2 className="h-5 w-5 animate-spin" /></div>
@@ -121,6 +168,7 @@ export default function MatchAdmin() {
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-bold text-sm text-foreground truncate">{inv.firm_name}</span>
                     <span className="flex items-center gap-1 shrink-0">
+                      {pendingInvestorIds.has(inv.id) && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-orange-500/15 text-orange-400 border-orange-500/30">🤝 bekliyor</span>}
                       {inv.interest_at && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-primary/10 text-primary border-primary/20">ilgilendi</span>}
                       {inv.status === "verified" && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-sky-500/10 text-sky-400 border-sky-500/20">onaylı</span>}
                       {inv.portal_enabled && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">davetli</span>}

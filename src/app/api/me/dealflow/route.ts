@@ -85,6 +85,7 @@ export async function POST(req: NextRequest) {
   if (body.action === "skipped") {
     patch.skip_reason = typeof body.reason === "string" && body.reason.trim() ? body.reason.trim().slice(0, 300) : null;
   }
+  if (body.action === "requested") patch.meeting_status = "open"; // admin bekleyen kuyruğuna girer
   const { error: dbErr } = await supabaseAdmin
     .from("inv_matches")
     .update(patch)

@@ -47,6 +47,7 @@ export default function AdminLayout({
   const [pw, setPw] = useState("");
   const [pwErr, setPwErr] = useState("");
   const [pwLoading, setPwLoading] = useState(false);
+  const [pendingCount, setPendingCount] = useState(0); // bekleyen görüşme talebi (bildirim)
 
   useEffect(() => {
     let saved: string | null = null;
@@ -75,6 +76,23 @@ export default function AdminLayout({
       .catch(() => {})
       .finally(() => setChecking(false));
   }, []);
+
+  // Bekleyen görüşme talebi sayısı — sidebar bildirimi. Girişten sonra + dakikada bir tazele.
+  useEffect(() => {
+    if (!authed) return;
+    const load = () => {
+      let pw = "";
+      try { pw = sessionStorage.getItem(ADMIN_PW_KEY) || ""; } catch {}
+      if (!pw) return;
+      fetch(`/api/admin/match?password=${encodeURIComponent(pw)}&pending=1`)
+        .then((r) => r.json())
+        .then((d) => setPendingCount(d.count || 0))
+        .catch(() => {});
+    };
+    load();
+    const t = setInterval(load, 60000);
+    return () => clearInterval(t);
+  }, [authed]);
 
   const submitPw = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -242,7 +260,10 @@ export default function AdminLayout({
                 }`}
               >
                 <Icon className="h-4 w-4 shrink-0" />
-                {item.name}
+                <span className="flex-1">{item.name}</span>
+                {item.href === "/admin/match" && pendingCount > 0 && (
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-orange-500 text-background">{pendingCount}</span>
+                )}
               </Link>
             );
           })}
@@ -323,7 +344,10 @@ export default function AdminLayout({
                     }`}
                   >
                     <Icon className="h-4 w-4 shrink-0" />
-                    {item.name}
+                    <span className="flex-1">{item.name}</span>
+                    {item.href === "/admin/match" && pendingCount > 0 && (
+                      <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-orange-500 text-background">{pendingCount}</span>
+                    )}
                   </Link>
                 );
               })}
