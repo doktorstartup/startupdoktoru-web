@@ -12,8 +12,8 @@ import { sirketAdiCikar } from "./topla.mjs";
 // varlik.mjs playwright'a bağlı ve CI'da kurulmuyor; saf fonksiyon ayrı modülde.
 import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
-import { govde } from "./gorsel.mjs";
-import { dogrulaHitap } from "./yazi.mjs";
+import { govde } from "./gorsel-govde.mjs";
+import { dogrulaHitap } from "./yazi-kapi.mjs";
 
 const R = [];
 const t = (ad, ok) => R.push([ad, !!ok]);

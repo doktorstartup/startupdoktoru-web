@@ -27,19 +27,37 @@ export async function GET(req: NextRequest) {
     .order("created_at", { ascending: false });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-  // Görüntülenme: ds_events page_view, path /blog/<slug>.
+  // Görüntülenme: ds_events page_view. Türkçe yazı /blog/<slug>, İngilizce
+  // /en/blog/<slug> yolunda. Eskiden yalnız /blog/% sorgulanıyor ve sayaç
+  // dile göre değil slug'a göre anahtarlanıyordu: İngilizce okumalar hiç
+  // sayılmıyor, panelde iki dil de aynı (Türkçe) rakamı gösteriyordu.
+  //
+  // Site sahibinin kendi ziyaretleri de sayılıyordu (önizleme, sayfa yenileme).
+  // Analytics artık işaretli tarayıcıda page_view göndermiyor ama GEÇMİŞ veri
+  // kirli. Silmek yerine burada dışlanıyor: /admin'e girmiş bir oturum okuyucu
+  // değildir. Ölçüldü — yeni yazıların görüntülemelerinin çoğu bu oturumlardan.
+  const { data: adminOlaylari } = await supabaseAdmin
+    .from("ds_events")
+    .select("session_id")
+    .like("path", "/admin%");
+  const sahipOturumlari = new Set((adminOlaylari || []).map((e) => e.session_id).filter(Boolean));
+
   const { data: views } = await supabaseAdmin
     .from("ds_events")
-    .select("path")
+    .select("path, session_id")
     .eq("event_type", "page_view")
-    .like("path", "/blog/%");
+    .or("path.like./blog/%,path.like./en/blog/%");
   const viewMap = new Map<string, number>();
   for (const v of views || []) {
-    const slug = (v.path || "").replace(/^\/blog\//, "").replace(/\/$/, "");
-    if (slug) viewMap.set(slug, (viewMap.get(slug) || 0) + 1);
+    if (v.session_id && sahipOturumlari.has(v.session_id)) continue;
+    const yol = (v.path || "").replace(/\/$/, "");
+    const m = /^\/(?:(en)\/)?blog\/(.+)$/.exec(yol);
+    if (!m || !m[2]) continue;
+    const anahtar = `${m[1] || "tr"}::${m[2]}`;
+    viewMap.set(anahtar, (viewMap.get(anahtar) || 0) + 1);
   }
 
-  const withViews = (posts || []).map((p) => ({ ...p, views: viewMap.get(p.slug) || 0 }));
+  const withViews = (posts || []).map((p) => ({ ...p, views: viewMap.get(`${p.lang}::${p.slug}`) || 0 }));
   return NextResponse.json({ posts: withViews });
 }
 

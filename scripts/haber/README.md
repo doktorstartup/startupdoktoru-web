@@ -61,6 +61,23 @@ node scripts/haber/topla.mjs --yaz           # kuyruğu güncelle
 | Blog'u yazmadan görmek | `yayinla.mjs $K --kuru` |
 | Paket klasörü | `HABER_PAKET_DIR` ortam değişkeni (şu an Drive'a bağlı) |
 
+## CI (bunu atlama)
+
+`haber.yml` bilerek `npm install` yapmaz — toplayıcının sıfır bağımlılığı var.
+Regresyon testi yanlışlıkla ağır bir modül import ederse (playwright-core,
+@supabase/supabase-js) CI her koşuda `ERR_MODULE_NOT_FOUND` ile düşer ve
+**haber toplama hiç çalışmaz**. Bu iki kez yaşandı: 13 Eylül (`varlik.mjs`),
+29 Eylül (`gorsel.mjs` + `yazi.mjs`).
+
+Kural: testin import ettiği her modül bağımlılıksız olacak. Saf fonksiyonlar
+ayrı dosyalarda durur — `appstore.mjs`, `gorsel-govde.mjs`, `yazi-kapi.mjs`.
+
+Test dosyasına dokunduktan sonra:
+
+```bash
+./scripts/haber/ci-kontrol.sh     # node_modules'ü gizleyip testleri koşar
+```
+
 ## Testler
 
 ```bash

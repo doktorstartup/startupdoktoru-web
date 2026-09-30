@@ -27,6 +27,12 @@ import {
 
 const ADMIN_PW_KEY = "ds_admin_pw";
 
+// Site sahibinin kendi ziyaretleri okunma sayısını şişiriyordu: önizleme ve
+// sayfa yenileme de okuyucu sayılıyordu. Panele girildiğinde kalıcı bir işaret
+// bırakılır; Analytics bu işaret varsa page_view göndermez.
+const SAHIP_ANAHTARI = "ds_sahip";
+const sahibiIsaretle = () => { try { localStorage.setItem(SAHIP_ANAHTARI, "1"); } catch {} };
+
 export default function AdminLayout({
   children,
 }: {
@@ -60,7 +66,7 @@ export default function AdminLayout({
     })
       .then((r) => r.json())
       .then((d) => {
-        if (d.ok) setAuthed(true);
+        if (d.ok) { setAuthed(true); sahibiIsaretle(); }
         else
           try {
             sessionStorage.removeItem(ADMIN_PW_KEY);
@@ -85,6 +91,7 @@ export default function AdminLayout({
         try {
           sessionStorage.setItem(ADMIN_PW_KEY, pw);
         } catch {}
+        sahibiIsaretle();
         setAuthed(true);
       } else {
         setPwErr(d.error || "Hatalı şifre.");
