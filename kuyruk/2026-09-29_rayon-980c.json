@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_rayon-980c",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Rayon",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "EUR",
+      "usd": 10800000
+    },
+    "lider": "Partech",
+    "katilanlar": [
+      "Foundamental",
+      "Northzone",
+      "Seedcamp"
+    ],
+    "kurucular": [
+      "Bastien Dolla"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/rayon-raises-eur10m-series-a-to-expand-ai-powered-interior-design-platform/",
+      "baslik": "Rayon raises €10M Series A to expand AI-powered interior design platform",
+      "tarih": "Tue, 29 Sep 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Rayon , a browser-based drawing software platform for interior designers, has raised €10 million in Series A funding to further develop its platform and expand its go-to-market activities.",
+      "kaynak_url": "https://tech.eu/2026/09/29/rayon-raises-eur10m-series-a-to-expand-ai-powered-interior-design-platform/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/29/rayon-raises-eur10m-series-a-to-expand-ai-powered-interior-design-platform/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

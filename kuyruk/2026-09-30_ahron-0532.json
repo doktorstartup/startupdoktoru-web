@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_ahron-0532",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Ahron",
+    "domain": "ahron.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2200000,
+      "birim": "EUR",
+      "usd": 2376000
+    },
+    "lider": "Cusp Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Rado Pavlov",
+      "Carl Hoffmann"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T06:32:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/30/ahron-raises-eur22m-to-automate-hr-processes-with-ai/",
+      "baslik": "Ahron raises €2.2M to automate HR processes with AI",
+      "tarih": "Wed, 30 Sep 2026 06:32:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Munich-based HR tech startup Ahron has raised €2.2 million in a funding round led by Cusp Capital , with participation from superangels and a group of business angels from the HR sector, including Sab",
+      "kaynak_url": "https://tech.eu/2026/09/30/ahron-raises-eur22m-to-automate-hr-processes-with-ai/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

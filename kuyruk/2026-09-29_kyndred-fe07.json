@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_kyndred-fe07",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Kyndred",
+    "domain": "getkyndred.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 500000,
+      "birim": "EUR",
+      "usd": 540000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Alex Bararu",
+      "Rares Mosescu"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T09:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/romanias-kyndred-raises-eur500k-from-early-game-ventures-to-build-ai-companions/",
+      "baslik": "Romania’s Kyndred raises €500K from Early Game Ventures to build AI companions",
+      "tarih": "Tue, 29 Sep 2026 09:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kyndred , a Romanian startup developing AI companions designed to support users with everyday tasks, has raised €500,000 in a pre-seed round from Early Game Ventures .",
+      "kaynak_url": "https://tech.eu/2026/09/29/romanias-kyndred-raises-eur500k-from-early-game-ventures-to-build-ai-companions/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/09/29/romanias-kyndred-raises-eur500k-from-early-game-ventures-to-build-ai-companions/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

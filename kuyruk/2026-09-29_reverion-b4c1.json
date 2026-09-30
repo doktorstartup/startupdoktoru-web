@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_reverion-b4c1",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Reverion",
+    "domain": "reverion.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 154200000,
+      "birim": "EUR",
+      "usd": 166536000
+    },
+    "lider": "Kembara",
+    "katilanlar": [
+      "Mundi Ventures’ €1 billion DeepTech",
+      "European Innovation Council Fund",
+      "Energy Impact Partners",
+      "Possible Ventures",
+      "UVC Partners",
+      "Extantia"
+    ],
+    "kurucular": [
+      "Stephan Herrmann",
+      "Felix Fischer"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T12:00:59.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/germanys-reverion-raises-e154-2-million-to-scale-production-of-power-plants-that-generate-electricity-from-gas/",
+      "baslik": "Germany’s Reverion raises €154.2 million to scale production of power plants that generate electricity from gas",
+      "tarih": "Tue, 29 Sep 2026 12:00:59 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Reverion , an Eresing-based EnergyTech company that builds reversible fuel cell power plants for decentralised energy supply, today announced the closing of a €154.2 million ($175 million) Series B fu",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/germanys-reverion-raises-e154-2-million-to-scale-production-of-power-plants-that-generate-electricity-from-gas/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/germanys-reverion-raises-e154-2-million-to-scale-production-of-power-plants-that-generate-electricity-from-gas/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

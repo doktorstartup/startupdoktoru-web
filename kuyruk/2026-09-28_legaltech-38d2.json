@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_legaltech-38d2",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 9,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "legaltech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1700000,
+      "birim": "EUR",
+      "usd": 1836000
+    },
+    "lider": "Vendep Capital",
+    "katilanlar": [
+      "FIRSTPICK VC"
+    ],
+    "kurucular": [
+      "Rytis Rudzinskas"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-28T13:58:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/enforceshield-raises-e1-7-million-seed/",
+      "baslik": "Lithuanian legaltech startup secures €1.7 million seed to automate takedowns and IP enforcement workflows",
+      "tarih": "Mon, 28 Sep 2026 13:58:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Vilnius-based legaltech startup EnforceShield has raised €1.7 million in a seed round led by Vendep Capital , with participation from FIRSTPICK VC , to expand its autonomous intellectual property enfo",
+      "kaynak_url": "https://arcticstartup.com/enforceshield-raises-e1-7-million-seed/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://arcticstartup.com/enforceshield-raises-e1-7-million-seed/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_ipercept-13d4",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "IPercept",
+    "domain": "ipercept.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 16500000,
+      "birim": "USD",
+      "usd": 16500000
+    },
+    "lider": "Isogon Ventures",
+    "katilanlar": [
+      "London-headquartered VC 2150"
+    ],
+    "kurucular": [
+      "Karoly Szipka"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T06:55:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/swedish-machine-fitness-tracker-ipercept-raises-165m/",
+      "baslik": "Swedish machine fitness tracker IPercept raises $16.5M",
+      "tarih": "Tue, 29 Sep 2026 06:55:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swedish machine fitness tracker IPercept has raised $16.5m in a Series A funding round, it said today.",
+      "kaynak_url": "https://tech.eu/2026/09/29/swedish-machine-fitness-tracker-ipercept-raises-165m/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/09/29/swedish-machine-fitness-tracker-ipercept-raises-165m/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

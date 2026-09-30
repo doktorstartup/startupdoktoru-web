@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_spotable-9edf",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Spotable",
+    "domain": "spotable.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Sebastien Vandendriessche",
+      "Pieter-Jan Philips"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/belgian-construction-tech-spotable-raises-eur4m-for-international-expansion/",
+      "baslik": "Belgian construction tech Spotable raises €4M for international expansion",
+      "tarih": "Tue, 29 Sep 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Ghent-based construction tech company Spotable has raised €4 million in seed funding to further develop its platform and accelerate its expansion across Europe and the United States.",
+      "kaynak_url": "https://tech.eu/2026/09/29/belgian-construction-tech-spotable-raises-eur4m-for-international-expansion/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/29/belgian-construction-tech-spotable-raises-eur4m-for-international-expansion/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

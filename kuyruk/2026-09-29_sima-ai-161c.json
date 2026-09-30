@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_sima-ai-161c",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "SiMa AI",
+    "domain": "sima.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 150000000,
+      "birim": "USD",
+      "usd": 150000000
+    },
+    "lider": "Fidelity Management & Research Company",
+    "katilanlar": [
+      "Amplify"
+    ],
+    "kurucular": [
+      "Krishna Rangasayee"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/29/sima-ai-1-45-milyar-dolar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/",
+      "baslik": "SiMa AI, 1,45 milyar dolar değerleme üzerinden 150 milyon dolar yatırım aldı",
+      "tarih": "Tue, 29 Sep 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "SiMA.ai, 150 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/29/sima-ai-1-45-milyar-dolar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/09/29/sima-ai-1-45-milyar-dolar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

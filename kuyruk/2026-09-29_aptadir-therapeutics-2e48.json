@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_aptadir-therapeutics-2e48",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Aptadir Therapeutics",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 45000000,
+      "birim": "USD",
+      "usd": 45000000
+    },
+    "lider": "4BIO Capital",
+    "katilanlar": [
+      "London-based VC",
+      "Italy’s",
+      "Extend"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-29T09:24:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/milan-based-biotech-aptadir-therapeutics-raises-45m-seed-round/",
+      "baslik": "Milan-based biotech Aptadir Therapeutics raises $45M seed round",
+      "tarih": "Tue, 29 Sep 2026 09:24:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A Milan-based biotech company developing novel treatments for difficult to treat genetic conditions has raised a $45m seed round, it said today.",
+      "kaynak_url": "https://tech.eu/2026/09/29/milan-based-biotech-aptadir-therapeutics-raises-45m-seed-round/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/09/29/milan-based-biotech-aptadir-therapeutics-raises-45m-seed-round/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

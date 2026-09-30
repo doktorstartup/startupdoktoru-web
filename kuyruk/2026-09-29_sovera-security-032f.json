@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-29_sovera-security-032f",
+  "durum": "hazir",
+  "puan": 38,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Sovera Security",
+    "domain": "sovera.security",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 535000,
+      "birim": "EUR",
+      "usd": 577800
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Søren Laustrup"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-29T09:26:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/29/sovera-security-secures-eur535k-from-eifo-to-build-sovereign-ai-cybersecurity/",
+      "baslik": "Sovera Security secures €535K from EIFO to build sovereign AI cybersecurity",
+      "tarih": "Tue, 29 Sep 2026 09:26:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Danish cybersecurity company Sovera Security has secured €535,000 (4 million DKK) from the Danish Export and Investment Fund (EIFO).",
+      "kaynak_url": "https://tech.eu/2026/09/29/sovera-security-secures-eur535k-from-eifo-to-build-sovereign-ai-cybersecurity/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

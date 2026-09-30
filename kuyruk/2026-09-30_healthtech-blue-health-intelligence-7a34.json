@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_healthtech-blue-health-intelligence-7a34",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "HealthTech Blue Health Intelligence",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3400000,
+      "birim": "EUR",
+      "usd": 3672000
+    },
+    "lider": "Knop Investments",
+    "katilanlar": [],
+    "kurucular": [
+      "Leanne Verdonck"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T07:13:45.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/amsterdam-based-preventive-healthtech-blue-health-intelligence-raises-e3-4-million-to-expand-across-europe/",
+      "baslik": "Amsterdam&#8217;s preventive HealthTech Blue Health Intelligence raises €3.4 million to expand across Europe",
+      "tarih": "Wed, 30 Sep 2026 07:13:45 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Blue Health Intelligence , an Amsterdam-based preventive health care startup, has secured €3.4 million in funding for international expansion and further product development.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/amsterdam-based-preventive-healthtech-blue-health-intelligence-raises-e3-4-million-to-expand-across-europe/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_eliseai-1289",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "EliseAI",
+    "domain": "eliseai.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 350000000,
+      "birim": "USD",
+      "usd": 350000000
+    },
+    "lider": "Andreessen Horowitz",
+    "katilanlar": [
+      "Ontario Teachers' Pension Plan",
+      "Bessemer Venture Partners",
+      "Sapphire Ventures",
+      "Navitas Capital"
+    ],
+    "kurucular": [
+      "Minna Song",
+      "Tony Stoyanov"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/09/30/eliseai-4-milyar-dolar-degerleme-uzerinden-350-milyon-dolar-yatirim-aldi/",
+      "baslik": "EliseAI, 4 milyar dolar değerleme üzerinden 350 milyon dolar yatırım aldı",
+      "tarih": "Wed, 30 Sep 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "EliseAI , 350 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/09/30/eliseai-4-milyar-dolar-degerleme-uzerinden-350-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

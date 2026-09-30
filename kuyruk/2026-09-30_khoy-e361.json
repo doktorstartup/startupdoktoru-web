@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_khoy-e361",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "KHOY",
+    "domain": "khoycompany.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "EUR",
+      "usd": 2160000
+    },
+    "lider": "Virta Equity",
+    "katilanlar": [
+      "Innovestor"
+    ],
+    "kurucular": [
+      "Visa Friström",
+      "András Kelemen",
+      "Jukka Salmikukka"
+    ],
+    "sektor": null,
+    "tarih": "2026-09-30T06:07:05.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/09/helsinki-based-khoy-raises-e2-million-to-take-its-vacuum-packed-sofa-beds-across-europe-and-the-us/",
+      "baslik": "Helsinki-based KHOY raises €2 million to take its vacuum-packed sofa beds across Europe and the US",
+      "tarih": "Wed, 30 Sep 2026 06:07:05 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "KHOY Company , a Helsinki-based direct-to-consumer design and furniture company, has raised €2 million in growth funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/09/helsinki-based-khoy-raises-e2-million-to-take-its-vacuum-packed-sofa-beds-across-europe-and-the-us/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}

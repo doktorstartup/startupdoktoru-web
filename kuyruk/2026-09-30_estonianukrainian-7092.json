@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_estonianukrainian-7092",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Estonian-Ukrainian",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2100000,
+      "birim": "USD",
+      "usd": 2100000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-30T06:10:42.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/dod-solution-raises-2-1-m-pre-seed/",
+      "baslik": "Estonian-Ukrainian defensetech startup lands $2.1 million pre-seed to advance onboard autonomy for unmanned systems",
+      "tarih": "Wed, 30 Sep 2026 06:10:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Estonian-Ukrainian defence technology company DOD Solution has raised $2.1 million in a pre-seed round to scale its AURA AI onboard autonomy platform for unmanned systems.",
+      "kaynak_url": "https://arcticstartup.com/dod-solution-raises-2-1-m-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/dod-solution-raises-2-1-m-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-09-30T11:08:07.641Z"
+}
