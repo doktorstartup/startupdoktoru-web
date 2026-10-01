@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_mbased-793c",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "M-Based",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 700000,
+      "birim": "USD",
+      "usd": 700000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-01T06:30:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/01/mantar-tabanli-alternatif-malzemeler-gelistiren-m-based-yaklasik-700-bin-dolar-yatirim-aldi/",
+      "baslik": "Mantar tabanlı alternatif malzemeler geliştiren M-Based, yaklaşık 700 bin dolar yatırım aldı",
+      "tarih": "Thu, 01 Oct 2026 06:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Mantar tabanlı alternatif malzeme teknolojileri geliştiren M-Based , yaklaşık 700 bin dolarlık tohum yatırım turunu tamamladı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/01/mantar-tabanli-alternatif-malzemeler-gelistiren-m-based-yaklasik-700-bin-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum yatırım",
+      "kaynak_url": "https://webrazzi.com/2026/10/01/mantar-tabanli-alternatif-malzemeler-gelistiren-m-based-yaklasik-700-bin-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

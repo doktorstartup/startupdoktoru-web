@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_frank-4a5c",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "FRANK",
+    "domain": "frankinsurance.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2900000,
+      "birim": "EUR",
+      "usd": 3132000
+    },
+    "lider": "Armilar",
+    "katilanlar": [
+      "Start Ventures"
+    ],
+    "kurucular": [
+      "Antonio Castro",
+      "Ricardo Vallejo",
+      "Alexandre Silva",
+      "António Castro"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/01/frank-raises-eur29m-to-cut-paperwork-for-insurance-brokers/",
+      "baslik": "FRANK raises €2.9M to cut paperwork for insurance brokers",
+      "tarih": "Thu, 01 Oct 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Portuguese insurtech FRANK has raised €2.9 million in a funding round led by Armilar and Start Ventures to further develop its AI-powered platform for insurance brokers and prepare for international e",
+      "kaynak_url": "https://tech.eu/2026/10/01/frank-raises-eur29m-to-cut-paperwork-for-insurance-brokers/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

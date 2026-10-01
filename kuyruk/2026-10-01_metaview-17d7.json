@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_metaview-17d7",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Metaview",
+    "domain": "metaview.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 53100000,
+      "birim": "EUR",
+      "usd": 57348000
+    },
+    "lider": "Insight Partners",
+    "katilanlar": [
+      "Intrepid Growth Partners",
+      "Vertex Ventures US",
+      "Garuda Ventures",
+      "San Francisco",
+      "Seedcamp",
+      "Plural",
+      "London",
+      "GV"
+    ],
+    "kurucular": [
+      "Siadhal Magos",
+      "Shahriar Tajbakhsh",
+      "Seth Tilliss",
+      "Aditya Gupta"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T11:17:35.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-metaview-raises-e53-1-million-series-c-led-by-insight-partners-to-scale-its-agentic-recruiting-platform/",
+      "baslik": "London&#8217;s Metaview raises €53.1 million Series C led by Insight Partners to scale its agentic recruiting platform",
+      "tarih": "Thu, 01 Oct 2026 11:17:35 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Metaview , a London-based agentic recruiting platform that automates sourcing, application review, interviewing, reporting and hiring workflows, has raised €53.1 million ($60 million) in Series C fund",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-metaview-raises-e53-1-million-series-c-led-by-insight-partners-to-scale-its-agentic-recruiting-platform/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-metaview-raises-e53-1-million-series-c-led-by-insight-partners-to-scale-its-agentic-recruiting-platform/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

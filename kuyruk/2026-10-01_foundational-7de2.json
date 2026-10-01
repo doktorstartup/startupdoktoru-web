@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_foundational-7de2",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Foundational",
+    "domain": "foundational.space",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 8200000,
+      "birim": "GBP",
+      "usd": 10414000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Hira Virdee",
+      "Dave Gooding"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/01/foundational-secures-ps82m-pre-seed-as-it-emerges-from-stealth/",
+      "baslik": "Foundational secures £8.2M pre-seed as it emerges from stealth",
+      "tarih": "Thu, 01 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based space technology company Foundational has emerged from stealth with £8.2 million in pre-seed funding to expand its satellite positioning infrastructure and further develop its data platfo",
+      "kaynak_url": "https://tech.eu/2026/10/01/foundational-secures-ps82m-pre-seed-as-it-emerges-from-stealth/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/01/foundational-secures-ps82m-pre-seed-as-it-emerges-from-stealth/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_deepslate-7a93",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Deepslate",
+    "domain": "deepslate.eu",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7700000,
+      "birim": "EUR",
+      "usd": 8316000
+    },
+    "lider": "42CAP",
+    "katilanlar": [
+      "Alstin Capital",
+      "SIVentures"
+    ],
+    "kurucular": [
+      "Paskal Paesler"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/01/deepslate-secures-eur77m-for-its-european-voice-ai-platform/",
+      "baslik": "Deepslate secures €7.7M for its European voice AI platform",
+      "tarih": "Thu, 01 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Berlin-based voice AI company Deepslate has raised €7.7 million in a seed round led by Munich-based technology investor 42CAP , with participation from Alstin Capital , existing investor SIVentures an",
+      "kaynak_url": "https://tech.eu/2026/10/01/deepslate-secures-eur77m-for-its-european-voice-ai-platform/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/01/deepslate-secures-eur77m-for-its-european-voice-ai-platform/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

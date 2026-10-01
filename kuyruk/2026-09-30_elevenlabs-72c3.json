@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-09-30_elevenlabs-72c3",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "ElevenLabs'",
+    "domain": "elevenlabs.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 300000000,
+      "birim": "GBP",
+      "usd": 381000000
+    },
+    "lider": "Wellington",
+    "katilanlar": [
+      "Andreessen Horowitz",
+      "T Rowe Price",
+      "Lightspeed",
+      "Iconiq",
+      "D.E"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-30T16:28:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/09/30/elelvenlabs-doubles-valuation-to-22bn-with-300m-employee-tender-offer/",
+      "baslik": "ElevenLabs' valuation doubles to $22BN, as completes $300M employee tender offer",
+      "tarih": "Wed, 30 Sep 2026 16:28:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Existing investors and employees sold £300m worth of stock in the tender offer, which was led by Wellington and T Rowe Price.",
+      "kaynak_url": "https://tech.eu/2026/09/30/elelvenlabs-doubles-valuation-to-22bn-with-300m-employee-tender-offer/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://tech.eu/2026/09/30/elelvenlabs-doubles-valuation-to-22bn-with-300m-employee-tender-offer/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}

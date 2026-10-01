@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_osavul-f79f",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Osavul",
+    "domain": "osavul.cloud",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 8500000,
+      "birim": "EUR",
+      "usd": 9180000
+    },
+    "lider": "33N Ventures",
+    "katilanlar": [
+      "G+D Ventures",
+      "Balnord",
+      "42CAP"
+    ],
+    "kurucular": [
+      "Ukrainians Dmytro Plieshakov"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T09:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/01/hostile-threat-warning-startup-osavul-raises-8-5m/",
+      "baslik": "Hostile threat warning startup Osavul raises €8.5M",
+      "tarih": "Thu, 01 Oct 2026 09:20:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A startup launched in light of Russia’s invasion of Ukraine whose tech helps NATO and governments detect hostile threats before they escalate has raised €8.5m in a Series A funding round, it said toda",
+      "kaynak_url": "https://tech.eu/2026/10/01/hostile-threat-warning-startup-osavul-raises-8-5m/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/01/hostile-threat-warning-startup-osavul-raises-8-5m/"
+    }
+  ],
+  "olusturma": "2026-10-01T11:34:41.489Z"
+}
