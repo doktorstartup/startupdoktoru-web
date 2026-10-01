@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { Loader2, Lock, ShoppingCart, BookOpen, Presentation } from "lucide-react";
 import { MemberLogin } from "../../../../../components/MemberLogin";
+import { PdfOkuyucu } from "../../../../../components/PdfOkuyucu";
 import { useMember } from "../../../../../lib/member";
 import { TRAININGS } from "../../../../../lib/trainings";
 import { useHref, useT } from "../../../../../lib/i18n-client";
@@ -124,19 +125,14 @@ export default function EbookPortal() {
         </div>
       )}
 
-      {/* Sistem içi PDF okuyucu — imzalı URL, toolbar gizli (indirme/yazdırma çubuğu yok) */}
-      <div className="rounded-2xl border border-border/60 overflow-hidden bg-black/30 shadow-2xl min-h-[82vh] flex items-center justify-center">
+      {/* Site içi PDF okuyucu — imzalı URL, sayfalar pdf.js ile çiziliyor (mobilde de çalışır) */}
+      <div className="rounded-2xl border border-border/60 bg-black/30 shadow-2xl p-2 sm:p-4">
         {acik ? (
-          <iframe
-            key={acik.ad}
-            src={`${acik.url}#toolbar=0&navpanes=0&view=FitH`}
-            title={adi(acik.ad)}
-            className="w-full h-[82vh]"
-          />
+          <PdfOkuyucu key={acik.url} url={acik.url} kimlik={acik.ad} sayfaMetni={t.sayfa} hataMetni={t.ebookError} />
         ) : hata ? (
-          <p className="text-sm text-muted-foreground px-6 text-center">{hata}</p>
+          <p className="text-sm text-muted-foreground px-6 py-20 text-center">{hata}</p>
         ) : (
-          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+          <div className="flex justify-center py-32"><Loader2 className="h-6 w-6 animate-spin text-muted-foreground" /></div>
         )}
       </div>
       <p className="text-[11px] text-muted-foreground text-center">{t.ebookFooter}</p>

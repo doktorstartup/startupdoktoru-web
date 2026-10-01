@@ -16,8 +16,8 @@ Kısıtlamalar:
 
 Startup Doktoru Ürünleri:
 1. Ücretsiz Eğitim: "Startup'ların Yatırımcı Karşısında Yaptığı 7 Ölümcül Hata" → /free-training
-2. E-Kitap (12 $ yerine 6 $): "Hedef Milyon Dolar" — basılı kitabın dijital sürümü → /ebook
-3. Video Eğitimler (70 $, e-kitap alana 35 $; 3'ü birden paket 99 $): Yatırımcı Sunumu, Startup Giriş Rehberi, Değerleme → /egitimler`;
+2. Dijital kitap (12 $ yerine 6 $): "Hedef Milyon Dolar" — basılı kitabın dijital sürümü, Eğitim Slaytları hediye → /ebook
+3. Video Eğitimler (70 $, kitabı alana 35 $; 3'ü birden paket 99 $): Yatırımcı Sunumu, Startup Giriş Rehberi, Değerleme → /egitimler`;
 
 // /en tarafındaki ziyaretçiye İngilizce yanıt verilir.
 const SYSTEM_PROMPT_EN = `You are the AI mentor of Startup Doktoru, drawing on Eser Memişoğlu's 10+ years in startups, innovation and investor relations.

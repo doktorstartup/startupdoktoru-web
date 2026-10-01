@@ -52,8 +52,8 @@ export const KITAP: Kitap | null = {
 // E-kitap artık BU kitabın dijital sürümü. İkisi aynı içerik, iki format —
 // karışıklık bu yüzden yapısal olarak yok. "Genişletilmiş basım" ya da
 // "biri rehber diğeri hikâye" dili KULLANILMIYOR; o dil "hangisini alayım"
-// sorusunu doğuruyordu. Eğitim slaytları ayrı bir materyal ve satılmıyor:
-// eğitim alanlara portalda hediye veriliyor.
+// sorusunu doğuruyordu. "Eğitim Slaytları" ayrı satılmıyor: dijital kitabı
+// alanlara hediye (bonus), video eğitim alanlara da portalda veriliyor.
 export const KITAP_METIN = {
   eyebrowCikti: "Yeni Kitap",
   eyebrowYakinda: "Çok Yakında",

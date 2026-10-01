@@ -614,6 +614,7 @@ export const en: Dict = {
     ebookLead: "You can read your book right here on the site.",
     ebookFooter: "Access is tied to your account — come back and read any time.",
     ebookError: "The ebook could not be opened.",
+    sayfa: "Page {n} / {toplam}",
     connectionError: "Connection error.",
   },
 
