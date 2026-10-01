@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-01_revnu-ab0b",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Revnu",
+    "domain": "revnu.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2600000,
+      "birim": "EUR",
+      "usd": 2808000
+    },
+    "lider": "NPIF II",
+    "katilanlar": [
+      "AI"
+    ],
+    "kurucular": [
+      "George Jefferson",
+      "Art Freebrey"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-01T14:58:47.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/",
+      "baslik": "AI sales startup Revnu raises €2.6 million to build team and accelerate international growth",
+      "tarih": "Thu, 01 Oct 2026 14:58:47 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Manchester-based Revnu , an AI platform helping business find customers and build their sales pipeline, has raised €2.6 million ($3 million) in order to build their team, accelerate its growth in the",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/ai-sales-startup-revnu-raises-e2-6-million-to-build-team-and-accelerate-international-growth/"
+    }
+  ],
+  "olusturma": "2026-10-01T19:29:15.780Z"
+}
