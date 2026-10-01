@@ -608,6 +608,10 @@ export const tr = {
     ebookFooter: "Erişimin hesabına tanımlı — istediğin zaman buradan okuyabilirsin.",
     ebookError: "Dosya açılamadı.",
     sayfa: "Sayfa {n} / {toplam}",
+    indir: "Sana özel PDF'ini indir",
+    indiriliyor: "Kopyan hazırlanıyor…",
+    indirNot: "Kitabın iç kapağına adın, sayfalarına adın ve e-postan basılır: bu kopya yalnızca sana ait.",
+    indirHata: "İndirme hazırlanamadı, biraz sonra tekrar dene.",
     connectionError: "Bağlantı hatası.",
   },
   ai: {

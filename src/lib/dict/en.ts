@@ -615,6 +615,10 @@ export const en: Dict = {
     ebookFooter: "Access is tied to your account — come back and read any time.",
     ebookError: "The ebook could not be opened.",
     sayfa: "Page {n} / {toplam}",
+    indir: "Download your personal PDF",
+    indiriliyor: "Preparing your copy…",
+    indirNot: "Your name is printed on the title page and your name and email on every page: this copy is yours alone.",
+    indirHata: "Could not prepare the download, please try again shortly.",
     connectionError: "Connection error.",
   },
 

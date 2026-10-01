@@ -2,10 +2,11 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Lock, ShoppingCart, BookOpen, Presentation } from "lucide-react";
+import { Loader2, Lock, ShoppingCart, BookOpen, Presentation, Download } from "lucide-react";
 import { MemberLogin } from "../../../../../components/MemberLogin";
 import { PdfOkuyucu } from "../../../../../components/PdfOkuyucu";
 import { useMember } from "../../../../../lib/member";
+import { supabase } from "../../../../../lib/supabase";
 import { TRAININGS } from "../../../../../lib/trainings";
 import { useHref, useT } from "../../../../../lib/i18n-client";
 
@@ -29,6 +30,30 @@ export default function EbookPortal() {
   const [belgeler, setBelgeler] = useState<Belge[] | null>(null);
   const [aktif, setAktif] = useState<BelgeAdi | null>(null);
   const [hata, setHata] = useState<string | null>(null);
+  const [indiriliyor, setIndiriliyor] = useState(false);
+  const [indirHatasi, setIndirHatasi] = useState(false);
+
+  // Kişiye özel kopya: adı ve e-postası basılmış PDF sunucuda üretilir.
+  const indir = useCallback(async () => {
+    setIndiriliyor(true);
+    setIndirHatasi(false);
+    try {
+      const { data } = await supabase.auth.getSession();
+      const r = await fetch("/api/ebook/indir", { headers: { Authorization: `Bearer ${data.session?.access_token || ""}` } });
+      if (!r.ok) throw new Error(String(r.status));
+      const ad = /filename\*=UTF-8''([^;]+)/.exec(r.headers.get("content-disposition") || "")?.[1];
+      const url = URL.createObjectURL(await r.blob());
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = ad ? decodeURIComponent(ad) : "Hedef-Milyon-Dolar.pdf";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(url), 10_000);
+    } catch {
+      setIndirHatasi(true);
+    } finally {
+      setIndiriliyor(false);
+    }
+  }, []);
 
   const adi = useCallback((ad: BelgeAdi) => (ad === "kitap" ? t.belgeKitap : t.belgeSunum), [t]);
 
@@ -122,6 +147,16 @@ export default function EbookPortal() {
               {adi(b.ad)}
             </button>
           ))}
+        </div>
+      )}
+
+      {aktif === "kitap" && acik && (
+        <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:justify-between">
+          <p className="text-xs text-muted-foreground">{indirHatasi ? t.indirHata : t.indirNot}</p>
+          <button onClick={indir} disabled={indiriliyor} className="btn btn-primary shrink-0 disabled:opacity-60">
+            {indiriliyor ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+            {indiriliyor ? t.indiriliyor : t.indir}
+          </button>
         </div>
       )}
 
