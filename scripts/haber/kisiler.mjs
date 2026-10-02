@@ -245,6 +245,9 @@ const LIDER_KALIP = [
   /\bbacked by\s+(?:an?\s+[^.]{0,60}?\b(?:investment|round|funding)\s+from\s+)?(.+)$/gi,
   /\breceived a grant[^,]{0,80}?\bfrom\s+(.+)$/gi,
   /\bturuna\s+(.+?)\s+(?:ortaklaşa\s+)?liderlik etti/gi,
+  // TR: "…yatırım turunu Andreessen Horowitz (a16z) ve Accel ortaklaşa yönetti."
+  // "liderlik etti" değil "yönetti" diyor; Armadin'de lider boş kalıyordu.
+  /\btur(?:unu|un)\s+(.+?)\s+(?:ortaklaşa\s+)?yönetti/gi,
   // TR: "X ve Y ortak liderliğinde gerçekleşen yatırım turuna ..." — "liderlik etti"
   // kalıbından farklı ve Webrazzi'de sık. Cümle başına/son virgüle demirlenir,
   // yoksa lazy grup cümlenin başındaki tanım öbeğini de içine alıyor.
@@ -350,6 +353,13 @@ function kurucuAdaylari(metin, cumleler, sirket, korunan) {
     // (b) TR: "A ve B tarafından kurulan / hayata geçirilen"
     const b = c.match(/(?:^|,\s*|\s)([^,;]{3,120}?)\s+tarafından\s+(?:kurulan|kuruldu|hayata geçiril)/i);
     if (b) for (const ham of parcala(b[1], korunan)) ekle(temizle(ham), "kurucu");
+
+    // (b2) TR: "Armadin; Kevin Mandia, Travis Lanham, Evan Peña ve David Slater
+    // tarafından hayata geçirildi." Kalıp (b) virgülde kesiyor ve listenin yalnız
+    // SON iki adını alıyordu — Armadin'de dört kurucudan ikisi düşmüştü.
+    // Noktalı virgüle demirlenir, o yüzden (b)'nin vakalarını etkilemez.
+    const b2 = c.match(/[;:]\s*([^.;:]{3,160}?)\s+tarafından\s+(?:kurulan|kuruldu|hayata geçiril)/i);
+    if (b2) for (const ham of parcala(b2[1], korunan)) ekle(temizle(ham), "kurucu");
 
     // (c) "NAME, (co-)founder and CEO of COMPANY" — unvan sonra, şirket iddiası var
     // D14: "Alexander Hebbe , CEO, Monava." — arctic'in sik kullandigi bicimde "of/at" YOK; eski kalip kaciriyordu.

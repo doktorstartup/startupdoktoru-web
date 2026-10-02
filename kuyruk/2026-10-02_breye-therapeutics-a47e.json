@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-10-02_breye-therapeutics-a47e",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Breye Therapeutics",
+    "domain": "breye.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 67500000,
+      "birim": "EUR",
+      "usd": 72900000
+    },
+    "lider": "Mission BioCapital",
+    "katilanlar": [
+      "Innovestor Life Science",
+      "Sound Bioventures",
+      "Catalyze Capital",
+      "Pappas Capital",
+      "Novo Holdings",
+      "Modi Ventures",
+      "Robert Blazej",
+      "Ljungström",
+      "EIFO"
+    ],
+    "kurucular": [
+      "Ulrik Mouritzen"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-02T12:20:33.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/denmarks-breye-therapeutics-raises-e67-5-million-to-advance-oral-therapies-for-early-treatment-of-retinal-diseases/",
+      "baslik": "Denmark’s Breye Therapeutics raises €67.5 million to advance oral therapies for early treatment of retinal diseases",
+      "tarih": "Fri, 02 Oct 2026 12:20:33 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Breye Therapeutics (Breye), a Danish clinical-stage biopharmaceutical company developing oral therapeutics for the early treatment of retinal diseases, has closed an oversubscribed €67.5 million Serie",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/denmarks-breye-therapeutics-raises-e67-5-million-to-advance-oral-therapies-for-early-treatment-of-retinal-diseases/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/denmarks-breye-therapeutics-raises-e67-5-million-to-advance-oral-therapies-for-early-treatment-of-retinal-diseases/"
+    }
+  ],
+  "olusturma": "2026-10-02T16:38:53.687Z"
+}

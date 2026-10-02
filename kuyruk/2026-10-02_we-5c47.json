@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-02_we-5c47",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "We",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 51000000,
+      "birim": "USD",
+      "usd": 51000000
+    },
+    "lider": "Sapphire Ventures",
+    "katilanlar": [
+      "HV Capital",
+      "Lakestar",
+      "Latitude"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-02T12:40:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/02/we-prefer-to-remain-on-the-sidelines-says-yapily-boss-amid-open-banking-consolidation/",
+      "baslik": "“We prefer to remain on the sidelines,” says Yapily boss amid open banking consolidation",
+      "tarih": "Fri, 02 Oct 2026 12:40:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapily’s last funding round was in 2021, raising a $51m Series B, led by Sapphire Ventures, with existing investors Lakestar, HV Capital and Latitude also participating.",
+      "kaynak_url": "https://tech.eu/2026/10/02/we-prefer-to-remain-on-the-sidelines-says-yapily-boss-amid-open-banking-consolidation/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/02/we-prefer-to-remain-on-the-sidelines-says-yapily-boss-amid-open-banking-consolidation/"
+    }
+  ],
+  "olusturma": "2026-10-02T16:38:53.687Z"
+}

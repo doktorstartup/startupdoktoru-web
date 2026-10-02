@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-02_volantis-34b2",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Volantis",
+    "domain": "volantissemi.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 88000000,
+      "birim": "USD",
+      "usd": 88000000
+    },
+    "lider": "Stripe'ın eski yöneticilerinden Lachy Groom",
+    "katilanlar": [
+      "Amazon'a ilk dönemlerinde yatırım yapan John Doerr",
+      "Anthropic araştırmacısı Sholto Douglas",
+      "Abstract Ventures",
+      "Dwarkesh Patel",
+      "Susa Ventures",
+      "VXI Capital",
+      "Naveen Rao",
+      "Triatomic",
+      "Google"
+    ],
+    "kurucular": [
+      "Tapa Ghosh",
+      "Roy Meade"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-02T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/02/yari-iletken-ve-yapay-zeka-altyapisi-alanina-odaklanan-volantis-88-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yarı iletken ve yapay zeka altyapısı alanına odaklanan Volantis, 88 milyon dolar yatırım aldı",
+      "tarih": "Fri, 02 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yarı iletken ve yapay zeka altyapısı alanına odaklanan Volantis , 88 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/02/yari-iletken-ve-yapay-zeka-altyapisi-alanina-odaklanan-volantis-88-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-02T16:38:53.687Z"
+}

@@ -372,6 +372,36 @@ t("yatırımcı adı tam hâliyle korunuyor",
   })());
 }
 
+
+// ── TR: noktalı virgüllü kurucu listesi + "ortaklaşa yönetti" ────────────
+// 2026-10-02 Armadin: dört kurucudan ikisi düştü ve lider boş kaldı.
+// (a) Kurucu kalıbı virgülde kesiyordu, "Armadin; Kevin Mandia, Travis
+//     Lanham, Evan Peña ve David Slater tarafından…" listesinin yalnız son
+//     ikisini alıyordu. Kaçan isim Mandiant'ın kurucusuydu — haberin en
+//     dikkat çekici adı.
+// (b) Lider kalıpları "liderlik etti" arıyordu; Webrazzi burada "turunu X ve
+//     Y ortaklaşa yönetti" demiş.
+{
+  const armadin = "Yapay zeka destekli siber güvenlik şirketi Armadin, 255,5 milyon dolar yatırım aldı. "
+    + "Şirketin 255,5 milyon dolarlık B serisi yatırım turunu Andreessen Horowitz (a16z) ve Accel ortaklaşa yönetti. "
+    + "Armadin; Kevin Mandia, Travis Lanham, Evan Peña ve David Slater tarafından hayata geçirildi.";
+  const r = kisilerCikar(armadin);
+  const ad = (r.kurucular ?? []).map((k) => k.ad ?? k);
+  t("lider: 'ortaklaşa yönetti' kalıbı", r.lider_yatirimci === "Andreessen Horowitz");
+  t("kurucular: noktalı virgüllü liste tam alınıyor",
+    ["Kevin Mandia", "Travis Lanham", "Evan Peña", "David Slater"].every((x) => ad.includes(x)));
+
+  // Mevcut kalıplar bozulmamalı — ikisi de virgül/boşlukla ayrılmış.
+  const crusoe = kisilerCikar("Crusoe'nun turuna Atreides Management liderlik etti. "
+    + "Chase Lochmiller ve Cully Cavness tarafından hayata geçirilen şirket veri merkezi kuruyor.");
+  const vantora = kisilerCikar("Vantora, Silversmith Capital Partners'tan 100 milyon dolar yatırım aldı. "
+    + "Vantora, 2022 yılında John Kuolt tarafından hayata geçirildi.");
+  const cAd = (crusoe.kurucular ?? []).map((k) => k.ad ?? k);
+  const vAd = (vantora.kurucular ?? []).map((k) => k.ad ?? k);
+  t("eski kurucu kalıpları bozulmadı",
+    cAd.length === 2 && cAd.includes("Chase Lochmiller") && vAd.length === 1 && vAd.includes("John Kuolt"));
+}
+
 // ── Rapor ──
 let bad = 0;
 for (const [ad, ok] of R) {

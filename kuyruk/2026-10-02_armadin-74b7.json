@@ -25,7 +25,7 @@
       "birim": "USD",
       "usd": 255500000
     },
-    "lider": null,
+    "lider": "Andreessen Horowitz",
     "katilanlar": [
       "Bain Capital Ventures",
       "Ballistic Ventures",
@@ -34,11 +34,14 @@
       "Menlo Ventures",
       "Redpoint",
       "In-Q-Tel",
+      "Accel",
       "8VC"
     ],
     "kurucular": [
       "Evan Peña",
-      "David Slater"
+      "David Slater",
+      "Kevin Mandia",
+      "Travis Lanham"
     ],
     "sektor": null,
     "tarih": "2026-10-02T10:00:00.000Z"
