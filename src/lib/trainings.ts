@@ -140,6 +140,10 @@ export const BUNDLE = {
 export const EBOOK_DISCOUNT_CODE = "EBOOK50";
 export const DISCOUNTED_TRAINING_PRICE = 35;
 
+// Kitaba (Hedef Milyon Dolar dijital sürümü) erişim veren ürünler: kitabın kendisi
+// ve tüm eğitimler paketi — en kapsamlı paketi alan kitaptan yoksun kalmasın.
+export const KITAP_URUNLERI = ["ebook_13_steps", BUNDLE.id];
+
 export const getTraining = (id: string) => TRAININGS.find((t) => t.id === id);
 
 // Katalog iki dilli tutuluyor; sayfalar metni buradan dile göre okur.

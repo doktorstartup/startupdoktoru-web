@@ -12,6 +12,7 @@ import {
 import CheckoutForm from "../../../../components/CheckoutForm";
 import { useHref, useLang, useT } from "../../../../lib/i18n-client";
 import { IngilizceBaskiKaydi } from "../../../../components/IngilizceBaskiKaydi";
+import { KitapYorumlari } from "../../../../components/KitapYorumlari";
 
 export default function EBookLanding() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -155,6 +156,7 @@ export default function EBookLanding() {
             )}
           </div>
         </section>
+        {!en && <KitapYorumlari />}
       </main>
 
       {/* Footer */}

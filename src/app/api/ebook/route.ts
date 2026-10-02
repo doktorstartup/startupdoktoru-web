@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase";
+import { KITAP_URUNLERI } from "../../../lib/trainings";
 
 // Üyeye ait dijital dosyalar: kısa ömürlü imzalı URL verir. Dosyalar public/'te
 // değil, özel Supabase Storage bucket'ında.
 //
 // İki belge var, erişim kuralları ayrı:
 //
-//   kitap  → basılı kitabın dijital sürümü. E-kitabı satın alanlara açık.
+//   kitap  → basılı kitabın dijital sürümü. Kitabı veya tüm eğitimler paketini alanlara açık.
 //   sunum  → eğitimlerde ders olarak anlatılan sunum/slayt dosyası. Hem e-kitabı
 //            alanlara (geçmişte satın aldıkları içerik buydu) hem de herhangi bir
 //            video eğitimi alanlara açık — eğitimin kendi materyali.
@@ -21,7 +22,7 @@ const BELGELER = {
   },
   kitap: {
     path: "kitap.pdf",
-    urunler: ["ebook_13_steps"],
+    urunler: KITAP_URUNLERI,
   },
 } as const;
 

@@ -5,9 +5,10 @@ import Link from "next/link";
 import { Loader2, Lock, ShoppingCart, BookOpen, Presentation, Download } from "lucide-react";
 import { MemberLogin } from "../../../../../components/MemberLogin";
 import { PdfOkuyucu } from "../../../../../components/PdfOkuyucu";
+import { KitapYorumKarti } from "../../../../../components/KitapYorumKarti";
 import { useMember } from "../../../../../lib/member";
 import { supabase } from "../../../../../lib/supabase";
-import { TRAININGS } from "../../../../../lib/trainings";
+import { KITAP_URUNLERI, TRAININGS } from "../../../../../lib/trainings";
 import { useHref, useT } from "../../../../../lib/i18n-client";
 
 // Üyenin dijital dosyaları. İki belge olabilir:
@@ -24,12 +25,13 @@ export default function EbookPortal() {
   const href = useHref();
   const email = member?.email || "";
 
-  const ekitabiVar = hasAccess("ebook_13_steps");
+  const ekitabiVar = KITAP_URUNLERI.some((id) => hasAccess(id));
   const egitimiVar = TRAININGS.some((tr) => hasAccess(tr.id));
 
   const [belgeler, setBelgeler] = useState<Belge[] | null>(null);
   const [aktif, setAktif] = useState<BelgeAdi | null>(null);
   const [hata, setHata] = useState<string | null>(null);
+  const [okunanSayfa, setOkunanSayfa] = useState(1);
   const [indiriliyor, setIndiriliyor] = useState(false);
   const [indirHatasi, setIndirHatasi] = useState(false);
 
@@ -163,7 +165,7 @@ export default function EbookPortal() {
       {/* Site içi PDF okuyucu — imzalı URL, sayfalar pdf.js ile çiziliyor (mobilde de çalışır) */}
       <div className="rounded-2xl border border-border/60 bg-black/30 shadow-2xl p-2 sm:p-4">
         {acik ? (
-          <PdfOkuyucu key={acik.url} url={acik.url} kimlik={acik.ad} sayfaMetni={t.sayfa} hataMetni={t.ebookError} />
+          <PdfOkuyucu key={acik.url} url={acik.url} kimlik={acik.ad} sayfaMetni={t.sayfa} hataMetni={t.ebookError} onSayfa={setOkunanSayfa} />
         ) : hata ? (
           <p className="text-sm text-muted-foreground px-6 py-20 text-center">{hata}</p>
         ) : (
@@ -171,6 +173,7 @@ export default function EbookPortal() {
         )}
       </div>
       <p className="text-[11px] text-muted-foreground text-center">{t.ebookFooter}</p>
+      {aktif === "kitap" && acik && <KitapYorumKarti sayfa={okunanSayfa} />}
     </div>
   );
 }

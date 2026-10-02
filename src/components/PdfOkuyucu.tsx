@@ -19,17 +19,22 @@ type Props = {
   kimlik: string; // kaldığı sayfanın saklandığı anahtar (belge adı)
   sayfaMetni: string; // "Sayfa {n} / {toplam}"
   hataMetni: string;
+  onSayfa?: (no: number) => void; // okurun ekranın ortasındaki sayfası değiştikçe
 };
 
 const CIZIM_PAYI = "1500px 0px"; // ekranın bu kadar yakınındaki sayfalar çizilir
 
-export function PdfOkuyucu({ url, kimlik, sayfaMetni, hataMetni }: Props) {
+export function PdfOkuyucu({ url, kimlik, sayfaMetni, hataMetni, onSayfa }: Props) {
   const [pdf, setPdf] = useState<PDFDocumentProxy | null>(null);
   const [oran, setOran] = useState(1.414); // yükseklik / genişlik
   const [hata, setHata] = useState(false);
   const [aktifSayfa, setAktifSayfa] = useState(1);
   const sayfaRefs = useRef<(HTMLDivElement | null)[]>([]);
   const anahtar = `okuyucu:${kimlik}`;
+
+  useEffect(() => {
+    onSayfa?.(aktifSayfa);
+  }, [aktifSayfa, onSayfa]);
 
   // Belgeyi yükle (üst bileşen key={url} verir: belge değişince okuyucu sıfırdan kurulur)
   useEffect(() => {

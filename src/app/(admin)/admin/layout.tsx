@@ -22,7 +22,8 @@ import {
   Building2,
   Mail,
   Rocket,
-  Handshake
+  Handshake,
+  MessageSquare,
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -173,6 +174,11 @@ export default function AdminLayout({
       name: "Erişim Yönetimi",
       href: "/admin/access",
       icon: UserPlus,
+    },
+    {
+      name: "Kitap Yorumları",
+      href: "/admin/kitap-yorumlari",
+      icon: MessageSquare,
     },
     {
       name: "Blog Yönetimi",

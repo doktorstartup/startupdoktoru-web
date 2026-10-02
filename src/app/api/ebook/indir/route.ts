@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyMember } from "../../../../lib/memberAuth";
 import { kisiyeOzelKopya } from "../../../../lib/kitapKopya";
+import { KITAP_URUNLERI } from "../../../../lib/trainings";
 
 // Kişiye özel kitap indirme. Kitabı alan üyeye, adı ve e-postası basılmış bir
 // kopya üretir:
@@ -15,7 +16,6 @@ import { kisiyeOzelKopya } from "../../../../lib/kitapKopya";
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
-const URUN = "ebook_13_steps";
 
 export async function GET(req: NextRequest) {
   const { user, error, status } = await verifyMember(req);
@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
     .from("ds_orders")
     .select("customer_name")
     .eq("payment_status", "paid")
-    .eq("product_id", URUN)
+    .in("product_id", KITAP_URUNLERI)
     .ilike("email", user.email)
     .order("created_at", { ascending: false });
   if (sErr) {
