@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-10-02_good-tape-e972",
+  "durum": "hazir",
+  "puan": 37,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Good Tape",
+    "domain": "goodtape.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 600000,
+      "birim": "EUR",
+      "usd": 648000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-02T07:08:34.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/copenhagens-good-tape-raises-e600k-from-nordic-makers-to-complete-management-buy-out-zendesk-co-founder-joins-board/",
+      "baslik": "Copenhagen&#8217;s Good Tape raises €600k and becomes independent from Zetland; Zendesk co-founder joins board",
+      "tarih": "Fri, 02 Oct 2026 07:08:34 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Good Tape , the Copenhagen-based AI transcription company, has raised €600k from Nordic Makers, an investment group founded by former unicorn founders that invests its own capital in early-stage Nordi",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/copenhagens-good-tape-raises-e600k-from-nordic-makers-to-complete-management-buy-out-zendesk-co-founder-joins-board/"
+    }
+  ],
+  "olusturma": "2026-10-02T11:03:49.847Z"
+}

@@ -1,12 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"ponda.bio","ad":"ponda","tarih":"2026-08-28","dosya":"2026-08-28_ponda-9f7a.json"},
-  {"dom":"askclementine.com","ad":"clementine","tarih":"2026-08-28","dosya":"2026-08-28_clementine-e4fa.json"},
-  {"dom":"revier.bio","ad":"revier therapeutics","tarih":"2026-08-28","dosya":"2026-08-28_revier-therapeutics-0908.json"},
-  {"dom":"nanolope.de","ad":"nanolope","tarih":"2026-08-28","dosya":"2026-08-28_nanolope-e6e0.json"},
-  {"dom":"lupindental.com","ad":"lupin dental","tarih":"2026-08-28","dosya":"2026-08-28_lupin-dental-04c4.json"},
-  {"dom":"yardstik.com","ad":"yardstik","tarih":"2026-08-28","dosya":"2026-08-28_yardstik-459f.json"},
-  {"dom":"hubx.co","ad":"hubx","tarih":"2026-08-28","dosya":"2026-08-28_hubx-5ca6.json"},
-  {"dom":"socure.com","ad":"socure","tarih":"2026-08-28","dosya":"2026-08-28_socure-c56b.json"},
   {"dom":"fluencify.io","ad":"fluencify","tarih":"2026-09-07","dosya":"2026-09-07_fluencify-25f1.json"},
   {"dom":"jaipurrobotics.com","ad":"jaipur robotics","tarih":"2026-09-07","dosya":"2026-09-07_jaipur-robotics-b3f5.json"},
   {"dom":"get-cato.com","ad":"cato","tarih":"2026-09-07","dosya":"2026-09-07_cato-e48f.json"},
@@ -166,5 +158,8 @@
   {"dom":"metaview.ai","ad":"metaview","tarih":"2026-10-01","dosya":"2026-10-01_metaview-17d7.json"},
   {"dom":null,"ad":"mbased","tarih":"2026-10-01","dosya":"2026-10-01_mbased-793c.json"},
   {"dom":"revnu.com","ad":"revnu","tarih":"2026-10-01","dosya":"2026-10-01_revnu-ab0b.json"},
-  {"dom":"flowengineering.com","ad":"flow","tarih":"2026-10-01","dosya":"2026-10-01_flow-c83e.json"}
+  {"dom":"flowengineering.com","ad":"flow","tarih":"2026-10-01","dosya":"2026-10-01_flow-c83e.json"},
+  {"dom":"kuro.technology","ad":"kuro","tarih":"2026-10-02","dosya":"2026-10-02_kuro-cfc5.json"},
+  {"dom":"goodtape.io","ad":"good tape","tarih":"2026-10-02","dosya":"2026-10-02_good-tape-e972.json"},
+  {"dom":null,"ad":"armadin","tarih":"2026-10-02","dosya":"2026-10-02_armadin-74b7.json"}
 ]}

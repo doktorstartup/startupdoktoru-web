@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-10-02_armadin-74b7",
+  "durum": "hazir",
+  "puan": 78,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Armadin",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 255500000,
+      "birim": "USD",
+      "usd": 255500000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Bain Capital Ventures",
+      "Ballistic Ventures",
+      "Google Ventures",
+      "Kleiner Perkins",
+      "Menlo Ventures",
+      "Redpoint",
+      "In-Q-Tel",
+      "8VC"
+    ],
+    "kurucular": [
+      "Evan Peña",
+      "David Slater"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-02T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/02/armadin-2-5-milyar-dolari-asan-degerlemeyle-255-5-milyon-dolar-yatirim-aldi/",
+      "baslik": "Armadin, 2,5 milyar doları aşan değerlemeyle 255,5 milyon dolar yatırım aldı",
+      "tarih": "Fri, 02 Oct 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli siber güvenlik şirketi Armadin , 255,5 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/02/armadin-2-5-milyar-dolari-asan-degerlemeyle-255-5-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/02/armadin-2-5-milyar-dolari-asan-degerlemeyle-255-5-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-02T11:03:49.847Z"
+}
