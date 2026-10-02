@@ -30,6 +30,10 @@ export const KAYNAKLAR = [
   { ad: "tech.eu", url: "https://tech.eu/feed/", ulke: null },
   { ad: "eu-startups", url: "https://www.eu-startups.com/feed/", ulke: null },
   { ad: "webrazzi", url: "https://webrazzi.com/feed/", ulke: "TR" },
+  // Tek Türk kaynağına bağlı kalmak kör nokta yaratıyordu: 2 Ekim'de swipeline
+  // Circle Games'i yayınladı, Webrazzi'de yoktu. Aynı turu ikisi de yazarsa
+  // kuyruk gruplaması birleştiriyor ve alanlar iki kaynaktan tamamlanıyor.
+  { ad: "swipeline", url: "https://swipeline.co/feed/", ulke: "TR" },
   { ad: "arcticstartup", url: "https://arcticstartup.com/feed/", ulke: null },
 ];
 
@@ -46,8 +50,12 @@ const etiket = (govde, ad) => {
   return m ? m[1].replace(/^\s*<!\[CDATA\[|\]\]>\s*$/g, "").trim() : "";
 };
 
+// Besleme başına üst sınır. swipeline arşivin TAMAMINI döndürüyor (2000+ item);
+// diğer kaynaklar 10-20 veriyor. Sınır olmadan tek besleme koşuyu şişiriyor.
+const ITEM_KAPAGI = 40;
+
 export function rssAyristir(xml) {
-  return [...String(xml ?? "").matchAll(/<item[\s>][\s\S]*?<\/item>/gi)].map((m) => {
+  return [...String(xml ?? "").matchAll(/<item[\s>][\s\S]*?<\/item>/gi)].slice(0, ITEM_KAPAGI).map((m) => {
     const g = m[0];
     return {
       baslik: etiket(g, "title"),
@@ -79,6 +87,9 @@ const ON_EKLER = [
   /^\s*[A-ZÀ-Ý][\w.'-]*(?:['’]s)\s+/,                       // "Norway's Volve"
   /^\s*[\p{L}][\p{L}\p{N}_'’-]*-based\s+/iu,                            // "Berlin-based Nanolope"
   /^\s*(?:danish|swedish|norwegian|finnish|icelandic|dutch|german|french|spanish|italian|portuguese|polish|estonian|latvian|lithuanian|belgian|austrian|swiss|irish|greek|czech|romanian|bulgarian|croatian|slovenian|slovak|hungarian|turkish|british|uk|us|european|nordic|baltic)\s+/i,
+  // TR uyruk öneki: "ABD'li Bluecore Energy", "Alman Reverion". swipeline bu
+  // biçimi sık kullanıyor ve önek ada yapışıyordu.
+  /^\s*(?:ABD|AB|İngiliz|Alman|Fransız|İspanyol|İtalyan|Hollandalı|Danimarkalı|İsveçli|Norveçli|Finlandiyalı|İzlandalı|Belçikalı|İsviçreli|Avusturyalı|İrlandalı|Polonyalı|Estonyalı|Letonyalı|Litvanyalı|Çek|Macar|Rumen|Bulgar|Yunan|Kanadalı|Japon|Çinli|Hintli|İsrailli|Avrupalı|Amerikan)['’]?l?[ıiu]?\s+/u,
 ];
 // "…startup/company/firm X" — tanımlayıcı öbek adın ÖNÜNDE durur, adı ondan sonrası verir.
 const TANIMLAYICI = /\b(?:startup|scale-?up|company|firm|platform|venture|challenger|rival|maker|studio|studios|lab|labs|agency|girişimi|şirketi|geliştiren|sunan|kuran)\s+/i;
@@ -117,7 +128,10 @@ export function sirketAdiCikar(baslik) {
 
   if (trMi) {
     // Webrazzi kalıbı: "<tanımlayıcı> <AD>, N milyon dolar yatırım aldı"
-    const oncesi = b.split(",")[0] ?? b;
+    // ÖN_EKLER burada da uygulanır: "ABD'li Bluecore Energy"de araya küçük
+    // harfli sözcük girmediği için sonOzelAdObegi öneki de ada dahil ediyordu.
+    let oncesi = b.split(",")[0] ?? b;
+    for (const re of ON_EKLER) oncesi = oncesi.replace(re, "");
     const ad = sonOzelAdObegi(oncesi.split(FIIL)[0] ?? oncesi);
     return ad ? ad.slice(0, 60) : null;
   }

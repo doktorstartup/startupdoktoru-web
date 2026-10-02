@@ -8,7 +8,7 @@ import { kunyeCikar } from "./kunye.mjs";
 import { kisilerCikar } from "./kisiler.mjs";
 import { identityGate, nameInDomain } from "./domain.mjs";
 import { ayniTur, puanla } from "./kuyruk.mjs";
-import { sirketAdiCikar } from "./topla.mjs";
+import { sirketAdiCikar, rssAyristir } from "./topla.mjs";
 // varlik.mjs playwright'a bağlı ve CI'da kurulmuyor; saf fonksiyon ayrı modülde.
 import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
@@ -450,6 +450,67 @@ t("yatırımcı adı tam hâliyle korunuyor",
     if (g !== bekle) { ok = false; console.log(`     ✗ ${JSON.stringify(g)} ← ${b.slice(0, 48)}`); }
   }
   t("şirket adı: studio/lab tanımlayıcısı", ok);
+}
+
+
+// ── Türkçe kaynak çeşitliliği: swipeline kalıpları ───────────────────────
+// 2026-10-02: tek Türk kaynağına (Webrazzi) bağlı kalmak kör nokta yaratıyordu;
+// swipeline eklendi. Ama swipeline aynı olguları FARKLI sözcüklerle yazıyor:
+// "Seri B" (Webrazzi "B serisi"), "X liderliğinde gerçekleşen tur" (Webrazzi
+// "turuna X liderlik etti"), "ABD'li Bluecore Energy" (TR uyruk öneki).
+{
+  const asama = [
+    ["Seri B yatırım turunda 50 milyon dolar aldı.", "series-b"],
+    ["Seri A turunda 10 milyon dolar.", "series-a"],
+    ["B serisi turunda 20 milyon dolar.", "series-b"],   // Webrazzi biçimi bozulmamalı
+    ["Series B round of $20M.", "series-b"],
+  ];
+  let ok = true;
+  for (const [m, bekle] of asama) {
+    const g = kunyeCikar(m, "").tur_tipi?.deger;
+    if (g !== bekle) { ok = false; console.log(`     ✗ aşama ${g} ← ${m.slice(0, 40)}`); }
+  }
+  t("aşama: 'Seri B' ve 'B serisi' birlikte", ok);
+
+  const lider = [
+    ["Tur, Mundi Ventures'ın derin teknoloji fonu Kembara liderliğinde gerçekleşirken; Allianz yeni yatırımcı oldu.", "Kembara"],
+    ["Crusoe'nun turuna Atreides Management liderlik etti.", "Atreides Management"],
+    ["Riot Ventures ve Atreides Management ortak liderliğinde gerçekleşen yatırım turuna European Innovation Council katıldı.", "Riot Ventures"],
+    ["Şirketin turunu Andreessen Horowitz ve Accel ortaklaşa yönetti.", "Andreessen Horowitz"],
+  ];
+  let ok2 = true;
+  for (const [m, bekle] of lider) {
+    const r = kisilerCikar(m);
+    if (r.lider_yatirimci !== bekle) { ok2 = false; console.log(`     ✗ lider ${r.lider_yatirimci} (beklenen ${bekle})`); }
+  }
+  // BİLİNEN SINIR: "ODTÜ 70. Yıl ... Fonu" gibi içinde nokta geçen fon adları
+  // cümle bölmede kesiliyor ("Yıl Girişim Sermayesi Yatırım Fonu" kalıyor).
+  t("lider: liderliğinde / liderlik etti / ortaklaşa yönetti", ok2);
+
+  const adlar = [
+    ["ABD'li Bluecore Energy, 50 milyon dolar yatırım aldı", "Bluecore Energy"],
+    ["Alman enerji girişimi Reverion, 154 milyon euro yatırım aldı", "Reverion"],
+    ["Yerli mobil oyun stüdyosu Circle Games, 25 milyon dolar yatırım aldı", "Circle Games"],
+    ["Ankara merkezli biyoteknoloji girişimi M-Based, 700 bin dolar yatırım aldı", "M-Based"],
+    ["HubX, 1,2 milyar dolar değerleme üzerinden yaklaşık 75 milyon dolar yatırım aldı", "HubX"],
+    ["Norway's Volve raises €4 million", "Volve"],
+  ];
+  let ok3 = true;
+  for (const [b, bekle] of adlar) {
+    const g = sirketAdiCikar(b);
+    if (g !== bekle) { ok3 = false; console.log(`     ✗ ad ${JSON.stringify(g)} ← ${b.slice(0, 46)}`); }
+  }
+  t("şirket adı: TR uyruk öneki sıyrılıyor", ok3);
+}
+
+// ── Besleme başına item kapağı ───────────────────────────────────────────
+// swipeline arşivin TAMAMINI döndürüyor (2000+ item); kapak olmadan tek
+// besleme koşuyu şişiriyordu.
+{
+  const sahte = `<rss>${Array.from({ length: 120 }, (_, i) =>
+    `<item><title>Haber ${i}</title><link>https://x/${i}</link></item>`).join("")}</rss>`;
+  const n = rssAyristir(sahte).length;
+  t("besleme kapağı uygulanıyor", n > 0 && n <= 40);
 }
 
 // ── Rapor ──

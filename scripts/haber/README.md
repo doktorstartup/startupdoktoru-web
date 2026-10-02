@@ -47,6 +47,10 @@ Elle oluştur: `mkdir -p paketler/<id> && <metin.json yaz>`.
 Türk girişimi **otomatik işaretlenir**: `topla.mjs` çıktısında satır başında
 🇹🇷 çıkar ve koşunun sonunda ayrı bir uyarı basılır. Kayıtta `kunye.turk`.
 
+Dedektörün sözcük dağarcığı genişledikçe eski kayıtlar yanlış kalıyor. Haftada
+bir (Pazartesi 09:20) `turk-tara.yml` Türk kaynaklı son 60 günün kayıtlarını
+yeniden okuyup işareti tazeliyor. Elle: `node scripts/haber/turk-tara.mjs --yaz`
+
 > `kunye.ulke` bu iş için **kullanılamaz** — o alan KAYNAĞIN ülkesi. Webrazzi
 > "TR" olduğu için Crusoe, EnduroSat, Vantora gibi ABD şirketleri de TR
 > görünüyor. Gerçek işaret `turk.mjs` içinde ölçülüyor.

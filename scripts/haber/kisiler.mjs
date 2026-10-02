@@ -251,7 +251,13 @@ const LIDER_KALIP = [
   // TR: "X ve Y ortak liderliğinde gerçekleşen yatırım turuna ..." — "liderlik etti"
   // kalıbından farklı ve Webrazzi'de sık. Cümle başına/son virgüle demirlenir,
   // yoksa lazy grup cümlenin başındaki tanım öbeğini de içine alıyor.
-  /(?:^|,\s*)([^,;]{2,90}?)\s+ortak(?:laşa)?\s+liderliğinde/gi,
+  // "X'ın ... fonu Y liderliğinde" — lider FON'dur, onu yöneten şirket değil.
+  // Daha dar olduğu için genel kalıptan ÖNCE denenir.
+  /\b(?:fonu|tarafından\s+yönetilen)\s+([^,;]{2,60}?)\s+(?:ortak(?:laşa)?\s+)?liderliğinde/gi,
+  // "ortak" opsiyonel: swipeline "X'nun liderliğinde gerçekleşen tura" diyor,
+  // Webrazzi "X ve Y ortak liderliğinde". İkisi de aynı kalıpla yakalanır.
+  /(?:^|,\s*)([^,;]{2,90}?)\s+(?:ortak(?:laşa)?\s+)?liderliğinde/gi,
+  /(?:^|,\s*)([^,;]{2,90}?)['’]?n[ıiu]n\s+ortak\s+liderlik\s+ettiği/gi,
   /\b(?:has been |was |been )?awarded\s+[^;]{0,60}?\bby\s+(.+)$/gi,
   /\b(?:secured|received|raised|gets?)\s+[^.]{0,50}?\b(?:loan|grant|award|facility)\s+from\s+(.+)$/gi,
   // TR: "X'tan ... yatırım aldı" — "liderlik etti" kalıbı olmayan haberler (HubX).

@@ -1,0 +1,56 @@
+name: turk-tara
+
+# Türk girişimi işaretini GERİYE DÖNÜK tazeler.
+#
+# turk.mjs'in sözcük dağarcığı genişledikçe, daha önce "yabancı" damgası yemiş
+# kayıtlar yanlış kalıyor. 2 Ekim 2026'da iki Türk girişimi (M-Based, Arcustin
+# Games) tam bu yüzden gözden kaçtı ve sistem haber vermedi.
+#
+# Sır kullanmaz; yalnız herkese açık haber sayfalarını okur ve kuyruğu günceller.
+
+on:
+  schedule:
+    - cron: "20 6 * * 1"     # Pazartesi 09:20 TR
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: turk-tara
+  cancel-in-progress: false
+
+jobs:
+  tara:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262   # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4
+        with:
+          node-version: "22"
+
+      # npm install YOK — turk-tara.mjs ve bağımlılıkları saf modüller.
+      - name: Geriye dönük Türk taraması
+        run: node scripts/haber/turk-tara.mjs --yaz | tee tarama.log
+
+      - name: Değişiklik varsa commit'le
+        run: |
+          git config user.name  "turk-tara"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kuyruk
+          if git diff --cached --quiet; then
+            echo "Yeni Türk girişimi yok — commit atlanıyor."
+            exit 0
+          fi
+          git commit -m "haber: türk işareti tazelendi [skip ci]"
+          git pull --rebase --autostash
+          git push
+
+      # Bulunan varsa iş akışı özetinde görünsün; e-posta bildirimi de gelir.
+      - name: Özet
+        if: always()
+        run: |
+          if grep -q "SONRADAN BULUNAN" tarama.log 2>/dev/null; then
+            { echo "## 🇹🇷 Sonradan bulunan Türk girişimi"; echo; echo '```'; cat tarama.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi

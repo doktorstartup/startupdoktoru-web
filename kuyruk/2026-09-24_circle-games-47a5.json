@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-24_circle-games-47a5",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 0,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Circle Games",
+    "domain": "circle.gs",
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 25000000,
+      "birim": "USD",
+      "usd": 25000000
+    },
+    "lider": "Tencent",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-24T10:00:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/ozel-haber-yerli-mobil-oyun-studyosu-circle-games-25-milyon-dolar-yatirim-aldi/",
+      "baslik": "Özel Haber &#124; Yerli mobil oyun stüdyosu Circle Games, 25 milyon dolar yatırım aldı",
+      "tarih": "Thu, 24 Sep 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "İstanbul merkezli mobil oyun stüdyosu Circle Games , Tencent liderliğinde gerçekleşen Seri A turunda 25 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/ozel-haber-yerli-mobil-oyun-studyosu-circle-games-25-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri A",
+      "kaynak_url": "https://swipeline.co/ozel-haber-yerli-mobil-oyun-studyosu-circle-games-25-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-02T17:18:50.884Z"
+}

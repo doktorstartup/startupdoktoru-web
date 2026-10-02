@@ -17,8 +17,16 @@ trap geri EXIT INT TERM
 [ -d scripts/haber/node_modules ] && mv scripts/haber/node_modules "$GEC/haber"
 
 echo "— node_modules gizlendi, CI koşulu —"
-node scripts/haber/regresyon.test.mjs; rc=$?
+cikti=$(node scripts/haber/regresyon.test.mjs 2>&1); rc=$?
+echo "$cikti" | tail -25
 node scripts/haber/tur-haberi-mi.test.mjs >/dev/null 2>&1 || rc=1
 echo
-[ $rc -eq 0 ] && echo "✓ CI'da geçer" || echo "✗ CI'DA DÜŞER — testin import ettiği bir modül ağır bağımlılık çekiyor"
+if [ $rc -eq 0 ]; then
+  echo "✓ CI'da geçer"
+# Import hatası ile başarısız test AYRI şeyler; mesaj ikisini karıştırmasın.
+elif echo "$cikti" | grep -q "ERR_MODULE_NOT_FOUND"; then
+  echo "✗ CI'DA DÜŞER — testin import ettiği bir modül ağır bağımlılık çekiyor"
+else
+  echo "✗ test başarısız (bağımlılık sorunu değil — yukarıdaki satırlara bak)"
+fi
 exit $rc

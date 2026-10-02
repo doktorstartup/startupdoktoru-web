@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-09-28_bluecore-energy-de02",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 3,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Bluecore Energy",
+    "domain": "bluecore.energy",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 50000000,
+      "birim": "USD",
+      "usd": 50000000
+    },
+    "lider": "Girişimin Silverton Partners",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-09-28T11:40:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/abdli-bluecore-energy-borusan-ventures-katildigi-turda-50-milyon-dolar-yatirim-aldi/",
+      "baslik": "ABD’li Bluecore Energy, Borusan Ventures’ın katıldığı turda 50 milyon dolar yatırım aldı",
+      "tarih": "Mon, 28 Sep 2026 11:40:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Borusan Ventures; limanlar, kıyıdaki sanayi tesisleri ve veri merkezleri için küçük modüler reaktörler geliştiren ABD merkezli Bluecore Energy’nin 50 milyon dolarlık tohum turuna katıldı.",
+      "kaynak_url": "https://swipeline.co/abdli-bluecore-energy-borusan-ventures-katildigi-turda-50-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum turu",
+      "kaynak_url": "https://swipeline.co/abdli-bluecore-energy-borusan-ventures-katildigi-turda-50-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-02T17:18:50.884Z"
+}

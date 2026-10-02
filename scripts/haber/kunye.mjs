@@ -213,9 +213,9 @@ function parantezIci(N, i) {
 // ---------------------------------------------------------------- tur tipi / enstrüman
 const TUR_KURAL = [
   ["pre-seed", /pre[-\s]?seed|ön[-\s]?tohum|pre[-\s]?tohum/i],
-  ["series-c+", /series[-\s]?[c-h]\b|\b[C-H] [Ss]erisi/i],
-  ["series-b", /series[-\s]?b\b|\bB [Ss]erisi/i],
-  ["series-a", /series[-\s]?a\b|\bA [Ss]erisi/i],
+  ["series-c+", /series[-\s]?[c-h]\b|\b[C-H] [Ss]erisi|\bSeri [C-H]\b/i],
+  ["series-b", /series[-\s]?b\b|\bB [Ss]erisi|\bSeri B\b/i],
+  ["series-a", /series[-\s]?a\b|\bA [Ss]erisi|\bSeri A\b/i],
   ["seed", /\bseed\b|tohum yatırım\w*|\btohum turu/i],
   ["bridge", /\bbridge (round|financing|funding)\b|köprü tur\w*/i],
   ["grant", /\bgrant\b|\bhibe\b|non-dilutive|innovation agency|research programme|research program\b|horizon europe|eic accelerator|tübitak|kosgeb|\bawarded\b|\baward\b/i],
