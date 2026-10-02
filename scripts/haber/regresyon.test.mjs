@@ -402,6 +402,56 @@ t("yatırımcı adı tam hâliyle korunuyor",
     cAd.length === 2 && cAd.includes("Chase Lochmiller") && vAd.length === 1 && vAd.includes("John Kuolt"));
 }
 
+
+// ── Türk tespiti: "faaliyet gösteren" ve teknokent ───────────────────────
+// 2026-10-02: M-Based (Ankara, ODTÜ TEKNOKENT) yabancı işaretlendi ve tam
+// paket üretilmedi — Eser haberi başka yerden görüp sordu. Sebep sözcük
+// dağarcığı: dedektör "merkezli" ve "kurulan" arıyordu, Webrazzi gövdesi ise
+// "Ankara'da ODTÜ TEKNOKENT bünyesinde FAALİYET GÖSTEREN" demiş. ("Ankara
+// merkezli" yalnız web sayfasının spot metninde, RSS gövdesinde yok.)
+// Aynı tarama 14 Eylül'de de bir Türk girişimi kaçırdığımızı ortaya çıkardı.
+{
+  const V = [
+    ["M-Based: gerçek RSS cümlesi", "Ankara'da ODTÜ TEKNOKENT bünyesinde faaliyet gösteren M-Based materyaller geliştiriyor.", null, true],
+    ["faaliyet gösteren, araya öbek girmeden", "İstanbul'da faaliyet gösteren şirket büyüyor.", "acme.com", true],
+    ["teknopark tek başına yeter", "Şirket Teknopark bünyesinde çalışıyor.", "acme.com", true],
+    // Önceki vakalar bozulmamalı
+    ["HubX", "2022 yılında İzmir’de kurulan HubX için bu ilk dış finansman.", "hubx.co", true],
+    ["Istanbul-based", "Istanbul-based Acme raises $5M.", "acme.com", true],
+    // Yanlış pozitif olmamalı
+    ["yabancı: pazara açılma", "Şirket yeni pazar olarak İstanbul'a açılmayı planlıyor.", "acme.com", false],
+    ["yabancı: Armadin", "ABD merkezli Armadin'in turunda Bain Capital Ventures yer aldı.", "armadin.com", false],
+    ["yabancı: Altis Labs", "Kanada merkezli Altis Labs 25 milyon dolar aldı.", "altislabs.com", false],
+  ];
+  let ok = true;
+  for (const [not, m, d, bekle] of V) {
+    const r = turkMu(m, d);
+    if (r.turk !== bekle) { ok = false; console.log(`     ✗ ${not} → ${r.turk ? "TÜRK" : "yabancı"}`); }
+  }
+  t("türk tespiti: faaliyet gösteren + teknokent", ok);
+}
+
+// ── Şirket adı: "<sıfat> <tür> <Ad>" kalıbı ──────────────────────────────
+// Aynı taramada çıktı: "AI-native game studio Arcustin Games raises $500K"
+// başlığından ad "AI-native" çıkarılmıştı; İstanbul merkezli bu girişim de
+// bu yüzden gözden kaçmıştı. TANIMLAYICI'ya studio/lab/agency eklendi.
+{
+  const V = [
+    ["AI-native game studio Arcustin Games raises $500K from Webrazzi GSYF", "Arcustin Games"],
+    ["Berlin-based AI lab Foo Bar raises €5M", "Foo Bar"],
+    ["UK startup AI Score raises $5.4M", "AI Score"],
+    ["Münster-based syte raises €9 million", "syte"],
+    ["CRM challenger Zero gets backing", "Zero"],
+    ["Altis Labs raises $25 million Series A", "Altis Labs"],
+  ];
+  let ok = true;
+  for (const [b, bekle] of V) {
+    const g = sirketAdiCikar(b);
+    if (g !== bekle) { ok = false; console.log(`     ✗ ${JSON.stringify(g)} ← ${b.slice(0, 48)}`); }
+  }
+  t("şirket adı: studio/lab tanımlayıcısı", ok);
+}
+
 // ── Rapor ──
 let bad = 0;
 for (const [ad, ok] of R) {

@@ -15,7 +15,7 @@
     "kaynak": 5
   },
   "kunye": {
-    "sirket": "AI-native",
+    "sirket": "Arcustin Games",
     "domain": null,
     "ulke": null,
     "tur_tipi": "pre-seed",
@@ -24,14 +24,15 @@
       "birim": "USD",
       "usd": 500000
     },
-    "lider": null,
+    "lider": "Webrazzi GSYF",
     "katilanlar": [],
     "kurucular": [
       "Barış Dikici",
       "Tolga Dikici"
     ],
     "sektor": null,
-    "tarih": "2026-09-14T06:26:00.000Z"
+    "tarih": "2026-09-14T06:26:00.000Z",
+    "turk": true
   },
   "dusuk_guven": [
     "kurucular"

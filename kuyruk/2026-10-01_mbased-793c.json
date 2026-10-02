@@ -16,18 +16,23 @@
   },
   "kunye": {
     "sirket": "M-Based",
-    "domain": null,
+    "domain": "m-based.com",
     "ulke": "TR",
-    "turk": false,
+    "turk": true,
     "tur_tipi": "seed",
     "tutar": {
       "deger": 700000,
       "birim": "USD",
       "usd": 700000
     },
-    "lider": null,
-    "katilanlar": [],
-    "kurucular": [],
+    "lider": "ODTÜ 70. Yıl Girişim Sermayesi Yatırım Fonu",
+    "katilanlar": [
+      "Elemental Ventures",
+      "Hatcher+"
+    ],
+    "kurucular": [
+      "Görkem Gökoğlu"
+    ],
     "sektor": null,
     "tarih": "2026-10-01T06:30:00.000Z"
   },

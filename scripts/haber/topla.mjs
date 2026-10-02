@@ -81,7 +81,7 @@ const ON_EKLER = [
   /^\s*(?:danish|swedish|norwegian|finnish|icelandic|dutch|german|french|spanish|italian|portuguese|polish|estonian|latvian|lithuanian|belgian|austrian|swiss|irish|greek|czech|romanian|bulgarian|croatian|slovenian|slovak|hungarian|turkish|british|uk|us|european|nordic|baltic)\s+/i,
 ];
 // "…startup/company/firm X" — tanımlayıcı öbek adın ÖNÜNDE durur, adı ondan sonrası verir.
-const TANIMLAYICI = /\b(?:startup|scale-?up|company|firm|platform|venture|challenger|rival|maker|girişimi|şirketi|geliştiren|sunan|kuran)\s+/i;
+const TANIMLAYICI = /\b(?:startup|scale-?up|company|firm|platform|venture|challenger|rival|maker|studio|studios|lab|labs|agency|girişimi|şirketi|geliştiren|sunan|kuran)\s+/i;
 // Öznesi ŞİRKET değil KİŞİ olan başlıklar: "Former Lunar executives land €8.2M…"
 // Burada şirketin adı başlıkta hiç geçmiyor; uydurmak yerine null dönülür.
 const KISI_OZNE = /^\s*(?:former|ex-)\s|\b(?:co-?founders?|executives?|founders?|alumni|veterans?)\s+(?:launch|land|raise|secure|start|build)|\b(?:co-?founders?|executives?|founders?|alumni|veterans?)\s*$/i;

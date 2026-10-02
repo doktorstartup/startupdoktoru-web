@@ -32,6 +32,14 @@ const GUCLU = [
   new RegExp(`${BAS}(?:${SEHIRLER})-based${SON}`, "iu"),                          // "Istanbul-based"
   new RegExp(`${BAS}Turkey-based${SON}`, "iu"),
   new RegExp(`${BAS}Turkish\\s+(?:startup|company|firm|fintech|scale-?up|founder)`, "iu"),
+  // "Ankara'da ODTÜ TEKNOKENT bünyesinde FAALİYET GÖSTEREN M-Based" — Webrazzi
+  // bunu "merkezli" kadar sık kullanıyor ve listede yoktu; M-Based bu yüzden
+  // yabancı işaretlendi. Araya kısa bir öbek girebiliyor ("… bünyesinde").
+  new RegExp(`${BAS}(?:${SEHIRLER})${K}(?:de|da|te|ta)\\s[^.]{0,60}?faaliyet\\s+göster`, "iu"),
+  new RegExp(`${BAS}Türkiye${K}(?:de|da)\\s[^.]{0,60}?faaliyet\\s+göster`, "iu"),
+  // Türk teknoparkları: yabancı bir şirket bunların "bünyesinde" olmaz.
+  new RegExp(`${BAS}(?:TEKNOKENT|Teknokent|Teknopark|Teknoparkı)${SON}`, "u"),
+  new RegExp(`${BAS}(?:ODTÜ|Boğaziçi|İTÜ|Bilkent|Sabancı|Koç)\\s+(?:TEKNOKENT|Teknokent|Teknopark|Çekirdek)`, "iu"),
 ];
 
 // ZAYIF işaretler — tek başına yetmez, ikisi birden gerekir. Yabancı bir şirket
@@ -40,6 +48,10 @@ const ZAYIF = [
   new RegExp(`${BAS}(?:${SEHIRLER})${K}(?:daki|deki|taki|teki)\\s+ofis`, "iu"), // "İzmir ve İstanbul'daki ofisleri"
   new RegExp(`${BAS}Anonim\\s+Şirketi\\b|\\bA\\.\\s?Ş\\.(?:\\s|,|$)`, "iu"),
   new RegExp(`${BAS}(?:${SEHIRLER})${K}(?:de|da|te|ta)\\s+(?:ofis|merkez|genel merkez)`, "iu"),
+  // Türk kurumsal işaretleri. Yabancı şirket haberinde de bağlam olarak
+  // geçebildiği için tek başına yetmez.
+  new RegExp(`${BAS}Girişim\\s+Sermayesi\\s+Yatırım\\s+Fonu${SON}`, "iu"),
+  new RegExp(`${BAS}(?:TÜBİTAK|KOSGEB|TTGV|TÜBITAK)${SON}`, "u"),
 ];
 
 /**
