@@ -15,6 +15,18 @@ export async function POST(req: NextRequest) {
     const safeName = typeof name === "string" && name ? name : normEmail;
     const src = typeof source === "string" && source ? source : "signup";
 
+    // Yatırımcı mı? Yatırımcılar GİRİŞİMCİ lead funnel'ına (Karşılama/Genel Takip/Topluluk/16-hafta)
+    // girMEZ — yanlış kitle + Türkçe girişimci içeriği. Portala giriş yapınca buraya düşerler;
+    // o yüzden burada erken çık. (Yatırımcı iletişimi inv_* akışları + yatırımcı ilgi serisiyle yürür.)
+    const { data: investor } = await supabaseAdmin
+      .from("inv_investors")
+      .select("id")
+      .ilike("email", normEmail)
+      .limit(1);
+    if (investor && investor.length > 0) {
+      return NextResponse.json({ ok: true, skipped: "investor" });
+    }
+
     // Lead yoksa oluştur (özellikle Google ile girenler CRM'e düşsün).
     const { data: existing } = await supabaseAdmin
       .from("ds_leads")
