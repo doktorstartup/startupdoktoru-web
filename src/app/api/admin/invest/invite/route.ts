@@ -32,16 +32,15 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: `Kullanıcı oluşturulamadı: ${created.error.message}` }, { status: 500 });
   }
 
-  // Tek kullanımlık giriş linki üret (göndermeden). Yatırımcı /en/investor'a düşer.
-  const link = await supabaseAdmin.auth.admin.generateLink({
-    type: "magiclink",
-    email,
-    options: { redirectTo: `${SITE}/en/investor` },
-  });
-  const actionLink = link.data?.properties?.action_link;
-  if (link.error || !actionLink) {
+  // Tek kullanımlık giriş token'ı üret (göndermeden). Link supabase.co'ya değil kendi
+  // domainimize gider; /en/investor token_hash'i verifyOtp ile doğrular. Böylece Supabase
+  // erişilemezse yatırımcı ham Cloudflare hatası yerine bizim hata ekranımızı görür.
+  const link = await supabaseAdmin.auth.admin.generateLink({ type: "magiclink", email });
+  const tokenHash = link.data?.properties?.hashed_token;
+  if (link.error || !tokenHash) {
     return NextResponse.json({ error: `Link üretilemedi: ${link.error?.message || "bilinmiyor"}` }, { status: 500 });
   }
+  const actionLink = `${SITE}/en/investor?token_hash=${encodeURIComponent(tokenHash)}`;
 
   const name = inv.partner_name || inv.firm_name || "there";
   const html = shell(`

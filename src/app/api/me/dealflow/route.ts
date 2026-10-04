@@ -9,12 +9,16 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 // Yatırımcı deal-flow'u — giriş yapmış ve portala davet edilmiş yatırımcıya özel.
 // Kimlik: oturumdaki e-posta = inv_investors.email/email_secondary + portal_enabled.
 // GET: yatırımcının profili + eşleştirilen ONAYLI girişimler (geçilenler hariç), her birinde aksiyon.
-// POST: bir girişim için "requested" (görüşme talebi) / "skipped" (geç) kaydı.
+// POST: bir girişim için "requested" (görüşme talebi) / "skipped" (geç) kaydı;
+//       action "click" + target deck|website → ilgi analizi için tıklama sayacı.
+// PATCH: yatırımcı kendi profilini (isim, rol, tez, sektör, aşama, ticket) düzenler.
+
+const INV_FIELDS = "id, firm_name, partner_name, role, thesis, sectors, stages, ticket, portal_enabled";
 
 async function findInvestor(email: string) {
   const { data } = await supabaseAdmin
     .from("inv_investors")
-    .select("id, firm_name, partner_name, role, thesis, sectors, stages, ticket, portal_enabled")
+    .select(INV_FIELDS)
     .or(`email.eq.${email},email_secondary.eq.${email}`)
     .eq("portal_enabled", true)
     .maybeSingle();
@@ -46,7 +50,7 @@ export async function GET(req: NextRequest) {
   if (ids.length) {
     const { data } = await supabaseAdmin
       .from("inv_startup_profiles")
-      .select("id, startup_name, one_liner, value_prop, deck_url, website, sectors, stage, team_size, city, product_stage, valuation")
+      .select("id, startup_name, one_liner, value_prop, deck_url, website, sectors, stage, team_size, city, product_stage, valuation, sd_trained")
       .in("id", ids)
       .eq("status", "approved")
       .order("updated_at", { ascending: false });
@@ -66,7 +70,48 @@ export async function GET(req: NextRequest) {
       .sort((a, b) => (b.interest_count as number) - (a.interest_count as number));
   }
 
-  return NextResponse.json({ investor: inv, startups });
+  // Son haberler: İngilizce yayınlanmış son blog yazıları.
+  const { data: news } = await supabaseAdmin
+    .from("ds_blog_posts")
+    .select("title, slug, seo_description, cover_image, created_at")
+    .eq("durum", "yayinda")
+    .eq("lang", "en")
+    .order("created_at", { ascending: false })
+    .limit(3);
+
+  return NextResponse.json({ investor: inv, startups, news: news || [] });
+}
+
+export async function PATCH(req: NextRequest) {
+  const { user, error, status } = await verifyMember(req);
+  if (!user) return NextResponse.json({ error }, { status });
+
+  const inv = await findInvestor(user.email);
+  if (!inv) return NextResponse.json({ error: "Yetkisiz." }, { status: 403 });
+
+  const body = await req.json().catch(() => ({}));
+  const patch: Record<string, unknown> = { updated_at: new Date().toISOString() };
+  for (const f of ["partner_name", "role", "ticket", "thesis"]) {
+    if (typeof body[f] !== "string") continue;
+    patch[f] = body[f].trim().slice(0, f === "thesis" ? 2000 : 200) || null;
+  }
+  for (const f of ["sectors", "stages"]) {
+    if (!Array.isArray(body[f])) continue;
+    patch[f] = body[f]
+      .filter((x: unknown): x is string => typeof x === "string")
+      .map((x: string) => x.trim().slice(0, 60))
+      .filter(Boolean)
+      .slice(0, 20);
+  }
+
+  const { data, error: dbErr } = await supabaseAdmin
+    .from("inv_investors")
+    .update(patch)
+    .eq("id", inv.id)
+    .select(INV_FIELDS)
+    .single();
+  if (dbErr) return NextResponse.json({ error: dbErr.message }, { status: 500 });
+  return NextResponse.json({ investor: data });
 }
 
 export async function POST(req: NextRequest) {
@@ -74,12 +119,30 @@ export async function POST(req: NextRequest) {
   if (!user) return NextResponse.json({ error }, { status });
 
   const body = await req.json().catch(() => ({}));
-  if (!body.startup_id || !["requested", "skipped"].includes(body.action)) {
+  if (!body.startup_id || !["requested", "skipped", "click"].includes(body.action)) {
     return NextResponse.json({ error: "startup_id + geçerli action gerekli." }, { status: 400 });
   }
 
   const inv = await findInvestor(user.email);
   if (!inv) return NextResponse.json({ error: "Yetkisiz." }, { status: 403 });
+
+  if (body.action === "click") {
+    if (!["deck", "website"].includes(body.target)) return NextResponse.json({ error: "Geçersiz target." }, { status: 400 });
+    const col = `${body.target}_clicks`;
+    const { data: m } = await supabaseAdmin
+      .from("inv_matches")
+      .select("id, deck_clicks, website_clicks")
+      .eq("investor_id", inv.id)
+      .eq("startup_id", body.startup_id)
+      .maybeSingle();
+    if (m) {
+      await supabaseAdmin
+        .from("inv_matches")
+        .update({ [col]: ((m as Record<string, number>)[col] || 0) + 1, [`${body.target}_clicked_at`]: new Date().toISOString() })
+        .eq("id", m.id);
+    }
+    return NextResponse.json({ ok: true });
+  }
 
   const patch: Record<string, unknown> = { investor_action: body.action, action_at: new Date().toISOString() };
   if (body.action === "skipped") {

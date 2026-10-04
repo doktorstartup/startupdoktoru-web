@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus, Send, Flame } from "lucide-react";
+import { Loader2, Rocket, Check, X, ChevronDown, Search, Trash2, ExternalLink, Plus, Send, Flame, GraduationCap } from "lucide-react";
 
 type Startup = {
   id: string;
@@ -20,9 +20,12 @@ type Startup = {
   status: "submitted" | "approved" | "rejected";
   notes: string | null;
   review_feedback: string | null;
+  sd_trained?: boolean;
   interest_count?: number;
+  stats?: { shown: number; viewed: number; requested: number; deck: Clicker[]; website: Clicker[] } | null;
   updated_at: string;
 };
+type Clicker = { name: string; clicks: number };
 
 function getPw() { try { return sessionStorage.getItem("ds_admin_pw") || ""; } catch { return ""; } }
 const csv = (s: string) => s.split(",").map((x) => x.trim()).filter(Boolean);
@@ -194,6 +197,7 @@ export default function StartupsAdmin() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-bold text-foreground truncate">{s.startup_name || "(isimsiz)"}</span>
                       <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${BADGE[s.status]}`}>{TR[s.status]}</span>
+                      {s.sd_trained && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20 inline-flex items-center gap-0.5"><GraduationCap className="h-2.5 w-2.5" /> SD eğitimli</span>}
                       {(s.interest_count || 0) > 0 && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-orange-500/10 text-orange-400 border-orange-500/20 inline-flex items-center gap-0.5"><Flame className="h-2.5 w-2.5" /> {s.interest_count} ilgilenen</span>}
                       {s.valuation && <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">{s.valuation.slice(0, 24)}</span>}
                     </div>
@@ -303,6 +307,23 @@ function EditPanel({ s, act, busy, patchItem }: {
 
   return (
     <div className="border-t border-border/30 p-5 space-y-4 bg-background/30">
+      {s.stats && (
+        <div className="rounded-xl border border-border/40 bg-secondary/20 p-3 text-xs text-muted-foreground space-y-1.5">
+          <div className={labelCls}>İlgi analizi</div>
+          <div className="text-foreground">
+            {s.stats.shown} yatırımcıya gösterildi · {s.stats.viewed} gördü · {s.stats.deck.length} deck açtı · {s.stats.website.length} siteye gitti · {s.stats.requested} görüşme istedi
+          </div>
+          {s.stats.deck.length > 0 && <div><strong className="text-foreground">Deck:</strong> {s.stats.deck.map((c) => `${c.name} ×${c.clicks}`).join(", ")}</div>}
+          {s.stats.website.length > 0 && <div><strong className="text-foreground">Site:</strong> {s.stats.website.map((c) => `${c.name} ×${c.clicks}`).join(", ")}</div>}
+        </div>
+      )}
+
+      <label className="flex items-center gap-2.5 text-sm text-foreground cursor-pointer">
+        <input type="checkbox" checked={!!s.sd_trained} onChange={(e) => save("sd_trained", e.target.checked)} className="h-4 w-4 accent-emerald-500" />
+        <GraduationCap className="h-4 w-4 text-emerald-400" /> Startup Doktoru eğitimi aldı
+        <span className="text-[11px] text-muted-foreground">— yatırımcı kartında &quot;Trained by Startup Doktoru&quot; rozeti çıkar</span>
+      </label>
+
       <div className="grid sm:grid-cols-2 gap-3">
         <Field label="Girişim adı" value={s.startup_name || ""} onSave={(v) => v.trim() && save("startup_name", v.trim())} />
         <Field label="Website" value={s.website || ""} ph="https://" onSave={(v) => save("website", v || null)} />

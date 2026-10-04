@@ -44,7 +44,7 @@ function feedbackEmail(p: Prof, message?: string) {
 // Girişim profillerinin yönetimi — şifre korumalı. Girişimciler /api/me/startup ile
 // kendi profillerini oluşturur; burada admin inceler (onayla/reddet) ve düzenler.
 // Yalnız 'approved' profiller eşleştirmeye ve yatırımcı deal-flow'una girer.
-const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city", "product_stage", "valuation", "email", "notes"];
+const FIELDS = ["startup_name", "one_liner", "value_prop", "deck_url", "website", "sectors", "stage", "team_size", "city", "product_stage", "valuation", "email", "notes", "sd_trained"];
 
 export async function GET(req: NextRequest) {
   const sp = req.nextUrl.searchParams;
@@ -64,12 +64,34 @@ export async function GET(req: NextRequest) {
   if (error) return NextResponse.json({ error: error.message, startups: [] }, { status: 500 });
   const startups = data || [];
 
-  // İlgi sayısı: her girişim için "görüşme talep eden" (requested) yatırımcı sayısı → trend.
-  const { data: reqs } = await supabaseAdmin.from("inv_matches").select("startup_id").eq("investor_action", "requested");
-  const countMap: Record<string, number> = {};
-  for (const r of reqs || []) countMap[r.startup_id as string] = (countMap[r.startup_id as string] || 0) + 1;
+  // İlgi analizi (girişim başına): kaç yatırımcıya gösterildi, kaçı gördü, deck/site'ye kim tıkladı,
+  // kaçı görüşme istedi. interest_count (requested) trend sıralaması için ayrıca döner.
+  const { data: ms } = await supabaseAdmin
+    .from("inv_matches")
+    .select("startup_id, investor_id, viewed_at, investor_action, deck_clicks, website_clicks")
+    .limit(5000);
+  const rows = ms || [];
+  const clickerIds = [...new Set(rows.filter((m) => m.deck_clicks || m.website_clicks).map((m) => m.investor_id as string))];
+  const { data: invs } = clickerIds.length
+    ? await supabaseAdmin.from("inv_investors").select("id, firm_name, partner_name").in("id", clickerIds)
+    : { data: [] as { id: string; firm_name: string; partner_name: string | null }[] };
+  const nameOf = Object.fromEntries((invs || []).map((i) => [i.id, i.partner_name ? `${i.partner_name} (${i.firm_name})` : i.firm_name]));
 
-  return NextResponse.json({ startups: startups.map((s) => ({ ...s, interest_count: countMap[s.id] || 0 })) });
+  type Stats = { shown: number; viewed: number; requested: number; deck: { name: string; clicks: number }[]; website: { name: string; clicks: number }[] };
+  const stats: Record<string, Stats> = {};
+  for (const m of rows) {
+    const st = (stats[m.startup_id as string] ||= { shown: 0, viewed: 0, requested: 0, deck: [], website: [] });
+    st.shown++;
+    if (m.viewed_at) st.viewed++;
+    if (m.investor_action === "requested") st.requested++;
+    const name = nameOf[m.investor_id as string] || "?";
+    if (m.deck_clicks) st.deck.push({ name, clicks: m.deck_clicks });
+    if (m.website_clicks) st.website.push({ name, clicks: m.website_clicks });
+  }
+
+  return NextResponse.json({
+    startups: startups.map((s) => ({ ...s, interest_count: stats[s.id]?.requested || 0, stats: stats[s.id] || null })),
+  });
 }
 
 export async function POST(req: NextRequest) {
