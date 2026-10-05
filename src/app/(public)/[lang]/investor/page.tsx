@@ -261,8 +261,14 @@ export default function InvestorPortal() {
 
                       <div className="mt-6 pt-5 border-t border-border/20">
                         {requested ? (
-                          <div className="flex items-center gap-2 text-sm font-semibold text-emerald-400 py-1.5">
-                            <CheckCircle2 className="h-4 w-4" /> Meeting requested — we&apos;ll email you to set up the call
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex items-center gap-2 text-sm font-semibold text-emerald-400 py-1.5">
+                              <CheckCircle2 className="h-4 w-4" /> Meeting requested — we&apos;ll email you to set up the call
+                            </div>
+                            <div className="flex items-center gap-2">
+                              {s.deck_url && <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")} className="btn btn-secondary btn-sm"><ExternalLink className="h-4 w-4" /> Deck</a>}
+                              {s.website && <a href={s.website} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "website")} className="btn btn-secondary btn-sm"><ExternalLink className="h-4 w-4" /> Website</a>}
+                            </div>
                           </div>
                         ) : skippingId === s.id ? (
                           <div className="space-y-2.5">
