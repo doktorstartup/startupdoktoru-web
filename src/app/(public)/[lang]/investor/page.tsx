@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame, RefreshCw, Newspaper, ArrowRight, GraduationCap } from "lucide-react";
+import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame, RefreshCw, Newspaper, ArrowRight, BadgeCheck, Star } from "lucide-react";
 import { supabase } from "../../../../lib/supabase";
 import ProfileCard, { type Investor } from "./ProfileCard";
 
@@ -223,23 +223,26 @@ export default function InvestorPortal() {
                   const requested = s.action === "requested";
                   const fit = overlap(s);
                   return (
-                    <div key={s.id} className="glass-panel rounded-2xl border border-primary/25 p-6 sm:p-7">
+                    <div key={s.id} className={`glass-panel rounded-2xl p-6 sm:p-7 ${s.sd_trained ? "border-2 border-emerald-500/60 shadow-lg shadow-emerald-500/10" : "border border-primary/25"}`}>
+                      {s.sd_trained && (
+                        <div className="-mx-6 sm:-mx-7 -mt-6 sm:-mt-7 mb-5 px-6 sm:px-7 py-2.5 rounded-t-2xl bg-emerald-500/10 border-b border-emerald-500/30 flex flex-wrap items-center gap-x-2 gap-y-1">
+                          <BadgeCheck className="h-5 w-5 text-emerald-400" />
+                          <span className="text-sm font-extrabold text-emerald-400">Startup Doktoru Verified</span>
+                          <Star className="h-3.5 w-3.5 text-amber-400 fill-amber-400" />
+                          <span className="text-xs text-muted-foreground">This team completed our founder training.</span>
+                        </div>
+                      )}
                       <div className="flex flex-wrap items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-primary uppercase tracking-wider">
                           <Sparkles className="h-3.5 w-3.5" /> Matched for you
                         </span>
-                        {s.sd_trained && (
-                          <span title="This team completed Startup Doktoru's founder training" className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
-                            <GraduationCap className="h-3 w-3" /> Trained by Startup Doktoru
-                          </span>
-                        )}
                         {(s.interest_count || 0) >= 2 && (
                           <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border bg-orange-500/10 text-orange-400 border-orange-500/20">
                             <Flame className="h-3 w-3" /> Trending
                           </span>
                         )}
                       </div>
-                      <h3 className="font-extrabold text-xl text-foreground">{s.startup_name}</h3>
+                      <h3 className="font-extrabold text-xl text-foreground inline-flex items-center gap-1.5">{s.startup_name}{s.sd_trained && <BadgeCheck className="h-5 w-5 text-emerald-400" />}</h3>
                       {s.one_liner && <p className="text-primary/90 mt-1">{s.one_liner}</p>}
                       {s.value_prop && <p className="text-sm text-muted-foreground mt-3 leading-relaxed whitespace-pre-line">{s.value_prop}</p>}
 

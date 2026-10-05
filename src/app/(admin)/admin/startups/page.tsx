@@ -321,7 +321,7 @@ function EditPanel({ s, act, busy, patchItem }: {
       <label className="flex items-center gap-2.5 text-sm text-foreground cursor-pointer">
         <input type="checkbox" checked={!!s.sd_trained} onChange={(e) => save("sd_trained", e.target.checked)} className="h-4 w-4 accent-emerald-500" />
         <GraduationCap className="h-4 w-4 text-emerald-400" /> Startup Doktoru eğitimi aldı
-        <span className="text-[11px] text-muted-foreground">— yatırımcı kartında &quot;Trained by Startup Doktoru&quot; rozeti çıkar</span>
+        <span className="text-[11px] text-muted-foreground">— yatırımcı kartı yeşil çerçeveli olur, &quot;Startup Doktoru Verified&quot; şeridi çıkar</span>
       </label>
 
       <div className="grid sm:grid-cols-2 gap-3">
