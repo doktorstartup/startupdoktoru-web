@@ -1,0 +1,76 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_namespace-5dd5",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Namespace",
+    "domain": "namespace.so",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 42000000,
+      "birim": "USD",
+      "usd": 42000000
+    },
+    "lider": "Scale Venture Partners",
+    "katilanlar": [
+      "Burst Capital",
+      "Essence",
+      "20VC",
+      "NEA"
+    ],
+    "kurucular": [
+      "Google Principal Engineer Hugo Santos"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/05/yazilim-gelistirme-altyapisi-sunan-namespace-42-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yazılım geliştirme altyapısı sunan Namespace, 42 milyon dolar yatırım aldı",
+      "tarih": "Mon, 05 Oct 2026 14:30:00 +0000"
+    },
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/namespace-secures-e37-million-to-scale-coding-build-and-test-infrastructure-across-mac-windows-and-linux/",
+      "baslik": "Namespace secures €37 million to scale coding, build and test infrastructure across Mac, Windows and Linux",
+      "tarih": "Mon, 05 Oct 2026 13:43:40 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/05/namespace-raises-42m-ssries-b-seven-months-after-series-a/",
+      "baslik": "Namespace raises $42M Series B, seven months after Series A",
+      "tarih": "Mon, 05 Oct 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yazılım geliştirme altyapısı sunan Namespace , 42 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/05/yazilim-gelistirme-altyapisi-sunan-namespace-42-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/05/yazilim-gelistirme-altyapisi-sunan-namespace-42-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-05T21:27:45.072Z"
+}

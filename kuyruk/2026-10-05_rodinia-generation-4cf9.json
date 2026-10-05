@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_rodinia-generation-4cf9",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Rodinia Generation",
+    "domain": "rodiniageneration.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "Vitamin°C",
+    "katilanlar": [
+      "Bristol-based Ponda’s €1.6 million Seed",
+      "Climentum Capital",
+      "EIFO"
+    ],
+    "kurucular": [
+      "Trine Young"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T15:41:21.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/fashiontech-startup-rodinia-generation-aims-to-save-100-billion-litres-of-water-annually-secures-e4-million/",
+      "baslik": "FashionTech startup Rodinia Generation aims to save 100 billion litres of water annually, secures €4 million",
+      "tarih": "Mon, 05 Oct 2026 15:41:21 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Danish FashionTech startup Rodinia Generation , a developer of clothing production technology, has raised €4 million to finance their industrial phase, including the establishment of a first commercia",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/fashiontech-startup-rodinia-generation-aims-to-save-100-billion-litres-of-water-annually-secures-e4-million/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/fashiontech-startup-rodinia-generation-aims-to-save-100-billion-litres-of-water-annually-secures-e4-million/"
+    }
+  ],
+  "olusturma": "2026-10-05T21:27:45.072Z"
+}

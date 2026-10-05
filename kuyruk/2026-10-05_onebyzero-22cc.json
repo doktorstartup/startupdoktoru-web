@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_onebyzero-22cc",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "OneByZero",
+    "domain": "onebyzero.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "USD",
+      "usd": 20000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Niket Vaidya",
+      "Vibhore Kumar"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/05/kurumsal-yapay-zeka-platformu-onebyzero-20-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kurumsal yapay zeka platformu OneByZero, 20 milyon dolar yatırım aldı",
+      "tarih": "Mon, 05 Oct 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kurumsal yapay zeka platformu OneByZero , 20 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/05/kurumsal-yapay-zeka-platformu-onebyzero-20-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/05/kurumsal-yapay-zeka-platformu-onebyzero-20-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-05T21:27:45.072Z"
+}
