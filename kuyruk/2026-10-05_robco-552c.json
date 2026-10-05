@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_robco-552c",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "RobCo",
+    "domain": "rob.co",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 89200000,
+      "birim": "EUR",
+      "usd": 96336000
+    },
+    "lider": null,
+    "katilanlar": [
+      "European Tech Collective",
+      "Cherry Ventures",
+      "Promus Ventures",
+      "Lightspeed",
+      "Greenfield",
+      "Lingotto",
+      "Sequoia",
+      "Kindred"
+    ],
+    "kurucular": [
+      "Roman Hölzl"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T12:05:18.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/",
+      "baslik": "Munich-based RobCo becomes a robotics unicorn as valuation doubles in nine months",
+      "tarih": "Mon, 05 Oct 2026 12:05:18 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Earlier this year, in January, the company raised €89.2 million ($100 million) in a Series C round co-led by Lightspeed Venture Partners and Lingotto Innovation.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/munich-based-robco-becomes-a-robotics-unicorn-as-valuation-doubles-in-nine-months/"
+    }
+  ],
+  "olusturma": "2026-10-05T12:13:24.252Z"
+}

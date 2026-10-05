@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_buntar-aerospace-26d8",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Buntar Aerospace",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 16000000,
+      "birim": "USD",
+      "usd": 16000000
+    },
+    "lider": "Freedom Fund",
+    "katilanlar": [
+      "Autonomy Capital",
+      "Iron Wolf",
+      "Gardar"
+    ],
+    "kurucular": [
+      "Bohdan Sas"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T12:00:14.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/05/buntar-aerospace-raises-16m-to-scale-ukrainian-defence-autonomy/",
+      "baslik": "Buntar Aerospace raises $16M to scale Ukrainian defence autonomy",
+      "tarih": "Mon, 05 Oct 2026 12:00:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Ukrainian defencetech company Buntar Aerospace has closed a $16 million funding round.",
+      "kaynak_url": "https://tech.eu/2026/10/05/buntar-aerospace-raises-16m-to-scale-ukrainian-defence-autonomy/"
+    }
+  ],
+  "olusturma": "2026-10-05T12:13:24.252Z"
+}

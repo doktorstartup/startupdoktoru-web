@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_pandektes-32f1",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Pandektes",
+    "domain": "pandektes.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 13500000,
+      "birim": "EUR",
+      "usd": 14580000
+    },
+    "lider": "Alstin Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Casper Laursen",
+      "Søren Brokær"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T06:30:57.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/copenhagens-pandektes-raises-e13-5-million-to-build-the-data-infrastructure-for-ai-powered-legal-research/",
+      "baslik": "Copenhagen’s Pandektes raises €13.5 million to build the data infrastructure for AI-powered legal research",
+      "tarih": "Mon, 05 Oct 2026 06:30:57 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Pandektes , a Copenhagen-based LegalTech company specialising in legal research, has raised €13.5 million in a Series A funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/copenhagens-pandektes-raises-e13-5-million-to-build-the-data-infrastructure-for-ai-powered-legal-research/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/copenhagens-pandektes-raises-e13-5-million-to-build-the-data-infrastructure-for-ai-powered-legal-research/"
+    }
+  ],
+  "olusturma": "2026-10-05T12:13:24.252Z"
+}

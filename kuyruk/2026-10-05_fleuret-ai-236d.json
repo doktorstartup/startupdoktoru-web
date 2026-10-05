@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-10-05_fleuret-ai-236d",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Fleuret AI",
+    "domain": "fleuret.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "RAISE Ventures",
+    "katilanlar": [
+      "Auriga Cyber Ventures",
+      "Wind Capital",
+      "Better Angle"
+    ],
+    "kurucular": [
+      "Yanis Grigy",
+      "Augustin Ponsin"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-05T07:22:40.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/",
+      "baslik": "French cybersecurity startup Fleuret AI raises €4 million to automate penetration testing with AI agents",
+      "tarih": "Mon, 05 Oct 2026 07:22:40 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/05/fleuret-ai-raises-eur4m-to-advance-ai-powered-offensive-cybersecurity-in-europe/",
+      "baslik": "Fleuret AI raises €4M to advance AI-powered offensive cybersecurity in Europe",
+      "tarih": "Mon, 05 Oct 2026 08:50:56 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fleuret AI , a Paris-based cybersecurity startup automating penetration testing with agentic AI, has closed a €4 million pre-Seed round to hire AI, software engineering, and offensive security talent",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-cybersecurity-startup-fleuret-ai-raises-e4-million-to-automate-penetration-testing-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-10-05T12:13:24.252Z"
+}
