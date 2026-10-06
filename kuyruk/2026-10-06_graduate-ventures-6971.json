@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_graduate-ventures-6971",
+  "durum": "hazir",
+  "puan": 48,
+  "puan_kirilimi": {
+    "alan_tutar": 0,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Graduate Ventures",
+    "domain": "graduate.nl",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": null,
+      "birim": null,
+      "usd": null
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Frans van Houten"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T12:46:15.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/graduate-ventures-launches-eur125m-second-seed-fund-to-back-dutch-tech-startups/",
+      "baslik": "Graduate Ventures launches €125M second seed fund to back Dutch tech startups",
+      "tarih": "Tue, 06 Oct 2026 12:46:15 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/graduate-ventures-launches-eur125m-second-seed-fund-to-back-dutch-tech-startups/"
+    }
+  ],
+  "olusturma": "2026-10-06T19:29:32.322Z"
+}
