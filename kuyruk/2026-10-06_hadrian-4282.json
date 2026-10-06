@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_hadrian-4282",
+  "durum": "hazir",
+  "puan": 54,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Hadrian",
+    "domain": "hadrian.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 35680000,
+      "birim": "EUR",
+      "usd": 38534400
+    },
+    "lider": "Forgepoint Capital International",
+    "katilanlar": [
+      "Motive Partners",
+      "Oetker Ventures",
+      "Picus Capital",
+      "HV Capital",
+      "SmartFin"
+    ],
+    "kurucular": [
+      "Rogier Fischer",
+      "Olivier Beg",
+      "Maurice Clin"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/",
+      "baslik": "Cybersecurity startup Hadrian raises €35.68 million to scale its agentic AI offensive security platform",
+      "tarih": "Tue, 06 Oct 2026 07:17:17 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/hadrian-raises-40m-to-tackle-ai-driven-cyber-threats/",
+      "baslik": "Hadrian raises $40M to tackle AI-driven cyber threats",
+      "tarih": "Tue, 06 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Hadrian , a London-Amsterdam-based agentic AI offensive security platform, today announced a €35.68 million ($40 million) funding round to fund expansion across EMEA and the U.S.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/london-amsterdam-based-hadrian-raises-e35-68-million-to-scale-its-agentic-ai-offensive-security-platform/"
+    },
+    {
+      "metin": "Hadrian , an agentic AI offensive security platform, has raised $40 million in a funding round co-led by Forgepoint Capital International and Smart Fin .",
+      "kaynak_url": "https://tech.eu/2026/10/06/hadrian-raises-40m-to-tackle-ai-driven-cyber-threats/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

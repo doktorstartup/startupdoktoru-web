@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_n26-e8d0",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "N26",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 17000000,
+      "birim": "EUR",
+      "usd": 18360000
+    },
+    "lider": "N26 has raised a €17m Series A",
+    "katilanlar": [
+      "Earlybird"
+    ],
+    "kurucular": [
+      "Alex Talkanista",
+      "Max Schertel",
+      "Max Tayenthal"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T06:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/n26-founder-backed-finmid-raises-eur17m-series-a-extension-strikes-bolt-deal/",
+      "baslik": "N26 founder-backed Finmid raises €17M Series A extension, strikes Bolt deal",
+      "tarih": "Tue, 06 Oct 2026 06:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A Berlin-based fintech backed by one of the founders of German challenger bank N26 has raised a €17m Series A extension round and says it has sealed a deal with Estonian ride-hailing firm Bolt, which",
+      "kaynak_url": "https://tech.eu/2026/10/06/n26-founder-backed-finmid-raises-eur17m-series-a-extension-strikes-bolt-deal/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/06/n26-founder-backed-finmid-raises-eur17m-series-a-extension-strikes-bolt-deal/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

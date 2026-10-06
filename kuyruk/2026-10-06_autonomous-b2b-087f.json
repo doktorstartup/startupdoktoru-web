@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_autonomous-b2b-087f",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Autonomous B2B",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "EUR",
+      "usd": 21600000
+    },
+    "lider": "XAnge",
+    "katilanlar": [
+      "Point Nine",
+      "Creandum"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-06T06:06:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/autonomous-b2b-trade-gets-a-boost-as-procuros-raises-eur20m/",
+      "baslik": "Autonomous B2B trade gets a boost as Procuros raises €20M",
+      "tarih": "Tue, 06 Oct 2026 06:06:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Hamburg-based software company Procuros has raised €20 million in a Series A funding round to further develop its AI-native supply chain connectivity platform and expand internationally.",
+      "kaynak_url": "https://tech.eu/2026/10/06/autonomous-b2b-trade-gets-a-boost-as-procuros-raises-eur20m/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/06/autonomous-b2b-trade-gets-a-boost-as-procuros-raises-eur20m/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_finches-3e4f",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Finches",
+    "domain": "finches.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "EUR",
+      "usd": 2160000
+    },
+    "lider": "High-Tech Gründerfonds (HTGF)",
+    "katilanlar": [
+      "Vanagon Ventures"
+    ],
+    "kurucular": [
+      "Catharina van Delden"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T06:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/finches-lands-eur2m-to-help-food-producers-spot-supply-risks-earlier/",
+      "baslik": "Finches lands €2M to help food producers spot supply risks earlier",
+      "tarih": "Tue, 06 Oct 2026 06:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bavaria-based agritech Finches has raised €2 million in a pre-seed funding round led by High-Tech Gründerfonds (HTGF), with Vanagon Ventures joining as co-lead.",
+      "kaynak_url": "https://tech.eu/2026/10/06/finches-lands-eur2m-to-help-food-producers-spot-supply-risks-earlier/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/finches-lands-eur2m-to-help-food-producers-spot-supply-risks-earlier/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_whitelab-genomics-409a",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "WhiteLab Genomics",
+    "domain": "whitelabgx.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 23200000,
+      "birim": "EUR",
+      "usd": 25056000
+    },
+    "lider": "AVP",
+    "katilanlar": [],
+    "kurucular": [
+      "David Del Bourgo",
+      "Lucia Cinque",
+      "Julien Cottineau"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T06:28:31.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/paris-based-whitelab-genomics-raises-e23-2-million-to-accelerate-ai-driven-genomic-medicine-development/",
+      "baslik": "Paris-based WhiteLab Genomics raises €23.2 million to accelerate AI-driven genomic medicine development",
+      "tarih": "Tue, 06 Oct 2026 06:28:31 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "WhiteLab Genomics , a Paris-based BioTech company that uses AI to design the building blocks of genomic medicines, has closed a €23.2 million ($26 million) Series B funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-based-whitelab-genomics-raises-e23-2-million-to-accelerate-ai-driven-genomic-medicine-development/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-based-whitelab-genomics-raises-e23-2-million-to-accelerate-ai-driven-genomic-medicine-development/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

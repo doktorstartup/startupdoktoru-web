@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_cleavr-b0c3",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Cleavr",
+    "domain": "cleavr.fr",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 8000000,
+      "birim": "EUR",
+      "usd": 8640000
+    },
+    "lider": "Varsity",
+    "katilanlar": [
+      "Financière Saint James",
+      "Portfolio Ventures",
+      "Kima Ventures",
+      "Better Angle",
+      "Kerala"
+    ],
+    "kurucular": [
+      "Baptiste Nassoy",
+      "Arthur Guerin",
+      "Antoine Grenard"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T06:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/cleavr-bags-eur8m-to-scale-ai-powered-invoice-collection-across-europe/",
+      "baslik": "Cleavr bags €8M to scale AI-powered invoice collection across Europe",
+      "tarih": "Tue, 06 Oct 2026 06:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French fintech Cleavr has raised €8 million in a seed round to expand its accounts receivable automation platform across Europe.",
+      "kaynak_url": "https://tech.eu/2026/10/06/cleavr-bags-eur8m-to-scale-ai-powered-invoice-collection-across-europe/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/cleavr-bags-eur8m-to-scale-ai-powered-invoice-collection-across-europe/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_up-4343",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Up",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "SWEN Blue Ocean 2",
+    "katilanlar": [
+      "Asterion Ventures",
+      "Bpifrance",
+      "Ferm Labs",
+      "EIT Food",
+      "Aardaia",
+      "Millow"
+    ],
+    "kurucular": [
+      "Hugo Valentin"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T11:48:12.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/up-to-27-times-lower-carbon-footprint-than-beef-edonia-raises-e15-million-for-their-meat-alternative/",
+      "baslik": "Up to 27 times lower carbon footprint than beef &#8211; Edonia raises €15 million for their meat-alternative",
+      "tarih": "Tue, 06 Oct 2026 11:48:12 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French FoodTech startup Edonia , a B2B ingredient supplier specialised in ready-to-eat-protein ingredients, has raised €15 million to expand the commercial use of its microalgae-based ingredients.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/up-to-27-times-lower-carbon-footprint-than-beef-edonia-raises-e15-million-for-their-meat-alternative/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

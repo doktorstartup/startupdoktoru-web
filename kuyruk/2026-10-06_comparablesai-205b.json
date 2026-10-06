@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_comparablesai-205b",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Comparables.ai",
+    "domain": "comparables.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "USD",
+      "usd": 6000000
+    },
+    "lider": "Pragmatech",
+    "katilanlar": [
+      "Somersault Ventures",
+      "Purple Ventures",
+      "Gorilla Capital",
+      "Araya Ventures"
+    ],
+    "kurucular": [
+      "Niko Nalli",
+      "Markus Vesala",
+      "Martin Kangasniemi",
+      "Muhammad Ammad-ud-din"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T07:01:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/comparablesai-secures-6m-seed-to-scale-its-ai-platform-for-dealmakers/",
+      "baslik": "Comparables.ai secures $6M seed to scale its AI platform for dealmakers",
+      "tarih": "Tue, 06 Oct 2026 07:01:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Comparables.ai , an AI platform for private and public market intelligence, has raised $6 million in seed funding to support its expansion across multiple markets and further develop its core AI engin",
+      "kaynak_url": "https://tech.eu/2026/10/06/comparablesai-secures-6m-seed-to-scale-its-ai-platform-for-dealmakers/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/comparablesai-secures-6m-seed-to-scale-its-ai-platform-for-dealmakers/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

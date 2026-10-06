@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_paris-4ffa",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Paris-",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 80030000,
+      "birim": "EUR",
+      "usd": 86432400
+    },
+    "lider": "New Enterprise Associates (NEA)",
+    "katilanlar": [
+      "Wintermute Ventures",
+      "Flourish Ventures",
+      "Mirana Ventures",
+      "Bpifrance",
+      "Blockwall",
+      "Shapers",
+      "Frst",
+      "EQNX"
+    ],
+    "kurucular": [
+      "Paul-Adrien Hyppolite",
+      "Antoine Michon"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T11:08:11.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/paris-and-london-based-spiko-raises-nearly-e80-million-to-help-businesses-and-individuals-put-idle-cash-to-work/",
+      "baslik": "Paris- and London-based Spiko raises nearly €80 million to help businesses and individuals put idle cash to work",
+      "tarih": "Tue, 06 Oct 2026 11:08:11 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Spiko , a tokenised cash fund platform with headquarters in Paris and London, has raised €80.03 million ($90 million) in a Series B funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-and-london-based-spiko-raises-nearly-e80-million-to-help-businesses-and-individuals-put-idle-cash-to-work/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-and-london-based-spiko-raises-nearly-e80-million-to-help-businesses-and-individuals-put-idle-cash-to-work/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

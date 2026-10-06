@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_nea-d654",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "NEA",
+    "domain": "nea.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 90000000,
+      "birim": "USD",
+      "usd": 90000000
+    },
+    "lider": "New Enterprise Associates (NEA)",
+    "katilanlar": [
+      "Axel Weber",
+      "Bundesbank",
+      "Qonto"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-06T08:16:29.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/nea-leads-spikos-90m-series-b-to-expand-access-to-cash-yield/",
+      "baslik": "NEA leads Spiko’s $90M Series B to expand access to cash yield",
+      "tarih": "Tue, 06 Oct 2026 08:16:29 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Spiko , a provider of tokenised cash funds, has raised $90 million in a Series B funding round led by New Enterprise Associates (NEA), bringing its total funding to $120 million.",
+      "kaynak_url": "https://tech.eu/2026/10/06/nea-leads-spikos-90m-series-b-to-expand-access-to-cash-yield/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/06/nea-leads-spikos-90m-series-b-to-expand-access-to-cash-yield/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

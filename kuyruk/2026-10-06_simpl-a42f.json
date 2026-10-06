@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_simpl-a42f",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "SimpL",
+    "domain": "simplsales.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1200000,
+      "birim": "EUR",
+      "usd": 1296000
+    },
+    "lider": "Techshop Capital",
+    "katilanlar": [
+      "Vento Ventures"
+    ],
+    "kurucular": [
+      "Nicolò Fugallo",
+      "Raffaele Scarano",
+      "Luca Marco Agnoli"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T08:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/italian-simpl-raises-eur12m-to-power-b2b-sales-with-ai/",
+      "baslik": "Italian SimpL raises €1.2M to power B2B sales with AI",
+      "tarih": "Tue, 06 Oct 2026 08:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Italian startup SimpL has raised €1.2 million in a pre-seed funding round to develop its AI-powered operating system for generating B2B sales opportunities.",
+      "kaynak_url": "https://tech.eu/2026/10/06/italian-simpl-raises-eur12m-to-power-b2b-sales-with-ai/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/italian-simpl-raises-eur12m-to-power-b2b-sales-with-ai/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}

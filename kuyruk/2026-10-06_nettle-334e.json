@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-06_nettle-334e",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Nettle",
+    "domain": "getnettle.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4800000,
+      "birim": "USD",
+      "usd": 4800000
+    },
+    "lider": "MTech",
+    "katilanlar": [
+      "Project A Ventures"
+    ],
+    "kurucular": [
+      "Katya Kinane",
+      "Jack Miller"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-06T06:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/06/nettle-raises-48m-to-expand-its-ai-workspace-for-insurers/",
+      "baslik": "Nettle raises $4.8M to expand its AI workspace for insurers",
+      "tarih": "Tue, 06 Oct 2026 06:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Nettle , an AI platform for commercial insurance loss control, has raised $4.8 million in an oversubscribed seed round.",
+      "kaynak_url": "https://tech.eu/2026/10/06/nettle-raises-48m-to-expand-its-ai-workspace-for-insurers/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/06/nettle-raises-48m-to-expand-its-ai-workspace-for-insurers/"
+    }
+  ],
+  "olusturma": "2026-10-06T11:59:38.864Z"
+}
