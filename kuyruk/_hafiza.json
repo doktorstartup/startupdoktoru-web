@@ -8,7 +8,6 @@
   {"dom":"rightcharge.com","ad":"rightcharge","tarih":"2026-09-03","dosya":"2026-09-03_rightcharge-b93f.json"},
   {"dom":"joinsouk.com","ad":"souk","tarih":"2026-09-03","dosya":"2026-09-03_souk-430c.json"},
   {"dom":"usebackbone.ai","ad":"backbone","tarih":"2026-09-03","dosya":"2026-09-03_backbone-70c6.json"},
-  {"dom":"wonderful.ai","ad":"wonderful","tarih":"2026-09-02","dosya":"2026-09-02_wonderful-be62.json"},
   {"dom":"claret-capital.com","ad":"claret capital partners","tarih":"2026-09-07","dosya":"2026-09-07_claret-capital-partners-db44.json"},
   {"dom":"creoir.com","ad":"creoir","tarih":"2026-09-04","dosya":"2026-09-04_creoir-f729.json"},
   {"dom":null,"ad":"ultrahuman","tarih":"2026-09-04","dosya":"2026-09-04_ultrahuman-9a14.json"},
@@ -17,7 +16,6 @@
   {"dom":"hiddenlayer.com","ad":"hiddenlayer","tarih":"2026-09-03","dosya":"2026-09-03_hiddenlayer-352f.json"},
   {"dom":"lyte.ai","ad":"lyte","tarih":"2026-09-03","dosya":"2026-09-03_lyte-fc0c.json"},
   {"dom":null,"ad":"gen z","tarih":"2026-09-07","dosya":"2026-09-07_gen-z-94ef.json"},
-  {"dom":"s-transistors.com","ad":"stransistors","tarih":"2026-09-02","dosya":"2026-09-02_stransistors-8a4c.json"},
   {"dom":"pixxel.space","ad":"pixxel","tarih":"2026-09-07","dosya":"2026-09-07_pixxel-5944.json"},
   {"dom":"chift.eu","ad":"chift","tarih":"2026-09-14","dosya":"2026-09-14_chift-d318.json"},
   {"dom":"custodea.eu","ad":"custodea","tarih":"2026-09-14","dosya":"2026-09-14_custodea-5d61.json"},
@@ -191,5 +189,9 @@
   {"dom":"valon.ai","ad":"valon","tarih":"2026-10-06","dosya":"2026-10-06_valon-a871.json"},
   {"dom":"edonia.com","ad":"edonia","tarih":"2026-10-06","dosya":"2026-10-06_edonia-8228.json"},
   {"dom":"graduate.nl","ad":"graduate ventures","tarih":"2026-10-06","dosya":"2026-10-06_graduate-ventures-6971.json"},
-  {"dom":"spiko.io","ad":"spiko","tarih":"2026-10-06","dosya":"2026-10-06_spiko-18ac.json"}
+  {"dom":"spiko.io","ad":"spiko","tarih":"2026-10-06","dosya":"2026-10-06_spiko-18ac.json"},
+  {"dom":"mintneuro.com","ad":"mintneuro","tarih":"2026-10-07","dosya":"2026-10-07_mintneuro-ab04.json"},
+  {"dom":"cori-clinical.com","ad":"cori clinical","tarih":"2026-10-07","dosya":"2026-10-07_cori-clinical-c018.json"},
+  {"dom":null,"ad":"france","tarih":"2026-10-07","dosya":"2026-10-07_france-0661.json"},
+  {"dom":null,"ad":"insurtech konsileo","tarih":"2026-10-07","dosya":"2026-10-07_insurtech-konsileo-2afa.json"}
 ]}

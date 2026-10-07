@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-07_mintneuro-ab04",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "MintNeuro",
+    "domain": "mintneuro.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "USD",
+      "usd": 5000000
+    },
+    "lider": "Odyssey Ventures",
+    "katilanlar": [
+      "Empirical Ventures",
+      "Jumpspace Ventures",
+      "JSK Investments",
+      "Alumni Ventures",
+      "33East",
+      "UK"
+    ],
+    "kurucular": [
+      "Dorian Haci"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-07T11:20:49.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/07/mintneuro-raises-5m-to-scale-chips-purpose-built-for-neural-devices/",
+      "baslik": "MintNeuro raises $5M to scale chips purpose-built for neural devices",
+      "tarih": "Wed, 07 Oct 2026 11:20:49 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "MintNeuro , an Imperial College London spinout developing specialised chips for neural devices from implants to wearables, has raised $5 million to drive its commercial scale-up.",
+      "kaynak_url": "https://tech.eu/2026/10/07/mintneuro-raises-5m-to-scale-chips-purpose-built-for-neural-devices/"
+    }
+  ],
+  "olusturma": "2026-10-07T11:44:37.083Z"
+}

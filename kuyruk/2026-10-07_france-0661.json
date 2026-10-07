@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-07_france-0661",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "France-",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 8930000,
+      "birim": "EUR",
+      "usd": 9644400
+    },
+    "lider": "Partech",
+    "katilanlar": [
+      "Primo Capital"
+    ],
+    "kurucular": [
+      "Gianluca Varisco",
+      "Guglielmo Reina"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-07T09:50:27.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/france-and-italy-based-netsec-raises-over-e8-93-million-to-scale-its-ai-native-solution-for-cybersecurity-and-it/",
+      "baslik": "France- and Italy-based Netsec raises over €8.93 million to scale its AI-native solution for cybersecurity and IT",
+      "tarih": "Wed, 07 Oct 2026 09:50:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Netsec , the European provider of cybersecurity and managed IT services, has raised more than €8.93 million ($10 million) in equity funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/france-and-italy-based-netsec-raises-over-e8-93-million-to-scale-its-ai-native-solution-for-cybersecurity-and-it/"
+    }
+  ],
+  "olusturma": "2026-10-07T11:44:37.083Z"
+}

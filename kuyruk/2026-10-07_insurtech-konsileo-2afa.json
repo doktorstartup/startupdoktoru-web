@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-07_insurtech-konsileo-2afa",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "InsurTech Konsileo",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5900000,
+      "birim": "EUR",
+      "usd": 6372000
+    },
+    "lider": "Committed Capital",
+    "katilanlar": [
+      "ACF Investors"
+    ],
+    "kurucular": [
+      "John Warburton",
+      "Peter Henderson"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-07T07:46:56.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/uk-based-insurtech-konsileo-raises-e5-9-million-to-expand-its-team-and-integrate-ai/",
+      "baslik": "UK-based InsurTech Konsileo raises €5.9 million to expand its team and integrate AI",
+      "tarih": "Wed, 07 Oct 2026 07:46:56 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Konsileo , a UK-based chartered insurance broker, has closed a €5.9 million (£5 million) equity round to support its continued growth.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/uk-based-insurtech-konsileo-raises-e5-9-million-to-expand-its-team-and-integrate-ai/"
+    }
+  ],
+  "olusturma": "2026-10-07T11:44:37.083Z"
+}
