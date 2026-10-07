@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-07_rivercell-db5e",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Rivercell",
+    "domain": "rivercell.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 22000000,
+      "birim": "EUR",
+      "usd": 23760000
+    },
+    "lider": "HV",
+    "katilanlar": [
+      "Bpifrance Digital Venture",
+      "Alven",
+      "HCVC"
+    ],
+    "kurucular": [
+      "Yann Fleureau"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-07T14:24:22.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/frances-rivercell-emerges-from-stealth-with-e22-million-for-ai-powered-drug-discovery-infrastructure/",
+      "baslik": "France&#8217;s Rivercell emerges from stealth with €22 million for AI-powered drug discovery infrastructure",
+      "tarih": "Wed, 07 Oct 2026 14:24:22 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Rivercell , a Paris-based BioTech and AI company building proprietary cell-response data infrastructure and a world model that predicts how human cells respond to treatment, has launched today out of",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/frances-rivercell-emerges-from-stealth-with-e22-million-for-ai-powered-drug-discovery-infrastructure/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/frances-rivercell-emerges-from-stealth-with-e22-million-for-ai-powered-drug-discovery-infrastructure/"
+    }
+  ],
+  "olusturma": "2026-10-07T19:56:24.628Z"
+}
