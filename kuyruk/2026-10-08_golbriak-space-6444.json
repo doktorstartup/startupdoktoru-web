@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_golbriak-space-6444",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Golbriak Space",
+    "domain": "golbriak.space",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "Join Capital",
+    "katilanlar": [
+      "CDP Venture Capital National Accelerator Network",
+      "PhotonVentures",
+      "Takeoff",
+      "Plug",
+      "Play"
+    ],
+    "kurucular": [
+      "Nicola Garzaniti"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/08/golbriak-space-raises-eur4m-to-scale-laser-communications-for-satellite-constellations/",
+      "baslik": "Golbriak Space raises €4M to scale laser communications for satellite constellations",
+      "tarih": "Thu, 08 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Estonia’s Golbriak Space has secured €4 million in fresh financing to accelerate the industrialisation of its technology and expand production capacity as customers move towards embedding optical term",
+      "kaynak_url": "https://tech.eu/2026/10/08/golbriak-space-raises-eur4m-to-scale-laser-communications-for-satellite-constellations/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/08/golbriak-space-raises-eur4m-to-scale-laser-communications-for-satellite-constellations/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

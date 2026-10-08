@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_innercrowd-74a3",
+  "durum": "hazir",
+  "puan": 42,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Innercrowd",
+    "domain": "innercrowd.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 750000,
+      "birim": "EUR",
+      "usd": 810000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Benjamin Havenaar",
+      "Job Vink"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/08/dutch-startup-innercrowd-raises-eur750k-to-turn-festival-fans-into-marketers/",
+      "baslik": "Dutch startup Innercrowd raises €750K to turn festival fans into marketers",
+      "tarih": "Thu, 08 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Innercrowd has raised €750,000 in funding to accelerate its international expansion as festivals across Europe look for new ways to drive ticket sales.",
+      "kaynak_url": "https://tech.eu/2026/10/08/dutch-startup-innercrowd-raises-eur750k-to-turn-festival-fans-into-marketers/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

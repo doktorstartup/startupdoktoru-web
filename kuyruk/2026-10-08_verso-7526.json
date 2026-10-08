@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_verso-7526",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Verso",
+    "domain": "askverso.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "USD",
+      "usd": 6000000
+    },
+    "lider": "Angular Ventures",
+    "katilanlar": [
+      "Sharpstone Capital",
+      "Olympe Capital",
+      "Kima Ventures"
+    ],
+    "kurucular": [
+      "Lydia Bellahouel",
+      "Camille Epitalon"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T07:01:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/08/verso-raises-6m-to-bring-consumer-intelligence-into-business-decision-making/",
+      "baslik": "Verso raises $6M to bring consumer intelligence into business decision-making",
+      "tarih": "Thu, 08 Oct 2026 07:01:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Verso , an AI-powered consumer intelligence platform, has raised $6 million in seed funding.",
+      "kaynak_url": "https://tech.eu/2026/10/08/verso-raises-6m-to-bring-consumer-intelligence-into-business-decision-making/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/08/verso-raises-6m-to-bring-consumer-intelligence-into-business-decision-making/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

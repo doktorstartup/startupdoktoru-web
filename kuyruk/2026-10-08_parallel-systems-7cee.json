@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_parallel-systems-7cee",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Parallel Systems",
+    "domain": "moveparallel.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Eski SpaceX"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T08:46:44.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/otonom-tren-girisimi-parallel-systems-100-milyon-dolar-yatirim-aldi/",
+      "baslik": "Otonom tren girişimi Parallel Systems, 100 milyon dolar yatırım aldı",
+      "tarih": "Thu, 08 Oct 2026 08:46:44 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Eski SpaceX çalışanları tarafından kurulan Parallel Systems, otonom ve elektrikli yük taşımacılığı teknolojisini büyütmek için Seri C turunda 100 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/otonom-tren-girisimi-parallel-systems-100-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri C",
+      "kaynak_url": "https://swipeline.co/otonom-tren-girisimi-parallel-systems-100-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

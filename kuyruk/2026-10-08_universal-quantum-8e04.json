@@ -1,0 +1,72 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_universal-quantum-8e04",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Universal Quantum",
+    "domain": "universalquantum.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 115000000,
+      "birim": "EUR",
+      "usd": 124200000
+    },
+    "lider": "DCVC",
+    "katilanlar": [
+      "Nauta Capital and The Venture Collective",
+      "Integral GlobalTech",
+      "Eigenstate.holdings",
+      "Firgun Ventures",
+      "Main Sequence",
+      "Dave Baszucki",
+      "IAG Capital",
+      "NGS Super",
+      "Hostplus",
+      "EdenBase",
+      "Artal",
+      "EDBI"
+    ],
+    "kurucular": [
+      "Professor Sebastian Weidt"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T10:07:40.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/universal-quantum-secures-uks-largest-quantum-series-a-with-e89-million-to-scale-modular-quantum-computers/",
+      "baslik": "Universal Quantum secures UK’s largest quantum Series A with €89 million to scale modular quantum computers",
+      "tarih": "Thu, 08 Oct 2026 10:07:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "In the UK, Oxford Quantum Circuits raised €301 million to expand its Quantum-AI data-centre platform, while Delft-based QuantWare secured €152 million to scale quantum processor manufacturing and Fran",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/universal-quantum-secures-uks-largest-quantum-series-a-with-e89-million-to-scale-modular-quantum-computers/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/universal-quantum-secures-uks-largest-quantum-series-a-with-e89-million-to-scale-modular-quantum-computers/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

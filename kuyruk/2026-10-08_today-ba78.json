@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_today-ba78",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "TODAY",
+    "domain": "usetoday.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2800000,
+      "birim": "EUR",
+      "usd": 3024000
+    },
+    "lider": "High-Tech Gründerfonds (HTGF)",
+    "katilanlar": [
+      "Herbert Rogenhofer and Tech11 founder Pierre Dubosq",
+      "Insurtech Gateway",
+      "Lucid Capital",
+      "Seed X"
+    ],
+    "kurucular": [
+      "Michael Gackstatter",
+      "Artem Demchenkov"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T06:22:32.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/08/today-lands-eur28m-to-scale-its-ai-platform-for-financial-advisors/",
+      "baslik": "TODAY lands €2.8M to scale its AI platform for financial advisors",
+      "tarih": "Thu, 08 Oct 2026 07:59:05 +0000"
+    },
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/copenhagens-today-raises-e2-8-million-to-bring-compliant-ai-agents-to-financial-and-insurance-advisors/",
+      "baslik": "Copenhagen’s TODAY raises €2.8 million to bring compliant AI agents to financial and insurance advisors",
+      "tarih": "Thu, 08 Oct 2026 06:22:32 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "TODAY , an AI startup helping financial and insurance advisors automate their work has raised €2.8 million in seed funding.",
+      "kaynak_url": "https://tech.eu/2026/10/08/today-lands-eur28m-to-scale-its-ai-platform-for-financial-advisors/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/08/today-lands-eur28m-to-scale-its-ai-platform-for-financial-advisors/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

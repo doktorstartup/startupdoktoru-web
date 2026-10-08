@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_psv-tech-7276",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 0,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "PSV Tech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": null,
+      "birim": null,
+      "usd": null
+    },
+    "lider": null,
+    "katilanlar": [
+      "EIFO",
+      "ATP",
+      "IDA"
+    ],
+    "kurucular": [
+      "Helle Uth"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T08:45:01.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/psv-tech-closes-e56m-fund-ii/",
+      "baslik": "PSV Tech closes its second fund to double down on Nordic pre-seed investing",
+      "tarih": "Thu, 08 Oct 2026 08:45:01 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/psv-tech-closes-e56m-fund-ii/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

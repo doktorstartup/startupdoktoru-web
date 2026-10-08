@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_immix-6722",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "IMMIX",
+    "domain": "immix.xyz",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3120000,
+      "birim": "EUR",
+      "usd": 3369600
+    },
+    "lider": "Crane Venture Partners",
+    "katilanlar": [
+      "Portfolio Ventures",
+      "BTSE"
+    ],
+    "kurucular": [
+      "Andrew Mann",
+      "David Twomey",
+      "Morgan Stanley",
+      "JP Morgan",
+      "Virtu Financial"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T07:11:43.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar/",
+      "baslik": "London’s IMMIX secures €3.12 million to build FX infrastructure for stablecoin payments beyond the US dollar",
+      "tarih": "Thu, 08 Oct 2026 07:11:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "IMMIX , a London-based AI-native trading firm that helps payment companies exchange stablecoins between currencies, has raised €3.12 million ($3.5 million) in funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-immix-secures-e3-12-million-to-build-fx-infrastructure-for-stablecoin-payments-beyond-the-us-dollar/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

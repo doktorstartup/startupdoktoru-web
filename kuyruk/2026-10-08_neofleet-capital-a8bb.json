@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_neofleet-capital-a8bb",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "NeoFleet Capital",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3500000,
+      "birim": "EUR",
+      "usd": 3780000
+    },
+    "lider": "Mark Loughran",
+    "katilanlar": [
+      "NeoFleet Capital as President"
+    ],
+    "kurucular": [
+      "Mark Loughran",
+      "Igor Shiyanov",
+      "Oleg Mosyazh"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-08T09:09:56.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/limassol-based-neofleet-capital-raises-e3-5-million-to-finance-taxi-fleets-across-emerging-markets/",
+      "baslik": "Limassol-based NeoFleet Capital raises €3.5 million to finance taxi fleets across emerging markets",
+      "tarih": "Thu, 08 Oct 2026 09:09:56 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "NeoFleet Capital , a Limassol-based investment and technology platform that finances professional taxi fleets, has raised €3.5 million in pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/limassol-based-neofleet-capital-raises-e3-5-million-to-finance-taxi-fleets-across-emerging-markets/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/limassol-based-neofleet-capital-raises-e3-5-million-to-finance-taxi-fleets-across-emerging-markets/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}

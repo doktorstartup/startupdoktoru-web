@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_university-1d4f",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "University",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": "DCVC",
+    "katilanlar": [
+      "Nauta Capital and The Venture Collective",
+      "Eigenstate Holdings",
+      "SiteGround Capital",
+      "Firgun Ventures",
+      "Dave Baszucki",
+      "IAG Capital",
+      "NGS Super",
+      "EdenBase"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-08T09:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/08/university-of-sussex-quantum-spinout-raises-record-ps100m-series-a/",
+      "baslik": "University of Sussex spinout Universal Quantum raises “record” $100M Series A",
+      "tarih": "Thu, 08 Oct 2026 09:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A UK university spinout building large scale quantum computing systems for real-world use has raised $100m in funding, which it says it the largest Series A raised by a UK-headquartered quantum firm.",
+      "kaynak_url": "https://tech.eu/2026/10/08/university-of-sussex-quantum-spinout-raises-record-ps100m-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/08/university-of-sussex-quantum-spinout-raises-record-ps100m-series-a/"
+    }
+  ],
+  "olusturma": "2026-10-08T11:59:23.989Z"
+}
