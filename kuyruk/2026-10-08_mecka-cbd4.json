@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_mecka-cbd4",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Mecka",
+    "domain": "mecka.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 60000000,
+      "birim": "USD",
+      "usd": 60000000
+    },
+    "lider": "Sequoia Capital",
+    "katilanlar": [
+      "Microsoft’un girişim sermayesi fonu M12",
+      "DoorDash kurucusu Tony Xu",
+      "Framework Ventures",
+      "Qualcomm Ventures",
+      "Kindred Ventures",
+      "ServiceNow",
+      "Samsung",
+      "NVIDIA",
+      "Neo"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-08T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/08/robotlarin-egitilmesi-icin-gercek-dunya-verileri-toplayan-mecka-60-milyon-dolar-yatirim-aldi/",
+      "baslik": "Robotların eğitilmesi için gerçek dünya verileri toplayan Mecka, 60 milyon dolar yatırım aldı",
+      "tarih": "Thu, 08 Oct 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Robotların eğitilmesi için gerçek dünya verileri toplayan Mecka , 60 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/08/robotlarin-egitilmesi-icin-gercek-dunya-verileri-toplayan-mecka-60-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/08/robotlarin-egitilmesi-icin-gercek-dunya-verileri-toplayan-mecka-60-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-08T19:53:33.719Z"
+}

@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-08_manus-040d",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Manus",
+    "domain": "manus.im",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 500000000,
+      "birim": "USD",
+      "usd": 500000000
+    },
+    "lider": "Boyu Capital",
+    "katilanlar": [
+      "IDG Capital"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-08T15:08:59.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/manus-meta-ayrilmasinin-ardindan-yaklasik-500-milyon-dolar-yatirim-aldi/",
+      "baslik": "Manus, Meta’dan ayrılmasının ardından yaklaşık 500 milyon dolar yatırım aldı",
+      "tarih": "Thu, 08 Oct 2026 15:08:59 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Manus’un çatı şirketi Butterfly Effect , Boyu Capital ve IDG Capital liderliğinde gerçekleşen turda yaklaşık 500 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/manus-meta-ayrilmasinin-ardindan-yaklasik-500-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-08T19:53:33.719Z"
+}
