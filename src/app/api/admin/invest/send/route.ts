@@ -97,7 +97,8 @@ export async function POST(req: NextRequest) {
     if (!to.includes("@")) return NextResponse.json({ error: "Bu yatırımcının e-postası yok." }, { status: 400 });
     // Kişisel mod: toplu-mail izleri (unsubscribe footer/başlık) yok. Nazik çıkış yolu
     // düz cümle olarak eklenir — insan yazmış gibi durur, Promotions'a itmez.
-    const personalHtml = `${fill(html, inv)}<p style="margin:14px 0 0">Yazmamı istemezsen bu e-postaya “çıkar” diye yanıtlaman yeterli.</p>`;
+    const footer = body.noFooter ? "" : `<p style="margin:14px 0 0">Yazmamı istemezsen bu e-postaya “çıkar” diye yanıtlaman yeterli.</p>`;
+    const personalHtml = `${fill(html, inv)}${footer}`;
     const r = await sendLogged(
       { to, subject: fill(subject, inv), html: shell(personalHtml), replyTo },
       { context: "invest", contextRef: inv.id, personal: true },

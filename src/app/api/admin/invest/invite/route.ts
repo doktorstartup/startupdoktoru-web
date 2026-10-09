@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../../lib/adminAuth";
-import { shell } from "../../../../../lib/email";
+import { shell, esc } from "../../../../../lib/email";
 import { sendLogged } from "../../../../../lib/mailer";
 
 // Yatırımcıyı portala davet et: portal_enabled aç + sihirli link (magic link) e-postala.
@@ -43,8 +43,11 @@ export async function POST(req: NextRequest) {
   const actionLink = `${SITE}/en/investor?token_hash=${encodeURIComponent(tokenHash)}`;
 
   const name = inv.partner_name || inv.firm_name || "there";
+  const note = typeof body.note === "string" ? body.note.trim() : "";
+  const refLine = note ? `<p>${esc(note)}</p>` : "";
   const html = shell(`
     <p>Hi ${name},</p>
+    ${refLine}
     <p>Thanks for your interest. We've opened a private deal-flow area where you can review the startups from our community that match your thesis — each with a one-line pitch, value proposition, team size and deck.</p>
     <p><a href="${actionLink}" style="color:#2563eb;font-weight:600">Sign in to your investor area →</a></p>
     <p style="font-size:13px;color:#6b7280">This is a one-time secure link for ${email}. If you didn't expect this, you can ignore it.</p>
