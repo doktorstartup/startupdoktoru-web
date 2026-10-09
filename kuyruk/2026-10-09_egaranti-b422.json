@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_egaranti-b422",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "egaranti",
+    "domain": "egaranti.com",
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1100000,
+      "birim": "USD",
+      "usd": 1100000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Aloqa Ventures",
+      "Hedef Holding",
+      "Techpoint"
+    ],
+    "kurucular": [
+      "Kamil Kınacı",
+      "Sinan Peksoy"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/09/garanti-teknolojilerine-odaklanan-egaranti-1-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Garanti teknolojilerine odaklanan egaranti, 1,1 milyon dolar yatırım aldı",
+      "tarih": "Fri, 09 Oct 2026 08:30:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/urunlerin-garanti-sureclerini-dijitallestiren-egaranti-1-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Ürünlerin garanti süreçlerini dijitalleştiren egaranti, 1.1 milyon dolar yatırım aldı",
+      "tarih": "Fri, 09 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Garanti belgelerini dijitalleştiren egaranti , 1,1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/09/garanti-teknolojilerine-odaklanan-egaranti-1-1-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Türkiye ve Özbekistan’da faaliyet gösteren egaranti, Techpoint ve Aloqa Bank'ın katıldığı Seri A öncesi turunda 1.1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/urunlerin-garanti-sureclerini-dijitallestiren-egaranti-1-1-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-09T19:30:19.459Z"
+}

@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_zach-yadegari-8330",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Zach Yadegari",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "USD",
+      "usd": 10000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-09T15:33:30.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/cal-ai-19-yasindaki-kurucusu-zach-yadegari-yeni-girisimi-persona-icin-10-milyon-dolar-yatirim-aldi/",
+      "baslik": "Cal AI’ın 19 yaşındaki kurucusu Zach Yadegari, yeni girişimi Persona için 10 milyon dolar yatırım aldı",
+      "tarih": "Fri, 09 Oct 2026 15:33:30 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kalori takip uygulaması Cal AI’ın kurucu ortaklarından 19 yaşındaki Zach Yadegari , yeni yapay zeka girişimi Persona için 10 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/cal-ai-19-yasindaki-kurucusu-zach-yadegari-yeni-girisimi-persona-icin-10-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-09T19:30:19.459Z"
+}
