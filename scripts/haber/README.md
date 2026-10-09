@@ -41,6 +41,17 @@ arıyor ("hubx kurucusu", "cem ortabaş kimdir"), yabancı kurucuyu aramıyor.
 | Adım 3 — `carousel.mjs` | **atla** | çalıştır |
 | Adım 4 — `yayinla.mjs` | çalıştır (görselsiz) | çalıştır |
 
+Kapak otomatik seçilir ama konuyu bilemez — egaranti'de en yüksek entropili
+görseller ekip portreleriydi ve kapak, haberde adı geçmeyen bir kişinin
+fotoğrafı oldu. Elle seç:
+
+```bash
+node scripts/haber/carousel.mjs $K --gorseller            # adayları listele
+node scripts/haber/carousel.mjs $K --kapak 1              # carousel kapağı (numara)
+node --env-file=.env.local scripts/haber/yayinla.mjs $K --kapak 20_appstore_02.jpg
+```
+Blog kapağı DOSYA ADI alır: iki araçtaki sıralama farklı, numara karıştırır.
+
 Görselsiz yayın için paket klasörü gerekmez; yeterli olan `metin.json`.
 Elle oluştur: `mkdir -p paketler/<id> && <metin.json yaz>`.
 

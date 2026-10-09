@@ -213,9 +213,9 @@ function parantezIci(N, i) {
 // ---------------------------------------------------------------- tur tipi / enstrüman
 const TUR_KURAL = [
   ["pre-seed", /pre[-\s]?seed|ön[-\s]?tohum|pre[-\s]?tohum/i],
-  ["series-c+", /series[-\s]?[c-h]\b|\b[C-H] [Ss]erisi|\bSeri [C-H]\b/i],
-  ["series-b", /series[-\s]?b\b|\bB [Ss]erisi|\bSeri B\b/i],
-  ["series-a", /series[-\s]?a\b|\bA [Ss]erisi|\bSeri A\b/i],
+  ["series-c+", /series[-\s]?[c-h]\b(?!\s+önces)|\b[C-H] [Ss]erisi(?!\s+önces)|\bSeri [C-H]\b(?!\s+önces)/i],
+  ["series-b", /series[-\s]?b\b(?!\s+önces)|\bB [Ss]erisi(?!\s+önces)|\bSeri B\b(?!\s+önces)/i],
+  ["series-a", /series[-\s]?a\b(?!\s+önces)|\bA [Ss]erisi(?!\s+önces)|\bSeri A\b(?!\s+önces)/i],
   ["seed", /\bseed\b|tohum yatırım\w*|\btohum turu/i],
   ["bridge", /\bbridge (round|financing|funding)\b|köprü tur\w*/i],
   ["grant", /\bgrant\b|\bhibe\b|non-dilutive|innovation agency|research programme|research program\b|horizon europe|eic accelerator|tübitak|kosgeb|\bawarded\b|\baward\b/i],

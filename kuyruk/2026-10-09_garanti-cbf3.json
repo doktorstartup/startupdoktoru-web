@@ -15,11 +15,11 @@
     "kaynak": 4
   },
   "kunye": {
-    "sirket": "Garanti",
-    "domain": null,
+    "sirket": "egaranti",
+    "domain": "egaranti.com",
     "ulke": "TR",
     "turk": true,
-    "tur_tipi": "series-a",
+    "tur_tipi": "bilinmiyor",
     "tutar": {
       "deger": 1100000,
       "birim": "USD",
@@ -27,9 +27,9 @@
     },
     "lider": null,
     "katilanlar": [
-      "Özbekistan merkezli Aloqa Ventures",
-      "Hedef Holding",
-      "Techpoint"
+      "Aloqa Ventures",
+      "Techpoint",
+      "Hedef Holding"
     ],
     "kurucular": [
       "Kamil Kınacı",

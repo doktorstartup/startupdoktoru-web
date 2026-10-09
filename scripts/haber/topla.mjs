@@ -104,16 +104,22 @@ const FIIL = /\s+\b(?:raises?|raised|raising|secures?|secured|lands?|landed|nets
 // Başlıkta şirket adı yokken geriye kalan jenerik sözcükler — bunlar ad değildir.
 // Cümle başı edatları da ad sanılıyordu: "After €387 million raise, The
 // Exploration Company wins …" → "After". Şirket adı cümlenin ilerisinde.
-const JENERIK_AD = /^(?:startup|scale-?up|company|firm|platform|venture|audio|tech|app|data|the|new|gen\s*z|ai|vc|crm|after|following|despite|amid|amidst|with|as|from|over|inside|meet|why|how|what|when)$/i;
+const JENERIK_AD = /^(?:startup|scale-?up|company|firm|platform|venture|audio|tech|app|data|the|new|gen\s*z|ai|vc|crm|after|following|despite|amid|amidst|with|as|from|over|inside|meet|why|how|what|when|şirketi|girişimi|platformu|firması|markası|uygulaması|teknolojisi|türkiye'nin|türkiyenin)$/i;
 
 // Bir metin parçasındaki SON bitişik büyük-harfle-başlayan kelime öbeği.
 // Türkçe başlıklarda tanımlayıcı önde, ad sonda: "Yapay zeka girişimi Deep Cogito" → "Deep Cogito".
 function sonOzelAdObegi(s) {
   const kelimeler = s.trim().split(/\s+/).filter(Boolean);
-  let son = [];
-  for (let i = kelimeler.length - 1; i >= 0; i--) {
-    if (/^[A-ZÀ-ÝÇĞİÖŞÜ]/.test(kelimeler[i])) son.unshift(kelimeler[i]);
-    else if (son.length) break;
+  if (!kelimeler.length) return "";
+  // SON sözcük HER ZAMAN alınır. Şirket adı küçük harfle başlayabiliyor
+  // ("egaranti", "syte") ve eski sürüm sondan geriye giderken bunları atlayıp
+  // tanımlayıcı öbekten ad uyduruyordu: "Garanti teknolojilerine odaklanan
+  // egaranti" → "Garanti"; "Ürünlerin garanti süreçlerini dijitalleştiren
+  // egaranti" → "Ürünlerin". Aynı tur iki farklı adla iki kayıt oluyordu.
+  const son = [kelimeler[kelimeler.length - 1]];
+  for (let i = kelimeler.length - 2; i >= 0; i--) {
+    if (!/^[A-ZÀ-ÝÇĞİÖŞÜ0-9]/.test(kelimeler[i])) break;
+    son.unshift(kelimeler[i]);
   }
   return son.join(" ");
 }
@@ -133,7 +139,10 @@ export function sirketAdiCikar(baslik) {
     let oncesi = b.split(",")[0] ?? b;
     for (const re of ON_EKLER) oncesi = oncesi.replace(re, "");
     const ad = sonOzelAdObegi(oncesi.split(FIIL)[0] ?? oncesi);
-    return ad ? ad.slice(0, 60) : null;
+    // Başlıkta ad yoksa geriye tanımlayıcının son sözcüğü kalır ("…fintech
+    // şirketi"); İngilizce dalındaki jenerik kapısı burada da uygulanır.
+    if (!ad || JENERIK_AD.test(ad.trim())) return null;
+    return ad.slice(0, 60);
   }
 
   // SIRA ÖNEMLİ: önce fiilde kes. Tanımlayıcı sözcükler ("platform", "firm")

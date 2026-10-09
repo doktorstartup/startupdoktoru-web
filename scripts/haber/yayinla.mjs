@@ -61,7 +61,7 @@ function ffmpegCalistir(args) {
 // Kapak 1200×630 (OG standardı), gövde görselleri en fazla 1100 geniş.
 // Blog gövdesi 768 px (max-w-3xl); 1100 retina için yeterli, fazlası boşuna bayt.
 // q:v 6 ≈ 150-250 KB. Bu dosyalar REPOYA giriyor, boyut doğrudan repo büyümesi.
-async function gorselleriHazirla(paket, slug, adet = 3) {
+async function gorselleriHazirla(paket, slug, adet = 3, kapakDosya = null) {
   const kaynakDizin = join(paket, "02_gorsel");
   const hedef = join(GORSEL_KOK, slug);
   if (!existsSync(kaynakDizin)) return { kapak: null, govde: [] };
@@ -77,7 +77,17 @@ async function gorselleriHazirla(paket, slug, adet = 3) {
   const puanli = await gorselSirala(paket);
   const site = puanli.filter((x) => x.dosya.startsWith("10_site"));
   const diger = puanli.filter((x) => !x.dosya.startsWith("10_site"));
-  const sirali = [...site, ...diger].map((x) => join(kaynakDizin, x.dosya));
+  let sirali = [...site, ...diger].map((x) => join(kaynakDizin, x.dosya));
+  // --kapak ile elle seçim. Otomatik sıralama şirketin konusunu bilemiyor:
+  // egaranti'nin sitesindeki en yüksek entropili görseller EKİP PORTRELERİYDİ
+  // ve kapak, haberde adı hiç geçmeyen bir kişinin fotoğrafı oluyordu —
+  // okur onu haberin öznesi sanar. İNDEKS DEĞİL DOSYA ADI alınır: carousel.mjs
+  // ile buradaki sıralama farklı, numara vermek karıştırırdı.
+  if (kapakDosya) {
+    const i = sirali.findIndex((y) => y.endsWith(kapakDosya));
+    if (i < 0) throw new Error(`--kapak bulunamadı: ${kapakDosya}`);
+    sirali = [sirali[i], ...sirali.filter((_, j) => j !== i)];
+  }
   if (!sirali.length) return { kapak: null, govde: [] };
 
   // Kapak: 1200×630'a KIRPARAK sığdır (letterbox değil).
@@ -198,13 +208,13 @@ export function govdeYaz(kayit, metinler, gorseller) {
 }
 
 // ── Yayın ─────────────────────────────────────────────────────────────────
-export async function yayinla(kayit, metinler, { paket, kuru = false } = {}) {
+export async function yayinla(kayit, metinler, { paket, kuru = false, kapakDosya = null } = {}) {
   const u = kayit.kunye;
   const baslik = `${u.sirket} ne iş yapıyor?`;
   const slug = slugify(`${u.sirket}-ne-is-yapiyor`);
   const tutar = tutarYaz(u.tutar?.deger, u.tutar?.birim);
 
-  const { kapak, govde } = await gorselleriHazirla(paket, slug);
+  const { kapak, govde } = await gorselleriHazirla(paket, slug, 3, kapakDosya);
   const content = govdeYaz(kayit, metinler, govde);
 
   const ilkCumle = (metinler.kurulus?.[0] ?? metinler.odak?.[0] ?? "").replace(/\*\*/g, "");
@@ -238,6 +248,8 @@ export async function yayinla(kayit, metinler, { paket, kuru = false } = {}) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const dosya = process.argv[2];
   const kuru = process.argv.includes("--kuru");
+  const ki = process.argv.indexOf("--kapak");
+  const kapakDosya = ki > -1 ? process.argv[ki + 1] : null;
   if (!dosya) {
     console.error("Kullanım: node --env-file=.env.local scripts/haber/yayinla.mjs kuyruk/<kayit>.json [--kuru]");
     process.exit(1);
@@ -266,7 +278,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     process.exit(1);
   }
 
-  const r = await yayinla(kayit, metinler, { paket, kuru });
+  const r = await yayinla(kayit, metinler, { paket, kuru, kapakDosya });
   console.log(`başlık : ${r.satir.title}`);
   console.log(`slug   : /blog/${r.satir.slug}`);
   console.log(`kapak  : ${r.kapak ?? "—"}`);

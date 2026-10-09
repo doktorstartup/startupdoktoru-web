@@ -513,6 +513,69 @@ t("yatırımcı adı tam hâliyle korunuyor",
   t("besleme kapağı uygulanıyor", n > 0 && n <= 40);
 }
 
+
+// ── Küçük harfle başlayan şirket adı (TR dalı) ───────────────────────────
+// 2026-10-09 egaranti: aynı tur İKİ kayıt oldu çünkü iki kaynak iki farklı
+// yanlış ad üretti — "Garanti" ve "Ürünlerin". sonOzelAdObegi sondan geriye
+// giderken küçük harfli adı atlayıp tanımlayıcı öbekten ad uyduruyordu.
+// Artık son sözcük HER ZAMAN alınır; geriye doğru yalnız büyük harfliler eklenir.
+{
+  const V = [
+    ["Garanti teknolojilerine odaklanan egaranti, 1,1 milyon dolar yatırım aldı", "egaranti"],
+    ["Ürünlerin garanti süreçlerini dijitalleştiren egaranti, 1.1 milyon dolar yatırım aldı", "egaranti"],
+    ["Türkiye'nin en büyük fintech şirketi, 10 milyon dolar yatırım aldı", null],   // ad yok → null
+    // Bozulmamalı
+    ["Ankara merkezli biyoteknoloji girişimi M-Based, 700 bin dolar yatırım aldı", "M-Based"],
+    ["Yerli mobil oyun stüdyosu Circle Games, 25 milyon dolar yatırım aldı", "Circle Games"],
+    ["ABD'li Bluecore Energy, 50 milyon dolar yatırım aldı", "Bluecore Energy"],
+    ["Uydu üreticisi EnduroSat, 205 milyon dolar yatırım aldı", "EnduroSat"],
+    ["HubX, 1,2 milyar dolar değerleme üzerinden yaklaşık 75 milyon dolar yatırım aldı", "HubX"],
+    ["Münster-based syte raises €9 million", "syte"],
+  ];
+  let ok = true;
+  for (const [b, bekle] of V) {
+    const g = sirketAdiCikar(b);
+    if (g !== bekle) { ok = false; console.log(`     ✗ ${JSON.stringify(g)} ← ${b.slice(0, 48)}`); }
+  }
+  t("şirket adı: küçük harfli ad (egaranti)", ok);
+}
+
+// ── "seri A öncesi" A serisi DEĞİLDİR ────────────────────────────────────
+// Aynı gün: "Seri A" kalıbını eklemem bir yanlış pozitif doğurdu. Kaynak
+// "1,1 milyon dolarlık seri A öncesi yatırım turu" diyor; kayıt series-a
+// yazıyordu. Eksik bırakmak yanlış iddia etmekten iyidir.
+{
+  const V = [
+    ["Şirketin 1,1 milyon dolarlık seri A öncesi yatırım turunda Techpoint yer aldı.", "belirsiz"],
+    ["A serisi öncesi turda 2 milyon dolar.", "belirsiz"],
+    ["Seri B yatırım turunda 50 milyon dolar aldı.", "series-b"],
+    ["B serisi turunda 20 milyon dolar.", "series-b"],
+    ["A serisi turunda 25 milyon dolar.", "series-a"],
+    ["Series B round of $20M.", "series-b"],
+    ["tohum turunda 700 bin dolar.", "seed"],
+  ];
+  let ok = true;
+  for (const [m, bekle] of V) {
+    const g = kunyeCikar(m, "").tur_tipi?.deger;
+    if (g !== bekle) { ok = false; console.log(`     ✗ ${g} ← ${m.slice(0, 44)}`); }
+  }
+  t("aşama: 'öncesi' iddiayı düşürüyor", ok);
+}
+
+// ── Yatırımcı adındaki TR konum öneki ────────────────────────────────────
+// "Özbekistan merkezli Aloqa Ventures" → "Aloqa Ventures". İngilizce
+// "X-based" kuyrukta normalleştiriliyordu, Türkçesi hiç ele alınmamıştı.
+{
+  const r = kisilerCikar("Şirketin 1,1 milyon dolarlık seri A öncesi yatırım turunda "
+    + "Özbekistan merkezli Aloqa Ventures, Techpoint, Hedef Holding ve ismi açıklanmayan 2 melek yatırımcı yer aldı. "
+    + "2021 yılında Kamil Kınacı ve Sinan Peksoy tarafından kurulan egaranti, garanti belgelerini dijitalleştiriyor.");
+  const kat = r.katilan_yatirimcilar ?? [];
+  const kur = (r.kurucular ?? []).map((k) => k.ad ?? k);
+  t("yatırımcı: TR konum öneki sıyrılıyor", kat.includes("Aloqa Ventures") && !kat.some((x) => /merkezli/i.test(x)));
+  t("kaynak lider demiyorsa lider null kalıyor", r.lider_yatirimci === null);
+  t("kurucular: 've' ile ayrılmış TR liste", kur.includes("Kamil Kınacı") && kur.includes("Sinan Peksoy"));
+}
+
 // ── Rapor ──
 let bad = 0;
 for (const [ad, ok] of R) {

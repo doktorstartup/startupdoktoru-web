@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_spectacell-c73c",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "SpectaCell",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "EUR",
+      "usd": 6480000
+    },
+    "lider": null,
+    "katilanlar": [
+      "PMV’s Flanders Future Tech Fund",
+      "InnovationQuarter Capital",
+      "Qbic",
+      "VIB"
+    ],
+    "kurucular": [
+      "Tony Montoye",
+      "Mathieu Rabaey",
+      "Veronique De Vroey",
+      "Jan Van de Velde"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T12:13:25.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/ghent-based-spectacell-launches-with-e6-million-to-advance-its-cell-analysis-platform-for-immunotherapy-development/",
+      "baslik": "Ghent-based SpectaCell launches with €6 million to advance its cell analysis platform for immunotherapy development",
+      "tarih": "Fri, 09 Oct 2026 12:13:25 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "SpectaCell , a new Ghent-based startup specialising in next-generation cell therapy analytics, has announced its official launch with €6 million in Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/ghent-based-spectacell-launches-with-e6-million-to-advance-its-cell-analysis-platform-for-immunotherapy-development/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/ghent-based-spectacell-launches-with-e6-million-to-advance-its-cell-analysis-platform-for-immunotherapy-development/"
+    }
+  ],
+  "olusturma": "2026-10-09T15:23:32.556Z"
+}

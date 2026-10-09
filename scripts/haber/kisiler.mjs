@@ -134,6 +134,9 @@ function parcala(span, korunan = []) {
 // ---------------------------------------------------------------------------
 
 function temizle(el) {
+  // TR konum öneki: "Özbekistan merkezli Aloqa Ventures" → "Aloqa Ventures".
+  // İngilizce "X-based" kuyrukta ayrıca normalleştiriliyordu, Türkçesi değil.
+  el = String(el ?? "").replace(/^\s*[\p{L}][\p{L}\s'’-]*?\s+merkezli\s+/iu, "");
   let s = kirp(el).replace(/^[“"'`\-–—]+|[.,;:”"'`]+$/g, "").trim();
   s = s.replace(/^(?:and|ve|also|as well as|alongside|together with|plus|with|from|including|dahil|ayrıca|ile)\s+/i, "");
 
