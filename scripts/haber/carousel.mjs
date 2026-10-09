@@ -58,18 +58,9 @@ const kacar = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
 // yani model çıktısı HTML olarak yorumlanamaz.
 const kalinla = (s) => kacar(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 
-const paraBirimi = { USD: "dolar", EUR: "euro", GBP: "sterlin", TRY: "TL" };
+import { tutarYaz, paraBirimi } from "./yayinla-govde.mjs";
+export { tutarYaz };
 
-// 75000000 USD → "75 milyon dolar"
-export function tutarYaz(deger, birim) {
-  if (!Number.isFinite(deger) || deger <= 0) return null;
-  const b = paraBirimi[birim] ?? birim ?? "";
-  const tr = (n) => String(n).replace(".", ",");
-  if (deger >= 1e9) return `${tr(+(deger / 1e9).toFixed(1))} milyar ${b}`.trim();
-  if (deger >= 1e6) return `${tr(+(deger / 1e6).toFixed(deger % 1e6 ? 1 : 0))} milyon ${b}`.trim();
-  if (deger >= 1e3) return `${tr(Math.round(deger / 1e3))} bin ${b}`.trim();
-  return `${deger} ${b}`.trim();
-}
 
 const TUR_TR = {
   "pre-seed": "tohum öncesi", seed: "tohum", "series-a": "A Serisi",

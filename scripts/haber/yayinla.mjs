@@ -24,7 +24,7 @@ import ffmpeg from "ffmpeg-static";
 import { spawn } from "node:child_process";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { gorselSirala, tutarYaz } from "./carousel.mjs";
+import { gorselSirala } from "./carousel.mjs";
 
 const PAKET_DIR = process.env.HABER_PAKET_DIR || "paketler";
 const GORSEL_KOK = "public/haber";
@@ -39,15 +39,8 @@ export const slugify = (s) => (s || "").trim()
 // Kesme işareti (') BİLEREK kaçırılmıyor: Türkçede çok sık ("İzmir'de", "40'tan") ve
 // metin içeriğinde de çift tırnaklı özniteliklerde de tehlikesiz. Kaçırılırsa HTML
 // kaynağı &#39; yığınına dönüyor ve admin panelinden elle düzenlemek zorlaşıyor.
-const kacar = (s) => String(s ?? "").replace(/[&<>"]/g, (c) =>
-  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-// **kalın** → <strong>. Kaçırma ÖNCE yapılır, yani modelin yazdığı < > zararsızlaşmış olur.
-const zengin = (s) => kacar(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-
-const TUR_TR = {
-  "pre-seed": "tohum öncesi", seed: "tohum", "series-a": "A Serisi", "series-b": "B Serisi",
-  "series-c+": "C Serisi ve sonrası", bridge: "köprü", grant: "hibe", debt: "borç",
-};
+import { govdeYaz, tutarYaz, kacar } from "./yayinla-govde.mjs";
+export { govdeYaz };
 
 function ffmpegCalistir(args) {
   return new Promise((c, h) => {
@@ -96,116 +89,29 @@ async function gorselleriHazirla(paket, slug, adet = 3, kapakDosya = null) {
     "-vf", "scale=1200:630:force_original_aspect_ratio=increase,crop=1200:630",
     "-q:v", "5", join(hedef, kapakAd)]);
 
+  // GÖVDEYE YALNIZ KONUSUNU BİLDİĞİMİZ GÖRSEL GİRER.
+  // Eskiden entropi sırasındaki ilk N dosya gövdeye serpiliyordu. Konuyu
+  // bilmediğimiz için egaranti yazısına şirketin sitesindeki bir EKİP
+  // PORTRESİ düştü — yazıda adı geçmeyen biri, okur onu haberin öznesi sanar.
+  // Diğer ikisi de soyut arayüz maketiydi ve "ölçek"/"yatırım turu"
+  // başlıklarının altında hiçbir şey anlatmıyordu.
+  //
+  // Bildiğimiz iki kaynak var: App Store ekranları (kimlik kapısından geçti,
+  // şirketin uygulaması olduğu kesin) ve hero (ana sayfanın tepesi). Rastgele
+  // site fotoğrafı gövdeye girmez — kapak için elle seçilebilir (--kapak).
+  const bilinen = (y) => /20_appstore|01_hero/.test(y);
   const govde = [];
-  for (const [i, k] of sirali.slice(1, 1 + adet).entries()) {
+  for (const [i, k] of sirali.slice(1).filter(bilinen).slice(0, adet).entries()) {
     const ad = `gorsel-${i + 1}.jpg`;
     try {
       await ffmpegCalistir(["-y", "-i", resolve(k),
         "-vf", "scale='min(1100,iw)':-2", "-q:v", "6", join(hedef, ad)]);
-      govde.push(ad);
+      govde.push({ yol: `/haber/${slug}/${ad}`, tip: /20_appstore/.test(k) ? "uygulama" : "site" });
     } catch { /* tek görsel düşerse yazı yine yayınlanır */ }
   }
-  return { kapak: `/haber/${slug}/${kapakAd}`, govde: govde.map((a) => `/haber/${slug}/${a}`) };
+  return { kapak: `/haber/${slug}/${kapakAd}`, govde };
 }
 
-// ── Gövde HTML'i — ŞABLON üretir ──────────────────────────────────────────
-export function govdeYaz(kayit, metinler, gorseller) {
-  const u = kayit.kunye;
-  const tutar = tutarYaz(u.tutar?.deger, u.tutar?.birim);
-  const tur = TUR_TR[u.tur_tipi] ?? null;
-  const yatirimcilar = [u.lider, ...(u.katilanlar ?? [])].filter(Boolean);
-  const kaynak = kayit.kaynaklar?.[0];
-  const g = [...gorseller];
-  const gorselAl = () => (g.length ? g.shift() : null);
-
-  const par = (metin) => `<p>${zengin(metin)}</p>`;
-  const figur = (src, alt) => src
-    ? `<figure><img src="${kacar(src)}" alt="${kacar(alt)}" loading="lazy"></figure>` : "";
-
-  const b = [];
-
-  // 1) Künye — hepsi mekanik, modelin eli değmiyor.
-  const kunyeSatirlari = [
-    tutar && `<li><strong>Yatırım:</strong> ${kacar(tutar)}</li>`,
-    tur && `<li><strong>Tur:</strong> ${kacar(tur)}</li>`,
-    yatirimcilar.length && `<li><strong>Yatırımcılar:</strong> ${kacar(yatirimcilar.join(", "))}</li>`,
-    u.kurucular?.length && `<li><strong>Kurucular:</strong> ${kacar(u.kurucular.join(", "))}</li>`,
-    u.domain && `<li><strong>Site:</strong> <a href="https://${kacar(u.domain)}" rel="nofollow noopener" target="_blank">${kacar(u.domain)}</a></li>`,
-  ].filter(Boolean);
-  if (kunyeSatirlari.length) b.push(`<ul>${kunyeSatirlari.join("")}</ul>`);
-
-  // 2) Ne iş yapıyor — SEO'nun hedeflediği bölüm ("<şirket> ne iş yapıyor")
-  if (metinler.kurulus?.length || metinler.odak?.length) {
-    b.push(`<h2>${kacar(u.sirket)} ne iş yapıyor?</h2>`);
-    for (const p of metinler.kurulus ?? []) b.push(par(p));
-    const gr = gorselAl();
-    if (gr) b.push(figur(gr, `${u.sirket} — ${u.domain ?? ""}`.trim()));
-    for (const p of metinler.odak ?? []) b.push(par(p));
-  }
-
-  // 3) Ölçek
-  if (metinler.olcek?.length) {
-    b.push(`<h2>Şirketin bugünkü ölçeği</h2>`);
-    for (const p of metinler.olcek ?? []) b.push(par(p));
-    const gr = gorselAl();
-    if (gr) b.push(figur(gr, u.sirket));
-  }
-
-  // 4) Yatırım — yine mekanik
-  if (tutar || yatirimcilar.length) {
-    b.push(`<h2>Yatırım turu</h2>`);
-    const cumle = yatirimcilar.length
-      ? `${kacar(u.sirket)}, <strong>${kacar(yatirimcilar[0])}</strong>${yatirimcilar.length > 1 ? ` ve ${yatirimcilar.length - 1} yatırımcıdan` : "'dan"}${tutar ? ` <strong>${kacar(tutar)}</strong>` : ""} yatırım aldı.`
-      : `${kacar(u.sirket)}, <strong>${kacar(tutar)}</strong> yatırım aldı.`;
-    b.push(`<p>${cumle}${tur ? ` Tur <strong>${kacar(tur)}</strong> aşamasında gerçekleşti.` : ""}</p>`);
-    const gr = gorselAl();
-    if (gr) b.push(figur(gr, u.sirket));
-  }
-
-  // 4b) YOL HARİTASI — kaynaktan çıkarılmış üç durak. Şirketin nereden gelip
-  // nereye gittiğini tek bakışta verir; okuma yükü düşük, bilgi yoğunluğu yüksek.
-  const yh = metinler.yolharitasi ?? [];
-  if (yh.length >= 2) {
-    b.push(`<h2>${kacar(u.sirket)} nereye gidiyor?</h2>`);
-    b.push(`<div class="ds-yol">${yh.map((d) => `
-      <div class="ds-durak">
-        <span class="ds-etiket">${kacar(d.etiket)}</span>
-        <strong>${kacar(d.baslik)}</strong>
-        ${(d.satirlar ?? []).length ? `<ul>${d.satirlar.map((x) => `<li>${kacar(x)}</li>`).join("")}</ul>` : ""}
-      </div>`).join("")}</div>`);
-  }
-
-  // 4c) YORUM — Startup Doktoru'nun kendi değerlendirmesi. Olgu bölümlerinden
-  // GÖRSEL OLARAK AYRIŞIR ve açıkça etiketlenir: bu kaynaktan aktarım değil, yorum.
-  if ((metinler.yorum ?? []).length) {
-    b.push(`<div class="ds-yorum">`);
-    b.push(`<h2>Startup Doktoru yorumu</h2>`);
-    for (const p of metinler.yorum) b.push(par(p));
-    b.push(`</div>`);
-  }
-
-  // 5) Kaynak — telif ve şeffaflık
-  if (kaynak?.url) {
-    b.push(`<hr>`);
-    b.push(`<p><em>Kaynak: <a href="${kacar(kaynak.url)}" rel="nofollow noopener" target="_blank">${kacar(kaynak.ad ?? "haber")}</a>${kaynak.baslik ? ` — ${kacar(kaynak.baslik)}` : ""}</em></p>`);
-  }
-
-  // 5b) Soru-cevap — kapsamı genişletir, okuma yükünü artırmaz.
-  if ((metinler.sorular ?? []).length) {
-    b.push(`<hr>`, `<h2>Sık sorulanlar</h2>`);
-    for (const sc of metinler.sorular) {
-      if (!sc?.soru || !sc?.cevap) continue;
-      b.push(`<h3>${kacar(sc.soru)}</h3>`, par(sc.cevap));
-    }
-  }
-
-  // 6) CTA
-  b.push(`<hr>`);
-  b.push(`<h2>Sen de yatırım almak istiyorsan</h2>`);
-  b.push(`<p>Yatırımcı karşısına çıkmadan önce bilmen gerekenleri <a href="/free-training">ücretsiz eğitimde</a> anlatıyorum.</p>`);
-
-  return b.join("\n");
-}
 
 // ── Yayın ─────────────────────────────────────────────────────────────────
 export async function yayinla(kayit, metinler, { paket, kuru = false, kapakDosya = null } = {}) {

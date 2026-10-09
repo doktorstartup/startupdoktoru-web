@@ -14,6 +14,7 @@ import { appStoreUygunMu } from "./appstore.mjs";
 import { dogrula } from "./metin.mjs";
 import { govde } from "./gorsel-govde.mjs";
 import { dogrulaHitap } from "./yazi-kapi.mjs";
+import { govdeYaz } from "./yayinla-govde.mjs";
 import { turkMu } from "./turk.mjs";
 
 const R = [];
@@ -574,6 +575,38 @@ t("yatırımcı adı tam hâliyle korunuyor",
   t("yatırımcı: TR konum öneki sıyrılıyor", kat.includes("Aloqa Ventures") && !kat.some((x) => /merkezli/i.test(x)));
   t("kaynak lider demiyorsa lider null kalıyor", r.lider_yatirimci === null);
   t("kurucular: 've' ile ayrılmış TR liste", kur.includes("Kamil Kınacı") && kur.includes("Sinan Peksoy"));
+}
+
+
+// ── Gövde görselleri: yalnız konusunu bildiğimiz dosya ───────────────────
+// 2026-10-09 egaranti: gövdeye şirketin sitesindeki bir EKİP PORTRESİ düştü.
+// Yazıda o kişinin adı geçmiyor; okur onu haberin öznesi sanar. Diğer iki
+// görsel de soyut maketti ve "ölçek"/"yatırım turu" başlıklarının altında
+// hiçbir şey anlatmıyordu — görseller entropi sırasına göre bölümlere
+// serpiliyor, içerikle ilişkisi hiç kurulmuyordu.
+{
+  const kayit = {
+    kunye: { sirket: "egaranti", domain: "egaranti.com", tutar: { deger: 1100000, birim: "USD" },
+             tur_tipi: "bilinmiyor", lider: "Aloqa Ventures", katilanlar: ["Techpoint"], kurucular: ["Kamil Kınacı"] },
+    kaynaklar: [{ ad: "webrazzi", url: "https://webrazzi.com/x", baslik: "egaranti yatırım aldı" }],
+  };
+  const metinler = { kurulus: ["Kuruldu."], odak: ["Ne yapıyor."], olcek: ["Ölçek cümlesi."] };
+  const gorseller = [
+    { yol: "/haber/egaranti/gorsel-1.jpg", tip: "uygulama" },
+    { yol: "/haber/egaranti/gorsel-2.jpg", tip: "site" },
+  ];
+  const h = govdeYaz(kayit, metinler, gorseller);
+
+  t("her görselin altyazısı var",
+    (h.match(/<figure/g) ?? []).length === (h.match(/<figcaption/g) ?? []).length
+    && (h.match(/<figure/g) ?? []).length === 2);
+  t("uygulama görseli uygulama diye etiketleniyor", h.includes("egaranti mobil uygulaması"));
+  t("site görseli kaynağıyla etiketleniyor", h.includes("egaranti — egaranti.com"));
+
+  // Görseller ürün bölümünde; ölçek ve yatırım turu başlıklarından SONRA
+  // hiç görsel gelmemeli.
+  const olcekSonrasi = h.slice(h.indexOf("Şirketin bugünkü ölçeği"));
+  t("ölçek ve yatırım bölümlerinde görsel yok", !olcekSonrasi.includes("<figure"));
 }
 
 // ── Rapor ──
