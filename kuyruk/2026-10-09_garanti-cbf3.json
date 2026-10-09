@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_garanti-cbf3",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Garanti",
+    "domain": null,
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 1100000,
+      "birim": "USD",
+      "usd": 1100000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Özbekistan merkezli Aloqa Ventures",
+      "Hedef Holding",
+      "Techpoint"
+    ],
+    "kurucular": [
+      "Kamil Kınacı",
+      "Sinan Peksoy"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T08:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/09/garanti-teknolojilerine-odaklanan-egaranti-1-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Garanti teknolojilerine odaklanan egaranti, 1,1 milyon dolar yatırım aldı",
+      "tarih": "Fri, 09 Oct 2026 08:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Garanti belgelerini dijitalleştiren egaranti , 1,1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/09/garanti-teknolojilerine-odaklanan-egaranti-1-1-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "seri A",
+      "kaynak_url": "https://webrazzi.com/2026/10/09/garanti-teknolojilerine-odaklanan-egaranti-1-1-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}

@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_ollygarden-43f4",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "OllyGarden",
+    "domain": "ollygarden.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "USD",
+      "usd": 4000000
+    },
+    "lider": "Next Frontier Capital",
+    "katilanlar": [
+      "OllyGarden has introduced Minimum Viable Instrumentation (MVI)",
+      "AI OpenTelemetry Engineer",
+      "Grand Ventures",
+      "ACTAI Ventures",
+      "DIG Ventures",
+      "Rose"
+    ],
+    "kurucular": [
+      "Juraci Paixão Kröhling"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T06:01:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/09/ollygarden-bags-4m-to-improve-telemetry-quality/",
+      "baslik": "OllyGarden bags $4M to improve telemetry quality",
+      "tarih": "Fri, 09 Oct 2026 06:01:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Observability platform OllyGarden has raised $4 million in venture capital funding to further develop its technology for improving telemetry quality.",
+      "kaynak_url": "https://tech.eu/2026/10/09/ollygarden-bags-4m-to-improve-telemetry-quality/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}

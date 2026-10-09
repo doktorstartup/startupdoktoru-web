@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-07_konsileo-00d0",
+  "durum": "hazir",
+  "puan": 47,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Konsileo",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "GBP",
+      "usd": 6350000
+    },
+    "lider": "Committed Capital",
+    "katilanlar": [
+      "ACF Investors"
+    ],
+    "kurucular": [
+      "John Warburton"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-07T11:34:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/07/konsileo-raises-ps5m-to-scale-technology-enabled-insurance-broking/",
+      "baslik": "Konsileo raises £5M to scale technology-enabled insurance broking",
+      "tarih": "Wed, 07 Oct 2026 11:34:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UK-chartered insurance broker Konsileo has raised £5 million in equity funding.",
+      "kaynak_url": "https://tech.eu/2026/10/07/konsileo-raises-ps5m-to-scale-technology-enabled-insurance-broking/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}

@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_autentic-ai-adcd",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Autentic AI",
+    "domain": "autentic.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1500000,
+      "birim": "EUR",
+      "usd": 1620000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Dani Diestre",
+      "Aniol Carreras",
+      "Jacob Bamio"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/09/spanish-autentic-ai-raises-eur15m-to-accelerate-ai-powered-market-research/",
+      "baslik": "Spanish Autentic AI raises €1.5M to accelerate AI-powered market research",
+      "tarih": "Fri, 09 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Autentic AI has raised €1.5 million in pre-seed funding from venture capital firms Baobab Ventures, Lanai Ventures, Acurio Ventures and Masia VC.",
+      "kaynak_url": "https://tech.eu/2026/10/09/spanish-autentic-ai-raises-eur15m-to-accelerate-ai-powered-market-research/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/09/spanish-autentic-ai-raises-eur15m-to-accelerate-ai-powered-market-research/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}

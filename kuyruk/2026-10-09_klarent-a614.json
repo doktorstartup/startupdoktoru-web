@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_klarent-a614",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Klarent",
+    "domain": "klarent.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7130000,
+      "birim": "EUR",
+      "usd": 7700400
+    },
+    "lider": "London-based Mosaic Ventures",
+    "katilanlar": [
+      "AngelInvest Ventures",
+      "Moonfire Ventures",
+      "Jürgen Galler",
+      "Harris Barton"
+    ],
+    "kurucular": [
+      "Asheem Panakkat"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-09T07:36:51.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/",
+      "baslik": "Zurich’s Klarent raises €7.13 million to scale its agentic software testing platform and expand into the US",
+      "tarih": "Fri, 09 Oct 2026 07:36:51 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Klarent (formerly fore ai) , a Zurich-based autonomous software testing startup, has closed a €7.13 million Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/zurichs-klarent-raises-e7-13-million-to-scale-its-agentic-software-testing-platform-and-expand-into-the-us/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}

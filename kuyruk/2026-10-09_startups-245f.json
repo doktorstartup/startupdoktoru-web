@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-09_startups-245f",
+  "durum": "hazir",
+  "puan": 55,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "startups",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 15800000000,
+      "birim": "EUR",
+      "usd": 17064000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-09T06:52:52.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/09/european-startups-raise-15-8b-in-september-nearly-five-times-august-s-total/",
+      "baslik": "European startups raise €15.8B in September, nearly five times August's total",
+      "tarih": "Fri, 09 Oct 2026 06:52:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Companies raised €15.8 billion across 300 funding deals, compared with €3.2 billion across 165 deals in August.",
+      "kaynak_url": "https://tech.eu/2026/10/09/european-startups-raise-15-8b-in-september-nearly-five-times-august-s-total/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://tech.eu/2026/10/09/european-startups-raise-15-8b-in-september-nearly-five-times-august-s-total/"
+    }
+  ],
+  "olusturma": "2026-10-09T11:51:43.949Z"
+}
