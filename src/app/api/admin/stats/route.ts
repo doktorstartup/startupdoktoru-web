@@ -12,10 +12,20 @@ export async function GET(req: NextRequest) {
   }
   try {
     // Tüm olaylar tek sorguda: sayfa kırılımı da kanal kırılımı da buradan çıkar.
-    const { data: tumOlaylar } = await supabaseAdmin
-      .from("ds_events")
-      .select("session_id, path, event_type, referrer, utm_source, utm_medium, created_at")
-      .order("created_at", { ascending: true });
+    // Supabase tek istekte en çok 1000 satır döndürür; sayfalamadan okununca panel
+    // ilk 1000 olayda (2026-09-14) donup kalıyordu.
+    type Olay = { session_id: string | null; path: string | null; event_type: string; referrer: string | null; utm_source: string | null; utm_medium: string | null; created_at: string };
+    const tumOlaylar: Olay[] = [];
+    for (let from = 0; ; from += 1000) {
+      const { data } = await supabaseAdmin
+        .from("ds_events")
+        .select("session_id, path, event_type, referrer, utm_source, utm_medium, created_at")
+        .order("created_at", { ascending: true })
+        .order("id", { ascending: true })
+        .range(from, from + 999);
+      tumOlaylar.push(...((data || []) as Olay[]));
+      if (!data || data.length < 1000) break;
+    }
 
     const tumPageViews = (tumOlaylar || []).filter((e) => e.event_type === "page_view");
 
