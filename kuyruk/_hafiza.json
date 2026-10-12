@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"fluencify.io","ad":"fluencify","tarih":"2026-09-07","dosya":"2026-09-07_fluencify-25f1.json"},
-  {"dom":"jaipurrobotics.com","ad":"jaipur robotics","tarih":"2026-09-07","dosya":"2026-09-07_jaipur-robotics-b3f5.json"},
-  {"dom":"get-cato.com","ad":"cato","tarih":"2026-09-07","dosya":"2026-09-07_cato-e48f.json"},
-  {"dom":"claret-capital.com","ad":"claret capital partners","tarih":"2026-09-07","dosya":"2026-09-07_claret-capital-partners-db44.json"},
-  {"dom":null,"ad":"gen z","tarih":"2026-09-07","dosya":"2026-09-07_gen-z-94ef.json"},
-  {"dom":"pixxel.space","ad":"pixxel","tarih":"2026-09-07","dosya":"2026-09-07_pixxel-5944.json"},
   {"dom":"chift.eu","ad":"chift","tarih":"2026-09-14","dosya":"2026-09-14_chift-d318.json"},
   {"dom":"custodea.eu","ad":"custodea","tarih":"2026-09-14","dosya":"2026-09-14_custodea-5d61.json"},
   {"dom":"tandemhealth.ai","ad":"tandem health","tarih":"2026-09-14","dosya":"2026-09-14_tandem-health-752a.json"},
@@ -206,5 +200,10 @@
   {"dom":null,"ad":"urunlerin","tarih":"2026-10-09","dosya":"2026-10-09_urunlerin-5751.json"},
   {"dom":null,"ad":"spectacell","tarih":"2026-10-09","dosya":"2026-10-09_spectacell-c73c.json"},
   {"dom":"egaranti.com","ad":"egaranti","tarih":"2026-10-09","dosya":"2026-10-09_egaranti-b422.json"},
-  {"dom":null,"ad":"zach yadegari","tarih":"2026-10-09","dosya":"2026-10-09_zach-yadegari-8330.json"}
+  {"dom":null,"ad":"zach yadegari","tarih":"2026-10-09","dosya":"2026-10-09_zach-yadegari-8330.json"},
+  {"dom":"scarlet.cc","ad":"scarlet","tarih":"2026-10-12","dosya":"2026-10-12_scarlet-545b.json"},
+  {"dom":"gaiuscapital.com","ad":"gaius capital","tarih":"2026-10-12","dosya":"2026-10-12_gaius-capital-c525.json"},
+  {"dom":"wiremind.io","ad":"wiremind","tarih":"2026-10-12","dosya":"2026-10-12_wiremind-8ef1.json"},
+  {"dom":"ramp.com","ad":"ramp","tarih":"2026-10-12","dosya":"2026-10-12_ramp-a17d.json"},
+  {"dom":null,"ad":"ozel haber loops ai","tarih":"2026-10-12","dosya":"2026-10-12_ozel-haber-loops-ai-ae69.json"}
 ]}

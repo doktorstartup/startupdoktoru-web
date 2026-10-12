@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-12_ozel-haber-loops-ai-ae69",
+  "durum": "hazir",
+  "puan": 76,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Özel Haber Loops AI",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3500000,
+      "birim": "USD",
+      "usd": 3500000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Alumni Ventures",
+      "Monday Capital",
+      "Netflix"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-12T12:32:52.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/loops-ai-a16z-speedrun-katildigi-tohum-turunda-3-5-milyon-dolar-yatirim-aldi/",
+      "baslik": "Özel Haber &#124; Loops AI, a16z Speedrun&#8217;ın katıldığı tohum turunda 3.5 milyon dolar yatırım aldı",
+      "tarih": "Mon, 12 Oct 2026 12:32:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Geçtiğimiz yıl Andreessen Horowitz'in erken aşama girişimler için başlattığı hızlandırma programı a16z Speedrun'a kabul edilen Loops AI , tohum turunda 3.5 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/loops-ai-a16z-speedrun-katildigi-tohum-turunda-3-5-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum turu",
+      "kaynak_url": "https://swipeline.co/loops-ai-a16z-speedrun-katildigi-tohum-turunda-3-5-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-12T13:07:18.664Z"
+}

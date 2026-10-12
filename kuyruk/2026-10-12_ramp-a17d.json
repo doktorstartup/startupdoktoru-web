@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-12_ramp-a17d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Ramp",
+    "domain": "ramp.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1850000000,
+      "birim": "USD",
+      "usd": 1850000000
+    },
+    "lider": "Dragoneer Investment Group",
+    "katilanlar": [
+      "Thrive Capital",
+      "Founders Fund"
+    ],
+    "kurucular": [
+      "Karim Atiyeh",
+      "Gene Lee"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-12T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/12/fintech-sirketi-ramp-1-85-milyar-dolar-yatirim-aldi/",
+      "baslik": "Fintech şirketi Ramp, 1,85 milyar dolar yatırım aldı",
+      "tarih": "Mon, 12 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fintech şirketi Ramp , 1,85 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/12/fintech-sirketi-ramp-1-85-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-12T13:07:18.664Z"
+}

@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-12_wiremind-8ef1",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Wiremind",
+    "domain": "wiremind.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 35000000,
+      "birim": "EUR",
+      "usd": 37800000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Bpifrance Investissement",
+      "IronWave"
+    ],
+    "kurucular": [
+      "Colin Girault-Matz"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-12T04:00:18.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/profitable-french-scale-up-wiremind-raises-e35-million-after-12-years-of-bootstrapping/",
+      "baslik": "Profitable French scale-up Wiremind raises €35 million after 12 years of bootstrapping",
+      "tarih": "Mon, 12 Oct 2026 04:00:18 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Wiremind , a Paris-based AI software company serving the transport, air cargo, and events industries, has closed a €35 million funding round, its first since being founded over a decade ago.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/profitable-french-scale-up-wiremind-raises-e35-million-after-12-years-of-bootstrapping/"
+    }
+  ],
+  "olusturma": "2026-10-12T13:07:18.664Z"
+}

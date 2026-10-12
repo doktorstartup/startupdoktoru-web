@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-12_scarlet-545b",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Scarlet",
+    "domain": "scarlet.cc",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 50000000,
+      "birim": "USD",
+      "usd": 50000000
+    },
+    "lider": "Headline",
+    "katilanlar": [
+      "Entrepreneurs First",
+      "Kindred Capital",
+      "Notion Capital",
+      "Creandum",
+      "Atomico"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-12T12:00:06.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/12/scarlet-raises-50m-series-b-to-accelerate-ai-medical-device-certification/",
+      "baslik": "Scarlet raises $50M Series B to accelerate AI medical device certification",
+      "tarih": "Mon, 12 Oct 2026 12:00:06 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Scarlet , the certification body for AI and software medical devices, today announced a $50 million Series B led by Headline , with participation from new investor Notion Capital and existing investor",
+      "kaynak_url": "https://tech.eu/2026/10/12/scarlet-raises-50m-series-b-to-accelerate-ai-medical-device-certification/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/12/scarlet-raises-50m-series-b-to-accelerate-ai-medical-device-certification/"
+    }
+  ],
+  "olusturma": "2026-10-12T13:07:18.664Z"
+}

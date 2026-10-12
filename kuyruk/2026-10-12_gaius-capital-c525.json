@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-10-12_gaius-capital-c525",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Gaius Capital",
+    "domain": "gaiuscapital.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 50000000,
+      "birim": "EUR",
+      "usd": 54000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Joscha Radeck",
+      "Lukas Klipper"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-12T04:20:47.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/",
+      "baslik": "Gaius Capital closes debut fund at €50 million, raises another €6 million via co-investment vehicle",
+      "tarih": "Mon, 12 Oct 2026 04:20:47 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gaius Capital , a Berlin-based private equity firm focused on business succession in the DACH Mittelstand, has announced the final close of its debut fund, Gaius Nachfolgekapital I, at €50 million.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/gaius-capital-closes-debut-fund-at-e50-million-raises-another-e6-million-via-co-investment-vehicle/"
+    }
+  ],
+  "olusturma": "2026-10-12T13:07:18.664Z"
+}
