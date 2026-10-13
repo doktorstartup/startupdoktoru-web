@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_ubitium-a5b8",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Ubitium",
+    "domain": "ubitium.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 14000000,
+      "birim": "USD",
+      "usd": 14000000
+    },
+    "lider": "Ibex Investors",
+    "katilanlar": [
+      "KBC Focus Fund",
+      "Florian Seibel",
+      "Runa Capital",
+      "Inflection",
+      "OpenOcean"
+    ],
+    "kurucular": [
+      "Hyun Shin Cho"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T07:05:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/ubitium-lands-14m-to-bring-universal-computing-to-physical-ai/",
+      "baslik": "Ubitium raises $14M to bring universal computing to physical AI",
+      "tarih": "Tue, 13 Oct 2026 07:05:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Semiconductor startup Ubitium has raised $14 million in new seed funding to develop its universal processor for autonomous machines and other physical AI applications.",
+      "kaynak_url": "https://tech.eu/2026/10/13/ubitium-lands-14m-to-bring-universal-computing-to-physical-ai/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/13/ubitium-lands-14m-to-bring-universal-computing-to-physical-ai/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

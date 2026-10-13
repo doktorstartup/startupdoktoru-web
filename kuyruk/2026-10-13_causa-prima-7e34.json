@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_causa-prima-7e34",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Causa Prima",
+    "domain": "causaprima.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "USD",
+      "usd": 20000000
+    },
+    "lider": "Base10 Partners",
+    "katilanlar": [
+      "Borusan Ventures",
+      "Creandum",
+      "Kfund"
+    ],
+    "kurucular": [
+      "Maex Ament",
+      "Henrik Gebbing",
+      "Philip Stanislaus"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T12:19:15.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/causa-prima-lands-20m-seed-just-three-months-after-pre-seed/",
+      "baslik": "Causa Prima lands $20M seed just three months after pre-seed round",
+      "tarih": "Tue, 13 Oct 2026 12:19:15 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Causa Prima , a company developing an autonomous finance platform for businesses, has raised $20 million in a seed funding round led by Base10 Partners .",
+      "kaynak_url": "https://tech.eu/2026/10/13/causa-prima-lands-20m-seed-just-three-months-after-pre-seed/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/13/causa-prima-lands-20m-seed-just-three-months-after-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

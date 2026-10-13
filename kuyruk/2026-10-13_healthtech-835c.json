@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_healthtech-835c",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "healthtech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 50000000,
+      "birim": "EUR",
+      "usd": 54000000
+    },
+    "lider": "Verdane",
+    "katilanlar": [
+      "Evli Growth Partners (EGP)"
+    ],
+    "kurucular": [
+      "Fredrik Meurling"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T12:27:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/yazen-raises-e50-million/",
+      "baslik": "Swedish healthtech company lands €50 million to expand digital obesity care across Europe",
+      "tarih": "Tue, 13 Oct 2026 12:27:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lund-based digital healthcare provider Yazen Health has secured €50 million in an investment partnership led by European growth investor Verdane , with participation from existing investor Evli Growth",
+      "kaynak_url": "https://arcticstartup.com/yazen-raises-e50-million/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

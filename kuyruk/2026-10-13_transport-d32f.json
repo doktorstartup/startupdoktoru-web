@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_transport-d32f",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Transport",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2700000,
+      "birim": "GBP",
+      "usd": 3429000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-13T08:45:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/tranport-data-specialist-alchera-raises-ps27m/",
+      "baslik": "Transport data specialist Alchera raises £2.7M",
+      "tarih": "Tue, 13 Oct 2026 08:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A Cambridge-founded startup that leverages AI to help cities manage roads and public transport more efficiently has raised £2.7m in seed funding, it said today.",
+      "kaynak_url": "https://tech.eu/2026/10/13/tranport-data-specialist-alchera-raises-ps27m/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/13/tranport-data-specialist-alchera-raises-ps27m/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

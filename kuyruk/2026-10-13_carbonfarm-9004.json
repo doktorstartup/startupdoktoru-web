@@ -1,0 +1,72 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_carbonfarm-9004",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "CarbonFarm",
+    "domain": "carbonfarm.tech",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 7000000,
+      "birim": "EUR",
+      "usd": 7560000
+    },
+    "lider": "Sonepar",
+    "katilanlar": [
+      "Working Capital Fund",
+      "Suma Capital",
+      "Bpifrance",
+      "Proparco",
+      "Albo"
+    ],
+    "kurucular": [
+      "Vassily Carantino",
+      "James Hastwell"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T04:00:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/",
+      "baslik": "Paris-based CarbonFarm raises €7 million to tackle methane emissions from rice farming",
+      "tarih": "Tue, 13 Oct 2026 04:00:42 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/carbonfarm-raises-eur7m-to-tackle-methane-emissions-from-rice-cultivation/",
+      "baslik": "CarbonFarm raises €7M to tackle methane emissions from rice cultivation",
+      "tarih": "Tue, 13 Oct 2026 06:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "CarbonFarm , a Paris-based ClimateTech startup specialising in rice decarbonisation, has closed an oversubscribed €7 million Series A funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/paris-based-carbonfarm-raises-e7-million-to-tackle-methane-emissions-from-rice-farming/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

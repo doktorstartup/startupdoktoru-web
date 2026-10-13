@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_epyr-7156",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Epyr",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "SlateVC",
+    "katilanlar": [
+      "WEPA Ventures",
+      "OVNI Capital",
+      "Aurum Impact",
+      "Daphni",
+      "AENU"
+    ],
+    "kurucular": [
+      "Bastien Oggeri"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T09:43:06.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/french-startup-epyr-raises-eur15m-following-successful-industrial-heat-storage-deployment/",
+      "baslik": "French startup Epyr raises €15M following successful industrial heat storage deployment",
+      "tarih": "Tue, 13 Oct 2026 09:43:06 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French industrial energytech company Epyr has raised a €15 million Series A round led by SlateVC.",
+      "kaynak_url": "https://tech.eu/2026/10/13/french-startup-epyr-raises-eur15m-following-successful-industrial-heat-storage-deployment/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/13/french-startup-epyr-raises-eur15m-following-successful-industrial-heat-storage-deployment/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

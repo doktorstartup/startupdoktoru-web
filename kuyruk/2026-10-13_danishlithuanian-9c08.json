@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_danishlithuanian-9c08",
+  "durum": "hazir",
+  "puan": 41,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Danish-Lithuanian",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "EUR",
+      "usd": 2160000
+    },
+    "lider": "CoInvest Capital",
+    "katilanlar": [
+      "Lithuanian Business Angel Network",
+      "Silicon Valley-based Plug",
+      "Plug and Play Ventures",
+      "Silicon Valley",
+      "NGL Ventures"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-13T10:10:36.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/monopulse-raises-over-e2-million/",
+      "baslik": "Danish-Lithuanian drone manufacturer secures over €2 million to expand production and enter new markets",
+      "tarih": "Tue, 13 Oct 2026 10:10:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lithuanian-Danish drone manufacturer Monopulse , operated by MNP Technologijos, has raised more than €2 million to expand production, advance research and development, and accelerate its international",
+      "kaynak_url": "https://arcticstartup.com/monopulse-raises-over-e2-million/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

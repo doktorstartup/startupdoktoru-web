@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_parkmundo-f5ef",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "ParkMundo",
+    "domain": "parkmundo.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2300000,
+      "birim": "EUR",
+      "usd": 2484000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Rabobank"
+    ],
+    "kurucular": [
+      "Martijn Meeuws"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/parkmundo-raises-eur23m-to-connect-airport-parking-with-global-travel-platforms/",
+      "baslik": "ParkMundo raises €2.3M to connect airport parking with global travel platforms",
+      "tarih": "Tue, 13 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Travel technology company ParkMundo has raised €2.3 million in seed funding to expand its airport parking marketplace and B2B distribution platform.",
+      "kaynak_url": "https://tech.eu/2026/10/13/parkmundo-raises-eur23m-to-connect-airport-parking-with-global-travel-platforms/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/13/parkmundo-raises-eur23m-to-connect-airport-parking-with-global-travel-platforms/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}

@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_reebuild-dde1",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "reebuild",
+    "domain": "reebuild.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": "Fortino Ventures",
+    "katilanlar": [
+      "Ghent-based VC firm backing B2B AI"
+    ],
+    "kurucular": [
+      "Alexander Kornell",
+      "Luca Papay"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T07:00:12.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/vienna-based-reebuild-raises-e3-million-to-build-the-ai-operating-system-for-construction-and-real-estate/",
+      "baslik": "Vienna-based reebuild raises €3 million to build the AI operating system for construction and real estate",
+      "tarih": "Tue, 13 Oct 2026 07:00:12 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/13/reebuild-secures-eur3m-to-automate-financial-workflows-in-construction/",
+      "baslik": "reebuild secures €3M to automate financial workflows in construction",
+      "tarih": "Tue, 13 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "reebuild , the Vienna-based AI-native back-office automation platform for construction and real estate, has raised a €3 million Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/vienna-based-reebuild-raises-e3-million-to-build-the-ai-operating-system-for-construction-and-real-estate/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/vienna-based-reebuild-raises-e3-million-to-build-the-ai-operating-system-for-construction-and-real-estate/"
+    }
+  ],
+  "olusturma": "2026-10-13T12:39:41.321Z"
+}
