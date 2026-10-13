@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_ambi-8d5d",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Ambi",
+    "domain": "ambi.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 26000000,
+      "birim": "USD",
+      "usd": 26000000
+    },
+    "lider": "Luminous Ventures",
+    "katilanlar": [
+      "Huaqin Technology"
+    ],
+    "kurucular": [
+      "Peter Mo"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/13/yapay-zeka-destekli-kisisel-asistanlar-gelistiren-ambi-26-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli kişisel asistanlar geliştiren Ambi, 26 milyon dolar yatırım aldı",
+      "tarih": "Tue, 13 Oct 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli kişisel asistanlar geliştiren Ambi , 26 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/13/yapay-zeka-destekli-kisisel-asistanlar-gelistiren-ambi-26-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-13T20:13:28.889Z"
+}

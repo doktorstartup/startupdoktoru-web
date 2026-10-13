@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-13_obsero-3b95",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Obsero",
+    "domain": "obsero.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": "SFC Capital alongside several of Obsero’s",
+    "katilanlar": [
+      "Obsero’s"
+    ],
+    "kurucular": [
+      "Mike Logue",
+      "EU-Startups Andy Francos"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-13T14:29:22.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/",
+      "baslik": "London&#8217;s Obsero raises €1 million to help brands improve visibility in AI-powered search",
+      "tarih": "Tue, 13 Oct 2026 14:29:22 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Obsero , a British AI Search platform and consultancy, has raised €1 million ($1.2 million) in Seed funding to develop their first specialist AI agents (trained on their GEO playbook), double its engi",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-obsero-raises-e1-million-to-help-brands-improve-visibility-in-ai-powered-search/"
+    }
+  ],
+  "olusturma": "2026-10-13T20:13:28.889Z"
+}
