@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_coding-giants-41c0",
+  "durum": "hazir",
+  "puan": 56,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Coding Giants",
+    "domain": "codinggiants.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "EUR",
+      "usd": 6480000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Radosław Kulesza",
+      "Dawid Leśniakiewicz",
+      "Piotr Pełka",
+      "Sebastian Langa"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T05:58:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/warsaws-coding-giants-secures-up-to-e6-million-to-expand-its-stem-education-platform-beyond-europe/",
+      "baslik": "Warsaw’s Coding Giants secures up to €6 million to expand its STEM education platform beyond Europe",
+      "tarih": "Wed, 14 Oct 2026 05:58:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Coding Giants , a Warsaw-based international STEM education platform for children and teenagers, has secured up to €6 million in venture debt financing.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/warsaws-coding-giants-secures-up-to-e6-million-to-expand-its-stem-education-platform-beyond-europe/"
+    },
+    {
+      "metin": "venture debt",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/warsaws-coding-giants-secures-up-to-e6-million-to-expand-its-stem-education-platform-beyond-europe/"
+    }
+  ],
+  "olusturma": "2026-10-14T10:07:15.778Z"
+}

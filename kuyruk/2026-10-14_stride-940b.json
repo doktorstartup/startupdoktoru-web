@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_stride-940b",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Stride",
+    "domain": "getstride.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4600000,
+      "birim": "GBP",
+      "usd": 5842000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Andrew Steele"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/uk-healthtech-startup-stride-raises-ps46m-to-expand-preventative-health-platform/",
+      "baslik": "UK healthtech startup Stride raises £4.6M to expand preventative health platform",
+      "tarih": "Wed, 14 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UK-based preventative health startup Stride has raised £4.6 million in seed funding to further develop its diagnostics-driven health platform and support international expansion.",
+      "kaynak_url": "https://tech.eu/2026/10/14/uk-healthtech-startup-stride-raises-ps46m-to-expand-preventative-health-platform/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/10/14/uk-healthtech-startup-stride-raises-ps46m-to-expand-preventative-health-platform/"
+    }
+  ],
+  "olusturma": "2026-10-14T10:07:15.778Z"
+}

@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_ambio-19d3",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Ambio",
+    "domain": "ambiomaterials.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5100000,
+      "birim": "EUR",
+      "usd": 5508000
+    },
+    "lider": "Tommi",
+    "katilanlar": [
+      "Lifeline Ventures",
+      "Montis",
+      "Elmo"
+    ],
+    "kurucular": [
+      "Tommi Bergström",
+      "Elmo Pakkanen"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T09:12:46.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/",
+      "baslik": "Helsinki’s Ambio raises €5.1 million to scale its AI-powered recycled plastics procurement platform",
+      "tarih": "Wed, 14 Oct 2026 09:12:46 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Ambio , a Helsinki-based startup building an AI-native end-to-end procurement solution for recycled plastics, has raised a €5.1 million Seed round to make recycled plastics procurement faster and more",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/helsinkis-ambio-raises-e5-1-million-to-scale-its-ai-powered-recycled-plastics-procurement-platform/"
+    }
+  ],
+  "olusturma": "2026-10-14T10:07:15.778Z"
+}

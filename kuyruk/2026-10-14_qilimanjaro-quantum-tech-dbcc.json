@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_qilimanjaro-quantum-tech-dbcc",
+  "durum": "hazir",
+  "puan": 47,
+  "puan_kirilimi": {
+    "alan_tutar": 0,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Qilimanjaro Quantum Tech",
+    "domain": "qilimanjaro.tech",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": null,
+      "birim": null,
+      "usd": null
+    },
+    "lider": "Indra Group through IndraMind",
+    "katilanlar": [
+      "Avançsa"
+    ],
+    "kurucular": [
+      "Marta P. Estarellas"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T08:31:05.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/barcelonas-full-stack-quantum-computing-company-qilimanjaro-quantum-tech-completes-e19-6-million-first-close-of-its-series-a/",
+      "baslik": "Spain&#8217;s full-stack quantum computing company Qilimanjaro Quantum Tech completes €19.6 million Series A first close",
+      "tarih": "Wed, 14 Oct 2026 08:31:05 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/barcelonas-full-stack-quantum-computing-company-qilimanjaro-quantum-tech-completes-e19-6-million-first-close-of-its-series-a/"
+    }
+  ],
+  "olusturma": "2026-10-14T10:07:15.778Z"
+}

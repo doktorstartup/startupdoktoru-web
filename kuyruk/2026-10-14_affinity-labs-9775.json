@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_affinity-labs-9775",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Affinity Labs",
+    "domain": "affinitylabs.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "USD",
+      "usd": 2000000
+    },
+    "lider": "Fuel Ventures",
+    "katilanlar": [
+      "Innovation (UKRI)",
+      "UK Research",
+      "Antler"
+    ],
+    "kurucular": [
+      "Edoardo Ricci",
+      "Ahmed Eltom",
+      "Sunny Panchal"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T05:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/affinity-labs-raises-2m-to-build-ai-powered-software-brands-with-creators/",
+      "baslik": "Affinity Labs raises $2M to build AI-powered software brands with creators",
+      "tarih": "Wed, 14 Oct 2026 05:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based startup Affinity Labs has raised $2 million in pre-seed funding to expand its portfolio of creator-led software brands and further develop its AI-powered product development technology.",
+      "kaynak_url": "https://tech.eu/2026/10/14/affinity-labs-raises-2m-to-build-ai-powered-software-brands-with-creators/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/14/affinity-labs-raises-2m-to-build-ai-powered-software-brands-with-creators/"
+    }
+  ],
+  "olusturma": "2026-10-14T10:07:15.778Z"
+}
