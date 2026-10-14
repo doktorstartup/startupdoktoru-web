@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_pluto-33f7",
+  "durum": "hazir",
+  "puan": 85,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Pluto",
+    "domain": "pluto.security",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 8500000,
+      "birim": "USD",
+      "usd": 8500000
+    },
+    "lider": "Jump Capital",
+    "katilanlar": [
+      "T LV Partners liderlik ederken siber güvenlik şirketi Armis'in",
+      "Ansa Capital"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-14T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/14/siber-guvenlik-girisimi-pluto-toplamda-42-5-milyon-dolar-yatirim-aldi/",
+      "baslik": "Siber güvenlik girişimi Pluto, toplamda 42,5 milyon dolar yatırım aldı",
+      "tarih": "Wed, 14 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Pluto'nun 8,5 milyon dolarlık tohum yatırım turuna T LV Partners liderlik ederken siber güvenlik şirketi Armis'in kurucuları da tura katıldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/14/siber-guvenlik-girisimi-pluto-toplamda-42-5-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum yatırım",
+      "kaynak_url": "https://webrazzi.com/2026/10/14/siber-guvenlik-girisimi-pluto-toplamda-42-5-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}

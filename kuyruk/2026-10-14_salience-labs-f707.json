@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_salience-labs-f707",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Salience Labs",
+    "domain": "saliencelabs.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 125000000,
+      "birim": "USD",
+      "usd": 125000000
+    },
+    "lider": "Bullhound Capital",
+    "katilanlar": [
+      "British Business Bank",
+      "Hudson River Trading",
+      "Intel Capital",
+      "AMD Ventures",
+      "SBI Group"
+    ],
+    "kurucular": [
+      "Vaysh Kewada"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/salience-labs-secures-125m-to-scale-photonic-chips-for-ai-data-centres/",
+      "baslik": "Salience Labs secures $125M to scale photonic chips for AI data centres",
+      "tarih": "Wed, 14 Oct 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Salience Labs , a developer of photonic chips for AI data centre connectivity, has raised $125 million in an oversubscribed Series B funding round to accelerate the deployment of its optical switching",
+      "kaynak_url": "https://tech.eu/2026/10/14/salience-labs-secures-125m-to-scale-photonic-chips-for-ai-data-centres/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/14/salience-labs-secures-125m-to-scale-photonic-chips-for-ai-data-centres/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}

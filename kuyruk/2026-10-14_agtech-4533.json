@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_agtech-4533",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "agtech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": "Industrifonden",
+    "katilanlar": [
+      "Nordic Foodtech VC",
+      "Future Food Fund",
+      "GU Ventures",
+      "AgFunder",
+      "PINC"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-14T12:24:23.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/olsaro-raises-e5m-seed/",
+      "baslik": "Swedish agtech company raises €5 million to bring climate-resilient wheat to market",
+      "tarih": "Wed, 14 Oct 2026 12:24:23 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gothenburg-based agtech company OlsAro has raised €5 million in a seed round led by Industrifonden , with Nordic Foodtech VC as co-lead and participation from existing investors Future Food Fund , PIN",
+      "kaynak_url": "https://arcticstartup.com/olsaro-raises-e5m-seed/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://arcticstartup.com/olsaro-raises-e5m-seed/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}

@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_miracly-dfe2",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Miracly",
+    "domain": "miracly.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1800000,
+      "birim": "EUR",
+      "usd": 1944000
+    },
+    "lider": "Beenext Ventures",
+    "katilanlar": [
+      "Hedda Baverud Olsson",
+      "Stefan Lindeberg",
+      "Parham Benisi",
+      "Alex Bouaziz",
+      "Thomas Ekman",
+      "Lotus"
+    ],
+    "kurucular": [
+      "Bjorn Bergstrom"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T12:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/miracly-launches-with-eur18m-to-automate-ai-powered-marketing/",
+      "baslik": "Miracly launches with €1.8M to automate AI-powered marketing",
+      "tarih": "Wed, 14 Oct 2026 12:20:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI marketing platform Miracly , developed by The Wild Ventures, the company behind Scandinavian home decor brand Wild Palace, has launched following the announcement of a €1.8 million pre-seed funding",
+      "kaynak_url": "https://tech.eu/2026/10/14/miracly-launches-with-eur18m-to-automate-ai-powered-marketing/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/14/miracly-launches-with-eur18m-to-automate-ai-powered-marketing/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}

@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_flae-robotics-7590",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "FLÆ Robotics",
+    "domain": "flaerobotics.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Filip Linek"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-14T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/",
+      "baslik": "FLÆ Robotics raises over €1 million in Seed funding to develop its AI hospitality agent",
+      "tarih": "Wed, 14 Oct 2026 12:20:35 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/czech-startup-flae-robotics-lands-over-eur1m-to-automate-hotel-guest-services/",
+      "baslik": "Czech startup FLÆ Robotics lands over €1M to automate hotel guest services",
+      "tarih": "Wed, 14 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Czech startup FLÆ Robotics has raised over €1 million in Seed funding to accelerate product development, deepen integrations with hotel systems, grow its team, and expand internationally.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/flae-robotics-raises-over-e1-million-in-seed-funding-to-develop-its-ai-hospitality-agent/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}

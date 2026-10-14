@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-14_from-rohlik-fea2",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "From Rohlik",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 32000000,
+      "birim": "USD",
+      "usd": 32000000
+    },
+    "lider": "Balderton Capital",
+    "katilanlar": [
+      "Index Ventures",
+      "Credo Ventures",
+      "Northzone"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-14T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/14/from-rohlik-to-enterprise-ai-tomas-cuprs-duvo-raises-32m-series-a/",
+      "baslik": "From Rohlik to enterprise AI: Tomáš Čupr's Duvo raises $32M Series A",
+      "tarih": "Wed, 14 Oct 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Duvo today announced a $32 million Series A led by Balderton Capital, with participation from existing investors Index Ventures, Northzone, and Credo Ventures.",
+      "kaynak_url": "https://tech.eu/2026/10/14/from-rohlik-to-enterprise-ai-tomas-cuprs-duvo-raises-32m-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/14/from-rohlik-to-enterprise-ai-tomas-cuprs-duvo-raises-32m-series-a/"
+    }
+  ],
+  "olusturma": "2026-10-14T18:32:14.018Z"
+}
