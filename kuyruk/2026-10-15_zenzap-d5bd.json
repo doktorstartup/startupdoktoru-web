@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_zenzap-d5bd",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Zenzap",
+    "domain": "zenzap.co",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 44000000,
+      "birim": "USD",
+      "usd": 44000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Garage'ın yanı sıra Wix'den Nir Zohar ve EY'den Yoram Tietz",
+      "Lightspeed Venture Partners",
+      "Bessemer Venture Partners"
+    ],
+    "kurucular": [
+      "Noam Neumann",
+      "Jonatan Bien"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T09:04:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/kurumsal-mesajlasma-uygulamasi-zenzap-44-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kurumsal mesajlaşma uygulaması Zenzap, 44 milyon dolar yatırım aldı",
+      "tarih": "Thu, 15 Oct 2026 09:04:00 +0000"
+    },
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/15/yapay-zeka-destekli-mesajlasma-programi-zenzap-44-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli mesajlaşma programı Zenzap, 44 milyon dolar yatırım aldı",
+      "tarih": "Thu, 15 Oct 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "İş yerlerindeki iletişimi yapay zeka destekli mesajlaşma uygulamasına taşımayı hedefleyen Zenzap , Bessemer Venture Partners, Lightspeed Venture Partners ve The Garage'ın da aralarında bulunduğu yatır",
+      "kaynak_url": "https://swipeline.co/kurumsal-mesajlasma-uygulamasi-zenzap-44-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Yapay zeka destekli mesajlaşma programı Zenzap , 44 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/15/yapay-zeka-destekli-mesajlasma-programi-zenzap-44-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-15T18:13:55.006Z"
+}

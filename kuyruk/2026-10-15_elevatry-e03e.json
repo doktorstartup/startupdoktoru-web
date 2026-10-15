@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_elevatry-e03e",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Elevatry",
+    "domain": "elevatry.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Heiko Schwarz",
+      "Christian Ruck",
+      "Tizian Ruck"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T15:18:50.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/german-ai-startup-elevatry-secures-e3-million-to-automate-procurement-workflows/",
+      "baslik": "German AI startup Elevatry secures €3 million to automate procurement workflows",
+      "tarih": "Thu, 15 Oct 2026 15:18:50 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Munich-based Elevatry , an AI platform for strategic procurement, has closed a €3 million pre-Seed financing round in order to enhance its platform, expand its team, and support market entry in Europe",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/german-ai-startup-elevatry-secures-e3-million-to-automate-procurement-workflows/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/german-ai-startup-elevatry-secures-e3-million-to-automate-procurement-workflows/"
+    }
+  ],
+  "olusturma": "2026-10-15T18:13:55.006Z"
+}

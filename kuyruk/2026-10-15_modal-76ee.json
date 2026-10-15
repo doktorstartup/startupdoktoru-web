@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_modal-76ee",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Modal",
+    "domain": "modal.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 750000000,
+      "birim": "USD",
+      "usd": 750000000
+    },
+    "lider": "Accel",
+    "katilanlar": [
+      "Bain Capital Ventures",
+      "Redpoint Ventures",
+      "General Catalyst",
+      "Amplify Partners",
+      "Kleiner Perkins",
+      "Menlo Ventures",
+      "Lux Capital"
+    ],
+    "kurucular": [
+      "Erik Bernhardsson",
+      "Akshat Bubna"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/15/modal-15-75-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/",
+      "baslik": "Modal, 15,75 milyar dolar değerleme üzerinden 750 milyon dolar yatırım aldı",
+      "tarih": "Thu, 15 Oct 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka uygulamalarının çalışması için gerekli altyapıyı geliştiren Modal , 750 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/15/modal-15-75-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "D serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/15/modal-15-75-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-15T18:13:55.006Z"
+}

@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_fintech-3fd8",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "fintech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "USD",
+      "usd": 5000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Knut Frängsmyr",
+      "Per Widerström",
+      "Douglas Stark",
+      "Johan Bladh",
+      "Patrik Tran",
+      "Klarna",
+      "Röko",
+      "Voi"
+    ],
+    "kurucular": [
+      "Per Österström"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T12:55:07.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/matters-raises-5m-pre-seed/",
+      "baslik": "Swedish fintech startup secures $5 million pre-seed to build AI-powered consumer bank",
+      "tarih": "Thu, 15 Oct 2026 12:55:07 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based fintech startup Matters has emerged from stealth with a $5 million pre-seed round anchored by Swedish angel investor Jakob Johansson, alongside investors including former Klarna COO Kn",
+      "kaynak_url": "https://arcticstartup.com/matters-raises-5m-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/matters-raises-5m-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-10-15T18:13:55.006Z"
+}

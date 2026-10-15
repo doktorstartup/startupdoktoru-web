@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_rabot-energy-8c6e",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Rabot Energy",
+    "domain": "rabot.energy",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 50000000,
+      "birim": "USD",
+      "usd": 50000000
+    },
+    "lider": "Endeit",
+    "katilanlar": [
+      "DeepTech & Climate Fonds (DTCF)"
+    ],
+    "kurucular": [
+      "Jan Rabe"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T12:10:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/",
+      "baslik": "Rabot Energy secures $50M to transform homes into a virtual power plant",
+      "tarih": "Thu, 15 Oct 2026 12:10:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Rabot Energy , a provider of dynamic electricity tariffs, has raised $50 million in a Series B funding round to expand its technology platform and support its next phase of growth.",
+      "kaynak_url": "https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/"
+    }
+  ],
+  "olusturma": "2026-10-15T18:13:55.006Z"
+}
