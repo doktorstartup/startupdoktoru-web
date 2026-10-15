@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_matters-5c29",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Matters",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "USD",
+      "usd": 5000000
+    },
+    "lider": "Jakob Johansson",
+    "katilanlar": [
+      "Matters has appointed Lars-Åke Norling as Chair",
+      "Knut Frängsmyr",
+      "Per Widerstrom",
+      "Douglas Stark",
+      "Johan Bladh",
+      "Patrik Tran"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-15T07:40:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/15/matters-emerges-from-stealth-with-5m-in-pre-seed-funding-to-build-ai-native-consumer-bank/",
+      "baslik": "Matters emerges from stealth with $5M in pre-seed funding to build AI-native consumer bank",
+      "tarih": "Thu, 15 Oct 2026 07:40:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI-powered personal finance startup Matters has emerged from stealth with $5 million in pre-seed funding to develop a consumer banking platform focused on helping users manage their spending and incre",
+      "kaynak_url": "https://tech.eu/2026/10/15/matters-emerges-from-stealth-with-5m-in-pre-seed-funding-to-build-ai-native-consumer-bank/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/15/matters-emerges-from-stealth-with-5m-in-pre-seed-funding-to-build-ai-native-consumer-bank/"
+    }
+  ],
+  "olusturma": "2026-10-15T09:49:52.623Z"
+}

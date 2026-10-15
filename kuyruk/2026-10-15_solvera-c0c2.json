@@ -1,0 +1,77 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_solvera-c0c2",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Solvera",
+    "domain": "solvera.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5620000,
+      "birim": "EUR",
+      "usd": 6069600
+    },
+    "lider": "Seedcamp",
+    "katilanlar": [
+      "Spacemaker founders Anders Kvåle",
+      "Nordic Web Ventures",
+      "Construct Venture",
+      "Håvard Haukeland",
+      "Inception Fund",
+      "Obos Ventures",
+      "Momentum",
+      "PSV Tech",
+      "Sondo"
+    ],
+    "kurucular": [
+      "Pål Rasmussen",
+      "Arif Mirza",
+      "Thorvald Thorsnes"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T06:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/",
+      "baslik": "Oslo-based AI-native engineering firm Solvera raises €5.62 million pre-Seed after July 2026 launch",
+      "tarih": "Thu, 15 Oct 2026 07:02:08 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/15/solvera-raises-63m-to-scale-the-ai-native-engineering-firm/",
+      "baslik": "Solvera raises $6.3M to scale the AI-native engineering firm",
+      "tarih": "Thu, 15 Oct 2026 06:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Solvera , an Oslo-based company building an AI-native engineering firm for the construction industry, today announced a €5.62 million ($6.3 million) pre-Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/oslo-based-ai-native-engineering-firm-solvera-raises-e5-62-million-pre-seed-after-july-2026-launch/"
+    }
+  ],
+  "olusturma": "2026-10-15T09:49:52.623Z"
+}

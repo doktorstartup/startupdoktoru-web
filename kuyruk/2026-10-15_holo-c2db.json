@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-10-15_holo-c2db",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Holo",
+    "domain": "tryholo.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": "Market One Capital",
+    "katilanlar": [
+      "Silicon Gardens",
+      "Tekton Ventures",
+      "Leonis Capital",
+      "FirstPick",
+      "NGL"
+    ],
+    "kurucular": [
+      "Deividas Kovger"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-15T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/vilnius-based-holo-raises-e5-million-to-put-marketing-on-autopilot-for-small-businesses/",
+      "baslik": "Vilnius-based Holo raises €5 million to put marketing on autopilot for small businesses",
+      "tarih": "Thu, 15 Oct 2026 09:17:56 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/15/vilnius-based-holo-raises-eur5m-to-bring-ai-powered-marketing-to-small-businesses/",
+      "baslik": "Vilnius-based Holo raises €5M to bring AI-powered marketing to small businesses",
+      "tarih": "Thu, 15 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Holo , a Vilnius-based AI platform that plans and runs marketing for small businesses, has raised €5 million in a Seed round to develop its marketing autopilot, reach more small businesses, and expand",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/vilnius-based-holo-raises-e5-million-to-put-marketing-on-autopilot-for-small-businesses/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/vilnius-based-holo-raises-e5-million-to-put-marketing-on-autopilot-for-small-businesses/"
+    }
+  ],
+  "olusturma": "2026-10-15T09:49:52.623Z"
+}
