@@ -7,6 +7,10 @@
     {
       "path": "/api/cron/invest-campaign",
       "schedule": "0 8 * * 1-5"
+    },
+    {
+      "path": "/api/cron/invest-followup",
+      "schedule": "0 9 * * *"
     }
   ]
 }
