@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_dj-reinier-zonneveld-e1c3",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "DJ Reinier Zonneveld",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "USD",
+      "usd": 1000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Reinier Zonneveld"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-16T14:23:30.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/16/dj-reinier-zonneveld-launches-ai-music-startup-gaslab-with-1m-pre-seed-funding/",
+      "baslik": "DJ Reinier Zonneveld launches AI music startup GasLab with $1M pre-seed funding",
+      "tarih": "Fri, 16 Oct 2026 14:23:30 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "GasLab (Generative AI Solutions Lab), a GenAI music platform created by DJ and producer Reinier Zonneveld, is launched this week, backed by $1 million in pre-seed funding.",
+      "kaynak_url": "https://tech.eu/2026/10/16/dj-reinier-zonneveld-launches-ai-music-startup-gaslab-with-1m-pre-seed-funding/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/16/dj-reinier-zonneveld-launches-ai-music-startup-gaslab-with-1m-pre-seed-funding/"
+    }
+  ],
+  "olusturma": "2026-10-16T17:59:21.968Z"
+}

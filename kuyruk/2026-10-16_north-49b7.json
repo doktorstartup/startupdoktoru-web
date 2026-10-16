@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_north-49b7",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "North",
+    "domain": "north.cloud",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 60000000,
+      "birim": "USD",
+      "usd": 60000000
+    },
+    "lider": "PeakSpan Capital",
+    "katilanlar": [
+      "Uncommon Denominator",
+      "Litquidity Ventures",
+      "Companyon Ventures",
+      "Mana Ventures",
+      "Gaingels",
+      "Alpaca"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-16T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/16/bulut-ve-yapay-zeka-maliyet-yonetimi-girisimi-north-60-milyon-dolar-yatirim-aldi/",
+      "baslik": "Bulut ve yapay zeka maliyet yönetimi girişimi North, 60 milyon dolar yatırım aldı",
+      "tarih": "Fri, 16 Oct 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bulut ve yapay zeka maliyet yönetimi girişimi North , 60 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/16/bulut-ve-yapay-zeka-maliyet-yonetimi-girisimi-north-60-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/16/bulut-ve-yapay-zeka-maliyet-yonetimi-girisimi-north-60-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-16T17:59:21.968Z"
+}

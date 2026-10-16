@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_oxford-e3e4",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Oxford",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 275000000,
+      "birim": "EUR",
+      "usd": 297000000
+    },
+    "lider": "Bain Capital Life Sciences",
+    "katilanlar": [
+      "Janus Henderson Investors",
+      "Jefferson Life Sciences",
+      "Netherlands’ Laigo Bio",
+      "SV Health Investors",
+      "Novo Holdings",
+      "Forbion"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-16T13:59:14.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/oxford-spin-out-omass-therapeutics-lands-e275-million-to-bring-novel-small-molecule-therapies-closer-to-patients/",
+      "baslik": "Oxford spin-out OMass Therapeutics lands €275 million to bring novel small-molecule therapies closer to patients",
+      "tarih": "Fri, 16 Oct 2026 13:59:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "OMass Therapeutics , a UK BioTech company developing small molecule therapeutics against highly validated target ecosystems, announced an oversubscribed €275 million (£230 million) Series C round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/oxford-spin-out-omass-therapeutics-lands-e275-million-to-bring-novel-small-molecule-therapies-closer-to-patients/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/oxford-spin-out-omass-therapeutics-lands-e275-million-to-bring-novel-small-molecule-therapies-closer-to-patients/"
+    }
+  ],
+  "olusturma": "2026-10-16T17:59:21.968Z"
+}
