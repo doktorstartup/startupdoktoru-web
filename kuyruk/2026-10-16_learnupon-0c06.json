@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_learnupon-0c06",
+  "durum": "hazir",
+  "puan": 55,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "LearnUpon",
+    "domain": "learnupon.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 44500000,
+      "birim": "EUR",
+      "usd": 48060000
+    },
+    "lider": "Ireland Strategic Investment Fund (ISIF)",
+    "katilanlar": [],
+    "kurucular": [
+      "Brendan Noud",
+      "Des Anderson"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-16T07:11:17.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/dublin-based-learnupon-secures-e44-5-million-to-scale-its-agentic-learning-platform/",
+      "baslik": "Dublin-based LearnUpon secures €44.5 million to scale its agentic learning platform",
+      "tarih": "Fri, 16 Oct 2026 07:11:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "LearnUpon , a Dublin-based enterprise learning platform, has secured a €44.5 million ($50 million) growth financing facility.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/dublin-based-learnupon-secures-e44-5-million-to-scale-its-agentic-learning-platform/"
+    }
+  ],
+  "olusturma": "2026-10-16T09:42:58.979Z"
+}

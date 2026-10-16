@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_loops-ai-e627",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Loops AI",
+    "domain": "loopsai.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3500000,
+      "birim": "USD",
+      "usd": 3500000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Ari Nazir",
+      "Yusuf Bahadır"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-16T07:05:24.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/16/loops-ai-a16z-speedrun-ve-nttnin-katildigi-turda-35-milyon-dolar-yatirim-aldi/",
+      "baslik": "Loops AI, a16z Speedrun ve NTT'nin katıldığı turda 3,5 milyon dolar yatırım aldı",
+      "tarih": "Fri, 16 Oct 2026 07:05:24 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "2025 yılında İlker Selim Zorluoğlu , Ari Nazir ve Yusuf Bahadır tarafından kurulan Loops AI , 3,5 milyon dolarlık tohum yatırım turunu tamamladı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/16/loops-ai-a16z-speedrun-ve-nttnin-katildigi-turda-35-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum yatırım",
+      "kaynak_url": "https://webrazzi.com/2026/10/16/loops-ai-a16z-speedrun-ve-nttnin-katildigi-turda-35-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-16T09:42:58.979Z"
+}

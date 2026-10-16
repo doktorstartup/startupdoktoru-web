@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_unravel-health-b8cd",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Unravel Health",
+    "domain": "unravel.health",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2960000,
+      "birim": "EUR",
+      "usd": 3196800
+    },
+    "lider": "Conduit EIS Impact Fund",
+    "katilanlar": [
+      "Embryo Ventures",
+      "Leo Capital",
+      "Wrightwood",
+      "Hermesa",
+      "Zinc VC"
+    ],
+    "kurucular": [
+      "Veronika Bridgman"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-16T08:52:14.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-unravel-health-raises-e2-96-million-to-help-women-track-hormones-at-home-with-a-palm-sized-lab/",
+      "baslik": "London’s Unravel Health raises €2.96 million to help women track hormones at home with a palm-sized lab",
+      "tarih": "Fri, 16 Oct 2026 08:52:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Unravel Health , a London-based startup developing technology to measure hormones at home daily, has raised €2.96 million (£2.5 million) to develop the Micro Lab, a palm-sized device that reads multip",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-unravel-health-raises-e2-96-million-to-help-women-track-hormones-at-home-with-a-palm-sized-lab/"
+    }
+  ],
+  "olusturma": "2026-10-16T09:42:58.979Z"
+}

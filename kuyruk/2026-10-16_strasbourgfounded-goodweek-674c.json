@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-16_strasbourgfounded-goodweek-674c",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Strasbourg-founded Goodweek",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 10690000,
+      "birim": "EUR",
+      "usd": 11545200
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-16T06:28:13.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/strasbourg-founded-goodweek-raises-e10-69-million-to-become-the-ai-manager-for-smbs/",
+      "baslik": "Strasbourg-founded Goodweek raises €10.69 million to become the AI Manager for SMBs",
+      "tarih": "Fri, 16 Oct 2026 06:28:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Goodweek , a Los Angeles-headquartered French startup positioning itself as a one-stop AI management platform for small and medium-sized businesses, has raised a €10.69 million ($12 million) Seed roun",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/strasbourg-founded-goodweek-raises-e10-69-million-to-become-the-ai-manager-for-smbs/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/strasbourg-founded-goodweek-raises-e10-69-million-to-become-the-ai-manager-for-smbs/"
+    }
+  ],
+  "olusturma": "2026-10-16T09:42:58.979Z"
+}
