@@ -18,7 +18,7 @@
     "sirket": "AppNava",
     "domain": null,
     "ulke": "TR",
-    "turk": false,
+    "turk": true,
     "tur_tipi": "bilinmiyor",
     "tutar": {
       "deger": 2300000,
