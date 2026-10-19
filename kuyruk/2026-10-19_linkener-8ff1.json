@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-19_linkener-8ff1",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Linkener",
+    "domain": "linkener.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 7500000,
+      "birim": "EUR",
+      "usd": 8100000
+    },
+    "lider": "Klima Energy Transition Fund",
+    "katilanlar": [
+      "GoHub Ventures",
+      "Alantra’s"
+    ],
+    "kurucular": [
+      "José Ignacio Ruiz"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-19T10:39:59.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/19/linkener-secures-eur75m-to-expand-its-energy-management-platform/",
+      "baslik": "Linkener secures €7.5M to expand its energy management platform",
+      "tarih": "Mon, 19 Oct 2026 10:39:59 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Energy technology startup Linkener has raised €7.5 million in a funding round led by Klima Energy Transition Fund, Alantra’s energy transition fund, with existing shareholder GoHub Ventures remaining",
+      "kaynak_url": "https://tech.eu/2026/10/19/linkener-secures-eur75m-to-expand-its-energy-management-platform/"
+    }
+  ],
+  "olusturma": "2026-10-19T10:42:04.751Z"
+}

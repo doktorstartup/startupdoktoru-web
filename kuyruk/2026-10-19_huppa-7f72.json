@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-19_huppa-7f72",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Huppa",
+    "domain": "huppa.app",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": "Dutch tech companies Sentia",
+    "katilanlar": [
+      "TicketSwap",
+      "Moneybird",
+      "Keylane",
+      "Revue"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-19T06:10:35.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/amsterdams-huppa-raises-e1-million-to-build-an-operating-system-for-class-based-gyms-and-studios/",
+      "baslik": "Amsterdam’s Huppa raises €1 million to build an operating system for class-based gyms and studios",
+      "tarih": "Mon, 19 Oct 2026 06:10:35 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Huppa , an Amsterdam-based SportsTech startup offering an all-in-one platform for gyms, CrossFit boxes and studios, has secured €1 million in pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/amsterdams-huppa-raises-e1-million-to-build-an-operating-system-for-class-based-gyms-and-studios/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/amsterdams-huppa-raises-e1-million-to-build-an-operating-system-for-class-based-gyms-and-studios/"
+    }
+  ],
+  "olusturma": "2026-10-19T10:42:04.751Z"
+}

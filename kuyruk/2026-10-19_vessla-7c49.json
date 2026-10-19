@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-19_vessla-7c49",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Vessla",
+    "domain": "vessla.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2940000,
+      "birim": "EUR",
+      "usd": 3175200
+    },
+    "lider": "Seedcamp",
+    "katilanlar": [
+      "Inception Fund",
+      "Tiny VC"
+    ],
+    "kurucular": [
+      "Orman Gazvini"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-19T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/stockholms-vessla-exits-stealth-with-e2-94-million-to-bring-ai-agents-to-property-management/",
+      "baslik": "Stockholm’s Vessla exits stealth with €2.94 million to bring AI agents to property management",
+      "tarih": "Mon, 19 Oct 2026 07:00:52 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/19/vessla-exits-stealth-with-33m-to-bring-ai-agents-to-property-management/",
+      "baslik": "Vessla exits stealth with $3.3M to bring AI agents to property management",
+      "tarih": "Mon, 19 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Vessla , a Stockholm-based AI startup building an agentic operating system for real estate, has emerged from stealth with €2.94 million ($3.3 million) pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/stockholms-vessla-exits-stealth-with-e2-94-million-to-bring-ai-agents-to-property-management/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/stockholms-vessla-exits-stealth-with-e2-94-million-to-bring-ai-agents-to-property-management/"
+    }
+  ],
+  "olusturma": "2026-10-19T10:42:04.751Z"
+}

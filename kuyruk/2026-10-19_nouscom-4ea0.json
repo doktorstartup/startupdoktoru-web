@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-19_nouscom-4ea0",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Nouscom",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 120000000,
+      "birim": "EUR",
+      "usd": 129600000
+    },
+    "lider": "M Ventures",
+    "katilanlar": [
+      "European oncology financings reported in 2026",
+      "Angelini Ventures",
+      "Neva SGR",
+      "ESMO",
+      "EIB"
+    ],
+    "kurucular": [
+      "Marina Udier"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-19T08:52:38.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/switzerlands-nouscom-bags-e120-million-to-bring-innovative-cancer-immunotherapy-closer-to-clinical-trials/",
+      "baslik": "Switzerland&#8217;s Nouscom bags €120 million to bring innovative cancer immunotherapy closer to clinical trials",
+      "tarih": "Mon, 19 Oct 2026 08:52:38 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Basel-based Nouscom , a clinical-stage, cancer interception focused BioTech developing next-generation immunotherapies, today announced the closing of an oversubscribed €120 million ($135 million) Ser",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/switzerlands-nouscom-bags-e120-million-to-bring-innovative-cancer-immunotherapy-closer-to-clinical-trials/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/switzerlands-nouscom-bags-e120-million-to-bring-innovative-cancer-immunotherapy-closer-to-clinical-trials/"
+    }
+  ],
+  "olusturma": "2026-10-19T10:42:04.751Z"
+}

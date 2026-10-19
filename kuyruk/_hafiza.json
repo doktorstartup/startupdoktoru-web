@@ -1,11 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"chift.eu","ad":"chift","tarih":"2026-09-14","dosya":"2026-09-14_chift-d318.json"},
-  {"dom":"custodea.eu","ad":"custodea","tarih":"2026-09-14","dosya":"2026-09-14_custodea-5d61.json"},
-  {"dom":"tandemhealth.ai","ad":"tandem health","tarih":"2026-09-14","dosya":"2026-09-14_tandem-health-752a.json"},
-  {"dom":null,"ad":"ainative","tarih":"2026-09-14","dosya":"2026-09-14_ainative-8741.json"},
-  {"dom":"fermlabs.com","ad":"ferm labs","tarih":"2026-09-14","dosya":"2026-09-14_ferm-labs-5bbf.json"},
-  {"dom":"freyaindustries.com","ad":"freya industries","tarih":"2026-09-14","dosya":"2026-09-14_freya-industries-63d7.json"},
-  {"dom":"open-cosmos.com","ad":"open cosmos","tarih":"2026-09-14","dosya":"2026-09-14_open-cosmos-082a.json"},
   {"dom":"originalvoices.ai","ad":"originalvoices","tarih":"2026-09-15","dosya":"2026-09-15_originalvoices-5d81.json"},
   {"dom":null,"ad":"legaltech enforceshield","tarih":"2026-09-15","dosya":"2026-09-15_legaltech-enforceshield-e207.json"},
   {"dom":"depotcharge.com","ad":"depotcharge","tarih":"2026-09-15","dosya":"2026-09-15_depotcharge-ec8a.json"},
@@ -238,5 +231,9 @@
   {"dom":null,"ad":"dj reinier zonneveld","tarih":"2026-10-16","dosya":"2026-10-16_dj-reinier-zonneveld-e1c3.json"},
   {"dom":null,"ad":"oxford","tarih":"2026-10-16","dosya":"2026-10-16_oxford-e3e4.json"},
   {"dom":"mueon.com","ad":"mueon","tarih":"2026-10-16","dosya":"2026-10-16_mueon-7cfd.json"},
-  {"dom":"north.cloud","ad":"north","tarih":"2026-10-16","dosya":"2026-10-16_north-49b7.json"}
+  {"dom":"north.cloud","ad":"north","tarih":"2026-10-16","dosya":"2026-10-16_north-49b7.json"},
+  {"dom":"linkener.com","ad":"linkener","tarih":"2026-10-19","dosya":"2026-10-19_linkener-8ff1.json"},
+  {"dom":"vessla.ai","ad":"vessla","tarih":"2026-10-19","dosya":"2026-10-19_vessla-7c49.json"},
+  {"dom":null,"ad":"nouscom","tarih":"2026-10-19","dosya":"2026-10-19_nouscom-4ea0.json"},
+  {"dom":"huppa.app","ad":"huppa","tarih":"2026-10-19","dosya":"2026-10-19_huppa-7f72.json"}
 ]}
