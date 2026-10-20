@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_town-a901",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Town",
+    "domain": "town.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 108000000,
+      "birim": "USD",
+      "usd": 108000000
+    },
+    "lider": "Forerunner Ventures",
+    "katilanlar": [
+      "Better Tomorrow Ventures",
+      "First Round Capital",
+      "Scribble Ventures",
+      "Sparked Ventures",
+      "Serena Ventures",
+      "Menlo Ventures",
+      "Josh Silverman",
+      "Brendan Foody",
+      "Taro Fukuyama",
+      "Precedent.vc",
+      "Scott Belsky",
+      "Steve Bartel"
+    ],
+    "kurucular": [
+      "Jean-Denis Greze",
+      "Tony Vincent"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/20/yapay-zeka-destekli-is-asistanlari-gelistiren-town-108-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli iş asistanları geliştiren Town, 108 milyon dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli iş asistanları geliştiren Town , 108 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/yapay-zeka-destekli-is-asistanlari-gelistiren-town-108-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/yapay-zeka-destekli-is-asistanlari-gelistiren-town-108-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}

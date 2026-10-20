@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_daytona-71ec",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Daytona",
+    "domain": "daytona.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 60000000,
+      "birim": "USD",
+      "usd": 60000000
+    },
+    "lider": "FirstMark",
+    "katilanlar": [
+      "Patrick Collison",
+      "Aravind Srinivas",
+      "Adam D’Angelo",
+      "Brendan Foody",
+      "Olivier Pomel",
+      "Tobi Lütke",
+      "Eric Yuan"
+    ],
+    "kurucular": [
+      "Ivan Burazin"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T14:08:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/20/daytona-hits-1b-valuation-with-60m-series-b-for-ai-agent-cloud/",
+      "baslik": "Daytona hits $1B valuation with $60M Series B for AI agent cloud",
+      "tarih": "Tue, 20 Oct 2026 14:08:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Daytona , a company developing cloud infrastructure for AI agents, has raised $60 million in a Series B funding round at a $1 billion valuation, bringing its total funding to $91 million.",
+      "kaynak_url": "https://tech.eu/2026/10/20/daytona-hits-1b-valuation-with-60m-series-b-for-ai-agent-cloud/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://tech.eu/2026/10/20/daytona-hits-1b-valuation-with-60m-series-b-for-ai-agent-cloud/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}

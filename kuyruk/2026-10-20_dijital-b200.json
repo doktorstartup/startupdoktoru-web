@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_dijital-b200",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Dijital",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "USD",
+      "usd": 1000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Beksultanhozha Anuarov"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T11:01:23.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/dijital-yatirim-platformu-paidax-domino-ventures-katildigi-turda-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Dijital yatırım platformu Paidax, DOMiNO Ventures’ın katıldığı turda 1 milyon dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 11:01:23 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Orta Asya merkezli dijital yatırım platformu Paidax , DOMiNO Ventures, Philip Capital, White Hill Capital ve Aloqa Ventures’ın katılımıyla gerçekleşen turda 1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/dijital-yatirim-platformu-paidax-domino-ventures-katildigi-turda-1-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}

@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_flow-games-d5fa",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Flow Games",
+    "domain": "flowgames.net",
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 49000000,
+      "birim": "USD",
+      "usd": 49000000
+    },
+    "lider": "Arcadia Gaming Partners",
+    "katilanlar": [
+      "Ludus Ventures"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-20T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/yerli-mobil-oyun-studyosu-flow-games-49-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yerli mobil oyun stüdyosu Flow Games, 49 milyon dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "oyununun yaratıcısı Flow Games; Tencent ve Arcadia Gaming Partners gibi isimlerden toplam 49 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/yerli-mobil-oyun-studyosu-flow-games-49-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}

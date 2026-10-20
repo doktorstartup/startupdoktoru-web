@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_neolix-7fa7",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Neolix",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 400000000,
+      "birim": "USD",
+      "usd": 400000000
+    },
+    "lider": "Boyu Capital",
+    "katilanlar": [
+      "Granite Asia Capital",
+      "Monolith Management",
+      "AEF NextGen Fund",
+      "Trustar Capital",
+      "Stone Venture",
+      "Vertex"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-20T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/20/surucusuz-teslimat-araclari-gelistiren-neolix-400-milyon-dolar-yatirim-aldi/",
+      "baslik": "Sürücüsüz teslimat araçları geliştiren Neolix, 400 milyon dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sürücüsüz teslimat araçları geliştiren Neolix , 400 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/surucusuz-teslimat-araclari-gelistiren-neolix-400-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "E serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/surucusuz-teslimat-araclari-gelistiren-neolix-400-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_tolan-94c7",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Tolan",
+    "domain": "tolans.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 30000000,
+      "birim": "USD",
+      "usd": 30000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Union Square Ventures",
+      "Khosla Ventures",
+      "Homebrew"
+    ],
+    "kurucular": [
+      "Evan Goldschmidt",
+      "Ajay Mehta",
+      "Quinten Farmer"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/20/yapay-zeka-destekli-asistan-gelistiren-tolan-30-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli asistan geliştiren Tolan, 30 milyon dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "ABD merkezli şirketin 30 milyon dolarlık yatırım turunda Union Square Ventures, Khosla Ventures ve Homebrew yer aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/yapay-zeka-destekli-asistan-gelistiren-tolan-30-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T18:26:33.930Z"
+}
