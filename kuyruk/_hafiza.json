@@ -1,20 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"originalvoices.ai","ad":"originalvoices","tarih":"2026-09-15","dosya":"2026-09-15_originalvoices-5d81.json"},
-  {"dom":null,"ad":"legaltech enforceshield","tarih":"2026-09-15","dosya":"2026-09-15_legaltech-enforceshield-e207.json"},
-  {"dom":"depotcharge.com","ad":"depotcharge","tarih":"2026-09-15","dosya":"2026-09-15_depotcharge-ec8a.json"},
-  {"dom":"boxd.sh","ad":"boxd","tarih":"2026-09-15","dosya":"2026-09-15_boxd-bfb7.json"},
-  {"dom":null,"ad":"crm","tarih":"2026-09-15","dosya":"2026-09-15_crm-ed44.json"},
-  {"dom":null,"ad":"facing","tarih":"2026-09-15","dosya":"2026-09-15_facing-86d0.json"},
-  {"dom":null,"ad":"enforceshield","tarih":"2026-09-15","dosya":"2026-09-15_enforceshield-4465.json"},
-  {"dom":"zero.inc","ad":"zero","tarih":"2026-09-15","dosya":"2026-09-15_zero-b0be.json"},
-  {"dom":"euclyd.ai","ad":"euclyd","tarih":"2026-09-15","dosya":"2026-09-15_euclyd-41cb.json"},
-  {"dom":"academyai.co","ad":"academyai","tarih":"2026-09-15","dosya":"2026-09-15_academyai-588c.json"},
-  {"dom":"isometric.com","ad":"isometric","tarih":"2026-09-15","dosya":"2026-09-15_isometric-fcd4.json"},
-  {"dom":"jackandjill.ai","ad":"jack jill","tarih":"2026-09-15","dosya":"2026-09-15_jack-jill-9e9a.json"},
-  {"dom":null,"ad":"unicorn","tarih":"2026-09-15","dosya":"2026-09-15_unicorn-1143.json"},
-  {"dom":"cornelis.com","ad":"cornelis","tarih":"2026-09-15","dosya":"2026-09-15_cornelis-e7e0.json"},
-  {"dom":"exein.io","ad":"exein","tarih":"2026-09-15","dosya":"2026-09-15_exein-e42d.json"},
-  {"dom":null,"ad":"startup","tarih":"2026-09-15","dosya":"2026-09-15_startup-9432.json"},
   {"dom":"etfbook.com","ad":"etfbook","tarih":"2026-09-16","dosya":"2026-09-16_etfbook-5f6c.json"},
   {"dom":"integral.de","ad":"integral","tarih":"2026-09-16","dosya":"2026-09-16_integral-ec73.json"},
   {"dom":"acoubatt.ai","ad":"acoubatt","tarih":"2026-09-16","dosya":"2026-09-16_acoubatt-cce6.json"},
@@ -235,5 +219,11 @@
   {"dom":"linkener.com","ad":"linkener","tarih":"2026-10-19","dosya":"2026-10-19_linkener-8ff1.json"},
   {"dom":"vessla.ai","ad":"vessla","tarih":"2026-10-19","dosya":"2026-10-19_vessla-7c49.json"},
   {"dom":null,"ad":"nouscom","tarih":"2026-10-19","dosya":"2026-10-19_nouscom-4ea0.json"},
-  {"dom":"huppa.app","ad":"huppa","tarih":"2026-10-19","dosya":"2026-10-19_huppa-7f72.json"}
+  {"dom":"huppa.app","ad":"huppa","tarih":"2026-10-19","dosya":"2026-10-19_huppa-7f72.json"},
+  {"dom":"coherencequantum.tech","ad":"coherence quantum","tarih":"2026-10-20","dosya":"2026-10-20_coherence-quantum-5741.json"},
+  {"dom":null,"ad":"blackwall","tarih":"2026-10-20","dosya":"2026-10-20_blackwall-1507.json"},
+  {"dom":"ganiga.ai","ad":"ganiga","tarih":"2026-10-20","dosya":"2026-10-20_ganiga-f205.json"},
+  {"dom":"xrlabs.ai","ad":"xrlabs","tarih":"2026-10-20","dosya":"2026-10-20_xrlabs-dc8c.json"},
+  {"dom":"plinto.ai","ad":"plinto","tarih":"2026-10-20","dosya":"2026-10-20_plinto-534e.json"},
+  {"dom":"tenstorrent.com","ad":"tenstorrent","tarih":"2026-10-20","dosya":"2026-10-20_tenstorrent-61fb.json"}
 ]}

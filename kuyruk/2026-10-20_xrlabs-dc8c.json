@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_xrlabs-dc8c",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "XRlabs",
+    "domain": "xrlabs.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7480000,
+      "birim": "EUR",
+      "usd": 8078400
+    },
+    "lider": "Playground Global",
+    "katilanlar": [
+      "Eka Ventures"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-20T07:01:33.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/london-based-surgical-intelligence-company-xrlabs-raises-e7-48-million-to-bring-ai-into-the-operating-room/",
+      "baslik": "London-based “Surgical Intelligence” company XRlabs raises €7.48 million to bring AI into the operating room",
+      "tarih": "Tue, 20 Oct 2026 07:01:33 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "XRlabs , the London-based Surgical Intelligence company built by surgeons for surgeons, has raised €7.48 million ($8.4 million) in Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/london-based-surgical-intelligence-company-xrlabs-raises-e7-48-million-to-bring-ai-into-the-operating-room/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/london-based-surgical-intelligence-company-xrlabs-raises-e7-48-million-to-bring-ai-into-the-operating-room/"
+    }
+  ],
+  "olusturma": "2026-10-20T09:58:40.001Z"
+}

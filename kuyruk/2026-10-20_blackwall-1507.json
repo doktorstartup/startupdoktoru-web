@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_blackwall-1507",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Blackwall",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Tera Ventures",
+      "Dawn Capital",
+      "MMC Ventures"
+    ],
+    "kurucular": [
+      "Nikita Rozenberg"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T08:38:48.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/20/blackwall-hits-2-2b-valuation-with-100m-series-c-just-weeks-after-joining-estonia-s-unicorn-club/",
+      "baslik": "Blackwall hits $2.2B valuation with $100M Series C just weeks after joining Estonia's unicorn club",
+      "tarih": "Tue, 20 Oct 2026 08:38:48 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Web traffic management platform Blackwall today announced it has raised $100 million in Series C at a valuation of $2.2 billion.",
+      "kaynak_url": "https://tech.eu/2026/10/20/blackwall-hits-2-2b-valuation-with-100m-series-c-just-weeks-after-joining-estonia-s-unicorn-club/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/10/20/blackwall-hits-2-2b-valuation-with-100m-series-c-just-weeks-after-joining-estonia-s-unicorn-club/"
+    }
+  ],
+  "olusturma": "2026-10-20T09:58:40.001Z"
+}

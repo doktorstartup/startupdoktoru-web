@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_plinto-534e",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Plinto",
+    "domain": "plinto.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2900000,
+      "birim": "EUR",
+      "usd": 3132000
+    },
+    "lider": "People Ventures",
+    "katilanlar": [
+      "Emblem"
+    ],
+    "kurucular": [
+      "Jakob Nielsen",
+      "Nermina Suljevic",
+      "Sebastian Rehnby"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-20T06:01:36.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/copenhagens-plinto-raises-e2-9-million-to-help-finance-teams-catch-and-fix-errors-with-ai-agents/",
+      "baslik": "Copenhagen’s Plinto raises €2.9 million to help finance teams catch and fix errors with AI agents",
+      "tarih": "Tue, 20 Oct 2026 06:01:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Plinto , a Copenhagen-based startup building AI for real-time controlling, has secured €2.9 million in pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/copenhagens-plinto-raises-e2-9-million-to-help-finance-teams-catch-and-fix-errors-with-ai-agents/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/copenhagens-plinto-raises-e2-9-million-to-help-finance-teams-catch-and-fix-errors-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-10-20T09:58:40.001Z"
+}

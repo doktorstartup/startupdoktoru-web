@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-20_tenstorrent-61fb",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Tenstorrent",
+    "domain": "tenstorrent.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1500000000,
+      "birim": "USD",
+      "usd": 1500000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Fidelity Management & Research Company",
+      "Tether Investments 'ın",
+      "Cadence Ventures",
+      "Morgan Stanley",
+      "Trace Capital",
+      "Innovation X",
+      "ARK Invest",
+      "Eclipse",
+      "Sandisk"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-20T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/20/yapay-zeka-cip-girisimi-tenstorrent-15-milyar-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka çip girişimi Tenstorrent, 1,5 milyar dolar yatırım aldı",
+      "tarih": "Tue, 20 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka çipleri geliştiren Tenstorrent , Seri E yatırım turunda 1,5 milyar dolar yatırım aldı .",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/yapay-zeka-cip-girisimi-tenstorrent-15-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri E",
+      "kaynak_url": "https://webrazzi.com/2026/10/20/yapay-zeka-cip-girisimi-tenstorrent-15-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-20T09:58:40.001Z"
+}
