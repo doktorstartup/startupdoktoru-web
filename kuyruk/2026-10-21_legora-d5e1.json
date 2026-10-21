@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_legora-d5e1",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Legora",
+    "domain": "legora.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 70600000,
+      "birim": "EUR",
+      "usd": 76248000
+    },
+    "lider": "Atreides Management",
+    "katilanlar": [
+      "Fidelity Management & Research Company",
+      "Glade Brook Capital Partners",
+      "European legal AI",
+      "Capital Research",
+      "Baron Capital",
+      "Lawhive"
+    ],
+    "kurucular": [
+      "Max Junestrand"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T14:00:47.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/theres-no-stopping-legora-e489-million-for-stockholms-legaltech-unicorn/",
+      "baslik": "There&#8217;s no stopping Legora &#8211; €489 million for Stockholm&#8217;s LegalTech Unicorn",
+      "tarih": "Wed, 21 Oct 2026 14:00:47 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The Stockholm-based company raised €70.6 million in a Series B in May 2025 at a €596 million valuation, before a €42 million extension to its Series D in April 2026 brought that round to €513 million",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/theres-no-stopping-legora-e489-million-for-stockholms-legaltech-unicorn/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/theres-no-stopping-legora-e489-million-for-stockholms-legaltech-unicorn/"
+    }
+  ],
+  "olusturma": "2026-10-21T18:33:57.276Z"
+}

@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_go-eve-f510",
+  "durum": "hazir",
+  "puan": 47,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Go Eve",
+    "domain": "goeve.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 750000,
+      "birim": "GBP",
+      "usd": 952500
+    },
+    "lider": "Go Eve’s engineering team in Wolverhampton",
+    "katilanlar": [
+      "UK"
+    ],
+    "kurucular": [
+      "John Goodbody"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T10:08:48.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/21/go-eve-secures-ps750k-to-advance-its-dockchain-ev-charging-technology/",
+      "baslik": "Go Eve secures £750K to advance its DockChain EV charging technology",
+      "tarih": "Wed, 21 Oct 2026 10:08:48 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Go Eve , a joint spin-out from University College Dublin (UCD) and Imperial College London, has secured £750,000 in funding from Innovate UK and private investors to further develop its electric vehic",
+      "kaynak_url": "https://tech.eu/2026/10/21/go-eve-secures-ps750k-to-advance-its-dockchain-ev-charging-technology/"
+    }
+  ],
+  "olusturma": "2026-10-21T18:33:57.276Z"
+}

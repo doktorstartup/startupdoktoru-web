@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_opply-a568",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Opply",
+    "domain": "opply.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 7500000,
+      "birim": "USD",
+      "usd": 7500000
+    },
+    "lider": "Chalfen Ventures",
+    "katilanlar": [
+      "Entrepreneurs First",
+      "Ventures Together",
+      "In This Together",
+      "Index Ventures",
+      "Anthemis"
+    ],
+    "kurucular": [
+      "Helen Murphy",
+      "Martin Postel"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/21/opply-raises-75m-to-expand-its-agentic-ai-platform-for-cpg-brands/",
+      "baslik": "Opply raises $7.5M to expand its agentic AI platform for CPG brands",
+      "tarih": "Wed, 21 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Opply , a company developing an AI-powered operating platform for consumer packaged goods (CPG) brands, has raised $7.5 million in a funding round led by Chalfen Ventures , with participation from Ind",
+      "kaynak_url": "https://tech.eu/2026/10/21/opply-raises-75m-to-expand-its-agentic-ai-platform-for-cpg-brands/"
+    }
+  ],
+  "olusturma": "2026-10-21T18:33:57.276Z"
+}

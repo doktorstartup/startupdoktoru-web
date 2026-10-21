@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_photon-bridge-2752",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Photon Bridge",
+    "domain": "photonbridge.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "EUR",
+      "usd": 10800000
+    },
+    "lider": "Amadeus APEX Technology Fund",
+    "katilanlar": [
+      "Brabant Development Agency (BOM)",
+      "Innovation Industries",
+      "360 Capital",
+      "Faber"
+    ],
+    "kurucular": [
+      "Rui Santos",
+      "Xaveer Leijtens"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T10:21:26.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/eindhoven-based-photon-bridge-raises-e10-million-to-build-optical-engines-for-ai-and-telecom/",
+      "baslik": "Eindhoven-based Photon Bridge raises €10 million to build optical engines for AI and telecom",
+      "tarih": "Wed, 21 Oct 2026 10:56:50 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/21/dutch-photonics-startup-photon-bridge-raises-eur10m-to-tackle-ais-looming-laser-bottleneck/",
+      "baslik": "Dutch photonics startup Photon Bridge raises €10M to tackle AI's looming laser bottleneck",
+      "tarih": "Wed, 21 Oct 2026 10:21:26 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Photon Bridge (formerly Photon IP), an Eindhoven-based startup building optical engines for AI and telecom, has raised €10 million to tackle an emerging bottleneck in AI infrastructure: producing the",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/eindhoven-based-photon-bridge-raises-e10-million-to-build-optical-engines-for-ai-and-telecom/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/eindhoven-based-photon-bridge-raises-e10-million-to-build-optical-engines-for-ai-and-telecom/"
+    }
+  ],
+  "olusturma": "2026-10-21T18:33:57.276Z"
+}
