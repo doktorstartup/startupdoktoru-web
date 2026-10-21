@@ -24,6 +24,7 @@ import {
   Rocket,
   Handshake,
   MessageSquare,
+  TrendingUp,
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -219,6 +220,11 @@ export default function AdminLayout({
       name: "Eşleştirme",
       href: "/admin/match",
       icon: Handshake,
+    },
+    {
+      name: "INVEST Hunisi",
+      href: "/admin/invest-funnel",
+      icon: TrendingUp,
     },
   ];
 
