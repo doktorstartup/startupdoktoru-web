@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_estatemin-9ed5",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "EstateMin",
+    "domain": "estatemin.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-21T06:49:43.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/former-international-boxers-legaltech-startup-estatemin-raises-e1-million-to-scale-in-the-us/",
+      "baslik": "Former international boxer’s LegalTech startup EstateMin raises €1 million to scale in the US",
+      "tarih": "Wed, 21 Oct 2026 06:49:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "EstateMin , an Irish-founded LegalTech startup helping trust and estate law firms manage estate values with its AI-powered platform, has secured €1 million in pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/former-international-boxers-legaltech-startup-estatemin-raises-e1-million-to-scale-in-the-us/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/former-international-boxers-legaltech-startup-estatemin-raises-e1-million-to-scale-in-the-us/"
+    }
+  ],
+  "olusturma": "2026-10-21T10:03:55.839Z"
+}

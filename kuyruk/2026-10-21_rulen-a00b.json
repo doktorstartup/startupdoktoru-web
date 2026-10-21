@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_rulen-a00b",
+  "durum": "hazir",
+  "puan": 48,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Rulen",
+    "domain": "rulen.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1800000,
+      "birim": "EUR",
+      "usd": 1944000
+    },
+    "lider": "VC Partners",
+    "katilanlar": [
+      "Growth Engine",
+      "AME Ventures",
+      "Zest"
+    ],
+    "kurucular": [
+      "Simone Hong",
+      "Claudio Cama"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/21/rulen-secures-eur18m-to-turn-tax-rules-into-action-with-ai/",
+      "baslik": "Rulen secures €1.8M to turn tax rules into action with AI",
+      "tarih": "Wed, 21 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Italian AI startup Rulen (formerly LexSA) has raised €1.8 million in its first funding round to further develop its AI-powered platform for the tax and accounting sector and support its commercial exp",
+      "kaynak_url": "https://tech.eu/2026/10/21/rulen-secures-eur18m-to-turn-tax-rules-into-action-with-ai/"
+    }
+  ],
+  "olusturma": "2026-10-21T10:03:55.839Z"
+}

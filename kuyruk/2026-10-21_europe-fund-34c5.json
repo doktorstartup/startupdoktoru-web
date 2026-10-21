@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_europe-fund-34c5",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Europe Fund",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 250000000,
+      "birim": "USD",
+      "usd": 250000000
+    },
+    "lider": "Scaleup Europe Fund",
+    "katilanlar": [
+      "World Innovation Labs",
+      "EQT"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-21T08:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/21/scaleup-europe-fund-leads-ps250m-funding-round-in-pigment/",
+      "baslik": "Scaleup Europe Fund leads $250M funding round in Pigment",
+      "tarih": "Wed, 21 Oct 2026 08:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French enterprise software startup Pigment has raised $250m at a $2.3bn valuation, it said today, in a funding round led by the EU's new €5bn ($5.6bn) investment fund aimed at scaling up future Europe",
+      "kaynak_url": "https://tech.eu/2026/10/21/scaleup-europe-fund-leads-ps250m-funding-round-in-pigment/"
+    },
+    {
+      "metin": "Series E",
+      "kaynak_url": "https://tech.eu/2026/10/21/scaleup-europe-fund-leads-ps250m-funding-round-in-pigment/"
+    }
+  ],
+  "olusturma": "2026-10-21T10:03:55.839Z"
+}

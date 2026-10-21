@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-10-21_skyfly-c97d",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Skyfly",
+    "domain": "skyfly.aero",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 8910000,
+      "birim": "EUR",
+      "usd": 9622800
+    },
+    "lider": "HICO Investment Group",
+    "katilanlar": [
+      "Archangel",
+      "Europe’s"
+    ],
+    "kurucular": [
+      "Michael Thompson"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-21T09:48:47.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/",
+      "baslik": "Britain’s Skyfly raises €8.91 million to bring its two-seat Axe eVTOL to market and develop Longbow for defence",
+      "tarih": "Wed, 21 Oct 2026 09:48:47 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Skyfly Technologies , the British developer of electric and hybrid-electric vertical take-off aircraft, has closed an €8.91 million ($10 million) Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/britains-skyfly-raises-e8-91-million-to-bring-its-two-seat-axe-evtol-to-market-and-develop-longbow-for-defence/"
+    }
+  ],
+  "olusturma": "2026-10-21T10:03:55.839Z"
+}
