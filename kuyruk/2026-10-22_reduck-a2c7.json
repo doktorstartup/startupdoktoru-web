@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_reduck-a2c7",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Reduck",
+    "domain": "reduck.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "USD",
+      "usd": 3000000
+    },
+    "lider": "Daphni",
+    "katilanlar": [
+      "Drysdale Ventures",
+      "Galion.exe"
+    ],
+    "kurucular": [
+      "Daniel Huynh",
+      "Louis Abraham",
+      "Raphaël Millet"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/reduck-secures-3m-to-make-web-automation-faster-for-ai-agents/",
+      "baslik": "Reduck secures $3M to make web automation faster for AI agents",
+      "tarih": "Thu, 22 Oct 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French-American AI startup Reduck has raised $3 million in a pre-seed funding round led by Daphni , with participation from Drysdale Ventures and Galion.exe .",
+      "kaynak_url": "https://tech.eu/2026/10/22/reduck-secures-3m-to-make-web-automation-faster-for-ai-agents/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/22/reduck-secures-3m-to-make-web-automation-faster-for-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-10-22T10:05:36.093Z"
+}

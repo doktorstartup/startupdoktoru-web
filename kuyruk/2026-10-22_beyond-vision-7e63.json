@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_beyond-vision-7e63",
+  "durum": "hazir",
+  "puan": 54,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Beyond Vision",
+    "domain": "beyond-vision.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 28000000,
+      "birim": "EUR",
+      "usd": 30240000
+    },
+    "lider": "Dário Pedro",
+    "katilanlar": [
+      "Luís Miguel Campos"
+    ],
+    "kurucular": [
+      "Dário Pedro"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T09:02:43.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/portuguese-drone-maker-beyond-vision-raises-over-eur28m-to-scale-production-and-global-expansion/",
+      "baslik": "Portuguese drone maker Beyond Vision raises over €28M to scale production and global expansion",
+      "tarih": "Thu, 22 Oct 2026 09:33:37 +0000"
+    },
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/lisbons-beyond-vision-raises-over-e28-million-to-scale-ai-drones-for-civilian-and-defence-markets/",
+      "baslik": "Lisbon’s Beyond Vision raises over €28 million to scale AI drones for civilian and defence markets",
+      "tarih": "Thu, 22 Oct 2026 09:02:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Unmanned aerial systems and vehicles maker Beyond Vision has raised over €28 million, co-led by Índico Capital Partners and Lince Capital , with a follow-on investment from ActiveCap, a shareholder si",
+      "kaynak_url": "https://tech.eu/2026/10/22/portuguese-drone-maker-beyond-vision-raises-over-eur28m-to-scale-production-and-global-expansion/"
+    },
+    {
+      "metin": "Beyond Vision , a Lisbon-based manufacturer of unmanned aerial systems and vehicles (drones), announced today the completion of an investment round of over €28 million.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/lisbons-beyond-vision-raises-over-e28-million-to-scale-ai-drones-for-civilian-and-defence-markets/"
+    }
+  ],
+  "olusturma": "2026-10-22T10:05:36.093Z"
+}

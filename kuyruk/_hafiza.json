@@ -1,15 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"syte.ms","ad":"syte","tarih":"2026-09-17","dosya":"2026-09-17_syte-c5a8.json"},
-  {"dom":"treble.tech","ad":"treble","tarih":"2026-09-17","dosya":"2026-09-17_treble-a12a.json"},
-  {"dom":"logibot.eu","ad":"logibot","tarih":"2026-09-17","dosya":"2026-09-17_logibot-c5f9.json"},
-  {"dom":null,"ad":"microlub","tarih":"2026-09-17","dosya":"2026-09-17_microlub-c1df.json"},
-  {"dom":"creem.io","ad":"creem","tarih":"2026-09-17","dosya":"2026-09-17_creem-8548.json"},
-  {"dom":"nearbycomputing.com","ad":"nearby computing","tarih":"2026-09-17","dosya":"2026-09-17_nearby-computing-80f5.json"},
-  {"dom":null,"ad":"munsterbased","tarih":"2026-09-17","dosya":"2026-09-17_munsterbased-93dc.json"},
-  {"dom":null,"ad":"reykjavikbased treble","tarih":"2026-09-17","dosya":"2026-09-17_reykjavikbased-treble-72f1.json"},
-  {"dom":"healthforce.ai","ad":"health force","tarih":"2026-09-17","dosya":"2026-09-17_health-force-0ecf.json"},
-  {"dom":"magentic.com","ad":"magentic","tarih":"2026-09-17","dosya":"2026-09-17_magentic-56fc.json"},
-  {"dom":"ryftpay.com","ad":"ryft","tarih":"2026-09-17","dosya":"2026-09-17_ryft-2ba3.json"},
   {"dom":"arcos.eu","ad":"arcos","tarih":"2026-09-18","dosya":"2026-09-18_arcos-60a7.json"},
   {"dom":"phosphoenix.nl","ad":"phosphoenix","tarih":"2026-09-18","dosya":"2026-09-18_phosphoenix-8d17.json"},
   {"dom":"tusk-ic.com","ad":"tusk ic","tarih":"2026-09-18","dosya":"2026-09-18_tusk-ic-fff7.json"},
@@ -228,5 +217,10 @@
   {"dom":"opply.com","ad":"opply","tarih":"2026-10-21","dosya":"2026-10-21_opply-a568.json"},
   {"dom":"photonbridge.com","ad":"photon bridge","tarih":"2026-10-21","dosya":"2026-10-21_photon-bridge-2752.json"},
   {"dom":"goeve.com","ad":"go eve","tarih":"2026-10-21","dosya":"2026-10-21_go-eve-f510.json"},
-  {"dom":"legora.com","ad":"legora","tarih":"2026-10-21","dosya":"2026-10-21_legora-d5e1.json"}
+  {"dom":"legora.com","ad":"legora","tarih":"2026-10-21","dosya":"2026-10-21_legora-d5e1.json"},
+  {"dom":"beyond-vision.com","ad":"beyond vision","tarih":"2026-10-22","dosya":"2026-10-22_beyond-vision-7e63.json"},
+  {"dom":"enact-intelligence.com","ad":"enact","tarih":"2026-10-22","dosya":"2026-10-22_enact-ce8a.json"},
+  {"dom":"reduck.ai","ad":"reduck","tarih":"2026-10-22","dosya":"2026-10-22_reduck-a2c7.json"},
+  {"dom":"rhymeq.com","ad":"rhymeq","tarih":"2026-10-22","dosya":"2026-10-22_rhymeq-8db1.json"},
+  {"dom":null,"ad":"deepseek","tarih":"2026-10-22","dosya":"2026-10-22_deepseek-38b5.json"}
 ]}

@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_enact-ce8a",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Enact",
+    "domain": "enact-intelligence.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 30000000,
+      "birim": "USD",
+      "usd": 30000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Hugging Face’s Thomas Wolf",
+      "Mensch",
+      "LeCun"
+    ],
+    "kurucular": [
+      "Manuel Yves Galliker"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T08:52:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/mistral-boss-and-yann-lecun-back-swiss-robotics-startup-enact-in-30m-pre-seed-round/",
+      "baslik": "Mistral boss and Yann LeCun back Swiss robotics startup Enact in $30M pre-seed round",
+      "tarih": "Thu, 22 Oct 2026 08:52:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swiss robotics startup Enact Intelligence has today emerged out of stealth, with a $30m pre-seed round and backing from two heavyweights from the French AI ecosystem, Mistral boss Arthur Mensch and Me",
+      "kaynak_url": "https://tech.eu/2026/10/22/mistral-boss-and-yann-lecun-back-swiss-robotics-startup-enact-in-30m-pre-seed-round/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/22/mistral-boss-and-yann-lecun-back-swiss-robotics-startup-enact-in-30m-pre-seed-round/"
+    }
+  ],
+  "olusturma": "2026-10-22T10:05:36.093Z"
+}

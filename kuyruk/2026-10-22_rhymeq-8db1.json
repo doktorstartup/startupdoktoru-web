@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_rhymeq-8db1",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "RhymeQ",
+    "domain": "rhymeq.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2200000,
+      "birim": "USD",
+      "usd": 2200000
+    },
+    "lider": "Ground State Ventures",
+    "katilanlar": [
+      "Freiraum Ventures",
+      "Vanagon Ventures",
+      "Plug",
+      "Play"
+    ],
+    "kurucular": [
+      "Daniel Volz",
+      "Tamás Varga",
+      "Christina Wu"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T07:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/rhymeq-emerges-from-stealth-with-22m-to-simplify-quantum-programming/",
+      "baslik": "RhymeQ emerges from stealth with $2.2M to simplify quantum programming",
+      "tarih": "Thu, 22 Oct 2026 07:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Quantum computing startup RhymeQ has emerged from stealth with a $2.2 million pre-seed funding round led by Ground State Ventures , with participation from Vanagon Ventures, Plug and Play, and Freirau",
+      "kaynak_url": "https://tech.eu/2026/10/22/rhymeq-emerges-from-stealth-with-22m-to-simplify-quantum-programming/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/10/22/rhymeq-emerges-from-stealth-with-22m-to-simplify-quantum-programming/"
+    }
+  ],
+  "olusturma": "2026-10-22T10:05:36.093Z"
+}
