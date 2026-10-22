@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_arke-telekom-e92a",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Arke Telekom",
+    "domain": "arketel.com",
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Barış Karadeniz",
+      "Tolga Numanoğlu"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T12:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/22/arke-telekom-act-venture-partners-tan-1-milyon-euro-yatirim-aldi/",
+      "baslik": "Arke Telekom, ACT Venture Partners'tan 1 milyon euro yatırım aldı",
+      "tarih": "Thu, 22 Oct 2026 12:15:00 +0000"
+    },
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/arke-telekom-lands-eur1m-from-act-venture-partners-to-advance-drone-communications/",
+      "baslik": "Arke Telekom lands €1M from ACT Venture Partners to advance drone communications",
+      "tarih": "Thu, 22 Oct 2026 14:05:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Savunma ve haberleşme teknolojileri geliştiren Arke Telekom , 1 milyon euro yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/22/arke-telekom-act-venture-partners-tan-1-milyon-euro-yatirim-aldi/"
+    },
+    {
+      "metin": "Arke Telekom , a company developing defence and communications technologies, has secured €1 million in funding from ACT VenturePartners , a venture capital firm focused on deeptech investments.",
+      "kaynak_url": "https://tech.eu/2026/10/22/arke-telekom-lands-eur1m-from-act-venture-partners-to-advance-drone-communications/"
+    }
+  ],
+  "olusturma": "2026-10-22T18:30:11.392Z"
+}

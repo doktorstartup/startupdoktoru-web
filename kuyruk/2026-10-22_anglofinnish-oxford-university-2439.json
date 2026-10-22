@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-22_anglofinnish-oxford-university-2439",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Anglo-Finnish Oxford University",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 12000000,
+      "birim": "EUR",
+      "usd": 12960000
+    },
+    "lider": null,
+    "katilanlar": [
+      "European Innovation Council (EIC) Fund",
+      "Transpose Capital"
+    ],
+    "kurucular": [
+      "Vishal Chatrath",
+      "Andrew Briggs",
+      "Oxford University",
+      "Natalia Ares",
+      "Dominic Lennon"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-22T11:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/10/22/anglo-finnish-oxford-university-quantum-spinout-raises-eur12m/",
+      "baslik": "Anglo-Finnish Oxford University quantum spinout QuantrolOx raises €12M",
+      "tarih": "Thu, 22 Oct 2026 11:20:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "An Anglo-Finnish University of Oxford quantum spinout has raised €12m in a funding round, it said today, as investment in the quantum sector continues to heat up.",
+      "kaynak_url": "https://tech.eu/2026/10/22/anglo-finnish-oxford-university-quantum-spinout-raises-eur12m/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/10/22/anglo-finnish-oxford-university-quantum-spinout-raises-eur12m/"
+    }
+  ],
+  "olusturma": "2026-10-22T18:30:11.392Z"
+}
