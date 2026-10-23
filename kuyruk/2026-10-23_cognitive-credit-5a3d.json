@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-10-23_cognitive-credit-5a3d",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Cognitive Credit",
+    "domain": "cognitivecredit.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 35730000,
+      "birim": "EUR",
+      "usd": 38588400
+    },
+    "lider": "Summit Partners",
+    "katilanlar": [
+      "ETFS Capital"
+    ],
+    "kurucular": [
+      "Robert Slater"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-23T09:45:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-cognitive-credit-lands-e35-73-million-to-scale-its-ai-and-data-platform-for-credit-markets/",
+      "baslik": "London’s Cognitive Credit lands €35.73 million to scale its AI and data platform for credit markets",
+      "tarih": "Fri, 23 Oct 2026 09:45:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Cognitive Credit , the London-based provider of corporate credit data, analytics and AI technology, has secured a €35.73 million ($40 million) strategic growth investment.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-cognitive-credit-lands-e35-73-million-to-scale-its-ai-and-data-platform-for-credit-markets/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-cognitive-credit-lands-e35-73-million-to-scale-its-ai-and-data-platform-for-credit-markets/"
+    }
+  ],
+  "olusturma": "2026-10-23T09:59:11.919Z"
+}

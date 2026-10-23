@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-23_edtech-intuitivo-9f82",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "EdTech Intuitivo",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1350000,
+      "birim": "EUR",
+      "usd": 1458000
+    },
+    "lider": "Caixa Capital",
+    "katilanlar": [
+      "Impact Innovation Fund",
+      "3xP Global"
+    ],
+    "kurucular": [
+      "Duarte Oliveira",
+      "Diogo Silva"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-23T06:25:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/",
+      "baslik": "Portuguese EdTech Intuitivo raises €1.35 million to ease teachers’ workload and expand into Brazil",
+      "tarih": "Fri, 23 Oct 2026 06:25:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Intuitivo , a Portuguese EdTech startup that helps lighten teachers’ administrative load, has raised €1.35 million in Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/portuguese-edtech-intuitivo-raises-e1-35-million-to-ease-teachers-workload-and-expand-into-brazil/"
+    }
+  ],
+  "olusturma": "2026-10-23T09:59:11.919Z"
+}
