@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-23_warp-d33d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Warp",
+    "domain": "warp.xyz",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 215000000,
+      "birim": "USD",
+      "usd": 215000000
+    },
+    "lider": "Lightspeed",
+    "katilanlar": [
+      "Menlo Ventures",
+      "Premji Invest",
+      "Lux Capital",
+      "Mayfield",
+      "IVP"
+    ],
+    "kurucular": [
+      "Manohar Paluri",
+      "Sol Reisberg",
+      "Kevin Weil",
+      "DJ Patil"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-23T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/23/yapay-zeka-destekli-ilac-gelistirme-girisimi-warp-215-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli ilaç geliştirme girişimi Warp, 215 milyon dolar yatırım aldı",
+      "tarih": "Fri, 23 Oct 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli ilaç geliştirme girişimi Warp , 215 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/23/yapay-zeka-destekli-ilac-gelistirme-girisimi-warp-215-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-23T18:15:56.333Z"
+}

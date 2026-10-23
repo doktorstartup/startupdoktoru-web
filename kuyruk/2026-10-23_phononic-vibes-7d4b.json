@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-10-23_phononic-vibes-7d4b",
+  "durum": "hazir",
+  "puan": 54,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Phononic Vibes",
+    "domain": "phononic-vibes.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 25000000,
+      "birim": "EUR",
+      "usd": 27000000
+    },
+    "lider": "Jolt Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Luca D'Alessandro",
+      "Giovanni Capellari"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-23T11:38:19.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/milans-phononic-vibes-secures-e25-million-to-expand-noise-control-tech-already-in-service-with-deutsche-bahn-and-in-mercedes-benz/",
+      "baslik": "Milan’s Phononic Vibes secures €25 million to expand noise control tech used by Deutsche Bahn and Mercedes-Benz",
+      "tarih": "Fri, 23 Oct 2026 11:38:19 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Phononic Vibes , a Milan-based noise management company that designs and manufactures noise and vibration products for rail, energy, industry, construction and mobility, has secured a €25 million fina",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/milans-phononic-vibes-secures-e25-million-to-expand-noise-control-tech-already-in-service-with-deutsche-bahn-and-in-mercedes-benz/"
+    }
+  ],
+  "olusturma": "2026-10-23T18:15:56.333Z"
+}
