@@ -21,15 +21,21 @@
     "turk": true,
     "tur_tipi": "bilinmiyor",
     "tutar": {
-      "deger": 49000000,
+      "deger": 46000000,
       "birim": "USD",
-      "usd": 49000000
+      "usd": 46000000
     },
-    "lider": "Arcadia Gaming Partners",
+    "lider": "Tencent",
     "katilanlar": [
+      "Makers Fund",
+      "Arcadia Gaming Partners",
       "Ludus Ventures"
     ],
-    "kurucular": [],
+    "kurucular": [
+      "Mehmet Emin Taşcı",
+      "Baturay Üstündağ",
+      "Aygün Kaplan"
+    ],
     "sektor": null,
     "tarih": "2026-10-20T14:00:00.000Z"
   },
@@ -38,10 +44,22 @@
   ],
   "kaynaklar": [
     {
+      "ad": "investgame",
+      "url": "https://investgame.net/news/tencent-leads-46m-round-in-flow-games-as-turkiye-out-raises-asia-pacific-and-north-america-in-mobile-game-funding/",
+      "baslik": "Tencent leads $46m round in Flow Games as Türkiye out-raises Asia-Pacific and North America in mobile game funding",
+      "tarih": "Sun, 18 Oct 2026 00:00:00 +0000"
+    },
+    {
       "ad": "swipeline",
       "url": "https://swipeline.co/yerli-mobil-oyun-studyosu-flow-games-49-milyon-dolar-yatirim-aldi/",
       "baslik": "Yerli mobil oyun stüdyosu Flow Games, 49 milyon dolar yatırım aldı",
       "tarih": "Tue, 20 Oct 2026 14:00:00 +0000"
+    },
+    {
+      "ad": "pocketgamer.biz",
+      "url": "https://www.pocketgamer.biz/flow-games-confirms-49m-in-total-funding-from-tencent-and-vc-investors/",
+      "baslik": "Flow Games confirms $49m in total funding from Tencent and VC investors",
+      "tarih": "Fri, 16 Oct 2026 00:00:00 +0000"
     }
   ],
   "alintilar": [

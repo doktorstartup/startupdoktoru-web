@@ -18,7 +18,7 @@
     "sirket": "Loops AI",
     "domain": "loopsai.com",
     "ulke": "TR",
-    "turk": false,
+    "turk": true,
     "tur_tipi": "seed",
     "tutar": {
       "deger": 3500000,
@@ -26,8 +26,15 @@
       "usd": 3500000
     },
     "lider": null,
-    "katilanlar": [],
+    "katilanlar": [
+      "a16z Speedrun",
+      "NTT DOCOMO",
+      "Connecticut Innovations",
+      "Monday Capital",
+      "Alumni Ventures"
+    ],
     "kurucular": [
+      "İlker Selim Zorluoğlu",
       "Ari Nazir",
       "Yusuf Bahadır"
     ],
