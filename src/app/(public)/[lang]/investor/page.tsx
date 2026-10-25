@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame, RefreshCw, Newspaper, ArrowRight, BadgeCheck, Star } from "lucide-react";
+import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame, RefreshCw, Newspaper, ArrowRight, BadgeCheck, Star, FileText, Maximize2 } from "lucide-react";
 import { supabase } from "../../../../lib/supabase";
 import ProfileCard, { type Investor } from "./ProfileCard";
 
@@ -16,6 +16,13 @@ type Startup = {
 async function token(): Promise<string> {
   const { data } = await supabase.auth.getSession();
   return data.session?.access_token || "";
+}
+
+// Google Drive dosya linkini gömülebilir önizleme URL'sine çevirir (/view → /preview). Drive değilse null.
+function driveEmbed(url: string | null): string | null {
+  if (!url) return null;
+  const m = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  return m ? `https://drive.google.com/file/d/${m[1]}/preview` : null;
 }
 
 const SKIP_REASONS = [
@@ -262,16 +269,43 @@ export default function InvestorPortal() {
                         {s.city && <span className="inline-flex items-center gap-1"><MapPin className="h-3.5 w-3.5" /> {s.city}</span>}
                       </div>
 
+                      {s.deck_url && (
+                        <div className="mt-5 rounded-xl border border-primary/25 bg-primary/[0.04] overflow-hidden">
+                          <div className="flex items-center justify-between gap-3 px-4 py-2.5 border-b border-primary/15">
+                            <span className="inline-flex items-center gap-2 text-sm font-bold text-foreground">
+                              <FileText className="h-4 w-4 text-primary" /> Pitch deck
+                              <span className="text-[11px] font-normal text-muted-foreground">· ~2 min read</span>
+                            </span>
+                            <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")}
+                              className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline shrink-0">
+                              <Maximize2 className="h-3.5 w-3.5" /> Open full deck
+                            </a>
+                          </div>
+                          {driveEmbed(s.deck_url) ? (
+                            <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")} className="block relative group">
+                              <iframe src={driveEmbed(s.deck_url)!} title={`${s.startup_name} deck`} className="w-full aspect-video bg-black/20 pointer-events-none" loading="lazy" />
+                              <span className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors">
+                                <span className="opacity-0 group-hover:opacity-100 transition-opacity inline-flex items-center gap-1.5 text-xs font-bold text-white bg-primary px-3 py-1.5 rounded-lg"><Maximize2 className="h-3.5 w-3.5" /> Open deck</span>
+                              </span>
+                            </a>
+                          ) : (
+                            <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")}
+                              className="flex items-center justify-center gap-2 py-6 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors">
+                              <FileText className="h-5 w-5" /> See the numbers behind {s.startup_name} — traction, model & the raise
+                            </a>
+                          )}
+                        </div>
+                      )}
+
                       <div className="mt-6 pt-5 border-t border-border/20">
                         {requested ? (
                           <div className="flex flex-wrap items-center justify-between gap-3">
                             <div className="flex items-center gap-2 text-sm font-semibold text-emerald-400 py-1.5">
                               <CheckCircle2 className="h-4 w-4" /> Meeting requested — we&apos;ll email you to set up the call
                             </div>
-                            <div className="flex items-center gap-2">
-                              {s.deck_url && <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")} className="btn btn-secondary btn-sm"><ExternalLink className="h-4 w-4" /> Deck</a>}
-                              {s.website && <a href={s.website} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "website")} className="btn btn-secondary btn-sm"><ExternalLink className="h-4 w-4" /> Website</a>}
-                            </div>
+                            {s.website && (
+                              <a href={s.website} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "website")} className="btn btn-secondary btn-sm"><ExternalLink className="h-4 w-4" /> Website</a>
+                            )}
                           </div>
                         ) : skippingId === s.id ? (
                           <div className="space-y-2.5">
@@ -293,13 +327,12 @@ export default function InvestorPortal() {
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <button onClick={() => act(s.id, "requested")} disabled={busyId === s.id} className="btn btn-primary flex-1 min-w-56">
-                                {busyId === s.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Handshake className="h-4 w-4" />} Request a meeting with {s.startup_name}
+                                {busyId === s.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Handshake className="h-4 w-4" />} Request a 15-min intro call
                               </button>
-                              {s.deck_url && <a href={s.deck_url} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "deck")} className="btn btn-secondary"><ExternalLink className="h-4 w-4" /> Deck</a>}
                               {s.website && <a href={s.website} target="_blank" rel="noreferrer" onClick={() => trackClick(s.id, "website")} className="btn btn-secondary"><ExternalLink className="h-4 w-4" /> Website</a>}
                             </div>
                             <div className="flex items-center justify-between gap-4 mt-3">
-                              <p className="text-xs text-muted-foreground">One click, no commitment — we coordinate the call with the founder.</p>
+                              <p className="text-xs text-muted-foreground">No commitment — we coordinate a short call with the founder. Reviewing the deck first? Take your time.</p>
                               <button onClick={() => setSkippingId(s.id)} disabled={busyId === s.id} className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground shrink-0">
                                 <X className="h-3.5 w-3.5" /> Not for me
                               </button>
@@ -348,7 +381,7 @@ export default function InvestorPortal() {
             <h2 className="text-lg font-extrabold mb-2">Before you go — meet {featured.startup_name}?</h2>
             <p className="text-sm text-muted-foreground">{featured.one_liner || "This founder was matched to your thesis."} One click and we&apos;ll coordinate a short intro call — no commitment.</p>
             <div className="flex items-center gap-2 mt-6">
-              <button onClick={() => { act(featured.id, "requested"); setExitOpen(false); }} className="btn btn-primary btn-sm flex-1"><Handshake className="h-4 w-4" /> Request a meeting</button>
+              <button onClick={() => { act(featured.id, "requested"); setExitOpen(false); }} className="btn btn-primary btn-sm flex-1"><Handshake className="h-4 w-4" /> Request a 15-min call</button>
               <button onClick={() => setExitOpen(false)} className="btn btn-secondary btn-sm">Not now</button>
             </div>
           </div>
