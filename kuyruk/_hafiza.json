@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"metrisenergy.com","ad":"metris energy","tarih":"2026-09-21","dosya":"2026-09-21_metris-energy-c6cd.json"},
-  {"dom":"unit1.studio","ad":"unit1 studio","tarih":"2026-09-21","dosya":"2026-09-21_unit1-studio-4db7.json"},
-  {"dom":"fintechos.com","ad":"fintechos","tarih":"2026-09-21","dosya":"2026-09-21_fintechos-4263.json"},
-  {"dom":"altislabs.com","ad":"altis labs","tarih":"2026-09-21","dosya":"2026-09-21_altis-labs-5ef6.json"},
-  {"dom":"vantora.us","ad":"vantora","tarih":"2026-09-21","dosya":"2026-09-21_vantora-47a2.json"},
-  {"dom":null,"ad":"audio","tarih":"2026-09-21","dosya":"2026-09-21_audio-e061.json"},
   {"dom":"verda.com","ad":"verda","tarih":"2026-09-22","dosya":"2026-09-22_verda-e9cc.json"},
   {"dom":"biolevate.com","ad":"biolevate","tarih":"2026-09-22","dosya":"2026-09-22_biolevate-7ac1.json"},
   {"dom":"getprimo.com","ad":"primo","tarih":"2026-09-22","dosya":"2026-09-22_primo-cce1.json"},
@@ -225,5 +219,7 @@
   {"dom":null,"ad":"edtech intuitivo","tarih":"2026-10-23","dosya":"2026-10-23_edtech-intuitivo-9f82.json"},
   {"dom":"phononic-vibes.com","ad":"phononic vibes","tarih":"2026-10-23","dosya":"2026-10-23_phononic-vibes-7d4b.json"},
   {"dom":"warhound.com","ad":"warhound","tarih":"2026-10-23","dosya":"2026-10-23_warhound-d6b4.json"},
-  {"dom":"warp.xyz","ad":"warp","tarih":"2026-10-23","dosya":"2026-10-23_warp-d33d.json"}
+  {"dom":"warp.xyz","ad":"warp","tarih":"2026-10-23","dosya":"2026-10-23_warp-d33d.json"},
+  {"dom":"sonexos.com","ad":"sonexos","tarih":"2026-10-26","dosya":"2026-10-26_sonexos-d99c.json"},
+  {"dom":"quointelligence.eu","ad":"quointelligence","tarih":"2026-10-26","dosya":"2026-10-26_quointelligence-3f2d.json"}
 ]}

@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-10-26_sonexos-d99c",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Sonexos",
+    "domain": "sonexos.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5400000,
+      "birim": "EUR",
+      "usd": 5832000
+    },
+    "lider": "Valquest Partners",
+    "katilanlar": [
+      "Robert Bosch Venture Capital GmbH"
+    ],
+    "kurucular": [
+      "Mark Donaldson"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-26T08:20:38.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/lausannes-sonexos-raises-e5-4-million-to-tackle-low-frequency-noise-from-fans-compressors-and-even-data-centres/",
+      "baslik": "Lausanne’s Sonexos raises €5.4 million to tackle low-frequency noise from fans, compressors and even data centres",
+      "tarih": "Mon, 26 Oct 2026 08:20:38 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sonexos , a Lausanne-based DeepTech company, has raised approximately €5.4 million (CHF 5 million/USD 6.1 million) in new equity financing to take its solid-state noise control from working prototypes",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/lausannes-sonexos-raises-e5-4-million-to-tackle-low-frequency-noise-from-fans-compressors-and-even-data-centres/"
+    }
+  ],
+  "olusturma": "2026-10-26T11:00:23.733Z"
+}

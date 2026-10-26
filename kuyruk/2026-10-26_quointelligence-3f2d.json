@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-26_quointelligence-3f2d",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "QuoIntelligence",
+    "domain": "quointelligence.eu",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 7300000,
+      "birim": "EUR",
+      "usd": 7884000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Marco Riccardi"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-26T08:00:28.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/frankfurts-quointelligence-secures-backing-from-ex-german-finance-minister-christian-lindner-months-after-e7-3-million-series-a/",
+      "baslik": "Frankfurt&#8217;s QuoIntelligence lands backing from ex-German finance minister Christian Lindner months after €7.3 million Series A",
+      "tarih": "Mon, 26 Oct 2026 08:00:28 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The investment follows the company’s €7.3 million Series A funding round, closed in April 2026 and led by Elevator Ventures, the venture capital arm of Raiffeisen Bank International.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/frankfurts-quointelligence-secures-backing-from-ex-german-finance-minister-christian-lindner-months-after-e7-3-million-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/frankfurts-quointelligence-secures-backing-from-ex-german-finance-minister-christian-lindner-months-after-e7-3-million-series-a/"
+    }
+  ],
+  "olusturma": "2026-10-26T11:00:23.733Z"
+}
