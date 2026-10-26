@@ -19,6 +19,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Video kurgu hattı ayrı paket (kendi node_modules'u, Vercel'e girmez).
+    "scripts/video/**",
   ]),
 ]);
 

@@ -1,0 +1,134 @@
+[
+ {
+  "id": "girisimci-fikir-gece",
+  "tur": "gorsel",
+  "dosya": "girisimci-fikir-gece.jpg",
+  "istem": "young startup founder sitting at a desk at night in a dark home office, laptop glow on his face, looking up dreamily, a softly glowing light bulb floating above his head",
+  "etiket": [
+   "fikir",
+   "girişimci",
+   "gece",
+   "ampul",
+   "laptop"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "kargocu-kapi-zil",
+  "tur": "gorsel",
+  "dosya": "kargocu-kapi-zil.jpg",
+  "istem": "delivery courier in uniform standing at an apartment front door holding a black briefcase, his finger pressing the doorbell, warm hallway light",
+  "etiket": [
+   "kapı",
+   "kargo",
+   "kurye",
+   "zil",
+   "teslimat",
+   "çanta"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "para-cantasi-kapi",
+  "tur": "gorsel",
+  "dosya": "para-cantasi-kapi.jpg",
+  "istem": "close-up of an open black briefcase overflowing with stacks of US hundred dollar bills on a doormat in front of an apartment door, dramatic golden light",
+  "etiket": [
+   "para",
+   "dolar",
+   "milyon",
+   "çanta",
+   "yatırım",
+   "zenginlik"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "zil-dingdong",
+  "tur": "ses",
+  "dosya": "zil-dingdong.mp3",
+  "istem": "apartment doorbell ding dong chime, clean, indoor",
+  "etiket": [
+   "zil",
+   "kapı",
+   "ding-dong"
+  ],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "kasa-kaching",
+  "tur": "ses",
+  "dosya": "kasa-kaching.mp3",
+  "istem": "cash register ka-ching with coins, bright and satisfying",
+  "etiket": [
+   "kasa",
+   "para",
+   "ka-ching",
+   "satış"
+  ],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "kargocu-kapi-zil",
+  "tur": "video",
+  "dosya": "kargocu-kapi-zil.mp4",
+  "istem": "the courier presses the doorbell and waits, holding the briefcase, slight handheld camera",
+  "etiket": [
+   "kapı",
+   "kargo",
+   "kurye",
+   "zil",
+   "teslimat",
+   "çanta"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "girisimci-fikir-gece",
+  "tur": "video",
+  "dosya": "girisimci-fikir-gece.mp4",
+  "istem": "the young man slowly looks up at the glowing light bulb, the bulb flickers on brighter, subtle push-in",
+  "etiket": [
+   "fikir",
+   "girişimci",
+   "gece",
+   "ampul",
+   "laptop"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-10-26"
+ },
+ {
+  "id": "para-cantasi-kapi",
+  "tur": "video",
+  "dosya": "para-cantasi-kapi.mp4",
+  "istem": "slow dolly-in towards the open briefcase full of dollar bills, golden light flickers",
+  "etiket": [
+   "para",
+   "dolar",
+   "milyon",
+   "çanta",
+   "yatırım",
+   "zenginlik"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-10-26"
+ }
+]

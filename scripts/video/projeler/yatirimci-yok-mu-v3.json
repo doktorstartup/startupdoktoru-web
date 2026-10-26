@@ -1,0 +1,139 @@
+{
+  "ad": "yatirimci-yok-mu-v3",
+  "klipler": [
+    {
+      "dosya": "/private/tmp/claude-503/-Users-eser-user-Desktop-Dr-Startup-WebSitesi/a964b650-c810-4072-a1dd-ced08559bc85/scratchpad/video/v1.mov",
+      "goruntu": true
+    },
+    {
+      "dosya": "/private/tmp/claude-503/-Users-eser-user-Desktop-Dr-Startup-WebSitesi/a964b650-c810-4072-a1dd-ced08559bc85/scratchpad/video/v2.mov",
+      "kes": [
+        [
+          10.53,
+          12.68
+        ],
+        [
+          32.14,
+          33.5
+        ]
+      ]
+    }
+  ],
+  "duzelt": {
+    "sorumum": "sunumum",
+    ".com": "+doktoru.com'a",
+    "'a,": "",
+    "He": ""
+  },
+  "kuyruk": 2.0,
+  "gorsel": [
+    {
+      "ifade": "Ya arkadaş şu",
+      "tur": "yuz",
+      "zoom": "yok mu"
+    },
+    {
+      "ifade": "Bakın buraya",
+      "tur": "ekran",
+      "resim": "yatirimcilar.png",
+      "sayac": [
+        {
+          "sayi": 881,
+          "metin": "yatırımcı ağda"
+        },
+        {
+          "sayi": 97,
+          "metin": "tanesi ilgilendi",
+          "ifade": "ve biz"
+        }
+      ]
+    },
+    {
+      "ifade": "diyorsan ki",
+      "tur": "liste",
+      "resim": "panel.png",
+      "maddeler": [
+        {
+          "metin": "Yatırımcı sunumu",
+          "ifade": "sunumum"
+        },
+        {
+          "metin": "Değerleme",
+          "ifade": "değerlemem"
+        },
+        {
+          "metin": "Dosyalar",
+          "ifade": "dosyalarım"
+        }
+      ]
+    },
+    {
+      "ifade": "Bak bu platformda",
+      "tur": "ekran",
+      "resim": "panel.png"
+    },
+    {
+      "ifade": "Sonra geliyorsun",
+      "tur": "ekran",
+      "resim": "girisim.png",
+      "sayac": [
+        {
+          "sayi": 97,
+          "metin": "yatırımcı ilgilendi",
+          "ifade": "girişim profilini"
+        },
+        {
+          "sayi": 70,
+          "on": "+",
+          "metin": "son 3 haftada",
+          "ifade": "yatırımcılarla eşleşmeye"
+        }
+      ]
+    },
+    {
+      "ifade": "Ya arkadaş bir fikir",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "Ya arkadaş bir fikir",
+          "resim": "broll-fikir.jpg",
+          "istem": "young startup founder sitting at a desk at night in a dark home office, laptop glow on his face, looking up dreamily, a softly glowing light bulb floating above his head"
+        },
+        {
+          "ifade": "Kapı zili",
+          "resim": "broll-kapi.jpg",
+          "istem": "delivery courier in uniform standing at an apartment front door holding a black briefcase, his finger pressing the doorbell, warm hallway light",
+          "ses": "zil.mp3",
+          "ses_istem": "apartment doorbell ding dong chime, clean, indoor",
+          "ses_sure": 1.5
+        },
+        {
+          "ifade": "milyon dolar",
+          "resim": "broll-para.jpg",
+          "istem": "close-up of an open black briefcase overflowing with stacks of US hundred dollar bills on a doormat in front of an apartment door, dramatic golden light",
+          "ses": "kasa.mp3",
+          "ses_istem": "cash register ka-ching with coins, bright and satisfying",
+          "ses_sure": 1.5,
+          "sayac": {
+            "sayi": 1000000,
+            "on": "$"
+          }
+        }
+      ]
+    },
+    {
+      "ifade": "Bunları yapman",
+      "tur": "ekran",
+      "resim": "anasayfa.png"
+    },
+    {
+      "ifade": "Gel kaydol",
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Yatırımcılar hazır.",
+        "Sıra senin girişiminde."
+      ]
+    }
+  ]
+}

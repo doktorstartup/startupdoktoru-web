@@ -1,0 +1,116 @@
+{
+  "ad": "yatirimci-yok-mu",
+  "klipler": [
+    {
+      "dosya": "/private/tmp/claude-503/-Users-eser-user-Desktop-Dr-Startup-WebSitesi/a964b650-c810-4072-a1dd-ced08559bc85/scratchpad/video/v1.mov",
+      "goruntu": true
+    },
+    {
+      "dosya": "/private/tmp/claude-503/-Users-eser-user-Desktop-Dr-Startup-WebSitesi/a964b650-c810-4072-a1dd-ced08559bc85/scratchpad/video/v2.mov",
+      "kes": [
+        [
+          10.53,
+          12.68
+        ],
+        [
+          32.14,
+          33.5
+        ]
+      ]
+    }
+  ],
+  "duzelt": {
+    "sorumum": "sunumum",
+    ".com": "+doktoru.com'a",
+    "'a,": "",
+    "He": ""
+  },
+  "kuyruk": 2.0,
+  "gorsel": [
+    {
+      "ifade": "Ya arkadaş şu",
+      "tur": "yuz",
+      "zoom": "yok mu"
+    },
+    {
+      "ifade": "Bakın buraya",
+      "tur": "ekran",
+      "resim": "yatirimcilar.png",
+      "sayac": [
+        {
+          "sayi": 881,
+          "metin": "yatırımcı ağda"
+        },
+        {
+          "sayi": 97,
+          "metin": "tanesi ilgilendi",
+          "ifade": "ve biz"
+        }
+      ]
+    },
+    {
+      "ifade": "diyorsan ki",
+      "tur": "liste",
+      "resim": "panel.png",
+      "maddeler": [
+        {
+          "metin": "Yatırımcı sunumu",
+          "ifade": "sunumum"
+        },
+        {
+          "metin": "Değerleme",
+          "ifade": "değerlemem"
+        },
+        {
+          "metin": "Dosyalar",
+          "ifade": "dosyalarım"
+        }
+      ]
+    },
+    {
+      "ifade": "Bak bu platformda",
+      "tur": "ekran",
+      "resim": "panel.png"
+    },
+    {
+      "ifade": "Sonra geliyorsun",
+      "tur": "ekran",
+      "resim": "girisim.png",
+      "sayac": [
+        {
+          "sayi": 97,
+          "metin": "yatırımcı ilgilendi",
+          "ifade": "girişim profilini"
+        },
+        {
+          "sayi": 70,
+          "on": "+",
+          "metin": "son 3 haftada",
+          "ifade": "yatırımcılarla eşleşmeye"
+        }
+      ]
+    },
+    {
+      "ifade": "Ya arkadaş bir fikir",
+      "tur": "buyuk",
+      "vurgu": [
+        "milyon",
+        "dolar"
+      ]
+    },
+    {
+      "ifade": "Bunları yapman",
+      "tur": "ekran",
+      "resim": "anasayfa.png"
+    },
+    {
+      "ifade": "Gel kaydol",
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Yatırımcılar hazır.",
+        "Sıra senin girişiminde."
+      ]
+    }
+  ]
+}

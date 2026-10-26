@@ -25,6 +25,7 @@ import {
   Handshake,
   MessageSquare,
   TrendingUp,
+  Share2,
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -205,6 +206,11 @@ export default function AdminLayout({
       name: "İçerik & LMS Editörü",
       href: "/admin/content",
       icon: BookOpen,
+    },
+    {
+      name: "Paylaşım",
+      href: "/admin/paylasim",
+      icon: Share2,
     },
     {
       name: "Yatırımcı Ağı (INVEST)",

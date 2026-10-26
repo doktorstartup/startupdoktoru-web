@@ -1,0 +1,23 @@
+{
+  "name": "video-kurgu",
+  "private": true,
+  "type": "module",
+  "description": "Kısa video kurgu hattı (Remotion). AYRI package.json: kök projeye (Vercel build'ine) girmesin.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Video"
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.10.1",
+    "@remotion/cli": "^4.0.538",
+    "@remotion/google-fonts": "^4.0.538",
+    "playwright-core": "^1.56.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.538"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}

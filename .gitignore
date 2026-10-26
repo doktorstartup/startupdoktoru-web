@@ -57,3 +57,12 @@ scripts/haber/node_modules
 
 # Claude Code kişisel izin/ayarları (git izinleri vb.) — repoya girmez.
 .claude/settings.local.json
+
+# video kurgu hattı: bağımlılıklar ve medya (ham/çıktı videolar repoya girmez)
+/scripts/video/node_modules
+/scripts/video/.venv
+/scripts/video/public
+/scripts/video/out
+# B-roll kütüphanesi: medya yerelde kalır, yalnız dizin (index.json) repoya girer
+/scripts/video/kutuphane/*
+!/scripts/video/kutuphane/index.json
