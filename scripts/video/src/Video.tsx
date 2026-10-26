@@ -24,8 +24,10 @@ type Gorsel = {
   // klip_sesi: videonun kendi sesi (Veo/Flow sesli üretir), 0–1; verilmezse sessiz
   kareler?: { ifade: string; id?: string; resim?: string; hareket?: string; ses?: string; klip_sesi?: number; sayac?: { sayi: number; on?: string } }[];
 };
+export type KapakAyari = { arka_sn: number; rozet?: string; baslik: string[]; vurgu: string };
 type Kurgu = {
   ad: string;
+  kapak?: KapakAyari;
   sure: number;
   kuyruk: number;
   gorsel: Gorsel[];

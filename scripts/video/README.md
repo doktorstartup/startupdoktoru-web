@@ -40,3 +40,8 @@ Ses senin gerçek kaydın, yalnız görüntü üretilir. `.env.local`'da `FAL_KE
 **Paylaşırken platformda "AI ile oluşturuldu" etiketini işaretle.**
 
 Yatırımcı adları gibi kişisel veri `ekran.mjs` içinde `gizle` ile bulanıklaştırılır — herkese açık videoda görünmemeli.
+
+## Teslim (paylaşıma hazır klasör)
+Proje dosyasına `kapak` (`arka_sn`, `rozet`, `baslik`, `vurgu`) ve `paylasim` (`baslik`, `instagram`, `shorts`, `linkedin`) ekle, sonra:
+`node teslim.mjs projeler/<ad>.json` → `~/Desktop/Startup Doktoru Videolar/<ad>/` (video, kapak 1080x1920, thumbnail 1280x720, broll/, metinler.md)
+ve Paylaşım sekmesine "Hazır" kaydı (aynı başlık varsa günceller; paylaşıldı işaretlerine dokunmaz).

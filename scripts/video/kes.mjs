@@ -112,5 +112,5 @@ for (const [i, k] of proje.klipler.entries()) {
 }
 
 ff(...sesParcalari.flatMap((f) => ["-i", f]), "-filter_complex", `${sesParcalari.map((_, j) => `[${j}:a]`).join("")}concat=n=${sesParcalari.length}:v=0:a=1,loudnorm=I=-14:TP=-1.5[a]`, "-map", "[a]", "-ar", "48000", join(cikti, "ses.wav"));
-writeFileSync(join(cikti, "kurgu.json"), JSON.stringify({ ad: proje.ad, sure: kayma, kuyruk: proje.kuyruk ?? 1.5, gorsel: proje.gorsel, kelimeler, sahneler }, null, 1));
+writeFileSync(join(cikti, "kurgu.json"), JSON.stringify({ ad: proje.ad, sure: kayma, kuyruk: proje.kuyruk ?? 1.5, gorsel: proje.gorsel, kapak: proje.kapak, kelimeler, sahneler }, null, 1));
 console.log(`toplam ${kayma.toFixed(1)} sn → public/${proje.ad}/`);

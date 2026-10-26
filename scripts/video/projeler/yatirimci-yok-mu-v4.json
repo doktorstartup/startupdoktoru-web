@@ -131,5 +131,20 @@
         "Sıra senin girişiminde."
       ]
     }
-  ]
+  ],
+  "kapak": {
+    "arka_sn": 2.6,
+    "rozet": "881 yatırımcı ağda",
+    "baslik": [
+      "Yatırım yapacak",
+      "startup"
+    ],
+    "vurgu": "YOK MU?"
+  },
+  "paylasim": {
+    "baslik": "Yatırım yapacak startup yok mu?",
+    "instagram": "Türkiye'de yatırım yapacak bir startup yok mu? 🤔\n\nYatırımcılar hazır: ağımızda 881 yatırımcı var, son 3 haftada 70'i yeni ilgi gösterdi. Eksik olan senin girişimin.\n\n👉 startupdoktoru.com'a gir, profilini oluştur\n📚 Yatırımcı sunumu, değerleme gibi eksiklerini eğitimlerle tamamla\n🤝 Girişim profilini doldur, yatırımcılarla eşleşmeye başla\n\nKapına kimse milyon dolar bırakmayacak. Hazırlığı sen yapacaksın.\n\n#startup #girişimcilik #yatırım #melekyatırımcı #girişim #yatırımcı #pitchdeck #startupdoktoru",
+    "shorts": "BAŞLIK: Yatırımcılar hazır, startup nerede? #shorts\n\nAÇIKLAMA:\nAğımızda 881 yatırımcı var, son 3 haftada 70'i yeni ilgi gösterdi. Eksik olan senin girişimin.\nGirişimini yatırımcılara aç: https://startupdoktoru.com\n\n#startup #girişimcilik #yatırım #shorts",
+    "linkedin": "Yatırımcı bulmak zor deriz. Bizde durum tersine döndü: yatırımcılar hazır, girişim arıyoruz.\n\nStartup Doktoru yatırımcı ağında bugün 881 yatırımcı var. Son 3 haftada 70 yatırımcı Türkiye'deki girişimlere ilgi gösterdi.\n\nAma bir fikir aklına geldi diye kimse kapına milyon dolar bırakmıyor. Yatırımcı sunumu, değerleme, doğru hazırlanmış dosyalar… Bunlar olmadan görüşme masasına oturmak zor.\n\nPlatformu bu yüzden şöyle kurduk:\n1. Profilini oluştur\n2. Eksiklerini (sunum, değerleme) eğitimlerle tamamla\n3. Girişim profilini doldur, yatırımcılarla eşleş\n\nYatırım arayan bir girişimin varsa ya da tanıyorsan: startupdoktoru.com\n\n#startup #girişimcilik #yatırım #melekyatırım"
+  }
 }
