@@ -1,16 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"verda.com","ad":"verda","tarih":"2026-09-22","dosya":"2026-09-22_verda-e9cc.json"},
-  {"dom":"biolevate.com","ad":"biolevate","tarih":"2026-09-22","dosya":"2026-09-22_biolevate-7ac1.json"},
-  {"dom":"getprimo.com","ad":"primo","tarih":"2026-09-22","dosya":"2026-09-22_primo-cce1.json"},
-  {"dom":"morphotonics.com","ad":"morphotonics","tarih":"2026-09-22","dosya":"2026-09-22_morphotonics-4346.json"},
-  {"dom":"zeliq.com","ad":"zeliq","tarih":"2026-09-22","dosya":"2026-09-22_zeliq-f4a4.json"},
-  {"dom":"light-spring.com","ad":"lightspring","tarih":"2026-09-22","dosya":"2026-09-22_lightspring-72f6.json"},
-  {"dom":"spott.io","ad":"spott","tarih":"2026-09-22","dosya":"2026-09-22_spott-e2d9.json"},
-  {"dom":"benford.tech","ad":"benford","tarih":"2026-09-22","dosya":"2026-09-22_benford-adf0.json"},
-  {"dom":null,"ad":"gamindo","tarih":"2026-09-22","dosya":"2026-09-22_gamindo-c451.json"},
-  {"dom":"eevi.ai","ad":"eevi","tarih":"2026-09-22","dosya":"2026-09-22_eevi-f2fb.json"},
-  {"dom":null,"ad":"nato innovation fund","tarih":"2026-09-22","dosya":"2026-09-22_nato-innovation-fund-b058.json"},
-  {"dom":"kairospower.com","ad":"kairos power","tarih":"2026-09-22","dosya":"2026-09-22_kairos-power-a6c7.json"},
   {"dom":null,"ad":"tekever","tarih":"2026-09-23","dosya":"2026-09-23_tekever-820c.json"},
   {"dom":"standardx.tech","ad":"standardx","tarih":"2026-09-23","dosya":"2026-09-23_standardx-fa84.json"},
   {"dom":"getmika.de","ad":"mika","tarih":"2026-09-23","dosya":"2026-09-23_mika-4f3f.json"},
@@ -222,5 +210,6 @@
   {"dom":"warp.xyz","ad":"warp","tarih":"2026-10-23","dosya":"2026-10-23_warp-d33d.json"},
   {"dom":"sonexos.com","ad":"sonexos","tarih":"2026-10-26","dosya":"2026-10-26_sonexos-d99c.json"},
   {"dom":"quointelligence.eu","ad":"quointelligence","tarih":"2026-10-26","dosya":"2026-10-26_quointelligence-3f2d.json"},
-  {"dom":"neviswealth.com","ad":"nevis","tarih":"2026-10-26","dosya":"2026-10-26_nevis-5c44.json"}
+  {"dom":"neviswealth.com","ad":"nevis","tarih":"2026-10-26","dosya":"2026-10-26_nevis-5c44.json"},
+  {"dom":null,"ad":"exclusive","tarih":"2026-10-27","dosya":"2026-10-27_exclusive-080f.json"}
 ]}

@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-10-27_exclusive-080f",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "EXCLUSIVE",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1470000,
+      "birim": "EUR",
+      "usd": 1587600
+    },
+    "lider": "PSV Tech",
+    "katilanlar": [],
+    "kurucular": [
+      "Christian Pind Schmidt",
+      "Frederik Buchardt"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-27T07:30:43.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/exclusive-copenhagen-based-proptech-cortas-lands-e1-47-million-in-a-pre-seed-round-led-by-psv-tech/",
+      "baslik": "EXCLUSIVE: Copenhagen-based PropTech Cortas lands €1.47 million in a pre-Seed round led by PSV Tech",
+      "tarih": "Tue, 27 Oct 2026 07:30:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Cortas , a Copenhagen-based PropTech startup building what it calls an entirely new operating model for property management, has raised €1.47 million in pre-Seed funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/exclusive-copenhagen-based-proptech-cortas-lands-e1-47-million-in-a-pre-seed-round-led-by-psv-tech/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/exclusive-copenhagen-based-proptech-cortas-lands-e1-47-million-in-a-pre-seed-round-led-by-psv-tech/"
+    }
+  ],
+  "olusturma": "2026-10-27T10:28:33.217Z"
+}
