@@ -1,0 +1,80 @@
+{
+  "surum": 1,
+  "id": "2026-10-27_bedrock-robotics-9e4d",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Bedrock Robotics",
+    "domain": "bedrockrobotics.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 600000000,
+      "birim": "USD",
+      "usd": 600000000
+    },
+    "lider": "CapitalG",
+    "katilanlar": [
+      "US Innovative Technology Fund",
+      "Bessemer Venture Partners",
+      "Valor Equity Partners",
+      "Perry Creek Capital",
+      "Emergence Capital",
+      "Georgian",
+      "Temasek",
+      "Eclipse",
+      "NVIDIA",
+      "Xora",
+      "8VC"
+    ],
+    "kurucular": [
+      "Ajay Gummalla",
+      "Tom Eliaz",
+      "Boris Sofman",
+      "Kevin Peterson"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-27T11:08:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/27/bedrock-robotics-4-1-milyar-dolar-degerleme-uzerinden-600-milyon-dolar-yatirim-aldi/",
+      "baslik": "Bedrock Robotics, 4,1 milyar dolar değerleme üzerinden 600 milyon dolar yatırım aldı",
+      "tarih": "Tue, 27 Oct 2026 12:00:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/otonom-is-makineleri-gelistiren-bedrock-robotics-600-milyon-dolar-yatirim-aldi/",
+      "baslik": "Otonom iş makineleri geliştiren Bedrock Robotics, 600 milyon dolar yatırım aldı",
+      "tarih": "Tue, 27 Oct 2026 11:08:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sürücüsüz araç teknolojileri geliştiren Bedrock Robotics , 600 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/27/bedrock-robotics-4-1-milyar-dolar-degerleme-uzerinden-600-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/27/bedrock-robotics-4-1-milyar-dolar-degerleme-uzerinden-600-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-27T19:24:20.999Z"
+}

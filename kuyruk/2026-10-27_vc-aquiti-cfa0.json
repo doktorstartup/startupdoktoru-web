@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-27_vc-aquiti-cfa0",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "VC Aquiti",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 60000000,
+      "birim": "EUR",
+      "usd": 64800000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-27T15:07:23.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/french-vc-aquiti-just-closed-their-e60-million-fund-for-founders-outside-of-traditional-venture-hubs/",
+      "baslik": "French VC Aquiti closes €60 million fund for founders outside of traditional venture hubs",
+      "tarih": "Tue, 27 Oct 2026 15:07:23 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "French VC Aquiti announces the final close of their AVA1 fund at nearly €60 million in order to back founders building across the Greater Southwest of France from pre-Seed onwards.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-vc-aquiti-just-closed-their-e60-million-fund-for-founders-outside-of-traditional-venture-hubs/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-vc-aquiti-just-closed-their-e60-million-fund-for-founders-outside-of-traditional-venture-hubs/"
+    }
+  ],
+  "olusturma": "2026-10-27T19:24:20.999Z"
+}

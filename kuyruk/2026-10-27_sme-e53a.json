@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-27_sme-e53a",
+  "durum": "hazir",
+  "puan": 56,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "SME",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 298000000,
+      "birim": "EUR",
+      "usd": 321840000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Lovey's"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-27T11:43:06.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/british-sme-lender-lovey-secures-up-to-e298-million-to-support-uk-companies/",
+      "baslik": "British SME lender Lovey secures up to €298 million to support UK companies",
+      "tarih": "Tue, 27 Oct 2026 11:43:06 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Lovey , a British FinTech and financial services provider specialising in SME lending and brokerage, has today announced a senior secured credit facility of up to €298 million (£250 million) with Poll",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/british-sme-lender-lovey-secures-up-to-e298-million-to-support-uk-companies/"
+    },
+    {
+      "metin": "credit facility",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/british-sme-lender-lovey-secures-up-to-e298-million-to-support-uk-companies/"
+    }
+  ],
+  "olusturma": "2026-10-27T19:24:20.999Z"
+}
