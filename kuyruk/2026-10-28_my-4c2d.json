@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_my-4c2d",
+  "durum": "hazir",
+  "puan": 42,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 3,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "My",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 600000,
+      "birim": "EUR",
+      "usd": 648000
+    },
+    "lider": "Milan Monza Brianza Lodi Chamber of Commerce through the Switch2Product",
+    "katilanlar": [
+      "European investments in technology-enabled care during 2026",
+      "Magic Vision"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-28T11:56:39.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/my-grandfather-fell-and-remained-on-the-floor-for-an-entire-day-magic-vision-raises-e600k-for-monitoring-tech/",
+      "baslik": "&#8220;My grandfather fell and remained on the floor for an entire day&#8221; &#8211; Magic Vision raises €600k for monitoring tech",
+      "tarih": "Wed, 28 Oct 2026 11:56:39 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Magic Vision , an Italian DeepTech startup developing AI and computer vision technologies to monitor and support older people and vulnerable individuals, has closed a €600k funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/my-grandfather-fell-and-remained-on-the-floor-for-an-entire-day-magic-vision-raises-e600k-for-monitoring-tech/"
+    }
+  ],
+  "olusturma": "2026-10-28T19:29:39.878Z"
+}
