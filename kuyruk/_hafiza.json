@@ -1,14 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":null,"ad":"tekever","tarih":"2026-09-23","dosya":"2026-09-23_tekever-820c.json"},
-  {"dom":"standardx.tech","ad":"standardx","tarih":"2026-09-23","dosya":"2026-09-23_standardx-fa84.json"},
-  {"dom":"getmika.de","ad":"mika","tarih":"2026-09-23","dosya":"2026-09-23_mika-4f3f.json"},
-  {"dom":"palma.ai","ad":"palmaai","tarih":"2026-09-23","dosya":"2026-09-23_palmaai-ad74.json"},
-  {"dom":"f13.com","ad":"f13","tarih":"2026-09-23","dosya":"2026-09-23_f13-c8ca.json"},
-  {"dom":null,"ad":"noxtua","tarih":"2026-09-23","dosya":"2026-09-23_noxtua-d2cb.json"},
-  {"dom":"spiich.ai","ad":"spiich","tarih":"2026-09-23","dosya":"2026-09-23_spiich-94a3.json"},
-  {"dom":"bird.com","ad":"bird","tarih":"2026-09-23","dosya":"2026-09-23_bird-c846.json"},
-  {"dom":null,"ad":"anthropic","tarih":"2026-09-23","dosya":"2026-09-23_anthropic-b0d1.json"},
-  {"dom":null,"ad":"london","tarih":"2026-09-23","dosya":"2026-09-23_london-703b.json"},
   {"dom":"duqu.ai","ad":"duqu","tarih":"2026-09-24","dosya":"2026-09-24_duqu-a433.json"},
   {"dom":"clastix.io","ad":"clastix","tarih":"2026-09-24","dosya":"2026-09-24_clastix-9885.json"},
   {"dom":"50skills.com","ad":"50skills","tarih":"2026-09-24","dosya":"2026-09-24_50skills-b2ee.json"},
@@ -214,5 +204,11 @@
   {"dom":null,"ad":"exclusive","tarih":"2026-10-27","dosya":"2026-10-27_exclusive-080f.json"},
   {"dom":null,"ad":"vc aquiti","tarih":"2026-10-27","dosya":"2026-10-27_vc-aquiti-cfa0.json"},
   {"dom":null,"ad":"sme","tarih":"2026-10-27","dosya":"2026-10-27_sme-e53a.json"},
-  {"dom":"bedrockrobotics.com","ad":"bedrock robotics","tarih":"2026-10-27","dosya":"2026-10-27_bedrock-robotics-9e4d.json"}
+  {"dom":"bedrockrobotics.com","ad":"bedrock robotics","tarih":"2026-10-27","dosya":"2026-10-27_bedrock-robotics-9e4d.json"},
+  {"dom":"autofixer.com","ad":"autofixer","tarih":"2026-10-28","dosya":"2026-10-28_autofixer-aef0.json"},
+  {"dom":"artiso.ai","ad":"artiso","tarih":"2026-10-28","dosya":"2026-10-28_artiso-4284.json"},
+  {"dom":null,"ad":"biotech samplix","tarih":"2026-10-28","dosya":"2026-10-28_biotech-samplix-b0a9.json"},
+  {"dom":"generalcompute.com","ad":"general compute","tarih":"2026-10-28","dosya":"2026-10-28_general-compute-cec3.json"},
+  {"dom":"rebuildmanufacturing.com","ad":"rebuild","tarih":"2026-10-28","dosya":"2026-10-28_rebuild-ab5a.json"},
+  {"dom":null,"ad":"proptech","tarih":"2026-10-28","dosya":"2026-10-28_proptech-db2f.json"}
 ]}

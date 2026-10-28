@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_artiso-4284",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Artiso",
+    "domain": "artiso.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Nicolaj Reffstrup",
+      "David Tomás",
+      "Cyberclick"
+    ],
+    "kurucular": [
+      "Sarah Iglesias Hiller",
+      "Matthias Brenninkmeijer"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-28T07:00:29.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/barcelonas-artiso-raises-over-e3-million-to-scale-its-ai-operating-system-for-fashion-teams/",
+      "baslik": "Barcelona’s Artiso raises over €3 million to scale its AI operating system for fashion teams",
+      "tarih": "Wed, 28 Oct 2026 07:00:29 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Artiso , a Barcelona-based FashionTech startup building an AI operating system built for fashion teams, has raised more than €3 million in a fully equity pre-Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/barcelonas-artiso-raises-over-e3-million-to-scale-its-ai-operating-system-for-fashion-teams/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/barcelonas-artiso-raises-over-e3-million-to-scale-its-ai-operating-system-for-fashion-teams/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}

@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_biotech-samplix-b0a9",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "BioTech Samplix",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 25000000,
+      "birim": "EUR",
+      "usd": 27000000
+    },
+    "lider": "WLanholding GmbH",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-28T06:31:24.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/danish-biotech-samplix-secures-e25-million-in-first-close-of-financing-round-to-scale-antibody-discovery/",
+      "baslik": "Danish BioTech Samplix secures €25 million in first close of financing round to scale antibody discovery",
+      "tarih": "Wed, 28 Oct 2026 06:31:24 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Samplix , a Danish BioTech company developing droplet microfluidics technology for functional single-cell analysis, has announced a €25 million first closing of a financing round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/danish-biotech-samplix-secures-e25-million-in-first-close-of-financing-round-to-scale-antibody-discovery/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}

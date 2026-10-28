@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_rebuild-ab5a",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Re:Build",
+    "domain": "rebuildmanufacturing.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2100000000,
+      "birim": "USD",
+      "usd": 2100000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Miles Arnone"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-28T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/28/uretim-teknolojilerine-odaklanan-re-build-2-1-milyar-dolar-yatirim-aldi/",
+      "baslik": "Üretim teknolojilerine odaklanan Re:Build, 2,1 milyar dolar yatırım aldı",
+      "tarih": "Wed, 28 Oct 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "ABD merkezli Re:Build Manufacturing , ileri aşama yatırım turunda 2,1 milyar dolar yatırım aldı .",
+      "kaynak_url": "https://webrazzi.com/2026/10/28/uretim-teknolojilerine-odaklanan-re-build-2-1-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}

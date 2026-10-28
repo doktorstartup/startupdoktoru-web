@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_autofixer-aef0",
+  "durum": "hazir",
+  "puan": 55,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Autofixer",
+    "domain": "autofixer.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Szymon Jezierski"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-28T07:34:27.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/polands-autofixer-raises-e3-million-in-venture-debt-to-scale-its-online-car-parts-platform/",
+      "baslik": "Poland’s Autofixer raises €3 million in venture debt to scale its online car parts platform",
+      "tarih": "Wed, 28 Oct 2026 07:34:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Autofixer , a Polish online car parts platform, has raised €3 million in venture debt financing to expand further across Europe, develop its platform and grow its team.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/polands-autofixer-raises-e3-million-in-venture-debt-to-scale-its-online-car-parts-platform/"
+    },
+    {
+      "metin": "venture debt",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/polands-autofixer-raises-e3-million-in-venture-debt-to-scale-its-online-car-parts-platform/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}

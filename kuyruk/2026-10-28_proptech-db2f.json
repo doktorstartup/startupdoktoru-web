@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_proptech-db2f",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "proptech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1470000,
+      "birim": "EUR",
+      "usd": 1587600
+    },
+    "lider": "PSV Tech",
+    "katilanlar": [
+      "JRNY Capital",
+      "Flatpay",
+      "Spirii",
+      "EIFO"
+    ],
+    "kurucular": [
+      "Christian Pind Schmidt",
+      "Frederik Buchardt"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-28T07:51:36.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/cortas-raises-e1-47-million-pre-seed/",
+      "baslik": "Danish proptech startup raises €1.47 million pre-seed to combine property management and software development",
+      "tarih": "Wed, 28 Oct 2026 07:51:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "In practice, that means being able to build software in-house and test new approaches every day.” The €1.47 million pre-seed round includes backing from PSV Tech, JRNY Capital and the Export and Inves",
+      "kaynak_url": "https://arcticstartup.com/cortas-raises-e1-47-million-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/cortas-raises-e1-47-million-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}

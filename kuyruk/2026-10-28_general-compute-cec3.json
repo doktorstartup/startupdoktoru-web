@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-10-28_general-compute-cec3",
+  "durum": "hazir",
+  "puan": 87,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "General Compute",
+    "domain": "generalcompute.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": "Blackbird Ventures",
+    "katilanlar": [
+      "Fuse Venture Partners",
+      "Abstract Ventures",
+      "Village Global"
+    ],
+    "kurucular": [
+      "Finn Puklowski",
+      "Jason Goodison"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-28T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/28/yapay-zeka-icin-bulut-bilisim-altyapisi-gelistiren-general-compute-100-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka için bulut bilişim altyapısı geliştiren General Compute, 100 milyon dolar yatırım aldı",
+      "tarih": "Wed, 28 Oct 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka teknolojisi için bulut bilişim altyapısı geliştiren General Compute , 100 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/28/yapay-zeka-icin-bulut-bilisim-altyapisi-gelistiren-general-compute-100-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/28/yapay-zeka-icin-bulut-bilisim-altyapisi-gelistiren-general-compute-100-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-28T11:16:57.030Z"
+}
