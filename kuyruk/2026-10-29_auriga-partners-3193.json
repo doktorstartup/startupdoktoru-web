@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-29_auriga-partners-3193",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Auriga Partners",
+    "domain": "aurigacyberventures.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 80000000,
+      "birim": "EUR",
+      "usd": 86400000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Jacques Chatain",
+      "Bernard Daugeras",
+      "Patrick Bamas"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-29T07:29:02.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/auriga-partners-reaches-e80-million-interim-close-for-second-fund-dedicated-to-cybersecurity/",
+      "baslik": "Auriga Partners reaches €80 million interim close for second fund dedicated to cybersecurity",
+      "tarih": "Thu, 29 Oct 2026 07:29:02 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Auriga Partners , a Paris-based asset management firm specialising in venture capital and innovation investment, has announced an €80 million interim close for Auriga Cyber Ventures II, its second fun",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/auriga-partners-reaches-e80-million-interim-close-for-second-fund-dedicated-to-cybersecurity/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/auriga-partners-reaches-e80-million-interim-close-for-second-fund-dedicated-to-cybersecurity/"
+    }
+  ],
+  "olusturma": "2026-10-29T11:28:50.076Z"
+}
