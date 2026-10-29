@@ -20,7 +20,8 @@ export function SiteFooter() {
           <a href={href("/egitimler")} className="hover:text-primary transition-colors">{t.footer.trainings}</a>
           <a href={href("/free-training")} className="hover:text-primary transition-colors">{t.footer.freeTraining}</a>
           <a href={href("/blog")} className="hover:text-primary transition-colors">{t.footer.blog}</a>
-          <a href="#" className="hover:text-primary transition-colors">{t.footer.privacy}</a>
+          <a href={href("/gizlilik")} className="hover:text-primary transition-colors">{t.footer.privacy}</a>
+          <a href={href("/kvkk")} className="hover:text-primary transition-colors">{t.footer.kvkk}</a>
           <a href="#" className="hover:text-primary transition-colors">{t.footer.distanceSales}</a>
           <a href="#" className="hover:text-primary transition-colors">{t.footer.terms}</a>
         </div>

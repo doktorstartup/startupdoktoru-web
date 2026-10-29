@@ -75,6 +75,7 @@ export const en: Dict = {
     freeTraining: "Free Training",
     blog: "Blog",
     privacy: "Privacy Policy",
+    kvkk: "KVKK Notice",
     distanceSales: "Distance Sales Agreement",
     terms: "Terms of Use",
   },

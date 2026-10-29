@@ -78,6 +78,7 @@ export const tr = {
     freeTraining: "Ücretsiz Eğitim",
     blog: "Blog",
     privacy: "Gizlilik Politikası",
+    kvkk: "KVKK Aydınlatma Metni",
     distanceSales: "Mesafeli Satış Sözleşmesi",
     terms: "Kullanım Şartları",
   },

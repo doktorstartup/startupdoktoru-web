@@ -164,7 +164,8 @@ export default function EBookLanding() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>{all.footer.copyright}</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-primary transition-colors">{all.footer.privacy}</Link>
+            <Link href={href("/gizlilik")} className="hover:text-primary transition-colors">{all.footer.privacy}</Link>
+            <Link href={href("/kvkk")} className="hover:text-primary transition-colors">{all.footer.kvkk}</Link>
             <Link href="#" className="hover:text-primary transition-colors">{all.footer.terms}</Link>
           </div>
         </div>
