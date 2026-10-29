@@ -11,6 +11,10 @@
     {
       "path": "/api/cron/invest-followup",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/cron/sosyal",
+      "schedule": "0 4 * * *"
     }
   ]
 }

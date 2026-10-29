@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { Loader2, Share2, Plus, Trash2, Check, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import Istatistik from "./Istatistik";
 
 // Paylaşım — kameraya konuşulan kısa videoların takibi.
 // Fikirden paylaşıma aşama + her platform (Instagram / Shorts / LinkedIn) için
@@ -196,6 +197,8 @@ export default function PaylasimAdmin() {
           </div>
         ))}
       </div>
+
+      <Istatistik pw={pw} basliklar={Object.fromEntries((videolar || []).map((v) => [v.id, v.baslik]))} />
     </div>
   );
 }
