@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-29_strollme-aaf3",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "StrollMe",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 22000000,
+      "birim": "EUR",
+      "usd": 23760000
+    },
+    "lider": null,
+    "katilanlar": [
+      "BMH Beteiligungs-Managementgesells chaft Hessen mbH (BMH)",
+      "Kristina Schreiner",
+      "Hanse Ventures",
+      "HGDF",
+      "JOSS"
+    ],
+    "kurucular": [
+      "Sebastian Reichelt",
+      "Timon Beutel"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-29T11:45:50.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/strollme-bags-e22-million-to-put-more-bikes-strollers-and-car-seats-into-european-homes/",
+      "baslik": "StrollMe bags €22 million to put more bikes, strollers and car seats into European homes",
+      "tarih": "Thu, 29 Oct 2026 11:45:50 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Strollme , a German provider of children's mobility on subscription, has secured €22 million in equity and debt financing to support their growth in its existing markets and lay the foundation for fut",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/strollme-bags-e22-million-to-put-more-bikes-strollers-and-car-seats-into-european-homes/"
+    },
+    {
+      "metin": "debt financing",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/strollme-bags-e22-million-to-put-more-bikes-strollers-and-car-seats-into-european-homes/"
+    }
+  ],
+  "olusturma": "2026-10-29T19:34:11.121Z"
+}

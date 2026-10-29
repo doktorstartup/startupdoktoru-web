@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-10-29_bleu-robotics-0a4a",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Bleu Robotics",
+    "domain": "bleu-robotics.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5000000,
+      "birim": "EUR",
+      "usd": 5400000
+    },
+    "lider": "Contrarian Ventures",
+    "katilanlar": [
+      "Switzerland’s Enact Intelligence",
+      "Charlie Songhurst",
+      "Germany’s Sereact",
+      "Poland’s Nomagic",
+      "Motier Ventures",
+      "WEPA Ventures",
+      "OVNI Capital",
+      "Kvanted",
+      "Meta"
+    ],
+    "kurucular": [
+      "Benoît Berkoukchi"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-29T12:35:45.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/",
+      "baslik": "French startup Bleu Robotics secures €5 million to teach humanoid robots new tasks with fewer demonstrations",
+      "tarih": "Thu, 29 Oct 2026 12:35:45 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bleu Robotics , a Paris-based startup building AI models for industrial humanoid robots, has raised a €5 million pre-Seed round, to reach its goal of reducing the full humanoid robot deployment proces",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/french-startup-bleu-robotics-secures-e5-million-to-teach-humanoid-robots-new-tasks-with-fewer-demonstrations/"
+    }
+  ],
+  "olusturma": "2026-10-29T19:34:11.121Z"
+}

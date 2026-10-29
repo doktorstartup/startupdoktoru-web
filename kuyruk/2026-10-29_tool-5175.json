@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-10-29_tool-5175",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Tool",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2700000,
+      "birim": "EUR",
+      "usd": 2916000
+    },
+    "lider": "Unconventional Ventures",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-10-29T15:10:17.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/tool-that-identifies-ai-generated-material-helps-pixel-systems-raise-e2-7-million/",
+      "baslik": "Tool that identifies AI-generated material helps Pixel Systems raise €2.7 million",
+      "tarih": "Thu, 29 Oct 2026 15:10:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swedish AI startup Pixel Systems has raised €2.7 million ($3.1 million) in a Seed round to accelerate their commercial initiatives and continue building the technology that helps identify AI-generated",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/tool-that-identifies-ai-generated-material-helps-pixel-systems-raise-e2-7-million/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/tool-that-identifies-ai-generated-material-helps-pixel-systems-raise-e2-7-million/"
+    }
+  ],
+  "olusturma": "2026-10-29T19:34:11.121Z"
+}
