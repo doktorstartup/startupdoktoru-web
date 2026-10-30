@@ -1,0 +1,72 @@
+{
+  "surum": 1,
+  "id": "2026-10-30_kalshi-8a4a",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Kalshi",
+    "domain": null,
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000000,
+      "birim": "USD",
+      "usd": 1000000000
+    },
+    "lider": "Sequoia Capital",
+    "katilanlar": [
+      "Morgan Stanley Investment Management",
+      "Wellington Management",
+      "Andreessen Horowitz",
+      "Coatue Management",
+      "Baillie Gifford"
+    ],
+    "kurucular": [
+      "Tarek Mansour",
+      "Luana Lopes Lara"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-30T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/30/kalshi-40-milyar-dolar-degerleme-uzerinden-1-milyar-dolar-yatirim-aldi/",
+      "baslik": "Kalshi, 40 milyar dolar değerleme üzerinden 1 milyar dolar yatırım aldı",
+      "tarih": "Fri, 30 Oct 2026 08:00:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/tahmin-piyasasi-platformu-kalshi-40-milyar-dolar-degerlemeyle-1-milyar-dolar-yatirim-aldi/",
+      "baslik": "Tahmin piyasası platformu Kalshi, 40 milyar dolar değerlemeyle 1 milyar dolar yatırım aldı",
+      "tarih": "Fri, 30 Oct 2026 08:12:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Tahmin piyasası platformu Kalshi , 1 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/30/kalshi-40-milyar-dolar-degerleme-uzerinden-1-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "G serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/30/kalshi-40-milyar-dolar-degerleme-uzerinden-1-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-30T11:20:47.690Z"
+}

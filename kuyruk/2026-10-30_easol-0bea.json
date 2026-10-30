@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-10-30_easol-0bea",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Easol",
+    "domain": "easol.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 17850000,
+      "birim": "EUR",
+      "usd": 19278000
+    },
+    "lider": "Y Combinator",
+    "katilanlar": [
+      "Foundation Capital",
+      "Notion Capital",
+      "Tiger Global",
+      "FMZ Ventures",
+      "Eight Roads"
+    ],
+    "kurucular": [
+      "Ben Simpson",
+      "Rise Festival"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-30T08:28:36.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/londons-easol-secures-e26-78-million-series-a-extension-as-it-launches-ai-agents-for-experience-businesses/",
+      "baslik": "London’s Easol secures €26.78 million Series A extension as it launches AI agents for experience businesses",
+      "tarih": "Fri, 30 Oct 2026 08:28:36 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "The round comprises €17.85 million ($20 million) in equity and an €8.92 million ($10 million) debt facility.",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-easol-secures-e26-78-million-series-a-extension-as-it-launches-ai-agents-for-experience-businesses/"
+    },
+    {
+      "metin": "debt facility",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/londons-easol-secures-e26-78-million-series-a-extension-as-it-launches-ai-agents-for-experience-businesses/"
+    }
+  ],
+  "olusturma": "2026-10-30T11:20:47.690Z"
+}

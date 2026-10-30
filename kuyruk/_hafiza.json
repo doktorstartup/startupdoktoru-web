@@ -1,6 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"island.io","ad":"island","tarih":"2026-09-25","dosya":"2026-09-25_island-ad55.json"},
-  {"dom":"precisionneuro.io","ad":"precision","tarih":"2026-09-25","dosya":"2026-09-25_precision-bfcd.json"},
   {"dom":"graniteinfra.ai","ad":"granite","tarih":"2026-09-28","dosya":"2026-09-28_granite-b8df.json"},
   {"dom":"complaion.com","ad":"complaion","tarih":"2026-09-28","dosya":"2026-09-28_complaion-c3ad.json"},
   {"dom":null,"ad":"shopify","tarih":"2026-09-28","dosya":"2026-09-28_shopify-f874.json"},
@@ -205,5 +203,7 @@
   {"dom":"nextcommunications.io","ad":"braid","tarih":"2026-10-29","dosya":"2026-10-29_braid-b80e.json"},
   {"dom":null,"ad":"tool","tarih":"2026-10-29","dosya":"2026-10-29_tool-5175.json"},
   {"dom":"bleu-robotics.com","ad":"bleu robotics","tarih":"2026-10-29","dosya":"2026-10-29_bleu-robotics-0a4a.json"},
-  {"dom":null,"ad":"strollme","tarih":"2026-10-29","dosya":"2026-10-29_strollme-aaf3.json"}
+  {"dom":null,"ad":"strollme","tarih":"2026-10-29","dosya":"2026-10-29_strollme-aaf3.json"},
+  {"dom":"easol.com","ad":"easol","tarih":"2026-10-30","dosya":"2026-10-30_easol-0bea.json"},
+  {"dom":null,"ad":"kalshi","tarih":"2026-10-30","dosya":"2026-10-30_kalshi-8a4a.json"}
 ]}
