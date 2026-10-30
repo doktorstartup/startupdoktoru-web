@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-10-30_serval-8973",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Serval",
+    "domain": "serval.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 150000000,
+      "birim": "USD",
+      "usd": 150000000
+    },
+    "lider": "Sequoia",
+    "katilanlar": [
+      "General Catalyst",
+      "First Round",
+      "Conviction",
+      "Elad Gil",
+      "Redpoint",
+      "Headline",
+      "Evantic"
+    ],
+    "kurucular": [
+      "Jake Stauch",
+      "Alex McLeod"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-30T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/30/serval-3-milyar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/",
+      "baslik": "Serval, 3 milyar değerleme üzerinden 150 milyon dolar yatırım aldı",
+      "tarih": "Fri, 30 Oct 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli kurumsal otomasyon ve hizmet yönetimi platformu geliştiren Serval , 150 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/30/serval-3-milyar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/10/30/serval-3-milyar-degerleme-uzerinden-150-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-30T19:16:59.579Z"
+}

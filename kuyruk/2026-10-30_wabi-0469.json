@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-10-30_wabi-0469",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Wabi",
+    "domain": "wabi.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 55000000,
+      "birim": "USD",
+      "usd": 55000000
+    },
+    "lider": "IVP",
+    "katilanlar": [
+      "Andreessen Horowitz",
+      "Marissa Mayer",
+      "Dick Costolo",
+      "Forerunner"
+    ],
+    "kurucular": [
+      "Eugenia Kuyda"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-30T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/10/30/wabi-1-25-milyar-dolar-degerleme-uzerinden-55-milyon-dolar-yatirim-aldi/",
+      "baslik": "Wabi, 1,25 milyar dolar değerleme üzerinden 55 milyon dolar yatırım aldı",
+      "tarih": "Fri, 30 Oct 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kişisel yapay zeka asistanları Wabi , 55 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/10/30/wabi-1-25-milyar-dolar-degerleme-uzerinden-55-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-10-30T19:16:59.579Z"
+}

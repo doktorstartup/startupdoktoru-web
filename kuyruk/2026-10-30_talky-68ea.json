@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-10-30_talky-68ea",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Talky",
+    "domain": "usetalky.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 1500000,
+      "birim": "EUR",
+      "usd": 1620000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Sebastián Gunningham",
+      "Javier Morenés",
+      "Paul Golbaum"
+    ],
+    "kurucular": [
+      "Jorge Beamonte"
+    ],
+    "sektor": null,
+    "tarih": "2026-10-30T12:50:55.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/10/madrids-talky-raises-e1-5-million-to-teach-ai-the-unwritten-rules-of-accounting/",
+      "baslik": "Madrid&#8217;s Talky raises €1.5 million to teach AI the unwritten rules of accounting",
+      "tarih": "Fri, 30 Oct 2026 12:50:55 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Talky Labs , a Spanish startup developing AI-powered technology to automate accounting and financial operations, has raised €1.5 million in a pre-Seed funding round to support team expansion, further",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/madrids-talky-raises-e1-5-million-to-teach-ai-the-unwritten-rules-of-accounting/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/10/madrids-talky-raises-e1-5-million-to-teach-ai-the-unwritten-rules-of-accounting/"
+    }
+  ],
+  "olusturma": "2026-10-30T19:16:59.579Z"
+}
