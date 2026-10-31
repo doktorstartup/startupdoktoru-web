@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
-import { youtubeSenkron } from "../../../../lib/youtube";
+import { sosyalSenkron } from "../../../../lib/sosyal";
 
 // Admin: platformdan okunan video istatistikleri (salt okuma).
 // GET = kayıtlı metrikler; POST = şimdi senkronla (cron'u beklemeden).
@@ -24,9 +24,10 @@ export async function POST(req: NextRequest) {
   const auth = verifyAdminPassword(body.password);
   if (!auth.ok) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
-  try {
-    return NextResponse.json({ youtube: await youtubeSenkron() });
-  } catch (e) {
-    return NextResponse.json({ error: e instanceof Error ? e.message : String(e) }, { status: 500 });
-  }
+  const sonuc = await sosyalSenkron();
+  const hata = [sonuc.youtube, sonuc.instagram]
+    .map((r, i) => (r && typeof r === "object" && "hata" in r ? `${i ? "Instagram" : "YouTube"}: ${r.hata}` : null))
+    .filter(Boolean)
+    .join(" · ");
+  return NextResponse.json(hata ? { ...sonuc, error: hata } : sonuc, { status: hata ? 500 : 200 });
 }

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Loader2, RefreshCw, BarChart3 } from "lucide-react";
 
-// Platformdan SALT OKUNAN video istatistikleri (şimdilik YouTube).
+// Platformdan SALT OKUNAN video istatistikleri (YouTube + Instagram).
 // Günlük cron doldurur; "Şimdi senkronla" beklemeden çeker.
 
 type SosyalVideo = {
@@ -14,12 +14,19 @@ type SosyalVideo = {
   baslik: string | null;
   yayin_at: string | null;
   sure_sn: number | null;
-  metrikler: { views?: number; dakika?: number; ort_sure_sn?: number; ort_yuzde?: number; begeni?: number; yorum?: number; paylasim?: number; abone?: number };
+  metrikler: { views?: number; dakika?: number; ort_sure_sn?: number; ort_yuzde?: number; begeni?: number; yorum?: number; paylasim?: number; abone?: number; erisim?: number; kaydet?: number };
   tutma: [number, number][] | null;
   guncellendi_at: string;
 };
 
 const sayi = (n?: number) => (n == null ? "—" : n.toLocaleString("tr-TR"));
+
+// Platforma göre son iki sütun: YouTube abone getirir, Instagram erişim/kaydetme verir.
+const PLATFORM = {
+  youtube: { ad: "YouTube", ekstra: [["paylasim", "Paylaşım"], ["abone", "Abone"]], link: (id: string) => `https://youtube.com/shorts/${id}` },
+  instagram: { ad: "Instagram", ekstra: [["erisim", "Erişim"], ["kaydet", "Kaydetme"]], link: (id: string) => `https://www.instagram.com/reel/${id}/` },
+} as const;
+type PlatformK = keyof typeof PLATFORM;
 
 // Ardışık iki nokta arasındaki en büyük düşüş → "en büyük kopuş" saniyesi
 const enBuyukKopus = (t: [number, number][], sure: number) => {
@@ -56,6 +63,7 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
   const [hata, setHata] = useState<string | null>(null);
   const [cekiliyor, setCekiliyor] = useState(false);
   const [acik, setAcik] = useState<string | null>(null);
+  const [platform, setPlatform] = useState<PlatformK>("youtube");
 
   const yukle = useCallback(async () => {
     const r = await fetch(`/api/admin/sosyal?password=${encodeURIComponent(pw())}`);
@@ -83,13 +91,15 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
     setCekiliyor(false);
   };
 
+  const gorunen = (videolar || []).filter((v) => v.platform === platform);
+  const P = PLATFORM[platform];
   const sonGuncelleme = videolar?.[0] && videolar.reduce((a, v) => (v.guncellendi_at > a ? v.guncellendi_at : a), "");
 
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-extrabold flex items-center gap-2">
-          <BarChart3 className="h-5 w-5 text-primary" /> YouTube istatistikleri
+          <BarChart3 className="h-5 w-5 text-primary" /> Platform istatistikleri
         </h2>
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           {sonGuncelleme && <span>Son: {new Date(sonGuncelleme).toLocaleString("tr-TR")}</span>}
@@ -98,13 +108,28 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
           </button>
         </div>
       </div>
-      <p className="text-xs text-muted-foreground">Ortalama izlenme ve tutma eğrisi YouTube&apos;dan 2-3 gün gecikmeli gelir.</p>
+      <div className="flex gap-2 text-xs">
+        {(Object.keys(PLATFORM) as PlatformK[]).map((k) => (
+          <button
+            key={k}
+            onClick={() => setPlatform(k)}
+            className={`px-3 py-1.5 rounded-lg border ${platform === k ? "border-primary/60 bg-primary/10 text-primary" : "border-border/40 bg-secondary/20"}`}
+          >
+            {PLATFORM[k].ad} <span className="opacity-60">{(videolar || []).filter((v) => v.platform === k).length}</span>
+          </button>
+        ))}
+      </div>
+      <p className="text-xs text-muted-foreground">
+        {platform === "youtube"
+          ? "Ortalama izlenme ve tutma eğrisi YouTube'dan 2-3 gün gecikmeli gelir."
+          : "Instagram saniye saniye tutma eğrisi vermez; yalnız ortalama izlenme süresi var."}
+      </p>
 
       {hata && <p className="text-sm text-red-400">{hata}</p>}
       {!videolar && !hata && <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />}
-      {videolar && videolar.length === 0 && <p className="text-sm text-muted-foreground">Henüz veri yok — &quot;Şimdi senkronla&quot;.</p>}
+      {videolar && gorunen.length === 0 && <p className="text-sm text-muted-foreground">Henüz veri yok — &quot;Şimdi senkronla&quot;.</p>}
 
-      {videolar && videolar.length > 0 && (
+      {gorunen.length > 0 && (
         <div className="glass-panel rounded-2xl border border-border/40 overflow-x-auto">
           <table className="w-full text-sm">
             <thead className="text-xs text-muted-foreground text-left">
@@ -113,12 +138,15 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
                 <th className="p-3 text-right">Görüntülenme</th>
                 <th className="p-3 text-right">Ort. izlenme</th>
                 <th className="p-3 text-right">Beğeni</th>
-                <th className="p-3 text-right">Paylaşım</th>
-                <th className="p-3 text-right">Abone</th>
+                {P.ekstra.map(([k, ad]) => (
+                  <th key={k} className="p-3 text-right">
+                    {ad}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {videolar.map((v) => {
+              {gorunen.map((v) => {
                 const m = v.metrikler || {};
                 return [
                   <tr
@@ -129,7 +157,8 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
                     <td className="p-3">
                       <div className="font-bold">{v.baslik}</div>
                       <div className="text-xs text-muted-foreground">
-                        {v.yayin_at && new Date(v.yayin_at).toLocaleDateString("tr-TR")} · {v.sure_sn} sn
+                        {v.yayin_at && new Date(v.yayin_at).toLocaleDateString("tr-TR")}
+                        {v.sure_sn != null && ` · ${v.sure_sn} sn`}
                         {v.paylasim_id && basliklar[v.paylasim_id] && <span className="text-primary"> · {basliklar[v.paylasim_id]}</span>}
                       </div>
                     </td>
@@ -139,19 +168,22 @@ export default function Istatistik({ pw, basliklar }: { pw: () => string; baslik
                       {m.ort_sure_sn != null && <div className="text-xs text-muted-foreground">{m.ort_sure_sn} sn</div>}
                     </td>
                     <td className="p-3 text-right">{sayi(m.begeni)}</td>
-                    <td className="p-3 text-right">{sayi(m.paylasim)}</td>
-                    <td className="p-3 text-right">{sayi(m.abone)}</td>
+                    {P.ekstra.map(([k]) => (
+                      <td key={k} className="p-3 text-right">
+                        {sayi(m[k])}
+                      </td>
+                    ))}
                   </tr>,
                   acik === v.id && (
                     <tr key={`${v.id}-t`} className="border-b border-border/20">
-                      <td colSpan={6} className="p-3">
+                      <td colSpan={4 + P.ekstra.length} className="p-3">
                         {v.tutma && v.sure_sn ? (
                           <TutmaEgrisi t={v.tutma} sure={v.sure_sn} />
-                        ) : (
+                        ) : platform === "youtube" ? (
                           <p className="text-xs text-muted-foreground">Tutma eğrisi henüz yok (yeni video ya da az izlenme).</p>
-                        )}
-                        <a href={`https://youtube.com/shorts/${v.video_id}`} target="_blank" rel="noreferrer" className="text-xs text-primary">
-                          YouTube&apos;da aç
+                        ) : null}
+                        <a href={P.link(v.video_id)} target="_blank" rel="noreferrer" className="text-xs text-primary">
+                          {P.ad}&apos;da aç
                         </a>
                       </td>
                     </tr>
