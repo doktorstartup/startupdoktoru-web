@@ -18,9 +18,11 @@ Canlı: **https://startupdoktoru.com** · Repo: `github.com/doktorstartup/startu
 | `OPENAI_API_KEY` | AI Mentor |
 | `ADMIN_PASSWORD` | Tüm `/admin` ve admin API'leri korur (sunucu doğrular) |
 | `RESEND_API_KEY` / `RESEND_FROM` / `RESEND_REPLY_TO` | E-posta. From: `eser@startupdoktoru.com`, Reply-To: `doktorstartup@gmail.com` |
-| `CRON_SECRET` (opsiyonel) | Cron endpoint'ini korur |
+| `CRON_SECRET` | Cron uçlarını korur — **tanımlı (2026-10-31)**, şifresiz istek 401; Vercel cron kendisi gönderir |
 | `ADMIN_NOTIFY_EMAIL` (opsiyonel) | Kayıt/satış bildirimleri buraya (varsayılan `esermemisoglu@gmail.com`) |
 | `NEXT_PUBLIC_SITE_URL` | `https://startupdoktoru.com` |
+| `YOUTUBE_CLIENT_ID` / `YOUTUBE_CLIENT_SECRET` / `YOUTUBE_REFRESH_TOKEN` | Sosyal istatistik — YouTube salt okuma (bkz. §6.1) |
+| `IG_ACCESS_TOKEN` / `IG_USER_ID` | Sosyal istatistik — Instagram (süresiz system-user anahtarı, **Secret**; paylaşım izni de var) |
 
 ## 3. Kimlik Doğrulama (Supabase Auth)
 - **Email+şifre** (Confirm email AÇIK) + **Google OAuth**.
@@ -78,6 +80,13 @@ Tablo **`ds_email_suppressions`** — bu adreslere **hiçbir pazarlama maili** g
 - `notifyAdmin()` (`src/lib/email.ts`) → `ADMIN_NOTIFY_EMAIL` (varsayılan `esermemisoglu@gmail.com`).
 - **Yeni kayıt**: `/api/welcome` içinde, kişi başına bir kez (`ds_leads.tags` içine `admin_notified` eklenerek dedup).
 - **Yeni satış**: Stripe webhook `payment_intent.succeeded` → `isNewOrder` (ürün, tutar, müşteri, kupon).
+
+### 6.1 Sosyal İstatistik Senkronu (Paylaşım sekmesi altı)
+YouTube + Instagram video metrikleri **salt okunur**, tablo **`ds_sosyal_video`** (migration 0032). Cron `/api/cron/sosyal` her gün `0 4 * * *` (07:00 TR); panelde "Şimdi senkronla" = `POST /api/admin/sosyal`. Kod: `src/lib/youtube.ts`, `src/lib/instagram.ts`, `src/lib/sosyal.ts` (iki platform `allSettled` — biri düşerse diğeri yazılır).
+- **YouTube:** Google Cloud projesi `startupdoktoru-sosyal-513020` (**Startupdoktoru Google hesabı**), OAuth uygulaması *In production* (doğrulamasız, ≤100 kullanıcı yeterli). Yetki: `node scripts/sosyal/youtube-yetki.mjs` → refresh token `.env.local`'a yazılır, Vercel'e elle kopyalanır. Kapsam yalnız okuma (`youtube.readonly` + `yt-analytics.readonly`); otomatik yükleme gerekirse `youtube.upload` ekle + yeniden yetki. Tutma eğrisi (`audienceWatchRatio`) Shorts dahil gelir.
+- **Instagram:** Meta uygulaması **"Startup Doktoru İstatistik"** (Arvasyon Yazılım portföyü, Unpublished/geliştirme modu yeterli), *Instagram API → Unified login* yapılandırması, **system-user anahtarı süresiz**. Host `graph.facebook.com/v23.0/{IG_USER_ID}`. İzinler: `instagram_basic`, `instagram_manage_insights`, `instagram_content_publish` (ileride otomatik paylaşım için) + Meta'nın zorunlu tuttuğu `instagram_manage_messages`. Saniye saniye tutma eğrisi **yok**; reels başına views/reach/saved/shares/ortalama izlenme süresi.
+- **Eşleşme:** Paylaşım kartındaki Shorts/Instagram linkinden video kimliği çıkarılır → `paylasim_id`. Link girilmezse eşleşme 0 kalır.
+- **Süre:** birleşik senkron ~25 sn (60 sn sınırı). Tuzaklar: YouTube tutma isteğinde `startDate=2005` → Google istek başına 10-35 sn bekletir (yayın günü kullan); Instagram içgörü istekleri 5'erli paralelde 60 sn'yi aşıyordu (15'erli).
 
 ## 7. Bilinen Tuzaklar (tekrar yaşamamak için)
 - **DNS Vercel'de.** İsimtescil DNS paneli yetkili değil; e-posta/DNS kaydı Vercel DNS'e.
