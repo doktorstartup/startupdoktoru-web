@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Phone, X, Loader2, Check } from "lucide-react";
 import { supabase } from "../lib/supabase";
-import { useMember } from "../lib/member";
+import { useMember, memberAuthHeader } from "../lib/member";
 import { useT } from "../lib/i18n-client";
 
 const DONE_KEY = "ds_phone_prompt_done";
@@ -26,15 +26,15 @@ export function PhonePrompt() {
       /* devam */
     }
     // İsmi auth profilinden al (Google: full_name), kaydı garantile, telefon yoksa kart göster.
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(async ({ data }) => {
       const m = data.user?.user_metadata || {};
       const fullName = m.full_name || m.name || "";
       setName(fullName);
       // POST: Google ile gireni CRM'e al + hasPhone öğren
       fetch("/api/profile", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: member.email, name: fullName }),
+        headers: { "Content-Type": "application/json", ...(await memberAuthHeader()) },
+        body: JSON.stringify({ name: fullName }),
       })
         .then((r) => r.json())
         .then((d) => {
@@ -60,8 +60,8 @@ export function PhonePrompt() {
     try {
       await fetch("/api/profile", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: member?.email, name, phone }),
+        headers: { "Content-Type": "application/json", ...(await memberAuthHeader()) },
+        body: JSON.stringify({ name, phone }),
       });
       setDone(true);
       try {

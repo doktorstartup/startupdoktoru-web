@@ -10,7 +10,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
 import { useHref, useT } from "../lib/i18n-client";
-import { useMember } from "../lib/member";
+import { useMember, memberAuthHeader } from "../lib/member";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -168,7 +168,8 @@ export default function CheckoutForm({
     if (!member?.email) return;
     setEmail(member.email);
     setPrefilling(true);
-    fetch(`/api/profile?email=${encodeURIComponent(member.email)}`)
+    memberAuthHeader()
+      .then((headers) => fetch("/api/profile", { headers }))
       .then((r) => r.json())
       .then((d) => {
         if (d.name) setName(d.name);

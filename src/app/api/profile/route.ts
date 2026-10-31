@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase";
+import { verifyMember } from "../../../lib/memberAuth";
 
 // Üye profili: telefon var mı (yatırımcı-telefon kartını göstermek için) + telefon kaydet.
 // Google ile girenlerden telefon olmaz → kart çıkar; email+şifre kayıtta zaten alınır.
+// E-posta istekten değil, doğrulanmış oturumdan gelir (başkasının verisi okunamaz/yazılamaz).
 
 export async function GET(req: NextRequest) {
-  const email = (req.nextUrl.searchParams.get("email") || "").trim().toLowerCase();
-  if (!email || !email.includes("@")) return NextResponse.json({ hasPhone: false });
+  const { user, error, status } = await verifyMember(req);
+  if (!user) return NextResponse.json({ error }, { status });
+  const email = user.email;
 
   const { data } = await supabaseAdmin
     .from("ds_leads")
@@ -20,11 +23,10 @@ export async function GET(req: NextRequest) {
 // phone yoksa: kaydı garantile (Google ile gireni CRM'e al) + hasPhone döndür.
 // phone varsa: telefonu kaydet + investor_interest etiketi.
 export async function POST(req: NextRequest) {
-  const { email, name, phone } = await req.json().catch(() => ({}));
-  const normEmail = typeof email === "string" ? email.trim().toLowerCase() : "";
-  if (!normEmail.includes("@")) {
-    return NextResponse.json({ error: "Geçerli e-posta gerekli." }, { status: 400 });
-  }
+  const { user, error, status } = await verifyMember(req);
+  if (!user) return NextResponse.json({ error }, { status });
+  const { name, phone } = await req.json().catch(() => ({}));
+  const normEmail = user.email;
 
   const { data: existing } = await supabaseAdmin
     .from("ds_leads")

@@ -643,7 +643,6 @@ export const tr = {
     phonePlaceholder: "Telefon (+90 5xx xxx xx xx)",
     projectPlaceholder: "Projenin adı (gerçek ya da takma)",
     gateCta: "Mentörle Konuşmaya Başla",
-    gateNote: "Bilgilerin gizli tutulur, üçüncü taraflarla paylaşılmaz.",
     statusBefore: "Mevcut Durum:",
     statusValue: "Girişim Check-Up Bekleniyor",
     raiseScore: "Puan Artır",

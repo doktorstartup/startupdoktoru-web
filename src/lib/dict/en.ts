@@ -651,7 +651,6 @@ export const en: Dict = {
     phonePlaceholder: "Phone (+1 555 000 0000)",
     projectPlaceholder: "Project name (real or a placeholder)",
     gateCta: "Start Talking to the Mentor",
-    gateNote: "Your details stay confidential and are never shared with third parties.",
     statusBefore: "Current status:",
     statusValue: "Startup Check-Up pending",
     raiseScore: "Raise Score",

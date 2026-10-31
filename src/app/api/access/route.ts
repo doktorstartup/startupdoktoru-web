@@ -1,17 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase";
+import { verifyMember } from "../../../lib/memberAuth";
 
-// E-posta ile erişim sorgusu: ödenmiş siparişlerden sahip olunan ürünleri döner.
+// Oturumdaki e-posta ile erişim sorgusu: ödenmiş siparişlerden sahip olunan ürünleri döner.
 // all_access_bundle → 3 eğitimin tamamına erişim olarak açılır.
 const BUNDLE_GRANTS = ["investor_training", "startup_giris", "degerleme"];
 
 export async function POST(req: NextRequest) {
   try {
-    const { email } = await req.json();
-    if (!email || typeof email !== "string") {
-      return NextResponse.json({ error: "E-posta gerekli." }, { status: 400 });
-    }
-    const normalized = email.trim().toLowerCase();
+    const { user, error: authError, status } = await verifyMember(req);
+    if (!user) return NextResponse.json({ error: authError }, { status });
+    const normalized = user.email;
 
     const { data, error } = await supabaseAdmin
       .from("ds_orders")

@@ -213,7 +213,6 @@ export function AIDrawer({ isOpen, onClose }: AIDrawerProps) {
             >
               {gateLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>{t.gateCta} <ArrowRight className="h-4 w-4" /></>}
             </button>
-            <p className="text-[10px] text-muted-foreground/80 text-center mt-3">{t.gateNote}</p>
           </form>
         ) : (
         <>

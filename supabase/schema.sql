@@ -19,14 +19,9 @@ CREATE TABLE IF NOT EXISTS public.ds_users (
 -- Enable RLS for ds_users
 ALTER TABLE public.ds_users ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Allow public read access to ds_users" ON public.ds_users
-  FOR SELECT USING (true);
-
-CREATE POLICY "Allow individuals to update their own ds_user profile" ON public.ds_users
-  FOR UPDATE USING (auth.uid() = id);
-
-CREATE POLICY "Allow system insertions on ds_user creation" ON public.ds_users
-  FOR INSERT WITH CHECK (true);
+-- Yalnız kendi satırı okunur; yazma yalnız service-role (bkz. 0033_ds_users_rls.sql).
+CREATE POLICY "Users read own ds_user row" ON public.ds_users
+  FOR SELECT USING (auth.uid() = id);
 
 -- 2. DR. STARTUP LEADS CRM TABLE
 CREATE TABLE IF NOT EXISTS public.ds_leads (
@@ -308,6 +303,11 @@ create table if not exists public.ds_paylasim (
   kurgu_link text,
   hedef_tarih date,
   platformlar jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+-- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
+alter table public.ds_paylasim enable row level security;
 
 -- Sosyal istatistik (salt okuma, günlük senkron) — bkz. migrations/0032_sosyal_istatistik.sql
 create table if not exists public.ds_sosyal_video (
@@ -325,8 +325,3 @@ create table if not exists public.ds_sosyal_video (
 );
 -- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
 alter table public.ds_sosyal_video enable row level security;
-  created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now()
-);
--- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
-alter table public.ds_paylasim enable row level security;
