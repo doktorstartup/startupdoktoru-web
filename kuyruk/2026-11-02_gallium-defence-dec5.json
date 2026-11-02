@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_gallium-defence-dec5",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Gallium Defence",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7100000,
+      "birim": "EUR",
+      "usd": 7668000
+    },
+    "lider": "Keen Venture Partners",
+    "katilanlar": [
+      "Polytechnique Ventures",
+      "Omnes Capital",
+      "360 Capital"
+    ],
+    "kurucular": [
+      "Eric Fournier",
+      "Florian Lemoine",
+      "Robin Mandel"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T09:00:37.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/paris-based-gallium-defense-emerges-from-stealth-with-e7-1-million-to-scale-affordable-drone-detection/",
+      "baslik": "Paris-based Gallium Defence emerges from stealth with €7.1 million to scale affordable drone detection",
+      "tarih": "Mon, 02 Nov 2026 09:00:37 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gallium Defence , a Paris-based startup working on drone detection at a fraction of the cost of legacy systems, has emerged from stealth with a €7.1 million Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/paris-based-gallium-defense-emerges-from-stealth-with-e7-1-million-to-scale-affordable-drone-detection/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/paris-based-gallium-defense-emerges-from-stealth-with-e7-1-million-to-scale-affordable-drone-detection/"
+    }
+  ],
+  "olusturma": "2026-11-02T22:44:54.324Z"
+}
