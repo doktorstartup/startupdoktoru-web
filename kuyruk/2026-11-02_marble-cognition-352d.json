@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_marble-cognition-352d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Marble Cognition",
+    "domain": "marblecognition.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3350000,
+      "birim": "EUR",
+      "usd": 3618000
+    },
+    "lider": "Heartcore",
+    "katilanlar": [
+      "Seedcamp",
+      "Personio",
+      "Datadog"
+    ],
+    "kurucular": [
+      "Felix Rösner",
+      "Christophe Schmit"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T08:00:05.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/",
+      "baslik": "Munich’s Marble Cognition raises €3.35 million to build AI coworkers that learn business processes before automating them",
+      "tarih": "Mon, 02 Nov 2026 08:00:05 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Marble Cognition (Marble), a Munich-based startup building AI coworkers that understand how work is executed to optimise and automate business operations, has raised €3.35 million ($3.75 million) in a",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/munichs-marble-cognition-raises-e3-35-million-to-build-ai-coworkers-that-learn-business-processes-before-automating-them/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}

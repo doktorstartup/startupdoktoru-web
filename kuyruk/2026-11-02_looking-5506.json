@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_looking-5506",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Looking",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2900000,
+      "birim": "EUR",
+      "usd": 3132000
+    },
+    "lider": "Practica Capital",
+    "katilanlar": [
+      "Nordic VC Inventure",
+      "Roleo"
+    ],
+    "kurucular": [
+      "Janer Gorohhov",
+      "Vahur Hansen"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T11:29:40.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/looking-for-a-job-estonias-roleo-just-raised-e2-9-million-to-help-you-on-your-journey/",
+      "baslik": "Looking for a job? Estonia&#8217;s Roleo just raised €2.9 million to help you on your journey",
+      "tarih": "Mon, 02 Nov 2026 11:29:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Roleo , an Estonian personal AI career agent, has raised €2.9 million to expand across Europe and help tech professionals discover career opportunities - without the hassle of searching and applying.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/looking-for-a-job-estonias-roleo-just-raised-e2-9-million-to-help-you-on-your-journey/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}

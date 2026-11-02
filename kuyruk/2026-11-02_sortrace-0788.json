@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_sortrace-0788",
+  "durum": "hazir",
+  "puan": 45,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Sortrace",
+    "domain": "sortrace.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 800000,
+      "birim": "USD",
+      "usd": 800000
+    },
+    "lider": "Almi Invest",
+    "katilanlar": [
+      "Gorilla Capital",
+      "Antler"
+    ],
+    "kurucular": [
+      "Rahel Surshi"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T11:02:15.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/sortrace-raises-800k/",
+      "baslik": "Swedish Sortrace secures funding to help municipalities improve household waste sorting",
+      "tarih": "Mon, 02 Nov 2026 11:02:15 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based waste technology startup Sortrace has raised approximately $800,000 in a funding round led by Almi Invest , with participation from Antler , Gorilla Capital and several business angels",
+      "kaynak_url": "https://arcticstartup.com/sortrace-raises-800k/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}

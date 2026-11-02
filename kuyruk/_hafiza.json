@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"graniteinfra.ai","ad":"granite","tarih":"2026-09-28","dosya":"2026-09-28_granite-b8df.json"},
-  {"dom":"complaion.com","ad":"complaion","tarih":"2026-09-28","dosya":"2026-09-28_complaion-c3ad.json"},
-  {"dom":null,"ad":"shopify","tarih":"2026-09-28","dosya":"2026-09-28_shopify-f874.json"},
-  {"dom":"klang.ai","ad":"klang","tarih":"2026-09-28","dosya":"2026-09-28_klang-cee2.json"},
-  {"dom":"reactive-technologies.com","ad":"reactive","tarih":"2026-09-28","dosya":"2026-09-28_reactive-69e6.json"},
-  {"dom":null,"ad":"biltme","tarih":"2026-09-28","dosya":"2026-09-28_biltme-1302.json"},
   {"dom":"inbolt.com","ad":"inbolt","tarih":"2026-09-30","dosya":"2026-09-30_inbolt-6b1b.json"},
   {"dom":"ahron.ai","ad":"ahron","tarih":"2026-09-30","dosya":"2026-09-30_ahron-0532.json"},
   {"dom":"spotable.com","ad":"spotable","tarih":"2026-09-29","dosya":"2026-09-29_spotable-9edf.json"},
@@ -20,7 +14,6 @@
   {"dom":"sima.ai","ad":"sima ai","tarih":"2026-09-29","dosya":"2026-09-29_sima-ai-161c.json"},
   {"dom":"instinct.com","ad":"instinct","tarih":"2026-09-29","dosya":"2026-09-29_instinct-bae4.json"},
   {"dom":null,"ad":"estonianukrainian","tarih":"2026-09-30","dosya":"2026-09-30_estonianukrainian-7092.json"},
-  {"dom":null,"ad":"legaltech","tarih":"2026-09-28","dosya":"2026-09-28_legaltech-38d2.json"},
   {"dom":null,"ad":"valuation","tarih":"2026-09-30","dosya":"2026-09-30_valuation-0a1e.json"},
   {"dom":"restate.dev","ad":"restate","tarih":"2026-09-30","dosya":"2026-09-30_restate-c5c1.json"},
   {"dom":null,"ad":"blackswan space","tarih":"2026-09-30","dosya":"2026-09-30_blackswan-space-eb9e.json"},
@@ -42,7 +35,6 @@
   {"dom":null,"ad":"we","tarih":"2026-10-02","dosya":"2026-10-02_we-5c47.json"},
   {"dom":"breye.com","ad":"breye therapeutics","tarih":"2026-10-02","dosya":"2026-10-02_breye-therapeutics-a47e.json"},
   {"dom":"volantissemi.ai","ad":"volantis","tarih":"2026-10-02","dosya":"2026-10-02_volantis-34b2.json"},
-  {"dom":"bluecore.energy","ad":"bluecore energy","tarih":"2026-09-28","dosya":"2026-09-28_bluecore-energy-de02.json"},
   {"dom":null,"ad":"buntar aerospace","tarih":"2026-10-05","dosya":"2026-10-05_buntar-aerospace-26d8.json"},
   {"dom":"fleuret.ai","ad":"fleuret ai","tarih":"2026-10-05","dosya":"2026-10-05_fleuret-ai-236d.json"},
   {"dom":"rob.co","ad":"robco","tarih":"2026-10-05","dosya":"2026-10-05_robco-552c.json"},
@@ -209,5 +201,12 @@
   {"dom":"usetalky.com","ad":"talky","tarih":"2026-10-30","dosya":"2026-10-30_talky-68ea.json"},
   {"dom":"wabi.ai","ad":"wabi","tarih":"2026-10-30","dosya":"2026-10-30_wabi-0469.json"},
   {"dom":"midstream.health","ad":"midstream health","tarih":"2026-10-30","dosya":"2026-10-30_midstream-health-f8e4.json"},
-  {"dom":"serval.com","ad":"serval","tarih":"2026-10-30","dosya":"2026-10-30_serval-8973.json"}
+  {"dom":"serval.com","ad":"serval","tarih":"2026-10-30","dosya":"2026-10-30_serval-8973.json"},
+  {"dom":null,"ad":"looking","tarih":"2026-11-02","dosya":"2026-11-02_looking-5506.json"},
+  {"dom":null,"ad":"vc creandum","tarih":"2026-11-02","dosya":"2026-11-02_vc-creandum-98a5.json"},
+  {"dom":"hypersonica.com","ad":"hypersonica","tarih":"2026-11-02","dosya":"2026-11-02_hypersonica-3545.json"},
+  {"dom":"gallium-defense.com","ad":"gallium defense","tarih":"2026-11-02","dosya":"2026-11-02_gallium-defense-cf15.json"},
+  {"dom":"marblecognition.com","ad":"marble cognition","tarih":"2026-11-02","dosya":"2026-11-02_marble-cognition-352d.json"},
+  {"dom":"seamoretech.com","ad":"seamoretech","tarih":"2026-11-02","dosya":"2026-11-02_seamoretech-86f0.json"},
+  {"dom":"sortrace.com","ad":"sortrace","tarih":"2026-11-02","dosya":"2026-11-02_sortrace-0788.json"}
 ]}

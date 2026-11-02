@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_seamoretech-86f0",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Seamoretech",
+    "domain": "seamoretech.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 1100000,
+      "birim": "EUR",
+      "usd": 1188000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Sofia Delgado"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T06:22:33.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/portos-seamoretech-secures-e1-1-million-to-turn-desalination-brine-into-freshwater-and-critical-minerals/",
+      "baslik": "Porto’s female-led startup Seamoretech secures €1.1 million to turn desalination brine into freshwater and critical minerals",
+      "tarih": "Mon, 02 Nov 2026 06:22:33 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Seamoretech , a Porto-based CleanTech startup that converts desalination brine into freshwater and critical minerals, has secured €1.1 million in the first closing of its Seed round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/portos-seamoretech-secures-e1-1-million-to-turn-desalination-brine-into-freshwater-and-critical-minerals/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/portos-seamoretech-secures-e1-1-million-to-turn-desalination-brine-into-freshwater-and-critical-minerals/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}

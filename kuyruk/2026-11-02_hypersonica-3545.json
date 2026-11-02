@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_hypersonica-3545",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Hypersonica",
+    "domain": "hypersonica.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "EUR",
+      "usd": 108000000
+    },
+    "lider": "Lightspeed",
+    "katilanlar": [
+      "General Catalyst",
+      "201 Ventures",
+      "Plural"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-02T09:35:58.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/hypersonica-secures-e100-million-to-boost-sovereign-hypersonic-deep-strike-systems-for-europe-and-its-allies/",
+      "baslik": "Hypersonica secures €100 million to boost sovereign hypersonic deep-strike systems for Europe and its allies",
+      "tarih": "Mon, 02 Nov 2026 09:35:58 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Hypersonica , the British-German defence company developing sovereign hypersonic deep-strike systems for Europe and its allies, has secured €100 million in Series B funding.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/hypersonica-secures-e100-million-to-boost-sovereign-hypersonic-deep-strike-systems-for-europe-and-its-allies/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/hypersonica-secures-e100-million-to-boost-sovereign-hypersonic-deep-strike-systems-for-europe-and-its-allies/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}

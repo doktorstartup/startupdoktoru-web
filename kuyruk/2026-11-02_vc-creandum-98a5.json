@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_vc-creandum-98a5",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "VC Creandum",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 668000000,
+      "birim": "EUR",
+      "usd": 721440000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Staffan Helgesson"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T10:16:41.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/swedish-vc-creandum-closes-e668-million-cviii-fund-its-largest-to-date/",
+      "baslik": "Swedish VC Creandum closes €668 million CVIII fund &#8211; its largest to date",
+      "tarih": "Mon, 02 Nov 2026 10:16:41 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based venture capital firm Creandum has closed a €668 million ($750 million) fund, Creandum VIII, to back early-stage technology startups from pre-Seed to Series A.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swedish-vc-creandum-closes-e668-million-cviii-fund-its-largest-to-date/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swedish-vc-creandum-closes-e668-million-cviii-fund-its-largest-to-date/"
+    }
+  ],
+  "olusturma": "2026-11-02T13:26:08.998Z"
+}
