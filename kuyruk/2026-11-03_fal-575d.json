@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_fal-575d",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "fal",
+    "domain": "fal.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1300000000,
+      "birim": "USD",
+      "usd": 1300000000
+    },
+    "lider": "Bessemer Venture Partners",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-03T18:34:22.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/fal-16-milyar-dolar-degerleme-uzerinden-1-3-milyar-dolar-yatirim-aldi/",
+      "baslik": "fal, 16 milyar dolar değerleme üzerinden 1.3 milyar dolar yatırım aldı",
+      "tarih": "Tue, 03 Nov 2026 18:34:22 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Görkem Yurtseven ve Burkay Gür 'ün ABD'de kurduğu üretken medya girişimi fal , değerlemesini iki katına çıkardığı yeni yatırım turunda 16 milyar dolar değerleme üzerinden 1.3 milyar dolar yatırım aldı",
+      "kaynak_url": "https://swipeline.co/fal-16-milyar-dolar-degerleme-uzerinden-1-3-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri D",
+      "kaynak_url": "https://swipeline.co/fal-16-milyar-dolar-degerleme-uzerinden-1-3-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-03T20:29:16.724Z"
+}

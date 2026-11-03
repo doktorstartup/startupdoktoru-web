@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_tallia-5889",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Tallia",
+    "domain": "tallia.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4000000,
+      "birim": "EUR",
+      "usd": 4320000
+    },
+    "lider": "Outward VC",
+    "katilanlar": [
+      "Institute of Chartered Accountants in England and Wales (ICAEW)",
+      "Portfolio Ventures",
+      "Expedite Capital",
+      "Paul Forster",
+      "Angus Miln"
+    ],
+    "kurucular": [
+      "Jack Mander",
+      "Alexander Bartlam"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T16:10:48.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/london-based-tallia-raises-e4-million-to-bring-ai-powered-research-and-review-to-tax-firms/",
+      "baslik": "Tallia raises €4 million to bring AI-powered research and review to tax firms",
+      "tarih": "Tue, 03 Nov 2026 16:10:48 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based AI startup Tallia , formerly known as Revax, has secured €4 million ($4.5 million) in Seed funding to expand its AI-powered research and drafting platform for tax and accountancy professi",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/london-based-tallia-raises-e4-million-to-bring-ai-powered-research-and-review-to-tax-firms/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/london-based-tallia-raises-e4-million-to-bring-ai-powered-research-and-review-to-tax-firms/"
+    }
+  ],
+  "olusturma": "2026-11-03T20:29:16.724Z"
+}
