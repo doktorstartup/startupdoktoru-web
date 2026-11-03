@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_trajectory-f97f",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Trajectory",
+    "domain": "trajectory.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 45000000,
+      "birim": "USD",
+      "usd": 45000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-03T08:47:02.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/yapay-zeka-modellerini-egiten-trajectory-45-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka modellerini eğiten Trajectory, 45 milyon dolar yatırım aldı",
+      "tarih": "Tue, 03 Nov 2026 08:47:02 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka modellerinin eğitimini teknik uzmanlığı olmayan kullanıcılar için erişilebilir hale getirmeyi hedefleyen Trajectory, 300 milyon dolar değerleme ile 45 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/yapay-zeka-modellerini-egiten-trajectory-45-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri A",
+      "kaynak_url": "https://swipeline.co/yapay-zeka-modellerini-egiten-trajectory-45-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-03T12:44:19.049Z"
+}

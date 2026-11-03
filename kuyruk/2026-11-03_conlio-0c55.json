@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_conlio-0c55",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Conlio",
+    "domain": "conlio.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 6400000,
+      "birim": "EUR",
+      "usd": 6912000
+    },
+    "lider": "Piton Capital",
+    "katilanlar": [
+      "F-LOG Ventures",
+      "WaVe-X"
+    ],
+    "kurucular": [
+      "Claudio Consul"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T10:49:15.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/freighttech-startup-conlio-secures-e6-4-million-to-expand-ai-powered-financial-automation-across-europe/",
+      "baslik": "FreightTech startup Conlio secures €6.4 million to expand AI-powered financial automation across Europe",
+      "tarih": "Tue, 03 Nov 2026 10:49:15 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Conlio , a German AI-powered financial operations platform for road freight forwarders, today announces a €6.4 million fundraise to expand across Europe - accelerating the automation of financial syst",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/freighttech-startup-conlio-secures-e6-4-million-to-expand-ai-powered-financial-automation-across-europe/"
+    }
+  ],
+  "olusturma": "2026-11-03T12:44:19.049Z"
+}

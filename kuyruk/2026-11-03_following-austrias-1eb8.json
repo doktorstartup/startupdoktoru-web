@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_following-austrias-1eb8",
+  "durum": "hazir",
+  "puan": 71,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Following Austria's",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6900000,
+      "birim": "EUR",
+      "usd": 7452000
+    },
+    "lider": "PactVC",
+    "katilanlar": [
+      "Prototype Capital",
+      "Vanagon Ventures",
+      "Tumbleweed's",
+      "EWOR"
+    ],
+    "kurucular": [
+      "Julian Rothenbuchner"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T09:35:35.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/",
+      "baslik": "Following Austria&#8217;s first commercial satellite launch, Tumbleweed raises €6.9 million to accelerate space missions",
+      "tarih": "Tue, 03 Nov 2026 09:35:35 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "SpaceTech company Tumbleweed has raised €6.9 million, allegedly the largest SpaceTech Seed round ever raised in Austria, four months after the startup put the country’s first commercial satellite in o",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/following-austrias-first-commercial-satellite-launch-tumbleweed-raises-e6-9-million-to-accelerate-space-missions/"
+    }
+  ],
+  "olusturma": "2026-11-03T12:44:19.049Z"
+}

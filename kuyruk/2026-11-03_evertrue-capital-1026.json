@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_evertrue-capital-1026",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Evertrue Capital",
+    "domain": "evertrue.capital",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "British Business Bank",
+    "katilanlar": [
+      "Phoenix Court appeared first on EU-Startups"
+    ],
+    "kurucular": [
+      "Yvonne Bajela"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T12:00:12.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/4-evertrue-capital-raises-e15-million-debut-fund-backed-by-british-business-bank-and-phoenix-court/",
+      "baslik": "Evertrue Capital raises €15 million debut fund backed by British Business Bank and Phoenix Court",
+      "tarih": "Tue, 03 Nov 2026 12:00:12 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "British VC firm Evertrue Capital , the debut fund of Yvonne Bajela, has closed at €15 million ($17 million) aiming to invest €299-€599k (£250k–£500k) at pre-Seed in founders building frontier technolo",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/4-evertrue-capital-raises-e15-million-debut-fund-backed-by-british-business-bank-and-phoenix-court/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/4-evertrue-capital-raises-e15-million-debut-fund-backed-by-british-business-bank-and-phoenix-court/"
+    }
+  ],
+  "olusturma": "2026-11-03T12:44:19.049Z"
+}

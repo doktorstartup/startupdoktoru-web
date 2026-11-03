@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_turning-bc39",
+  "durum": "hazir",
+  "puan": 60,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Turning",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2600000,
+      "birim": "EUR",
+      "usd": 2808000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Viridi's funding total more than €60.3"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-03T12:35:55.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/turning-pollution-into-everyday-products-southamptons-virdi-raises-e2-6-million-to-transform-waste/",
+      "baslik": "Turning pollution into everyday products &#8211; Southampton&#8217;s Virdi raises €2.6 million to transform waste",
+      "tarih": "Tue, 03 Nov 2026 12:35:55 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Viridi , a British DeepTech that enables the transformation of waste carbon dioxide into chemical products, has closed a €2.6 million (£2.2 million) round to scale their technology, strengthen its tea",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/turning-pollution-into-everyday-products-southamptons-virdi-raises-e2-6-million-to-transform-waste/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/turning-pollution-into-everyday-products-southamptons-virdi-raises-e2-6-million-to-transform-waste/"
+    }
+  ],
+  "olusturma": "2026-11-03T12:44:19.049Z"
+}
