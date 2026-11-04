@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_tired-720c",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Tired",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 40000000,
+      "birim": "EUR",
+      "usd": 43200000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Jacinto Roca",
+      "Timothy Edwards",
+      "Miquel Barba",
+      "Tobias Pfalzgraff",
+      "Titan OS"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T15:57:43.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/tired-of-roku-and-the-like-spains-titan-os-just-raised-e40-million-to-provide-you-with-an-alternative/",
+      "baslik": "Tired of Roku and the like? Spain&#8217;s Titan OS just raised €40 million to provide you with an alternative.",
+      "tarih": "Wed, 04 Nov 2026 15:57:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Titan OS , a Barcelona-based technology, entertainment and advertising company, today announced a €40 million ($46 million) financing round to further develop their smart TV Operating System.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/tired-of-roku-and-the-like-spains-titan-os-just-raised-e40-million-to-provide-you-with-an-alternative/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/tired-of-roku-and-the-like-spains-titan-os-just-raised-e40-million-to-provide-you-with-an-alternative/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

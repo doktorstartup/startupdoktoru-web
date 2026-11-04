@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_return-0d8d",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Return",
+    "domain": "return.energy",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 835000000,
+      "birim": "EUR",
+      "usd": 901800000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Europe"
+    ],
+    "kurucular": [
+      "Willem-Jan Schutte",
+      "Daniel Witvoet"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T15:22:31.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/return-secures-e835-million-financing-to-expand-battery-storage-capacity-in-germany/",
+      "baslik": "Return secures €835 million financing to expand battery storage capacity in Germany",
+      "tarih": "Wed, 04 Nov 2026 15:22:31 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Amsterdam-based Return , an energy storage startup specialising in large-scale battery systems and energy flexibility services, has secured €835 million in portfolio financing underwritten by Deutsche",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/return-secures-e835-million-financing-to-expand-battery-storage-capacity-in-germany/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_applied-compute-c2c2",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Applied Compute",
+    "domain": "appliedcompute.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 350000000,
+      "birim": "USD",
+      "usd": 350000000
+    },
+    "lider": "Elad Gil",
+    "katilanlar": [
+      "Shopify Ventures",
+      "HubSpot Ventures",
+      "Kleiner Perkins",
+      "Hanabi Capital",
+      "First Harmonic",
+      "Quantum Light",
+      "Layer Global",
+      "Lux Capital",
+      "Blackstone",
+      "Definition",
+      "Diffusion",
+      "Timeless"
+    ],
+    "kurucular": [
+      "Rhythm Garg",
+      "Linden Li"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/04/applied-compute-3-25-milyar-dolar-degerleme-uzerinden-350-milyon-dolar-yatirim-aldi/",
+      "baslik": "Applied Compute, 3,25 milyar dolar değerleme üzerinden 350 milyon dolar yatırım aldı",
+      "tarih": "Wed, 04 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kurumsal şirketler için yapay zeka modelleri geliştiren Applied Compute , 350 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/04/applied-compute-3-25-milyar-dolar-degerleme-uzerinden-350-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

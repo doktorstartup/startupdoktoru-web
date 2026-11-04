@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_granter-d0f0",
+  "durum": "hazir",
+  "puan": 45,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Granter",
+    "domain": "granter.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1600000,
+      "birim": "EUR",
+      "usd": 1728000
+    },
+    "lider": "3XP Global",
+    "katilanlar": [
+      "Celtis Venture Partners",
+      "Gateway Ventures",
+      "Deel"
+    ],
+    "kurucular": [
+      "Bernardo Seixas"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/03/portuguese-ai-startup-granter-bags-eur16m-to-expand-across-europe/",
+      "baslik": "Portuguese AI startup Granter bags €1.6M to expand across Europe",
+      "tarih": "Tue, 03 Nov 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Portuguese startup Granter has raised €1.6 million in a funding round to expand its AI-powered platform that simplifies access to European funding programmes.",
+      "kaynak_url": "https://tech.eu/2026/11/03/portuguese-ai-startup-granter-bags-eur16m-to-expand-across-europe/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

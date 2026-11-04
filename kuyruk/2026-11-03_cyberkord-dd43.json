@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_cyberkord-dd43",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "CyberKord",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2700000,
+      "birim": "EUR",
+      "usd": 2916000
+    },
+    "lider": "360 Capital",
+    "katilanlar": [
+      "Addendum Capital",
+      "Vento"
+    ],
+    "kurucular": [
+      "Alessandro Maggio",
+      "Dragos Tanasa",
+      "Cosimo Michelagnoli"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T10:47:19.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/03/cyberkord-raises-eur27m-to-automate-it-and-cybersecurity-operations-with-ai/",
+      "baslik": "CyberKord raises €2.7M to automate IT and cybersecurity operations with AI",
+      "tarih": "Tue, 03 Nov 2026 10:47:19 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Italian cybersecurity startup CyberKord has raised €2.7 million in a pre-seed funding round to support the development of its AI-powered platform for automating IT and cybersecurity operations.",
+      "kaynak_url": "https://tech.eu/2026/11/03/cyberkord-raises-eur27m-to-automate-it-and-cybersecurity-operations-with-ai/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/03/cyberkord-raises-eur27m-to-automate-it-and-cybersecurity-operations-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

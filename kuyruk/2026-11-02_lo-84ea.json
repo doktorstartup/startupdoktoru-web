@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-02_lo-84ea",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "LO",
+    "domain": "lo.tech",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 12000000,
+      "birim": "USD",
+      "usd": 12000000
+    },
+    "lider": "MMC",
+    "katilanlar": [
+      "13 Books Capital",
+      "Faction",
+      "Atka"
+    ],
+    "kurucular": [
+      "Tim Meggs",
+      "Marcus Horsley"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-02T14:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/02/london-based-lotech-lands-12m-series-a-led-by-mmc/",
+      "baslik": "London-based LO:TECH lands $12M Series A led by MMC",
+      "tarih": "Mon, 02 Nov 2026 14:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based LO:TECH , a capital markets firm built for round-the-clock and onchain markets, has raised $12 million in a Series A funding round led by MMC , with participation from existing investors",
+      "kaynak_url": "https://tech.eu/2026/11/02/london-based-lotech-lands-12m-series-a-led-by-mmc/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/02/london-based-lotech-lands-12m-series-a-led-by-mmc/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

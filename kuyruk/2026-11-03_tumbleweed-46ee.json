@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_tumbleweed-46ee",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Tumbleweed",
+    "domain": "tumbleweed.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6900000,
+      "birim": "EUR",
+      "usd": 7452000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Prototype Capital",
+      "Vanagon Ventures",
+      "EWOR"
+    ],
+    "kurucular": [
+      "Julian Rothenbuchner"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/03/tumbleweed-raises-record-eur69m-seed-round-to-bring-microgravity-research-to-the-masses/",
+      "baslik": "Tumbleweed raises record €6.9M seed round to bring microgravity research to the masses",
+      "tarih": "Tue, 03 Nov 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Austrian startup Tumbleweed has raised €6.9 million in the country's largest-ever spacetech seed round, just four months after launching Austria's first commercial satellite.",
+      "kaynak_url": "https://tech.eu/2026/11/03/tumbleweed-raises-record-eur69m-seed-round-to-bring-microgravity-research-to-the-masses/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/03/tumbleweed-raises-record-eur69m-seed-round-to-bring-microgravity-research-to-the-masses/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

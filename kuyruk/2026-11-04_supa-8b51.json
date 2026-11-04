@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_supa-8b51",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Supa",
+    "domain": "supa.co.uk",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 21000000,
+      "birim": "GBP",
+      "usd": 26670000
+    },
+    "lider": "OpenOcean",
+    "katilanlar": [
+      "Actia Capital Partners",
+      "KOMPAS VC",
+      "HEARTFELT",
+      "UK"
+    ],
+    "kurucular": [
+      "Calum Brannan"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T09:31:20.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/04/supa-raises-ps21m-in-seed-funding-to-transform-uk-residential-block-management/",
+      "baslik": "Supa raises £21M in seed funding to transform UK residential block management",
+      "tarih": "Wed, 04 Nov 2026 09:31:20 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UK-based proptech company Supa has raised £21 million in seed funding to expand its AI-powered property management platform.",
+      "kaynak_url": "https://tech.eu/2026/11/04/supa-raises-ps21m-in-seed-funding-to-transform-uk-residential-block-management/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/04/supa-raises-ps21m-in-seed-funding-to-transform-uk-residential-block-management/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_traversal-e528",
+  "durum": "hazir",
+  "puan": 83,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Traversal",
+    "domain": "traversal.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 120000000,
+      "birim": "USD",
+      "usd": 120000000
+    },
+    "lider": "Kleiner Perkins",
+    "katilanlar": [
+      "Redpoint Ventures",
+      "Battery Ventures",
+      "Khosla Ventures",
+      "Sequoia Capital",
+      "Amex Ventures"
+    ],
+    "kurucular": [
+      "Ahmed Lone",
+      "Raj Agrawal"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/04/traversal-1-milyar-dolar-degerleme-uzerinden-120-milyon-dolar-yatirim-aldi/",
+      "baslik": "Traversal, 1 milyar dolar değerleme üzerinden 120 milyon dolar yatırım aldı",
+      "tarih": "Wed, 04 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli yazılım altyapısı yönetim platformu Traversal , 120 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/04/traversal-1-milyar-dolar-degerleme-uzerinden-120-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "B serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/04/traversal-1-milyar-dolar-degerleme-uzerinden-120-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

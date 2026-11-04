@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-03_kick-c61c",
+  "durum": "hazir",
+  "puan": 56,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 1,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Kick",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 164000,
+      "birim": "EUR",
+      "usd": 177120
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Jesus Poley",
+      "Luke Simons"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-03T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/03/venture-kick-backs-apolarion-with-eur164k-to-advance-plasma-based-seed-treatment/",
+      "baslik": "Venture Kick backs Apolarion with €164K to advance plasma-based seed treatment",
+      "tarih": "Tue, 03 Nov 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swiss cleantech startup Apolarion , a spin-off from EPFL, has received €164,000 (CHF 150,000) from Venture Kick to advance its chemical-free seed treatment technology.",
+      "kaynak_url": "https://tech.eu/2026/11/03/venture-kick-backs-apolarion-with-eur164k-to-advance-plasma-based-seed-treatment/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/03/venture-kick-backs-apolarion-with-eur164k-to-advance-plasma-based-seed-treatment/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}

@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_bitbio-572c",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "bit.bio",
+    "domain": "bit.bio",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 25000000,
+      "birim": "USD",
+      "usd": 25000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Emma Pepperell"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T09:01:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/04/human-cell-programming-company-bitbio-closes-25m-series-d/",
+      "baslik": "Human cell programming company bit.bio closes $25M Series D",
+      "tarih": "Wed, 04 Nov 2026 09:01:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Human cell programming company bit.bio has secured $25 million in Series D funding to expand its portfolio of human cell models and increase access to its technology for pharmaceutical companies, biot",
+      "kaynak_url": "https://tech.eu/2026/11/04/human-cell-programming-company-bitbio-closes-25m-series-d/"
+    },
+    {
+      "metin": "Series D",
+      "kaynak_url": "https://tech.eu/2026/11/04/human-cell-programming-company-bitbio-closes-25m-series-d/"
+    }
+  ],
+  "olusturma": "2026-11-04T20:47:19.107Z"
+}
