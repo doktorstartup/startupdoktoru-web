@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_biograil-5d4f",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Biograil",
+    "domain": "biograil.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "EUR",
+      "usd": 21600000
+    },
+    "lider": "Verve Ventures",
+    "katilanlar": [
+      "Megatrend Invest"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-04T10:23:16.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/copenhagens-biograil-raises-e20-million-for-oral-drug-delivery-device-designed-as-an-alternative-to-injections/",
+      "baslik": "Copenhagen’s Biograil raises €20 million for oral drug delivery device designed as an alternative to injections",
+      "tarih": "Wed, 04 Nov 2026 10:23:16 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Biograil , a Copenhagen-based BioTech company developing an oral device to deliver therapeutics that would otherwise require injection, has closed a €20 million funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/copenhagens-biograil-raises-e20-million-for-oral-drug-delivery-device-designed-as-an-alternative-to-injections/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/copenhagens-biograil-raises-e20-million-for-oral-drug-delivery-device-designed-as-an-alternative-to-injections/"
+    }
+  ],
+  "olusturma": "2026-11-04T12:56:51.022Z"
+}

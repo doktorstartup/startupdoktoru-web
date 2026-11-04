@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_jawbuddy-63dc",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "JawBuddy",
+    "domain": "jawbuddy.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 818000,
+      "birim": "EUR",
+      "usd": 883440
+    },
+    "lider": "HALBZEIT",
+    "katilanlar": [],
+    "kurucular": [
+      "Leon Rauch",
+      "Moritz Scherer"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T07:24:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/leipzig-based-jawbuddy-raises-e818k-to-help-people-reduce-jaw-pain-bruxism-and-tmj-related-tension/",
+      "baslik": "Leipzig-based JawBuddy raises €818k to help people reduce jaw pain, bruxism, and TMJ-related tension",
+      "tarih": "Wed, 04 Nov 2026 07:24:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "JawBuddy , a Leipzig-based HealthTech startup that helps people reduce jaw pain, bruxism, and TMJ-related tension, has raised €818k in a pre-Seed round led by healthcare platform HALBZEIT.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/leipzig-based-jawbuddy-raises-e818k-to-help-people-reduce-jaw-pain-bruxism-and-tmj-related-tension/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/leipzig-based-jawbuddy-raises-e818k-to-help-people-reduce-jaw-pain-bruxism-and-tmj-related-tension/"
+    }
+  ],
+  "olusturma": "2026-11-04T12:56:51.022Z"
+}

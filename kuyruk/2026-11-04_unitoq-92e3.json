@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_unitoq-92e3",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 1,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Unitoq",
+    "domain": "unitoq.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 155000,
+      "birim": "EUR",
+      "usd": 167400
+    },
+    "lider": "LatBAN",
+    "katilanlar": [],
+    "kurucular": [
+      "Eduards Raudonis",
+      "Nikita Manija"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-04T09:17:42.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/unitoq-raises-e155k-pre-seed/",
+      "baslik": "Latvian startup Unitoq targets an early 2027 launch after its angel round to build a smartphone-based European real estate investment platform",
+      "tarih": "Wed, 04 Nov 2026 09:17:42 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Riga-based PropTech startup Unitoq has raised €155,000 in pre-seed funding from a syndicate of business angels, including members of the Latvian Business Angel Network (LatBAN) .",
+      "kaynak_url": "https://arcticstartup.com/unitoq-raises-e155k-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/unitoq-raises-e155k-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-11-04T12:56:51.022Z"
+}

@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-04_biotech-7725",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "biotech",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "EUR",
+      "usd": 21600000
+    },
+    "lider": "Verve Ventures",
+    "katilanlar": [
+      "High-Tech Gründerfonds (HTGF)",
+      "Megatrend Invest",
+      "Phase 1"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-04T12:32:40.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/biograil-raises-e20-million/",
+      "baslik": "Danish biotech startup secures €20 million to advance oral drug delivery technology towards clinical trials",
+      "tarih": "Wed, 04 Nov 2026 12:32:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Copenhagen-based biotech company Biograil has raised €20 million in a financing round backed by Verve Ventures , Megatrend Invest and existing investor High-Tech Gründerfonds (HTGF) , which participat",
+      "kaynak_url": "https://arcticstartup.com/biograil-raises-e20-million/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://arcticstartup.com/biograil-raises-e20-million/"
+    }
+  ],
+  "olusturma": "2026-11-04T12:56:51.022Z"
+}
