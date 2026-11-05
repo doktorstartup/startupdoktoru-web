@@ -68,7 +68,7 @@ yeniden okuyup işareti tazeliyor. Elle: `node scripts/haber/turk-tara.mjs --yaz
 
 # 5) Yayın onayı — /admin/blog
 
-Adım 4 yazıyı **canlıya çıkarmaz**, taslak olarak bırakır. Taslak `/blog`
+Adım 4 yazıyı **hemen canlıya çıkarmaz**: taslak olarak bırakır, kuyruktaki ilk boş sabaha tarih atar. Taslak `/blog`
 listesinde ve sitemap'te görünmez, doğrudan URL'i 404 verir, anon anahtarla
 sorgulansa bile RLS engeller.
 
@@ -87,7 +87,10 @@ Panelden elle açılan yeni yazılar da taslak doğar.
 ## Yayın kuyruğu — her sabah 07:30 TR
 
 `ds_blog_posts.yayin_tarihi` dolu taslaklar, o tarihin 07:30'unda yayına çıkar
-(pg_cron işi `blog-yayin-kuyrugu`, migration 0034). Boş taslak kendiliğinden yayınlanmaz.
+(pg_cron işi `blog-yayin-kuyrugu`, migration 0034). `yayinla.mjs` ve `yazi.mjs` yeni
+yazıya kuyruktaki ilk boş sabahı otomatik atar. Panelden açılan taslak ve panelden
+"Taslağa al" ile geri çekilen yazı kuyruğa girmez. Paneldeki "İngilizceye çevir",
+kuyruktaki Türkçe yazının tarihini İngilizce taslağa da verir.
 Yayın saatinde `created_at` güncellenir, yazı listenin başına geçer.
 Kuyruktan çıkarmak için `yayin_tarihi` boşaltılır.
 

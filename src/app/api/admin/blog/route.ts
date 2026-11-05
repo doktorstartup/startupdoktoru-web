@@ -141,7 +141,7 @@ export async function PUT(req: NextRequest) {
   if (!id) return NextResponse.json({ error: "id gerekli." }, { status: 400 });
   const { data: kaynak } = await supabaseAdmin
     .from("ds_blog_posts")
-    .select("title, slug, content, seo_title, seo_description, cover_image, lang")
+    .select("title, slug, content, seo_title, seo_description, cover_image, lang, yayin_tarihi")
     .eq("id", id)
     .maybeSingle();
   if (!kaynak) return NextResponse.json({ error: "Yazı bulunamadı." }, { status: 404 });
@@ -216,7 +216,7 @@ export async function PUT(req: NextRequest) {
 
   const { error } = mevcut
     ? await supabaseAdmin.from("ds_blog_posts").update(satir).eq("id", mevcut.id)
-    : await supabaseAdmin.from("ds_blog_posts").insert([{ ...satir, durum: "taslak" }]);
+    : await supabaseAdmin.from("ds_blog_posts").insert([{ ...satir, durum: "taslak", yayin_tarihi: kaynak.yayin_tarihi }]);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
   return NextResponse.json({ ok: true, guncellendi: !!mevcut });

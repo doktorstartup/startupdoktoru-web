@@ -145,7 +145,9 @@ export async function yayinla(kayit, metinler, { paket, kuru = false, kapakDosya
   }
   // Yeni yazı TASLAK olarak basılır — yayına alma kararı admin panelinden verilir.
   // Güncellemede durum'a dokunulmaz: yayındaki bir yazı yeniden basılınca yayında kalır.
-  const { error } = await db.from("ds_blog_posts").insert([{ ...satir, durum: "taslak", lang: "tr" }]);
+  const { data: yayin_tarihi, error: tarihHatasi } = await db.rpc("blog_siradaki_yayin_tarihi");
+  if (tarihHatasi) throw new Error(tarihHatasi.message);
+  const { error } = await db.from("ds_blog_posts").insert([{ ...satir, durum: "taslak", lang: "tr", yayin_tarihi }]);
   if (error) throw new Error(error.message);
   return { satir, kapak, govde, yazildi: true, guncellendi: false };
 }
