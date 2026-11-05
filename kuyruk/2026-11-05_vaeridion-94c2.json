@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-11-05_vaeridion-94c2",
+  "durum": "hazir",
+  "puan": 64,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "VÆRIDION",
+    "domain": "vaeridion.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 30000000,
+      "birim": "EUR",
+      "usd": 32400000
+    },
+    "lider": "SHIFT Invest",
+    "katilanlar": [
+      "VÆRIDION’s separately selected EU",
+      "Vsquared Ventures",
+      "VÆRIDION’s €30",
+      "World Fund",
+      "Invest-NL",
+      "Project A"
+    ],
+    "kurucular": [
+      "Ivor van Dartel"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-05T12:10:04.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/germanys-vaeridion-raises-e124-million-to-bring-electric-regional-flights-closer-to-reality/",
+      "baslik": "Germany&#8217;s VÆRIDION raises €124 million to bring electric regional flights closer to reality",
+      "tarih": "Thu, 05 Nov 2026 12:10:04 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Munich-based aviation startup VÆRIDION has raised €30 million in a Series A2 funding round and selected for a €94.5 million grant from the European Commission’s Innovation Fund, bringing the combined",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/germanys-vaeridion-raises-e124-million-to-bring-electric-regional-flights-closer-to-reality/"
+    },
+    {
+      "metin": "grant",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/germanys-vaeridion-raises-e124-million-to-bring-electric-regional-flights-closer-to-reality/"
+    }
+  ],
+  "olusturma": "2026-11-05T13:07:17.008Z"
+}

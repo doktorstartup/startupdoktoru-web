@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-05_green-voltis-b3f5",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Green Voltis",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 13500000,
+      "birim": "EUR",
+      "usd": 14580000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Martin Kievit",
+      "Ali Shi",
+      "Gino Zhang"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-05T11:50:53.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/stockholms-green-voltis-raises-e13-5-million-to-operate-and-trade-battery-storage-across-european-power-markets-using-ai/",
+      "baslik": "Stockholm’s Green Voltis raises €13.5 million to operate and trade battery storage across European power markets using AI",
+      "tarih": "Thu, 05 Nov 2026 11:50:53 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Green Voltis , a Stockholm-based route-to-market (RTM) optimiser that uses AI to operate and trade battery storage across European power markets, has raised €13.5 million in a Series A round, with Loc",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/stockholms-green-voltis-raises-e13-5-million-to-operate-and-trade-battery-storage-across-european-power-markets-using-ai/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/stockholms-green-voltis-raises-e13-5-million-to-operate-and-trade-battery-storage-across-european-power-markets-using-ai/"
+    }
+  ],
+  "olusturma": "2026-11-05T13:07:17.008Z"
+}

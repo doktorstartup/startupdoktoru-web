@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-05_kabilio-3e8d",
+  "durum": "hazir",
+  "puan": 76,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Kabilio",
+    "domain": "kabilio.es",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "EUR",
+      "usd": 10800000
+    },
+    "lider": "Picus Capital",
+    "katilanlar": [
+      "Visionaries",
+      "Kabilio’s"
+    ],
+    "kurucular": [
+      "Jose Ojeda",
+      "Álex Valls"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-05T09:19:45.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/barcelonas-kabilio-raises-e10-million-to-deploy-its-ai-accounting-agent-as-client-base-nears-500-firms/",
+      "baslik": "Barcelona’s Kabilio raises €10 million to deploy its AI accounting agent as client base nears 500 firms",
+      "tarih": "Thu, 05 Nov 2026 09:19:45 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kabilio , a Barcelona-based startup building an AI platform for accounting firms and the small businesses they serve, has closed a €10 million funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/barcelonas-kabilio-raises-e10-million-to-deploy-its-ai-accounting-agent-as-client-base-nears-500-firms/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/barcelonas-kabilio-raises-e10-million-to-deploy-its-ai-accounting-agent-as-client-base-nears-500-firms/"
+    }
+  ],
+  "olusturma": "2026-11-05T13:07:17.008Z"
+}

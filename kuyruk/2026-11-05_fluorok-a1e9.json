@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-05_fluorok-a1e9",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "FluoRok",
+    "domain": "fluorok.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 26640000,
+      "birim": "EUR",
+      "usd": 28771200
+    },
+    "lider": "Orano Ventures Fund/Supernova Invest",
+    "katilanlar": [
+      "Bidra Innovation Ventures"
+    ],
+    "kurucular": [
+      "Gabriele Pupo"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-05T06:21:38.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/oxfords-fluorok-raises-e26-64-million-to-scale-fluorochemical-production-without-the-hazardous-hydrogen-fluoride/",
+      "baslik": "Oxford’s FluoRok raises €26.64 million to scale fluorochemical production without hazardous hydrogen fluoride",
+      "tarih": "Thu, 05 Nov 2026 06:21:38 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "FluoRok , an Oxford-based chemical manufacturing startup that has developed a patented process to produce fluorochemicals without using highly hazardous hydrogen fluoride (HF), has secured a €26.64 mi",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/oxfords-fluorok-raises-e26-64-million-to-scale-fluorochemical-production-without-the-hazardous-hydrogen-fluoride/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/oxfords-fluorok-raises-e26-64-million-to-scale-fluorochemical-production-without-the-hazardous-hydrogen-fluoride/"
+    }
+  ],
+  "olusturma": "2026-11-05T13:07:17.008Z"
+}
