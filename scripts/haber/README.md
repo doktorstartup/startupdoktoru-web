@@ -84,6 +84,13 @@ sorgulansa bile RLS engeller.
 Yayındaki bir yazıyı `yayinla.mjs` ile yeniden basmak durumu bozmaz — yayında kalır.
 Panelden elle açılan yeni yazılar da taslak doğar.
 
+## Yayın kuyruğu — her sabah 07:30 TR
+
+`ds_blog_posts.yayin_tarihi` dolu taslaklar, o tarihin 07:30'unda yayına çıkar
+(pg_cron işi `blog-yayin-kuyrugu`, migration 0034). Boş taslak kendiliğinden yayınlanmaz.
+Yayın saatinde `created_at` güncellenir, yazı listenin başına geçer.
+Kuyruktan çıkarmak için `yayin_tarihi` boşaltılır.
+
 ## Kuyruğu görmek
 
 ```bash

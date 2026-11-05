@@ -146,7 +146,9 @@ CREATE TABLE IF NOT EXISTS public.ds_blog_posts (
   durum TEXT NOT NULL DEFAULT 'taslak' CHECK (durum IN ('taslak', 'yayinda')),
   -- Yazının dili. Aynı slug her dilde bir kez bulunabilir: /blog/x ve /en/blog/x.
   lang TEXT NOT NULL DEFAULT 'tr' CHECK (lang IN ('tr', 'en')),
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
+  -- Dolu taslak bu tarihten sonraki ilk 07:30 TR'de yayına çıkar (migration 0034, pg_cron).
+  yayin_tarihi TIMESTAMP WITH TIME ZONE
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS ds_blog_posts_slug_lang_key ON public.ds_blog_posts (slug, lang);
