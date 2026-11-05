@@ -43,5 +43,32 @@ Yatırımcı adları gibi kişisel veri `ekran.mjs` içinde `gizle` ile bulanık
 
 ## Teslim (paylaşıma hazır klasör)
 Proje dosyasına `kapak` (`arka_sn`, `rozet`, `baslik`, `vurgu`) ve `paylasim` (`baslik`, `instagram`, `shorts`, `linkedin`) ekle, sonra:
-`node teslim.mjs projeler/<ad>.json` → `~/Desktop/Startup Doktoru Videolar/<ad>/` (video, kapak 1080x1920, thumbnail 1280x720, broll/, metinler.md)
-ve Paylaşım sekmesine "Hazır" kaydı (aynı başlık varsa günceller; paylaşıldı işaretlerine dokunmaz).
+`node teslim.mjs projeler/<ad>.json` → `~/Desktop/Startup Doktoru Videolar/<ad>/` (video, yayin.mp4, kapak 1080x1920, thumbnail 1280x720, broll/, metinler.md),
+Paylaşım sekmesine "Hazır" kaydı (aynı başlık varsa günceller; paylaşıldı işaretlerine dokunmaz) ve **otomatik paylaşım kuyruğu**:
+yayın dosyası + kapak Supabase Storage'a (`paylasim-video`) yüklenir, video en az 24 saat sonraki ilk boş güne yerleşir (saat 19:00 TR).
+İptal edilmiş video kendiliğinden geri girmez; yayını başlamış videonun dosyasına dokunulmaz.
+`--dry-run`: klasörü ve yayin.mp4'ü üretir, veritabanına ve Storage'a dokunmaz.
+45 MB üstü dosya otomatik sıkıştırılır (Supabase ücretsiz plan sınırı 50 MB; 43 sn'lik video ~18 MB çıkıyor).
+Shorts metni `BAŞLIK: ...` + `AÇIKLAMA:` kalıbında olmalı; videoda AI görüntü varsa YouTube ve Instagram'a otomatik beyan edilir.
+
+## Toplu üretim (haftalık oturum)
+Gelen kutusu: **`~/Desktop/Startup Doktoru Videolar/_gelen/`**. Ham videoları buraya at.
+Google Drive masaüstü klasörü için: `VIDEO_GELEN="$HOME/Library/CloudStorage/GoogleDrive-<hesap>/Drive'ım/Ham Videolar" node toplu.mjs` (veya `--gelen <klasör>`).
+
+```
+node toplu.mjs            # yeni videoları işle, kurgusu biteni teslim et, tabloyu göster
+node toplu.mjs --durum    # yalnız tablo
+node toplu.mjs --dry-run  # teslim veritabanına ve Storage'a dokunmaz
+node toplu.mjs --zorla    # kontrol uyarısına rağmen teslim et
+```
+
+Her video şu aşamalardan geçer; durum gelen kutusundaki `.toplu-durum.json`'da durur, yarıda kesilirse aynı komut kaldığı yerden sürer:
+1. `metin`: `projeler/<ad>.json` açılır, `kes.mjs` metne çevirip keser. Son 60 sn'de değişen dosya (Drive hâlâ indiriyor olabilir) sonraki çalıştırmaya kalır.
+2. `kurgu_bekliyor`: **burada durur.** Claude `public/<ad>/kurgu.json`'daki metni okur, proje dosyasına `kes`, `duzelt`, `gorsel`, `kapak`, `paylasim` yazar (gerekirse `ekran.mjs`, `broll-uret.mjs`) ve son olarak `"kurgu_tamam": true` ekler. Varsayılan `gorsel` tek yüz sahnesidir, ama `kurgu_tamam` olmadan video asla teslim edilmez.
+3. Komut yeniden çalıştırılır. Proje değiştiyse `kes.mjs` tekrar koşar (metin önbellekten), kontrolden geçen video `teslim.mjs` ile render edilir.
+4. `kuyrukta`: bitti, bu dosya bir daha işlenmez (dosya adı değişse de boyut + ilk 1 MB ile tanınır).
+
+Yayın öncesi kontrol (`kontrol.mjs`, kesilmiş kelime zamanlarından): konuşma ilk 1 sn'de başlıyor mu, kelimeler arasında veya sonda 1,5 sn'den uzun boşluk var mı.
+Uyarı varsa `kontrol_uyari`'da durur: düzelt (`kes`) veya `--zorla`. 3 sn merak cümlesi ve ekrandaki yazı kontrolü kurgu adımında Claude'dadır.
+
+Testler: `node --test scripts/video/kontrol.test.mjs`. Not: Remotion, yolunda `.claude/` geçen klasörde kök bileşeni yükleyemiyor; render'ı ana klonda çalıştır, worktree'de değil.
