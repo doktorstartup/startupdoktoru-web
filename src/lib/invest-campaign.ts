@@ -4,6 +4,12 @@
 // country='TR' → Türkçe, aksi halde İngilizce. shell() ile sarılır; sendLogged unsubscribe ekler.
 import { interestUrl } from "./invest-interest";
 
+// Duraklatma anahtarı: true yapıp deploy edince davet kampanyası durur; bekçi de "cron durdu" uyarısı vermez.
+// Nerede kaldığımız inv_outreach (segment='tier1-invite') dedup'ında saklı → false yapınca sıradaki
+// temaslanmamış partiden sürer, kimseye tekrar gitmez.
+// 2026-11-05: son 76 adres duraklatıldı; bounce %22'ye çıktı, adres doğrulaması olmadan gönderilmeyecek.
+export const INVEST_CAMPAIGN_PAUSED = true;
+
 type Inv = {
   id: string; firm_name: string; partner_name: string | null; country: string | null;
   sectors?: string[] | null; stages?: string[] | null; role?: string | null;

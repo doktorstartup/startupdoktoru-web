@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Loader2, Building2, ExternalLink, LogOut, Users, MapPin, Layers, Sparkles, Handshake, X, CheckCircle2, Flame, RefreshCw, Newspaper, ArrowRight, BadgeCheck, Star, FileText, Maximize2 } from "lucide-react";
 import { supabase } from "../../../../lib/supabase";
@@ -35,7 +35,7 @@ const SKIP_REASONS = [
 ];
 
 export default function InvestorPortal() {
-  const [phase, setPhase] = useState<"loading" | "anon" | "expired" | "unavailable" | "denied" | "ready">("loading");
+  const [phase, setPhase] = useState<"loading" | "confirm" | "anon" | "expired" | "unavailable" | "denied" | "ready">("loading");
   const [investor, setInvestor] = useState<Investor | null>(null);
   const [startups, setStartups] = useState<Startup[]>([]);
   const [busyId, setBusyId] = useState<string | null>(null);
@@ -43,6 +43,7 @@ export default function InvestorPortal() {
   const [skippingId, setSkippingId] = useState<string | null>(null); // "neden geçtin?" panelini açan kart
   const [news, setNews] = useState<Post[]>([]);
   const [exitOpen, setExitOpen] = useState(false);
+  const signedIn = useRef(false);
 
   const loadDealflow = useCallback(async (accessToken: string) => {
     try {
@@ -56,38 +57,47 @@ export default function InvestorPortal() {
     } catch { setPhase("denied"); }
   }, []);
 
+  const finishSignIn = useCallback(async (linkFailed: boolean) => {
+    const { data } = await supabase.auth.getSession();
+    const s = data.session;
+    if (s?.access_token) { signedIn.current = true; loadDealflow(s.access_token); }
+    else if (linkFailed) setPhase("expired");
+    else setTimeout(() => { if (!signedIn.current) setPhase("anon"); }, 1200);
+  }, [loadDealflow]);
+
+  // Tek kullanımlık linki yalnız butona basılınca harca: mail tarayıcıları linki önceden açıp
+  // token'ı yakarsa gerçek yatırımcı "expired" görürdü.
+  const confirmLink = useCallback(async () => {
+    const tokenHash = new URLSearchParams(window.location.search).get("token_hash");
+    if (!tokenHash) return;
+    setPhase("loading");
+    let status = 0;
+    try {
+      const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: "email" });
+      if (!error) status = 200;
+      else status = error.status || 0;
+    } catch { /* ağ hatası → status 0 */ }
+    // 4xx (429 hariç) = link geçersiz/süresi dolmuş. Diğer her şey = Supabase'e ulaşılamadı;
+    // token harcanmadı, URL'i koru ki "Try again" aynı linkle yeniden denesin.
+    const invalid = status >= 400 && status < 500 && status !== 429;
+    if (status !== 200 && !invalid) { setPhase("unavailable"); return; }
+    window.history.replaceState(null, "", window.location.pathname);
+    finishSignIn(invalid);
+  }, [finishSignIn]);
+
   useEffect(() => {
-    let done = false;
+    const hasLink = () => new URLSearchParams(window.location.search).has("token_hash");
+    // Davet linki kendi domainimize token_hash ile gelir; doğrulama "confirm" ekranındaki butonla.
     const start = async () => {
-      // Davet linki kendi domainimize token_hash ile gelir; burada doğrularız.
-      const tokenHash = new URLSearchParams(window.location.search).get("token_hash");
-      let linkFailed = false;
-      if (tokenHash) {
-        let status = 0;
-        try {
-          const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: "email" });
-          if (!error) status = 200;
-          else status = error.status || 0;
-        } catch { /* ağ hatası → status 0 */ }
-        // 4xx (429 hariç) = link geçersiz/süresi dolmuş. Diğer her şey = Supabase'e ulaşılamadı;
-        // token harcanmadı, URL'i koru ki "Try again" aynı linkle yeniden denesin.
-        const invalid = status >= 400 && status < 500 && status !== 429;
-        if (status !== 200 && !invalid) { setPhase("unavailable"); return; }
-        window.history.replaceState(null, "", window.location.pathname);
-        linkFailed = invalid;
-      }
-      const { data } = await supabase.auth.getSession();
-      const s = data.session;
-      if (s?.access_token) { done = true; loadDealflow(s.access_token); }
-      else if (linkFailed) setPhase("expired");
-      else setTimeout(() => { if (!done) setPhase("anon"); }, 1200);
+      if (hasLink()) setPhase("confirm");
+      else finishSignIn(false);
     };
     start();
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
-      if (session?.access_token) { done = true; loadDealflow(session.access_token); }
+      if (session?.access_token && !hasLink()) { signedIn.current = true; loadDealflow(session.access_token); }
     });
     return () => sub.subscription.unsubscribe();
-  }, [loadDealflow]);
+  }, [finishSignIn, loadDealflow]);
 
   // Çıkış niyeti: fare pencerenin üstünden çıkarsa, oturum başına bir kez, henüz talep yoksa.
   const canPrompt = phase === "ready" && startups.length > 0 && !startups.some((s) => s.action === "requested");
@@ -169,6 +179,15 @@ export default function InvestorPortal() {
 
       <main className="max-w-6xl mx-auto px-6 py-10">
         {phase === "loading" && <div className="flex items-center justify-center py-32 text-muted-foreground"><Loader2 className="h-6 w-6 animate-spin" /></div>}
+
+        {phase === "confirm" && (
+          <div className="max-w-md mx-auto text-center py-20">
+            <div className="h-14 w-14 mx-auto rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-5"><Building2 className="h-7 w-7" /></div>
+            <h1 className="text-xl font-extrabold mb-2">Your private investor page</h1>
+            <p className="text-sm text-muted-foreground">One tap to sign in securely — no password needed.</p>
+            <button onClick={confirmLink} className="btn btn-primary mt-6">Open your investor page</button>
+          </div>
+        )}
 
         {phase === "anon" && (
           <div className="max-w-md mx-auto text-center py-20">

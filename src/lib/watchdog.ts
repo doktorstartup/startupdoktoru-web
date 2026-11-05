@@ -3,6 +3,7 @@
 // Amaç: Eser başka bir işe odaklanırken satış/yatırımcı/mail-sağlığı tarafında hiçbir şey kaçmasın.
 // Yalnız service-role okur (inv_* + ds_* admin tabloları). CRON_SECRET'li route'tan tetiklenir.
 import { supabaseAdmin } from "./supabase";
+import { INVEST_CAMPAIGN_PAUSED } from "./invest-campaign";
 
 const SEGMENT = "tier1-invite";
 const since24h = () => new Date(Date.now() - 24 * 3600000).toISOString();
@@ -46,11 +47,11 @@ export async function buildDigest(): Promise<Digest> {
     .contains("tags", ["tier1"]).eq("address_purpose", "outreach_published").not("email", "is", null).neq("email", "");
   const remaining = Math.max(0, (poolCount || 0) - (investSentTotal || 0));
   const sent24 = investSent24h || 0;
-  lines.push(`📨 <b>Yatırımcı davet:</b> bugün ${sent24} · toplam ${investSentTotal || 0}/${poolCount || 0} · kalan ${remaining}`);
+  lines.push(`📨 <b>Yatırımcı davet${INVEST_CAMPAIGN_PAUSED ? " (duraklatıldı)" : ""}:</b> bugün ${sent24} · toplam ${investSentTotal || 0}/${poolCount || 0} · kalan ${remaining}`);
 
   // ⚠️ Hafta içi olup 0 davet gittiyse kampanya durmuş olabilir (cron bozuk?)
   const trDay = new Date(Date.now() + 3 * 3600000).getUTCDay(); // 1-5 = hafta içi
-  if (trDay >= 1 && trDay <= 5 && sent24 === 0 && remaining > 0) {
+  if (!INVEST_CAMPAIGN_PAUSED && trDay >= 1 && trDay <= 5 && sent24 === 0 && remaining > 0) {
     alerts.push(`Bugün hiç davet maili gitmedi ama gönderilecek ${remaining} kişi var — cron/gönderim durmuş olabilir.`);
   }
 
@@ -62,9 +63,11 @@ export async function buildDigest(): Promise<Digest> {
     .order("interest_at", { ascending: false })
     .limit(10);
   const interestedList = interested || [];
+  const { count: interestedTotal } = await supabaseAdmin
+    .from("inv_investors").select("id", { count: "exact", head: true }).not("interest_at", "is", null);
   const newInterest = interestedList.filter((i) => i.interest_at && i.interest_at >= since);
-  if (interestedList.length) {
-    lines.push(`⭐ <b>İlgilenen yatırımcı (toplam):</b> ${interestedList.length}`);
+  if (interestedTotal) {
+    lines.push(`⭐ <b>İlgilenen yatırımcı (toplam):</b> ${interestedTotal}`);
   }
   if (newInterest.length) {
     const who = newInterest.map((i) => `${i.partner_name || i.firm_name} (${i.email || "-"})`).join(", ");

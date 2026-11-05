@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { shell } from "../../../../lib/email";
 import { sendLogged } from "../../../../lib/mailer";
-import { campaignEmail, type Startup } from "../../../../lib/invest-campaign";
+import { campaignEmail, INVEST_CAMPAIGN_PAUSED, type Startup } from "../../../../lib/invest-campaign";
 
 // Tier-1 yatırımcı davet kampanyası — her iş günü sıradaki 50 (temaslanmamış) kişiye gider.
 // Seçim: tags⊇['tier1'] + address_purpose='outreach_published' + e-posta dolu, inv_outreach'te
@@ -17,13 +17,21 @@ const SEGMENT = "tier1-invite";
 
 type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null; country: string | null; sectors: string[] | null; stages: string[] | null; role: string | null };
 
-// Duraklatma anahtarı: true yapıp deploy edince kampanya durur (2026-09-19 → 2026-10-05 arası duraklatıldı).
-// Nerede kaldığımız inv_outreach (segment='tier1-invite') dedup'ında saklı → devam otomatik
-// sıradaki temaslanmamış partiden sürer, kimseye tekrar gitmez.
-const PAUSED = false;
+// Supabase REST tek sorguda en fazla 1000 satır döndürür; .limit() bunu aşamaz. Eksik dedup
+// listesi aynı kişiye tekrar mail demek, bu yüzden hepsini çek ve hatada gönderimi durdur.
+async function tumSatirlar<T>(sayfa: (from: number, to: number) => PromiseLike<{ data: unknown; error: unknown }>): Promise<T[]> {
+  const satirlar: T[] = [];
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await sayfa(from, from + 999);
+    if (error) throw new Error("invest-campaign: liste okunamadı");
+    const parca = (data || []) as T[];
+    satirlar.push(...parca);
+    if (parca.length < 1000) return satirlar;
+  }
+}
 
 export async function GET(req: NextRequest) {
-  if (PAUSED) {
+  if (INVEST_CAMPAIGN_PAUSED) {
     return NextResponse.json({ ok: true, paused: true, sent: 0, note: "invest campaign paused" });
   }
 
@@ -41,25 +49,26 @@ export async function GET(req: NextRequest) {
     .eq("active", true);
   const startups = (startupsData || []) as Startup[];
 
-  // Uygun tier-1 havuzu (≤2000 — 800'ü rahat kapsar).
-  const { data: pool } = await supabaseAdmin
+  // Uygun tier-1 havuzu.
+  const investors = await tumSatirlar<Inv>((from, to) => supabaseAdmin
     .from("inv_investors")
     .select("id, firm_name, partner_name, email, country, sectors, stages, role")
     .contains("tags", ["tier1"])
     .eq("address_purpose", "outreach_published")
     .not("email", "is", null)
     .neq("email", "")
-    .limit(2000);
-  const investors = (pool || []) as Inv[];
+    .order("id")
+    .range(from, to));
   if (!investors.length) return NextResponse.json({ ok: true, sent: 0, note: "tier1 havuzu boş" });
 
   // Bu kampanyada zaten gönderilenler (dedup).
-  const { data: done } = await supabaseAdmin
+  const done = await tumSatirlar<{ investor_id: string }>((from, to) => supabaseAdmin
     .from("inv_outreach")
     .select("investor_id")
     .eq("segment", SEGMENT)
-    .limit(50000);
-  const sentSet = new Set(((done || []) as { investor_id: string }[]).map((r) => r.investor_id));
+    .order("id")
+    .range(from, to));
+  const sentSet = new Set(done.map((r) => r.investor_id));
 
   const queue = investors.filter((i) => !sentSet.has(i.id));
   const batch = queue.slice(0, DAILY_CAP);
