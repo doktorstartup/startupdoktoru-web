@@ -1,4 +1,4 @@
-// YouTube SALT-OKUMA yetkisi al → YOUTUBE_REFRESH_TOKEN'ı .env.local'a yazar.
+// YouTube okuma + yükleme (otomatik paylaşım) yetkisi al → YOUTUBE_REFRESH_TOKEN'ı .env.local'a yazar.
 // Önce .env.local'a YOUTUBE_CLIENT_ID + YOUTUBE_CLIENT_SECRET (Google Cloud → OAuth istemcisi, tür: Masaüstü uygulaması).
 // Kullanım: node scripts/sosyal/youtube-yetki.mjs
 // Tarayıcıda "Startupdoktoru" hesabıyla giriş yap ve kanalı seç (kişisel hesap DEĞİL).
@@ -26,7 +26,7 @@ const url =
     response_type: "code",
     access_type: "offline",
     prompt: "consent",
-    scope: "https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly",
+    scope: "https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/yt-analytics.readonly https://www.googleapis.com/auth/youtube.upload",
   });
 
 const sunucu = createServer(async (req, res) => {

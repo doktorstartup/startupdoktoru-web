@@ -1,6 +1,6 @@
 import { supabaseAdmin } from "./supabase";
 
-// YouTube istatistik senkronu — SALT OKUMA (youtube.readonly + yt-analytics.readonly).
+// YouTube istatistik senkronu — bu dosyadaki çağrılar salt okuma (yükleme: paylasim-platform.ts).
 // Kanal "Startupdoktoru" Google hesabında; yenileme anahtarı scripts/sosyal/youtube-yetki.mjs ile alınır.
 // Env: YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN.
 // Not: Analytics verisi ~2-3 gün gecikmeli gelir; görüntülenme için Data API sayacı daha güncel.
@@ -8,7 +8,7 @@ import { supabaseAdmin } from "./supabase";
 const DATA = "https://www.googleapis.com/youtube/v3";
 const ANALYTICS = "https://youtubeanalytics.googleapis.com/v2/reports";
 
-async function erisimAnahtari() {
+export async function erisimAnahtari() {
   const { YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET, YOUTUBE_REFRESH_TOKEN } = process.env;
   if (!YOUTUBE_CLIENT_ID || !YOUTUBE_CLIENT_SECRET || !YOUTUBE_REFRESH_TOKEN) {
     throw new Error("YOUTUBE_CLIENT_ID / YOUTUBE_CLIENT_SECRET / YOUTUBE_REFRESH_TOKEN tanımlı değil.");

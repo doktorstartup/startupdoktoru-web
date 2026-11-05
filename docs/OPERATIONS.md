@@ -23,6 +23,7 @@ Canlı: **https://startupdoktoru.com** · Repo: `github.com/doktorstartup/startu
 | `NEXT_PUBLIC_SITE_URL` | `https://startupdoktoru.com` |
 | `YOUTUBE_CLIENT_ID` / `YOUTUBE_CLIENT_SECRET` / `YOUTUBE_REFRESH_TOKEN` | Sosyal istatistik — YouTube salt okuma (bkz. §6.1) |
 | `IG_ACCESS_TOKEN` / `IG_USER_ID` | Sosyal istatistik — Instagram (süresiz system-user anahtarı, **Secret**; paylaşım izni de var) |
+| `PAYLASIM_AKTIF` | `1` ise otomatik paylaşım yayın yapar; yoksa cron hiçbir şey yapmaz (acil durdurma, bkz. §6.2) |
 
 ## 3. Kimlik Doğrulama (Supabase Auth)
 - **Email+şifre** (Confirm email AÇIK) + **Google OAuth**.
@@ -83,10 +84,22 @@ Tablo **`ds_email_suppressions`** — bu adreslere **hiçbir pazarlama maili** g
 
 ### 6.1 Sosyal İstatistik Senkronu (Paylaşım sekmesi altı)
 YouTube + Instagram video metrikleri **salt okunur**, tablo **`ds_sosyal_video`** (migration 0032). Cron `/api/cron/sosyal` her gün `0 4 * * *` (07:00 TR); panelde "Şimdi senkronla" = `POST /api/admin/sosyal`. Kod: `src/lib/youtube.ts`, `src/lib/instagram.ts`, `src/lib/sosyal.ts` (iki platform `allSettled` — biri düşerse diğeri yazılır).
-- **YouTube:** Google Cloud projesi `startupdoktoru-sosyal-513020` (**Startupdoktoru Google hesabı**), OAuth uygulaması *In production* (doğrulamasız, ≤100 kullanıcı yeterli). Yetki: `node scripts/sosyal/youtube-yetki.mjs` → refresh token `.env.local`'a yazılır, Vercel'e elle kopyalanır. Kapsam yalnız okuma (`youtube.readonly` + `yt-analytics.readonly`); otomatik yükleme gerekirse `youtube.upload` ekle + yeniden yetki. Tutma eğrisi (`audienceWatchRatio`) Shorts dahil gelir.
+- **YouTube:** Google Cloud projesi `startupdoktoru-sosyal-513020` (**Startupdoktoru Google hesabı**), OAuth uygulaması *In production* (doğrulamasız, ≤100 kullanıcı yeterli). Yetki: `node scripts/sosyal/youtube-yetki.mjs` → refresh token `.env.local`'a yazılır, Vercel'e elle kopyalanır. Kapsam `youtube.readonly` + `yt-analytics.readonly` + `youtube.upload` (senkron yalnız okur, yükleme §6.2). Tutma eğrisi (`audienceWatchRatio`) Shorts dahil gelir.
 - **Instagram:** Meta uygulaması **"Startup Doktoru İstatistik"** (Arvasyon Yazılım portföyü, Unpublished/geliştirme modu yeterli), *Instagram API → Unified login* yapılandırması, **system-user anahtarı süresiz**. Host `graph.facebook.com/v23.0/{IG_USER_ID}`. İzinler: `instagram_basic`, `instagram_manage_insights`, `instagram_content_publish` (ileride otomatik paylaşım için) + Meta'nın zorunlu tuttuğu `instagram_manage_messages`. Saniye saniye tutma eğrisi **yok**; reels başına views/reach/saved/shares/ortalama izlenme süresi.
 - **Eşleşme:** Paylaşım kartındaki Shorts/Instagram linkinden video kimliği çıkarılır → `paylasim_id`. Link girilmezse eşleşme 0 kalır.
 - **Süre:** birleşik senkron ~25 sn (60 sn sınırı). Tuzaklar: YouTube tutma isteğinde `startDate=2005` → Google istek başına 10-35 sn bekletir (yayın günü kullan); Instagram içgörü istekleri 5'erli paralelde 60 sn'yi aşıyordu (15'erli).
+
+### 6.2 Otomatik Paylaşım Kuyruğu (YouTube Shorts + Instagram Reels)
+Her gün tek video, iki platforma, **19:00 TR**. Onay beklenmez; yayına 24 saatten fazla varken Paylaşım sekmesinden iptal edilir. LinkedIn elle.
+- **Veri:** `ds_paylasim` (migration 0036): `yayin_at`, `yayin_bitti_at`, `iptal_at`, `video_yol`, `ai_icerik`, `yayin` (platform başına durum/hata/id). Saatin tek yeri: `paylasim_kuyruga_al` içindeki `saat` sabiti.
+- **Giriş:** `scripts/video/teslim.mjs` dosyayı public Storage bucket'ı `paylasim-video`'ya yükler, `paylasim_kuyruga_al` en az 24 saat sonraki ilk boş günü verir (iptal hakkı kalsın diye). İptalde gün boşalır, sonrakiler kaymaz; ilk yeni video oraya girer.
+- **Tetik:** pg_cron `paylasim-kuyrugu` 5 dakikada bir `paylasim_tetikle()`; yalnız vadesi gelen video varken `pg_net` ile `/api/cron/paylasim`'i çağırır (Vercel Hobby günde 1 ve ±59 dk). `CRON_SECRET` Vault'ta `paylasim_cron_secret` adıyla durur. `PAYLASIM_AKTIF=1` değilse uç hiçbir şey yapmaz.
+- **Aşamalar (her tik platform başına bir adım):** YouTube: oturum aç + kaydet → gönder (süre dolarsa `Range`'den sürer) → sonraki tik `public` doğrula. Instagram: container aç → `IN_PROGRESS` bekle → yayınla.
+- **Çift paylaşım yok:** kilit `paylasim_kilit_al` ile (180 sn); YouTube oturum adresi bayt gönderilmeden yazılır, tekrar denemede yenisi açılmaz; Instagram önce `status_code` sorar, `PUBLISHED` ise yayınlamaz. Elle işaretlenmiş platform `atlandi` olur.
+- **Hata:** 5 denemede `hata` + anında mail; biri diğerini engellemez. `kilitli` = YouTube video private kaldı, kod yeniden yüklemez. YouTube oturumu düştüyse video yüklenmiş olabilir: kanala bak, sonra Yeniden dene. Başlamamış video planından 6 saat geç kaldıysa yayınlanmaz, kuyruktan çıkar (sistem kapalıyken birikenler art arda gitmesin). 24 saatten az kala acil durdurma: Vercel'den `PAYLASIM_AKTIF` kaldır + Redeploy.
+- **Temizlik:** iki platform da bitince dosya Storage'dan silinir (yerel kopya Masaüstünde kalır).
+- **Bekçi:** stok < 3 gün, hata ve 1 saatten fazla geciken yayın günlük özette uyarı olur.
+- **Limitler:** Instagram 100 yayın/24 saat, 400 container/24 saat; YouTube `videos.insert` günde 100 çağrı, ayrı kota kovası. Test: `npm run test:paylasim`.
 
 ## 7. Bilinen Tuzaklar (tekrar yaşamamak için)
 - **DNS Vercel'de.** İsimtescil DNS paneli yetkili değil; e-posta/DNS kaydı Vercel DNS'e.

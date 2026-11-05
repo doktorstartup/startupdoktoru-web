@@ -306,10 +306,19 @@ create table if not exists public.ds_paylasim (
   hedef_tarih date,
   platformlar jsonb not null default '{}'::jsonb,
   created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now()
+  updated_at timestamptz not null default now(),
+  -- Otomatik paylaşım kuyruğu; fonksiyonlar, bucket ve pg_cron işi: migrations/0036_paylasim_kuyrugu.sql
+  yayin_at timestamptz,
+  yayin_bitti_at timestamptz,
+  iptal_at timestamptz,
+  video_yol text,
+  ai_icerik boolean not null default false,
+  yayin jsonb not null default '{}'::jsonb
 );
 -- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
 alter table public.ds_paylasim enable row level security;
+create unique index if not exists ds_paylasim_yayin_gunu_uq
+  on public.ds_paylasim (((yayin_at at time zone 'Europe/Istanbul')::date)) where yayin_at is not null;
 
 -- Sosyal istatistik (salt okuma, günlük senkron) — bkz. migrations/0032_sosyal_istatistik.sql
 create table if not exists public.ds_sosyal_video (

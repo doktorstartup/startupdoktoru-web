@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Loader2, Share2, Plus, Trash2, Check, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Istatistik from "./Istatistik";
+import Kuyruk, { type KuyrukVideo } from "./Kuyruk";
 
 // Paylaşım — kameraya konuşulan kısa videoların takibi.
 // Fikirden paylaşıma aşama + her platform (Instagram / Shorts / LinkedIn) için
@@ -36,9 +37,7 @@ const EFEKTLER = [
   "doodle boil", "vertigo", "cover story", "glass type", "kinetic captions", "freeze frame", "speed ramp",
 ];
 
-type Video = {
-  id: string;
-  baslik: string;
+type Video = Omit<KuyrukVideo, "durum"> & {
   durum: Durum;
   notlar: string | null;
   efektler: string[];
@@ -109,6 +108,17 @@ export default function PaylasimAdmin() {
     }
   };
 
+  const kuyrukIslem = async (id: string, islem: string, platform?: string) => {
+    const r = await fetch("/api/admin/paylasim/kuyruk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw(), id, islem, platform }),
+    });
+    const d = await r.json().catch(() => ({}));
+    setHata(r.ok ? null : d.error || "İşlem yapılamadı.");
+    await yukle();
+  };
+
   const bastan = haftaBasi();
   const buHafta = (videolar || []).filter((v) =>
     Object.values(v.platformlar || {}).some((p) => p?.paylasildi_at && new Date(p.paylasildi_at) >= bastan)
@@ -123,7 +133,7 @@ export default function PaylasimAdmin() {
           <Share2 className="h-6 w-6 text-primary" /> Paylaşım
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
-          Kameraya konuştuğun videolar: fikirden paylaşıma. Paylaştığın platformu elle işaretle.
+          Kameraya konuştuğun videolar: fikirden paylaşıma. YouTube ve Instagram kuyruktan otomatik gider, LinkedIn'i elle işaretle.
         </p>
       </div>
 
@@ -138,6 +148,8 @@ export default function PaylasimAdmin() {
           <div className="h-full bg-primary transition-all" style={{ width: `${Math.min(100, (buHafta / HAFTALIK_HEDEF) * 100)}%` }} />
         </div>
       </div>
+
+      <Kuyruk videolar={videolar || []} islem={kuyrukIslem} />
 
       <form onSubmit={ekle} className="flex gap-2">
         <input value={yeniBaslik} onChange={(e) => setYeniBaslik(e.target.value)} placeholder="Yeni video fikri / başlık" className={inputCls} />

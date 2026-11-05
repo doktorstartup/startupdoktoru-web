@@ -2,9 +2,12 @@
 //   ~/Desktop/Startup Doktoru Videolar/<ad>/
 //     video.mp4 · kapak.jpg (1080x1920) · thumbnail.jpg (1280x720) · broll/ · metinler.md
 //   Paylaşım sekmesi (ds_paylasim): aynı başlıklı kayıt "Hazır" aşamasında, platform metinleriyle.
+//   Kuyruk: video + kapak Supabase Storage'a yüklenir, video ilk boş güne yerleşir.
 //
 // Kullanım: node teslim.mjs projeler/<ad>.json   (video yoksa render eder; --yeniden ile her şeyi yeniden üretir)
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync } from "node:fs";
+//   --dry-run: klasörü ve yayın dosyasını üretir, veritabanına ve Storage'a dokunmaz.
+//   VIDEO_TESLIM_KOK: teslim klasörünün kökü (varsayılan Masaüstü).
+import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { homedir } from "node:os";
 import { dirname, join } from "node:path";
@@ -14,11 +17,13 @@ import { createClient } from "../../node_modules/@supabase/supabase-js/dist/inde
 const KOK = dirname(fileURLToPath(import.meta.url));
 const proje = JSON.parse(readFileSync(process.argv[2], "utf8"));
 const yeniden = process.argv.includes("--yeniden");
+const kuru = process.argv.includes("--dry-run");
+const DOSYA_SINIRI = 45 * 1024 * 1024; // Supabase ücretsiz plan tek dosya sınırı 50 MB
 const p = proje.paylasim;
 if (!p?.baslik) throw new Error('Proje dosyasında "paylasim" (baslik, instagram, shorts, linkedin) yok');
 if (!proje.kapak) throw new Error('Proje dosyasında "kapak" ayarı yok');
 
-const klasor = join(homedir(), "Desktop", "Startup Doktoru Videolar", proje.ad);
+const klasor = join(process.env.VIDEO_TESLIM_KOK || join(homedir(), "Desktop", "Startup Doktoru Videolar"), proje.ad);
 mkdirSync(join(klasor, "broll"), { recursive: true });
 const props = JSON.stringify({ proje: proje.ad });
 const remotion = (...a) => execFileSync("npx", ["remotion", ...a, "--props", props, "--log=error"], { cwd: KOK, stdio: "inherit" });
@@ -49,7 +54,25 @@ writeFileSync(
     (aiVar ? `\n---\n⚠️ Videoda yapay zekâ ile üretilmiş görüntü var: paylaşırken platformun "AI ile oluşturuldu / değiştirilmiş içerik" seçeneğini işaretle.\n` : "")
 );
 
-// 4) Paylaşım sekmesine işle (aynı başlık varsa güncelle; paylaşım işaretlerine/linklere dokunma)
+// 4) Yayın dosyası: moov başta (Instagram şartı); sınırı aşarsa bit hızını düşür.
+const yayinDosyasi = join(klasor, "yayin.mp4");
+const ff = (...a) => execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", join(klasor, "video.mp4"), ...a, yayinDosyasi]);
+ff("-c", "copy", "-movflags", "+faststart");
+if (statSync(yayinDosyasi).size > DOSYA_SINIRI) {
+  const sure = parseFloat(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", yayinDosyasi]).toString());
+  const kbps = Math.floor(((DOSYA_SINIRI * 8) / 1000 / sure) * 0.92) - 128;
+  ff("-c:v", "libx264", "-preset", "medium", "-b:v", `${kbps}k`, "-maxrate", `${kbps}k`, "-bufsize", `${kbps * 2}k`, "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart");
+}
+const mb = statSync(yayinDosyasi).size / 1024 / 1024;
+if (mb > 50) throw new Error(`Yayın dosyası ${mb.toFixed(1)} MB, 50 MB sınırını aşıyor.`);
+console.log(`yayın dosyası ${mb.toFixed(1)} MB`);
+
+if (kuru) {
+  console.log(`✓ ${klasor}\n(dry-run: veritabanı ve Storage atlandı)`);
+  process.exit(0);
+}
+
+// 5) Paylaşım sekmesine işle (aynı başlık varsa güncelle; paylaşım işaretlerine/linklere dokunma)
 const env = Object.fromEntries(
   readFileSync(join(KOK, "../../.env.local"), "utf8")
     .split("\n")
@@ -76,11 +99,33 @@ const kayit = {
   efektler: [...efektler],
   notlar: `Proje: ${proje.ad}\nKlasör: ${klasor}\n\n${kurgu.kelimeler.map((w) => w.w).join(" ")}`,
   platformlar,
+  ai_icerik: aiVar,
   updated_at: new Date().toISOString(),
 };
-const { error } = var_
-  ? await db.from("ds_paylasim").update(kayit).eq("id", var_.id)
-  : await db.from("ds_paylasim").insert(kayit);
+const { data: satir, error } = var_
+  ? await db.from("ds_paylasim").update(kayit).eq("id", var_.id).select().single()
+  : await db.from("ds_paylasim").insert(kayit).select().single();
 if (error) throw error;
-
 console.log(`✓ ${klasor}\n✓ Paylaşım sekmesi: "${p.baslik}" ${var_ ? "güncellendi" : "eklendi"} (Hazır)`);
+
+// 6) Kuyruk: yayını başlamış videonun dosyasına dokunma; iptal edilen kendiliğinden geri girmez.
+if (satir.durum === "paylasildi" || (satir.yayin_at && new Date(satir.yayin_at) <= new Date())) {
+  console.log("Kuyruk atlandı: yayını başlamış veya paylaşılmış.");
+} else {
+  const yol = `${satir.id}/video.mp4`;
+  const yukle = async (ad, dosya, contentType) => {
+    const r = await db.storage.from("paylasim-video").upload(`${satir.id}/${ad}`, readFileSync(dosya), { contentType, upsert: true });
+    if (r.error) throw r.error;
+  };
+  await yukle("video.mp4", yayinDosyasi, "video/mp4");
+  await yukle("kapak.jpg", join(klasor, "kapak.jpg"), "image/jpeg");
+  const { error: e2 } = await db.from("ds_paylasim").update({ video_yol: yol }).eq("id", satir.id);
+  if (e2) throw e2;
+  if (satir.iptal_at) {
+    console.log("Video yüklendi. Daha önce iptal edilmiş: kuyruğa Paylaşım sekmesinden al.");
+  } else {
+    const { data: an, error: e3 } = await db.rpc("paylasim_kuyruga_al", { p_id: satir.id });
+    if (e3) throw e3;
+    console.log(`✓ Kuyruk: ${new Date(an).toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" })}`);
+  }
+}
