@@ -7,12 +7,15 @@ import { interestUrl } from "./invest-interest";
 // Duraklatma anahtarı: true yapıp deploy edince davet kampanyası durur; bekçi de "cron durdu" uyarısı vermez.
 // Nerede kaldığımız inv_outreach (segment='tier1-invite') dedup'ında saklı → false yapınca sıradaki
 // temaslanmamış partiden sürer, kimseye tekrar gitmez.
-// 2026-11-05: son 76 adres duraklatıldı; bounce %22'ye çıktı, adres doğrulaması olmadan gönderilmeyecek.
-export const INVEST_CAMPAIGN_PAUSED = true;
+export const INVEST_CAMPAIGN_PAUSED = false;
+
+// A/B testi (2026-11): son 76 kişi rastgele ikiye bölündü. Bu etiketi taşıyan B grubu kısa pitch'i alır;
+// A grubu mevcut daveti. Karşılaştırma yalnız onay butonu ve gerçek cevapla yapılır.
+const AB_PITCH_TAG = "ab_2026_11_b";
 
 type Inv = {
   id: string; firm_name: string; partner_name: string | null; country: string | null;
-  sectors?: string[] | null; stages?: string[] | null; role?: string | null;
+  sectors?: string[] | null; stages?: string[] | null; role?: string | null; tags?: string[] | null;
 };
 
 export type Startup = {
@@ -53,7 +56,28 @@ function examplesBlock(matched: Startup[], lang: "tr" | "en"): string {
   return `<p style="margin:0 0 6px">${intro}</p><ul style="margin:0;padding-left:18px">${items}</ul>`;
 }
 
+// B şablonu: tek girişim, rakamlar önde, kısa. Eşleşme yoksa öne çıkan girişime düşer.
+function pitchEmail(inv: Inv, startups: Startup[]): { subject: string; html: string } {
+  const st = matchStartups(inv, startups)[0] || startups.find((x) => x.hero) || startups[0];
+  const name = label(st);
+  const fn = firstName(inv);
+  const firm = (inv.firm_name || "").trim();
+  const secs = (inv.sectors || []).slice(0, 2).join(" and ");
+  const who = firm && firm !== (inv.partner_name || "").trim() ? firm : "you";
+  const reason = secs ? `Reaching out because ${who} ${who === "you" ? "back" : "backs"} ${secs}. ` : "";
+  return {
+    subject: "A Turkish startup raising now — worth a look?",
+    html: `<p>${fn ? `Hi ${fn},` : "Hi there,"}</p>
+<p>${reason}I run Startup Doktoru, a Turkish program that prepares founders before they meet investors.</p>
+<p><b>${name.charAt(0).toUpperCase() + name.slice(1)}</b> — ${st.one_liner}.${st.ask ? ` It's ${st.ask}.` : ""}</p>
+<p>If you'd like the deck, just reply to this email, or tap here: <a href="${interestUrl(inv.id)}"><b>I'm interested →</b></a></p>
+<p>Best,<br>Eser Memişoğlu — Startup Doktoru</p>`,
+  };
+}
+
 export function campaignEmail(inv: Inv, startups: Startup[] = []): { subject: string; html: string } {
+  if (startups.length && inv.tags?.includes(AB_PITCH_TAG)) return pitchEmail(inv, startups);
+
   const link = interestUrl(inv.id);
   const fn = firstName(inv);
   const isTR = (inv.country || "TR") === "TR";

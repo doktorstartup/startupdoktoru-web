@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic";
 const DAILY_CAP = Math.max(1, Math.min(Number(process.env.INVEST_DAILY_CAP) || 25, 200));
 const SEGMENT = "tier1-invite";
 
-type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null; country: string | null; sectors: string[] | null; stages: string[] | null; role: string | null };
+type Inv = { id: string; firm_name: string; partner_name: string | null; email: string | null; country: string | null; sectors: string[] | null; stages: string[] | null; role: string | null; tags: string[] | null };
 
 // Supabase REST tek sorguda en fazla 1000 satır döndürür; .limit() bunu aşamaz. Eksik dedup
 // listesi aynı kişiye tekrar mail demek, bu yüzden hepsini çek ve hatada gönderimi durdur.
@@ -52,7 +52,7 @@ export async function GET(req: NextRequest) {
   // Uygun tier-1 havuzu.
   const investors = await tumSatirlar<Inv>((from, to) => supabaseAdmin
     .from("inv_investors")
-    .select("id, firm_name, partner_name, email, country, sectors, stages, role")
+    .select("id, firm_name, partner_name, email, country, sectors, stages, role, tags")
     .contains("tags", ["tier1"])
     .eq("address_purpose", "outreach_published")
     .not("email", "is", null)
