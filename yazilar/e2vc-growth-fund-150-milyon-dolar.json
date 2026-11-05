@@ -1,0 +1,59 @@
+{
+  "baslik": "e2vc 150 milyon dolarlık büyüme fonu kurdu: Kurucular için ne değişiyor?",
+  "slug": "e2vc-growth-fund-150-milyon-dolar",
+  "seo_title": "e2vc Growth Fund: 150 milyon dolarlık yeni fon kime yatırım yapacak?",
+  "seo_description": "e2vc, Series A-C aşamasına şirket başına 10 milyon dolara kadar yatırım yapacak 150 milyon dolar hedefli Growth Fund'ı tanıttı. İlk odak mobil oyun.",
+  "tip": "analiz",
+  "kapak_etiket": "Fon Haberi",
+  "kapak_metin": "Tohumda bulan ekip, artık **büyümede de** masada.",
+  "bolumler": [
+    { "tip": "p", "metin": "e2vc bugün İstanbul'da yeni fonunu tanıttı: **e2vc Growth Fund**, hedef büyüklüğü **150 milyon dolar**. Son on yıldır tohum öncesi ve tohum aşamasında yatırım yapan ekip, bu fonla Series A'dan Series C'ye kadar olan turlara giriyor." },
+    { "tip": "p", "metin": "Bu haberi ayrıca önemsiyorum, çünkü bu ekibi yakından tanıyorum. e2vc ekibinden Başak Zorlutuna'yı tanırım. Pixel Flow!'un yatırım hikayesini, yani Türkiye'nin en hızlı unicorn'u olan Loom Games'in hikayesini kendisinden dinlemiştim. O konuşmadan aklımda kalan şey şuydu: bu ekip kazanacak şirketi **çok erken görüyor** ve onu hızla büyük bir sonuca taşımayı biliyor." },
+    { "tip": "h2", "metin": "Fonun künyesi" },
+    { "tip": "liste", "maddeler": [
+      "**Hedef büyüklük:** 150 milyon dolar",
+      "**Aşama:** Series A, B ve C",
+      "**İlk yatırım:** şirket başına 10 milyon dolara kadar, sonraki turlarda takip yatırımı",
+      "**Yapı:** Azimut Portföy tarafından kurulan bir Girişim Sermayesi Yatırım Fonu (GSYF); danışmanlığını e2vc ekibi yapıyor",
+      "**Yönetim:** General Partner'lar Enis Hulli, Arın Özkula ve Serra Alkoçlar Alp",
+      "**Odak:** Türkiye'den çıkan mobil oyun şirketleri ve Türkiye bağını koruyan küresel teknoloji şirketleri"
+    ] },
+    { "tip": "p", "metin": "Yeni yapılanmayla e2vc'nin yönettiği toplam varlık **600 milyon dolara** ulaşıyor. Growth Fund ve Fund III birlikte yatırıma yönlendirilebilecek **300 milyon doların üzerinde** sermaye demek." },
+    { "tip": "h2", "metin": "Neden şimdi bir büyüme fonu?" },
+    { "tip": "p", "metin": "Enis Hulli'nin açıklaması meselenin özünü veriyor: birçok başarılı şirkete çok erken girdiler, ama fonlarının kapsamı yüzünden o şirketlerin sonraki turlarında yer alamadılar. Yani en iyi şirketlerini büyüme aşamasında başkalarına bırakmak zorunda kaldılar. Yeni fon bu boşluğu kapatıyor." },
+    { "tip": "p", "metin": "Türkiye'deki tablo da bunu doğruluyor. e2vc'nin bültende paylaştığı Cumhurbaşkanlığı Dijital Dönüşüm Ofisi verilerine göre girişimlerin büyük çoğunluğu erken aşamada kalıyor." },
+    { "tip": "gorsel", "altyazi": "Türkiye'de VC yatırımı almış girişimlerin aşamalara dağılımı. Kaynak: e2vc bülteni, Cumhurbaşkanlığı Dijital Dönüşüm Ofisi verisi.", "gorsel": { "tip": "tablo", "etiket": "Türkiye verisi", "baslik": "Girişimler hangi aşamada kalıyor?", "sutunlar": ["Aşama", "Girişim sayısı"], "satirlar": [["Erken aşama", "yaklaşık 950"], ["Büyüme aşaması", "**47**"], ["Geç aşama", "**7**"]] } },
+    { "tip": "p", "metin": "Sermaye tarafında da aynı daralma var. Aynı bültene göre yerli yatırımcıların payı erken aşamada yaklaşık **yüzde 40**. 15 milyon euronun üzerindeki turlarda bu pay **yüzde 5'e** düşüyor. Serra Alkoçlar Alp'in deyişiyle, birçok girişim büyük yatırıma ulaşmak için önce Silikon Vadisi'nde kendini kanıtlamak zorunda kaldı." },
+    { "tip": "alinti", "metin": "Türkiye'de büyüme aşamasındaki girişimleri destekleyen fonlar olsaydı, Insider olarak çok daha hızlı büyüyebilirdik.", "kaynak": "Hande Çilingir, Insider One kurucu ortağı ve CEO'su" },
+    { "tip": "h2", "metin": "Oyunda kanıtlanmış bir göz" },
+    { "tip": "p", "metin": "Fonun ilk odağı mobil oyun ve bunun bir sebebi var. e2vc'nin 2025 sonuna kadar yatırım yaptığı altı oyun şirketinden **Loom Games** unicorn oldu, üç şirketin değerlemesi de 100 milyon doları aştı. Oyun portföyünün günlük geliri en yüksek noktasında 3 milyon dolara ulaştı. 2026'da beş yeni yatırımla oyun şirketi sayısı 11'e çıktı." },
+    { "tip": "p", "metin": "Loom'un hikayesi bu fonun mantığını tek başına anlatıyor. Kübra Gündoğan ve Emre Çelik'in 2025'te kurduğu stüdyo, yılın sonlarında **Pixel Flow!** oyununu çıkardı. Oyun 10 milyondan fazla oyuncuya ulaştı. Kuruluşundan yaklaşık bir yıl sonra, Şubat 2026'da, Scopely şirketin çoğunluk hissesini 1 milyar doları aşan değerlemeyle satın aldı. Loom bu seviyeye en hızlı ulaşan Türk şirketi oldu." },
+    { "tip": "p", "metin": "Benim gözümde e2vc'yi farklı kılan da bu. Bir şirketin unicorn olacağını erken anlamak bir beceri. O şirketi doğru alıcıyla, doğru zamanda büyük bir sonuca taşımak ayrı bir beceri. Bu ekipte ikisi birden var. e2vc'nin yatırım geçmişinde altı unicorn ve 100 milyon doların üzerinde değerlemeye ulaşmış 10 şirket bulunuyor." },
+    { "tip": "h2", "metin": "Kurucu olarak bundan ne çıkarmalısın?" },
+    { "tip": "gorsel", "altyazi": "Bu fonun kapısını çalmadan önce.", "gorsel": { "tip": "liste", "etiket": "Kontrol listesi", "baslik": "Growth Fund'a hazır mısın?", "maddeler": [
+      "**Aşamanı dürüstçe koy.** Bu fon Series A-C için. Tohumdaysan muhatabın e2vc'nin erken aşama fonu, Growth Fund değil.",
+      "**Türkiye bağını göster.** Kurucu, ekip, Ar-Ge ya da operasyon: fon bu bağı arıyor. Şirketin yurt dışındaysa bu bağı tek cümleyle anlatabilmelisin.",
+      "**Uluslararası gelir hikayeni hazırla.** e2vc'ye göre portföy şirketlerinin gelirinin neredeyse tamamı uluslararası pazarlardan geliyor. Beklenti bu.",
+      "**Oyundaysan metriklerin hazır olsun.** İlk odak mobil oyun. Elde tutma, oyuncu başına gelir ve kullanıcı edinme maliyeti verisiz bir görüşme kısa sürer."
+    ] } },
+    { "tip": "p", "metin": "Asıl mesaj şu: Türkiye'de büyüme turu bulmak için artık her zaman yurt dışına çıkmak gerekmeyebilir. Ama bu, büyüme sermayesinin kolaylaştığı anlamına gelmiyor. Seçici bir ekip, kanıtlanmış bir yöntemle, sınırlı sayıda şirkete giriyor. Masaya o kanıtla oturman gerekiyor." }
+  ],
+  "sorular_baslik": "Sık sorulanlar",
+  "sorular": [
+    { "soru": "e2vc Growth Fund'ı kim yönetiyor?", "cevap": "Fonun yatırım stratejisini e2vc'nin General Partner'ları Enis Hulli, Arın Özkula ve Serra Alkoçlar Alp yönetecek. Fon Azimut Portföy tarafından kurulan bir Girişim Sermayesi Yatırım Fonu; danışmanlığını e2vc ekibi yapıyor." },
+    { "soru": "e2vc Growth Fund ne kadar yatırım yapacak?", "cevap": "Fonun hedef büyüklüğü 150 milyon dolar. Series A-C aşamasındaki şirketlere şirket başına 10 milyon dolara kadar ilk yatırım yapılması, sonraki turlarda da takip yatırımı yapılması planlanıyor." },
+    { "soru": "e2vc hangi şirketlere yatırım yapıyor?", "cevap": "Yeni fonun önceliği Türkiye'den çıkan mobil oyun şirketleri ile kurucuları, ekipleri, Ar-Ge'si veya operasyonları üzerinden Türkiye bağını koruyan küresel teknoloji şirketleri. Arın Özkula fal, BillionToOne, Ubicloud, Carbon Health ve Insider gibi şirketlere yatırım yaptıklarını belirtti." },
+    { "soru": "Pixel Flow'u hangi şirket geliştirdi?", "cevap": "Pixel Flow!, İstanbul merkezli Loom Games tarafından geliştirildi. Loom'u Kübra Gündoğan ve Emre Çelik 2025'te kurdu. Scopely, Şubat 2026'da şirketin çoğunluk hissesini 1 milyar doları aşan değerlemeyle satın aldı. e2vc, Loom'un yatırımcıları arasında." },
+    { "soru": "e2vc'nin toplam fon büyüklüğü ne kadar?", "cevap": "e2vc'nin açıklamasına göre yeni yapılanmayla yönetilen toplam varlık 600 milyon dolara ulaşıyor. Growth Fund ve Fund III kapsamında yatırıma yönlendirilebilir sermaye 300 milyon doları aşıyor." }
+  ],
+  "kaynaklar": [
+    { "ad": "e2vc Growth Fund tanıtıldı: Hedef büyüklük 150 milyon dolar — TechInside", "url": "https://www.techinside.com/e2vc-growth-fund-150-milyon-dolar/", "not": "Fon künyesi, CBDDO aşama verisi, yerli yatırımcı payı, Hulli/Alp/Çilingir açıklamaları" },
+    { "ad": "e2vc'den 150 milyon dolarlık yeni büyüme fonu — Ekonomim", "url": "https://www.ekonomim.com/sirketler/e2vcden-150-milyon-dolarlik-yeni-buyume-fonu-haberi-929130", "not": "Oyun portföyü, 6 unicorn / 10 şirket, Özkula'nın portföy listesi, uluslararası gelir" },
+    { "ad": "Loom Games Türkiye'nin 7. unicorn'u oldu — Forbes Türkiye", "url": "https://www.forbes.com.tr/teknoloji/2025-te-kurulan-pixel-flow-un-gelistiricisi-loom-games-turkiye-nin-7-unicorn-i-oldu-scopely-den-1-milyar-dolar-degerlemeyle-yatirim", "not": "Loom kuruluşu, kurucular, Pixel Flow! ve Scopely çoğunluk hissesi" },
+    { "ad": "Scopely takes majority stake in Pixel Flow! at $1B valuation — tech.eu", "url": "https://tech.eu/2026/02/19/scopely-takes-majority-stake-in-pixel-flow-at-1b-valuation/", "not": "19 Şubat 2026 satın alma haberi" }
+  ],
+  "cta_baslik": "Sen de yatırım almak istiyorsan",
+  "cta": "Yatırımcı karşısına çıkmadan önce bilmen gerekenleri ücretsiz eğitimde anlatıyorum.",
+  "cta_link": "/free-training",
+  "cta_link_metin": "Ücretsiz eğitime katıl"
+}
