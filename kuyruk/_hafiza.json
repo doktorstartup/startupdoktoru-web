@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"kuro.technology","ad":"kuro","tarih":"2026-10-02","dosya":"2026-10-02_kuro-cfc5.json"},
-  {"dom":"goodtape.io","ad":"good tape","tarih":"2026-10-02","dosya":"2026-10-02_good-tape-e972.json"},
-  {"dom":null,"ad":"armadin","tarih":"2026-10-02","dosya":"2026-10-02_armadin-74b7.json"},
-  {"dom":null,"ad":"we","tarih":"2026-10-02","dosya":"2026-10-02_we-5c47.json"},
-  {"dom":"breye.com","ad":"breye therapeutics","tarih":"2026-10-02","dosya":"2026-10-02_breye-therapeutics-a47e.json"},
-  {"dom":"volantissemi.ai","ad":"volantis","tarih":"2026-10-02","dosya":"2026-10-02_volantis-34b2.json"},
   {"dom":null,"ad":"buntar aerospace","tarih":"2026-10-05","dosya":"2026-10-05_buntar-aerospace-26d8.json"},
   {"dom":"fleuret.ai","ad":"fleuret ai","tarih":"2026-10-05","dosya":"2026-10-05_fleuret-ai-236d.json"},
   {"dom":"rob.co","ad":"robco","tarih":"2026-10-05","dosya":"2026-10-05_robco-552c.json"},
@@ -206,5 +200,6 @@
   {"dom":"vaeridion.com","ad":"vaeridion","tarih":"2026-11-05","dosya":"2026-11-05_vaeridion-94c2.json"},
   {"dom":null,"ad":"green voltis","tarih":"2026-11-05","dosya":"2026-11-05_green-voltis-b3f5.json"},
   {"dom":"kabilio.es","ad":"kabilio","tarih":"2026-11-05","dosya":"2026-11-05_kabilio-3e8d.json"},
-  {"dom":"fluorok.com","ad":"fluorok","tarih":"2026-11-05","dosya":"2026-11-05_fluorok-a1e9.json"}
+  {"dom":"fluorok.com","ad":"fluorok","tarih":"2026-11-05","dosya":"2026-11-05_fluorok-a1e9.json"},
+  {"dom":"zipline.com","ad":"zipline","tarih":"2026-11-06","dosya":"2026-11-06_zipline-12e6.json"}
 ]}
