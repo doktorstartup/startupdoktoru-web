@@ -112,7 +112,7 @@ begin
 end $$;
 
 -- pg_cron'dan çağrılır: yalnız iş varsa siteyi uyandırır. Anahtar Vault'ta (repo public):
---   select vault.create_secret('<CRON_SECRET>', 'paylasim_cron_secret');
+--   select vault.create_secret('<PAYLASIM_CRON_SECRET>', 'paylasim_cron_secret');
 create or replace function public.paylasim_tetikle()
 returns void language plpgsql security definer set search_path = public as $$
 declare anahtar text;
