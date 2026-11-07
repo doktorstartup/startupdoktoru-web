@@ -425,7 +425,7 @@ export default function Home() {
       <SiteFooter />
 
       {/* ─── MOBILE STICKY BUY BAR ─── */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-30 border-t border-border/40 bg-background/90 backdrop-blur-md px-4 py-3 flex items-center gap-3">
+      <div data-alt-cubuk className="md:hidden fixed bottom-0 inset-x-0 z-30 border-t border-border/40 bg-background/90 backdrop-blur-md px-4 py-3 flex items-center gap-3">
         <div className="flex-1 leading-tight">
           <p className="text-sm font-bold text-foreground">{t.stickyBar.title}</p>
           <p className="text-xs text-muted-foreground">

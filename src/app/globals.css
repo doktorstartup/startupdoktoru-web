@@ -194,3 +194,14 @@ body {
   border-radius: 0 1rem 1rem 0;
 }
 .ds-prose .ds-yorum h2 { margin-top: 1.4rem; font-size: 1.35rem; color: var(--primary); }
+
+/* Creato sohbet balonu (kapalı shadow DOM, içine CSS girmez): mobil alt satın alma
+   çubuğu varken host'u çubuk kadar kısaltıp yeni "fixed" kapsayıcı yapıyoruz; balon ve
+   panel çubuğun üstünde kalır. 5rem = çubuk yüksekliği + boşluk. Çubuk md altında görünür. */
+@media (max-width: 767px) {
+  body:has([data-alt-cubuk]) #creato-chat-widget-host {
+    width: 100vw !important;
+    height: calc(100dvh - 5rem) !important;
+    transform: translateZ(0);
+  }
+}
