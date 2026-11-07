@@ -4,7 +4,7 @@ import type { Metin } from "../../components/HukukiMetin";
 
 const tr: Metin = {
   baslik: "KVKK Aydınlatma Metni",
-  guncelleme: "Son güncelleme: 28 Ekim 2026",
+  guncelleme: "Son güncelleme: 7 Kasım 2026",
   giris: [
     "Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (\"KVKK\") 10. maddesi uyarınca, startupdoktoru.com üzerinden ve yatırımcı ağımız kapsamında işlenen kişisel verilerin hangi amaçla, hangi hukuki sebeple işlendiği, kimlere aktarıldığı ve haklarının neler olduğu konusunda seni bilgilendirmek için hazırlanmıştır.",
   ],
@@ -16,30 +16,30 @@ const tr: Metin = {
     {
       baslik: "2. İşlenen kişisel veriler",
       metin: [
-        "- Kimlik: ad, soyad.\n- İletişim: e-posta adresi, telefon numarası.\n- Müşteri işlem: sipariş bilgileri, satın alınan ürünler, ödeme referansı, kitap yorumları, form yanıtları.\n- Mesleki ve girişim bilgileri: şirket/proje adı, girişim aşaması, girişim profili (açıklama, sunum linki, sektör, ekip, şehir, değerleme); yatırımcılar için unvan, şirket, yatırım tezi, sektör, portföy ve kamuya açık profil linkleri.\n- Pazarlama: e-posta açılma/tıklama bilgileri, kampanya kaynağı, ilgilenilen ürünler, abonelikten çıkış kaydı.\n- İşlem güvenliği: giriş kayıtları, oturum kimliği, ziyaret edilen sayfalar.\n- Yapay zekâ mentoruna yazılan mesajlar (kalıcı olarak saklanmaz).",
+        "- Kimlik: ad, soyad.\n- İletişim: e-posta adresi, telefon numarası.\n- Müşteri işlem: sipariş bilgileri, satın alınan ürünler, ödeme referansı, kitap yorumları, form yanıtları.\n- Mesleki ve girişim bilgileri: şirket/proje adı, girişim aşaması, girişim profili (açıklama, sunum linki, sektör, ekip, şehir, değerleme); yatırımcılar için unvan, şirket, yatırım tezi, sektör, portföy ve kamuya açık profil linkleri.\n- Pazarlama: e-posta açılma/tıklama bilgileri, kampanya kaynağı, ilgilenilen ürünler, abonelikten çıkış kaydı.\n- İşlem güvenliği: giriş kayıtları, oturum kimliği, ziyaret edilen sayfalar.\n- Yapay zekâ mentoruna yazılan mesajlar (kalıcı olarak saklanmaz).\n- Mesajlaşma: WhatsApp, Instagram ve web sohbetinde ad veya kullanıcı adı, telefon numarası ya da hesap bilgisi, mesaj içerikleri ve görüşme geçmişi.",
         "Kart bilgileri tarafımızca işlenmez; ödeme kuruluşu Stripe tarafından alınır. Özel nitelikli kişisel veri (sağlık, din, biyometrik vb.) talep etmiyoruz; lütfen formlara ve sohbete bu tür bilgi yazma.",
       ],
     },
     {
       baslik: "3. İşleme amaçları",
       metin: [
-        "- Satın alınan ürün ve eğitimlerin sunulması, e-kitabın teslimi ve kopya koruması, üyelik hesabının yönetimi.\n- Sipariş, ödeme ve faturalandırma süreçlerinin yürütülmesi.\n- Eğitim içerikleri, bilgilendirme ve kampanya e-postalarının gönderilmesi.\n- Girişimlerin yatırımcılarla eşleştirilmesi, girişim profillerinin yatırımcılara sunulması, görüşme taleplerinin iletilmesi.\n- Yatırımcılara uygun girişimlerin tanıtılması ve platforma davet edilmesi.\n- Yapay zekâ mentoru hizmetinin sunulması.\n- Site kullanımının ve kampanya performansının ölçülmesi, hizmetlerin geliştirilmesi.\n- Bilgi güvenliğinin sağlanması, hukuki yükümlülüklerin yerine getirilmesi, olası uyuşmazlıklarda hakların korunması.",
+        "- Satın alınan ürün ve eğitimlerin sunulması, e-kitabın teslimi ve kopya koruması, üyelik hesabının yönetimi.\n- Sipariş, ödeme ve faturalandırma süreçlerinin yürütülmesi.\n- Eğitim içerikleri, bilgilendirme ve kampanya e-postalarının gönderilmesi.\n- Girişimlerin yatırımcılarla eşleştirilmesi, girişim profillerinin yatırımcılara sunulması, görüşme taleplerinin iletilmesi.\n- Yatırımcılara uygun girişimlerin tanıtılması ve platforma davet edilmesi.\n- Yapay zekâ mentoru hizmetinin sunulması.\n- WhatsApp, Instagram ve web sohbetinden gelen soruların yapay zekâ destekli asistanla yanıtlanması; onay verilmesi halinde yarım kalan satın almalar için WhatsApp hatırlatması gönderilmesi.\n- Site kullanımının ve kampanya performansının ölçülmesi, hizmetlerin geliştirilmesi.\n- Bilgi güvenliğinin sağlanması, hukuki yükümlülüklerin yerine getirilmesi, olası uyuşmazlıklarda hakların korunması.",
       ],
     },
     {
       baslik: "4. Toplama yöntemi ve hukuki sebepler",
       metin: [
-        "Kişisel veriler; site formları, üyelik ve Google ile giriş, ödeme sayfası, girişim profili formu, yapay zekâ mentoru, e-posta yazışmaları ve tarayıcı depolama alanı aracılığıyla elektronik ortamda, otomatik veya kısmen otomatik yollarla toplanır. Yatırımcılara ait veriler; şirket web siteleri, LinkedIn ve yatırımcı veritabanları gibi kamuya açık kaynaklardan derlenir.",
+        "Kişisel veriler; site formları, üyelik ve Google ile giriş, ödeme sayfası, girişim profili formu, yapay zekâ mentoru, WhatsApp, Instagram ve web sohbeti, e-posta yazışmaları ve tarayıcı depolama alanı aracılığıyla elektronik ortamda, otomatik veya kısmen otomatik yollarla toplanır. Yatırımcılara ait veriler; şirket web siteleri, LinkedIn ve yatırımcı veritabanları gibi kamuya açık kaynaklardan derlenir.",
         "Bu veriler KVKK md. 5 kapsamında şu hukuki sebeplere dayanılarak işlenir:",
-        "- Bir sözleşmenin kurulması veya ifası (md. 5/2-c): satın alma, e-kitap teslimi, üyelik, girişim–yatırımcı eşleştirme.\n- Hukuki yükümlülüğün yerine getirilmesi (md. 5/2-ç): fatura ve ticari kayıtların saklanması.\n- Bir hakkın tesisi, kullanılması veya korunması (md. 5/2-e): uyuşmazlık halinde kayıtların kullanılması.\n- İlgili kişinin kendisi tarafından alenileştirilmiş olması (md. 5/2-d): yatırımcıların kamuya açık mesleki bilgileri.\n- Meşru menfaat (md. 5/2-f): site kullanımının ölçülmesi, hizmetlerin geliştirilmesi, bilgi güvenliği, yatırımcılara mesleki nitelikte tanıtım yapılması.\n- Açık rıza (md. 5/1): diğer hukuki sebeplerin bulunmadığı işlemeler ile yurt dışına aktarımın açık rızaya dayandığı haller.",
-        "Ticari elektronik iletiler (kampanya e-postaları), 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun kapsamında onayına dayanılarak gönderilir; tacir ve esnaf alıcılara yönelik iletilerde önceden onay aranmayabilir. Her iletide ücretsiz ve tek tıkla ret imkânı bulunur.",
+        "- Bir sözleşmenin kurulması veya ifası (md. 5/2-c): satın alma, e-kitap teslimi, üyelik, girişim–yatırımcı eşleştirme, mesajla iletilen soruların yanıtlanması.\n- Hukuki yükümlülüğün yerine getirilmesi (md. 5/2-ç): fatura ve ticari kayıtların saklanması.\n- Bir hakkın tesisi, kullanılması veya korunması (md. 5/2-e): uyuşmazlık halinde kayıtların kullanılması.\n- İlgili kişinin kendisi tarafından alenileştirilmiş olması (md. 5/2-d): yatırımcıların kamuya açık mesleki bilgileri.\n- Meşru menfaat (md. 5/2-f): site kullanımının ölçülmesi, hizmetlerin geliştirilmesi, bilgi güvenliği, yatırımcılara mesleki nitelikte tanıtım yapılması.\n- Açık rıza (md. 5/1): diğer hukuki sebeplerin bulunmadığı işlemeler ile yurt dışına aktarımın açık rızaya dayandığı haller.",
+        "Ticari elektronik iletiler (kampanya e-postaları ve WhatsApp hatırlatmaları), 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun kapsamında onayına dayanılarak gönderilir; tacir ve esnaf alıcılara yönelik iletilerde önceden onay aranmayabilir. Her iletide ücretsiz ret imkânı bulunur.",
       ],
     },
     {
       baslik: "5. Kişisel verilerin aktarılması",
       metin: [
         "Kişisel verilerin, yukarıdaki amaçlarla sınırlı olarak şu alıcılara aktarılabilir:",
-        "- Hizmet sağlayıcılar: barındırma (Vercel), veritabanı ve giriş altyapısı (Supabase), ödeme (Stripe), e-posta (Resend), yapay zekâ (Google Gemini, OpenAI, Moonshot AI), video ve önizleme (Bunny.net, YouTube, Google Drive).\n- Yatırımcılar: onaylanan girişim profilleri ve iletişim talepleri, eşleşen yatırımcılara.\n- Girişimler: yatırımcının görüşme talebi, ilgili girişime.\n- Yetkili kamu kurum ve kuruluşları: hukuken yetkili olmaları ve talep etmeleri halinde.",
+        "- Hizmet sağlayıcılar: barındırma (Vercel), veritabanı ve giriş altyapısı (Supabase), ödeme (Stripe), e-posta (Resend), mesajlaşma (Creato AI; WhatsApp ve Instagram için Meta), yapay zekâ (Google Gemini, OpenAI, Moonshot AI ve Creato'nun çalıştığı yapay zekâ sağlayıcıları), video ve önizleme (Bunny.net, YouTube, Google Drive).\n- Yatırımcılar: onaylanan girişim profilleri ve iletişim talepleri, eşleşen yatırımcılara.\n- Girişimler: yatırımcının görüşme talebi, ilgili girişime.\n- Yetkili kamu kurum ve kuruluşları: hukuken yetkili olmaları ve talep etmeleri halinde.",
         "Hizmet sağlayıcıların önemli bir kısmının sunucuları yurt dışında (başta ABD; Moonshot AI için Çin) bulunduğundan, kişisel verilerin KVKK md. 9'da öngörülen şartlara uygun olarak yurt dışına aktarılır.",
       ],
     },
@@ -67,7 +67,7 @@ const tr: Metin = {
 
 const en: Metin = {
   baslik: "KVKK Information Notice",
-  guncelleme: "Last updated: 28 October 2026",
+  guncelleme: "Last updated: 7 November 2026",
   giris: [
     "This notice is provided under Article 10 of Turkey's Personal Data Protection Law No. 6698 (\"KVKK\"). It explains why and on what legal basis personal data is processed through startupdoktoru.com and our investor network, who it is shared with, and what your rights are.",
   ],
@@ -79,30 +79,30 @@ const en: Metin = {
     {
       baslik: "2. Personal data processed",
       metin: [
-        "- Identity: first and last name.\n- Contact: email address, phone number.\n- Customer transactions: order details, products purchased, payment reference, book reviews, form answers.\n- Professional and startup information: company/project name, startup stage, startup profile (description, deck link, sector, team, city, valuation); for investors, title, firm, investment thesis, sectors, portfolio and public profile links.\n- Marketing: email open/click data, campaign source, products of interest, unsubscribe records.\n- Security: login records, session ID, pages visited.\n- Messages typed to the AI mentor (not stored permanently).",
+        "- Identity: first and last name.\n- Contact: email address, phone number.\n- Customer transactions: order details, products purchased, payment reference, book reviews, form answers.\n- Professional and startup information: company/project name, startup stage, startup profile (description, deck link, sector, team, city, valuation); for investors, title, firm, investment thesis, sectors, portfolio and public profile links.\n- Marketing: email open/click data, campaign source, products of interest, unsubscribe records.\n- Security: login records, session ID, pages visited.\n- Messages typed to the AI mentor (not stored permanently).\n- Messaging: on WhatsApp, Instagram and web chat, your name or username, phone number or account details, message content and conversation history.",
         "We do not process card details; they are collected by the payment provider Stripe. We do not ask for special categories of data (health, religion, biometrics, etc.); please do not enter such information in forms or the chat.",
       ],
     },
     {
       baslik: "3. Purposes",
       metin: [
-        "- Providing purchased products and courses, delivering and copy-protecting the e-book, managing accounts.\n- Handling orders, payments and invoicing.\n- Sending course content, information and campaign emails.\n- Matching startups with investors, presenting startup profiles to investors and passing on meeting requests.\n- Introducing relevant startups to investors and inviting them to the platform.\n- Providing the AI mentor.\n- Measuring site usage and campaign performance, improving our services.\n- Information security, meeting legal obligations and protecting our rights in disputes.",
+        "- Providing purchased products and courses, delivering and copy-protecting the e-book, managing accounts.\n- Handling orders, payments and invoicing.\n- Sending course content, information and campaign emails.\n- Matching startups with investors, presenting startup profiles to investors and passing on meeting requests.\n- Introducing relevant startups to investors and inviting them to the platform.\n- Providing the AI mentor.\n- Answering questions sent on WhatsApp, Instagram and web chat with an AI assistant and, with consent, sending WhatsApp reminders about unfinished purchases.\n- Measuring site usage and campaign performance, improving our services.\n- Information security, meeting legal obligations and protecting our rights in disputes.",
       ],
     },
     {
       baslik: "4. Collection method and legal bases",
       metin: [
-        "Personal data is collected electronically, by automated or partly automated means, through site forms, sign-up and Google sign-in, the checkout page, the startup profile form, the AI mentor, email correspondence and browser storage. Investor data is compiled from publicly available sources such as firm websites, LinkedIn and investor databases.",
+        "Personal data is collected electronically, by automated or partly automated means, through site forms, sign-up and Google sign-in, the checkout page, the startup profile form, the AI mentor, WhatsApp, Instagram and web chat, email correspondence and browser storage. Investor data is compiled from publicly available sources such as firm websites, LinkedIn and investor databases.",
         "The data is processed on the following legal bases under KVKK Article 5:",
-        "- Formation or performance of a contract (Art. 5/2-c): purchases, e-book delivery, accounts, startup–investor matching.\n- Compliance with a legal obligation (Art. 5/2-ç): keeping invoices and commercial records.\n- Establishing, exercising or defending a right (Art. 5/2-e): using records in disputes.\n- Data made public by the data subject (Art. 5/2-d): investors' publicly available professional information.\n- Legitimate interest (Art. 5/2-f): measuring site usage, improving services, information security, professional introductions to investors.\n- Explicit consent (Art. 5/1): processing with no other legal basis, and transfers abroad that rely on explicit consent.",
-        "Commercial electronic messages (campaign emails) are sent on the basis of your approval under Law No. 6563 on Electronic Commerce; prior approval may not be required for messages to merchants and tradespeople. Every message offers a free, one-click opt-out.",
+        "- Formation or performance of a contract (Art. 5/2-c): purchases, e-book delivery, accounts, startup–investor matching, answering questions sent by message.\n- Compliance with a legal obligation (Art. 5/2-ç): keeping invoices and commercial records.\n- Establishing, exercising or defending a right (Art. 5/2-e): using records in disputes.\n- Data made public by the data subject (Art. 5/2-d): investors' publicly available professional information.\n- Legitimate interest (Art. 5/2-f): measuring site usage, improving services, information security, professional introductions to investors.\n- Explicit consent (Art. 5/1): processing with no other legal basis, and transfers abroad that rely on explicit consent.",
+        "Commercial electronic messages (campaign emails and WhatsApp reminders) are sent on the basis of your approval under Law No. 6563 on Electronic Commerce; prior approval may not be required for messages to merchants and tradespeople. Every message offers a free opt-out.",
       ],
     },
     {
       baslik: "5. Transfers",
       metin: [
         "Your personal data may be transferred, limited to the purposes above, to:",
-        "- Service providers: hosting (Vercel), database and login (Supabase), payments (Stripe), email (Resend), AI (Google Gemini, OpenAI, Moonshot AI), video and previews (Bunny.net, YouTube, Google Drive).\n- Investors: approved startup profiles and contact requests, to matched investors.\n- Startups: an investor's meeting request, to the startup concerned.\n- Competent public authorities: where legally authorised and requested.",
+        "- Service providers: hosting (Vercel), database and login (Supabase), payments (Stripe), email (Resend), messaging (Creato AI; Meta for WhatsApp and Instagram), AI (Google Gemini, OpenAI, Moonshot AI and the AI providers Creato works with), video and previews (Bunny.net, YouTube, Google Drive).\n- Investors: approved startup profiles and contact requests, to matched investors.\n- Startups: an investor's meeting request, to the startup concerned.\n- Competent public authorities: where legally authorised and requested.",
         "Because many of these providers' servers are abroad (mainly the USA; China for Moonshot AI), your personal data is transferred abroad in accordance with the conditions of KVKK Article 9.",
       ],
     },

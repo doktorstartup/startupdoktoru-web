@@ -136,7 +136,7 @@ export default function InvestorTraining() {
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold font-mono text-primary uppercase tracking-widest">{d.modulePrefix} {String(idx + 1).padStart(2, "0")}</span>
-                    <span className="text-xs font-mono text-muted-foreground px-2 py-0.5 rounded bg-secondary/30 border border-border">{mod.duration}</span>
+                    <span className="text-xs font-mono text-muted-foreground px-2 py-0.5 rounded bg-secondary/30 border border-border">{mod.tag}</span>
                   </div>
                   <h3 className="text-lg font-bold mb-2">{mod.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{mod.desc}</p>
