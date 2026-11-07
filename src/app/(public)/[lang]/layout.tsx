@@ -5,6 +5,7 @@ import "../../globals.css";
 import { Analytics } from "../../../components/Analytics";
 import { DiscountPopup } from "../../../components/DiscountPopup";
 import { CerezBanner } from "../../../components/CerezBanner";
+import { CreatoSohbet } from "../../../components/CreatoSohbet";
 import { LangProvider } from "../../../lib/i18n-client";
 import { LOCALES, isLocale, localePath } from "../../../lib/i18n";
 import { getDict } from "../../../lib/dict";
@@ -75,6 +76,7 @@ export default async function RootLayout({
           {children}
           <DiscountPopup />
           <CerezBanner />
+          <CreatoSohbet />
         </LangProvider>
       </body>
     </html>
