@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Ban, CalendarClock, RotateCcw } from "lucide-react";
+import { Ban, CalendarClock, Power, RotateCcw } from "lucide-react";
 
 // Otomatik paylaşım kuyruğu: sıradaki videolar, platform durumu, iptal ve stok.
 
@@ -14,6 +14,7 @@ export type KuyrukVideo = {
   yayin_bitti_at: string | null;
   iptal_at: string | null;
   video_yol: string | null;
+  ai_icerik: boolean;
   yayin: { shorts?: Kayit; instagram?: Kayit };
 };
 
@@ -34,7 +35,17 @@ const ETIKET: Record<string, { ad: string; cls: string }> = {
 
 const tarih = (s: string) => new Date(s).toLocaleString("tr-TR", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
-export default function Kuyruk({ videolar, islem }: { videolar: KuyrukVideo[]; islem: (id: string, islem: string, platform?: string) => Promise<void> }) {
+export default function Kuyruk({
+  videolar,
+  islem,
+  aktif,
+  aktifDegistir,
+}: {
+  videolar: KuyrukVideo[];
+  islem: (id: string, islem: string, platform?: string) => Promise<void>;
+  aktif: boolean | null;
+  aktifDegistir: (aktif: boolean) => Promise<void>;
+}) {
   const [simdi] = useState(() => Date.now()); // 24 saat sınırını asıl sunucu uygular
   // Bitmiş satırlar hata varsa görünür kalır; temiz bitenler listeden düşer.
   const liste = videolar
@@ -42,9 +53,29 @@ export default function Kuyruk({ videolar, islem }: { videolar: KuyrukVideo[]; i
     .sort((a, b) => a.yayin_at!.localeCompare(b.yayin_at!));
   const stok = liste.filter((v) => new Date(v.yayin_at!).getTime() > simdi).length;
   const iptaller = videolar.filter((v) => v.iptal_at && !v.yayin_at && v.video_yol);
+  const sirada = liste.find((v) => !v.yayin_bitti_at);
+
+  // Kapatmak onay istemez; açarken sıradaki yayın gösterilir (planı 6 saatten fazla geçmişse kuyruktan çıkar).
+  const degistir = () => {
+    if (aktif) return aktifDegistir(false);
+    const mesaj = sirada
+      ? `Sıradaki yayın: ${tarih(sirada.yayin_at!)} — "${sirada.baslik}"${new Date(sirada.yayin_at!).getTime() < simdi ? " (saati geçti: hemen gider)" : ""}`
+      : "Kuyrukta video yok.";
+    if (confirm(`Otomatik paylaşım açılsın mı?\n${mesaj}`)) aktifDegistir(true);
+  };
 
   return (
     <div className="glass-panel rounded-2xl border border-border/40 p-5 space-y-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40 text-sm">
+        <span className={`font-bold flex items-center gap-2 ${aktif ? "text-emerald-400" : "text-red-400"}`}>
+          <Power className="h-4 w-4" /> Otomatik paylaşım: {aktif === null ? "…" : aktif ? "Açık" : "Kapalı"}
+        </span>
+        {aktif !== null && (
+          <button onClick={degistir} className={`btn btn-sm ${aktif ? "btn-secondary" : "btn-primary"}`}>
+            {aktif ? "Kapat" : "Aç"}
+          </button>
+        )}
+      </div>
       <div className="flex items-center justify-between text-sm">
         <span className="font-bold flex items-center gap-2">
           <CalendarClock className="h-4 w-4 text-primary" /> Otomatik paylaşım kuyruğu
@@ -61,6 +92,7 @@ export default function Kuyruk({ videolar, islem }: { videolar: KuyrukVideo[]; i
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs text-muted-foreground w-36 shrink-0">{tarih(v.yayin_at!)}</span>
               <span className="font-bold flex-1 min-w-[10rem]">{v.baslik}</span>
+              <span className="px-2 py-1 rounded-md text-xs bg-secondary/30 text-muted-foreground">{v.ai_icerik ? "AI beyanı: var" : "AI beyanı: yok"}</span>
               {kalan > 0 && (
                 <button
                   disabled={kalan <= GUN}

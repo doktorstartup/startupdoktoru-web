@@ -10,8 +10,10 @@ import { instagramIstemci, shortsMetni, youtubeIstemci } from "./paylasim-platfo
 
 const migration = readFileSync(new URL("../../supabase/migrations/0036_paylasim_kuyrugu.sql", import.meta.url), "utf8");
 const tablo = readFileSync(new URL("../../supabase/migrations/0031_paylasim.sql", import.meta.url), "utf8");
+const ayar = readFileSync(new URL("../../supabase/migrations/0038_paylasim_ayar.sql", import.meta.url), "utf8");
 
-async function kur() {
+// Varsayılan: sistem açık (eski davranış testleri). Kapalı durum testleri { aktif: false } verir.
+async function kur({ aktif = true } = {}) {
   const db = new PGlite();
   // Supabase'e özgü parçalar için boş kabuk.
   await db.exec(`
@@ -24,6 +26,8 @@ async function kur() {
   `);
   await db.exec(tablo);
   await db.exec(migration.replace(/^create extension.*$/gm, ""));
+  await db.exec(ayar);
+  if (aktif) await db.query(`update ds_paylasim_ayar set aktif = true`);
   return db;
 }
 
@@ -53,6 +57,7 @@ const kilidiEskit = (db, id, p) =>
 function depo(db) {
   const d = {
     temizlenen: [],
+    aktif: async () => (await db.query(`select aktif from ds_paylasim_ayar`)).rows[0]?.aktif === true,
     vadesiGelenler: async () =>
       (await db.query(`select id, baslik, video_yol, ai_icerik, platformlar, yayin_at, yayin from ds_paylasim where yayin_at <= now() and yayin_bitti_at is null order by yayin_at limit 3`)).rows,
     kilitAl: async (id, p, sn) => (await db.query(`select paylasim_kilit_al($1, $2, $3) r`, [id, p, sn])).rows[0].r,
@@ -382,6 +387,43 @@ test("pg_cron tetiği yalnız iş varken ve anahtarla çağırır", async () => 
   const r = await istek();
   assert.equal(r.length, 1);
   assert.equal(r[0].headers.Authorization, "Bearer gizli");
+});
+
+test("aç/kapa: yeni kurulumda kapalı; kapalıyken tetik siteyi çağırmaz, uç hiçbir şey yapmaz", async () => {
+  const db = await kur({ aktif: false });
+  const istek = async () => (await db.query(`select * from net.istek`)).rows;
+  await db.query(`insert into vault.decrypted_secrets values ('paylasim_cron_secret', 'gizli')`);
+  const id = await vadesiGelmis(db, "a");
+  assert.equal((await db.query(`select aktif from ds_paylasim_ayar`)).rows[0].aktif, false, "varsayılan kapalı");
+
+  await db.query(`select paylasim_tetikle()`);
+  assert.equal((await istek()).length, 0, "kapalıyken pg_net isteği yok");
+
+  const b = bagim(db);
+  assert.deepEqual(await kuyrukAdimi(b), { pasif: true });
+  assert.equal(b.youtube.yayinlanan + b.instagram.yayinlanan, 0);
+  const s = await satir(db, id);
+  assert.equal(s.yayin.shorts.durum, "bekliyor");
+  assert.equal(s.yayin.instagram.durum, "bekliyor");
+  assert.equal(b.bildirimler.length, 0);
+
+  // Açılınca eski davranış.
+  await db.query(`update ds_paylasim_ayar set aktif = true`);
+  await db.query(`select paylasim_tetikle()`);
+  assert.equal((await istek()).length, 1);
+  await kuyrukAdimi(b);
+  assert.equal(b.youtube.yayinlanan, 1);
+});
+
+test("aç/kapa: ayar tablosuna anon/authenticated erişemez, tek satır", async () => {
+  const db = await kur({ aktif: false });
+  for (const rol of ["anon", "authenticated"]) {
+    await db.exec(`set role ${rol}`);
+    await assert.rejects(db.query(`select aktif from public.ds_paylasim_ayar`), /permission denied/);
+    await assert.rejects(db.query(`update public.ds_paylasim_ayar set aktif = true`), /permission denied/);
+    await db.exec(`reset role`);
+  }
+  await assert.rejects(db.query(`insert into ds_paylasim_ayar (id, aktif) values (false, true)`), /check/);
 });
 
 test("shortsMetni kalıbı ayrıştırır", () => {

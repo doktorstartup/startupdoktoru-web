@@ -71,12 +71,14 @@ export default function PaylasimAdmin() {
   const [filtre, setFiltre] = useState<Durum | "hepsi">("hepsi");
   const [acik, setAcik] = useState<string | null>(null);
   const [yeniBaslik, setYeniBaslik] = useState("");
+  const [aktif, setAktif] = useState<boolean | null>(null);
 
   const yukle = useCallback(async () => {
     const r = await fetch(`/api/admin/paylasim?password=${encodeURIComponent(pw())}`);
     const d = await r.json();
     if (!r.ok) return setHata(d.error || "Yüklenemedi.");
     setVideolar(d.videolar);
+    setAktif(d.aktif);
   }, []);
 
   useEffect(() => {
@@ -119,6 +121,17 @@ export default function PaylasimAdmin() {
     await yukle();
   };
 
+  const aktifDegistir = async (yeni: boolean) => {
+    const r = await fetch("/api/admin/paylasim/ayar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw(), aktif: yeni }),
+    });
+    const d = await r.json().catch(() => ({}));
+    setHata(r.ok ? null : d.error || "Değiştirilemedi.");
+    await yukle();
+  };
+
   const bastan = haftaBasi();
   const buHafta = (videolar || []).filter((v) =>
     Object.values(v.platformlar || {}).some((p) => p?.paylasildi_at && new Date(p.paylasildi_at) >= bastan)
@@ -149,7 +162,7 @@ export default function PaylasimAdmin() {
         </div>
       </div>
 
-      <Kuyruk videolar={videolar || []} islem={kuyrukIslem} />
+      <Kuyruk videolar={videolar || []} islem={kuyrukIslem} aktif={aktif} aktifDegistir={aktifDegistir} />
 
       <form onSubmit={ekle} className="flex gap-2">
         <input value={yeniBaslik} onChange={(e) => setYeniBaslik(e.target.value)} placeholder="Yeni video fikri / başlık" className={inputCls} />

@@ -23,7 +23,6 @@ Canlı: **https://startupdoktoru.com** · Repo: `github.com/doktorstartup/startu
 | `NEXT_PUBLIC_SITE_URL` | `https://startupdoktoru.com` |
 | `YOUTUBE_CLIENT_ID` / `YOUTUBE_CLIENT_SECRET` / `YOUTUBE_REFRESH_TOKEN` | Sosyal istatistik — YouTube salt okuma (bkz. §6.1) |
 | `IG_ACCESS_TOKEN` / `IG_USER_ID` | Sosyal istatistik — Instagram (süresiz system-user anahtarı, **Secret**; paylaşım izni de var) |
-| `PAYLASIM_AKTIF` | `1` ise otomatik paylaşım yayın yapar; yoksa cron hiçbir şey yapmaz (acil durdurma, bkz. §6.2) |
 
 ## 3. Kimlik Doğrulama (Supabase Auth)
 - **Email+şifre** (Confirm email AÇIK) + **Google OAuth**.
@@ -91,12 +90,13 @@ YouTube + Instagram video metrikleri **salt okunur**, tablo **`ds_sosyal_video`*
 
 ### 6.2 Otomatik Paylaşım Kuyruğu (YouTube Shorts + Instagram Reels)
 Her gün tek video, iki platforma, **19:00 TR**. Onay beklenmez; yayına 24 saatten fazla varken Paylaşım sekmesinden iptal edilir. LinkedIn elle.
-- **Veri:** `ds_paylasim` (migration 0036): `yayin_at`, `yayin_bitti_at`, `iptal_at`, `video_yol`, `ai_icerik`, `yayin` (platform başına durum/hata/id). Saatin tek yeri: `paylasim_kuyruga_al` içindeki `saat` sabiti.
+- **Veri:** `ds_paylasim` (migration 0036): `yayin_at`, `yayin_bitti_at`, `iptal_at`, `video_yol`, `ai_icerik` (proje JSON'undaki `ai_beyan`, bkz. scripts/video/README.md), `yayin` (platform başına durum/hata/id). Saatin tek yeri: `paylasim_kuyruga_al` içindeki `saat` sabiti.
 - **Giriş:** `scripts/video/teslim.mjs` dosyayı public Storage bucket'ı `paylasim-video`'ya yükler, `paylasim_kuyruga_al` en az 24 saat sonraki ilk boş günü verir (iptal hakkı kalsın diye). İptalde gün boşalır, sonrakiler kaymaz; ilk yeni video oraya girer.
-- **Tetik:** pg_cron `paylasim-kuyrugu` 5 dakikada bir `paylasim_tetikle()`; yalnız vadesi gelen video varken `pg_net` ile `/api/cron/paylasim`'i çağırır (Vercel Hobby günde 1 ve ±59 dk). Bu uç diğer cron'lardan ayrı anahtar kullanır: `PAYLASIM_CRON_SECRET` Vercel'de, aynı değer Vault'ta `paylasim_cron_secret` adıyla durur (`CRON_SECRET` değil). `PAYLASIM_AKTIF=1` değilse uç hiçbir şey yapmaz.
+- **Tetik:** pg_cron `paylasim-kuyrugu` 5 dakikada bir `paylasim_tetikle()`; yalnız vadesi gelen video varken `pg_net` ile `/api/cron/paylasim`'i çağırır (Vercel Hobby günde 1 ve ±59 dk). Bu uç diğer cron'lardan ayrı anahtar kullanır: `PAYLASIM_CRON_SECRET` Vercel'de, aynı değer Vault'ta `paylasim_cron_secret` adıyla durur (`CRON_SECRET` değil).
+- **Aç/kapa:** Paylaşım sekmesindeki "Otomatik paylaşım: Açık / Kapalı" düğmesi (`ds_paylasim_ayar.aktif`, migration 0038, varsayılan kapalı; eski `PAYLASIM_AKTIF` env'i artık okunmaz). Kapalıyken `paylasim_tetikle()` siteyi çağırmaz, uç da hiçbir şey yapmaz; bekçi kuyruk uyarısı vermez. Açarken sıradaki yayın onayda gösterilir.
 - **Aşamalar (her tik platform başına bir adım):** YouTube: oturum aç + kaydet → gönder (süre dolarsa `Range`'den sürer) → sonraki tik `public` doğrula. Instagram: container aç → `IN_PROGRESS` bekle → yayınla.
 - **Çift paylaşım yok:** kilit `paylasim_kilit_al` ile (180 sn); YouTube oturum adresi bayt gönderilmeden yazılır, tekrar denemede yenisi açılmaz; Instagram önce `status_code` sorar, `PUBLISHED` ise yayınlamaz. Elle işaretlenmiş platform `atlandi` olur.
-- **Hata:** 5 denemede `hata` + anında mail; biri diğerini engellemez. `kilitli` = YouTube video private kaldı, kod yeniden yüklemez. YouTube oturumu düştüyse video yüklenmiş olabilir: kanala bak, sonra Yeniden dene. Başlamamış video planından 6 saat geç kaldıysa yayınlanmaz, kuyruktan çıkar (sistem kapalıyken birikenler art arda gitmesin). 24 saatten az kala acil durdurma: Vercel'den `PAYLASIM_AKTIF` kaldır + Redeploy.
+- **Hata:** 5 denemede `hata` + anında mail; biri diğerini engellemez. `kilitli` = YouTube video private kaldı, kod yeniden yüklemez. YouTube oturumu düştüyse video yüklenmiş olabilir: kanala bak, sonra Yeniden dene. Başlamamış video planından 6 saat geç kaldıysa yayınlanmaz, kuyruktan çıkar (sistem kapalıyken birikenler art arda gitmesin). 24 saatten az kala acil durdurma: Paylaşım sekmesinden Kapat (anında; o an işlenen platform adımı yarıda kalmaz, sonraki tik başlamaz).
 - **Temizlik:** iki platform da bitince dosya Storage'dan silinir (yerel kopya Masaüstünde kalır).
 - **Bekçi:** stok < 3 gün, hata ve 1 saatten fazla geciken yayın günlük özette uyarı olur.
 - **Limitler:** Instagram 100 yayın/24 saat, 400 container/24 saat; YouTube `videos.insert` günde 100 çağrı, ayrı kota kovası. Test: `npm run test:paylasim`.

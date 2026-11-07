@@ -4,7 +4,7 @@
 // Yalnız service-role okur (inv_* + ds_* admin tabloları). CRON_SECRET'li route'tan tetiklenir.
 import { supabaseAdmin } from "./supabase";
 import { INVEST_CAMPAIGN_PAUSED } from "./invest-campaign";
-import { kuyrukOzeti } from "./paylasim-yayin";
+import { kuyrukOzeti, paylasimAktif } from "./paylasim-yayin";
 
 const SEGMENT = "tier1-invite";
 const since24h = () => new Date(Date.now() - 24 * 3600000).toISOString();
@@ -140,7 +140,7 @@ export async function buildDigest(): Promise<Digest> {
   }
 
   // ── Otomatik paylaşım kuyruğu ── yalnız sistem açıkken uyarır.
-  const kuyruk = process.env.PAYLASIM_AKTIF === "1" ? await kuyrukOzeti() : null;
+  const kuyruk = (await paylasimAktif()) ? await kuyrukOzeti() : null;
   if (kuyruk) {
     lines.push(`🎬 <b>Video stoku:</b> ${kuyruk.stok} gün`);
     if (kuyruk.stok < 3) alerts.push(`Video stoku ${kuyruk.stok} güne düştü — yeni kurgu gerekiyor.`);

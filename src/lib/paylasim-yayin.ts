@@ -5,14 +5,21 @@ import { instagramIstemci, youtubeIstemci } from "./paylasim-platform";
 import { kuyrukAdimi, type Depo, type KuyrukVideo, type Platform, type PlatformKaydi } from "./paylasim-kuyruk";
 
 // Kuyruğu gerçek veritabanı ve platformlara bağlar.
-// Env: PAYLASIM_AKTIF=1 yoksa cron hiçbir şey yayınlamaz (acil durdurma da budur).
+// Paylaşım sekmesinden kapalıysa (ds_paylasim_ayar) cron hiçbir şey yayınlamaz (acil durdurma da budur).
 export const BUCKET = "paylasim-video";
 
 const hata = (e: { message: string } | null) => {
   if (e) throw new Error(e.message);
 };
 
+// Aç/kapa bayrağı. Okunamazsa (migration yok, bağlantı hatası) kapalı sayılır.
+export async function paylasimAktif() {
+  const { data, error } = await supabaseAdmin.from("ds_paylasim_ayar").select("aktif").maybeSingle();
+  return !error && data?.aktif === true;
+}
+
 const depo: Depo = {
+  aktif: paylasimAktif,
   async vadesiGelenler() {
     const { data, error } = await supabaseAdmin
       .from("ds_paylasim")

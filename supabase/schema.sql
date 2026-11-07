@@ -324,6 +324,17 @@ alter table public.ds_paylasim enable row level security;
 create unique index if not exists ds_paylasim_yayin_gunu_uq
   on public.ds_paylasim (((yayin_at at time zone 'Europe/Istanbul')::date)) where yayin_at is not null;
 
+-- Otomatik paylaşım aç/kapa (tek satır, varsayılan kapalı) — bkz. migrations/0038_paylasim_ayar.sql
+create table if not exists public.ds_paylasim_ayar (
+  id boolean primary key default true check (id),
+  aktif boolean not null default false,
+  updated_at timestamptz not null default now()
+);
+-- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
+alter table public.ds_paylasim_ayar enable row level security;
+revoke all on public.ds_paylasim_ayar from public, anon, authenticated;
+insert into public.ds_paylasim_ayar (id) values (true) on conflict (id) do nothing;
+
 -- Sosyal istatistik (salt okuma, günlük senkron) — bkz. migrations/0032_sosyal_istatistik.sql
 create table if not exists public.ds_sosyal_video (
   id uuid default gen_random_uuid() primary key,

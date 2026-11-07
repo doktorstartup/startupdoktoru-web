@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
-import { dosyalariSil } from "../../../../lib/paylasim-yayin";
+import { dosyalariSil, paylasimAktif } from "../../../../lib/paylasim-yayin";
 
 // Admin: kısa video paylaşım takibi (Instagram / Shorts / LinkedIn).
-// LinkedIn elle işaretlenir; otomatik gönderim: lib/paylasim-kuyruk.ts, kuyruk işlemleri: ./kuyruk.
+// LinkedIn elle işaretlenir; otomatik gönderim: lib/paylasim-kuyruk.ts, kuyruk işlemleri: ./kuyruk, aç/kapa: ./ayar.
 
 const ALANLAR = ["baslik", "durum", "notlar", "efektler", "ham_link", "kurgu_link", "hedef_tarih", "platformlar"];
 
@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
     .select("*")
     .order("created_at", { ascending: false });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ videolar: data });
+  return NextResponse.json({ videolar: data, aktif: await paylasimAktif() });
 }
 
 export async function POST(req: NextRequest) {

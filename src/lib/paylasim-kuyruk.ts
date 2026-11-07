@@ -33,6 +33,7 @@ export type KuyrukVideo = {
 };
 
 export type Depo = {
+  aktif(): Promise<boolean>; // Paylaşım sekmesindeki aç/kapa (ds_paylasim_ayar)
   vadesiGelenler(): Promise<KuyrukVideo[]>;
   kilitAl(id: string, platform: Platform, sureSn: number): Promise<PlatformKaydi | null>;
   yama(id: string, platform: Platform, yama: Partial<PlatformKaydi>, link?: string | null): Promise<boolean>;
@@ -155,6 +156,7 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
 
 // Vadesi gelen her video için iki platformu bağımsız ilerletir; biri düşerse diğeri sürer.
 export async function kuyrukAdimi(d: Bagimliliklar) {
+  if (!(await d.depo.aktif())) return { pasif: true as const };
   const simdi = d.simdi?.() ?? new Date();
   const videolar = await d.depo.vadesiGelenler();
   const sonuc: Record<string, Record<Platform, string>> = {};
