@@ -47,11 +47,16 @@ for (const k of kareler) {
 }
 
 // 3) Paylaşım metinleri
-const aiVar = kareler.length > 0 || proje.gorsel.some((g) => g.video);
+// AI beyanı kurguda Claude'un kararı (README "AI beyanı"). Alan yoksa eski geniş kural: herhangi bir AI görüntü varsa beyan.
+let aiVar = proje.ai_beyan;
+if (typeof aiVar !== "boolean") {
+  aiVar = kareler.length > 0 || proje.gorsel.some((g) => g.video);
+  console.warn(`⚠️ Proje dosyasında "ai_beyan" yok: AI görüntü ${aiVar ? "var, beyan AÇIK" : "yok, beyan kapalı"} varsayıldı. Kurguda "ai_beyan": true|false yaz.`);
+}
 writeFileSync(
   join(klasor, "metinler.md"),
   `# ${p.baslik}\n\n## Instagram (Reels)\n\n${p.instagram}\n\n## YouTube Shorts\n\n${p.shorts}\n\n## LinkedIn\n\n${p.linkedin}\n` +
-    (aiVar ? `\n---\n⚠️ Videoda yapay zekâ ile üretilmiş görüntü var: paylaşırken platformun "AI ile oluşturuldu / değiştirilmiş içerik" seçeneğini işaretle.\n` : "")
+    (aiVar ? `\n---\n⚠️ Videoda gerçek sanılabilecek yapay zekâ görüntüsü var: paylaşırken platformun "AI ile oluşturuldu / değiştirilmiş içerik" seçeneğini işaretle.\n` : "")
 );
 
 // 4) Yayın dosyası: moov başta (Instagram şartı); sınırı aşarsa bit hızını düşür.

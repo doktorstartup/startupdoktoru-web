@@ -1,5 +1,6 @@
 // Toplu üretim: gelen kutusundaki her ham video için proje açar, kes.mjs ile metne çevirip keser,
 // kurgu (Claude, oturumda) biten videoyu kontrol edip teslim.mjs ile kuyruğa sokar.
+// Kurguda Claude "kurgu_tamam"dan önce "ai_beyan": true|false yazar (kural: README "AI beyanı").
 // İlerleme gelen kutusundaki .toplu-durum.json'da: tekrar çalıştırmak güvenlidir, kaldığı yerden sürer.
 //
 // Kullanım: node toplu.mjs [--gelen <klasör>] [--durum] [--dry-run] [--zorla]

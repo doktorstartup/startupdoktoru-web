@@ -49,7 +49,13 @@ yayın dosyası + kapak Supabase Storage'a (`paylasim-video`) yüklenir, video e
 İptal edilmiş video kendiliğinden geri girmez; yayını başlamış videonun dosyasına dokunulmaz.
 `--dry-run`: klasörü ve yayin.mp4'ü üretir, veritabanına ve Storage'a dokunmaz.
 45 MB üstü dosya otomatik sıkıştırılır (Supabase ücretsiz plan sınırı 50 MB; 43 sn'lik video ~18 MB çıkıyor).
-Shorts metni `BAŞLIK: ...` + `AÇIKLAMA:` kalıbında olmalı; videoda AI görüntü varsa YouTube ve Instagram'a otomatik beyan edilir.
+Shorts metni `BAŞLIK: ...` + `AÇIKLAMA:` kalıbında olmalı; proje dosyasında `"ai_beyan": true` ise YouTube ve Instagram'a otomatik AI beyanı gider ve `metinler.md` uyarı yazar.
+
+### AI beyanı (`ai_beyan`)
+Kurguda Claude video başına karar verir. **`true`** yalnız izleyicinin gerçek sanabileceği fotogerçekçi AI içerik varsa:
+AI üretimi gerçekçi kişi veya gerçekçi sahne, gerçek bir kişi/olay/yerin değiştirilmesi (ör. `yuz-uret.mjs` yüzü, gerçekçi B-roll insanları).
+**`false`**: kendi çekimin, kurgu, efekt, altyazı, grafik/yazı, açıkça fantastik veya illüstrasyon tarzı görüntü.
+Alan yoksa `teslim.mjs` uyarı basar ve eski geniş kuralı uygular (herhangi bir AI B-roll/video varsa beyan açık).
 
 ## Toplu üretim (haftalık oturum)
 Gelen kutusu: **`~/Desktop/Startup Doktoru Videolar/_gelen/`**. Ham videoları buraya at.
@@ -64,7 +70,7 @@ node toplu.mjs --zorla    # kontrol uyarısına rağmen teslim et
 
 Her video şu aşamalardan geçer; durum gelen kutusundaki `.toplu-durum.json`'da durur, yarıda kesilirse aynı komut kaldığı yerden sürer:
 1. `metin`: `projeler/<ad>.json` açılır, `kes.mjs` metne çevirip keser. Son 60 sn'de değişen dosya (Drive hâlâ indiriyor olabilir) sonraki çalıştırmaya kalır.
-2. `kurgu_bekliyor`: **burada durur.** Claude `public/<ad>/kurgu.json`'daki metni okur, proje dosyasına `kes`, `duzelt`, `gorsel`, `kapak`, `paylasim` yazar (gerekirse `ekran.mjs`, `broll-uret.mjs`) ve son olarak `"kurgu_tamam": true` ekler. Varsayılan `gorsel` tek yüz sahnesidir, ama `kurgu_tamam` olmadan video asla teslim edilmez.
+2. `kurgu_bekliyor`: **burada durur.** Claude `public/<ad>/kurgu.json`'daki metni okur, proje dosyasına `kes`, `duzelt`, `gorsel`, `kapak`, `paylasim` yazar (gerekirse `ekran.mjs`, `broll-uret.mjs`), `"ai_beyan": true|false` kararını yazar (bkz. AI beyanı) ve son olarak `"kurgu_tamam": true` ekler. Varsayılan `gorsel` tek yüz sahnesidir, ama `kurgu_tamam` olmadan video asla teslim edilmez.
 3. Komut yeniden çalıştırılır. Proje değiştiyse `kes.mjs` tekrar koşar (metin önbellekten), kontrolden geçen video `teslim.mjs` ile render edilir.
 4. `kuyrukta`: bitti, bu dosya bir daha işlenmez (dosya adı değişse de boyut + ilk 1 MB ile tanınır).
 
