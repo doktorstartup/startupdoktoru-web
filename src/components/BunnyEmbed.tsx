@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { useT } from "../lib/i18n-client";
+import { useVideoTakip } from "../lib/videoTrack";
 import { BUNNY_LIBRARY } from "../lib/videos";
 
 type Accent = "cyan" | "violet" | "amber";
@@ -57,6 +58,8 @@ function CoverSurface({ poster, children }: { poster: Poster; children: React.Re
 // Tıkla-oynat (facade) Bunny.net gömme. videoId boşsa "Video yakında" placeholder.
 export function BunnyEmbed({ videoId, title, label, onPlay, poster }: Props) {
   const [playing, setPlaying] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  useVideoTakip(iframeRef, "bunny", videoId, playing);
   const t = useT();
   const accentRing = ACCENTS[poster?.accent || "cyan"].ring;
 
@@ -89,6 +92,7 @@ export function BunnyEmbed({ videoId, title, label, onPlay, poster }: Props) {
   if (playing) {
     return (
       <iframe
+        ref={iframeRef}
         className="w-full h-full"
         src={`https://iframe.mediadelivery.net/embed/${BUNNY_LIBRARY}/${videoId}?autoplay=true&preload=true&responsive=true`}
         title={title}

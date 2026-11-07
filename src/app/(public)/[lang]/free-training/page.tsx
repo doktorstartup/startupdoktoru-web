@@ -21,8 +21,14 @@ import { supabase } from "../../../../lib/supabase";
 import { track } from "../../../../lib/track";
 import { YouTubeEmbed } from "../../../../components/YouTubeEmbed";
 import { VIDEOS } from "../../../../lib/videos";
+import { TESTIMONIALS } from "../../../../lib/socialproof";
 import { useMember } from "../../../../lib/member";
 import { useHref, useT, useLang } from "../../../../lib/i18n-client";
+
+// Formun altında kısa yazılı öğrenci sözleri (video/link yok, sürtünme olmasın).
+const FORM_SOZLERI = TESTIMONIALS.filter(
+  (s) => s.quote && s.role && ["Muhammet Kayapınar", "Yunus Burak Özcan", "Serdar"].includes(s.name)
+);
 
 export default function FreeTraining() {
   const [formData, setFormData] = useState({
@@ -271,6 +277,17 @@ export default function FreeTraining() {
                     </button>
                   </form>
                 </div>
+
+                {FORM_SOZLERI.length > 0 && (
+                  <ul className="mt-5 space-y-3 px-2">
+                    {FORM_SOZLERI.map((s) => (
+                      <li key={s.name} className="text-xs text-muted-foreground leading-relaxed">
+                        <span className="text-foreground/80">“{en ? s.quoteEn || s.quote : s.quote}”</span>{" "}
+                        <span className="whitespace-nowrap">— {s.name}, {s.role}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
             </div>

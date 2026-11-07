@@ -1,8 +1,21 @@
 // Hafif istemci tarafı olay takibi. session_id'yi localStorage'da tutar,
 // UTM parametrelerini URL'den okur ve /api/track'a POST eder.
 // Hata durumunda sessizce yutar — takip asla kullanıcı akışını bozmamalı.
+// Çerez onayı yoksa olay kimliksiz gider: oturum kimliği, kaynak, referrer ve
+// üye e-postası eklenmez (bkz. consent.ts).
 
-export type EventType = "page_view" | "lead" | "purchase" | "popup_view" | "popup_submit";
+import { onayOku } from "./consent";
+
+export type EventType =
+  | "page_view"
+  | "lead"
+  | "purchase"
+  | "popup_view"
+  | "popup_submit"
+  | "video_start"
+  | "video_50"
+  | "video_complete"
+  | "checkout_open";
 
 const SESSION_KEY = "ds_session_id";
 
@@ -64,19 +77,38 @@ function getUtm(): Attr {
   return simdiki;
 }
 
+// Girişli üyenin e-postası (Supabase oturumu tarayıcıda "sb-<ref>-auth-token").
+function uyeEmail(): string | undefined {
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !/^sb-.+-auth-token$/.test(k)) continue;
+      const email = JSON.parse(localStorage.getItem(k) || "{}")?.user?.email;
+      if (typeof email === "string" && email) return email.toLowerCase();
+    }
+  } catch {
+    /* oturum okunamadıysa e-postasız gönder */
+  }
+  return undefined;
+}
+
 export function track(
   eventType: EventType,
-  extra?: { email?: string; product_id?: string; amount?: number }
+  extra?: { email?: string; product_id?: string; amount?: number; video_id?: string }
 ): void {
   if (typeof window === "undefined") return;
-  const payload = {
-    event_type: eventType,
-    session_id: getSessionId(),
-    path: window.location.pathname,
-    referrer: document.referrer || undefined,
-    ...getUtm(),
-    ...extra,
-  };
+  const onay = onayOku() === "evet";
+  const payload = onay
+    ? {
+        event_type: eventType,
+        session_id: getSessionId(),
+        path: window.location.pathname,
+        referrer: document.referrer || undefined,
+        email: uyeEmail(),
+        ...getUtm(),
+        ...extra,
+      }
+    : { event_type: eventType, path: window.location.pathname, ...extra };
 
   try {
     const body = JSON.stringify(payload);

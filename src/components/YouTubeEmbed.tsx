@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { useT } from "../lib/i18n-client";
+import { useVideoTakip } from "../lib/videoTrack";
 
 type Accent = "cyan" | "violet" | "amber" | "emerald";
 
@@ -32,6 +33,8 @@ const ACCENTS: Record<Accent, { glow: string; from: string; ring: string }> = {
 // videoId boşsa markalı "Video yakında" placeholder'ı gösterir.
 export function YouTubeEmbed({ videoId, title, label, poster, onPlay }: Props) {
   const [playing, setPlaying] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  useVideoTakip(iframeRef, "youtube", videoId, playing);
   const t = useT();
   const a = ACCENTS[poster?.accent || "cyan"];
   const start = () => {
@@ -54,8 +57,9 @@ export function YouTubeEmbed({ videoId, title, label, poster, onPlay }: Props) {
   if (playing) {
     return (
       <iframe
+        ref={iframeRef}
         className="w-full h-full"
-        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+        src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&enablejsapi=1`}
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

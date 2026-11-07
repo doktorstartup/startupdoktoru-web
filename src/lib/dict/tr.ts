@@ -71,6 +71,14 @@ export const tr = {
     switchLanguage: "Dili değiştir",
   },
 
+  cookieBanner: {
+    title: "Çerez tercihi",
+    text: "Siteyi geliştirmek ve sana uygun içerik sunmak için gezdiğin sayfaları ve izlediğin videoları kaydetmek istiyoruz. Reddedersen yalnızca kimliksiz sayım yapılır.",
+    more: "Gizlilik Politikası",
+    accept: "Kabul et",
+    reject: "Reddet",
+  },
+
   footer: {
     rights: "© 2026 Startup Doktoru. Tüm Hakları Saklıdır. \u201CKervan yolda değil, stratejiyle düzülür.\u201D",
     copyright: "© 2026 Startup Doktoru. Tüm Hakları Saklıdır.",
@@ -81,6 +89,7 @@ export const tr = {
     kvkk: "KVKK Aydınlatma Metni",
     distanceSales: "Mesafeli Satış Sözleşmesi",
     terms: "Kullanım Şartları",
+    cookiePrefs: "Çerez tercihleri",
   },
   home: {
     hero: {

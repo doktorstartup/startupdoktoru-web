@@ -11,6 +11,7 @@ import {
 import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
 import { useHref, useT } from "../lib/i18n-client";
 import { useMember, memberAuthHeader } from "../lib/member";
+import { track } from "../lib/track";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -129,6 +130,11 @@ export default function CheckoutForm({
     }
     onClose();
   }, [clientSecret, email, name, onClose]);
+
+  // Ödeme formunun hangi sayfada açıldığını kaydet (dönüşüm hunisi).
+  useEffect(() => {
+    track("checkout_open", { product_id: productId });
+  }, [productId]);
 
   // ESC ile kapat
   useEffect(() => {

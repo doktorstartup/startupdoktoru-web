@@ -4,6 +4,7 @@ import { Space_Grotesk } from "next/font/google";
 import "../../globals.css";
 import { Analytics } from "../../../components/Analytics";
 import { DiscountPopup } from "../../../components/DiscountPopup";
+import { CerezBanner } from "../../../components/CerezBanner";
 import { LangProvider } from "../../../lib/i18n-client";
 import { LOCALES, isLocale, localePath } from "../../../lib/i18n";
 import { getDict } from "../../../lib/dict";
@@ -73,6 +74,7 @@ export default async function RootLayout({
         <LangProvider lang={lang}>
           {children}
           <DiscountPopup />
+          <CerezBanner />
         </LangProvider>
       </body>
     </html>

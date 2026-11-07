@@ -1,6 +1,7 @@
 "use client";
 
 import { useHref, useT } from "../lib/i18n-client";
+import { onaySifirla } from "../lib/consent";
 
 export function SiteFooter() {
   const t = useT();
@@ -24,6 +25,7 @@ export function SiteFooter() {
           <a href={href("/kvkk")} className="hover:text-primary transition-colors">{t.footer.kvkk}</a>
           <a href="#" className="hover:text-primary transition-colors">{t.footer.distanceSales}</a>
           <a href="#" className="hover:text-primary transition-colors">{t.footer.terms}</a>
+          <button type="button" onClick={onaySifirla} className="hover:text-primary transition-colors">{t.footer.cookiePrefs}</button>
         </div>
       </div>
     </footer>

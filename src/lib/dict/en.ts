@@ -68,6 +68,14 @@ export const en: Dict = {
     switchLanguage: "Change language",
   },
 
+  cookieBanner: {
+    title: "Cookie preference",
+    text: "To improve the site and show you relevant content, we would like to record the pages you visit and the videos you watch. If you reject, we only keep anonymous counts.",
+    more: "Privacy Policy",
+    accept: "Accept",
+    reject: "Reject",
+  },
+
   footer: {
     rights: "© 2026 Startup Doktoru. All rights reserved. \u201CA caravan isn\u2019t sorted out on the road — it\u2019s sorted out with strategy.\u201D",
     copyright: "© 2026 Startup Doktoru. All rights reserved.",
@@ -78,6 +86,7 @@ export const en: Dict = {
     kvkk: "KVKK Notice",
     distanceSales: "Distance Sales Agreement",
     terms: "Terms of Use",
+    cookiePrefs: "Cookie preferences",
   },
 
   home: {

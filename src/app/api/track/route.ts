@@ -1,7 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../lib/supabase";
 
-const VALID = new Set(["page_view", "lead", "purchase", "popup_view", "popup_submit"]);
+const VALID = new Set([
+  "page_view",
+  "lead",
+  "purchase",
+  "popup_view",
+  "popup_submit",
+  "video_start",
+  "video_50",
+  "video_complete",
+  "checkout_open",
+]);
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,6 +34,8 @@ export async function POST(req: NextRequest) {
         email: body.email || null,
         product_id: body.product_id || null,
         amount: typeof body.amount === "number" ? body.amount : null,
+        // Yalnız video olaylarında yazılır: kolon (0037) yoksa diğer olaylar bozulmasın.
+        ...(typeof body.video_id === "string" && body.video_id ? { video_id: body.video_id.slice(0, 80) } : {}),
       },
     ]);
 

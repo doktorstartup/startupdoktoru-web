@@ -172,7 +172,10 @@ CREATE POLICY "Allow admin to manage ds_blog posts" ON public.ds_blog_posts
 -- 7. DR. STARTUP EVENTS TABLE (Ziyaretçi / funnel olay takibi)
 CREATE TABLE IF NOT EXISTS public.ds_events (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  event_type TEXT NOT NULL CHECK (event_type IN ('page_view', 'lead', 'purchase', 'popup_view', 'popup_submit')),
+  event_type TEXT NOT NULL CONSTRAINT ds_events_event_type_check CHECK (event_type IN (
+    'page_view', 'lead', 'purchase', 'popup_view', 'popup_submit',
+    'video_start', 'video_50', 'video_complete', 'checkout_open'
+  )),
   session_id TEXT,
   path TEXT,
   referrer TEXT,
@@ -182,6 +185,7 @@ CREATE TABLE IF NOT EXISTS public.ds_events (
   email TEXT,
   product_id TEXT,
   amount NUMERIC,
+  video_id TEXT, -- 0037: video olayları
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
