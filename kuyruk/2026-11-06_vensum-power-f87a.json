@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-06_vensum-power-f87a",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Vensum Power",
+    "domain": "vensum.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 9000000,
+      "birim": "EUR",
+      "usd": 9720000
+    },
+    "lider": "Larsen & Toubro Group",
+    "katilanlar": [
+      "Eviny Ventures"
+    ],
+    "kurucular": [
+      "Peter Nisula"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-06T07:49:11.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/helsinkis-vensum-power-secures-e9-million-to-scale-its-software-defined-power-conversion-platform/",
+      "baslik": "Helsinki’s Vensum Power secures €9 million to scale its software-defined power conversion platform",
+      "tarih": "Fri, 06 Nov 2026 07:49:11 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Vensum Power , a Helsinki-based developer of Software-Defined Power Conversion (SDPC) solution, has closed a €9 million Series A round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/helsinkis-vensum-power-secures-e9-million-to-scale-its-software-defined-power-conversion-platform/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/helsinkis-vensum-power-secures-e9-million-to-scale-its-software-defined-power-conversion-platform/"
+    }
+  ],
+  "olusturma": "2026-11-08T11:53:39.350Z"
+}

@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-06_bioliberty-2ad2",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Bioliberty",
+    "domain": "bioliberty.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 2950000,
+      "birim": "EUR",
+      "usd": 3186000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Rowan Armstrong",
+      "Ross O’Hanlon",
+      "Conan Bradley",
+      "Shéa Quinn"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-06T09:13:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/bioliberty-raises-e2-95-million-to-bring-its-ai-powered-rehabilitation-technology-into-the-home/",
+      "baslik": "Bioliberty raises €2.95 million to bring its AI-powered rehabilitation technology into the home",
+      "tarih": "Fri, 06 Nov 2026 09:13:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Bioliberty , an Edinburgh- and Boston-based rehabilitation technology startup, has raised a €2.95 million ($3.3 million) Series A extension, bringing its total funding to €12.07 million ($13.5 million",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bioliberty-raises-e2-95-million-to-bring-its-ai-powered-rehabilitation-technology-into-the-home/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bioliberty-raises-e2-95-million-to-bring-its-ai-powered-rehabilitation-technology-into-the-home/"
+    }
+  ],
+  "olusturma": "2026-11-08T11:53:39.350Z"
+}
