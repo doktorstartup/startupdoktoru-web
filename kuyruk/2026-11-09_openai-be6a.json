@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-11-09_openai-be6a",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "OpenAI",
+    "domain": "swipeline.co",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 11000000000,
+      "birim": "USD",
+      "usd": 11000000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-09T12:35:40.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/openai-1-2-trilyon-dolar-degerlemeyle-11-milyar-dolar-yatirim-aldi/",
+      "baslik": "OpenAI, 1.2 trilyon dolar değerlemeyle 11 milyar dolar yatırım aldı",
+      "tarih": "Mon, 09 Nov 2026 12:35:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "OpenAI , Bloomberg’ün kaleme aldığı habere göre 1.2 trilyon dolar değerleme üzerinden 11 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/openai-1-2-trilyon-dolar-degerlemeyle-11-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-09T13:49:28.352Z"
+}

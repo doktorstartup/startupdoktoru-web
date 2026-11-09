@@ -1,12 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":null,"ad":"buntar aerospace","tarih":"2026-10-05","dosya":"2026-10-05_buntar-aerospace-26d8.json"},
-  {"dom":"fleuret.ai","ad":"fleuret ai","tarih":"2026-10-05","dosya":"2026-10-05_fleuret-ai-236d.json"},
-  {"dom":"rob.co","ad":"robco","tarih":"2026-10-05","dosya":"2026-10-05_robco-552c.json"},
-  {"dom":"pandektes.com","ad":"pandektes","tarih":"2026-10-05","dosya":"2026-10-05_pandektes-32f1.json"},
-  {"dom":null,"ad":"appnava","tarih":"2026-10-05","dosya":"2026-10-05_appnava-d82c.json"},
-  {"dom":"namespace.so","ad":"namespace","tarih":"2026-10-05","dosya":"2026-10-05_namespace-5dd5.json"},
-  {"dom":"rodiniageneration.io","ad":"rodinia generation","tarih":"2026-10-05","dosya":"2026-10-05_rodinia-generation-4cf9.json"},
-  {"dom":"onebyzero.ai","ad":"onebyzero","tarih":"2026-10-05","dosya":"2026-10-05_onebyzero-22cc.json"},
   {"dom":"simplsales.ai","ad":"simpl","tarih":"2026-10-06","dosya":"2026-10-06_simpl-a42f.json"},
   {"dom":"nea.com","ad":"nea","tarih":"2026-10-06","dosya":"2026-10-06_nea-d654.json"},
   {"dom":"comparables.ai","ad":"comparablesai","tarih":"2026-10-06","dosya":"2026-10-06_comparablesai-205b.json"},
@@ -204,5 +196,7 @@
   {"dom":"zipline.com","ad":"zipline","tarih":"2026-11-06","dosya":"2026-11-06_zipline-12e6.json"},
   {"dom":null,"ad":"golbriak space","tarih":"2026-11-04","dosya":"2026-11-04_golbriak-space-72a7.json"},
   {"dom":"bioliberty.com","ad":"bioliberty","tarih":"2026-11-06","dosya":"2026-11-06_bioliberty-2ad2.json"},
-  {"dom":"vensum.com","ad":"vensum power","tarih":"2026-11-06","dosya":"2026-11-06_vensum-power-f87a.json"}
+  {"dom":"vensum.com","ad":"vensum power","tarih":"2026-11-06","dosya":"2026-11-06_vensum-power-f87a.json"},
+  {"dom":null,"ad":"openaiin 1","tarih":"2026-11-09","dosya":"2026-11-09_openaiin-1-6848.json"},
+  {"dom":"swipeline.co","ad":"openai","tarih":"2026-11-09","dosya":"2026-11-09_openai-be6a.json"}
 ]}
