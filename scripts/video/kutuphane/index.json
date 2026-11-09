@@ -130,5 +130,250 @@
   "sure": 4,
   "maliyet": 0.2,
   "tarih": "2026-10-26"
+ },
+ {
+  "id": "eser-gulumseme-saat",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4441.MOV",
+  "aralik": [
+   17.5,
+   21.0
+  ],
+  "etiket": [
+   "gülümseme",
+   "neşeli",
+   "hikâye-girişi",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-saate-bakma",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4441.MOV",
+  "aralik": [
+   11.0,
+   14.0
+  ],
+  "etiket": [
+   "saate-bakma",
+   "bekleme",
+   "sabırsızlık",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-gulme-sasirma",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4442.MOV",
+  "aralik": [
+   0.0,
+   2.0
+  ],
+  "etiket": [
+   "gülme",
+   "şaşırma",
+   "inanamama",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-yukari-bakma-alay",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4442.MOV",
+  "aralik": [
+   8.5,
+   12.5
+  ],
+  "etiket": [
+   "yukarı-bakma",
+   "alaycı",
+   "inanamama",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-dusunme-cene",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4445.MOV",
+  "aralik": [
+   2.5,
+   13.5
+  ],
+  "etiket": [
+   "düşünme",
+   "el-çenede",
+   "kararsızlık",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-parmak-vurgu",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4444.MOV",
+  "aralik": [
+   5.0,
+   15.5
+  ],
+  "etiket": [
+   "parmakla-vurgu",
+   "ciddi",
+   "öğüt",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-isyan-eller-acik",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4443.MOV",
+  "aralik": [
+   11.0,
+   16.8
+  ],
+  "etiket": [
+   "isyan",
+   "eller-açık",
+   "sitem",
+   "komik",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-dinleme-kafa-sallama",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4446.MOV",
+  "aralik": [
+   0.0,
+   11.4
+  ],
+  "etiket": [
+   "dinleme",
+   "kafa-sallama",
+   "onaylama",
+   "sessiz",
+   "ara-görüntü",
+   "nötr",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-kitabi-gosterme",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4440.MOV",
+  "aralik": [
+   33.0,
+   39.0
+  ],
+  "etiket": [
+   "kitap",
+   "hedef-milyon-dolar",
+   "gösterme",
+   "ürün",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-anlatim-el",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4440.MOV",
+  "aralik": [
+   2.8,
+   23.0
+  ],
+  "etiket": [
+   "anlatım",
+   "el-hareketi",
+   "eğitim",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
  }
 ]

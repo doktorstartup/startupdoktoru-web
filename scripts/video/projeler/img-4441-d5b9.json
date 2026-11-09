@@ -1,0 +1,117 @@
+{
+  "ad": "img-4441-d5b9",
+  "ai_beyan": false,
+  "klipler": [
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4441.MOV",
+      "goruntu": true,
+      "kes": [
+        [
+          0,
+          11.5
+        ],
+        [
+          14.75,
+          16.7
+        ],
+        [
+          19.65,
+          28.8
+        ]
+      ]
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4442.MOV",
+      "goruntu": true
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4445.MOV",
+      "goruntu": true
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4444.MOV",
+      "goruntu": true,
+      "kes": [
+        [
+          0,
+          2.85
+        ]
+      ]
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4443.MOV",
+      "goruntu": true,
+      "kes": [
+        [
+          0,
+          3.0
+        ]
+      ]
+    }
+  ],
+  "duzelt": {
+    "geçen": "Geçen",
+    "hikayeyle": "hikâyeyle",
+    "başladık": "başladık.",
+    "girişimci": "girişimci…",
+    "inanamazsınız": "inanamazsınız!"
+  },
+  "kuyruk": 1.5,
+  "gorsel": [
+    {
+      "ifade": "Geçen hafta",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "Ne? Gerçekten",
+      "tur": "yuz",
+      "zoom": "3 milyon"
+    },
+    {
+      "ifade": "Peki bu durumda",
+      "tur": "yuz",
+      "zoom": "Bilemedim"
+    },
+    {
+      "ifade": "Şunu net",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "Gerçek iş ekipte",
+      "tur": "buyuk",
+      "vurgu": [
+        "ekipte"
+      ]
+    },
+    {
+      "ifade": "Ya arkadaş girin",
+      "tur": "yuz",
+      "zoom": "Kardeşim"
+    },
+    {
+      "ifade": "Hayret bir",
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Yatırımcılar hazır.",
+        "Sıra senin girişiminde."
+      ]
+    }
+  ],
+  "kapak": {
+    "arka_sn": 2.2,
+    "rozet": "Girişimci hikâyesi",
+    "baslik": [
+      "İlk ayında",
+      "değerleme"
+    ],
+    "vurgu": "3 MİLYON $?"
+  },
+  "paylasim": {
+    "baslik": "İlk ayında 3 milyon dolar değerleme mi?",
+    "instagram": "Bir girişimci geldi: ilk ayında 3 milyon dolar değerleme, 300 bin dolar yatırım… 😅\n\nYatırımcılar ne dünyada ilk olan fikrine ne de hayallerine bakar. Gerçek iş ekipte.\n\nDeğerlemeni neye göre yaptığını bilmiyorsan, yatırımcının karşısına çıkmadan önce hazırlığını yap:\n👉 startupdoktoru.com\n\n#startup #girişimcilik #yatırım #değerleme #melekyatırımcı #girişim #startupdoktoru",
+    "shorts": "BAŞLIK: İlk ayında 3 milyon dolar değerleme mi? #shorts\n\nAÇIKLAMA:\nYatırımcılar fikre ya da hayale değil, ekibe bakar.\nYatırıma hazırlan: https://startupdoktoru.com\n\n#startup #girişimcilik #yatırım #shorts",
+    "linkedin": "Geçen hafta bir girişimci geldi: ilk ayında 3 milyon dolar değerleme, 300 bin dolar yatırım beklentisi.\n\nYatırımcılar ne \"dünyada ilk\" olan fikre ne de gelecek hayaline yatırım yapar. Gerçek iş ekipte.\n\nDeğerlemeni neye dayandırdığını anlatamıyorsan, görüşmeden önce hazırlığını tamamla: startupdoktoru.com\n\n#startup #girişimcilik #yatırım #değerleme"
+  },
+  "kurgu_tamam": true
+}

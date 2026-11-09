@@ -72,6 +72,7 @@ Her video şu aşamalardan geçer; durum gelen kutusundaki `.toplu-durum.json`'d
 1. `metin`: `projeler/<ad>.json` açılır, `kes.mjs` metne çevirip keser. Son 60 sn'de değişen dosya (Drive hâlâ indiriyor olabilir) sonraki çalıştırmaya kalır.
 2. `kurgu_bekliyor`: **burada durur.** Claude `public/<ad>/kurgu.json`'daki metni okur, proje dosyasına `kes`, `duzelt`, `gorsel`, `kapak`, `paylasim` yazar (gerekirse `ekran.mjs`, `broll-uret.mjs`), `"ai_beyan": true|false` kararını yazar (bkz. AI beyanı) ve son olarak `"kurgu_tamam": true` ekler. Varsayılan `gorsel` tek yüz sahnesidir, ama `kurgu_tamam` olmadan video asla teslim edilmez.
 3. Komut yeniden çalıştırılır. Proje değiştiyse `kes.mjs` tekrar koşar (metin önbellekten), kontrolden geçen video `teslim.mjs` ile render edilir.
+Birden çok ham dosya tek videoysa: ilk dosyanın projesine hepsini `klipler` olarak yaz, diğerlerinin `.toplu-durum.json` kaydında `"asama": "birlesti", "hedef": "<proje>"` yap; bir daha işlenmezler.
 4. `kuyrukta`: bitti, bu dosya bir daha işlenmez (dosya adı değişse de boyut + ilk 1 MB ile tanınır).
 
 Yayın öncesi kontrol (`kontrol.mjs`, kesilmiş kelime zamanlarından): konuşma ilk 1 sn'de başlıyor mu, kelimeler arasında veya sonda 1,5 sn'den uzun boşluk var mı.
