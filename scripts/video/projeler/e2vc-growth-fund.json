@@ -27,7 +27,8 @@
     {
       "ifade": "Türkiye'de",
       "tur": "yuz",
-      "video": "tepki-dinleme1.mp4",
+      "video": "yuz-lipsync.mp4",
+      "senkron": true,
       "zoom": "sürprizim"
     },
     {
@@ -42,7 +43,8 @@
     {
       "ifade": "Series A'dan",
       "tur": "yuz",
-      "video": "tepki-dinleme2.mp4"
+      "video": "yuz-lipsync.mp4",
+      "senkron": true
     },
     {
       "ifade": "Şirket başına",
@@ -58,7 +60,8 @@
     {
       "ifade": "Neden mi",
       "tur": "yuz",
-      "video": "tepki-dusunme.mp4"
+      "video": "yuz-lipsync.mp4",
+      "senkron": true
     },
     {
       "ifade": "Loom Games",
@@ -73,26 +76,22 @@
     {
       "ifade": "tam 1 milyar",
       "tur": "yuz",
-      "video": "tepki-gulme.mp4",
+      "video": "yuz-lipsync.mp4",
+      "senkron": true,
       "zoom": "milyar"
     },
     {
       "ifade": "Asıl mesele",
       "tur": "yuz",
-      "video": "tepki-ciddi.mp4"
-    },
-    {
-      "ifade": "Büyüme yatırım",
-      "tur": "buyuk",
-      "vurgu": [
-        "yurt",
-        "dışına"
-      ]
+      "video": "yuz-lipsync.mp4",
+      "senkron": true,
+      "zoom": "yurt"
     },
     {
       "ifade": "Ama bu kapıyı",
       "tur": "yuz",
-      "video": "tepki-gulumseme.mp4"
+      "video": "yuz-lipsync.mp4",
+      "senkron": true
     },
     {
       "ifade": "Detaylar",
@@ -104,7 +103,7 @@
       ]
     }
   ],
-  "ai_beyan": false,
+  "ai_beyan": true,
   "kapak": {
     "arka_sn": 21.0,
     "rozet": "Fon haberi",

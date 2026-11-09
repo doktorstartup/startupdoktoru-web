@@ -20,6 +20,7 @@ type Gorsel = {
   metin?: string;
   ust?: string[];
   video?: string; // yuz: hazır yüz videosu (ör. yuz-uret.mjs çıktısı), sahne başından oynar
+  senkron?: boolean; // yuz+video: video tüm konuşma boyunca (dudak senkronu), sahnenin kendi saniyesinden oynar
   // broll: id → kütüphane dosyası (<id>.jpg, hareket varsa <id>.mp4); resim/ses dosya adı da verilebilir (eski usul)
   // klip_sesi: videonun kendi sesi (Veo/Flow sesli üretir), 0–1; verilmezse sessiz
   kareler?: { ifade: string; id?: string; resim?: string; hareket?: string; ses?: string; klip_sesi?: number; sayac?: { sayi: number; on?: string } }[];
@@ -59,7 +60,7 @@ export const Video = ({ kurgu, boylar = {} }: Props) => {
       {sahneler.map(({ g, bas, son }, i) => (
         <Sequence key={i} from={Math.round(bas * FPS)} durationInFrames={Math.round((son - bas) * FPS)}>
           <Giris>
-            {g.tur === "yuz" && <Yuz kurgu={kurgu} bas={bas} video={g.video} zoom={g.zoom ? ifadeAni(kurgu.kelimeler, g.zoom, bas) - bas : null} />}
+            {g.tur === "yuz" && <Yuz kurgu={kurgu} bas={bas} video={g.video} senkron={g.senkron} zoom={g.zoom ? ifadeAni(kurgu.kelimeler, g.zoom, bas) - bas : null} />}
             {g.tur === "ekran" && <Ekran resim={`${kurgu.ad}/${g.resim}`} boy={boylar[g.resim!.replace(".png", "")] ?? 1920} sure={son - bas} />}
             {g.tur === "ekran" && g.sayac && <Sayaclar sayac={g.sayac} kurgu={kurgu} bas={bas} />}
             {g.tur === "liste" && <Liste g={g} kurgu={kurgu} bas={bas} />}
@@ -83,7 +84,7 @@ const Giris = ({ children }: { children: React.ReactNode }) => {
 };
 
 // Yüz çekimi + "digital zoom": belirtilen kelimede ani yakınlaşma.
-const Yuz = ({ kurgu, bas, zoom, video }: { kurgu: Kurgu; bas: number; zoom: number | null; video?: string }) => {
+const Yuz = ({ kurgu, bas, zoom, video, senkron }: { kurgu: Kurgu; bas: number; zoom: number | null; video?: string; senkron?: boolean }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const sahne = video ? null : kurgu.sahneler.find((s) => s.goruntu && bas >= s.bas - 0.01 && bas < s.son)!;
@@ -93,7 +94,7 @@ const Yuz = ({ kurgu, bas, zoom, video }: { kurgu: Kurgu; bas: number; zoom: num
     <AbsoluteFill style={{ transform: `scale(${olcek})`, transformOrigin: "50% 35%" }}>
       <OffthreadVideo
         src={staticFile(video ? `${kurgu.ad}/${video}` : sahne!.goruntu!)}
-        startFrom={sahne ? Math.round((bas - sahne.bas) * fps) : 0}
+        startFrom={sahne ? Math.round((bas - sahne.bas) * fps) : senkron ? Math.round(bas * fps) : 0}
         muted
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />

@@ -11,7 +11,8 @@ const SARI = "#FACC15";
 
 const Arka = ({ kurgu, konum }: { kurgu: NonNullable<Props["kurgu"]>; konum: string }) => (
   <OffthreadVideo
-    src={staticFile(kurgu.sahneler.find((s) => s.goruntu)!.goruntu!)}
+    // Yalnız ses kaydı olan projede (ör. dudak senkronu) arka plan ilk hazır yüz videosundan alınır.
+    src={staticFile(kurgu.sahneler.find((s) => s.goruntu)?.goruntu ?? `${kurgu.ad}/${kurgu.gorsel.find((g) => g.tur === "yuz" && g.video)!.video}`)}
     startFrom={Math.round(kurgu.kapak!.arka_sn * 30)}
     muted
     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: konum }}
