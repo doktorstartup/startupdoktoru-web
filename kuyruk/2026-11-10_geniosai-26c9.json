@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-10_geniosai-26c9",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "geniosAI",
+    "domain": "geniosai.co",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 19100000,
+      "birim": "USD",
+      "usd": 19100000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-10T14:30:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/10/yapay-zeka-destekli-finansal-analiz-platformu-geniosai-191-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli finansal analiz platformu geniosAI, 19,1 milyon dolar yatırım aldı",
+      "tarih": "Tue, 10 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Finansal analiz ve modelleme için yapay zeka yazılımı geliştiren geniosAI , tohum ve Seri A yatırım turlarında toplam 19,1 milyon dolar yatırım aldığını açıkladı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/10/yapay-zeka-destekli-finansal-analiz-platformu-geniosai-191-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri A",
+      "kaynak_url": "https://webrazzi.com/2026/11/10/yapay-zeka-destekli-finansal-analiz-platformu-geniosai-191-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-10T20:46:23.587Z"
+}
