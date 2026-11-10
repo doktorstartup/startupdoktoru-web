@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-10_nominal-6ed6",
+  "durum": "hazir",
+  "puan": 76,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 5,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Nominal",
+    "domain": "nominal.io",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 240000000,
+      "birim": "USD",
+      "usd": 240000000
+    },
+    "lider": "Lightspeed Venture Partners",
+    "katilanlar": [
+      "Lockheed Martin Ventures",
+      "General Catalyst",
+      "Founders Fund",
+      "Lux Capital",
+      "Sequoia",
+      "Avenir"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-10T12:04:28.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/donanim-test-teknolojileri-gelistiren-nominal-240-milyon-dolar-yatirim-aldi/",
+      "baslik": "Donanım test teknolojileri geliştiren Nominal, 240 milyon dolar yatırım aldı",
+      "tarih": "Tue, 10 Nov 2026 12:04:28 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli donanım test ve analiz yazılımları geliştiren ABD merkezli Nominal , 240 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/donanim-test-teknolojileri-gelistiren-nominal-240-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri B",
+      "kaynak_url": "https://swipeline.co/donanim-test-teknolojileri-gelistiren-nominal-240-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-10T13:25:25.951Z"
+}

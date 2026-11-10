@@ -1,21 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"simplsales.ai","ad":"simpl","tarih":"2026-10-06","dosya":"2026-10-06_simpl-a42f.json"},
-  {"dom":"nea.com","ad":"nea","tarih":"2026-10-06","dosya":"2026-10-06_nea-d654.json"},
-  {"dom":"comparables.ai","ad":"comparablesai","tarih":"2026-10-06","dosya":"2026-10-06_comparablesai-205b.json"},
-  {"dom":"hadrian.io","ad":"hadrian","tarih":"2026-10-06","dosya":"2026-10-06_hadrian-4282.json"},
-  {"dom":"getnettle.com","ad":"nettle","tarih":"2026-10-06","dosya":"2026-10-06_nettle-334e.json"},
-  {"dom":"cleavr.fr","ad":"cleavr","tarih":"2026-10-06","dosya":"2026-10-06_cleavr-b0c3.json"},
-  {"dom":"finches.ai","ad":"finches","tarih":"2026-10-06","dosya":"2026-10-06_finches-3e4f.json"},
-  {"dom":null,"ad":"autonomous b2b","tarih":"2026-10-06","dosya":"2026-10-06_autonomous-b2b-087f.json"},
-  {"dom":null,"ad":"n26","tarih":"2026-10-06","dosya":"2026-10-06_n26-e8d0.json"},
-  {"dom":null,"ad":"up","tarih":"2026-10-06","dosya":"2026-10-06_up-4343.json"},
-  {"dom":null,"ad":"paris","tarih":"2026-10-06","dosya":"2026-10-06_paris-4ffa.json"},
-  {"dom":"procuros.io","ad":"procuros","tarih":"2026-10-06","dosya":"2026-10-06_procuros-f96e.json"},
-  {"dom":"whitelabgx.com","ad":"whitelab genomics","tarih":"2026-10-06","dosya":"2026-10-06_whitelab-genomics-409a.json"},
-  {"dom":"valon.ai","ad":"valon","tarih":"2026-10-06","dosya":"2026-10-06_valon-a871.json"},
-  {"dom":"edonia.com","ad":"edonia","tarih":"2026-10-06","dosya":"2026-10-06_edonia-8228.json"},
-  {"dom":"graduate.nl","ad":"graduate ventures","tarih":"2026-10-06","dosya":"2026-10-06_graduate-ventures-6971.json"},
-  {"dom":"spiko.io","ad":"spiko","tarih":"2026-10-06","dosya":"2026-10-06_spiko-18ac.json"},
   {"dom":"mintneuro.com","ad":"mintneuro","tarih":"2026-10-07","dosya":"2026-10-07_mintneuro-ab04.json"},
   {"dom":"cori-clinical.com","ad":"cori clinical","tarih":"2026-10-07","dosya":"2026-10-07_cori-clinical-c018.json"},
   {"dom":null,"ad":"france","tarih":"2026-10-07","dosya":"2026-10-07_france-0661.json"},
@@ -198,5 +181,6 @@
   {"dom":"bioliberty.com","ad":"bioliberty","tarih":"2026-11-06","dosya":"2026-11-06_bioliberty-2ad2.json"},
   {"dom":"vensum.com","ad":"vensum power","tarih":"2026-11-06","dosya":"2026-11-06_vensum-power-f87a.json"},
   {"dom":null,"ad":"openaiin 1","tarih":"2026-11-09","dosya":"2026-11-09_openaiin-1-6848.json"},
-  {"dom":"swipeline.co","ad":"openai","tarih":"2026-11-09","dosya":"2026-11-09_openai-be6a.json"}
+  {"dom":"swipeline.co","ad":"openai","tarih":"2026-11-09","dosya":"2026-11-09_openai-be6a.json"},
+  {"dom":"nominal.io","ad":"nominal","tarih":"2026-11-10","dosya":"2026-11-10_nominal-6ed6.json"}
 ]}
