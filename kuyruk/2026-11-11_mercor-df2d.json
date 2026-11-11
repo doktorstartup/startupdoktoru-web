@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-11-11_mercor-df2d",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Mercor",
+    "domain": "mercor.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 750000000,
+      "birim": "USD",
+      "usd": 750000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Glade Brook Capital Partners",
+      "Apollo Global Management'ın",
+      "Benchmark Capital",
+      "Sapphire Ventures",
+      "Felicis Ventures",
+      "General Catalyst",
+      "StepStone Group",
+      "XTX Ventures",
+      "Salesforce",
+      "G Squared",
+      "Fundomo",
+      "Nvidia"
+    ],
+    "kurucular": [
+      "Adarsh Hiremath",
+      "Surya Midha"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-11T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/11/mercor-20-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/",
+      "baslik": "Mercor, 20 milyar dolar değerleme üzerinden 750 milyon dolar yatırım aldı",
+      "tarih": "Wed, 11 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka girişimi Mercor , 750 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/11/mercor-20-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "D serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/11/mercor-20-milyar-dolar-degerleme-uzerinden-750-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-11T21:24:22.311Z"
+}
