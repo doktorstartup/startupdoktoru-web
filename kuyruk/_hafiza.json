@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"mintneuro.com","ad":"mintneuro","tarih":"2026-10-07","dosya":"2026-10-07_mintneuro-ab04.json"},
-  {"dom":"cori-clinical.com","ad":"cori clinical","tarih":"2026-10-07","dosya":"2026-10-07_cori-clinical-c018.json"},
-  {"dom":null,"ad":"france","tarih":"2026-10-07","dosya":"2026-10-07_france-0661.json"},
-  {"dom":null,"ad":"insurtech konsileo","tarih":"2026-10-07","dosya":"2026-10-07_insurtech-konsileo-2afa.json"},
-  {"dom":"noah.com","ad":"noah","tarih":"2026-10-07","dosya":"2026-10-07_noah-aa53.json"},
-  {"dom":"rivercell.ai","ad":"rivercell","tarih":"2026-10-07","dosya":"2026-10-07_rivercell-db5e.json"},
   {"dom":null,"ad":"university","tarih":"2026-10-08","dosya":"2026-10-08_university-1d4f.json"},
   {"dom":"innercrowd.io","ad":"innercrowd","tarih":"2026-10-08","dosya":"2026-10-08_innercrowd-74a3.json"},
   {"dom":"usetoday.io","ad":"today","tarih":"2026-10-08","dosya":"2026-10-08_today-ba78.json"},
@@ -20,7 +14,6 @@
   {"dom":"autentic.ai","ad":"autentic ai","tarih":"2026-10-09","dosya":"2026-10-09_autentic-ai-adcd.json"},
   {"dom":null,"ad":"startups","tarih":"2026-10-09","dosya":"2026-10-09_startups-245f.json"},
   {"dom":"ollygarden.com","ad":"ollygarden","tarih":"2026-10-09","dosya":"2026-10-09_ollygarden-43f4.json"},
-  {"dom":null,"ad":"konsileo","tarih":"2026-10-07","dosya":"2026-10-07_konsileo-00d0.json"},
   {"dom":"klarent.ai","ad":"klarent","tarih":"2026-10-09","dosya":"2026-10-09_klarent-a614.json"},
   {"dom":"arena.ai","ad":"arena","tarih":"2026-10-09","dosya":"2026-10-09_arena-e418.json"},
   {"dom":null,"ad":"garanti","tarih":"2026-10-09","dosya":"2026-10-09_garanti-cbf3.json"},
