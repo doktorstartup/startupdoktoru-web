@@ -1,0 +1,78 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_fractile-532c",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Fractile",
+    "domain": "fractile.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 720000000,
+      "birim": "USD",
+      "usd": 720000000
+    },
+    "lider": "Thrive Capital",
+    "katilanlar": [
+      "Lightspeed Venture Partners",
+      "Bain Capital Ventures",
+      "British Business Bank",
+      "Gigascale Capital",
+      "Shopify Ventures",
+      "F ounders Fund",
+      "Sovereign AI",
+      "DST Global",
+      "BlackRock",
+      "Balderton",
+      "Redpoint",
+      "CapitalG"
+    ],
+    "kurucular": [
+      "Walter Goodwin"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/12/fractile-7-milyar-dolar-degerleme-uzerinden-720-milyon-dolar-yatirim-aldi/",
+      "baslik": "Fractile, 7 milyar dolar değerleme üzerinden 720 milyon dolar yatırım aldı",
+      "tarih": "Thu, 12 Nov 2026 08:00:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/yapay-zeka-cipi-girisimi-fractile-7-milyar-dolar-degerlemeyle-720-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka çipi girişimi Fractile, 7 milyar dolar değerlemeyle 720 milyon dolar yatırım aldı",
+      "tarih": "Thu, 12 Nov 2026 10:09:12 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka çip girişimi Fractile , 720 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/12/fractile-7-milyar-dolar-degerleme-uzerinden-720-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/12/fractile-7-milyar-dolar-degerleme-uzerinden-720-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-12T13:42:24.990Z"
+}

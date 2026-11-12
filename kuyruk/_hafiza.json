@@ -1,16 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":null,"ad":"university","tarih":"2026-10-08","dosya":"2026-10-08_university-1d4f.json"},
-  {"dom":"innercrowd.io","ad":"innercrowd","tarih":"2026-10-08","dosya":"2026-10-08_innercrowd-74a3.json"},
-  {"dom":"usetoday.io","ad":"today","tarih":"2026-10-08","dosya":"2026-10-08_today-ba78.json"},
-  {"dom":"askverso.ai","ad":"verso","tarih":"2026-10-08","dosya":"2026-10-08_verso-7526.json"},
-  {"dom":"golbriak.space","ad":"golbriak space","tarih":"2026-10-08","dosya":"2026-10-08_golbriak-space-6444.json"},
-  {"dom":"universalquantum.com","ad":"universal quantum","tarih":"2026-10-08","dosya":"2026-10-08_universal-quantum-8e04.json"},
-  {"dom":null,"ad":"neofleet capital","tarih":"2026-10-08","dosya":"2026-10-08_neofleet-capital-a8bb.json"},
-  {"dom":"immix.xyz","ad":"immix","tarih":"2026-10-08","dosya":"2026-10-08_immix-6722.json"},
-  {"dom":"moveparallel.com","ad":"parallel systems","tarih":"2026-10-08","dosya":"2026-10-08_parallel-systems-7cee.json"},
-  {"dom":null,"ad":"psv tech","tarih":"2026-10-08","dosya":"2026-10-08_psv-tech-7276.json"},
-  {"dom":"mecka.ai","ad":"mecka","tarih":"2026-10-08","dosya":"2026-10-08_mecka-cbd4.json"},
-  {"dom":"manus.im","ad":"manus","tarih":"2026-10-08","dosya":"2026-10-08_manus-040d.json"},
   {"dom":"autentic.ai","ad":"autentic ai","tarih":"2026-10-09","dosya":"2026-10-09_autentic-ai-adcd.json"},
   {"dom":null,"ad":"startups","tarih":"2026-10-09","dosya":"2026-10-09_startups-245f.json"},
   {"dom":"ollygarden.com","ad":"ollygarden","tarih":"2026-10-09","dosya":"2026-10-09_ollygarden-43f4.json"},
@@ -177,5 +165,7 @@
   {"dom":"swipeline.co","ad":"openai","tarih":"2026-11-09","dosya":"2026-11-09_openai-be6a.json"},
   {"dom":"nominal.io","ad":"nominal","tarih":"2026-11-10","dosya":"2026-11-10_nominal-6ed6.json"},
   {"dom":"geniosai.co","ad":"geniosai","tarih":"2026-11-10","dosya":"2026-11-10_geniosai-26c9.json"},
-  {"dom":"mercor.com","ad":"mercor","tarih":"2026-11-11","dosya":"2026-11-11_mercor-df2d.json"}
+  {"dom":"mercor.com","ad":"mercor","tarih":"2026-11-11","dosya":"2026-11-11_mercor-df2d.json"},
+  {"dom":"edelbyte.io","ad":"edelbyte","tarih":"2026-11-12","dosya":"2026-11-12_edelbyte-0048.json"},
+  {"dom":"fractile.com","ad":"fractile","tarih":"2026-11-12","dosya":"2026-11-12_fractile-532c.json"}
 ]}

@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_edelbyte-0048",
+  "durum": "hazir",
+  "puan": 86,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Edelbyte",
+    "domain": "edelbyte.io",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 70000000,
+      "birim": "USD",
+      "usd": 70000000
+    },
+    "lider": "Quiet Capital",
+    "katilanlar": [
+      "Sequoia Capita l liderlik ederken Greenoaks",
+      "Swish Ventures"
+    ],
+    "kurucular": [
+      "Alexander Sloutsky",
+      "Yoni Leibowitz"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/12/edelbyte-500-milyon-dolar-degerleme-uzerinden-70-milyon-dolar-yatirim-aldi/",
+      "baslik": "Edelbyte, 500 milyon dolar değerleme üzerinden toplamda 70 milyon dolar yatırım aldı",
+      "tarih": "Thu, 12 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli veri analitiği girişimi Edelbyte , iki yatırım turunda toplam 70 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/12/edelbyte-500-milyon-dolar-degerleme-uzerinden-70-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/12/edelbyte-500-milyon-dolar-degerleme-uzerinden-70-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-12T13:42:24.990Z"
+}
