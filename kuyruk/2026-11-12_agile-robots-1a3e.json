@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_agile-robots-1a3e",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Agile Robots",
+    "domain": "agile-robots.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 500000000,
+      "birim": "USD",
+      "usd": 500000000
+    },
+    "lider": "SoftBank Group",
+    "katilanlar": [
+      "T.Capital",
+      "Hitachi",
+      "Nvidia"
+    ],
+    "kurucular": [
+      "Alman Havacılık"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/12/agile-robots-8-5-milyar-dolar-degerleme-uzerinden-500-milyon-dolar-yatirim-aldi/",
+      "baslik": "Agile Robots, 8,5 milyar dolar değerleme üzerinden 500 milyon dolar yatırım aldı",
+      "tarih": "Thu, 12 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Endüstriyel robotik teknolojileri geliştiren Agile Robots , 500 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/12/agile-robots-8-5-milyar-dolar-degerleme-uzerinden-500-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-12T21:26:13.633Z"
+}
