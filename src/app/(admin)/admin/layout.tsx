@@ -26,6 +26,7 @@ import {
   MessageSquare,
   TrendingUp,
   Share2,
+  Target,
 } from "lucide-react";
 
 const ADMIN_PW_KEY = "ds_admin_pw";
@@ -211,6 +212,11 @@ export default function AdminLayout({
       name: "Paylaşım",
       href: "/admin/paylasim",
       icon: Share2,
+    },
+    {
+      name: "Reklam Performansı",
+      href: "/admin/reklam",
+      icon: Target,
     },
     {
       name: "Yatırımcı Ağı (INVEST)",

@@ -92,6 +92,11 @@ CREATE TABLE IF NOT EXISTS public.ds_orders (
   payment_status TEXT DEFAULT 'pending' CHECK (payment_status IN ('pending', 'paid', 'cancelled', 'refunded')),
   payment_method TEXT DEFAULT 'stripe' CHECK (payment_method IN ('stripe', 'iyzico', 'manual')),
   payment_ref TEXT UNIQUE, -- Stripe payment_intent id; webhook tekrarına karşı idempotency
+  utm_source TEXT,   -- 0039: reklam atfı (webhook, PaymentIntent metadata'sından)
+  utm_medium TEXT,
+  utm_campaign TEXT,
+  utm_content TEXT,
+  utm_term TEXT,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
@@ -182,6 +187,9 @@ CREATE TABLE IF NOT EXISTS public.ds_events (
   utm_source TEXT,
   utm_medium TEXT,
   utm_campaign TEXT,
+  utm_content TEXT, -- 0039: reklam kimliği ({{ad.id}})
+  utm_term TEXT,    -- 0039: reklam seti ({{adset.id}})
+  fbclid TEXT,      -- 0039: Meta tıklama kimliği
   email TEXT,
   product_id TEXT,
   amount NUMERIC,
@@ -351,3 +359,32 @@ create table if not exists public.ds_sosyal_video (
 );
 -- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
 alter table public.ds_sosyal_video enable row level security;
+
+-- Meta reklam harcaması (günlük senkron, reklam × gün) — bkz. migrations/0039_reklam_atif.sql
+CREATE TABLE IF NOT EXISTS public.ds_reklam_gunluk (
+  tarih DATE NOT NULL,
+  ad_id TEXT NOT NULL,
+  ad_ad TEXT,
+  adset_id TEXT,
+  adset_ad TEXT,
+  kampanya_id TEXT,
+  kampanya_ad TEXT,
+  harcama NUMERIC NOT NULL DEFAULT 0,
+  para_birimi TEXT,
+  gosterim INT NOT NULL DEFAULT 0,
+  erisim INT NOT NULL DEFAULT 0,
+  siklik NUMERIC,
+  link_tiklama INT NOT NULL DEFAULT 0,
+  video_3sn INT NOT NULL DEFAULT 0,   -- hook oranı = video_3sn / gosterim
+  thruplay INT NOT NULL DEFAULT 0,
+  meta_lead INT NOT NULL DEFAULT 0,   -- Meta'nın kendi saydığı (Pixel/CAPI yokken 0 kalır)
+  meta_satis INT NOT NULL DEFAULT 0,
+  ham JSONB,
+  guncellendi_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  PRIMARY KEY (tarih, ad_id)
+);
+CREATE INDEX IF NOT EXISTS ds_reklam_gunluk_ad_idx ON public.ds_reklam_gunluk (ad_id);
+
+-- Yalnız sunucu (service role) okur/yazar
+ALTER TABLE public.ds_reklam_gunluk ENABLE ROW LEVEL SECURITY;
+REVOKE ALL ON public.ds_reklam_gunluk FROM public, anon, authenticated;

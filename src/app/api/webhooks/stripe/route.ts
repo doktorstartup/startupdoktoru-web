@@ -30,6 +30,15 @@ export async function POST(req: NextRequest) {
   if (event.type === "payment_intent.succeeded") {
     const pi = event.data.object as Stripe.PaymentIntent;
     const { productId, email, name, phone, discountCode } = pi.metadata || {};
+    // Ödeme başlarken taşınan reklam kaynağı (api/checkout); onay yoksa boş.
+    const md = pi.metadata || {};
+    const atif = {
+      utm_source: md.utm_source || null,
+      utm_medium: md.utm_medium || null,
+      utm_campaign: md.utm_campaign || null,
+      utm_content: md.utm_content || null,
+      utm_term: md.utm_term || null,
+    };
 
     // Paylaşılan Stripe hesabı koruması: yalnız BİZİM checkout'umuzdan çıkan ödemeler
     // productId metadata'sı taşır (api/checkout her zaman set eder). productId yoksa bu ödeme
@@ -56,6 +65,7 @@ export async function POST(req: NextRequest) {
             payment_status: "paid",
             payment_method: "stripe",
             payment_ref: pi.id,
+            ...atif,
           },
         ],
         { onConflict: "payment_ref", ignoreDuplicates: true }
@@ -75,6 +85,8 @@ export async function POST(req: NextRequest) {
           email: email || null,
           product_id: productId || null,
           amount: pi.amount / 100,
+          ...atif,
+          fbclid: md.fbclid || null,
         },
       ]);
       if (eventError) {

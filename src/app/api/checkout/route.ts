@@ -24,7 +24,16 @@ async function resolveDiscount(code: string | undefined, productId: string): Pro
 
 export async function POST(req: NextRequest) {
   try {
-    const { productId, email, name, phone, discountCode } = await req.json();
+    const { productId, email, name, phone, discountCode, kaynak } = await req.json();
+
+    // Reklam atfı: istemcinin sakladığı kaynak PaymentIntent'e taşınır, webhook siparişe yazar.
+    const atif: Record<string, string> = {};
+    if (kaynak && typeof kaynak === "object") {
+      for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"]) {
+        const v = (kaynak as Record<string, unknown>)[k];
+        if (typeof v === "string" && v) atif[k] = v.slice(0, 200);
+      }
+    }
 
     if (!productId || !email || !name) {
       return NextResponse.json(
@@ -61,6 +70,7 @@ export async function POST(req: NextRequest) {
         name,
         ...(phone ? { phone } : {}),
         ...(discount ? { discountCode: discount.code, percentOff: String(discount.percentOff) } : {}),
+        ...atif,
       },
     });
 

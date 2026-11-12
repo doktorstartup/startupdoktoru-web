@@ -11,7 +11,7 @@ import {
 import { CreditCard, Lock, Loader2, ArrowRight, X } from "lucide-react";
 import { useHref, useT } from "../lib/i18n-client";
 import { useMember, memberAuthHeader } from "../lib/member";
-import { track } from "../lib/track";
+import { track, kaynakBilgisi } from "../lib/track";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
@@ -152,7 +152,7 @@ export default function CheckoutForm({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, email: em, name: n, phone: ph, discountCode }),
+        body: JSON.stringify({ productId, email: em, name: n, phone: ph, discountCode, kaynak: kaynakBilgisi() }),
       });
       const data = await res.json();
       if (!res.ok || !data.clientSecret) {

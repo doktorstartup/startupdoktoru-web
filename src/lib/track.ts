@@ -36,7 +36,10 @@ function getSessionId(): string {
 const ATTR_KEY = "ds_attr";
 const ATTR_GUN = 30;
 
-type Attr = { utm_source?: string; utm_medium?: string; utm_campaign?: string };
+// utm_content = reklam kimliği ({{ad.id}}), utm_term = reklam seti ({{adset.id}}),
+// fbclid = Meta tıklama kimliği. Reklam düzeyinde atıf bu üçüyle yapılır.
+export type Attr = { utm_source?: string; utm_medium?: string; utm_campaign?: string; utm_content?: string; utm_term?: string; fbclid?: string };
+const ATTR_ALANLARI = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"] as const;
 
 // Kampanya kaynağı YALNIZ giriş adresinde bulunur; ziyaretçi ikinci sayfaya
 // geçtiğinde URL'den düşer. Böyle olunca lead ve satış olayları "kaynak yok"
@@ -47,34 +50,47 @@ type Attr = { utm_source?: string; utm_medium?: string; utm_campaign?: string };
 function getUtm(): Attr {
   if (typeof window === "undefined") return {};
 
-  let simdiki: Attr = {};
+  const simdiki: Attr = {};
   try {
     const p = new URLSearchParams(window.location.search);
-    const kaynak = p.get("utm_source") || undefined;
-    const arac = p.get("utm_medium") || undefined;
-    const kampanya = p.get("utm_campaign") || undefined;
-    if (kaynak || arac || kampanya) {
-      simdiki = { utm_source: kaynak, utm_medium: arac, utm_campaign: kampanya };
+    for (const k of ATTR_ALANLARI) {
+      const v = p.get(k);
+      if (v) simdiki[k] = v.slice(0, 200);
     }
   } catch {
     /* URL okunamadıysa saklanana bak */
   }
 
   try {
-    if (simdiki.utm_source || simdiki.utm_medium || simdiki.utm_campaign) {
+    // Kaynağı yalnız bir utm_* değiştirir. Instagram/Facebook organik bağlantılara da
+    // fbclid ekler; tek başına fbclid saklı reklam kaynağını silmesin, ona eklensin.
+    if (simdiki.utm_source || simdiki.utm_medium || simdiki.utm_campaign || simdiki.utm_content || simdiki.utm_term) {
       localStorage.setItem(ATTR_KEY, JSON.stringify({ ...simdiki, ts: Date.now() }));
       return simdiki;
     }
     const kayitli = localStorage.getItem(ATTR_KEY);
     if (kayitli) {
       const { ts, ...attr } = JSON.parse(kayitli) as Attr & { ts?: number };
-      if (ts && Date.now() - ts < ATTR_GUN * 864e5) return attr;
+      if (ts && Date.now() - ts < ATTR_GUN * 864e5) {
+        if (simdiki.fbclid && simdiki.fbclid !== attr.fbclid) {
+          localStorage.setItem(ATTR_KEY, JSON.stringify({ ...attr, fbclid: simdiki.fbclid, ts }));
+          return { ...attr, fbclid: simdiki.fbclid };
+        }
+        return attr;
+      }
     }
   } catch {
     /* localStorage yoksa URL'dekiyle yetin */
   }
 
   return simdiki;
+}
+
+// Ödeme isteğine eklenecek kaynak: satış sunucuda (Stripe webhook) yazıldığı için
+// kaynağı oraya taşımanın tek yolu bu. Çerez onayı yoksa boş döner.
+export function kaynakBilgisi(): Attr {
+  if (typeof window === "undefined" || onayOku() !== "evet") return {};
+  return getUtm();
 }
 
 // Girişli üyenin e-postası (Supabase oturumu tarayıcıda "sb-<ref>-auth-token").
