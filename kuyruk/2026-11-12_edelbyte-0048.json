@@ -19,7 +19,7 @@
     "domain": "edelbyte.io",
     "ulke": "TR",
     "turk": false,
-    "tur_tipi": "series-a",
+    "tur_tipi": null,
     "tutar": {
       "deger": 70000000,
       "birim": "USD",
@@ -27,20 +27,23 @@
     },
     "lider": "Quiet Capital",
     "katilanlar": [
-      "Sequoia Capita l liderlik ederken Greenoaks",
-      "Swish Ventures"
+      "Sequoia Capital",
+      "Greenoaks",
+      "Swish Ventures",
+      "QP Ventures",
+      "Startpoint Capital",
+      "Cerca Partners"
     ],
     "kurucular": [
+      "Avner Aharoni",
+      "Evgeney Ryzhyk",
       "Alexander Sloutsky",
       "Yoni Leibowitz"
     ],
     "sektor": null,
     "tarih": "2026-11-12T13:00:00.000Z"
   },
-  "dusuk_guven": [
-    "kurucular",
-    "katilanlar"
-  ],
+  "dusuk_guven": [],
   "kaynaklar": [
     {
       "ad": "webrazzi",

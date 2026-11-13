@@ -314,7 +314,7 @@ export async function metinUret(kayit, { paket } = {}) {
       const cikti = { ...metinler, uretici: s.ad, uretim: new Date().toISOString() };
       if (paket) {
         mkdirSync(paket, { recursive: true });
-        writeFileSync(join(paket, "metin.json"), JSON.stringify(cikti, null, 2) + "\n");
+        writeFileSync(join(/*turbopackIgnore: true*/ paket, "metin.json"), JSON.stringify(cikti, null, 2) + "\n");
       }
       return { metinler: cikti, sorunlar, saglayici: s.ad };
     } catch (e) { sonHata = e; }
@@ -329,8 +329,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     console.error("Kullanım: node scripts/haber/metin.mjs kuyruk/<kayit>.json [--prompt|--dogrula]");
     process.exit(1);
   }
-  const kayit = JSON.parse(readFileSync(dosya, "utf8"));
-  const paket = join(process.env.HABER_PAKET_DIR || "paketler", kayit.id);
+  const kayit = JSON.parse(readFileSync(/*turbopackIgnore: true*/ dosya, "utf8"));
+  const paket = join(/*turbopackIgnore: true*/ process.env.HABER_PAKET_DIR || "paketler", kayit.id);
 
   if (process.argv.includes("--prompt")) {
     // Claude Code yolu: promptu bas, oturumda yaz, çıktıyı metin.json'a kaydet.
@@ -342,9 +342,9 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   // Elle yazılan metin.json da kapıdan geçmeli. dogrula() yalnız LLM yolunda
   // koşuyordu; Claude Code yolu varsayılan olduğu için o yol denetimsiz kalıyordu.
   if (process.argv.includes("--dogrula")) {
-    const yol = join(paket, "metin.json");
+    const yol = join(/*turbopackIgnore: true*/ paket, "metin.json");
     const makale = await makaleCek(kayit.kaynaklar[0].url);
-    const { metinler, sorunlar } = dogrula(JSON.parse(readFileSync(yol, "utf8")), makale, kayit);
+    const { metinler, sorunlar } = dogrula(JSON.parse(readFileSync(/*turbopackIgnore: true*/ yol, "utf8")), makale, kayit);
     console.log(`${yol}\n`);
     for (const [alan, p] of Object.entries(metinler)) {
       if (!Array.isArray(p) || !p.length) continue;

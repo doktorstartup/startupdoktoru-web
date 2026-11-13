@@ -29,18 +29,12 @@ import { gorselSirala } from "./carousel.mjs";
 const PAKET_DIR = process.env.HABER_PAKET_DIR || "paketler";
 const GORSEL_KOK = "public/haber";
 
-const TR = { ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", İ: "i", Ç: "c", Ğ: "g", Ö: "o", Ş: "s", Ü: "u" };
-export const slugify = (s) => (s || "").trim()
-  .replace(/[çğıöşüİÇĞÖŞÜ]/g, (m) => TR[m] || m)
-  .toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-")
-  .replace(/-+/g, "-").replace(/^-|-$/g, "");
-
 // Model çıktısı buradan geçer: HTML'e dönüşemez.
 // Kesme işareti (') BİLEREK kaçırılmıyor: Türkçede çok sık ("İzmir'de", "40'tan") ve
 // metin içeriğinde de çift tırnaklı özniteliklerde de tehlikesiz. Kaçırılırsa HTML
 // kaynağı &#39; yığınına dönüyor ve admin panelinden elle düzenlemek zorlaşıyor.
-import { govdeYaz, tutarYaz, kacar } from "./yayinla-govde.mjs";
-export { govdeYaz };
+import { govdeYaz, satirYaz, slugify, yaziSlug } from "./yayinla-govde.mjs";
+export { govdeYaz, slugify };
 
 function ffmpegCalistir(args) {
   return new Promise((c, h) => {
@@ -115,23 +109,9 @@ async function gorselleriHazirla(paket, slug, adet = 3, kapakDosya = null) {
 
 // ── Yayın ─────────────────────────────────────────────────────────────────
 export async function yayinla(kayit, metinler, { paket, kuru = false, kapakDosya = null } = {}) {
-  const u = kayit.kunye;
-  const baslik = `${u.sirket} ne iş yapıyor?`;
-  const slug = slugify(`${u.sirket}-ne-is-yapiyor`);
-  const tutar = tutarYaz(u.tutar?.deger, u.tutar?.birim);
-
+  const slug = yaziSlug(kayit.kunye.sirket);
   const { kapak, govde } = await gorselleriHazirla(paket, slug, 3, kapakDosya);
-  const content = govdeYaz(kayit, metinler, govde);
-
-  const ilkCumle = (metinler.kurulus?.[0] ?? metinler.odak?.[0] ?? "").replace(/\*\*/g, "");
-  const satir = {
-    title: tutar ? `${tutar} yatırım alan ${u.sirket} ne iş yapıyor?` : baslik,
-    slug,
-    content,
-    seo_title: `${u.sirket} ne iş yapıyor? ${tutar ? `${tutar} yatırım aldı` : ""}`.trim(),
-    seo_description: (ilkCumle || `${u.sirket} hakkında künye, kurucular ve yatırım detayları.`).slice(0, 300),
-    cover_image: kapak,
-  };
+  const satir = satirYaz(kayit, metinler, { kapak, govde });
 
   if (kuru) return { satir, kapak, govde, yazildi: false };
 

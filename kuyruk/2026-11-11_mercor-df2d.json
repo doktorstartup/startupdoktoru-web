@@ -19,7 +19,7 @@
     "domain": "mercor.com",
     "ulke": "TR",
     "turk": false,
-    "tur_tipi": "bilinmiyor",
+    "tur_tipi": "series-c+",
     "tutar": {
       "deger": 750000000,
       "birim": "USD",
@@ -27,30 +27,29 @@
     },
     "lider": null,
     "katilanlar": [
-      "Glade Brook Capital Partners",
-      "Apollo Global Management'ın",
+      "Nvidia",
+      "Salesforce",
+      "Zoom",
       "Benchmark Capital",
-      "Sapphire Ventures",
       "Felicis Ventures",
       "General Catalyst",
+      "Fundomo",
+      "G Squared",
+      "Glade Brook Capital Partners",
+      "Sapphire Ventures",
       "StepStone Group",
       "XTX Ventures",
-      "Salesforce",
-      "G Squared",
-      "Fundomo",
-      "Nvidia"
+      "Apollo Global Management fonları"
     ],
     "kurucular": [
+      "Brendan Foody",
       "Adarsh Hiremath",
       "Surya Midha"
     ],
     "sektor": null,
     "tarih": "2026-11-11T14:30:00.000Z"
   },
-  "dusuk_guven": [
-    "kurucular",
-    "katilanlar"
-  ],
+  "dusuk_guven": [],
   "kaynaklar": [
     {
       "ad": "webrazzi",

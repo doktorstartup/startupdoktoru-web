@@ -19,7 +19,7 @@
     "domain": "fractile.com",
     "ulke": "TR",
     "turk": false,
-    "tur_tipi": "bilinmiyor",
+    "tur_tipi": "series-c+",
     "tutar": {
       "deger": 720000000,
       "birim": "USD",
@@ -27,18 +27,24 @@
     },
     "lider": "Thrive Capital",
     "katilanlar": [
+      "Founders Fund",
       "Lightspeed Venture Partners",
-      "Bain Capital Ventures",
-      "British Business Bank",
-      "Gigascale Capital",
-      "Shopify Ventures",
-      "F ounders Fund",
-      "Sovereign AI",
-      "DST Global",
-      "BlackRock",
-      "Balderton",
       "Redpoint",
-      "CapitalG"
+      "CapitalG",
+      "DST Global",
+      "Elad Gil",
+      "BlackRock",
+      "Bain Capital Ventures",
+      "T. Rowe Price",
+      "SV Angel",
+      "Sovereign AI",
+      "British Business Bank",
+      "Shopify Ventures",
+      "Felicis",
+      "Gigascale Capital",
+      "20VC",
+      "Georgian",
+      "Balderton"
     ],
     "kurucular": [
       "Walter Goodwin"
@@ -46,10 +52,7 @@
     "sektor": null,
     "tarih": "2026-11-12T08:00:00.000Z"
   },
-  "dusuk_guven": [
-    "kurucular",
-    "katilanlar"
-  ],
+  "dusuk_guven": [],
   "kaynaklar": [
     {
       "ad": "webrazzi",

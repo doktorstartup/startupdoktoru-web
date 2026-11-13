@@ -10,6 +10,29 @@
 
 export const paraBirimi = { USD: "dolar", EUR: "euro", GBP: "sterlin", TRY: "TL" };
 
+const TR_HARF = { ç: "c", ğ: "g", ı: "i", ö: "o", ş: "s", ü: "u", İ: "i", Ç: "c", Ğ: "g", Ö: "o", Ş: "s", Ü: "u" };
+export const slugify = (s) => (s || "").trim()
+  .replace(/[çğıöşüİÇĞÖŞÜ]/g, (m) => TR_HARF[m] || m)
+  .toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-")
+  .replace(/-+/g, "-").replace(/^-|-$/g, "");
+
+export const yaziSlug = (sirket) => slugify(`${sirket}-ne-is-yapiyor`);
+
+// ds_blog_posts satırı — yayinla.mjs (yerel) ve akşam hattı (/api/cron/haber-aksam) aynı şablonu kullanır.
+export function satirYaz(kayit, metinler, { kapak = null, govde = [] } = {}) {
+  const u = kayit.kunye;
+  const tutar = tutarYaz(u.tutar?.deger, u.tutar?.birim);
+  const ilkCumle = (metinler.kurulus?.[0] ?? metinler.odak?.[0] ?? "").replace(/\*\*/g, "");
+  return {
+    title: tutar ? `${tutar} yatırım alan ${u.sirket} ne iş yapıyor?` : `${u.sirket} ne iş yapıyor?`,
+    slug: yaziSlug(u.sirket),
+    content: govdeYaz(kayit, metinler, govde),
+    seo_title: `${u.sirket} ne iş yapıyor? ${tutar ? `${tutar} yatırım aldı` : ""}`.trim(),
+    seo_description: (ilkCumle || `${u.sirket} hakkında künye, kurucular ve yatırım detayları.`).slice(0, 300),
+    cover_image: kapak,
+  };
+}
+
 // 75000000 USD → "75 milyon dolar"
 export function tutarYaz(deger, birim) {
   if (!Number.isFinite(deger) || deger <= 0) return null;
@@ -99,7 +122,7 @@ export function govdeYaz(kayit, metinler, gorseller) {
       <div class="ds-durak">
         <span class="ds-etiket">${kacar(d.etiket)}</span>
         <strong>${kacar(d.baslik)}</strong>
-        ${(d.satirlar ?? []).length ? `<ul>${d.satirlar.map((x) => `<li>${kacar(x)}</li>`).join("")}</ul>` : ""}
+        ${(d.satirlar ?? []).length ? `<ul>${d.satirlar.map((x) => `<li>${kacar(String(x).replace(/\*\*/g, ""))}</li>`).join("")}</ul>` : ""}
       </div>`).join("")}</div>`);
   }
 

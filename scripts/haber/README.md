@@ -84,11 +84,29 @@ sorgulansa bile RLS engeller.
 Yayındaki bir yazıyı `yayinla.mjs` ile yeniden basmak durumu bozmaz — yayında kalır.
 Panelden elle açılan yeni yazılar da taslak doğar.
 
-## Yayın kuyruğu — her sabah 07:30 TR
+## Yayın kuyruğu — her akşam 19:00 TR
 
-`ds_blog_posts.yayin_tarihi` dolu taslaklar, o tarihin 07:30'unda yayına çıkar
-(pg_cron işi `blog-yayin-kuyrugu`, migration 0034). `yayinla.mjs` ve `yazi.mjs` yeni
-yazıya kuyruktaki ilk boş sabahı otomatik atar. Panelden açılan taslak ve panelden
+`ds_blog_posts.yayin_tarihi` dolu taslaklar, tarihleri gelince yayına çıkar
+(pg_cron işi `blog-yayin-kuyrugu`, yarım saatte bir — migration 0034 → 0040 → 0041). `yayinla.mjs` ve `yazi.mjs` yeni
+yazıya kuyruktaki ilk boş akşamın 19:00'unu otomatik atar.
+
+## Akşam hattı — tam otomatik (18:30 → 19:00 TR)
+
+pg_cron 18:30'da `/api/cron/haber-aksam`'ı çağırır (`aksam.mjs`): RSS'leri o an toplar,
+son 24 saatin puanı ≥65 ve henüz yazısı olmayan haberlerini sıralar, Gemini ile metni
+yazar (doğrulama kapısı aynen çalışır) ve yazıları **30 dakika arayla** kuyruğa koyar:
+19:00, 19:30, 20:00 (hepsi birden çıkmasın). Akşam başına **en fazla 3** yazı; elle kuyruğa
+alınmış yazı bir saati doldurur. Ara `aksam.mjs` → `ARALIK_DK` (1 saat için 60). Gemini paralel
+isteklerde 503 verdiği için yazılar sırayla üretilir, her biri hemen kaydedilir. Düşük güvenli künye alanları
+(kurucular/katılanlar) yayına girmez. Görselsiz çıkar — kapak istenirse `varlik.mjs` + `yayinla.mjs --kapak`
+ile yeniden basılır, yazı yayında kalır.
+
+GitHub Actions burada kullanılmıyor: zamanlanmış işler 6-7 saat gecikiyor ve `haber.yml`'e sır konmuyor.
+Gerekenler: Vercel'de `GEMINI_API_KEY`, Vault'ta `paylasim_cron_secret` (paylaşım ucuyla ortak).
+
+```bash
+node --env-file=.env.local scripts/haber/aksam.mjs --kuru    # yerelde dene, yazmaz
+``` Panelden açılan taslak ve panelden
 "Taslağa al" ile geri çekilen yazı kuyruğa girmez. Paneldeki "İngilizceye çevir",
 kuyruktaki Türkçe yazının tarihini İngilizce taslağa da verir.
 Yayın saatinde `created_at` güncellenir, yazı listenin başına geçer.

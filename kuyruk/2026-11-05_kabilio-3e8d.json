@@ -19,7 +19,7 @@
     "domain": "kabilio.es",
     "ulke": null,
     "turk": false,
-    "tur_tipi": "pre-seed",
+    "tur_tipi": null,
     "tutar": {
       "deger": 10000000,
       "birim": "EUR",
@@ -28,7 +28,7 @@
     "lider": "Picus Capital",
     "katilanlar": [
       "Visionaries",
-      "Kabilio’s"
+      "CDTI"
     ],
     "kurucular": [
       "Jose Ojeda",
@@ -37,10 +37,7 @@
     "sektor": null,
     "tarih": "2026-11-05T09:19:45.000Z"
   },
-  "dusuk_guven": [
-    "kurucular",
-    "katilanlar"
-  ],
+  "dusuk_guven": [],
   "kaynaklar": [
     {
       "ad": "eu-startups",

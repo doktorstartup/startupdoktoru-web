@@ -19,7 +19,7 @@
     "domain": "nominal.io",
     "ulke": "TR",
     "turk": false,
-    "tur_tipi": "series-b",
+    "tur_tipi": null,
     "tutar": {
       "deger": 240000000,
       "birim": "USD",
@@ -27,20 +27,19 @@
     },
     "lider": "Lightspeed Venture Partners",
     "katilanlar": [
-      "Lockheed Martin Ventures",
-      "General Catalyst",
-      "Founders Fund",
+      "Insight Partners",
       "Lux Capital",
       "Sequoia",
-      "Avenir"
+      "General Catalyst",
+      "Founders Fund",
+      "Avenir",
+      "Lockheed Martin Ventures"
     ],
     "kurucular": [],
     "sektor": null,
     "tarih": "2026-11-10T12:04:28.000Z"
   },
-  "dusuk_guven": [
-    "katilanlar"
-  ],
+  "dusuk_guven": [],
   "kaynaklar": [
     {
       "ad": "swipeline",

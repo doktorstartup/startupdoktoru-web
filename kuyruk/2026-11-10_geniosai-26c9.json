@@ -19,14 +19,17 @@
     "domain": "geniosai.co",
     "ulke": "TR",
     "turk": false,
-    "tur_tipi": "series-a",
+    "tur_tipi": null,
     "tutar": {
       "deger": 19100000,
       "birim": "USD",
       "usd": 19100000
     },
-    "lider": null,
-    "katilanlar": [],
+    "lider": "FactSet",
+    "katilanlar": [
+      "Zoom",
+      "General Catalyst"
+    ],
     "kurucular": [],
     "sektor": null,
     "tarih": "2026-11-10T14:30:00.000Z"
