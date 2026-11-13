@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-11-13_mirendil-0710",
+  "durum": "hazir",
+  "puan": 87,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Mirendil",
+    "domain": "mirendil.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 1000000000,
+      "birim": "USD",
+      "usd": 1000000000
+    },
+    "lider": "Kleiner Perkins",
+    "katilanlar": [
+      "Clearlake Capital",
+      "Battery Ventures",
+      "Doerr Capital",
+      "Gil & Co",
+      "Pear VC",
+      "Google",
+      "M13",
+      "S32"
+    ],
+    "kurucular": [
+      "Shayan Salehian",
+      "Tara Rezaei"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-13T09:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/13/yapay-zeka-model-ve-ajan-yazilimlari-gelistiren-mirendil-1-milyar-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka modelleri ve ajan yazılımları geliştiren Mirendil, 1 milyar dolar yatırım aldı",
+      "tarih": "Fri, 13 Nov 2026 09:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka modelleri ve ajan yazılımları geliştiren Mirendil , 1 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/13/yapay-zeka-model-ve-ajan-yazilimlari-gelistiren-mirendil-1-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/13/yapay-zeka-model-ve-ajan-yazilimlari-gelistiren-mirendil-1-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-13T13:01:57.440Z"
+}

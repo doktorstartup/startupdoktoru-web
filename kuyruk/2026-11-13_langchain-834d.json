@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-13_langchain-834d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "LangChain",
+    "domain": "langchain.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 300000000,
+      "birim": "USD",
+      "usd": 300000000
+    },
+    "lider": "CapitalG",
+    "katilanlar": [
+      "Sapphire Ventures",
+      "DFJ Growth",
+      "IVP",
+      "GIC"
+    ],
+    "kurucular": [
+      "Harrison Chase",
+      "Ankush Gola"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-13T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/13/langchain-3-milyar-dolar-degerleme-uzerinden-300-milyon-dolar-yatirim-aldi/",
+      "baslik": "LangChain, 3 milyar dolar değerleme üzerinden 300 milyon dolar yatırım aldı",
+      "tarih": "Fri, 13 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka ajanları geliştirme ve yönetme platformu LangChain , 300 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/13/langchain-3-milyar-dolar-degerleme-uzerinden-300-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-13T13:01:57.440Z"
+}

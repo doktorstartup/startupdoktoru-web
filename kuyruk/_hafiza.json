@@ -1,14 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"autentic.ai","ad":"autentic ai","tarih":"2026-10-09","dosya":"2026-10-09_autentic-ai-adcd.json"},
-  {"dom":null,"ad":"startups","tarih":"2026-10-09","dosya":"2026-10-09_startups-245f.json"},
-  {"dom":"ollygarden.com","ad":"ollygarden","tarih":"2026-10-09","dosya":"2026-10-09_ollygarden-43f4.json"},
-  {"dom":"klarent.ai","ad":"klarent","tarih":"2026-10-09","dosya":"2026-10-09_klarent-a614.json"},
-  {"dom":"arena.ai","ad":"arena","tarih":"2026-10-09","dosya":"2026-10-09_arena-e418.json"},
-  {"dom":null,"ad":"garanti","tarih":"2026-10-09","dosya":"2026-10-09_garanti-cbf3.json"},
-  {"dom":null,"ad":"urunlerin","tarih":"2026-10-09","dosya":"2026-10-09_urunlerin-5751.json"},
-  {"dom":null,"ad":"spectacell","tarih":"2026-10-09","dosya":"2026-10-09_spectacell-c73c.json"},
-  {"dom":"egaranti.com","ad":"egaranti","tarih":"2026-10-09","dosya":"2026-10-09_egaranti-b422.json"},
-  {"dom":null,"ad":"zach yadegari","tarih":"2026-10-09","dosya":"2026-10-09_zach-yadegari-8330.json"},
   {"dom":"scarlet.cc","ad":"scarlet","tarih":"2026-10-12","dosya":"2026-10-12_scarlet-545b.json"},
   {"dom":"gaiuscapital.com","ad":"gaius capital","tarih":"2026-10-12","dosya":"2026-10-12_gaius-capital-c525.json"},
   {"dom":"wiremind.io","ad":"wiremind","tarih":"2026-10-12","dosya":"2026-10-12_wiremind-8ef1.json"},
@@ -168,5 +158,8 @@
   {"dom":"mercor.com","ad":"mercor","tarih":"2026-11-11","dosya":"2026-11-11_mercor-df2d.json"},
   {"dom":"edelbyte.io","ad":"edelbyte","tarih":"2026-11-12","dosya":"2026-11-12_edelbyte-0048.json"},
   {"dom":"fractile.com","ad":"fractile","tarih":"2026-11-12","dosya":"2026-11-12_fractile-532c.json"},
-  {"dom":"agile-robots.com","ad":"agile robots","tarih":"2026-11-12","dosya":"2026-11-12_agile-robots-1a3e.json"}
+  {"dom":"agile-robots.com","ad":"agile robots","tarih":"2026-11-12","dosya":"2026-11-12_agile-robots-1a3e.json"},
+  {"dom":"langchain.com","ad":"langchain","tarih":"2026-11-13","dosya":"2026-11-13_langchain-834d.json"},
+  {"dom":"databento.com","ad":"databento","tarih":"2026-11-13","dosya":"2026-11-13_databento-f90b.json"},
+  {"dom":"mirendil.com","ad":"mirendil","tarih":"2026-11-13","dosya":"2026-11-13_mirendil-0710.json"}
 ]}

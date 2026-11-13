@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-13_databento-f90b",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Databento",
+    "domain": "databento.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 100000000,
+      "birim": "USD",
+      "usd": 100000000
+    },
+    "lider": "Fifth Down Capital",
+    "katilanlar": [
+      "DRW Venture Capital",
+      "Tribe Capital",
+      "Hedosophia",
+      "NEA"
+    ],
+    "kurucular": [
+      "Christina Qi"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-13T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/13/databento-1-1-milyar-dolar-degerleme-uzerinden-100-milyon-dolar-yatirim-aldi/",
+      "baslik": "Databento, 1,1 milyar dolar değerleme üzerinden 100 milyon dolar yatırım aldı",
+      "tarih": "Fri, 13 Nov 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fintech girişimi Databento , 100 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/13/databento-1-1-milyar-dolar-degerleme-uzerinden-100-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/13/databento-1-1-milyar-dolar-degerleme-uzerinden-100-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-13T13:01:57.440Z"
+}
