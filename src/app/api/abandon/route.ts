@@ -7,12 +7,15 @@ import { enroll } from "../../../lib/campaigns";
 // sepeti-bırakma serisine kaydeder. Idempotent: tekrar çağrılırsa çift kayıt/mail olmaz.
 export async function POST(req: NextRequest) {
   try {
-    const { email, name } = await req.json();
+    const { email, name, phone, waOnay } = await req.json();
     const normEmail = typeof email === "string" ? email.trim().toLowerCase() : "";
     if (!normEmail.includes("@")) {
       return NextResponse.json({ ok: false }, { status: 400 });
     }
     const safeName = typeof name === "string" && name ? name : normEmail;
+    const safePhone = typeof phone === "string" && phone.trim() ? phone.trim() : null;
+    // WhatsApp onayı yalnız telefonla birlikte ve kutu işaretliyse yazılır; asla kapatılmaz.
+    const onay = safePhone && waOnay === true ? { wa_onay: true, wa_onay_at: new Date().toISOString() } : {};
 
     const { data: existing } = await supabaseAdmin
       .from("ds_leads")
@@ -23,7 +26,8 @@ export async function POST(req: NextRequest) {
     if (existing && existing.length > 0) {
       const tags: string[] = existing[0].tags || [];
       if (!tags.includes("checkout_started")) tags.push("checkout_started");
-      const patch: Record<string, unknown> = { tags };
+      const patch: Record<string, unknown> = { tags, ...onay };
+      if (safePhone) patch.phone = safePhone;
       if (existing[0].status !== "CUSTOMER") {
         patch.status = "HOT";
         patch.score = 75;
@@ -31,7 +35,7 @@ export async function POST(req: NextRequest) {
       await supabaseAdmin.from("ds_leads").update(patch).eq("id", existing[0].id);
     } else {
       await supabaseAdmin.from("ds_leads").insert([
-        { name: safeName, email: normEmail, source: "checkout", status: "HOT", score: 75, stage: "NEW_LEAD", tags: ["checkout_started"] },
+        { name: safeName, email: normEmail, phone: safePhone, source: "checkout", status: "HOT", score: 75, stage: "NEW_LEAD", tags: ["checkout_started"], ...onay },
       ]);
     }
 

@@ -77,6 +77,8 @@ export default function FreeTraining() {
             company: formData.company,
             startup_stage: formData.stage,
             source: "free_training",
+            wa_onay: true,
+            wa_onay_at: new Date().toISOString(),
             status: "NEW",
             score: 10, // Lead score +10 for registering
             stage: "FREE_TRAINING"

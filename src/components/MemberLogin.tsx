@@ -16,6 +16,7 @@ export function MemberLogin() {
     typeof window !== "undefined" && window.location.hash === "#kayit" ? "signup" : "login"
   );
   const [form, setForm] = useState({ name: "", email: "", phone: "", password: "" });
+  const [waOnay, setWaOnay] = useState(false);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
@@ -37,7 +38,7 @@ export function MemberLogin() {
           setErr(t.errShortPassword);
           return;
         }
-        const r = await signUp(form);
+        const r = await signUp({ ...form, waOnay });
         if (!r.ok) {
           // E-posta zaten kayıtlıysa: yeniden "hesap oluştur" dayatma → giriş moduna geç,
           // e-posta+şifre formda kalır, "Giriş Yap"a basması yeter.
@@ -96,6 +97,10 @@ export function MemberLogin() {
               <input type="tel" required value={form.phone} onChange={(e) => set("phone", e.target.value)} placeholder={t.phonePlaceholder}
                 className="w-full h-12 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none" />
               <p className="text-[11px] text-muted-foreground mt-1.5 px-1">{t.phoneHint}</p>
+              <label className="flex items-start gap-2 mt-2 px-1 text-[11px] text-muted-foreground select-none cursor-pointer">
+                <input type="checkbox" checked={waOnay} onChange={(e) => setWaOnay(e.target.checked)} className="mt-0.5 accent-primary h-3.5 w-3.5" />
+                <span>{t.waConsent}</span>
+              </label>
             </div>
           )}
           {mode !== "forgot" && (

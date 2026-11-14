@@ -24,7 +24,7 @@ async function resolveDiscount(code: string | undefined, productId: string): Pro
 
 export async function POST(req: NextRequest) {
   try {
-    const { productId, email, name, phone, discountCode, kaynak } = await req.json();
+    const { productId, email, name, phone, waOnay, discountCode, kaynak } = await req.json();
 
     // Reklam atfı: istemcinin sakladığı kaynak PaymentIntent'e taşınır, webhook siparişe yazar.
     const atif: Record<string, string> = {};
@@ -92,10 +92,14 @@ export async function POST(req: NextRequest) {
           patch.score = 75;
         }
         if (phone) patch.phone = phone;
+        if (phone && waOnay === true) {
+          patch.wa_onay = true;
+          patch.wa_onay_at = new Date().toISOString();
+        }
         await supabaseAdmin.from("ds_leads").update(patch).eq("id", existing[0].id);
       } else {
         await supabaseAdmin.from("ds_leads").insert([
-          { name, email: normEmail, phone: phone || null, source: "checkout", status: "HOT", score: 75, stage: "NEW_LEAD", tags: ["checkout_started"] },
+          { name, email: normEmail, phone: phone || null, source: "checkout", status: "HOT", score: 75, stage: "NEW_LEAD", tags: ["checkout_started"], ...(phone && waOnay === true ? { wa_onay: true, wa_onay_at: new Date().toISOString() } : {}) },
         ]);
       }
       // Sepeti bırakma kampanyasına kaydet (tamamlamazsa drip başlar)

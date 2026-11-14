@@ -107,6 +107,7 @@ export default function CheckoutForm({
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [waOnay, setWaOnay] = useState(false);
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -123,13 +124,13 @@ export default function CheckoutForm({
         fetch("/api/abandon", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: e, name }),
+          body: JSON.stringify({ email: e, name, phone, waOnay }),
           keepalive: true,
         }).catch(() => {});
       }
     }
     onClose();
-  }, [clientSecret, email, name, onClose]);
+  }, [clientSecret, email, name, phone, waOnay, onClose]);
 
   // Ödeme formunun hangi sayfada açıldığını kaydet (dönüşüm hunisi).
   useEffect(() => {
@@ -152,7 +153,7 @@ export default function CheckoutForm({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productId, email: em, name: n, phone: ph, discountCode, kaynak: kaynakBilgisi() }),
+        body: JSON.stringify({ productId, email: em, name: n, phone: ph, waOnay, discountCode, kaynak: kaynakBilgisi() }),
       });
       const data = await res.json();
       if (!res.ok || !data.clientSecret) {
@@ -281,6 +282,10 @@ export default function CheckoutForm({
                 placeholder={t.phonePlaceholder}
                 className="w-full h-11 px-4 rounded-xl bg-background border border-border focus:border-primary/50 text-sm outline-none transition-all"
               />
+              <label className="flex items-start gap-2 mt-2 text-[11px] text-muted-foreground select-none cursor-pointer">
+                <input type="checkbox" checked={waOnay} onChange={(e) => setWaOnay(e.target.checked)} className="mt-0.5 accent-primary h-3.5 w-3.5" />
+                <span>{t.waConsent}</span>
+              </label>
             </div>
 
             {error && <p className="text-xs text-red-400 text-center">{error}</p>}

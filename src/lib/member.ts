@@ -90,7 +90,7 @@ export function useMember() {
   }, []);
 
   const signUp = useCallback(
-    async ({ name, email, phone, password }: { name: string; email: string; phone: string; password: string }) => {
+    async ({ name, email, phone, password, waOnay }: { name: string; email: string; phone: string; password: string; waOnay?: boolean }) => {
       const normalized = email.trim().toLowerCase();
       const { data, error } = await supabase.auth.signUp({
         email: normalized,
@@ -102,7 +102,7 @@ export function useMember() {
       // CRM lead + karşılama maili
       try {
         await supabase.from("ds_leads").insert([
-          { name, email: normalized, phone: phone || null, source: "signup", status: "NEW", score: 15, stage: "NEW_LEAD" },
+          { name, email: normalized, phone: phone || null, source: "signup", status: "NEW", score: 15, stage: "NEW_LEAD", ...(phone && waOnay ? { wa_onay: true, wa_onay_at: new Date().toISOString() } : {}) },
         ]);
       } catch {
         /* lead eklenemese de akışı bozma */
