@@ -23,6 +23,22 @@ const p = proje.paylasim;
 if (!p?.baslik) throw new Error('Proje dosyasında "paylasim" (baslik, instagram, shorts, linkedin) yok');
 if (!proje.kapak) throw new Error('Proje dosyasında "kapak" ayarı yok');
 
+// Stüdyo kapısı: müzik, ses efekti ve açılış kancası olmadan video kuyruğa giremez — 2026-11-13'te
+// eski bir proje üçü de olmadan yayına çıktı. Bilerek sade video için projeye "sade": true yazılır.
+if (!proje.sade) {
+  const eksik = [
+    !proje.muzik?.dosya && '"muzik"',
+    !proje.efektler?.length && '"efektler"',
+    !proje.gorsel?.[0]?.kanca?.length && 'ilk sahnede "kanca"',
+  ].filter(Boolean);
+  if (eksik.length) throw new Error(`Stüdyo katmanı eksik: ${eksik.join(", ")}. Ekle ya da bilerek sade video ise projeye "sade": true yaz.`);
+}
+
+// Kapak ayarı kurguda yoksa Kapak/Thumbnail boş (siyah) çıkar — 2026-11-09'da iki videoda oldu. Projeden eşitle.
+const kurguDosya = join(KOK, "public", proje.ad, "kurgu.json");
+const kurguJson = JSON.parse(readFileSync(kurguDosya, "utf8"));
+if (JSON.stringify(kurguJson.kapak) !== JSON.stringify(proje.kapak)) writeFileSync(kurguDosya, JSON.stringify({ ...kurguJson, kapak: proje.kapak }, null, 1));
+
 const klasor = join(process.env.VIDEO_TESLIM_KOK || join(homedir(), "Desktop", "Startup Doktoru Videolar"), proje.ad);
 mkdirSync(join(klasor, "broll"), { recursive: true });
 const props = JSON.stringify({ proje: proje.ad });
