@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "./supabase";
 import { notifyAdmin } from "./email";
 import { erisimAnahtari } from "./youtube";
-import { instagramIstemci, youtubeIstemci } from "./paylasim-platform";
+import { instagramIstemci, linkedinIstemci, youtubeIstemci } from "./paylasim-platform";
 import { kuyrukAdimi, type Depo, type KuyrukVideo, type Platform, type PlatformKaydi } from "./paylasim-kuyruk";
 
 // Kuyruğu gerçek veritabanı ve platformlara bağlar.
@@ -16,6 +16,21 @@ const hata = (e: { message: string } | null) => {
 export async function paylasimAktif() {
   const { data, error } = await supabaseAdmin.from("ds_paylasim_ayar").select("aktif").maybeSingle();
   return !error && data?.aktif === true;
+}
+
+// LinkedIn bağlantısı (ds_paylasim_ayar). Anahtar 60 günlük; dolunca Paylaşım sekmesinden yeniden bağlanır.
+export async function linkedinDurumu() {
+  const { data } = await supabaseAdmin.from("ds_paylasim_ayar").select("linkedin_token, linkedin_kisi, linkedin_bitis").maybeSingle();
+  const kalanGun = data?.linkedin_bitis ? Math.floor((new Date(data.linkedin_bitis).getTime() - Date.now()) / 86400000) : null;
+  return { token: data?.linkedin_token as string | null, kisi: data?.linkedin_kisi as string | null, bagli: !!data?.linkedin_token, kalanGun };
+}
+
+async function linkedinHesap() {
+  const d = await linkedinDurumu();
+  if (!d.token || !d.kisi || (d.kalanGun ?? 0) < 0) {
+    throw Object.assign(new Error("LinkedIn bağlı değil ya da yetkinin süresi doldu. Paylaşım sekmesinden bağla, sonra Yeniden dene."), { kalici: true });
+  }
+  return { token: d.token, kisi: d.kisi };
 }
 
 const depo: Depo = {
@@ -61,6 +76,7 @@ export function kuyrukCalistir() {
     depo,
     youtube: youtubeIstemci(erisimAnahtari, adres),
     instagram: instagramIstemci(process.env.IG_USER_ID || "", process.env.IG_ACCESS_TOKEN || "", adres),
+    linkedin: linkedinIstemci(linkedinHesap, adres),
     bildir: (konu, metin) => notifyAdmin(konu, `<p>${metin}</p><p>Paylaşım sekmesinden Yeniden dene.</p>`),
   });
 }

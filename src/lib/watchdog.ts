@@ -4,7 +4,7 @@
 // Yalnız service-role okur (inv_* + ds_* admin tabloları). CRON_SECRET'li route'tan tetiklenir.
 import { supabaseAdmin } from "./supabase";
 import { INVEST_CAMPAIGN_PAUSED } from "./invest-campaign";
-import { kuyrukOzeti, paylasimAktif } from "./paylasim-yayin";
+import { kuyrukOzeti, linkedinDurumu, paylasimAktif } from "./paylasim-yayin";
 
 const SEGMENT = "tier1-invite";
 const since24h = () => new Date(Date.now() - 24 * 3600000).toISOString();
@@ -146,6 +146,8 @@ export async function buildDigest(): Promise<Digest> {
     if (kuyruk.stok < 3) alerts.push(`Video stoku ${kuyruk.stok} güne düştü — yeni kurgu gerekiyor.`);
     if (kuyruk.hatalar.length) alerts.push(`Paylaşım hatası: ${kuyruk.hatalar.join(", ")} — Paylaşım sekmesine bak.`);
     if (kuyruk.geciken.length) alerts.push(`Paylaşım gecikti: ${kuyruk.geciken.join(", ")} — pg_cron/Vault anahtarını kontrol et.`);
+    const li = await linkedinDurumu();
+    if (li.bagli && (li.kalanGun ?? 0) < 7) alerts.push(`LinkedIn yetkisi ${Math.max(0, li.kalanGun ?? 0)} gün içinde doluyor — Paylaşım sekmesinden yeniden bağla.`);
   }
 
   // ── Özet mail derle ──

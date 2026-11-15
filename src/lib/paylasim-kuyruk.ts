@@ -6,8 +6,10 @@
 // - YouTube oturum adresi bayt göndermeden ÖNCE yazılır. Tekrar denemede yeni oturum açılmaz, aynısı sorgulanır:
 //   bir oturumdan en fazla bir video çıkar.
 // - Instagram container'ı tek kullanımlıktır; önce durumu sorulur, PUBLISHED ise yeniden yayınlanmaz.
+// - LinkedIn gönderisi sorgulanamaz (okuma izni kapalı): gönderimden ÖNCE "gonderiliyor" yazılır. Cevap kaybolursa
+//   sonraki tik yeniden göndermez, hataya düşer; profili kontrol edip Yeniden dene kararını insan verir.
 
-export type Platform = "shorts" | "instagram";
+export type Platform = "shorts" | "instagram" | "linkedin";
 export type YayinDurumu = "bekliyor" | "isleniyor" | "yayinda" | "hata" | "kilitli" | "atlandi";
 
 export type PlatformKaydi = {
@@ -18,8 +20,9 @@ export type PlatformKaydi = {
   deneme?: number;
   kilit?: string | null;
   oturum?: string | null; // YouTube devam ettirilebilir yükleme adresi
-  container?: string | null; // Instagram medya container'ı
+  container?: string | null; // Instagram medya container'ı; LinkedIn'de yüklenen videonun URN'i
   container_at?: string | null;
+  gonderiliyor?: boolean; // LinkedIn: gönderi isteği çıktı, cevabı kaydedilmedi
 };
 
 export type KuyrukVideo = {
@@ -29,7 +32,7 @@ export type KuyrukVideo = {
   ai_icerik: boolean;
   yayin_at: string;
   yayin: Partial<Record<Platform, PlatformKaydi>>;
-  platformlar: Partial<Record<Platform | "linkedin", { metin?: string; paylasildi_at?: string | null }>>;
+  platformlar: Partial<Record<Platform, { metin?: string; paylasildi_at?: string | null }>>;
 };
 
 export type Depo = {
@@ -56,10 +59,17 @@ export type InstagramIstemci = {
   permalink(id: string): Promise<string | null>;
 };
 
+export type LinkedInIstemci = {
+  yukle(video: KuyrukVideo): Promise<string>; // video URN'i
+  hazir(videoUrn: string): Promise<boolean>; // LinkedIn videoyu işledi mi
+  paylas(videoUrn: string, video: KuyrukVideo): Promise<string>; // gönderi URN'i
+};
+
 export type Bagimliliklar = {
   depo: Depo;
   youtube: YouTubeIstemci;
   instagram: InstagramIstemci;
+  linkedin: LinkedInIstemci;
   bildir(konu: string, metin: string): Promise<unknown>;
   simdi?: () => Date;
 };
@@ -122,6 +132,28 @@ async function instagramAdimi(d: Bagimliliklar, v: KuyrukVideo, s: PlatformKaydi
   return { yama: { durum: "yayinda", id, link, hata: null }, link };
 }
 
+async function linkedinAdimi(d: Bagimliliklar, v: KuyrukVideo, s: PlatformKaydi, simdi: Date, kaydet: Kaydet): Promise<Sonuc> {
+  if (s.gonderiliyor) {
+    throw adimHatasi("LinkedIn gönderisi yarıda kaldı. Profili kontrol et: gönderi çıkmadıysa Yeniden dene.", { kalici: true, yama: { gonderiliyor: false } });
+  }
+  if (!s.container) {
+    const video = await d.linkedin.yukle(v);
+    return { yama: { durum: "isleniyor", container: video, container_at: simdi.toISOString(), hata: null } };
+  }
+  if (!(await d.linkedin.hazir(s.container))) {
+    const dk = (simdi.getTime() - new Date(s.container_at || simdi).getTime()) / 60000;
+    if (dk > IG_BEKLEME_DK) throw adimHatasi(`LinkedIn videoyu ${IG_BEKLEME_DK} dakikada işleyemedi.`, { kalici: true, yama: { container: null } });
+    return { yama: { durum: "isleniyor" } };
+  }
+
+  await kaydet({ gonderiliyor: true });
+  const id = await d.linkedin.paylas(s.container, v);
+  const link = `https://www.linkedin.com/feed/update/${id}/`;
+  return { yama: { durum: "yayinda", id, link, gonderiliyor: false, hata: null }, link };
+}
+
+const PLATFORM_ADI: Record<Platform, string> = { shorts: "YouTube Shorts", instagram: "Instagram", linkedin: "LinkedIn" };
+
 async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simdi: Date) {
   const s = await d.depo.kilitAl(v.id, p, KILIT_SN);
   if (!s) return "kilit-dolu";
@@ -130,7 +162,7 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
     const temiz = await d.depo.yama(v.id, p, { ...yama, kilit: null }, link);
     if (temiz) await d.depo.dosyaTemizle(v).catch((e) => console.error("[paylasim] dosya silinemedi:", e));
     if (yama.durum === "hata" || yama.durum === "kilitli") {
-      await d.bildir(`Paylaşım hatası: ${v.baslik}`, `${p === "shorts" ? "YouTube Shorts" : "Instagram"}: ${yama.hata}`);
+      await d.bildir(`Paylaşım hatası: ${v.baslik}`, `${PLATFORM_ADI[p]}: ${yama.hata}`);
     }
     return yama.durum ?? s.durum;
   };
@@ -141,10 +173,13 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
     if (baslamadi && !v.platformlar?.[p]?.metin?.trim()) throw adimHatasi("Platform metni boş.", { kalici: true });
     if (baslamadi && !v.video_yol) throw adimHatasi("Video dosyası yok.", { kalici: true });
 
+    const kaydet: Kaydet = (y) => d.depo.yama(v.id, p, y);
     const sonuc =
       p === "shorts"
-        ? await youtubeAdimi(d, v, s, (y) => d.depo.yama(v.id, p, y))
-        : await instagramAdimi(d, v, s, simdi);
+        ? await youtubeAdimi(d, v, s, kaydet)
+        : p === "instagram"
+          ? await instagramAdimi(d, v, s, simdi)
+          : await linkedinAdimi(d, v, s, simdi, kaydet);
     return await bitir(sonuc.yama, sonuc.link);
   } catch (e) {
     const h = e as AdimHatasi;
@@ -154,7 +189,8 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
   }
 }
 
-// Vadesi gelen her video için iki platformu bağımsız ilerletir; biri düşerse diğeri sürer.
+// Vadesi gelen her video için platformları bağımsız ilerletir; biri düşerse diğerleri sürer.
+// Kuyruğa alınırken eklenmemiş platformun (LinkedIn bağlı değilken) kaydı yoktur: kilit alınamaz, dokunulmaz.
 export async function kuyrukAdimi(d: Bagimliliklar) {
   if (!(await d.depo.aktif())) return { pasif: true as const };
   const simdi = d.simdi?.() ?? new Date();
@@ -168,12 +204,13 @@ export async function kuyrukAdimi(d: Bagimliliklar) {
       await d.bildir(`Paylaşım gecikti: ${v.baslik}`, `Planlanan saatten ${GEC_KALMA_SAAT} saat geçti, yayınlanmadı. Paylaşım sekmesinden kuyruğa al.`);
       continue;
     }
-    const [shorts, instagram] = await Promise.allSettled([
+    const [shorts, instagram, linkedin] = await Promise.allSettled([
       platformAdimi(d, v, "shorts", simdi),
       platformAdimi(d, v, "instagram", simdi),
+      platformAdimi(d, v, "linkedin", simdi),
     ]);
     const yaz = (r: PromiseSettledResult<string>) => (r.status === "fulfilled" ? r.value : `hata: ${r.reason}`);
-    sonuc[v.id] = { shorts: yaz(shorts), instagram: yaz(instagram) };
+    sonuc[v.id] = { shorts: yaz(shorts), instagram: yaz(instagram), linkedin: yaz(linkedin) };
   }
   return { videolar: videolar.length, sonuc };
 }

@@ -6,14 +6,15 @@ import { readFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { PGlite } from "@electric-sql/pglite";
 import { kuyrukAdimi, MAX_DENEME } from "./paylasim-kuyruk.ts";
-import { instagramIstemci, shortsMetni, youtubeIstemci } from "./paylasim-platform.ts";
+import { instagramIstemci, linkedinIstemci, linkedinMetni, shortsMetni, youtubeIstemci } from "./paylasim-platform.ts";
 
 const migration = readFileSync(new URL("../../supabase/migrations/0036_paylasim_kuyrugu.sql", import.meta.url), "utf8");
 const tablo = readFileSync(new URL("../../supabase/migrations/0031_paylasim.sql", import.meta.url), "utf8");
 const ayar = readFileSync(new URL("../../supabase/migrations/0038_paylasim_ayar.sql", import.meta.url), "utf8");
+const linkedinSql = readFileSync(new URL("../../supabase/migrations/0043_paylasim_linkedin.sql", import.meta.url), "utf8");
 
 // Varsayılan: sistem açık (eski davranış testleri). Kapalı durum testleri { aktif: false } verir.
-async function kur({ aktif = true } = {}) {
+async function kur({ aktif = true, linkedin = false } = {}) {
   const db = new PGlite();
   // Supabase'e özgü parçalar için boş kabuk.
   await db.exec(`
@@ -27,11 +28,13 @@ async function kur({ aktif = true } = {}) {
   await db.exec(tablo);
   await db.exec(migration.replace(/^create extension.*$/gm, ""));
   await db.exec(ayar);
+  await db.exec(linkedinSql);
+  if (linkedin) await db.query(`update ds_paylasim_ayar set linkedin_token = 'tok', linkedin_kisi = 'kisi'`);
   if (aktif) await db.query(`update ds_paylasim_ayar set aktif = true`);
   return db;
 }
 
-const metinler = { shorts: { metin: "BAŞLIK: Deneme\n\nAÇIKLAMA:\nmetin" }, instagram: { metin: "açıklama" } };
+const metinler = { shorts: { metin: "BAŞLIK: Deneme\n\nAÇIKLAMA:\nmetin" }, instagram: { metin: "açıklama" }, linkedin: { metin: "LinkedIn metni" } };
 
 async function video(db, ad, ek = {}) {
   const { rows } = await db.query(`insert into ds_paylasim (baslik, durum, video_yol, platformlar) values ($1, 'hazir', $2, $3) returning id`, [
@@ -122,8 +125,31 @@ function sahteInstagram(ayar = {}) {
   return g;
 }
 
+function sahteLinkedIn(ayar = {}) {
+  const l = {
+    yuklenen: 0,
+    yayinlanan: 0,
+    hazirlar: [...(ayar.hazirlar ?? [])],
+    yukle: async () => `urn:li:video:${++l.yuklenen}`,
+    hazir: async () => l.hazirlar.shift() ?? true,
+    async paylas() {
+      if (ayar.ret && !l.retOldu) {
+        l.retOldu = true;
+        throw Object.assign(new Error("reddedildi"), { yama: { gonderiliyor: false } });
+      }
+      l.yayinlanan++;
+      if (ayar.cevapKaybi && !l.kayipOldu) {
+        l.kayipOldu = true;
+        throw new Error("zaman aşımı");
+      }
+      return `urn:li:share:${l.yayinlanan}`;
+    },
+  };
+  return l;
+}
+
 function bagim(db, ayar = {}) {
-  const b = { depo: ayar.depo ?? depo(db), youtube: sahteYouTube(ayar.yt), instagram: sahteInstagram(ayar.ig), bildirimler: [] };
+  const b = { depo: ayar.depo ?? depo(db), youtube: sahteYouTube(ayar.yt), instagram: sahteInstagram(ayar.ig), linkedin: sahteLinkedIn(ayar.li), bildirimler: [] };
   b.bildir = async (konu, metin) => void b.bildirimler.push(`${konu}: ${metin}`);
   return b;
 }
@@ -424,6 +450,117 @@ test("aç/kapa: ayar tablosuna anon/authenticated erişemez, tek satır", async 
     await db.exec(`reset role`);
   }
   await assert.rejects(db.query(`insert into ds_paylasim_ayar (id, aktif) values (false, true)`), /check/);
+});
+
+test("LinkedIn bağlı değilken kuyruğa girmez ve hiç çağrılmaz", async () => {
+  const db = await kur();
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db);
+  await kuyrukAdimi(b);
+  await kuyrukAdimi(b);
+  const s = await satir(db, id);
+  assert.equal(s.yayin.linkedin, undefined);
+  assert.equal(s.durum, "paylasildi");
+  assert.equal(b.linkedin.yuklenen, 0);
+});
+
+test("LinkedIn bağlıyken: yükler, işlenmesini bekler, bir kez paylaşır, link işlenir", async () => {
+  const db = await kur({ linkedin: true });
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db, { li: { hazirlar: [false] } });
+  await kuyrukAdimi(b); // yükler
+  await kuyrukAdimi(b); // hâlâ işleniyor
+  assert.equal((await satir(db, id)).yayin.linkedin.durum, "isleniyor");
+  await kilidiEskit(db, id, "linkedin");
+  await kuyrukAdimi(b); // paylaşır
+  const s = await satir(db, id);
+  assert.equal(s.yayin.linkedin.durum, "yayinda");
+  assert.equal(s.platformlar.linkedin.link, "https://www.linkedin.com/feed/update/urn:li:share:1/");
+  assert.equal(s.durum, "paylasildi");
+  assert.equal(b.linkedin.yuklenen, 1);
+  assert.equal(b.linkedin.yayinlanan, 1);
+});
+
+test("LinkedIn gönderi cevabı kaybolursa yeniden gönderilmez, hataya düşer ve bildirilir", async () => {
+  const db = await kur({ linkedin: true });
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db, { li: { cevapKaybi: true } });
+  await kuyrukAdimi(b); // yükler
+  await kuyrukAdimi(b); // gönderir, cevap kaybolur
+  await kilidiEskit(db, id, "linkedin");
+  await kuyrukAdimi(b);
+  const s = await satir(db, id);
+  assert.equal(s.yayin.linkedin.durum, "hata");
+  assert.match(s.yayin.linkedin.hata, /yarıda kaldı/);
+  assert.equal(b.linkedin.yayinlanan, 1);
+  assert.ok(b.bildirimler.some((m) => m.includes("LinkedIn")));
+  assert.deepEqual(b.depo.temizlenen, [], "hata varken dosya silinmez");
+});
+
+test("LinkedIn gönderiyi reddederse aynı videoyla yeniden denenir", async () => {
+  const db = await kur({ linkedin: true });
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db, { li: { ret: true } });
+  await kuyrukAdimi(b); // yükler
+  await kuyrukAdimi(b); // ret
+  await kilidiEskit(db, id, "linkedin");
+  await kuyrukAdimi(b); // yeniden
+  const s = await satir(db, id);
+  assert.equal(s.yayin.linkedin.durum, "yayinda");
+  assert.equal(b.linkedin.yuklenen, 1);
+  assert.equal(b.linkedin.yayinlanan, 1);
+});
+
+test("linkedinMetni ayrılmış karakterleri kaçırır, etiketi korur", () => {
+  assert.equal(linkedinMetni("Büyüme (hızlı) * 3 #girişim # tek"), "Büyüme \\(hızlı\\) \\* 3 #girişim \\# tek");
+});
+
+test("gerçek HTTP: LinkedIn videoyu parçalar hâlinde yükler, sırayla bitirir, gönderiyi kişi adına atar", async () => {
+  const parcalar = {};
+  const govdeler = {};
+  const { s, url } = await yerelSunucu((req, res, govde) => {
+    if (req.url === "/dosya") return res.writeHead(200).end(dosya);
+    if (req.url.startsWith("/parca/")) {
+      parcalar[req.url] = govde.toString();
+      return res.writeHead(200, { etag: `"e${req.url.slice(7)}"` }).end();
+    }
+    assert.equal(req.headers.authorization, "Bearer tok");
+    assert.ok(req.headers["linkedin-version"]);
+    govdeler[req.url] = JSON.parse(govde.toString());
+    if (req.url === "/videos?action=initializeUpload") {
+      return res.writeHead(200, { "content-type": "application/json" }).end(
+        JSON.stringify({
+          value: {
+            video: "urn:li:video:9",
+            uploadToken: "ut",
+            uploadInstructions: [
+              { firstByte: 0, lastByte: 5, uploadUrl: `${url}/parca/1` },
+              { firstByte: 6, lastByte: 9, uploadUrl: `${url}/parca/2` },
+            ],
+          },
+        }),
+      );
+    }
+    if (req.url === "/posts") return res.writeHead(201, { "x-restli-id": "urn:li:share:7" }).end();
+    res.writeHead(200).end();
+  });
+  const li = linkedinIstemci(async () => ({ token: "tok", kisi: "K" }), () => `${url}/dosya`, url);
+  assert.equal(await li.yukle(v), "urn:li:video:9");
+  assert.deepEqual(parcalar, { "/parca/1": "012345", "/parca/2": "6789" });
+  assert.equal(govdeler["/videos?action=initializeUpload"].initializeUploadRequest.owner, "urn:li:person:K");
+  assert.deepEqual(govdeler["/videos?action=finalizeUpload"].finalizeUploadRequest, { video: "urn:li:video:9", uploadToken: "ut", uploadedPartIds: ["e1", "e2"] });
+  assert.equal(await li.paylas("urn:li:video:9", v), "urn:li:share:7");
+  assert.equal(govdeler["/posts"].author, "urn:li:person:K");
+  assert.equal(govdeler["/posts"].content.media.id, "urn:li:video:9");
+  assert.equal(govdeler["/posts"].commentary, "LinkedIn metni");
+  s.close();
+});
+
+test("gerçek HTTP: LinkedIn ret cevabı yeniden denenebilir işaretlenir", async () => {
+  const { s, url } = await yerelSunucu((req, res) => res.writeHead(422, { "content-type": "application/json" }).end(JSON.stringify({ message: "geçersiz" })));
+  const li = linkedinIstemci(async () => ({ token: "tok", kisi: "K" }), () => "", url);
+  await assert.rejects(li.paylas("urn:li:video:9", v), (e) => e.message === "LinkedIn gönderi: geçersiz" && e.yama.gonderiliyor === false);
+  s.close();
 });
 
 test("shortsMetni kalıbı ayrıştırır", () => {

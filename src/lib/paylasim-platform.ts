@@ -1,9 +1,11 @@
-// YouTube ve Instagram yayın istemcileri. Kuyruk kuralları paylasim-kuyruk.ts'te, burada yalnız API çağrıları var.
-import type { InstagramIstemci, KuyrukVideo, YouTubeIstemci } from "./paylasim-kuyruk";
+// YouTube, Instagram ve LinkedIn yayın istemcileri. Kuyruk kuralları paylasim-kuyruk.ts'te, burada yalnız API çağrıları var.
+import type { InstagramIstemci, KuyrukVideo, LinkedInIstemci, YouTubeIstemci } from "./paylasim-kuyruk";
 
 const UPLOAD = "https://www.googleapis.com/upload/youtube/v3/videos";
 const DATA = "https://www.googleapis.com/youtube/v3";
 const GRAPH = "https://graph.facebook.com/v23.0";
+const LINKEDIN = "https://api.linkedin.com/rest";
+const LINKEDIN_SURUM = "202610"; // Linkedin-Version; sürümler yaklaşık bir yıl sonra kapanır
 const GONDERIM_MS = 40_000; // 60 sn fonksiyon sınırı içinde bitsin; kalan sonraki tike kalır
 
 type Adres = (yol: string) => string;
@@ -113,8 +115,98 @@ export function instagramIstemci(hesap: string, token: string, adres: Adres, api
   };
 }
 
-// Platform hata mesajı (anahtar içermez).
+// LinkedIn metin biçiminde ayrılmış karakterler ters eğik çizgiyle yazılır; "#etiket" olduğu gibi kalır.
+export const linkedinMetni = (metin: string) => metin.replace(/[\\|{}@[\]()<>*_~]/g, "\\$&").replace(/#(?![\p{L}\p{N}])/gu, "\\#");
+
+// Yetki dönüş adresi; LinkedIn uygulamasında birebir kayıtlı olmalı.
+export const LINKEDIN_DONUS = `${process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com"}/api/admin/paylasim/linkedin/geri`;
+
+export type LinkedInHesap = { token: string; kisi: string };
+
+export function linkedinIstemci(hesap: () => Promise<LinkedInHesap>, adres: Adres, api = LINKEDIN): LinkedInIstemci {
+  const basliklar = (token: string) => ({
+    Authorization: `Bearer ${token}`,
+    "Linkedin-Version": LINKEDIN_SURUM,
+    "X-Restli-Protocol-Version": "2.0.0",
+    "Content-Type": "application/json",
+  });
+  const eylem = async (token: string, ad: string, govde: object) => {
+    const r = await fetch(`${api}/videos?action=${ad}`, { method: "POST", headers: basliklar(token), body: JSON.stringify(govde) });
+    if (!r.ok) throw new Error(`LinkedIn ${ad}: ${await hataMetni(r)}`);
+    return r;
+  };
+
+  return {
+    // Yarıda kalan yükleme gönderiye dönüşmez; sonraki deneme baştan yükler.
+    async yukle(v: KuyrukVideo) {
+      const { token, kisi } = await hesap();
+      const dosya = await fetch(adres(v.video_yol!));
+      if (!dosya.ok) throw new Error(`Video dosyası okunamadı (${dosya.status}).`);
+      const bayt = await dosya.arrayBuffer();
+
+      const bas = await eylem(token, "initializeUpload", {
+        initializeUploadRequest: { owner: `urn:li:person:${kisi}`, fileSizeBytes: bayt.byteLength, uploadCaptions: false, uploadThumbnail: false },
+      });
+      const { video, uploadToken, uploadInstructions } = (await bas.json()).value as {
+        video: string;
+        uploadToken: string;
+        uploadInstructions: { firstByte: number; lastByte: number; uploadUrl: string }[];
+      };
+      const sinyal = AbortSignal.timeout(GONDERIM_MS);
+      const parcalar = await Promise.all(
+        uploadInstructions.map(async (p) => {
+          const r = await fetch(p.uploadUrl, {
+            method: "PUT",
+            headers: { "Content-Type": "application/octet-stream" },
+            body: bayt.slice(p.firstByte, p.lastByte + 1),
+            signal: sinyal,
+          });
+          const etag = r.headers.get("etag");
+          if (!r.ok || !etag) throw new Error(`LinkedIn parça yüklemesi: ${r.status}`);
+          return etag.replace(/"/g, "");
+        }),
+      );
+      await eylem(token, "finalizeUpload", { finalizeUploadRequest: { video, uploadToken, uploadedPartIds: parcalar } });
+      return video;
+    },
+
+    async hazir(videoUrn: string) {
+      const { token } = await hesap();
+      const r = await fetch(`${api}/videos/${encodeURIComponent(videoUrn)}`, { headers: basliklar(token) });
+      if (!r.ok) throw new Error(`LinkedIn video durumu: ${await hataMetni(r)}`);
+      const durum = (await r.json()).status as string;
+      if (durum === "PROCESSING_FAILED") {
+        throw Object.assign(new Error("LinkedIn videoyu işleyemedi."), { yama: { container: null, container_at: null } });
+      }
+      return durum === "AVAILABLE";
+    },
+
+    async paylas(videoUrn: string, v: KuyrukVideo) {
+      const { token, kisi } = await hesap();
+      const r = await fetch(`${api}/posts`, {
+        method: "POST",
+        headers: basliklar(token),
+        body: JSON.stringify({
+          author: `urn:li:person:${kisi}`,
+          commentary: linkedinMetni(v.platformlar.linkedin?.metin || ""),
+          visibility: "PUBLIC",
+          distribution: { feedDistribution: "MAIN_FEED", targetEntities: [], thirdPartyDistributionChannels: [] },
+          content: { media: { title: v.baslik, id: videoUrn } },
+          lifecycleState: "PUBLISHED",
+          isReshareDisabledByAuthor: false,
+        }),
+      });
+      const id = r.headers.get("x-restli-id");
+      // Ret cevabı geldi: gönderi kesin çıkmadı, yeniden denenebilir.
+      if (!r.ok) throw Object.assign(new Error(`LinkedIn gönderi: ${await hataMetni(r)}`), { yama: { gonderiliyor: false } });
+      if (!id) throw new Error("LinkedIn gönderi kimliği dönmedi.");
+      return id;
+    },
+  };
+}
+
+// Platform hata mesajı (anahtar içermez). LinkedIn mesajı kökte döner.
 async function hataMetni(r: Response) {
   const d = await r.json().catch(() => null);
-  return d?.error?.message || r.status;
+  return d?.error?.message || d?.message || r.status;
 }

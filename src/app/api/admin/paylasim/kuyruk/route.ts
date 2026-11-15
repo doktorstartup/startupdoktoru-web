@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, yayin_at: data });
   }
 
-  if (islem === "yeniden_dene" && (platform === "shorts" || platform === "instagram")) {
+  if (islem === "yeniden_dene" && (platform === "shorts" || platform === "instagram" || platform === "linkedin")) {
     const { data: v, error } = await supabaseAdmin.from("ds_paylasim").select("yayin").eq("id", id).single();
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     const s = v.yayin?.[platform];

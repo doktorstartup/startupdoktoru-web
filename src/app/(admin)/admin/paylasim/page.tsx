@@ -72,6 +72,7 @@ export default function PaylasimAdmin() {
   const [acik, setAcik] = useState<string | null>(null);
   const [yeniBaslik, setYeniBaslik] = useState("");
   const [aktif, setAktif] = useState<boolean | null>(null);
+  const [linkedin, setLinkedin] = useState<{ bagli: boolean; kalanGun: number | null } | null>(null);
 
   const yukle = useCallback(async () => {
     const r = await fetch(`/api/admin/paylasim?password=${encodeURIComponent(pw())}`);
@@ -79,11 +80,13 @@ export default function PaylasimAdmin() {
     if (!r.ok) return setHata(d.error || "Yüklenemedi.");
     setVideolar(d.videolar);
     setAktif(d.aktif);
+    setLinkedin(d.linkedin);
   }, []);
 
   useEffect(() => {
     (async () => {
       await yukle();
+      if (new URLSearchParams(window.location.search).get("linkedin") === "hata") setHata("LinkedIn bağlanamadı. Yeniden dene.");
     })();
   }, [yukle]);
 
@@ -132,6 +135,18 @@ export default function PaylasimAdmin() {
     await yukle();
   };
 
+  // LinkedIn yetki sayfasına gider; dönüşte bu sayfaya ?linkedin=ok|hata ile gelinir.
+  const linkedinBagla = async () => {
+    const r = await fetch("/api/admin/paylasim/linkedin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password: pw() }),
+    });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) return setHata(d.error || "LinkedIn bağlantısı başlatılamadı.");
+    window.location.href = d.url;
+  };
+
   const bastan = haftaBasi();
   const buHafta = (videolar || []).filter((v) =>
     Object.values(v.platformlar || {}).some((p) => p?.paylasildi_at && new Date(p.paylasildi_at) >= bastan)
@@ -146,7 +161,7 @@ export default function PaylasimAdmin() {
           <Share2 className="h-6 w-6 text-primary" /> Paylaşım
         </h1>
         <p className="text-sm text-muted-foreground mt-1">
-          Kameraya konuştuğun videolar: fikirden paylaşıma. YouTube ve Instagram kuyruktan otomatik gider, LinkedIn'i elle işaretle.
+          Kameraya konuştuğun videolar: fikirden paylaşıma. YouTube ve Instagram kuyruktan otomatik gider; LinkedIn bağlıysa o da gider, değilse elle işaretle.
         </p>
       </div>
 
@@ -162,7 +177,7 @@ export default function PaylasimAdmin() {
         </div>
       </div>
 
-      <Kuyruk videolar={videolar || []} islem={kuyrukIslem} aktif={aktif} aktifDegistir={aktifDegistir} />
+      <Kuyruk videolar={videolar || []} islem={kuyrukIslem} aktif={aktif} aktifDegistir={aktifDegistir} linkedin={linkedin} linkedinBagla={linkedinBagla} />
 
       <form onSubmit={ekle} className="flex gap-2">
         <input value={yeniBaslik} onChange={(e) => setYeniBaslik(e.target.value)} placeholder="Yeni video fikri / başlık" className={inputCls} />

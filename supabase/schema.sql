@@ -338,7 +338,12 @@ create unique index if not exists ds_paylasim_yayin_gunu_uq
 create table if not exists public.ds_paylasim_ayar (
   id boolean primary key default true check (id),
   aktif boolean not null default false,
-  updated_at timestamptz not null default now()
+  updated_at timestamptz not null default now(),
+  -- LinkedIn kişisel profil bağlantısı — bkz. migrations/0043_paylasim_linkedin.sql
+  linkedin_token text,
+  linkedin_kisi text,
+  linkedin_bitis timestamptz,
+  linkedin_state text
 );
 -- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
 alter table public.ds_paylasim_ayar enable row level security;
