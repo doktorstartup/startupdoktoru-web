@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS public.ds_blog_posts (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
   -- Dolu taslak bu tarihten sonraki ilk 07:30 TR'de yayına çıkar (migration 0034, pg_cron).
   yayin_tarihi TIMESTAMP WITH TIME ZONE,
-  -- LinkedIn'de paylaşıldığı an ve gönderi bağlantısı (migration 0044; günde bir yazı, 09:00 TR)
+  -- LinkedIn'de paylaşıldığı an ve gönderi bağlantısı (migration 0044-0045; günde bir yazı, 08:30 TR)
   linkedin_at TIMESTAMP WITH TIME ZONE,
   linkedin_link TEXT
 );
