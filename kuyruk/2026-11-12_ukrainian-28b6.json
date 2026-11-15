@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_ukrainian-28b6",
+  "durum": "hazir",
+  "puan": 55,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Ukrainian",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 700000000,
+      "birim": "USD",
+      "usd": 700000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "US–Ukraine Reconstruction Investment Fund (URIF)",
+      "Ballistic Ventures",
+      "Shield Capital",
+      "Lakestar",
+      "Squadra",
+      "UFORCE"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-12T10:51:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/ukrainian-defence-tech-uforce-raises-700m-series-a-at-6b-valuation/",
+      "baslik": "Ukrainian defencetech UFORCE raises $700M Series A at $6B valuation",
+      "tarih": "Thu, 12 Nov 2026 10:51:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "UFORCE , a defencetech company founded in Ukraine and headquartered in London, with major hubs in Kyiv and Washington, DC, today announced a $700 million Series A financing round at a $6 billion valua",
+      "kaynak_url": "https://tech.eu/2026/11/12/ukrainian-defence-tech-uforce-raises-700m-series-a-at-6b-valuation/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/12/ukrainian-defence-tech-uforce-raises-700m-series-a-at-6b-valuation/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

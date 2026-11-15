@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_gama-43f7",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Gama",
+    "domain": "gamaspace.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": "Daniel Chapman",
+    "katilanlar": [
+      "Starlink",
+      "SpaceX"
+    ],
+    "kurucular": [
+      "Andrew Nutter",
+      "SpaceX Starlink"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T10:29:14.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/gama-secures-eur15m-to-tackle-the-growing-power-demands-of-satellites/",
+      "baslik": "Gama secures €15M to tackle the growing power demands of satellites",
+      "tarih": "Thu, 12 Nov 2026 10:29:14 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Gama , the French company building ultra-light deployable solar arrays for satellites, today announced €15 million in Seed funding from Transition , Planet A , Draper Associates , and Manta Ray .",
+      "kaynak_url": "https://tech.eu/2026/11/12/gama-secures-eur15m-to-tackle-the-growing-power-demands-of-satellites/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://tech.eu/2026/11/12/gama-secures-eur15m-to-tackle-the-growing-power-demands-of-satellites/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

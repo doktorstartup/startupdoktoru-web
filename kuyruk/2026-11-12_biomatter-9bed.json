@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_biomatter-9bed",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Biomatter",
+    "domain": "biomatter.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 18000000,
+      "birim": "USD",
+      "usd": 18000000
+    },
+    "lider": "Astanor",
+    "katilanlar": [
+      "UVC Partners",
+      "Metaplanet",
+      "Inventure"
+    ],
+    "kurucular": [
+      "Laurynas Karpus"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T08:51:47.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/biomatter-lands-18m-to-speed-up-enzyme-development-with-ai/",
+      "baslik": "Biomatter lands $18M to speed up enzyme development with AI",
+      "tarih": "Thu, 12 Nov 2026 08:51:47 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Biomatter , a company specialising in custom enzyme design, has raised $18 million in an oversubscribed Series A funding round led by Astanor , with participation from existing investors UVC Partners",
+      "kaynak_url": "https://tech.eu/2026/11/12/biomatter-lands-18m-to-speed-up-enzyme-development-with-ai/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/12/biomatter-lands-18m-to-speed-up-enzyme-development-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_eic-scaling-club-41bb",
+  "durum": "hazir",
+  "puan": 52,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "EIC Scaling Club",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 4000000000,
+      "birim": "EUR",
+      "usd": 4320000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-12T14:55:16.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/eic-scaling-club-companies-raise-eur4b-outpacing-european-deeptech-peers/",
+      "baslik": "EIC Scaling Club companies raise €4B, outpacing European deeptech peers",
+      "tarih": "Thu, 12 Nov 2026 14:55:16 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "European deeptech scaleups have raised more than €4 billion since joining the EIC Scaling Club , an EIC-funded initiative supporting promising European deeptech companies.",
+      "kaynak_url": "https://tech.eu/2026/11/12/eic-scaling-club-companies-raise-eur4b-outpacing-european-deeptech-peers/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/11/12/eic-scaling-club-companies-raise-eur4b-outpacing-european-deeptech-peers/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

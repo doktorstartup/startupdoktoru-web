@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_mondrio-768d",
+  "durum": "hazir",
+  "puan": 46,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Mondrio",
+    "domain": "mondrio.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3750000,
+      "birim": "USD",
+      "usd": 3750000
+    },
+    "lider": "Heartcore Capital",
+    "katilanlar": [
+      "Cambrena Capital",
+      "Hersir Ventures",
+      "Pretiosum VC",
+      "Momo VC",
+      "CPQ",
+      "AI"
+    ],
+    "kurucular": [
+      "Gregor Biljardt",
+      "Joep van den Nieuwenhoff"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/mondrio-secures-375m-to-rethink-b2b-pricing-with-ai-agents/",
+      "baslik": "Mondrio secures $3.75M to rethink B2B pricing with AI agents",
+      "tarih": "Thu, 12 Nov 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI-powered B2B pricing platform Mondrio has raised a $3.75 million funding round led by Heartcore Capital , with participation from Pretiosum VC, Hersir Ventures, Cambrena Capital and Momo VC, alongsi",
+      "kaynak_url": "https://tech.eu/2026/11/12/mondrio-secures-375m-to-rethink-b2b-pricing-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

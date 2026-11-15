@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_opdo-2a62",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Opdo",
+    "domain": "opdo.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2300000,
+      "birim": "USD",
+      "usd": 2300000
+    },
+    "lider": "Angular Ventures",
+    "katilanlar": [
+      "Inflection",
+      "Tiny.vc"
+    ],
+    "kurucular": [
+      "Stephan Kuehr",
+      "Yousef Arzhangnia"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T12:21:37.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/berlin-la-startup-opdo-raises-23m-to-automate-optical-engineering-with-ai/",
+      "baslik": "Berlin-LA startup Opdo raises $2.3M to automate optical engineering with AI",
+      "tarih": "Thu, 12 Nov 2026 12:21:37 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Opdo , an AI-native optical engineering company, has raised $2.3 million in pre-seed funding to accelerate its ambition of automating optical engineering, from initial design to finished components.",
+      "kaynak_url": "https://tech.eu/2026/11/12/berlin-la-startup-opdo-raises-23m-to-automate-optical-engineering-with-ai/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/12/berlin-la-startup-opdo-raises-23m-to-automate-optical-engineering-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}

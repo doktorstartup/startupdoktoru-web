@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-12_nebuly-3108",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Nebuly",
+    "domain": "nebuly.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 21000000,
+      "birim": "USD",
+      "usd": 21000000
+    },
+    "lider": "Planven",
+    "katilanlar": [],
+    "kurucular": [
+      "Francesco Signorato"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-12T08:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/12/nebuly-raises-21m-series-a-to-turn-ai-investments-into-measurable-results/",
+      "baslik": "Nebuly raises $21M Series A to turn AI investments into measurable results",
+      "tarih": "Thu, 12 Nov 2026 08:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Nebuly , a platform that helps enterprises measure the business value of their AI agents, has raised $21 million in a Series A funding round led by Planven .",
+      "kaynak_url": "https://tech.eu/2026/11/12/nebuly-raises-21m-series-a-to-turn-ai-investments-into-measurable-results/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/12/nebuly-raises-21m-series-a-to-turn-ai-investments-into-measurable-results/"
+    }
+  ],
+  "olusturma": "2026-11-15T19:44:14.571Z"
+}
