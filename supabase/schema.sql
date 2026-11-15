@@ -155,7 +155,10 @@ CREATE TABLE IF NOT EXISTS public.ds_blog_posts (
   lang TEXT NOT NULL DEFAULT 'tr' CHECK (lang IN ('tr', 'en')),
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
   -- Dolu taslak bu tarihten sonraki ilk 07:30 TR'de yayına çıkar (migration 0034, pg_cron).
-  yayin_tarihi TIMESTAMP WITH TIME ZONE
+  yayin_tarihi TIMESTAMP WITH TIME ZONE,
+  -- LinkedIn'de paylaşıldığı an ve gönderi bağlantısı (migration 0044; günde bir yazı, 09:00 TR)
+  linkedin_at TIMESTAMP WITH TIME ZONE,
+  linkedin_link TEXT
 );
 
 CREATE UNIQUE INDEX IF NOT EXISTS ds_blog_posts_slug_lang_key ON public.ds_blog_posts (slug, lang);
@@ -349,6 +352,16 @@ create table if not exists public.ds_paylasim_ayar (
 alter table public.ds_paylasim_ayar enable row level security;
 revoke all on public.ds_paylasim_ayar from public, anon, authenticated;
 insert into public.ds_paylasim_ayar (id) values (true) on conflict (id) do nothing;
+
+-- LinkedIn şirket etiketleri — bkz. migrations/0044_linkedin_etiket_blog.sql
+create table if not exists public.ds_linkedin_etiket (
+  metinde text primary key,
+  ad text not null,
+  urn text not null check (urn ~ '^urn:li:organization:[0-9]+$'),
+  created_at timestamptz not null default now()
+);
+alter table public.ds_linkedin_etiket enable row level security;
+revoke all on public.ds_linkedin_etiket from public, anon, authenticated;
 
 -- Sosyal istatistik (salt okuma, günlük senkron) — bkz. migrations/0032_sosyal_istatistik.sql
 create table if not exists public.ds_sosyal_video (

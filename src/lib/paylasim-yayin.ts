@@ -25,12 +25,14 @@ export async function linkedinDurumu() {
   return { token: data?.linkedin_token as string | null, kisi: data?.linkedin_kisi as string | null, bagli: !!data?.linkedin_token, kalanGun };
 }
 
-async function linkedinHesap() {
+export async function linkedinHesap() {
   const d = await linkedinDurumu();
   if (!d.token || !d.kisi || (d.kalanGun ?? 0) < 0) {
     throw Object.assign(new Error("LinkedIn bağlı değil ya da yetkinin süresi doldu. Paylaşım sekmesinden bağla, sonra Yeniden dene."), { kalici: true });
   }
-  return { token: d.token, kisi: d.kisi };
+  // Etiket listesi okunamazsa gönderi etiketsiz çıkar.
+  const { data: etiketler } = await supabaseAdmin.from("ds_linkedin_etiket").select("metinde, ad, urn");
+  return { token: d.token, kisi: d.kisi, etiketler: etiketler || [] };
 }
 
 const depo: Depo = {

@@ -6,12 +6,13 @@ import { readFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { PGlite } from "@electric-sql/pglite";
 import { kuyrukAdimi, MAX_DENEME } from "./paylasim-kuyruk.ts";
-import { instagramIstemci, linkedinIstemci, linkedinMetni, shortsMetni, youtubeIstemci } from "./paylasim-platform.ts";
+import { instagramIstemci, linkedinIstemci, linkedinMakale, linkedinMetni, shortsMetni, youtubeIstemci } from "./paylasim-platform.ts";
 
 const migration = readFileSync(new URL("../../supabase/migrations/0036_paylasim_kuyrugu.sql", import.meta.url), "utf8");
 const tablo = readFileSync(new URL("../../supabase/migrations/0031_paylasim.sql", import.meta.url), "utf8");
 const ayar = readFileSync(new URL("../../supabase/migrations/0038_paylasim_ayar.sql", import.meta.url), "utf8");
 const linkedinSql = readFileSync(new URL("../../supabase/migrations/0043_paylasim_linkedin.sql", import.meta.url), "utf8");
+const blogSql = readFileSync(new URL("../../supabase/migrations/0044_linkedin_etiket_blog.sql", import.meta.url), "utf8");
 
 // Varsayılan: sistem açık (eski davranış testleri). Kapalı durum testleri { aktif: false } verir.
 async function kur({ aktif = true, linkedin = false } = {}) {
@@ -24,11 +25,13 @@ async function kur({ aktif = true, linkedin = false } = {}) {
     create schema net; create table net.istek (url text, headers jsonb);
     create function net.http_get(url text, headers jsonb, timeout_milliseconds int) returns bigint language sql as 'insert into net.istek values (url, headers); select 1::bigint';
     create schema vault; create table vault.decrypted_secrets (name text, decrypted_secret text);
+    create table ds_blog_posts (id uuid default gen_random_uuid() primary key, title text, slug text, lang text default 'tr', durum text default 'yayinda', created_at timestamptz default now());
   `);
   await db.exec(tablo);
   await db.exec(migration.replace(/^create extension.*$/gm, ""));
   await db.exec(ayar);
   await db.exec(linkedinSql);
+  await db.exec(blogSql);
   if (linkedin) await db.query(`update ds_paylasim_ayar set linkedin_token = 'tok', linkedin_kisi = 'kisi'`);
   if (aktif) await db.query(`update ds_paylasim_ayar set aktif = true`);
   return db;
@@ -553,6 +556,75 @@ test("gerçek HTTP: LinkedIn videoyu parçalar hâlinde yükler, sırayla bitiri
   assert.equal(govdeler["/posts"].author, "urn:li:person:K");
   assert.equal(govdeler["/posts"].content.media.id, "urn:li:video:9");
   assert.equal(govdeler["/posts"].commentary, "LinkedIn metni");
+  s.close();
+});
+
+test("linkedinMetni şirketi etiketler: ilk geçtiği yer, uzun ad önce, #etiket ve bağlantıya dokunmaz", () => {
+  const etiketler = [
+    { metinde: "Loom", ad: "Loom", urn: "urn:li:organization:1" },
+    { metinde: "Loom Games", ad: "Loom Games", urn: "urn:li:organization:2" },
+    { metinde: "e2vc", ad: "e2vc (VC)", urn: "urn:li:organization:3" },
+  ];
+  assert.equal(
+    linkedinMetni("Loom Games ve e2vc'nin fonu. e2vc yine. https://x.com/blog/e2vc-fon #e2vc", etiketler),
+    "@[Loom Games](urn:li:organization:2) ve @[e2vc \\(VC\\)](urn:li:organization:3)'nin fonu. e2vc yine. https://x.com/blog/e2vc-fon #e2vc",
+  );
+  assert.equal(linkedinMetni("Bloom büyüyor", etiketler), "Bloom büyüyor");
+});
+
+test("blog sırası: son 20 saatin en erken Türkçe yazısı, günde bir kez, eski ve İngilizce yazı gitmez", async () => {
+  const db = await kur();
+  await db.query(`insert into ds_blog_posts (title, slug, lang, durum, created_at) values
+    ('eski', 'eski', 'tr', 'yayinda', now() - interval '2 days'),
+    ('ingilizce', 'en', 'en', 'yayinda', now() - interval '3 hours'),
+    ('taslak', 'taslak', 'tr', 'taslak', now() - interval '3 hours'),
+    ('ikinci', 'ikinci', 'tr', 'yayinda', now() - interval '13 hours'),
+    ('birinci', 'birinci', 'tr', 'yayinda', now() - interval '14 hours')`);
+  const al = async () => (await db.query(`select slug from linkedin_blog_al()`)).rows.map((r) => r.slug);
+  assert.deepEqual(await al(), ["birinci"]);
+  assert.deepEqual(await al(), [], "aynı gün ikinci yazı gitmez");
+  await db.query(`update ds_blog_posts set linkedin_at = null where slug = 'birinci'`); // ret: yazı serbest kalır
+  assert.deepEqual(await al(), ["birinci"]);
+});
+
+test("blog tetiği: kapalıyken ya da LinkedIn bağlı değilken siteyi çağırmaz", async () => {
+  const db = await kur({ linkedin: false });
+  await db.query(`insert into vault.decrypted_secrets values ('paylasim_cron_secret', 'gizli')`);
+  await db.query(`select linkedin_blog_tetikle()`);
+  assert.equal((await db.query(`select * from net.istek`)).rows.length, 0);
+  await db.query(`update ds_paylasim_ayar set linkedin_token = 'tok', aktif = false`);
+  await db.query(`select linkedin_blog_tetikle()`);
+  assert.equal((await db.query(`select * from net.istek`)).rows.length, 0);
+  await db.query(`update ds_paylasim_ayar set aktif = true`);
+  await db.query(`select linkedin_blog_tetikle()`);
+  const { rows } = await db.query(`select * from net.istek`);
+  assert.equal(rows[0].url, "https://startupdoktoru.com/api/cron/linkedin-blog");
+  assert.equal(rows[0].headers.Authorization, "Bearer gizli");
+});
+
+test("gerçek HTTP: blog yazısı kapak yükleyip bağlantı kartıyla gider; kapak düşerse kapaksız gider", async () => {
+  const govdeler = [];
+  let kapakBozuk = false;
+  const { s, url } = await yerelSunucu((req, res, govde) => {
+    if (req.url === "/kapak.jpg") return res.writeHead(kapakBozuk ? 404 : 200).end("jpg");
+    if (req.url === "/yukle") {
+      assert.equal(req.headers.authorization, "Bearer tok");
+      return res.writeHead(201).end();
+    }
+    if (req.url === "/images?action=initializeUpload") {
+      return res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ value: { uploadUrl: `${url}/yukle`, image: "urn:li:image:5" } }));
+    }
+    govdeler.push(JSON.parse(govde.toString()));
+    res.writeHead(201, { "x-restli-id": "urn:li:share:8" }).end();
+  });
+  const hesap = { token: "tok", kisi: "K", etiketler: [{ metinde: "Mercor", ad: "Mercor", urn: "urn:li:organization:4" }] };
+  const m = { metin: "Mercor ne iş yapıyor?", url: "https://x/blog/mercor", baslik: "Başlık", aciklama: "Özet", kapakUrl: `${url}/kapak.jpg` };
+  assert.equal(await linkedinMakale(hesap, m, url), "https://www.linkedin.com/feed/update/urn:li:share:8/");
+  kapakBozuk = true;
+  await linkedinMakale(hesap, m, url);
+  assert.equal(govdeler[0].commentary, "@[Mercor](urn:li:organization:4) ne iş yapıyor?");
+  assert.deepEqual(govdeler[0].content.article, { source: "https://x/blog/mercor", title: "Başlık", description: "Özet", thumbnail: "urn:li:image:5" });
+  assert.equal(govdeler[1].content.article.thumbnail, undefined);
   s.close();
 });
 

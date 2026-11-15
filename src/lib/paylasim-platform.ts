@@ -116,20 +116,82 @@ export function instagramIstemci(hesap: string, token: string, adres: Adres, api
 }
 
 // LinkedIn metin biçiminde ayrılmış karakterler ters eğik çizgiyle yazılır; "#etiket" olduğu gibi kalır.
-export const linkedinMetni = (metin: string) => metin.replace(/[\\|{}@[\]()<>*_~]/g, "\\$&").replace(/#(?![\p{L}\p{N}])/gu, "\\#");
+const kacir = (metin: string) => metin.replace(/[\\|{}@[\]()<>*_~]/g, "\\$&").replace(/#(?![\p{L}\p{N}])/gu, "\\#");
+
+// Şirket etiketi (ds_linkedin_etiket): metinde geçen ilk yer @[ad](urn) olur. Bağlantı ve #etiket içine dokunulmaz.
+export type Etiket = { metinde: string; ad: string; urn: string };
+
+export function linkedinMetni(metin: string, etiketler: Etiket[] = []) {
+  let s = kacir(metin);
+  // Uzun ad önce: "Loom Games" varken "Loom" onun içine girmesin. Yer tutucu, eklenen etiketin yeniden taranmasını önler.
+  const sirali = [...etiketler].sort((a, b) => b.metinde.length - a.metinde.length);
+  sirali.forEach((e, i) => {
+    const ara = kacir(e.metinde).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    s = s.replace(new RegExp(`(?<![#\\p{L}\\p{N}/.\\-\u0000])${ara}(?![\\p{L}\\p{N}\u0000])`, "u"), `\u0000${i}\u0000`);
+  });
+  return s.replace(/\u0000(\d+)\u0000/g, (_, i) => `@[${kacir(sirali[i].ad)}](${sirali[i].urn})`);
+}
 
 // Yetki dönüş adresi; LinkedIn uygulamasında birebir kayıtlı olmalı.
 export const LINKEDIN_DONUS = `${process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com"}/api/admin/paylasim/linkedin/geri`;
 
-export type LinkedInHesap = { token: string; kisi: string };
+export type LinkedInHesap = { token: string; kisi: string; etiketler?: Etiket[] };
+
+const linkedinBasliklar = (token: string) => ({
+  Authorization: `Bearer ${token}`,
+  "Linkedin-Version": LINKEDIN_SURUM,
+  "X-Restli-Protocol-Version": "2.0.0",
+  "Content-Type": "application/json",
+});
+
+const gonderiGovdesi = (kisi: string, metin: string, icerik: object) =>
+  JSON.stringify({
+    author: `urn:li:person:${kisi}`,
+    commentary: metin,
+    visibility: "PUBLIC",
+    distribution: { feedDistribution: "MAIN_FEED", targetEntities: [], thirdPartyDistributionChannels: [] },
+    content: icerik,
+    lifecycleState: "PUBLISHED",
+    isReshareDisabledByAuthor: false,
+  });
+
+export type Makale = { metin: string; url: string; baslik: string; aciklama: string; kapakUrl?: string | null };
+
+// Blog yazısını bağlantı kartıyla paylaşır. LinkedIn bağlantıyı kendisi taramaz: başlık, açıklama ve kapak buradan gider.
+// Kapak yüklenemezse gönderi kapaksız çıkar. ret: LinkedIn açıkça reddetti (gönderi kesin çıkmadı).
+export async function linkedinMakale(hesap: LinkedInHesap, m: Makale, api = LINKEDIN) {
+  const kapak = m.kapakUrl ? await linkedinGorsel(hesap, m.kapakUrl, api).catch(() => null) : null;
+  const r = await fetch(`${api}/posts`, {
+    method: "POST",
+    headers: linkedinBasliklar(hesap.token),
+    body: gonderiGovdesi(hesap.kisi, linkedinMetni(m.metin, hesap.etiketler), {
+      article: { source: m.url, title: m.baslik, description: m.aciklama, ...(kapak ? { thumbnail: kapak } : {}) },
+    }),
+  });
+  const id = r.headers.get("x-restli-id");
+  if (!r.ok) throw Object.assign(new Error(`LinkedIn gönderi: ${await hataMetni(r)}`), { ret: true });
+  if (!id) throw new Error("LinkedIn gönderi kimliği dönmedi.");
+  return `https://www.linkedin.com/feed/update/${id}/`;
+}
+
+async function linkedinGorsel(hesap: LinkedInHesap, url: string, api: string) {
+  const dosya = await fetch(url);
+  if (!dosya.ok) throw new Error(`Kapak okunamadı (${dosya.status}).`);
+  const bas = await fetch(`${api}/images?action=initializeUpload`, {
+    method: "POST",
+    headers: linkedinBasliklar(hesap.token),
+    body: JSON.stringify({ initializeUploadRequest: { owner: `urn:li:person:${hesap.kisi}` } }),
+  });
+  if (!bas.ok) throw new Error(`LinkedIn görsel: ${await hataMetni(bas)}`);
+  const { uploadUrl, image } = (await bas.json()).value as { uploadUrl: string; image: string };
+  // Videodan farklı: görsel yüklemesi anahtar ister.
+  const r = await fetch(uploadUrl, { method: "PUT", headers: { Authorization: `Bearer ${hesap.token}` }, body: await dosya.arrayBuffer() });
+  if (!r.ok) throw new Error(`LinkedIn görsel yüklemesi: ${r.status}`);
+  return image;
+}
 
 export function linkedinIstemci(hesap: () => Promise<LinkedInHesap>, adres: Adres, api = LINKEDIN): LinkedInIstemci {
-  const basliklar = (token: string) => ({
-    Authorization: `Bearer ${token}`,
-    "Linkedin-Version": LINKEDIN_SURUM,
-    "X-Restli-Protocol-Version": "2.0.0",
-    "Content-Type": "application/json",
-  });
+  const basliklar = linkedinBasliklar;
   const eylem = async (token: string, ad: string, govde: object) => {
     const r = await fetch(`${api}/videos?action=${ad}`, { method: "POST", headers: basliklar(token), body: JSON.stringify(govde) });
     if (!r.ok) throw new Error(`LinkedIn ${ad}: ${await hataMetni(r)}`);
@@ -182,19 +244,11 @@ export function linkedinIstemci(hesap: () => Promise<LinkedInHesap>, adres: Adre
     },
 
     async paylas(videoUrn: string, v: KuyrukVideo) {
-      const { token, kisi } = await hesap();
+      const { token, kisi, etiketler } = await hesap();
       const r = await fetch(`${api}/posts`, {
         method: "POST",
         headers: basliklar(token),
-        body: JSON.stringify({
-          author: `urn:li:person:${kisi}`,
-          commentary: linkedinMetni(v.platformlar.linkedin?.metin || ""),
-          visibility: "PUBLIC",
-          distribution: { feedDistribution: "MAIN_FEED", targetEntities: [], thirdPartyDistributionChannels: [] },
-          content: { media: { title: v.baslik, id: videoUrn } },
-          lifecycleState: "PUBLISHED",
-          isReshareDisabledByAuthor: false,
-        }),
+        body: gonderiGovdesi(kisi, linkedinMetni(v.platformlar.linkedin?.metin || "", etiketler), { media: { title: v.baslik, id: videoUrn } }),
       });
       const id = r.headers.get("x-restli-id");
       // Ret cevabı geldi: gönderi kesin çıkmadı, yeniden denenebilir.
