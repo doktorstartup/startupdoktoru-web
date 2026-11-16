@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_backed-1e88",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Backed",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3500000,
+      "birim": "EUR",
+      "usd": 3780000
+    },
+    "lider": "Lifeline Ventures",
+    "katilanlar": [
+      "Camilla Komulainen",
+      "Pyry Pohjanoksa",
+      "Taavi Paananen",
+      "Eino Miettinen"
+    ],
+    "kurucular": [
+      "Johannes Korpela"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-16T06:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/16/backed-by-supercell-wolt-and-plangrid-founders-stoa-lands-eur35m-to-bring-ai-to-construction-sites/",
+      "baslik": "Backed by Supercell, Wolt and PlanGrid founders, Stoa lands €3.5M to bring AI to construction sites",
+      "tarih": "Mon, 16 Nov 2026 06:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Helsinki-based AI company Stoa has raised €3.5 million in a pre-seed funding round led by Lifeline Ventures to develop its AI-powered platform for managing complex construction projects, including dat",
+      "kaynak_url": "https://tech.eu/2026/11/16/backed-by-supercell-wolt-and-plangrid-founders-stoa-lands-eur35m-to-bring-ai-to-construction-sites/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/16/backed-by-supercell-wolt-and-plangrid-founders-stoa-lands-eur35m-to-bring-ai-to-construction-sites/"
+    }
+  ],
+  "olusturma": "2026-11-16T13:34:02.753Z"
+}

@@ -1,10 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"scarlet.cc","ad":"scarlet","tarih":"2026-10-12","dosya":"2026-10-12_scarlet-545b.json"},
-  {"dom":"gaiuscapital.com","ad":"gaius capital","tarih":"2026-10-12","dosya":"2026-10-12_gaius-capital-c525.json"},
-  {"dom":"wiremind.io","ad":"wiremind","tarih":"2026-10-12","dosya":"2026-10-12_wiremind-8ef1.json"},
-  {"dom":"ramp.com","ad":"ramp","tarih":"2026-10-12","dosya":"2026-10-12_ramp-a17d.json"},
-  {"dom":null,"ad":"ozel haber loops ai","tarih":"2026-10-12","dosya":"2026-10-12_ozel-haber-loops-ai-ae69.json"},
-  {"dom":"typesafe.ai","ad":"typesafe ai","tarih":"2026-10-12","dosya":"2026-10-12_typesafe-ai-41ef.json"},
   {"dom":"causaprima.com","ad":"causa prima","tarih":"2026-10-13","dosya":"2026-10-13_causa-prima-7e34.json"},
   {"dom":null,"ad":"epyr","tarih":"2026-10-13","dosya":"2026-10-13_epyr-7156.json"},
   {"dom":null,"ad":"transport","tarih":"2026-10-13","dosya":"2026-10-13_transport-d32f.json"},
@@ -168,5 +162,9 @@
   {"dom":null,"ad":"ukrainian","tarih":"2026-11-12","dosya":"2026-11-12_ukrainian-28b6.json"},
   {"dom":"gamaspace.com","ad":"gama","tarih":"2026-11-12","dosya":"2026-11-12_gama-43f7.json"},
   {"dom":"biomatter.ai","ad":"biomatter","tarih":"2026-11-12","dosya":"2026-11-12_biomatter-9bed.json"},
-  {"dom":"nebuly.com","ad":"nebuly","tarih":"2026-11-12","dosya":"2026-11-12_nebuly-3108.json"}
+  {"dom":"nebuly.com","ad":"nebuly","tarih":"2026-11-12","dosya":"2026-11-12_nebuly-3108.json"},
+  {"dom":"daisytuner.com","ad":"daisytuner","tarih":"2026-11-16","dosya":"2026-11-16_daisytuner-ed98.json"},
+  {"dom":"valeriahr.com","ad":"valeria","tarih":"2026-11-16","dosya":"2026-11-16_valeria-eb5d.json"},
+  {"dom":null,"ad":"backed","tarih":"2026-11-16","dosya":"2026-11-16_backed-1e88.json"},
+  {"dom":"intergridsystems.com","ad":"intergrid","tarih":"2026-11-16","dosya":"2026-11-16_intergrid-f536.json"}
 ]}

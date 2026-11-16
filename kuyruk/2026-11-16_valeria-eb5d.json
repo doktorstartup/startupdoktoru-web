@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_valeria-eb5d",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Valeria",
+    "domain": "valeriahr.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5500000,
+      "birim": "EUR",
+      "usd": 5940000
+    },
+    "lider": "BlackFin",
+    "katilanlar": [
+      "VentureFriends",
+      "Fortino",
+      "GoHub"
+    ],
+    "kurucular": [
+      "Pau Laporte",
+      "Carlos Saiz",
+      "Sergio Morales"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-16T08:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/16/valeria-raises-eur55m-to-accelerate-ai-powered-payroll-and-hr-automation/",
+      "baslik": "Valeria raises €5.5M to accelerate AI-powered payroll and HR automation",
+      "tarih": "Mon, 16 Nov 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Barcelona-based Valeria , an AI-powered HR and payroll management platform for companies with high staff turnover, has raised €5.5 million in a seed funding round led by BlackFin , with participation",
+      "kaynak_url": "https://tech.eu/2026/11/16/valeria-raises-eur55m-to-accelerate-ai-powered-payroll-and-hr-automation/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/16/valeria-raises-eur55m-to-accelerate-ai-powered-payroll-and-hr-automation/"
+    }
+  ],
+  "olusturma": "2026-11-16T13:34:02.753Z"
+}

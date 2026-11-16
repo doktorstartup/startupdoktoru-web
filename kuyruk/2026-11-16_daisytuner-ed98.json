@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_daisytuner-ed98",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Daisytuner",
+    "domain": "daisytuner.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 6000000,
+      "birim": "EUR",
+      "usd": 6480000
+    },
+    "lider": "Elaia",
+    "katilanlar": [
+      "Amadeus APEX Technology Fund",
+      "LEA Ventures",
+      "Seedcamp"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-16T11:01:40.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/16/ai-inference-startup-daisyturner-raises-eur6m-seed/",
+      "baslik": "AI inference startup Daisytuner raises €6M seed",
+      "tarih": "Mon, 16 Nov 2026 11:01:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "A German startup whose technology tunes AI models for different chips during inference has raised €6 million in seed funding, it said today.",
+      "kaynak_url": "https://tech.eu/2026/11/16/ai-inference-startup-daisyturner-raises-eur6m-seed/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/16/ai-inference-startup-daisyturner-raises-eur6m-seed/"
+    }
+  ],
+  "olusturma": "2026-11-16T13:34:02.753Z"
+}

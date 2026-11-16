@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_intergrid-f536",
+  "durum": "hazir",
+  "puan": 53,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Intergrid",
+    "domain": "intergridsystems.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 23500000,
+      "birim": "EUR",
+      "usd": 25380000
+    },
+    "lider": "Kvanted",
+    "katilanlar": [
+      "First Fellow Partners",
+      "Lifeline Ventures",
+      "True Ventures",
+      "Tesi"
+    ],
+    "kurucular": [
+      "Olli Kangas"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-16T06:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/16/intergrid-secures-eur235m-to-power-autonomous-industrial-energy-operations/",
+      "baslik": "Intergrid secures €23.5M to power autonomous industrial energy operations",
+      "tarih": "Mon, 16 Nov 2026 06:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Helsinki-based energy technology company Intergrid has announced €23.5 million in total funding to support its international expansion and further growth across Europe.",
+      "kaynak_url": "https://tech.eu/2026/11/16/intergrid-secures-eur235m-to-power-autonomous-industrial-energy-operations/"
+    }
+  ],
+  "olusturma": "2026-11-16T13:34:02.753Z"
+}
