@@ -18,7 +18,7 @@
     "sirket": "Databento",
     "domain": "databento.com",
     "ulke": "TR",
-    "turk": false,
+    "turk": true,
     "tur_tipi": "bilinmiyor",
     "tutar": {
       "deger": 100000000,
