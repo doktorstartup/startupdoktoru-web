@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_stark-future-62ed",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Stark Future",
+    "domain": "starkfuture.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 150000000,
+      "birim": "EUR",
+      "usd": 162000000
+    },
+    "lider": "Highland Europe",
+    "katilanlar": [
+      "Morgan Stanley Investment Management’ın 1GT",
+      "Axon Partners Group"
+    ],
+    "kurucular": [
+      "Anton Wass",
+      "Paul Soucy"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-16T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/16/stark-future-1-2-milyar-euro-degerleme-uzerinden-150-milyon-euro-yatirim-aldi/",
+      "baslik": "Stark Future, 1,2 milyar euro değerleme üzerinden 150 milyon euroyu aşan yatırım aldı",
+      "tarih": "Mon, 16 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Elektrikli motosiklet üreten Stark Future , 150 milyon eurodan fazla yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/16/stark-future-1-2-milyar-euro-degerleme-uzerinden-150-milyon-euro-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-16T23:21:28.612Z"
+}
