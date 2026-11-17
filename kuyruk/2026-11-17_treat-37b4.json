@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_treat-37b4",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Treat",
+    "domain": "treat.health",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": "byFounders",
+    "katilanlar": [
+      "Illusian"
+    ],
+    "kurucular": [
+      "Sami Marttinen"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T06:20:35.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/swappie-co-founders-ai-healthtech-startup-treat-raises-e3-million-to-streamline-private-healthcare/",
+      "baslik": "Swappie co-founder’s AI HealthTech startup Treat raises €3 million to streamline private healthcare",
+      "tarih": "Tue, 17 Nov 2026 06:20:35 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Treat , a Helsinki-based HealthTech startup co-founded by Swappie co-founder Sami Marttinen, has raised €3 million in a pre-Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swappie-co-founders-ai-healthtech-startup-treat-raises-e3-million-to-streamline-private-healthcare/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swappie-co-founders-ai-healthtech-startup-treat-raises-e3-million-to-streamline-private-healthcare/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}

@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_fermat-6cf7",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Fermat",
+    "domain": "fermat.app",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7260000,
+      "birim": "EUR",
+      "usd": 7840800
+    },
+    "lider": "Kibo Ventures",
+    "katilanlar": [
+      "London-based PROfounders Capital",
+      "Lunar Ventures"
+    ],
+    "kurucular": [
+      "Pol Baladas"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T09:20:13.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/barcelona-based-fermat-raises-e7-26-million-for-its-ai-operating-system-for-fashion-and-luxury-brands/",
+      "baslik": "Barcelona-based Fermat raises €7.26 million for its AI operating system for fashion and luxury brands",
+      "tarih": "Tue, 17 Nov 2026 09:20:13 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fermat , a Barcelona-based AI platform for the fashion industry, has raised €7.26 million ($8 million) in Seed funding to open a New York office and expand its software from a design tool to full garm",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/barcelona-based-fermat-raises-e7-26-million-for-its-ai-operating-system-for-fashion-and-luxury-brands/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/barcelona-based-fermat-raises-e7-26-million-for-its-ai-operating-system-for-fashion-and-luxury-brands/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}

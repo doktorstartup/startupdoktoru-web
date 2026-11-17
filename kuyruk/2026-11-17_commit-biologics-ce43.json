@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_commit-biologics-ce43",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Commit Biologics",
+    "domain": "commitbio.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 54000000,
+      "birim": "EUR",
+      "usd": 58320000
+    },
+    "lider": "Ackermans & van Haaren",
+    "katilanlar": [
+      "Bioqube Ventures",
+      "AbbVie Ventures",
+      "Novo Holdings",
+      "M Ventures",
+      "Korys"
+    ],
+    "kurucular": [
+      "Montgomery Andresen"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T09:01:50.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/denmarks-commit-biologics-secures-e54-million-seed-funding-to-advance-cancer-and-autoimmune-therapies/",
+      "baslik": "Denmark’s Commit Biologics secures €54 million Seed funding to advance cancer and autoimmune therapies",
+      "tarih": "Tue, 17 Nov 2026 09:01:50 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Copenhagen-based BioTech startup Commit Biologics has raised €54 million ($60 million) in Seed funding to develop new treatments for cancer and autoimmune diseases.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/denmarks-commit-biologics-secures-e54-million-seed-funding-to-advance-cancer-and-autoimmune-therapies/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/denmarks-commit-biologics-secures-e54-million-seed-funding-to-advance-cancer-and-autoimmune-therapies/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}

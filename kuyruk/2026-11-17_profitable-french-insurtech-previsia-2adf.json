@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_profitable-french-insurtech-previsia-2adf",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Profitable French InsurTech Previsia",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3800000,
+      "birim": "EUR",
+      "usd": 4104000
+    },
+    "lider": "IRDI",
+    "katilanlar": [
+      "ARIS"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-17T07:47:03.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/profitable-french-insurtech-previsia-raises-e3-8-million-in-seed-funding-for-its-ai-risk-prevention-platform/",
+      "baslik": "Profitable French InsurTech Previsia raises €3.8 million in Seed funding for its AI risk-prevention platform",
+      "tarih": "Tue, 17 Nov 2026 07:47:03 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Previsia , a French InsurTech startup building an all-in-one AI risk-prevention platform for businesses, brokers, and insurers, has raised €3.8 million in a Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/profitable-french-insurtech-previsia-raises-e3-8-million-in-seed-funding-for-its-ai-risk-prevention-platform/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/profitable-french-insurtech-previsia-raises-e3-8-million-in-seed-funding-for-its-ai-risk-prevention-platform/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}

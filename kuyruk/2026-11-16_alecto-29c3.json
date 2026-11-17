@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-11-16_alecto-29c3",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 9,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Alecto",
+    "domain": "alectolegal.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 18000000,
+      "birim": "EUR",
+      "usd": 19440000
+    },
+    "lider": "Insight Partners",
+    "katilanlar": [
+      "Alecto's €18 million Seed",
+      "Antiportfolio Ventures",
+      "Firstminute Capital",
+      "Mishcon de Reya LLP",
+      "Blue Lion Global",
+      "Andrena Ventures",
+      "Simon Rogerson",
+      "Jon Reynolds",
+      "Rigby Group",
+      "FJ Labs",
+      "AI"
+    ],
+    "kurucular": [
+      "Will Rice"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-16T16:09:10.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/alecto-lands-e18-million-to-scale-its-ai-powered-law-firm-beyond-property-transactions/",
+      "baslik": "Alecto lands €18 million to scale its AI-powered law firm beyond property transactions",
+      "tarih": "Mon, 16 Nov 2026 16:09:10 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Alecto , a British AI-native law firm, has raised a €18 million ($20 million) Seed round, to support the company’s expansion into additional areas of consumer law and new geographies, with its first i",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/alecto-lands-e18-million-to-scale-its-ai-powered-law-firm-beyond-property-transactions/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/alecto-lands-e18-million-to-scale-its-ai-powered-law-firm-beyond-property-transactions/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}

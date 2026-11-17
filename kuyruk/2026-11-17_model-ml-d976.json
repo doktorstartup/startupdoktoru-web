@@ -1,0 +1,72 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_model-ml-d976",
+  "durum": "hazir",
+  "puan": 65,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 5,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Model ML",
+    "domain": "modelml.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-b",
+    "tutar": {
+      "deger": 227000000,
+      "birim": "EUR",
+      "usd": 245160000
+    },
+    "lider": "General Atlantic",
+    "katilanlar": [
+      "Evolution Equity Partners",
+      "Forestay Capital",
+      "13Books Capital",
+      "Inception Fund",
+      "Round Treasury",
+      "QED Investors",
+      "Y Combinator",
+      "FT Partners",
+      "Diligent AI",
+      "Model ML's",
+      "Latitude",
+      "Airtree"
+    ],
+    "kurucular": [
+      "Chaz Englander"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T12:50:16.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/model-ml-is-europes-newest-unicorn-with-e227-million-raise-to-put-ai-agents-to-work-in-finance-makes/",
+      "baslik": "Model ML is Europe&#8217;s newest Unicorn with €227 million raise to put AI agents to work in finance makes",
+      "tarih": "Tue, 17 Nov 2026 12:50:16 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based Model ML , an AI platform developing personalised agents for financial and professional services, has raised €227 million ($250 million) in Series B funding at a €1.3 billion ($1.5 billio",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/model-ml-is-europes-newest-unicorn-with-e227-million-raise-to-put-ai-agents-to-work-in-finance-makes/"
+    },
+    {
+      "metin": "Series B",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/model-ml-is-europes-newest-unicorn-with-e227-million-raise-to-put-ai-agents-to-work-in-finance-makes/"
+    }
+  ],
+  "olusturma": "2026-11-17T22:14:31.552Z"
+}
