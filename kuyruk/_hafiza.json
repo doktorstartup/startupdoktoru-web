@@ -1,16 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"causaprima.com","ad":"causa prima","tarih":"2026-10-13","dosya":"2026-10-13_causa-prima-7e34.json"},
-  {"dom":null,"ad":"epyr","tarih":"2026-10-13","dosya":"2026-10-13_epyr-7156.json"},
-  {"dom":null,"ad":"transport","tarih":"2026-10-13","dosya":"2026-10-13_transport-d32f.json"},
-  {"dom":"reebuild.com","ad":"reebuild","tarih":"2026-10-13","dosya":"2026-10-13_reebuild-dde1.json"},
-  {"dom":"ubitium.com","ad":"ubitium","tarih":"2026-10-13","dosya":"2026-10-13_ubitium-a5b8.json"},
-  {"dom":"parkmundo.com","ad":"parkmundo","tarih":"2026-10-13","dosya":"2026-10-13_parkmundo-f5ef.json"},
-  {"dom":"carbonfarm.tech","ad":"carbonfarm","tarih":"2026-10-13","dosya":"2026-10-13_carbonfarm-9004.json"},
-  {"dom":"undecimalbio.com","ad":"undecimal bio","tarih":"2026-10-13","dosya":"2026-10-13_undecimal-bio-672f.json"},
-  {"dom":null,"ad":"healthtech","tarih":"2026-10-13","dosya":"2026-10-13_healthtech-835c.json"},
-  {"dom":null,"ad":"danishlithuanian","tarih":"2026-10-13","dosya":"2026-10-13_danishlithuanian-9c08.json"},
-  {"dom":"obsero.ai","ad":"obsero","tarih":"2026-10-13","dosya":"2026-10-13_obsero-3b95.json"},
-  {"dom":"ambi.ai","ad":"ambi","tarih":"2026-10-13","dosya":"2026-10-13_ambi-8d5d.json"},
   {"dom":"getstride.com","ad":"stride","tarih":"2026-10-14","dosya":"2026-10-14_stride-940b.json"},
   {"dom":"affinitylabs.ai","ad":"affinity labs","tarih":"2026-10-14","dosya":"2026-10-14_affinity-labs-9775.json"},
   {"dom":"ambiomaterials.com","ad":"ambio","tarih":"2026-10-14","dosya":"2026-10-14_ambio-19d3.json"},
@@ -167,5 +155,8 @@
   {"dom":"valeriahr.com","ad":"valeria","tarih":"2026-11-16","dosya":"2026-11-16_valeria-eb5d.json"},
   {"dom":null,"ad":"backed","tarih":"2026-11-16","dosya":"2026-11-16_backed-1e88.json"},
   {"dom":"intergridsystems.com","ad":"intergrid","tarih":"2026-11-16","dosya":"2026-11-16_intergrid-f536.json"},
-  {"dom":"starkfuture.com","ad":"stark future","tarih":"2026-11-16","dosya":"2026-11-16_stark-future-62ed.json"}
+  {"dom":"starkfuture.com","ad":"stark future","tarih":"2026-11-16","dosya":"2026-11-16_stark-future-62ed.json"},
+  {"dom":"corma.ai","ad":"corma","tarih":"2026-11-17","dosya":"2026-11-17_corma-8690.json"},
+  {"dom":"isomorphiclabs.com","ad":"isomorphic labs","tarih":"2026-11-17","dosya":"2026-11-17_isomorphic-labs-5e97.json"},
+  {"dom":"noeri.ai","ad":"noeri","tarih":"2026-11-17","dosya":"2026-11-17_noeri-ed07.json"}
 ]}

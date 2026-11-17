@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_isomorphic-labs-5e97",
+  "durum": "hazir",
+  "puan": 79,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Isomorphic Labs",
+    "domain": "isomorphiclabs.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5000000000,
+      "birim": "USD",
+      "usd": 5000000000
+    },
+    "lider": "Greenoaks",
+    "katilanlar": [
+      "Andreessen Horowitz",
+      "Sequoia Capital",
+      "Thrive Capital",
+      "Alphabet",
+      "Temasek",
+      "GV"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-17T12:37:26.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/17/yapay-zeka-destekli-biyoteknoloji-girisimi-isomorphic-labs-5-milyar-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli biyoteknoloji girişimi Isomorphic Labs, 5 milyar dolar yatırım aldı",
+      "tarih": "Tue, 17 Nov 2026 12:37:26 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli biyoteknoloji girişimi Isomorphic Labs , 5 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/17/yapay-zeka-destekli-biyoteknoloji-girisimi-isomorphic-labs-5-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "C serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/17/yapay-zeka-destekli-biyoteknoloji-girisimi-isomorphic-labs-5-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-17T14:18:14.113Z"
+}

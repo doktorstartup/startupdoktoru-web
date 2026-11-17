@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_corma-8690",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Corma",
+    "domain": "corma.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 125000000,
+      "birim": "USD",
+      "usd": 125000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Sequoia Capital",
+      "Khosla Ventures",
+      "Coatue"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-17T13:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/17/siber-guvenlik-girisimi-corma-125-milyon-dolar-yatirim-aldi/",
+      "baslik": "Siber güvenlik girişimi Corma, 125 milyon dolar yatırım aldı",
+      "tarih": "Tue, 17 Nov 2026 13:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Siber güvenlik alanında yapay zeka modelleri ve otonom ajanlar geliştiren Corma , 125 milyon dolarlık Seri A yatırım turunu tamamladı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/17/siber-guvenlik-girisimi-corma-125-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "Seri A",
+      "kaynak_url": "https://webrazzi.com/2026/11/17/siber-guvenlik-girisimi-corma-125-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-17T14:18:14.113Z"
+}

@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_noeri-ed07",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Noeri",
+    "domain": "noeri.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 110000000,
+      "birim": "USD",
+      "usd": 110000000
+    },
+    "lider": "Menlo Ventures",
+    "katilanlar": [
+      "Wing Venture Capital",
+      "Madrona Ventures",
+      "Kindred Ventures",
+      "Cisco Ventures",
+      "Snowflake",
+      "NEA"
+    ],
+    "kurucular": [
+      "Carlos Guestrin"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/17/kurumsal-yapay-zeka-sistemleri-gelistiren-noeri-110-milyon-dolar-yatirim-aldi/",
+      "baslik": "Kurumsal yapay zeka sistemleri geliştiren Noeri, 110 milyon dolar yatırım aldı",
+      "tarih": "Tue, 17 Nov 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kurumsal yapay zeka sistemleri geliştiren Noeri , 110 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/17/kurumsal-yapay-zeka-sistemleri-gelistiren-noeri-110-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-17T14:18:14.113Z"
+}
