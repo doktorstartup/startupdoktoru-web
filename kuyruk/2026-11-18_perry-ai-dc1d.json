@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_perry-ai-dc1d",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Perry AI",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "EUR",
+      "usd": 2160000
+    },
+    "lider": "Haatch",
+    "katilanlar": [
+      "Syncorp Ventures",
+      "Araya Ventures",
+      "Antler"
+    ],
+    "kurucular": [
+      "Shashwat Patel",
+      "Vaneesa Agarwal"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T06:42:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/londons-perry-ai-raises-e2-million-to-bring-ai-powered-legal-intelligence-to-private-capital-funds/",
+      "baslik": "London’s Perry AI raises €2 million to bring AI-powered legal intelligence to private capital funds",
+      "tarih": "Wed, 18 Nov 2026 06:42:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Perry AI , the London-based startup building an AI-powered legal operating system for private equity and venture capital funds, has raised €2 million ($2.2 million) in a Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/londons-perry-ai-raises-e2-million-to-bring-ai-powered-legal-intelligence-to-private-capital-funds/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/londons-perry-ai-raises-e2-million-to-bring-ai-powered-legal-intelligence-to-private-capital-funds/"
+    }
+  ],
+  "olusturma": "2026-11-18T21:52:04.519Z"
+}

@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_payhawk-6c70",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Payhawk",
+    "domain": "payhawk.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 255140000,
+      "birim": "EUR",
+      "usd": 275551200
+    },
+    "lider": null,
+    "katilanlar": [
+      "European entrepreneurs Tomas Okmanas",
+      "Galdana Ventures",
+      "Cogito Capital",
+      "Bek Ventures",
+      "Lightspeed",
+      "Hedosophia",
+      "Inveready",
+      "Didac Lee",
+      "Greenoaks",
+      "Invus",
+      "QED"
+    ],
+    "kurucular": [
+      "Hristo Borisov",
+      "Boyko Karadzhov",
+      "Konstantin Dzhengozov"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T10:46:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/bulgarias-first-unicorn-payhawk-raises-e255-14-million-at-e1-82-billion-valuation-to-build-a-global-finance-os-for-the-ai-era/",
+      "baslik": "Bulgaria’s first unicorn Payhawk raises €255.14 million at €1.82 billion valuation in Goldman Sachs-led Series C round",
+      "tarih": "Wed, 18 Nov 2026 10:46:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Payhawk , a London-based AI-native spend management platform, today announced a €255.14 million ($280 million) Series C round, valuing the business at €1.82 billion ($2 billion) as it builds the globa",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bulgarias-first-unicorn-payhawk-raises-e255-14-million-at-e1-82-billion-valuation-to-build-a-global-finance-os-for-the-ai-era/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bulgarias-first-unicorn-payhawk-raises-e255-14-million-at-e1-82-billion-valuation-to-build-a-global-finance-os-for-the-ai-era/"
+    }
+  ],
+  "olusturma": "2026-11-18T21:52:04.519Z"
+}

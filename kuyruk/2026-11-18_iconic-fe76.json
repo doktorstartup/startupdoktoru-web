@@ -1,0 +1,62 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_iconic-fe76",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Iconic",
+    "domain": "iconic.works",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 9100000,
+      "birim": "EUR",
+      "usd": 9828000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Graduate Ventures",
+      "Bridford Group",
+      "Common Magic",
+      "NP-Hard",
+      "Tiny VC"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-18T07:23:37.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/",
+      "baslik": "Meatable co-founder’s new firm Iconic raises €9.1 million to build AI operating system for large capital projects",
+      "tarih": "Wed, 18 Nov 2026 07:23:37 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Iconic , an Amsterdam-based startup building an AI operating system for large capital projects, has raised €9.1 million ($10 million) in Seed funding to bring AI-powered intelligence to these projects",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/meatable-co-founders-new-firm-iconic-raises-e9-1-million-to-build-ai-operating-system-for-large-capital-projects/"
+    }
+  ],
+  "olusturma": "2026-11-18T21:52:04.519Z"
+}

@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_mountain-cf33",
+  "durum": "hazir",
+  "puan": 72,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "MountAIn",
+    "domain": "mountainedge.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7300000,
+      "birim": "EUR",
+      "usd": 7884000
+    },
+    "lider": "360 Capital",
+    "katilanlar": [
+      "Crédit Agricole Alpes Développement (C2AD)",
+      "Supernova Invest",
+      "Bpifrance"
+    ],
+    "kurucular": [
+      "Vincent Huard",
+      "Olivier Montfort",
+      "David Nahmani"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T08:23:07.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/",
+      "baslik": "French frugal AI infrastructure startup MountAIn raises €7.3 million to bring advanced AI to sub-€9 chips",
+      "tarih": "Wed, 18 Nov 2026 08:23:07 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "MountAIn , a Grenoble-based frugal AI infrastructure company, has raised €7.3 million in Seed funding to run advanced AI on microcontrollers costing less than €9.11 ($10).",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/"
+    },
+    {
+      "metin": "Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/french-frugal-ai-infrastructure-startup-mountain-raises-e7-3-million-to-bring-advanced-ai-to-sub-e9-chips/"
+    }
+  ],
+  "olusturma": "2026-11-18T21:52:04.519Z"
+}
