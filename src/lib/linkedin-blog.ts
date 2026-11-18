@@ -8,6 +8,14 @@ import { linkedinHesap, paylasimAktif } from "./paylasim-yayin";
 // Yazı seçimi ve çift paylaşım koruması veritabanında: linkedin_blog_al (migration 0044).
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
+// Yazının künyesindeki "Yatırımcılar:" satırı, ilk 3 ad. Adlar metinde geçince ds_linkedin_etiket'tekiler etiketlenir.
+export function yatirimciSatiri(icerik: string | null) {
+  const m = (icerik || "").match(/Yatırımcılar:<\/strong>\s*([^<]+)/);
+  if (!m) return "";
+  const adlar = m[1].split(",").map((s) => s.trim()).filter(Boolean);
+  return `Yatırımcılar: ${adlar.slice(0, 3).join(", ")}${adlar.length > 3 ? " ve diğerleri" : ""}`;
+}
+
 export async function blogPaylas() {
   if (!(await paylasimAktif())) return { pasif: true as const };
   const hesap = await linkedinHesap();
@@ -20,7 +28,7 @@ export async function blogPaylas() {
   const aciklama = yazi.seo_description || "";
   try {
     const link = await linkedinMakale(hesap, {
-      metin: [yazi.title, aciklama, "#startup #girişimcilik #yatırım"].filter(Boolean).join("\n\n"),
+      metin: [yazi.title, aciklama, yatirimciSatiri(yazi.content), "#startup #girişimcilik #yatırım"].filter(Boolean).join("\n\n"),
       url,
       baslik: yazi.title,
       aciklama,
