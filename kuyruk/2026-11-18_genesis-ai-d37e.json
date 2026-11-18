@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_genesis-ai-d37e",
+  "durum": "hazir",
+  "puan": 87,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Genesis AI",
+    "domain": "genesis.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 500000000,
+      "birim": "USD",
+      "usd": 500000000
+    },
+    "lider": "Premji Invest",
+    "katilanlar": [
+      "Advanced Micro Devices (AMD)",
+      "Zoom Communications",
+      "Samsung Electronics",
+      "Khosla Ventures",
+      "Eclipse",
+      "Nvidia"
+    ],
+    "kurucular": [
+      "Zhou Xian",
+      "Théophile Gervet"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T12:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/18/genesis-ai-3-5-milyar-dolar-degerlemeyle-500-milyon-dolar-yatirim-aldi/",
+      "baslik": "Genesis AI, 3,5 milyar dolar değerlemeyle 500 milyon dolar yatırım aldı",
+      "tarih": "Wed, 18 Nov 2026 12:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Robotlar için yapay zeka temel modeli geliştiren Genesis AI , 500 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/18/genesis-ai-3-5-milyar-dolar-degerlemeyle-500-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/18/genesis-ai-3-5-milyar-dolar-degerlemeyle-500-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-18T13:52:47.546Z"
+}

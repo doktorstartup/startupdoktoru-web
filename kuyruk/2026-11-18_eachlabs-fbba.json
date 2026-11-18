@@ -1,0 +1,70 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_eachlabs-fbba",
+  "durum": "hazir",
+  "puan": 89,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "each::labs",
+    "domain": "eachlabs.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7000000,
+      "birim": "USD",
+      "usd": 7000000
+    },
+    "lider": "Revo Capital",
+    "katilanlar": [
+      "Avrupa İmar ve Kalkınma Bankası 'nın (EBRD)",
+      "Şubat 2025'te Right Side Capital",
+      "ENA Venture Capital",
+      "Treeo VC"
+    ],
+    "kurucular": [
+      "Canberk Sinangil"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/18/eachlabs-revo-capital-ve-ebrd-es-liderliginde-7-milyon-dolar-yatirim-aldi/",
+      "baslik": "each::labs, Revo Capital ve EBRD eş liderliğinde 7 milyon dolar yatırım aldı",
+      "tarih": "Wed, 18 Nov 2026 13:00:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/uretken-medya-girisimi-eachlabs-7-milyon-dolar-yatirim-aldi/",
+      "baslik": "Üretken medya girişimi each::labs, 7 milyon dolar yatırım aldı",
+      "tarih": "Wed, 18 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Üretken medya platformu each::labs , Revo Capital ve Avrupa İmar ve Kalkınma Bankası 'nın (EBRD) eş liderliğinde gerçekleşen tohum yatırım turunda 7 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/18/eachlabs-revo-capital-ve-ebrd-es-liderliginde-7-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum yatırım",
+      "kaynak_url": "https://webrazzi.com/2026/11/18/eachlabs-revo-capital-ve-ebrd-es-liderliginde-7-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-18T13:52:47.546Z"
+}
