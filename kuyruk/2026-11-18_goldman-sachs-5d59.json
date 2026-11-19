@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_goldman-sachs-5d59",
+  "durum": "hazir",
+  "puan": 57,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Goldman Sachs",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 280000000,
+      "birim": "USD",
+      "usd": 280000000
+    },
+    "lider": "AI",
+    "katilanlar": [
+      "Galdana Ventures",
+      "Cogito Capital",
+      "Tomas Okmanas",
+      "Bek Ventures",
+      "Lightspeed",
+      "Hedosophia",
+      "Inveready",
+      "Didac Lee",
+      "Greenoaks",
+      "Invus",
+      "QED"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-18T08:32:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/18/goldman-sachs-leads-280m-funding-round-in-payhawk/",
+      "baslik": "Goldman Sachs leads $280M funding round in Payhawk",
+      "tarih": "Wed, 18 Nov 2026 08:32:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Payhawk , the Bulgaria-founded spend management platform, has raised a $280m Series C funding round, led by new investor Goldman Sachs, as it looks to build the finance operating system for the AI era",
+      "kaynak_url": "https://tech.eu/2026/11/18/goldman-sachs-leads-280m-funding-round-in-payhawk/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/11/18/goldman-sachs-leads-280m-funding-round-in-payhawk/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

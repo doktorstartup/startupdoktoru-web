@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_dcubed-5b07",
+  "durum": "hazir",
+  "puan": 63,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 10,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Dcubed",
+    "domain": "dcubed.space",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 27200000,
+      "birim": "EUR",
+      "usd": 29376000
+    },
+    "lider": "Warsaw Equity Group (WEG)",
+    "katilanlar": [
+      "Expansion"
+    ],
+    "kurucular": [
+      "Thomas Sinn"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T12:05:30.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/18/dcubed-raises-eur272m-series-a-to-scale-space-deployment-and-power-systems/",
+      "baslik": "Dcubed raises €27.2M Series A+ to scale space deployment and power systems",
+      "tarih": "Wed, 18 Nov 2026 12:05:30 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "German spacetech company Dcubed has raised €27.2 million in a Series A+ funding round led by Warsaw Equity Group (WEG), with participation from the European Innovation Council ( EIC ) Fund, the HTGF O",
+      "kaynak_url": "https://tech.eu/2026/11/18/dcubed-raises-eur272m-series-a-to-scale-space-deployment-and-power-systems/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/18/dcubed-raises-eur272m-series-a-to-scale-space-deployment-and-power-systems/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

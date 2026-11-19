@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_each-147a",
+  "durum": "hazir",
+  "puan": 62,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "each",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 7000000,
+      "birim": "USD",
+      "usd": 7000000
+    },
+    "lider": "Revo Capital",
+    "katilanlar": [
+      "European Bank for Reconstruction and Development ( EBRD )"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-18T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/18/eachlabs-bags-7m-to-make-generative-media-production-faster-and-cheaper/",
+      "baslik": "each::labs bags $7M to make generative media production faster and cheaper",
+      "tarih": "Wed, 18 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "each::labs , a generative media platform that enables businesses to create images, videos and audio using AI models and automated workflows, has raised $7 million in a seed funding round co-led by Rev",
+      "kaynak_url": "https://tech.eu/2026/11/18/eachlabs-bags-7m-to-make-generative-media-production-faster-and-cheaper/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/18/eachlabs-bags-7m-to-make-generative-media-production-faster-and-cheaper/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

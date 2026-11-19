@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_wilgot-ed39",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Wilgot",
+    "domain": "wilgot.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "USD",
+      "usd": 3000000
+    },
+    "lider": "Industrifonden",
+    "katilanlar": [
+      "Johan Bäckarlin",
+      "Niclas Mollin",
+      "Johan Hjelte",
+      "Voyado",
+      "Occtoo"
+    ],
+    "kurucular": [
+      "Erik Wikander",
+      "Mhairi Dunion",
+      "Oleg Danylenko"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-19T09:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/19/wilgot-raises-3m-in-seed-funding-to-help-brands-get-recommended-by-ai/",
+      "baslik": "Wilgot raises $3M in seed funding to help brands get recommended by AI",
+      "tarih": "Thu, 19 Nov 2026 09:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Stockholm-based startup Wilgot , which develops technology to help brands improve their product visibility in AI assistants, has raised $3 million in a seed funding round led by Industrifonden .",
+      "kaynak_url": "https://tech.eu/2026/11/19/wilgot-raises-3m-in-seed-funding-to-help-brands-get-recommended-by-ai/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/19/wilgot-raises-3m-in-seed-funding-to-help-brands-get-recommended-by-ai/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

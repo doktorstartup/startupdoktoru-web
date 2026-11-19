@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_lato-bad8",
+  "durum": "hazir",
+  "puan": 70,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "LATO",
+    "domain": "latolabs.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 4700000,
+      "birim": "USD",
+      "usd": 4700000
+    },
+    "lider": "Air Street Capital",
+    "katilanlar": [
+      "Axiom Partners",
+      "Paul Graham",
+      "ElevenLabs",
+      "Snowflake",
+      "Vercel",
+      "Rogo",
+      "AI"
+    ],
+    "kurucular": [
+      "Tymek Staniszewski",
+      "Tien Chu"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-19T08:15:57.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/19/lato-secures-47m-to-automate-customer-and-expert-interviews-with-ai/",
+      "baslik": "LATO secures $4.7M to automate customer and expert interviews with AI",
+      "tarih": "Thu, 19 Nov 2026 08:15:57 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "AI-powered market research platform LATO has raised $4.7 million in a seed funding round co-led by Air Street Capital and Axiom Partners .",
+      "kaynak_url": "https://tech.eu/2026/11/19/lato-secures-47m-to-automate-customer-and-expert-interviews-with-ai/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/19/lato-secures-47m-to-automate-customer-and-expert-interviews-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

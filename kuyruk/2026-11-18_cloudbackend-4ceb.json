@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-11-18_cloudbackend-4ceb",
+  "durum": "hazir",
+  "puan": 47,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "CloudBackend",
+    "domain": "cloudbackend.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 6600000,
+      "birim": "EUR",
+      "usd": 7128000
+    },
+    "lider": "Carl-Henric Svanberg",
+    "katilanlar": [
+      "Swedish Government's AI Commission"
+    ],
+    "kurucular": [
+      "Daniel Arthursson"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-18T06:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/18/cloudbackend-raises-eur66m-in-round-led-by-carl-henric-svanbergs-family-office/",
+      "baslik": "CloudBackend raises €6.6M in round led by Carl-Henric Svanberg’s family office",
+      "tarih": "Wed, 18 Nov 2026 06:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swedish AI cloud infrastructure company CloudBackend AB has raised €6.6 million in a funding round led by the family office of Carl-Henric Svanberg, former chair of the Swedish Government's AI Commiss",
+      "kaynak_url": "https://tech.eu/2026/11/18/cloudbackend-raises-eur66m-in-round-led-by-carl-henric-svanbergs-family-office/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

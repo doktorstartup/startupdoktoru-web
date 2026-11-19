@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_sequoia-d3d7",
+  "durum": "hazir",
+  "puan": 59,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 6,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Sequoia",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 5000000000,
+      "birim": "USD",
+      "usd": 5000000000
+    },
+    "lider": "California-based VCs Greenoaks",
+    "katilanlar": [
+      "Andreessen Horowitz",
+      "Thrive Capital",
+      "Alphabet’s GV",
+      "Sovereign AI",
+      "Alphabet",
+      "CapitalG",
+      "Temasek"
+    ],
+    "kurucular": [
+      "London-headquartered Isomorphic"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T13:07:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/17/sequoia-and-greenoaks-lead-massive-5bn-series-c-funding-round-in-isomorphic-labs/",
+      "baslik": "Sequoia and Greenoaks lead massive $5BN Series C funding round in Isomorphic Labs",
+      "tarih": "Tue, 17 Nov 2026 13:07:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Demis Hassabis’'s Isomorphic Labs has raised a massive $5bn Series C funding round, just six months after raising $2.1bn in a Series B funding, as it looks to leverage AI to power a new generation of",
+      "kaynak_url": "https://tech.eu/2026/11/17/sequoia-and-greenoaks-lead-massive-5bn-series-c-funding-round-in-isomorphic-labs/"
+    },
+    {
+      "metin": "Series C",
+      "kaynak_url": "https://tech.eu/2026/11/17/sequoia-and-greenoaks-lead-massive-5bn-series-c-funding-round-in-isomorphic-labs/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

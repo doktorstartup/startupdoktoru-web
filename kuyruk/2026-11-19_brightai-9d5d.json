@@ -1,0 +1,63 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_brightai-9d5d",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "BrightAI",
+    "domain": "bright.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 97000000,
+      "birim": "USD",
+      "usd": 97000000
+    },
+    "lider": "Smith Point Capital",
+    "katilanlar": [
+      "Zero Infinity Partners",
+      "Marlinspike Partners",
+      "Inspired Capital",
+      "Upfront Ventures",
+      "Khosla Ventures",
+      "Cobalt Capital",
+      "GE Vernova"
+    ],
+    "kurucular": [
+      "Alex Hawkinson"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-19T14:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/19/fiziksel-yapay-zeka-cozumleri-gelistiren-brightai-97-milyon-dolar-yatirim-aldi/",
+      "baslik": "Fiziksel yapay zeka çözümleri geliştiren BrightAI, 97 milyon dolar yatırım aldı",
+      "tarih": "Thu, 19 Nov 2026 14:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fiziksel yapay zeka çözümleri geliştiren BrightAI , 97 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/19/fiziksel-yapay-zeka-cozumleri-gelistiren-brightai-97-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

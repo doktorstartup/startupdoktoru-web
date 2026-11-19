@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_boltz-ab2d",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Boltz",
+    "domain": "boltz.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 110000000,
+      "birim": "USD",
+      "usd": 110000000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Zetta Venture Partners",
+      "Andreessen Horowitz",
+      "Amplify Partners",
+      "Obvious Ventures"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-19T10:04:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/19/london-based-boltz-raises-110m-series-a/",
+      "baslik": "London-based Boltz raises $110M Series A",
+      "tarih": "Thu, 19 Nov 2026 10:04:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "London-based AI drug discovery startup Boltz has raised a $110m Series A funding round, less than a year after emerging out of stealth.",
+      "kaynak_url": "https://tech.eu/2026/11/19/london-based-boltz-raises-110m-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/19/london-based-boltz-raises-110m-series-a/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}

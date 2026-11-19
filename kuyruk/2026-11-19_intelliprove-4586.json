@@ -1,0 +1,61 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_intelliprove-4586",
+  "durum": "hazir",
+  "puan": 69,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "IntelliProve",
+    "domain": "intelliprove.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 2700000,
+      "birim": "EUR",
+      "usd": 2916000
+    },
+    "lider": "Miles Ahead",
+    "katilanlar": [
+      "Wit-Gele Kruis"
+    ],
+    "kurucular": [
+      "Tanguy Sanglet"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-19T06:55:49.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/19/intelliprove-raises-eur27m-to-bring-health-monitoring-from-smartphones-to-humanoid-robots/",
+      "baslik": "IntelliProve raises €2.7M to bring health monitoring from smartphones to humanoid robots",
+      "tarih": "Thu, 19 Nov 2026 06:55:49 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Belgian healthtech company IntelliProve has raised €2.7 million in a seed funding round led by Miles Ahead , with participation from Wit-Gele Kruis , imec.istart and several business angels.",
+      "kaynak_url": "https://tech.eu/2026/11/19/intelliprove-raises-eur27m-to-bring-health-monitoring-from-smartphones-to-humanoid-robots/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/19/intelliprove-raises-eur27m-to-bring-health-monitoring-from-smartphones-to-humanoid-robots/"
+    }
+  ],
+  "olusturma": "2026-11-19T14:21:21.799Z"
+}
