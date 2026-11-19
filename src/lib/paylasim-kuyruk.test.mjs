@@ -6,16 +6,18 @@ import { readFileSync } from "node:fs";
 import { createServer } from "node:http";
 import { PGlite } from "@electric-sql/pglite";
 import { kuyrukAdimi, MAX_DENEME } from "./paylasim-kuyruk.ts";
-import { instagramIstemci, linkedinIstemci, linkedinMakale, linkedinMetni, shortsMetni, youtubeIstemci } from "./paylasim-platform.ts";
+import { instagramIstemci, linkedinIstemci, linkedinMakale, linkedinMetni, shortsMetni, tiktokIstemci, youtubeIstemci } from "./paylasim-platform.ts";
 
 const migration = readFileSync(new URL("../../supabase/migrations/0036_paylasim_kuyrugu.sql", import.meta.url), "utf8");
 const tablo = readFileSync(new URL("../../supabase/migrations/0031_paylasim.sql", import.meta.url), "utf8");
 const ayar = readFileSync(new URL("../../supabase/migrations/0038_paylasim_ayar.sql", import.meta.url), "utf8");
 const linkedinSql = readFileSync(new URL("../../supabase/migrations/0043_paylasim_linkedin.sql", import.meta.url), "utf8");
+const tiktokSql = readFileSync(new URL("../../supabase/migrations/0046_paylasim_tiktok.sql", import.meta.url), "utf8");
+const ucSaatSql = readFileSync(new URL("../../supabase/migrations/0047_paylasim_3_saat.sql", import.meta.url), "utf8");
 const blogSql = readFileSync(new URL("../../supabase/migrations/0044_linkedin_etiket_blog.sql", import.meta.url), "utf8");
 
 // Varsayılan: sistem açık (eski davranış testleri). Kapalı durum testleri { aktif: false } verir.
-async function kur({ aktif = true, linkedin = false } = {}) {
+async function kur({ aktif = true, linkedin = false, tiktok = false } = {}) {
   const db = new PGlite();
   // Supabase'e özgü parçalar için boş kabuk.
   await db.exec(`
@@ -32,6 +34,9 @@ async function kur({ aktif = true, linkedin = false } = {}) {
   await db.exec(ayar);
   await db.exec(linkedinSql);
   await db.exec(blogSql);
+  await db.exec(tiktokSql);
+  await db.exec(ucSaatSql);
+  if (tiktok) await db.query(`update ds_paylasim_ayar set tiktok_refresh = 'yenile'`);
   if (linkedin) await db.query(`update ds_paylasim_ayar set linkedin_token = 'tok', linkedin_kisi = 'kisi'`);
   if (aktif) await db.query(`update ds_paylasim_ayar set aktif = true`);
   return db;
@@ -151,13 +156,24 @@ function sahteLinkedIn(ayar = {}) {
   return l;
 }
 
+function sahteTikTok(ayar = {}) {
+  const t = {
+    taslak: 0,
+    durumlar: [...(ayar.durumlar ?? [])],
+    taslakGonder: async () => `p-${++t.taslak}`,
+    durum: async () => t.durumlar.shift() ?? { durum: "SEND_TO_USER_INBOX" },
+  };
+  return t;
+}
+
 function bagim(db, ayar = {}) {
-  const b = { depo: ayar.depo ?? depo(db), youtube: sahteYouTube(ayar.yt), instagram: sahteInstagram(ayar.ig), linkedin: sahteLinkedIn(ayar.li), bildirimler: [] };
+  const b = { depo: ayar.depo ?? depo(db), youtube: sahteYouTube(ayar.yt), instagram: sahteInstagram(ayar.ig), linkedin: sahteLinkedIn(ayar.li), tiktok: sahteTikTok(ayar.tt), bildirimler: [], haberler: [] };
+  b.haber = async (konu, metin) => void b.haberler.push(`${konu}: ${metin}`);
   b.bildir = async (konu, metin) => void b.bildirimler.push(`${konu}: ${metin}`);
   return b;
 }
 
-test("kuyruğa yerleşme: ardışık boş günler, en az 24 saat sonra, 19:00 TR", async () => {
+test("kuyruğa yerleşme: ardışık boş günler, en az 3 saat sonra, 19:00 TR", async () => {
   const db = await kur();
   const an = [];
   for (const ad of ["a", "b", "c"]) {
@@ -166,7 +182,7 @@ test("kuyruğa yerleşme: ardışık boş günler, en az 24 saat sonra, 19:00 TR
     const ikinci = (await db.query(`select paylasim_kuyruga_al($1) r`, [id])).rows[0].r;
     assert.equal(new Date(ikinci).getTime(), an.at(-1).getTime(), "tekrar çağrı günü değiştirmemeli");
   }
-  assert.ok(an[0].getTime() > Date.now() + 24 * 3600000);
+  assert.ok(an[0].getTime() > Date.now() + 3 * 3600000);
   assert.equal(an[1] - an[0], 86400000);
   assert.equal(an[2] - an[1], 86400000);
   for (const a of an) assert.equal(a.getUTCHours(), 16);
@@ -196,15 +212,15 @@ test("aynı güne iki video yazılamaz", async () => {
   await assert.rejects(db.query(`update ds_paylasim set yayin_at = (select yayin_at from ds_paylasim where id = $1) where id = $2`, [a, b]));
 });
 
-test("24 saat kuralı: 24 saatten az kala iptal reddedilir", async () => {
+test("3 saat kuralı: 3 saatten az kala iptal reddedilir", async () => {
   const db = await kur();
   const id = await video(db, "a");
   await db.query(`select paylasim_kuyruga_al($1)`, [id]);
-  await db.query(`update ds_paylasim set yayin_at = now() + interval '23 hours 59 minutes' where id = $1`, [id]);
+  await db.query(`update ds_paylasim set yayin_at = now() + interval '2 hours 59 minutes' where id = $1`, [id]);
   assert.equal((await db.query(`select paylasim_iptal($1) r`, [id])).rows[0].r, false);
   assert.ok((await satir(db, id)).yayin_at);
 
-  await db.query(`update ds_paylasim set yayin_at = now() + interval '24 hours 1 minute' where id = $1`, [id]);
+  await db.query(`update ds_paylasim set yayin_at = now() + interval '3 hours 1 minute' where id = $1`, [id]);
   assert.equal((await db.query(`select paylasim_iptal($1) r`, [id])).rows[0].r, true);
   const s = await satir(db, id);
   assert.equal(s.yayin_at, null);
@@ -512,6 +528,68 @@ test("LinkedIn gönderiyi reddederse aynı videoyla yeniden denenir", async () =
   assert.equal(s.yayin.linkedin.durum, "yayinda");
   assert.equal(b.linkedin.yuklenen, 1);
   assert.equal(b.linkedin.yayinlanan, 1);
+});
+
+test("TikTok bağlıyken: taslak yüklenir, telefona ulaşınca açıklama bildirilir, iş bitmiş sayılır", async () => {
+  const db = await kur({ tiktok: true });
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db, { tt: { durumlar: [{ durum: "PROCESSING_UPLOAD" }] } });
+  await kuyrukAdimi(b); // taslak yüklenir
+  await kuyrukAdimi(b); // TikTok hâlâ işliyor
+  assert.equal((await satir(db, id)).yayin.tiktok.durum, "isleniyor");
+  assert.equal((await satir(db, id)).yayin_bitti_at, null, "TikTok bitmeden satır bitmez");
+  await kilidiEskit(db, id, "tiktok");
+  await kuyrukAdimi(b);
+  const s = await satir(db, id);
+  assert.equal(s.yayin.tiktok.durum, "taslak");
+  assert.equal(s.durum, "paylasildi");
+  assert.equal(s.platformlar.tiktok, undefined, "taslak, paylaşıldı diye işaretlenmez");
+  assert.deepEqual(b.haberler, ["TikTok taslağı telefonunda: a: açıklama"]);
+  assert.equal(b.tiktok.taslak, 1);
+  assert.deepEqual(b.depo.temizlenen, [id]);
+});
+
+test("TikTok videoyu kabul etmezse hataya düşer ve bildirilir; bağlı değilken kuyruğa girmez", async () => {
+  const db = await kur({ tiktok: true });
+  const id = await vadesiGelmis(db, "a");
+  const b = bagim(db, { tt: { durumlar: [{ durum: "FAILED", neden: "duration_check_failed" }] } });
+  await kuyrukAdimi(b);
+  await kuyrukAdimi(b);
+  const s = await satir(db, id);
+  assert.equal(s.yayin.tiktok.durum, "hata");
+  assert.match(s.yayin.tiktok.hata, /duration_check_failed/);
+  assert.ok(b.bildirimler.some((m) => m.includes("TikTok")));
+
+  const db2 = await kur();
+  const id2 = await vadesiGelmis(db2, "b");
+  assert.equal((await satir(db2, id2)).yayin.tiktok, undefined);
+});
+
+test("gerçek HTTP: TikTok taslağı tek parçada yüklenir; 200 içindeki hata kodu hata sayılır", async () => {
+  const istekler = [];
+  let hataVer = false;
+  const { s, url } = await yerelSunucu((req, res, govde) => {
+    if (req.url === "/dosya") return res.writeHead(200).end(dosya);
+    if (req.url === "/yukle") {
+      istekler.push([req.headers["content-range"], req.headers["content-type"], govde.toString()]);
+      return res.writeHead(201).end();
+    }
+    assert.equal(req.headers.authorization, "Bearer tok");
+    if (hataVer) return res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ error: { code: "scope_not_authorized", message: "izin yok" } }));
+    istekler.push(JSON.parse(govde.toString()));
+    const data = req.url.includes("status") ? { status: "SEND_TO_USER_INBOX" } : { publish_id: "p1", upload_url: `${url}/yukle` };
+    res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ data, error: { code: "ok", message: "" } }));
+  });
+  const tt = tiktokIstemci(async () => "tok", () => `${url}/dosya`, url);
+  assert.equal(await tt.taslakGonder(v), "p1");
+  assert.deepEqual(istekler, [
+    { source_info: { source: "FILE_UPLOAD", video_size: 10, chunk_size: 10, total_chunk_count: 1 } },
+    ["bytes 0-9/10", "video/mp4", "0123456789"],
+  ]);
+  assert.deepEqual(await tt.durum("p1"), { durum: "SEND_TO_USER_INBOX", neden: null });
+  hataVer = true;
+  await assert.rejects(tt.durum("p1"), (e) => e.message === "TikTok: izin yok");
+  s.close();
 });
 
 test("linkedinMetni ayrılmış karakterleri kaçırır, etiketi korur", () => {

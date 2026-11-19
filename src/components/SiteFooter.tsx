@@ -24,7 +24,7 @@ export function SiteFooter() {
           <a href={href("/gizlilik")} className="hover:text-primary transition-colors">{t.footer.privacy}</a>
           <a href={href("/kvkk")} className="hover:text-primary transition-colors">{t.footer.kvkk}</a>
           <a href="#" className="hover:text-primary transition-colors">{t.footer.distanceSales}</a>
-          <a href="#" className="hover:text-primary transition-colors">{t.footer.terms}</a>
+          <a href={href("/kullanim-kosullari")} className="hover:text-primary transition-colors">{t.footer.terms}</a>
           <button type="button" onClick={onaySifirla} className="hover:text-primary transition-colors">{t.footer.cookiePrefs}</button>
         </div>
       </div>

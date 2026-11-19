@@ -346,7 +346,13 @@ create table if not exists public.ds_paylasim_ayar (
   linkedin_token text,
   linkedin_kisi text,
   linkedin_bitis timestamptz,
-  linkedin_state text
+  linkedin_state text,
+  -- TikTok bağlantısı (taslak yükleme) — bkz. migrations/0046_paylasim_tiktok.sql
+  tiktok_access text,
+  tiktok_access_bitis timestamptz,
+  tiktok_refresh text,
+  tiktok_refresh_bitis timestamptz,
+  tiktok_state text
 );
 -- Yalnız service-role erişir (API üzerinden); istemciye politika yok.
 alter table public.ds_paylasim_ayar enable row level security;

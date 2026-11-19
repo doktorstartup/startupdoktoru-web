@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../../lib/adminAuth";
 
-// Admin: paylaşım kuyruğu işlemleri. 24 saat kuralı veritabanında (paylasim_iptal).
+// Admin: paylaşım kuyruğu işlemleri. 3 saat kuralı veritabanında (paylasim_iptal).
 export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => ({}));
   const auth = verifyAdminPassword(body.password);
@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   if (islem === "iptal") {
     const { data, error } = await supabaseAdmin.rpc("paylasim_iptal", { p_id: id });
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    if (!data) return NextResponse.json({ error: "Yayına 24 saatten az kaldı, iptal edilemez." }, { status: 409 });
+    if (!data) return NextResponse.json({ error: "Yayına 3 saatten az kaldı, iptal edilemez." }, { status: 409 });
     return NextResponse.json({ ok: true });
   }
 
@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, yayin_at: data });
   }
 
-  if (islem === "yeniden_dene" && (platform === "shorts" || platform === "instagram" || platform === "linkedin")) {
+  if (islem === "yeniden_dene" && ["shorts", "instagram", "linkedin", "tiktok"].includes(platform)) {
     const { data: v, error } = await supabaseAdmin.from("ds_paylasim").select("yayin").eq("id", id).single();
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     const s = v.yayin?.[platform];

@@ -8,9 +8,10 @@
 // - Instagram container'ı tek kullanımlıktır; önce durumu sorulur, PUBLISHED ise yeniden yayınlanmaz.
 // - LinkedIn gönderisi sorgulanamaz (okuma izni kapalı): gönderimden ÖNCE "gonderiliyor" yazılır. Cevap kaybolursa
 //   sonraki tik yeniden göndermez, hataya düşer; profili kontrol edip Yeniden dene kararını insan verir.
+// - TikTok'a yayın değil TASLAK gider (yayını hesap sahibi uygulamadan yapar); çift taslak herkese açık bir şey üretmez.
 
-export type Platform = "shorts" | "instagram" | "linkedin";
-export type YayinDurumu = "bekliyor" | "isleniyor" | "yayinda" | "hata" | "kilitli" | "atlandi";
+export type Platform = "shorts" | "instagram" | "linkedin" | "tiktok";
+export type YayinDurumu = "bekliyor" | "isleniyor" | "yayinda" | "taslak" | "hata" | "kilitli" | "atlandi";
 
 export type PlatformKaydi = {
   durum: YayinDurumu;
@@ -20,7 +21,7 @@ export type PlatformKaydi = {
   deneme?: number;
   kilit?: string | null;
   oturum?: string | null; // YouTube devam ettirilebilir yükleme adresi
-  container?: string | null; // Instagram medya container'ı; LinkedIn'de yüklenen videonun URN'i
+  container?: string | null; // Instagram medya container'ı; LinkedIn'de yüklenen videonun URN'i; TikTok'ta publish_id
   container_at?: string | null;
   gonderiliyor?: boolean; // LinkedIn: gönderi isteği çıktı, cevabı kaydedilmedi
 };
@@ -65,12 +66,19 @@ export type LinkedInIstemci = {
   paylas(videoUrn: string, video: KuyrukVideo): Promise<string>; // gönderi URN'i
 };
 
+export type TikTokIstemci = {
+  taslakGonder(video: KuyrukVideo): Promise<string>; // publish_id
+  durum(publishId: string): Promise<{ durum: string; neden?: string | null }>;
+};
+
 export type Bagimliliklar = {
   depo: Depo;
   youtube: YouTubeIstemci;
   instagram: InstagramIstemci;
   linkedin: LinkedInIstemci;
-  bildir(konu: string, metin: string): Promise<unknown>;
+  tiktok: TikTokIstemci;
+  bildir(konu: string, metin: string): Promise<unknown>; // hata bildirimi
+  haber(konu: string, metin: string): Promise<unknown>; // hata olmayan bilgi (TikTok taslağı hazır)
   simdi?: () => Date;
 };
 
@@ -152,7 +160,24 @@ async function linkedinAdimi(d: Bagimliliklar, v: KuyrukVideo, s: PlatformKaydi,
   return { yama: { durum: "yayinda", id, link, gonderiliyor: false, hata: null }, link };
 }
 
-const PLATFORM_ADI: Record<Platform, string> = { shorts: "YouTube Shorts", instagram: "Instagram", linkedin: "LinkedIn" };
+// Taslak API'si açıklama almaz: açıklamayı hesap sahibi yapıştırır, o yüzden metin (Instagram metni) bildirimle gider.
+async function tiktokAdimi(d: Bagimliliklar, v: KuyrukVideo, s: PlatformKaydi, simdi: Date): Promise<Sonuc> {
+  if (!s.container) {
+    const id = await d.tiktok.taslakGonder(v);
+    return { yama: { durum: "isleniyor", container: id, container_at: simdi.toISOString(), hata: null } };
+  }
+  const k = await d.tiktok.durum(s.container);
+  if (k.durum === "FAILED") throw adimHatasi(`TikTok videoyu kabul etmedi: ${k.neden || "neden belirtilmedi"}.`, { kalici: true, yama: { container: null } });
+  if (k.durum === "SEND_TO_USER_INBOX" || k.durum === "PUBLISH_COMPLETE") {
+    await d.haber(`TikTok taslağı telefonunda: ${v.baslik}`, v.platformlar.instagram?.metin || "");
+    return { yama: { durum: "taslak", id: s.container, hata: null } };
+  }
+  const dk = (simdi.getTime() - new Date(s.container_at || simdi).getTime()) / 60000;
+  if (dk > IG_BEKLEME_DK) throw adimHatasi(`TikTok videoyu ${IG_BEKLEME_DK} dakikada işleyemedi.`, { kalici: true, yama: { container: null } });
+  return { yama: { durum: "isleniyor" } };
+}
+
+const PLATFORM_ADI: Record<Platform, string> = { shorts: "YouTube Shorts", instagram: "Instagram", linkedin: "LinkedIn", tiktok: "TikTok" };
 
 async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simdi: Date) {
   const s = await d.depo.kilitAl(v.id, p, KILIT_SN);
@@ -170,7 +195,8 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
   try {
     const baslamadi = !s.oturum && !s.container && !s.id;
     if (baslamadi && v.platformlar?.[p]?.paylasildi_at) return await bitir({ durum: "atlandi" });
-    if (baslamadi && !v.platformlar?.[p]?.metin?.trim()) throw adimHatasi("Platform metni boş.", { kalici: true });
+    const metinKaynagi = p === "tiktok" ? "instagram" : p; // TikTok açıklaması Instagram metnidir
+    if (baslamadi && !v.platformlar?.[metinKaynagi]?.metin?.trim()) throw adimHatasi("Platform metni boş.", { kalici: true });
     if (baslamadi && !v.video_yol) throw adimHatasi("Video dosyası yok.", { kalici: true });
 
     const kaydet: Kaydet = (y) => d.depo.yama(v.id, p, y);
@@ -179,7 +205,9 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
         ? await youtubeAdimi(d, v, s, kaydet)
         : p === "instagram"
           ? await instagramAdimi(d, v, s, simdi)
-          : await linkedinAdimi(d, v, s, simdi, kaydet);
+          : p === "linkedin"
+            ? await linkedinAdimi(d, v, s, simdi, kaydet)
+            : await tiktokAdimi(d, v, s, simdi);
     return await bitir(sonuc.yama, sonuc.link);
   } catch (e) {
     const h = e as AdimHatasi;
@@ -190,7 +218,7 @@ async function platformAdimi(d: Bagimliliklar, v: KuyrukVideo, p: Platform, simd
 }
 
 // Vadesi gelen her video için platformları bağımsız ilerletir; biri düşerse diğerleri sürer.
-// Kuyruğa alınırken eklenmemiş platformun (LinkedIn bağlı değilken) kaydı yoktur: kilit alınamaz, dokunulmaz.
+// Kuyruğa alınırken eklenmemiş platformun (LinkedIn/TikTok bağlı değilken) kaydı yoktur: kilit alınamaz, dokunulmaz.
 export async function kuyrukAdimi(d: Bagimliliklar) {
   if (!(await d.depo.aktif())) return { pasif: true as const };
   const simdi = d.simdi?.() ?? new Date();
@@ -204,13 +232,14 @@ export async function kuyrukAdimi(d: Bagimliliklar) {
       await d.bildir(`Paylaşım gecikti: ${v.baslik}`, `Planlanan saatten ${GEC_KALMA_SAAT} saat geçti, yayınlanmadı. Paylaşım sekmesinden kuyruğa al.`);
       continue;
     }
-    const [shorts, instagram, linkedin] = await Promise.allSettled([
+    const [shorts, instagram, linkedin, tiktok] = await Promise.allSettled([
       platformAdimi(d, v, "shorts", simdi),
       platformAdimi(d, v, "instagram", simdi),
       platformAdimi(d, v, "linkedin", simdi),
+      platformAdimi(d, v, "tiktok", simdi),
     ]);
     const yaz = (r: PromiseSettledResult<string>) => (r.status === "fulfilled" ? r.value : `hata: ${r.reason}`);
-    sonuc[v.id] = { shorts: yaz(shorts), instagram: yaz(instagram), linkedin: yaz(linkedin) };
+    sonuc[v.id] = { shorts: yaz(shorts), instagram: yaz(instagram), linkedin: yaz(linkedin), tiktok: yaz(tiktok) };
   }
   return { videolar: videolar.length, sonuc };
 }

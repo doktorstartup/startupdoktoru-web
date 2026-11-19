@@ -16,6 +16,7 @@ const STATIC: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/blog", priority: 0.8, changeFrequency: "daily" },
   { path: "/gizlilik", priority: 0.3, changeFrequency: "yearly" },
   { path: "/kvkk", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/kullanim-kosullari", priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export const revalidate = 3600;

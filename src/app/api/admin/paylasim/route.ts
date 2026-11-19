@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { verifyAdminPassword } from "../../../../lib/adminAuth";
-import { dosyalariSil, linkedinDurumu, paylasimAktif } from "../../../../lib/paylasim-yayin";
+import { dosyalariSil, linkedinDurumu, paylasimAktif, tiktokDurumu } from "../../../../lib/paylasim-yayin";
 
 // Admin: kısa video paylaşım takibi (Instagram / Shorts / LinkedIn).
-// Otomatik gönderim: lib/paylasim-kuyruk.ts, kuyruk işlemleri: ./kuyruk, aç/kapa: ./ayar, LinkedIn bağlantısı: ./linkedin.
+// Otomatik gönderim: lib/paylasim-kuyruk.ts, kuyruk işlemleri: ./kuyruk, aç/kapa: ./ayar, hesap bağlantıları: ./linkedin, ./tiktok.
 
 const ALANLAR = ["baslik", "durum", "notlar", "efektler", "ham_link", "kurgu_link", "hedef_tarih", "platformlar"];
 
@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
     .order("created_at", { ascending: false });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   const { bagli, kalanGun } = await linkedinDurumu();
-  return NextResponse.json({ videolar: data, aktif: await paylasimAktif(), linkedin: { bagli, kalanGun } });
+  return NextResponse.json({ videolar: data, aktif: await paylasimAktif(), linkedin: { bagli, kalanGun }, tiktok: await tiktokDurumu() });
 }
 
 export async function POST(req: NextRequest) {

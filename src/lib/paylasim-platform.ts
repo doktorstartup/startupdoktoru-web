@@ -1,11 +1,12 @@
-// YouTube, Instagram ve LinkedIn yayın istemcileri. Kuyruk kuralları paylasim-kuyruk.ts'te, burada yalnız API çağrıları var.
-import type { InstagramIstemci, KuyrukVideo, LinkedInIstemci, YouTubeIstemci } from "./paylasim-kuyruk";
+// YouTube, Instagram, LinkedIn ve TikTok yayın istemcileri. Kuyruk kuralları paylasim-kuyruk.ts'te, burada yalnız API çağrıları var.
+import type { InstagramIstemci, KuyrukVideo, LinkedInIstemci, TikTokIstemci, YouTubeIstemci } from "./paylasim-kuyruk";
 
 const UPLOAD = "https://www.googleapis.com/upload/youtube/v3/videos";
 const DATA = "https://www.googleapis.com/youtube/v3";
 const GRAPH = "https://graph.facebook.com/v23.0";
 const LINKEDIN = "https://api.linkedin.com/rest";
 const LINKEDIN_SURUM = "202610"; // Linkedin-Version; sürümler yaklaşık bir yıl sonra kapanır
+const TIKTOK = "https://open.tiktokapis.com";
 const GONDERIM_MS = 40_000; // 60 sn fonksiyon sınırı içinde bitsin; kalan sonraki tike kalır
 
 type Adres = (yol: string) => string;
@@ -255,6 +256,50 @@ export function linkedinIstemci(hesap: () => Promise<LinkedInHesap>, adres: Adre
       if (!r.ok) throw Object.assign(new Error(`LinkedIn gönderi: ${await hataMetni(r)}`), { yama: { gonderiliyor: false } });
       if (!id) throw new Error("LinkedIn gönderi kimliği dönmedi.");
       return id;
+    },
+  };
+}
+
+// Yetki dönüş adresi; TikTok uygulamasında (Login Kit) birebir kayıtlı olmalı.
+export const TIKTOK_DONUS = `${process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com"}/api/admin/paylasim/tiktok/geri`;
+
+// TikTok: video hesabın gelen kutusuna taslak olarak yüklenir (video.upload izni); yayını hesap sahibi uygulamadan yapar.
+export function tiktokIstemci(anahtar: () => Promise<string>, adres: Adres, api = TIKTOK): TikTokIstemci {
+  // TikTok hatayı 200 cevabın içinde de döndürebilir: error.code "ok" değilse hatadır.
+  const cagir = async (yol: string, govde: object) => {
+    const r = await fetch(`${api}${yol}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${await anahtar()}`, "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify(govde),
+    });
+    const d = await r.json().catch(() => null);
+    if (!r.ok || !d || (d.error?.code && d.error.code !== "ok")) throw new Error(`TikTok: ${d?.error?.message || d?.error?.code || r.status}`);
+    return d.data;
+  };
+
+  return {
+    // Depo sınırı 50 MB olduğu için dosya tek parçada gider (TikTok tek parçaya 64 MB'a kadar izin verir).
+    async taslakGonder(v: KuyrukVideo) {
+      const dosya = await fetch(adres(v.video_yol!));
+      if (!dosya.ok) throw new Error(`Video dosyası okunamadı (${dosya.status}).`);
+      const bayt = await dosya.arrayBuffer();
+      const boyut = bayt.byteLength;
+      const { publish_id, upload_url } = await cagir("/v2/post/publish/inbox/video/init/", {
+        source_info: { source: "FILE_UPLOAD", video_size: boyut, chunk_size: boyut, total_chunk_count: 1 },
+      });
+      const r = await fetch(upload_url, {
+        method: "PUT",
+        headers: { "Content-Type": "video/mp4", "Content-Range": `bytes 0-${boyut - 1}/${boyut}` },
+        body: bayt,
+        signal: AbortSignal.timeout(GONDERIM_MS),
+      });
+      if (r.status !== 201) throw new Error(`TikTok yükleme: ${r.status}`);
+      return publish_id as string;
+    },
+
+    async durum(publishId: string) {
+      const d = await cagir("/v2/post/publish/status/fetch/", { publish_id: publishId });
+      return { durum: d.status as string, neden: (d.fail_reason as string) || null };
     },
   };
 }

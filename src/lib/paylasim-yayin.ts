@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "./supabase";
 import { notifyAdmin } from "./email";
 import { erisimAnahtari } from "./youtube";
-import { instagramIstemci, linkedinIstemci, youtubeIstemci } from "./paylasim-platform";
+import { instagramIstemci, linkedinIstemci, tiktokIstemci, youtubeIstemci } from "./paylasim-platform";
 import { kuyrukAdimi, type Depo, type KuyrukVideo, type Platform, type PlatformKaydi } from "./paylasim-kuyruk";
 
 // Kuyruğu gerçek veritabanı ve platformlara bağlar.
@@ -33,6 +33,40 @@ export async function linkedinHesap() {
   // Etiket listesi okunamazsa gönderi etiketsiz çıkar.
   const { data: etiketler } = await supabaseAdmin.from("ds_linkedin_etiket").select("metinde, ad, urn");
   return { token: d.token, kisi: d.kisi, etiketler: etiketler || [] };
+}
+
+// TikTok bağlantısı (ds_paylasim_ayar). Erişim anahtarı kısa ömürlü; yenileme anahtarıyla kendiliğinden yenilenir.
+export async function tiktokDurumu() {
+  const { data } = await supabaseAdmin.from("ds_paylasim_ayar").select("tiktok_refresh, tiktok_refresh_bitis").maybeSingle();
+  const kalanGun = data?.tiktok_refresh_bitis ? Math.floor((new Date(data.tiktok_refresh_bitis).getTime() - Date.now()) / 86400000) : null;
+  return { bagli: !!data?.tiktok_refresh, kalanGun };
+}
+
+// TikTok'tan anahtar alır (ilk yetki ya da yenileme) ve ayar satırına yazar. Yenileme anahtarı her seferinde değişir.
+export async function tiktokAnahtarAl(alan: Record<string, string>) {
+  const r = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
+    method: "POST",
+    body: new URLSearchParams({ client_key: process.env.TIKTOK_CLIENT_KEY || "", client_secret: process.env.TIKTOK_CLIENT_SECRET || "", ...alan }),
+  });
+  const d = await r.json().catch(() => null);
+  if (!r.ok || !d?.access_token || !d?.refresh_token) throw new Error(`TikTok yetki: ${d?.error_description || d?.error || r.status}`);
+  const sonra = (sn: number) => new Date(Date.now() + sn * 1000).toISOString();
+  const { error } = await supabaseAdmin
+    .from("ds_paylasim_ayar")
+    .update({ tiktok_access: d.access_token, tiktok_access_bitis: sonra(d.expires_in), tiktok_refresh: d.refresh_token, tiktok_refresh_bitis: sonra(d.refresh_expires_in) })
+    .eq("id", true);
+  hata(error);
+  return d.access_token as string;
+}
+
+async function tiktokAnahtari() {
+  const { data } = await supabaseAdmin.from("ds_paylasim_ayar").select("tiktok_access, tiktok_access_bitis, tiktok_refresh").maybeSingle();
+  if (!data?.tiktok_refresh) {
+    throw Object.assign(new Error("TikTok bağlı değil. Paylaşım sekmesinden bağla, sonra Yeniden dene."), { kalici: true });
+  }
+  // Bitmesine 5 dakikadan fazla varsa mevcut anahtar kullanılır.
+  if (data.tiktok_access && new Date(data.tiktok_access_bitis).getTime() > Date.now() + 300000) return data.tiktok_access as string;
+  return tiktokAnahtarAl({ grant_type: "refresh_token", refresh_token: data.tiktok_refresh });
 }
 
 const depo: Depo = {
@@ -79,7 +113,13 @@ export function kuyrukCalistir() {
     youtube: youtubeIstemci(erisimAnahtari, adres),
     instagram: instagramIstemci(process.env.IG_USER_ID || "", process.env.IG_ACCESS_TOKEN || "", adres),
     linkedin: linkedinIstemci(linkedinHesap, adres),
+    tiktok: tiktokIstemci(tiktokAnahtari, adres),
     bildir: (konu, metin) => notifyAdmin(konu, `<p>${metin}</p><p>Paylaşım sekmesinden Yeniden dene.</p>`),
+    haber: (konu, metin) =>
+      notifyAdmin(
+        konu,
+        `<p>TikTok uygulamasındaki bildirime dokun, aşağıdaki açıklamayı yapıştır ve paylaş.</p><p style="white-space:pre-wrap">${metin.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</p>`,
+      ),
   });
 }
 

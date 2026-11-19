@@ -15,20 +15,24 @@ export type KuyrukVideo = {
   iptal_at: string | null;
   video_yol: string | null;
   ai_icerik: boolean;
-  yayin: { shorts?: Kayit; instagram?: Kayit; linkedin?: Kayit };
+  yayin: { shorts?: Kayit; instagram?: Kayit; linkedin?: Kayit; tiktok?: Kayit };
+};
+export type Baglanti = { ad: string; bagli: boolean; kalanGun: number | null; bagla: () => Promise<void>;
 };
 
-const GUN = 24 * 3600000;
+const GUN = 3 * 3600000; // iptal sınırı (paylasim_iptal, migration 0047)
 const STOK_ALT = 3;
 const PLATFORM = [
   ["shorts", "YouTube"],
   ["instagram", "Instagram"],
   ["linkedin", "LinkedIn"],
+  ["tiktok", "TikTok"],
 ] as const;
 const ETIKET: Record<string, { ad: string; cls: string }> = {
   bekliyor: { ad: "Bekliyor", cls: "bg-secondary/30 text-muted-foreground" },
   isleniyor: { ad: "İşleniyor", cls: "bg-amber-500/15 text-amber-300" },
   yayinda: { ad: "Yayında", cls: "bg-emerald-500/15 text-emerald-300" },
+  taslak: { ad: "Taslak telefonda", cls: "bg-emerald-500/15 text-emerald-300" },
   atlandi: { ad: "Elle paylaşıldı", cls: "bg-secondary/30 text-muted-foreground" },
   hata: { ad: "Hata", cls: "bg-red-500/15 text-red-300" },
   kilitli: { ad: "Kilitli", cls: "bg-red-500/15 text-red-300" },
@@ -41,17 +45,15 @@ export default function Kuyruk({
   islem,
   aktif,
   aktifDegistir,
-  linkedin,
-  linkedinBagla,
+  baglantilar,
 }: {
   videolar: KuyrukVideo[];
   islem: (id: string, islem: string, platform?: string) => Promise<void>;
   aktif: boolean | null;
   aktifDegistir: (aktif: boolean) => Promise<void>;
-  linkedin: { bagli: boolean; kalanGun: number | null } | null;
-  linkedinBagla: () => Promise<void>;
+  baglantilar: Baglanti[];
 }) {
-  const [simdi] = useState(() => Date.now()); // 24 saat sınırını asıl sunucu uygular
+  const [simdi] = useState(() => Date.now()); // 3 saat sınırını asıl sunucu uygular
   // Bitmiş satırlar hata varsa görünür kalır; temiz bitenler listeden düşer.
   const liste = videolar
     .filter((v) => v.yayin_at && (!v.yayin_bitti_at || v.durum !== "paylasildi"))
@@ -81,17 +83,17 @@ export default function Kuyruk({
           </button>
         )}
       </div>
-      {linkedin && (
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40 text-sm">
-          <span className={`flex items-center gap-2 ${linkedin.bagli && (linkedin.kalanGun ?? 0) >= 7 ? "text-muted-foreground" : "font-bold text-red-400"}`}>
-            <Link2 className="h-4 w-4" /> LinkedIn:{" "}
-            {!linkedin.bagli ? "Bağlı değil (kuyruğa girmez)" : (linkedin.kalanGun ?? 0) < 0 ? "Yetki süresi doldu" : `Bağlı, yetki ${linkedin.kalanGun} gün geçerli`}
+      {baglantilar.map((b) => (
+        <div key={b.ad} className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-border/40 text-sm">
+          <span className={`flex items-center gap-2 ${b.bagli && (b.kalanGun ?? 0) >= 7 ? "text-muted-foreground" : "font-bold text-red-400"}`}>
+            <Link2 className="h-4 w-4" /> {b.ad}:{" "}
+            {!b.bagli ? "Bağlı değil (kuyruğa girmez)" : (b.kalanGun ?? 0) < 0 ? "Yetki süresi doldu" : `Bağlı, yetki ${b.kalanGun} gün geçerli`}
           </span>
-          <button onClick={linkedinBagla} className="btn btn-secondary btn-sm">
-            {linkedin.bagli ? "Yeniden bağla" : "Bağla"}
+          <button onClick={b.bagla} className="btn btn-secondary btn-sm">
+            {b.bagli ? "Yeniden bağla" : "Bağla"}
           </button>
         </div>
-      )}
+      ))}
       <div className="flex items-center justify-between text-sm">
         <span className="font-bold flex items-center gap-2">
           <CalendarClock className="h-4 w-4 text-primary" /> Otomatik paylaşım kuyruğu
@@ -112,7 +114,7 @@ export default function Kuyruk({
               {kalan > 0 && (
                 <button
                   disabled={kalan <= GUN}
-                  title={kalan <= GUN ? "Yayına 24 saatten az kaldı" : undefined}
+                  title={kalan <= GUN ? "Yayına 3 saatten az kaldı" : undefined}
                   onClick={() => confirm(`"${v.baslik}" kuyruktan çıkarılsın mı?`) && islem(v.id, "iptal")}
                   className="btn btn-secondary btn-sm disabled:opacity-40"
                 >
@@ -123,7 +125,7 @@ export default function Kuyruk({
             <div className="flex flex-wrap gap-2 text-xs">
               {PLATFORM.map(([k, ad]) => {
                 const s = v.yayin?.[k];
-                if (!s && k === "linkedin") return null; // kuyruğa alınırken LinkedIn bağlı değildi
+                if (!s && (k === "linkedin" || k === "tiktok")) return null; // kuyruğa alınırken hesap bağlı değildi
                 const e = ETIKET[s?.durum || "bekliyor"];
                 return (
                   <span key={k} className="flex flex-wrap items-center gap-1.5">
