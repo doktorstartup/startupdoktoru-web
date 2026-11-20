@@ -29,6 +29,8 @@ export async function POST(req: NextRequest) {
     scope: "user.info.basic,video.upload",
     redirect_uri: TIKTOK_DONUS,
     state,
+    // İzin ekranı her seferinde gösterilsin (daha önce izin verildiyse TikTok onu atlıyor).
+    disable_auto_auth: "1",
   }).toString();
   return NextResponse.json({ url: url.toString() });
 }
