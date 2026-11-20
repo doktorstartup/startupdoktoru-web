@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-13_switchpoint-bio-9e67",
+  "durum": "hazir",
+  "puan": 55,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 0,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Switchpoint Bio",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5300000,
+      "birim": "USD",
+      "usd": 5300000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Samuel Myllykangas",
+      "Jason Buenrostro"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-13T12:37:08.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/switchpoint-bio-raises-5-3m-pre-seed/",
+      "baslik": "Finland&#8217;s Switchpoint Bio lands $5.3 million pre-seed to help drug developers understand treatment response",
+      "tarih": "Fri, 13 Nov 2026 12:37:08 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Helsinki- and Cambridge-based biotech startup Switchpoint Bio has raised $5.3 million in pre-seed funding, including a $5 million investment from Treehouse Delmar Investments.",
+      "kaynak_url": "https://arcticstartup.com/switchpoint-bio-raises-5-3m-pre-seed/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://arcticstartup.com/switchpoint-bio-raises-5-3m-pre-seed/"
+    }
+  ],
+  "olusturma": "2026-11-20T21:46:07.952Z"
+}

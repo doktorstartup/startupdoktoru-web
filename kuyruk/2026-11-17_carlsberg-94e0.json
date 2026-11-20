@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_carlsberg-94e0",
+  "durum": "hazir",
+  "puan": 57,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 6,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Carlsberg",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "EUR",
+      "usd": 21600000
+    },
+    "lider": "Sofinnova Partners",
+    "katilanlar": [
+      "Investment Fund of Denmark ( EIFO )",
+      "Nordic Foodtech VC",
+      "Footprint Firm",
+      "SVG Ventures",
+      "PSV Hafnium",
+      "Export"
+    ],
+    "kurucular": [
+      "Gustav Hambraeus"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-17T12:12:54.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/traitomic-raises-e20m-series-a/",
+      "baslik": "Carlsberg spinout raises €20 million Series A to expand non-GE trait development",
+      "tarih": "Tue, 17 Nov 2026 12:12:54 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Copenhagen-based biotechnology company Traitomic has raised €20 million in a Series A round led by Sofinnova Partners , with participation from the Export and Investment Fund of Denmark ( EIFO ), Foot",
+      "kaynak_url": "https://arcticstartup.com/traitomic-raises-e20m-series-a/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://arcticstartup.com/traitomic-raises-e20m-series-a/"
+    }
+  ],
+  "olusturma": "2026-11-20T21:46:07.952Z"
+}

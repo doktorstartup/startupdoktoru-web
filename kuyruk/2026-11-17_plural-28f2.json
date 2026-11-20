@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-11-17_plural-28f2",
+  "durum": "hazir",
+  "puan": 37,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 6,
+    "kaynak": 3
+  },
+  "kunye": {
+    "sirket": "Plural",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000000,
+      "birim": "EUR",
+      "usd": 1080000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-17T12:44:17.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "arcticstartup",
+      "url": "https://arcticstartup.com/plural-raises-e1bn/",
+      "baslik": "Plural raises €1bn fund to back Europe&#8217;s next generation of frontier technology companies",
+      "tarih": "Tue, 17 Nov 2026 12:44:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Plural , a Tallinn-, Paris- and London-based early-stage venture capital firm led by former founders and technology operators, has raised €1 billion to invest in European startups developing frontier",
+      "kaynak_url": "https://arcticstartup.com/plural-raises-e1bn/"
+    }
+  ],
+  "olusturma": "2026-11-20T21:46:07.952Z"
+}
