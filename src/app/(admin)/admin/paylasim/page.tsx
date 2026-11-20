@@ -88,7 +88,7 @@ export default function PaylasimAdmin() {
       await yukle();
       const sorgu = new URLSearchParams(window.location.search);
       if (sorgu.get("linkedin") === "hata") setHata("LinkedIn bağlanamadı. Yeniden dene.");
-      if (sorgu.get("tiktok") === "hata") setHata("TikTok bağlanamadı. Yeniden dene.");
+      if (sorgu.get("tiktok") === "hata") setHata(`TikTok bağlanamadı${sorgu.get("neden") ? ` (${sorgu.get("neden")})` : ""}. Yeniden dene.`);
     })();
   }, [yukle]);
 
