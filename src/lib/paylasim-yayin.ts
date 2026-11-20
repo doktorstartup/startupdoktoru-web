@@ -46,7 +46,9 @@ export async function tiktokDurumu() {
 export async function tiktokAnahtarAl(alan: Record<string, string>) {
   const r = await fetch("https://open.tiktokapis.com/v2/oauth/token/", {
     method: "POST",
-    body: new URLSearchParams({ client_key: process.env.TIKTOK_CLIENT_KEY || "", client_secret: process.env.TIKTOK_CLIENT_SECRET || "", ...alan }),
+    // Başlık açık verilmeli: fetch'in eklediği ";charset=UTF-8" TikTok'ta "parameters are malformed" hatası verir.
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ client_key: process.env.TIKTOK_CLIENT_KEY || "", client_secret: process.env.TIKTOK_CLIENT_SECRET || "", ...alan }).toString(),
   });
   const d = await r.json().catch(() => null);
   if (!r.ok || !d?.access_token || !d?.refresh_token) throw new Error(`TikTok yetki: ${d?.error_description || d?.error || r.status}`);
