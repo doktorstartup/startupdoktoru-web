@@ -1,12 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"unravel.health","ad":"unravel health","tarih":"2026-10-16","dosya":"2026-10-16_unravel-health-b8cd.json"},
-  {"dom":"learnupon.com","ad":"learnupon","tarih":"2026-10-16","dosya":"2026-10-16_learnupon-0c06.json"},
-  {"dom":null,"ad":"strasbourgfounded goodweek","tarih":"2026-10-16","dosya":"2026-10-16_strasbourgfounded-goodweek-674c.json"},
-  {"dom":"loopsai.com","ad":"loops ai","tarih":"2026-10-16","dosya":"2026-10-16_loops-ai-e627.json"},
-  {"dom":null,"ad":"dj reinier zonneveld","tarih":"2026-10-16","dosya":"2026-10-16_dj-reinier-zonneveld-e1c3.json"},
-  {"dom":null,"ad":"oxford","tarih":"2026-10-16","dosya":"2026-10-16_oxford-e3e4.json"},
-  {"dom":"mueon.com","ad":"mueon","tarih":"2026-10-16","dosya":"2026-10-16_mueon-7cfd.json"},
-  {"dom":"north.cloud","ad":"north","tarih":"2026-10-16","dosya":"2026-10-16_north-49b7.json"},
   {"dom":"linkener.com","ad":"linkener","tarih":"2026-10-19","dosya":"2026-10-19_linkener-8ff1.json"},
   {"dom":"vessla.ai","ad":"vessla","tarih":"2026-10-19","dosya":"2026-10-19_vessla-7c49.json"},
   {"dom":null,"ad":"nouscom","tarih":"2026-10-19","dosya":"2026-10-19_nouscom-4ea0.json"},
@@ -160,5 +152,7 @@
   {"dom":null,"ad":"goldman sachs","tarih":"2026-11-18","dosya":"2026-11-18_goldman-sachs-5d59.json"},
   {"dom":"cloudbackend.com","ad":"cloudbackend","tarih":"2026-11-18","dosya":"2026-11-18_cloudbackend-4ceb.json"},
   {"dom":null,"ad":"sequoia","tarih":"2026-11-17","dosya":"2026-11-17_sequoia-d3d7.json"},
-  {"dom":"bright.ai","ad":"brightai","tarih":"2026-11-19","dosya":"2026-11-19_brightai-9d5d.json"}
+  {"dom":"bright.ai","ad":"brightai","tarih":"2026-11-19","dosya":"2026-11-19_brightai-9d5d.json"},
+  {"dom":"hackajob.com","ad":"archer","tarih":"2026-11-20","dosya":"2026-11-20_archer-9eb1.json"},
+  {"dom":"everfulwholesale.com","ad":"everful","tarih":"2026-11-20","dosya":"2026-11-20_everful-9b6f.json"}
 ]}

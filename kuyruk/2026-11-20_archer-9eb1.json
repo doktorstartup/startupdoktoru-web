@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-11-20_archer-9eb1",
+  "durum": "hazir",
+  "puan": 51,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Archer",
+    "domain": "hackajob.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 10000000,
+      "birim": "USD",
+      "usd": 10000000
+    },
+    "lider": "Volition Capital",
+    "katilanlar": [
+      "AVP"
+    ],
+    "kurucular": [
+      "Mark Chaffey"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-20T09:11:26.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/20/archer-raises-10m-to-connect-recruiters-and-job-seekers-with-ai/",
+      "baslik": "Archer raises $10M to connect recruiters and job seekers with AI",
+      "tarih": "Fri, 20 Nov 2026 09:11:26 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Archer (formerly hackajob) has raised $10 million in new funding in a round led by Volition Capital , with participation from existing investor AVP .",
+      "kaynak_url": "https://tech.eu/2026/11/20/archer-raises-10m-to-connect-recruiters-and-job-seekers-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-20T13:57:54.366Z"
+}

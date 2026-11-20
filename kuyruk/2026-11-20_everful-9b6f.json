@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-20_everful-9b6f",
+  "durum": "hazir",
+  "puan": 86,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 11,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Everful",
+    "domain": "everfulwholesale.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 48500000,
+      "birim": "USD",
+      "usd": 48500000
+    },
+    "lider": "Vertex Ventures Southeast Asia & India",
+    "katilanlar": [
+      "J anuary Capital",
+      "Square Peg",
+      "Lightspeed"
+    ],
+    "kurucular": [
+      "Sisi Song",
+      "Kevin Han"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-20T13:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/20/yapay-zeka-destekli-b2b-tedarik-platformu-everful-48-5-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka destekli B2B tedarik platformu Everful, 48,5 milyon dolar yatırım aldı",
+      "tarih": "Fri, 20 Nov 2026 13:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka destekli B2B tedarik platformu Everful , 48,5 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/20/yapay-zeka-destekli-b2b-tedarik-platformu-everful-48-5-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/20/yapay-zeka-destekli-b2b-tedarik-platformu-everful-48-5-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-20T13:57:54.366Z"
+}
