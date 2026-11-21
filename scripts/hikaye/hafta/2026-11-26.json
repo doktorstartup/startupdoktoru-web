@@ -1,0 +1,58 @@
+[
+ {
+  "ad": "fikrini-calarlar",
+  "soz": "Fikrini çalarlar diye korkma. Asıl korkulacak şey, kimsenin umursaması.",
+  "ust": "Fikrini çalarlar diye korkma.",
+  "alt1": "Asıl korkulacak şey:",
+  "alt2": "kimsenin umursaması.",
+  "sahne": "A founder anxiously hugs a big locked safe with heavy chains and padlocks, looking around suspiciously. All around him, rows of empty chairs; nobody is there, nobody is looking. The mascot sits alone on one of the empty chairs, watching him."
+ },
+ {
+  "ad": "musteri-sorun",
+  "soz": "Müşteri ürün almaz. Sorununun bitmesini satın alır.",
+  "ust": "Müşteri ürün almaz.",
+  "alt1": "Sorununun bitmesini",
+  "alt2": "satın alır.",
+  "sahne": "A person stands in heavy rain, soaking wet. Next to him a shelf full of fancy complicated gadgets that he ignores completely. He reaches with relief for one simple open umbrella standing next to the mascot. Rain drops drawn with pencil strokes."
+ },
+ {
+  "ad": "nakit-oksijen",
+  "soz": "Nakit, girişimin oksijenidir. Hava bitince fikir kurtarmaz.",
+  "ust": "Nakit, girişimin oksijenidir.",
+  "alt1": "Hava bitince",
+  "alt2": "fikir kurtarmaz.",
+  "sahne": "Underwater scene: a diver sits on the sea floor next to a beautiful glowing treasure chest, holding up the pressure gauge of his oxygen tank which points to almost empty. A few last bubbles rise. The mascot floats nearby, worried, with bubbles around it."
+ },
+ {
+  "ad": "yatirimci-ekip",
+  "soz": "Yatırımcı fikre değil, o fikri taşıyacak ekibe yatırım yapar.",
+  "ust": "Yatırımcı fikre değil,",
+  "alt1": "o fikri taşıyacak",
+  "alt2": "ekibe yatırım yapar.",
+  "sahne": "A rowing race on a lake. Left: a very fancy shiny boat with only ONE person rowing alone, falling behind. Right: a simple wooden boat with four people rowing in perfect sync, moving fast; the mascot sits at the back of this boat like the coxswain. On the shore an investor figure points at the team boat."
+ },
+ {
+  "ad": "mukemmel-bekleme",
+  "soz": "Mükemmeli bekleyen başlayamaz. Yamuk da olsa bitmiş ev kazanır.",
+  "ust": "Mükemmeli bekleyen başlayamaz.",
+  "alt1": "Yamuk da olsa",
+  "alt2": "bitmiş ev kazanır.",
+  "sahne": "Two building plots side by side. Left: a person still carefully polishing one single perfect brick with a cloth, surrounded by blueprints, nothing built. Right: a small slightly crooked but finished little house with smoke from the chimney, a happy person at the door, and the mascot standing proudly in front of it."
+ },
+ {
+  "ad": "kopyalanamaz",
+  "soz": "Ürününü kopyalarlar. Ekibinin tutkusunu asla kopyalayamazlar.",
+  "ust": "Ürününü kopyalarlar.",
+  "alt1": "Ekibinin tutkusunu",
+  "alt2": "asla kopyalayamazlar.",
+  "sahne": "Left: a big office photocopier spitting out many identical copies of the same product box, a competitor figure collecting them. Right: a team of four people sitting together around a warm campfire at night, working and laughing, the fire glowing; the mascot sits with them by the fire. The fire cannot be copied."
+ },
+ {
+  "ad": "pazar-dilim",
+  "soz": "Pazar büyük olabilir. Önemli olan senin dilimin.",
+  "ust": "Pazar büyük olabilir.",
+  "alt1": "Önemli olan",
+  "alt2": "senin dilimin.",
+  "sahne": "A gigantic pizza covering a whole long table, with many people around it. A founder at the end of the table holds up proudly one tiny crumb-sized slice on a fork. The mascot stands next to him on the table, looking at the tiny slice."
+ }
+]

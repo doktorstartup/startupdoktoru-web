@@ -2,9 +2,10 @@
 // Yayını site yapar (/api/cron/hikaye, 15 dk'da bir; Paylaşım düğmesi kapalıysa atmaz).
 //
 // Kullanım: node scripts/hikaye/kuyruga-al.mjs <gorsel.jpg> "<söz>"
+// Hafta:    node scripts/hikaye/kuyruga-al.mjs --klasor ~/Desktop/hikaye-ornekleri/<hafta>   (uret.mjs çıktısı)
 // Liste:    node scripts/hikaye/kuyruga-al.mjs --liste
 // İptal:    node scripts/hikaye/kuyruga-al.mjs --iptal <id>
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -35,25 +36,34 @@ if (a === "--iptal") {
   console.log(data.length ? "İptal edildi." : "Bulunamadı ya da yayın başladı.");
   process.exit(0);
 }
+// --klasor: uret.mjs çıktısı; klasördeki NN-ad.jpg'ler sırayla, sözleri sozler.json'dan (silinen görsel atlanır).
+const isler =
+  a === "--klasor"
+    ? JSON.parse(readFileSync(join(b, "sozler.json"), "utf8"))
+        .map((s, i) => [join(b, `${String(i + 1).padStart(2, "0")}-${s.ad}.jpg`), s.soz])
+        .filter(([d]) => existsSync(d))
+    : [[a, b]];
 if (!a || !b) {
-  console.error('Kullanım: node scripts/hikaye/kuyruga-al.mjs <gorsel.jpg> "<söz>"');
+  console.error('Kullanım: node scripts/hikaye/kuyruga-al.mjs <gorsel.jpg> "<söz>"  |  --klasor <klasör>');
   process.exit(1);
 }
 
-// İlk boş gün: yarın ya da sonrası (bugünün 07:00'ı geçmiş olabilir), dolu günler atlanır.
-const { data: dolu, error } = await db.from("ds_hikaye_kuyruk").select("yayin_at").in("durum", ["bekliyor", "isleniyor", "yayinda"]).gte("yayin_at", new Date().toISOString());
-hata(error);
-const gunler = new Set(dolu.map((d) => new Date(d.yayin_at).toLocaleDateString("sv", { timeZone: "Europe/Istanbul" })));
-const an = new Date();
-let yayin;
-for (let i = 0; i < 60; i++) {
-  const gun = new Date(an.getTime() + i * 86400000).toLocaleDateString("sv", { timeZone: "Europe/Istanbul" });
-  const t = new Date(`${gun}T${String(SAAT).padStart(2, "0")}:00:00+03:00`);
-  if (t.getTime() > an.getTime() + 30 * 60000 && !gunler.has(gun)) { yayin = t; break; }
-}
+for (const [dosya, soz] of isler) {
+  // İlk boş gün: yarın ya da sonrası (bugünün 07:00'ı geçmiş olabilir), dolu günler atlanır.
+  const { data: dolu, error } = await db.from("ds_hikaye_kuyruk").select("yayin_at").in("durum", ["bekliyor", "isleniyor", "yayinda"]).gte("yayin_at", new Date().toISOString());
+  hata(error);
+  const gunler = new Set(dolu.map((d) => new Date(d.yayin_at).toLocaleDateString("sv", { timeZone: "Europe/Istanbul" })));
+  const an = new Date();
+  let yayin;
+  for (let i = 0; i < 60; i++) {
+    const gun = new Date(an.getTime() + i * 86400000).toLocaleDateString("sv", { timeZone: "Europe/Istanbul" });
+    const t = new Date(`${gun}T${String(SAAT).padStart(2, "0")}:00:00+03:00`);
+    if (t.getTime() > an.getTime() + 30 * 60000 && !gunler.has(gun)) { yayin = t; break; }
+  }
 
-const yol = `hikaye/${randomUUID()}.jpg`;
-hata((await db.storage.from("paylasim-video").upload(yol, readFileSync(a), { contentType: "image/jpeg" })).error);
-const { data: satir, error: e2 } = await db.from("ds_hikaye_kuyruk").insert({ soz: b, gorsel_yol: yol, yayin_at: yayin.toISOString() }).select("id").single();
-hata(e2);
-console.log(`✓ ${tr(yayin)} — ${b.slice(0, 60)} (${satir.id})`);
+  const yol = `hikaye/${randomUUID()}.jpg`;
+  hata((await db.storage.from("paylasim-video").upload(yol, readFileSync(dosya), { contentType: "image/jpeg" })).error);
+  const { data: satir, error: e2 } = await db.from("ds_hikaye_kuyruk").insert({ soz, gorsel_yol: yol, yayin_at: yayin.toISOString() }).select("id").single();
+  hata(e2);
+  console.log(`✓ ${tr(yayin)} — ${soz.slice(0, 60)} (${satir.id})`);
+}
