@@ -43,6 +43,9 @@ CREATE TABLE IF NOT EXISTS public.ds_leads (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
+-- Bir e-posta = tek lead (0052): formlar birbirini kontrol etmeden satır açıyordu.
+CREATE UNIQUE INDEX IF NOT EXISTS ds_leads_email_tekil ON public.ds_leads (lower(trim(email)));
+
 -- Enable RLS for ds_leads
 ALTER TABLE public.ds_leads ENABLE ROW LEVEL SECURITY;
 
