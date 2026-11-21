@@ -414,3 +414,15 @@ CREATE INDEX IF NOT EXISTS ds_reklam_gunluk_ad_idx ON public.ds_reklam_gunluk (a
 -- Yalnız sunucu (service role) okur/yazar
 ALTER TABLE public.ds_reklam_gunluk ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON public.ds_reklam_gunluk FROM public, anon, authenticated;
+
+-- Akşam haber hattı çalışma kaydı — bkz. migrations/0051_haber_aksam_log.sql
+create table if not exists public.ds_haber_aksam_log (
+  id bigserial primary key,
+  basladi_at timestamptz not null default now(),
+  bitti_at timestamptz,
+  ok boolean,
+  yazilan int,
+  sonuc jsonb
+);
+alter table public.ds_haber_aksam_log enable row level security;
+revoke all on public.ds_haber_aksam_log from public, anon, authenticated;

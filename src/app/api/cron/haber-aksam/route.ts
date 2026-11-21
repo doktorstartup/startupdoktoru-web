@@ -14,12 +14,19 @@ export async function GET(req: NextRequest) {
   if (!secret || req.headers.get("authorization") !== `Bearer ${secret}`) {
     return NextResponse.json({ error: "Yetkisiz." }, { status: 401 });
   }
+  // Kalıcı kayıt (migration 0051): satır başta açılır; ok null kalırsa çalışma yarıda kesilmiştir. Bekçi okur.
+  const { data: kayit } = await supabaseAdmin.from("ds_haber_aksam_log").insert({}).select("id").single();
+  const bitir = async (alan: { ok: boolean; yazilan?: number; sonuc: unknown }) => {
+    if (kayit) await supabaseAdmin.from("ds_haber_aksam_log").update({ ...alan, bitti_at: new Date().toISOString() }).eq("id", kayit.id);
+  };
   try {
     const sonuc = await aksamYayini({ db: supabaseAdmin, log: console.log });
     console.log("haber-aksam", JSON.stringify(sonuc));
+    await bitir({ ok: true, yazilan: sonuc.yazilan.length, sonuc });
     return NextResponse.json({ ok: true, ...sonuc });
   } catch (e) {
     console.error("haber-aksam", e);
+    await bitir({ ok: false, sonuc: { error: (e as Error).message } });
     return NextResponse.json({ ok: false, error: (e as Error).message }, { status: 500 });
   }
 }

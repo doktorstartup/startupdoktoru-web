@@ -105,7 +105,7 @@ export async function aksamYayini({ db, simdi = new Date(), kuru = false, log = 
     }
     yazilan.push({ slug: satir.slug, baslik: satir.title, puan: k.puan, yayin_tarihi, kapi_dusurdu: r.sorunlar.length });
   }
-  return { yazilan, dusen, yuvalar: tum, kuru };
+  return { yazilan, dusen, aday: adaylar.length, taze: taze.length, yuvalar: tum, kuru };
 }
 
 // ── CLI ───────────────────────────────────────────────────────────────────

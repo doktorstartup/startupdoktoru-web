@@ -152,6 +152,24 @@ export async function buildDigest(): Promise<Digest> {
     if (tt.bagli && (tt.kalanGun ?? 0) < 7) alerts.push(`TikTok yetkisi ${Math.max(0, tt.kalanGun ?? 0)} gün içinde doluyor — Paylaşım sekmesinden yeniden bağla.`);
   }
 
+  // ── Akşam haber hattı (dün 18:30 TR) ── kayıt tablosu boşsa (ilk kurulum) sessiz.
+  const { data: aksam } = await supabaseAdmin.from("ds_haber_aksam_log")
+    .select("basladi_at, ok, yazilan, sonuc").order("basladi_at", { ascending: false }).limit(1).maybeSingle();
+  if (aksam) {
+    const s = (aksam.sonuc ?? {}) as { aday?: number; taze?: number; dusen?: { sirket: string; neden: string }[]; error?: string };
+    const dunTr = new Date(Date.parse(aksam.basladi_at) + 3 * 3600000).getUTCDay(); // 0 pazar, 6 cumartesi
+    if (Date.now() - Date.parse(aksam.basladi_at) > 20 * 3600000) alerts.push("Akşam haber hattı dün çalışmadı — pg_cron haber-aksam işine bak.");
+    else if (aksam.ok === null) alerts.push("Akşam haber hattı dün yarıda kesildi (muhtemelen 60 sn zaman aşımı) — blog yazısı çıkmamış olabilir.");
+    else if (aksam.ok === false) alerts.push(`Akşam haber hattı hata verdi: ${s.error ?? "bilinmiyor"}`);
+    else {
+      lines.push(`📰 <b>Akşam haberi:</b> ${aksam.yazilan} yazı (aday ${s.aday ?? "?"}, taze ${s.taze ?? "?"})`);
+      if (!aksam.yazilan && dunTr >= 1 && dunTr <= 5) {
+        const dusen = (s.dusen ?? []).map((d) => `${d.sirket}: ${d.neden}`).join(", ");
+        alerts.push(`Dün akşam hiç blog yazısı çıkmadı (aday ${s.aday ?? "?"}, taze ${s.taze ?? "?"})${dusen ? ` — düşenler: ${dusen}` : ""}.`);
+      }
+    }
+  }
+
   // ── Özet mail derle ──
   const dateStr = new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10);
   const alertBlock = alerts.length
