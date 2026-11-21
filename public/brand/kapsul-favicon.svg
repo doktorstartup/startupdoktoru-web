@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"><title>Startup Doktoru</title>
+<rect width="100" height="100" rx="22" fill="#26304A"/><g transform="translate(50 50) scale(1.22) translate(-50 -50)"><g transform="rotate(-14 50 50)">
+    <path id="alt" d="M33 50V69A17 17 0 0 0 67 69V50Z" fill="#FFFFFF"/>
+    <g id="kapak">
+      <path d="M33 50V31A17 17 0 0 1 67 31V50Z" fill="#1BA1C4"/>
+    </g>
+    <g id="gozler"><rect x="40.2" y="29.5" width="7.6" height="15" rx="3.8" fill="#FFFFFF"/><rect x="52.2" y="29.5" width="7.6" height="15" rx="3.8" fill="#FFFFFF"/></g>
+  </g></g>
+</svg>

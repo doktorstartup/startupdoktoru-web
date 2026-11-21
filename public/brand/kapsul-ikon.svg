@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"><title>Startup Doktoru</title>
+<circle cx="50" cy="50" r="50" fill="#26304A"/><g transform="rotate(-14 50 50)">
+    <path id="alt" d="M33 50V69A17 17 0 0 0 67 69V50Z" fill="#FFFFFF"/>
+    <g id="kapak">
+      <path d="M33 50V31A17 17 0 0 1 67 31V50Z" fill="#1BA1C4"/>
+      <path d="M36.6 33A14 14 0 0 1 41.5 22.6" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".5"/>
+    </g>
+    <g id="gozler"><rect x="41.1" y="30.2" width="5.8" height="13.6" rx="2.9" fill="#FFFFFF"/><rect x="53.1" y="30.2" width="5.8" height="13.6" rx="2.9" fill="#FFFFFF"/></g>
+  </g>
+</svg>
