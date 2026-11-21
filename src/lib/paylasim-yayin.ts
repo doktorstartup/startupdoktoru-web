@@ -96,6 +96,9 @@ const depo: Depo = {
   },
   async dosyaTemizle(v: KuyrukVideo) {
     if (!v.video_yol) return;
+    // Reels çıktıysa video 48 saat sonraki hikâye için kalır; hikâye çıkınca instagram-hikaye.ts siler.
+    const { data } = await supabaseAdmin.from("ds_paylasim").select("yayin, hikaye").eq("id", v.id).maybeSingle();
+    if (data?.yayin?.instagram?.durum === "yayinda" && !data.hikaye) return;
     await dosyalariSil(v.video_yol);
     hata((await supabaseAdmin.from("ds_paylasim").update({ video_yol: null }).eq("id", v.id)).error);
   },
@@ -105,7 +108,7 @@ const depo: Depo = {
 };
 
 export async function dosyalariSil(yol: string) {
-  hata((await supabaseAdmin.storage.from(BUCKET).remove([yol, yol.replace(/video\.mp4$/, "kapak.jpg")])).error);
+  hata((await supabaseAdmin.storage.from(BUCKET).remove([yol, yol.replace(/video\.mp4$/, "kapak.jpg"), yol.replace(/video\.mp4$/, "hikaye.mp4")])).error);
 }
 
 export function kuyrukCalistir() {

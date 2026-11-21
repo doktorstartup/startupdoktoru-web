@@ -105,6 +105,9 @@ export function instagramIstemci(hesap: string, token: string, adres: Adres, api
         share_to_feed: "true",
         ...(v.ai_icerik ? { is_ai_generated: "true" } : {}),
       }),
+    // Hikâye açıklama almaz; video en fazla 60 sn olabilir. .jpg yolu görsel hikâye olur.
+    hikayeAc: (yol: string) =>
+      gonder(`${hesap}/media`, { media_type: "STORIES", ...(/\.jpe?g$/.test(yol) ? { image_url: adres(yol) } : { video_url: adres(yol) }) }),
     durum: async (container) => (await al(`${container}?fields=status_code`)).status_code,
     yayinla: (container) => gonder(`${hesap}/media_publish`, { creation_id: container }),
     sonMedya: async (sonra) => {
