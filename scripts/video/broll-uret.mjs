@@ -11,6 +11,10 @@
 //     "istem": "<görsel tarifi, İngilizce>", "hareket": "<hareket tarifi; yoksa durağan görsel>",
 //     "ses": "zil-dingdong", "ses_istem": "<ses tarifi>" }
 // Kütüphanede olan bir id için yalnız "id" (ve istenirse "hareket") yazmak yeter.
+// Sahneye bağlı olmayanlar da üretilir (stüdyo kurgusu):
+//   "uret": [{ "id", "istem", "hareket", "sure": 4, "etiket" }]  → arka plan videosu (<id>.mp4)
+//   "efektler": [{ "ses": "sfx-whoosh.mp3", "ses_istem": "...", "ses_sure": 1 }]  → ses efekti
+//   "muzik": { "dosya": "muzik-x.mp3", "istem": "...", "sure": 50 }  → ElevenLabs Music (~$0,6/dk)
 import { readFileSync, writeFileSync, existsSync, copyFileSync, readdirSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import { writeFile } from "node:fs/promises";
@@ -127,7 +131,30 @@ if (process.argv.includes("--flow")) {
   }
 }
 
+const muzik = async (m) => {
+  const id = m.dosya.replace(/\.mp3$/, "");
+  if (bul(id, "muzik")) return;
+  const sn = m.sure ?? 50;
+  const r = await fal.subscribe("fal-ai/elevenlabs/music", { input: { prompt: m.istem, music_length_ms: Math.round(sn * 1000), force_instrumental: true } });
+  await indir(r.data.audio.url, join(KUT, `${id}.mp3`));
+  ekle({ id, tur: "muzik", dosya: `${id}.mp3`, istem: m.istem, etiket: m.etiket ?? [], kaynak: "fal-ai/elevenlabs/music", sure: sn, maliyet: +((0.6 * sn) / 60).toFixed(3) });
+  harcama += (0.6 * sn) / 60;
+  console.log(`✓ müzik ${id} (${sn} sn)`);
+};
+const sesAdi = (x) => x.replace(/\.mp3$/, "");
+
 const isler = [];
+for (const k of proje.uret ?? []) {
+  isler.push((async () => {
+    if (k.hareket && bul(k.id, "video")) return;
+    await gorsel(k);
+    if (k.hareket) await video(k, k.sure ?? 4);
+  })());
+}
+for (const e of proje.efektler ?? []) {
+  if (e.ses_istem) isler.push(ses({ ...e, ses: sesAdi(e.ses) }));
+}
+if (proje.muzik?.istem) isler.push(muzik(proje.muzik));
 proje.gorsel.forEach((g, gi) => {
   if (g.tur !== "broll") return;
   const sahneSonu = proje.gorsel[gi + 1] ? an(proje.gorsel[gi + 1].ifade) : kurgu.sure;
@@ -156,4 +183,7 @@ for (const g of proje.gorsel.filter((g) => g.tur === "broll")) {
     if (k.hareket) console.log(`  ${k.id}.mp4: ${sure(join(klasor, `${k.id}.mp4`)).toFixed(1)} sn`);
   }
 }
+for (const k of proje.uret ?? []) copyFileSync(join(KUT, k.hareket ? `${k.id}.mp4` : `${k.id}.jpg`), join(klasor, k.hareket ? `${k.id}.mp4` : `${k.id}.jpg`));
+for (const e of proje.efektler ?? []) copyFileSync(join(KUT, `${sesAdi(e.ses)}.mp3`), join(klasor, `${sesAdi(e.ses)}.mp3`));
+if (proje.muzik) copyFileSync(join(KUT, proje.muzik.dosya), join(klasor, proje.muzik.dosya));
 console.log(harcama ? `harcama ≈ $${harcama.toFixed(2)}` : "hepsi kütüphaneden — harcama yok");

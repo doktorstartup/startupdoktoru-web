@@ -1,0 +1,518 @@
+{
+  "ad": "E2VC_v3",
+  "klipler": [
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          23.95
+        ],
+        [
+          28.4,
+          43.3
+        ]
+      ]
+    },
+    {
+      "sessizlik": 0.35
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          7.86,
+          8.1
+        ],
+        [
+          11.3,
+          43.3
+        ]
+      ]
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          11.3
+        ],
+        [
+          13.75,
+          43.3
+        ]
+      ],
+      "tempo": 0.92
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          13.75
+        ],
+        [
+          17.1,
+          43.3
+        ]
+      ],
+      "tempo": 0.92
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          17.1
+        ],
+        [
+          19.2,
+          43.3
+        ]
+      ],
+      "tempo": 0.85
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          19.2
+        ],
+        [
+          28.4,
+          43.3
+        ]
+      ]
+    },
+    {
+      "sessizlik": 0.8
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          28.6
+        ],
+        [
+          40.2,
+          43.3
+        ]
+      ]
+    },
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/Sesler/E2VC haberi/E2Vc Yeni Fon.m4a",
+      "kes": [
+        [
+          0,
+          40.2
+        ],
+        [
+          43.3,
+          43.3
+        ]
+      ],
+      "tempo": 0.9
+    }
+  ],
+  "duzelt": {
+    "E2VC": "e2vc",
+    "Seri": "Series",
+    "seri": "Series",
+    "'ye": "+'ye",
+    "'nin": "+'nin",
+    "başında": "başına",
+    "gidiyor.": "giriyor.",
+    "startuptoktor": "startupdoktoru",
+    ".com'da.": "+.com'da."
+  },
+  "ses_filtre": "highpass=f=75,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.4:g=2.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+  "kuyruk": 1.6,
+  "gorsel": [
+    {
+      "ifade": "yaklaşık",
+      "tur": "baslik",
+      "ust": "LOOM GAMES",
+      "baslik": [
+        "Kuruluşundan",
+        "1 yıl sonra"
+      ],
+      "arka": "mobil-oyun-telefon.mp4"
+    },
+    {
+      "ifade": "tam 1 milyar",
+      "tur": "sayi",
+      "sayi": 1000000000,
+      "on": "$",
+      "ust": "DEĞERLEME",
+      "etiket": "ile satıldı"
+    },
+    {
+      "ifade": "Türkiye'de büyüme",
+      "tur": "yuz",
+      "video": "dudak-giris.mp4",
+      "dudak": "oto",
+      "isik": true,
+      "dudak_kaynak": [
+        "Uzun anlatım",
+        "Sitem",
+        "Gülme"
+      ],
+      "isim": [
+        "Eser Memişoğlu",
+        "STARTUP DOKTORU"
+      ]
+    },
+    {
+      "ifade": "tam sizin",
+      "tur": "buyuk",
+      "vurgu": [
+        "sizin"
+      ]
+    },
+    {
+      "ifade": "e2vc 150",
+      "tur": "sayi",
+      "sayi": 150,
+      "on": "$",
+      "son": "M",
+      "ust": "e2vc GROWTH FUND",
+      "etiket": "hedefli yeni büyüme fonu"
+    },
+    {
+      "ifade": "Series A'dan",
+      "tur": "asama",
+      "asamalar": [
+        "Tohum",
+        "Series A",
+        "Series B",
+        "Series C"
+      ],
+      "aktif": [
+        1,
+        2,
+        3
+      ],
+      "baslik": "Hangi turlar?",
+      "etiket": "Tohumu geçenlere büyüme sermayesi"
+    },
+    {
+      "ifade": "Şirket başına",
+      "tur": "sayi",
+      "sayi": 10,
+      "on": "$",
+      "son": "M",
+      "ust": "İLK YATIRIM",
+      "etiket": "şirket başına, sonra takip yatırımı"
+    },
+    {
+      "ifade": "İlk odak",
+      "tur": "baslik",
+      "ust": "İLK ODAK",
+      "baslik": [
+        "Mobil"
+      ],
+      "vurgu": "OYUN",
+      "arka": "mobil-oyun-telefon.mp4"
+    },
+    {
+      "ifade": "Neden mi",
+      "tur": "yuz",
+      "video": "dudak-neden.mp4",
+      "dudak": "oto",
+      "isik": true,
+      "dudak_kaynak": [
+        "Düşünme",
+        "Uzun anlatım"
+      ]
+    },
+    {
+      "ifade": "Çünkü e2vc'nin",
+      "tur": "zaman",
+      "baslik": "Loom Games",
+      "adimlar": [
+        {
+          "ust": "2025",
+          "metin": "Kübra Gündoğan ve Emre Çelik kurdu",
+          "ifade": "Loom"
+        },
+        {
+          "ust": "Pixel Flow!",
+          "metin": "10 milyondan fazla oyuncu",
+          "ifade": "kuruluşundan"
+        },
+        {
+          "ust": "Şubat 2026",
+          "metin": "Scopely çoğunluk hissesini aldı",
+          "ifade": "tam"
+        },
+        {
+          "ust": "Değerleme",
+          "metin": "$1 MİLYAR+",
+          "ifade": "milyar",
+          "vurgu": true
+        }
+      ]
+    },
+    {
+      "ifade": "Asıl",
+      "an": 28.77,
+      "tur": "yuz",
+      "video": "eser-kahkaha.mp4",
+      "isik": true
+    },
+    {
+      "ifade": "Asıl mesele",
+      "tur": "yuz",
+      "video": "dudak-asil.mp4",
+      "dudak": "oto",
+      "isik": true,
+      "dudak_kaynak": [
+        "Sert Konuşma",
+        "Uzun anlatım"
+      ]
+    },
+    {
+      "ifade": "Büyüme yatırım için",
+      "tur": "asama",
+      "baslik": "Türkiye'de girişimler nerede kalıyor?",
+      "asamalar": [
+        "Erken aşama · ~950",
+        "Büyüme · 47",
+        "Geç aşama · 7"
+      ],
+      "aktif": [
+        1,
+        2
+      ],
+      "etiket": "Kaynak: CBDDO verisi, e2vc bülteni"
+    },
+    {
+      "ifade": "yurt dışına",
+      "tur": "yuz",
+      "video": "dudak-yurtdisi.mp4",
+      "dudak": "oto",
+      "isik": true,
+      "dudak_kaynak": [
+        "Uzun anlatım"
+      ]
+    },
+    {
+      "ifade": "Ama bu kapıyı",
+      "tur": "yuz",
+      "video": "dudak-kapi.mp4",
+      "dudak": "oto",
+      "isik": true,
+      "dudak_kaynak": [
+        "Sert Konuşma",
+        "Uzun anlatım"
+      ]
+    },
+    {
+      "ifade": "hazırlığını",
+      "tur": "liste",
+      "tik": true,
+      "baslik": "Growth Fund'a hazır mısın?",
+      "maddeler": [
+        {
+          "metin": "Aşamanı dürüstçe koy",
+          "ifade": "hazırlığını"
+        },
+        {
+          "metin": "Türkiye bağını göster",
+          "ifade": "yap ve"
+        },
+        {
+          "metin": "Uluslararası gelir hikâyen",
+          "ifade": "dosyalarını"
+        },
+        {
+          "metin": "Oyun metriklerin hazır",
+          "ifade": "oluştur"
+        }
+      ]
+    },
+    {
+      "ifade": "Detaylar",
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Büyüme turu",
+        "artık burada da var."
+      ]
+    }
+  ],
+  "studyo": true,
+  "ai_beyan": true,
+  "muzik": {
+    "dosya": "muzik-tech-haber.mp3",
+    "sure": 45,
+    "ses": 0.16,
+    "kisik": 0.06,
+    "etiket": [
+      "haber",
+      "teknoloji",
+      "enerjik"
+    ],
+    "istem": "Modern confident tech news background music, pulsing synth bass, crisp light percussion, optimistic and driving, 110 BPM, minimal and clean so a voiceover sits on top, no vocals, subtle build in the middle"
+  },
+  "uret": [
+    {
+      "id": "mobil-oyun-telefon",
+      "istem": "close-up of hands holding a smartphone playing a colorful casual puzzle mobile game, glowing screen in a dark room",
+      "hareket": "fingers tap and swipe on the phone screen, colorful game light reflects on the hands, subtle push-in",
+      "sure": 4,
+      "etiket": [
+        "mobil",
+        "oyun",
+        "telefon",
+        "gaming"
+      ]
+    },
+    {
+      "id": "istanbul-gece",
+      "istem": "Istanbul skyline at night with the illuminated Bosphorus bridge and city lights, aerial view",
+      "hareket": "slow aerial drift over the Bosphorus at night, city lights twinkle",
+      "sure": 6,
+      "etiket": [
+        "istanbul",
+        "türkiye",
+        "gece",
+        "şehir",
+        "boğaz"
+      ]
+    }
+  ],
+  "efektler": [
+    {
+      "ses": "sfx-impact.mp3",
+      "an": 0.0,
+      "seviye": 0.4,
+      "ses_istem": "deep cinematic impact boom hit, trailer style, short tail",
+      "ses_sure": 2
+    },
+    {
+      "ses": "sfx-riser.mp3",
+      "an": 0.15,
+      "seviye": 0.35,
+      "ses_istem": "short cinematic tension riser swelling up quickly",
+      "ses_sure": 2
+    },
+    {
+      "ses": "kasa-kaching.mp3",
+      "ifade": "milyar",
+      "kaydir": 0.05,
+      "seviye": 0.45
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 4.3,
+      "seviye": 0.4,
+      "ses_istem": "fast clean whoosh transition swoosh",
+      "ses_sure": 1
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "e2vc 150",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-pop.mp3",
+      "ifade": "e2vc 150",
+      "kaydir": 1.15,
+      "seviye": 0.4,
+      "ses_istem": "soft modern UI pop notification click",
+      "ses_sure": 0.5
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Şirket başına",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-pop.mp3",
+      "ifade": "Şirket başına",
+      "kaydir": 1.15,
+      "seviye": 0.4
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Çünkü e2vc'nin",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "kasa-kaching.mp3",
+      "an": 28.79,
+      "seviye": 0.55
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Asıl mesele",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-impact.mp3",
+      "ifade": "Ama bu kapıyı",
+      "kaydir": -0.05,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-tik.mp3",
+      "ifade": "hazırlığını",
+      "kaydir": 0.1,
+      "seviye": 0.4,
+      "ses_istem": "satisfying soft checkmark tick UI sound",
+      "ses_sure": 0.5
+    },
+    {
+      "ses": "sfx-tik.mp3",
+      "ifade": "yap ve",
+      "kaydir": 0.05,
+      "seviye": 0.4
+    },
+    {
+      "ses": "sfx-tik.mp3",
+      "ifade": "dosyalarını",
+      "kaydir": 0.1,
+      "seviye": 0.4
+    },
+    {
+      "ses": "sfx-tik.mp3",
+      "ifade": "oluştur",
+      "kaydir": 0.1,
+      "seviye": 0.4
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Detaylar",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "tam sizin",
+      "kaydir": -0.1,
+      "seviye": 0.3
+    }
+  ],
+  "kapak": {
+    "arka_sn": 1.0,
+    "rozet": "Fon haberi",
+    "baslik": [
+      "e2vc'den",
+      "büyüme fonu"
+    ],
+    "vurgu": "$150 MİLYON"
+  },
+  "paylasim": {
+    "baslik": "e2vc'den 150 milyon dolarlık büyüme fonu",
+    "instagram": "Kuruluşundan 1 yıl sonra 1 milyar dolar. 🎯\n\nLoom Games'in hikâyesinin arkasındaki ekip, e2vc, şimdi 150 milyon dolar hedefli bir büyüme fonu kurdu.\n📌 Aşama: Series A, B ve C\n📌 İlk yatırım: şirket başına 10 milyon dolara kadar\n📌 İlk odak: mobil oyun\n\nTürkiye'de ~950 girişim erken aşamada, büyüme aşamasında olan yalnız 47. Büyüme turu için artık her zaman yurt dışına gitmek gerekmeyebilir. Ama kapıyı çalmadan önce hazırlığını yap.\n\nHaberin tamamı ve kontrol listesi: startupdoktoru.com/blog\n\n#e2vc #startup #girişimcilik #yatırım #venturecapital #mobiloyun #startupdoktoru",
+    "shorts": "BAŞLIK: 1 Yılda 1 Milyar Dolar: e2vc'den 150M$ Büyüme Fonu #shorts\n\nAÇIKLAMA:\ne2vc Growth Fund: Series A-C, şirket başına 10 milyon dolara kadar ilk yatırım, ilk odak mobil oyun. Loom Games kuruluşundan yaklaşık bir yıl sonra 1 milyar doları aşan değerlemeyle satıldı.\nHaberin tamamı: https://startupdoktoru.com/blog/e2vc-growth-fund-150-milyon-dolar\n\n#e2vc #startup #yatırım #shorts",
+    "linkedin": "Kuruluşundan yaklaşık bir yıl sonra 1 milyar doları aşan değerleme: Loom Games.\n\nBu hikâyenin yatırımcılarından e2vc, şimdi 150 milyon dolar hedefli Growth Fund'ı tanıttı: Series A-C, şirket başına 10 milyon dolara kadar ilk yatırım, ilk odak mobil oyun.\n\nNeden önemli? Türkiye'de VC yatırımı almış girişimlerin ~950'si erken aşamada, büyüme aşamasında yalnız 47 şirket var. Büyüme sermayesi için artık her zaman yurt dışına gitmek gerekmeyebilir.\n\nFonun künyesi ve kurucular için kontrol listesi: https://startupdoktoru.com/blog/e2vc-growth-fund-150-milyon-dolar\n\n#e2vc #venturecapital #startup #girişimcilik"
+  }
+}

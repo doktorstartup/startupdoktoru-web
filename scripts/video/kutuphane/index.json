@@ -132,65 +132,29 @@
   "tarih": "2026-10-26"
  },
  {
-  "id": "eser-gulumseme-saat",
+  "id": "eser-kahkaha",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4441.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Gülme.mp4",
   "aralik": [
-   17.5,
-   21.0
+   9,
+   12
   ],
-  "etiket": [
-   "gülümseme",
-   "neşeli",
-   "hikâye-girişi",
-   "eser",
-   "masa",
-   "mavi-arka-plan",
-   "siyah-tişört",
-   "kitap-masada",
-   "iç-mekân",
-   "dikey"
-  ],
-  "kaynak": "kendi-cekim",
-  "maliyet": 0,
-  "tarih": "2026-11-09"
- },
- {
-  "id": "eser-saate-bakma",
-  "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4441.MOV",
-  "aralik": [
-   11.0,
-   14.0
-  ],
-  "etiket": [
-   "saate-bakma",
-   "bekleme",
-   "sabırsızlık",
-   "eser",
-   "masa",
-   "mavi-arka-plan",
-   "siyah-tişört",
-   "kitap-masada",
-   "iç-mekân",
-   "dikey"
-  ],
-  "kaynak": "kendi-cekim",
-  "maliyet": 0,
-  "tarih": "2026-11-09"
- },
- {
-  "id": "eser-gulme-sasirma",
-  "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4442.MOV",
-  "aralik": [
-   0.0,
-   2.0
-  ],
+  "duygu": "gülme",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0.58,
+   "kas_kalkik": 0,
+   "kas_catik": 0.54,
+   "agiz_acik": 0.08,
+   "yaw": 4.89
+  },
   "etiket": [
    "gülme",
-   "şaşırma",
-   "inanamama",
+   "sessiz",
+   "kahkaha",
+   "dişler-görünür",
+   "tepki",
+   "komik",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -204,17 +168,28 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-yukari-bakma-alay",
+  "id": "eser-kahkaha-2",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4442.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Gülme.mp4",
   "aralik": [
-   8.5,
-   12.5
+   15.1,
+   17.5
   ],
+  "duygu": "gülme",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0.66,
+   "kas_kalkik": 0.01,
+   "kas_catik": 0.27,
+   "agiz_acik": 0.08,
+   "yaw": -1.06
+  },
   "etiket": [
-   "yukarı-bakma",
-   "alaycı",
-   "inanamama",
+   "gülme",
+   "sessiz",
+   "kahkaha",
+   "geriye-yaslanma",
+   "tepki",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -230,15 +205,28 @@
  {
   "id": "eser-dusunme-cene",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4445.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Düşünme.MOV",
   "aralik": [
-   2.5,
-   13.5
+   13.7,
+   17
   ],
+  "duygu": "düşünme",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.61,
+   "kas_catik": 0,
+   "agiz_acik": 0,
+   "yaw": -17.39
+  },
   "etiket": [
    "düşünme",
+   "sessiz",
    "el-çenede",
-   "kararsızlık",
+   "yukarı-bakma",
+   "kaş-kalkık",
+   "merak",
+   "soru",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -252,17 +240,28 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-parmak-vurgu",
+  "id": "eser-dusunme-kisa",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4444.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Düşünme.MOV",
   "aralik": [
-   5.0,
-   15.5
+   7.3,
+   8.5
   ],
+  "duygu": "düşünme",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.02,
+   "kas_catik": 0.25,
+   "agiz_acik": 0,
+   "yaw": 7
+  },
   "etiket": [
-   "parmakla-vurgu",
-   "ciddi",
-   "öğüt",
+   "düşünme",
+   "sessiz",
+   "el-çenede",
+   "yana-bakma",
+   "soru",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -276,17 +275,278 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-isyan-eller-acik",
+  "id": "eser-dinleme",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4443.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sessiz Dinleme.MOV",
   "aralik": [
-   11.0,
-   16.8
+   4.1,
+   11.4
   ],
+  "duygu": "nötr",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.2,
+   "kas_catik": 0.06,
+   "agiz_acik": 0,
+   "yaw": -4.09
+  },
   "etiket": [
-   "isyan",
-   "eller-açık",
+   "nötr",
+   "sessiz",
+   "dinleme",
+   "eller-masada",
+   "sakin",
+   "ara-görüntü",
+   "pip",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-dinleme-kas",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sessiz Dinleme.MOV",
+  "aralik": [
+   3.1,
+   4.1
+  ],
+  "duygu": "şaşırma",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.49,
+   "kas_catik": 0,
+   "agiz_acik": 0,
+   "yaw": -2.4
+  },
+  "etiket": [
+   "şaşırma",
+   "sessiz",
+   "kaş-kalkık",
+   "dinleme",
+   "ilgi",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-alayci-gulumseme",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Şaşırma.mp4",
+  "aralik": [
+   10.5,
+   12.8
+  ],
+  "duygu": "gülümseme",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0.08,
+   "kas_kalkik": 0.01,
+   "kas_catik": 0.43,
+   "agiz_acik": 0,
+   "yaw": -1.15
+  },
+  "etiket": [
+   "gülümseme",
+   "sessiz",
+   "hafif-gülümseme",
+   "alaycı",
+   "inanamama-sonu",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-sitem-sonu",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sitem.mp4",
+  "aralik": [
+   13.6,
+   15.7
+  ],
+  "duygu": "sitem",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.03,
+   "kas_catik": 0.25,
+   "agiz_acik": 0.01,
+   "yaw": -3.72
+  },
+  "etiket": [
    "sitem",
+   "sessiz",
+   "arkaya-yaslanma",
+   "bıkkınlık",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-parmak-uyari",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sert Konuşma.mp4",
+  "aralik": [
+   12.1,
+   13.4
+  ],
+  "duygu": "sert",
+  "konusma": false,
+  "yuz": {
+   "gulumseme": 0.01,
+   "kas_kalkik": 0,
+   "kas_catik": 0.28,
+   "agiz_acik": 0,
+   "yaw": 8.81
+  },
+  "etiket": [
+   "sert",
+   "sessiz",
+   "parmak-kameraya",
+   "uyarı",
+   "ciddi",
+   "vurgu",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-sasirma-konusma",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Şaşırma.mp4",
+  "aralik": [
+   0,
+   10.5
+  ],
+  "duygu": "şaşırma",
+  "konusma": true,
+  "metin": "Ne? Gerçekten mi? Bir haftada ilk ayında 3 milyon dolar mı? İlk ayında 300 bin dolar yatırım alan şirket mi? İnanamıyorum.",
+  "yuz": {
+   "gulumseme": 0.06,
+   "kas_kalkik": 0.47,
+   "kas_catik": 0.09,
+   "agiz_acik": 0.03,
+   "yaw": -0.81
+  },
+  "etiket": [
+   "şaşırma",
+   "konuşuyor",
+   "ne-gerçekten-mi",
+   "kaş-kalkık",
+   "inanamama",
+   "rakam",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-gulumseyerek-anlatim",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Gülme.mp4",
+  "aralik": [
+   0,
+   9
+  ],
+  "duygu": "gülümseme",
+  "konusma": true,
+  "metin": "Geçen hafta çok komik bir hikayeyle başladık. Bir girişimci inanamazsınız.",
+  "yuz": {
+   "gulumseme": 0.24,
+   "kas_kalkik": 0.13,
+   "kas_catik": 0.18,
+   "agiz_acik": 0.04,
+   "yaw": 1.01
+  },
+  "etiket": [
+   "gülümseme",
+   "konuşuyor",
+   "hikâye-girişi",
+   "komik-hikâye",
+   "eser",
+   "masa",
+   "mavi-arka-plan",
+   "siyah-tişört",
+   "kitap-masada",
+   "iç-mekân",
+   "dikey"
+  ],
+  "kaynak": "kendi-cekim",
+  "maliyet": 0,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "eser-sitem-konusma",
+  "tur": "cekim",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sitem.mp4",
+  "aralik": [
+   0,
+   13.6
+  ],
+  "duygu": "sitem",
+  "konusma": true,
+  "metin": "Ya arkadaş girin şu platforma yatırımcı alın diyoruz. Adam hala bana diyor ki ya hocam yok mu bize yatırım? Kardeşim gir işte buraya gir bak sana her şeyi veriyoruz ya. Hayret bir şeysin ya.",
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.19,
+   "kas_catik": 0.06,
+   "agiz_acik": 0.03,
+   "yaw": -1.95
+  },
+  "etiket": [
+   "sitem",
+   "konuşuyor",
+   "ya-arkadaş",
+   "eller-açık",
+   "isyan",
    "komik",
    "eser",
    "masa",
@@ -301,20 +561,29 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-dinleme-kafa-sallama",
+  "id": "eser-sert-konusma",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4446.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Sert Konuşma.mp4",
   "aralik": [
-   0.0,
-   11.4
+   0,
+   12.1
   ],
+  "duygu": "sert",
+  "konusma": true,
+  "metin": "Şunu net bir şekilde söyleyeyim arkadaşlar. Yatırımcılar sizin ne dünyada ilk olan fikrinize ne de sizin gelecek hayalinize bakar. Gerçek iş ekipte. Bunu sakın unutmayın.",
+  "yuz": {
+   "gulumseme": 0.01,
+   "kas_kalkik": 0.3,
+   "kas_catik": 0.06,
+   "agiz_acik": 0.03,
+   "yaw": -10.64
+  },
   "etiket": [
-   "dinleme",
-   "kafa-sallama",
-   "onaylama",
-   "sessiz",
-   "ara-görüntü",
-   "nötr",
+   "sert",
+   "konuşuyor",
+   "parmak-vurgu",
+   "öğüt",
+   "ekip",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -328,18 +597,29 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-kitabi-gosterme",
+  "id": "eser-dusunme-konusma",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4440.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Düşünme.MOV",
   "aralik": [
-   33.0,
-   39.0
+   0,
+   7.3
   ],
+  "duygu": "düşünme",
+  "konusma": true,
+  "metin": "Hmmmm Peki bu durumda ne yapmalı? Şimdi bir düşüneyim.",
+  "yuz": {
+   "gulumseme": 0,
+   "kas_kalkik": 0.11,
+   "kas_catik": 0.16,
+   "agiz_acik": 0.01,
+   "yaw": -1.41
+  },
   "etiket": [
-   "kitap",
-   "hedef-milyon-dolar",
-   "gösterme",
-   "ürün",
+   "düşünme",
+   "konuşuyor",
+   "hmm",
+   "ne-yapmalı",
+   "el-çenede",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -353,17 +633,30 @@
   "tarih": "2026-11-09"
  },
  {
-  "id": "eser-anlatim-el",
+  "id": "eser-uzun-anlatim",
   "tur": "cekim",
-  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/IMG_4440.MOV",
+  "dosya": "~/Desktop/Startup Doktoru Videolar/ham_gelen/Uzun anlatım.MOV",
   "aralik": [
    2.8,
-   23.0
+   57.2
   ],
+  "duygu": "nötr-vurgulu",
+  "konusma": true,
+  "metin": "Bugün sizlere bir girişimin yatırım almadan önce yapması gereken şeyleri anlatacağım arkadaşlar. Öncelikle bir kere değer öneriniz olmalı. Değerlemeniz olmalı. Yatırımcı sunumunuz çok iyi olmalı. Mesela bir yatırımcı ile yan yana geldiniz. O anda asansör konuşmanız hazır olmalı. Değer önerisini net bir şekilde belirlemelisiniz. Eğer bunları nasıl yapacağınızı bilmiyorsanız o zaman startuptoktor .com 'a giriyorsunuz. Buradaki eğitimler sizin ihtiyacınız olan her şeyi veriyor. Ve eğer isterseniz Hedef Milyon Dolar kitabını alarak bunların hepsini sizler de yapabilirsiniz. Bununla birlikte sevgili arkadaşlar platformumuzda birçok yatırımcı var. Dosyalarınızı tamamlarsanız bu yatırımcılarla anında eşleşebilir ve hayalinizi kurduğunuz yatırıma hemen ulaşabilirsiniz. Hadi şimdi hemen tıkla ve startuptoktor .com 'a uyuyorum.",
+  "yuz": {
+   "gulumseme": 0.01,
+   "kas_kalkik": 0.32,
+   "kas_catik": 0.05,
+   "agiz_acik": 0.03,
+   "yaw": 0.15
+  },
   "etiket": [
-   "anlatım",
-   "el-hareketi",
+   "nötr-vurgulu",
+   "konuşuyor",
    "eğitim",
+   "yatırım-öncesi",
+   "anlatım",
+   "kaş-vurgu",
    "eser",
    "masa",
    "mavi-arka-plan",
@@ -375,5 +668,889 @@
   "kaynak": "kendi-cekim",
   "maliyet": 0,
   "tarih": "2026-11-09"
+ },
+ {
+  "id": "sfx-whoosh",
+  "tur": "ses",
+  "dosya": "sfx-whoosh.mp3",
+  "istem": "fast clean whoosh transition swoosh",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "sfx-impact",
+  "tur": "ses",
+  "dosya": "sfx-impact.mp3",
+  "istem": "deep cinematic impact boom hit, trailer style, short tail",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "sfx-pop",
+  "tur": "ses",
+  "dosya": "sfx-pop.mp3",
+  "istem": "soft modern UI pop notification click",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "sfx-riser",
+  "tur": "ses",
+  "dosya": "sfx-riser.mp3",
+  "istem": "short cinematic tension riser swelling up quickly",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "sfx-tik",
+  "tur": "ses",
+  "dosya": "sfx-tik.mp3",
+  "istem": "satisfying soft checkmark tick UI sound",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "istanbul-gece",
+  "tur": "gorsel",
+  "dosya": "istanbul-gece.jpg",
+  "istem": "Istanbul skyline at night with the illuminated Bosphorus bridge and city lights, aerial view",
+  "etiket": [
+   "istanbul",
+   "türkiye",
+   "gece",
+   "şehir",
+   "boğaz"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "mobil-oyun-telefon",
+  "tur": "gorsel",
+  "dosya": "mobil-oyun-telefon.jpg",
+  "istem": "close-up of hands holding a smartphone playing a colorful casual puzzle mobile game, glowing screen in a dark room",
+  "etiket": [
+   "mobil",
+   "oyun",
+   "telefon",
+   "gaming"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "muzik-tech-haber",
+  "tur": "muzik",
+  "dosya": "muzik-tech-haber.mp3",
+  "istem": "Modern confident tech news background music, pulsing synth bass, crisp light percussion, optimistic and driving, 110 BPM, minimal and clean so a voiceover sits on top, no vocals, subtle build in the middle",
+  "etiket": [
+   "haber",
+   "teknoloji",
+   "enerjik"
+  ],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 45,
+  "maliyet": 0.45,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "mobil-oyun-telefon",
+  "tur": "video",
+  "dosya": "mobil-oyun-telefon.mp4",
+  "istem": "fingers tap and swipe on the phone screen, colorful game light reflects on the hands, subtle push-in",
+  "etiket": [
+   "mobil",
+   "oyun",
+   "telefon",
+   "gaming"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "istanbul-gece",
+  "tur": "video",
+  "dosya": "istanbul-gece.mp4",
+  "istem": "slow aerial drift over the Bosphorus at night, city lights twinkle",
+  "etiket": [
+   "istanbul",
+   "türkiye",
+   "gece",
+   "şehir",
+   "boğaz"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 6,
+  "maliyet": 0.30000000000000004,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "dudak-e2vc_v3-giris",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v3-giris.mp4",
+  "metin": "Türkiye'de büyüme turu arayan kurucular size bir sürprizim var bu haber",
+  "kelimeler": [
+   {
+    "w": "Türkiye'de",
+    "s": 0,
+    "e": 0.55
+   },
+   {
+    "w": "büyüme",
+    "s": 0.55,
+    "e": 0.93
+   },
+   {
+    "w": "turu",
+    "s": 0.93,
+    "e": 1.15
+   },
+   {
+    "w": "arayan",
+    "s": 1.15,
+    "e": 1.46
+   },
+   {
+    "w": "kurucular",
+    "s": 1.46,
+    "e": 1.97
+   },
+   {
+    "w": "size",
+    "s": 1.97,
+    "e": 2.33
+   },
+   {
+    "w": "bir",
+    "s": 2.33,
+    "e": 2.55
+   },
+   {
+    "w": "sürprizim",
+    "s": 2.55,
+    "e": 2.92
+   },
+   {
+    "w": "var",
+    "s": 2.92,
+    "e": 3.07
+   },
+   {
+    "w": "bu",
+    "s": 3.07,
+    "e": 3.32
+   },
+   {
+    "w": "haber",
+    "s": 3.32,
+    "e": 3.55
+   }
+  ],
+  "sure": 3.56,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 51.2",
+  "model": "fal-ai/sync-lipsync/v2",
+  "testler": {
+   "dudak": "7/7",
+   "yama": "YAMA doku 0.25 parlak +1.2 kötü-kare %85 → LEKE",
+   "sakal_onar": false
+  },
+  "onay": "eser (A sürümü, 2026-11-10)",
+  "ai": true,
+  "proje": "E2VC_v3",
+  "etiket": [
+   "dudak-senkron",
+   "sakal-lekesi",
+   "onayli",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v3"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.178,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "dudak-e2vc_v3-neden",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v3-neden.mp4",
+  "metin": "Neden mi?",
+  "kelimeler": [
+   {
+    "w": "Neden",
+    "s": 0,
+    "e": 0.3
+   },
+   {
+    "w": "mi?",
+    "s": 0.3,
+    "e": 0.56
+   }
+  ],
+  "sure": 0.64,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 2.5",
+  "model": "fal-ai/sync-lipsync/v2",
+  "testler": {
+   "dudak": "1/1",
+   "yama": "YAMA doku 0.30 parlak +4.6 kötü-kare %57 → LEKE",
+   "sakal_onar": false
+  },
+  "onay": "eser (A sürümü, 2026-11-10)",
+  "ai": true,
+  "proje": "E2VC_v3",
+  "etiket": [
+   "dudak-senkron",
+   "sakal-lekesi",
+   "onayli",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v3"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.032,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "dudak-e2vc_v3-asil",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v3-asil.mp4",
+  "metin": "Asıl mesele şu.",
+  "kelimeler": [
+   {
+    "w": "Asıl",
+    "s": 0,
+    "e": 0.34
+   },
+   {
+    "w": "mesele",
+    "s": 0.34,
+    "e": 0.76
+   },
+   {
+    "w": "şu.",
+    "s": 0.76,
+    "e": 0.88
+   }
+  ],
+  "sure": 1,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 7.2",
+  "model": "fal-ai/sync-lipsync/v2",
+  "testler": {
+   "dudak": "1/1",
+   "yama": "YAMA doku 0.27 parlak +1.6 kötü-kare %80 → LEKE",
+   "sakal_onar": false
+  },
+  "onay": "eser (A sürümü, 2026-11-10)",
+  "ai": true,
+  "proje": "E2VC_v3",
+  "etiket": [
+   "dudak-senkron",
+   "sakal-lekesi",
+   "onayli",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v3"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.05,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "dudak-e2vc_v3-yurtdisi",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v3-yurtdisi.mp4",
+  "metin": "yurt dışına gitmeye gerek kalmayabilir.",
+  "kelimeler": [
+   {
+    "w": "yurt",
+    "s": 0,
+    "e": 0.28
+   },
+   {
+    "w": "dışına",
+    "s": 0.28,
+    "e": 0.62
+   },
+   {
+    "w": "gitmeye",
+    "s": 0.62,
+    "e": 1.06
+   },
+   {
+    "w": "gerek",
+    "s": 1.06,
+    "e": 1.36
+   },
+   {
+    "w": "kalmayabilir.",
+    "s": 1.36,
+    "e": 2.14
+   }
+  ],
+  "sure": 2.27,
+  "duygu": "sitem",
+  "ref": "Sitem 0.0",
+  "model": "fal-ai/sync-lipsync/v2",
+  "testler": {
+   "dudak": "3/3",
+   "yama": "YAMA doku 0.42 parlak +2.7 kötü-kare %43 → TEMİZ",
+   "sakal_onar": false
+  },
+  "onay": "eser (A sürümü, 2026-11-10)",
+  "ai": true,
+  "proje": "E2VC_v3",
+  "etiket": [
+   "dudak-senkron",
+   "temiz",
+   "onayli",
+   "eser",
+   "konuşuyor",
+   "sitem",
+   "e2vc_v3"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.113,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "dudak-e2vc_v3-kapi",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v3-kapi.mp4",
+  "metin": "Ama bu kapıyı çalmadan önce",
+  "kelimeler": [
+   {
+    "w": "Ama",
+    "s": 0,
+    "e": 0.2
+   },
+   {
+    "w": "bu",
+    "s": 0.2,
+    "e": 0.38
+   },
+   {
+    "w": "kapıyı",
+    "s": 0.38,
+    "e": 0.68
+   },
+   {
+    "w": "çalmadan",
+    "s": 0.68,
+    "e": 1.12
+   },
+   {
+    "w": "önce",
+    "s": 1.12,
+    "e": 1.38
+   }
+  ],
+  "sure": 1.38,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 38.5",
+  "model": "fal-ai/sync-lipsync/v2",
+  "testler": {
+   "dudak": "4/4",
+   "yama": "YAMA doku 0.28 parlak -1.6 kötü-kare %79 → LEKE",
+   "sakal_onar": false
+  },
+  "onay": "eser (A sürümü, 2026-11-10)",
+  "ai": true,
+  "proje": "E2VC_v3",
+  "etiket": [
+   "dudak-senkron",
+   "sakal-lekesi",
+   "onayli",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v3"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.069,
+  "tarih": "2026-11-09"
+ },
+ {
+  "id": "muzik-10-kasim",
+  "tur": "muzik",
+  "dosya": "muzik-10-kasim.mp3",
+  "istem": "Solemn and respectful cinematic piano with soft strings, starts quiet and reflective, slowly builds to a hopeful, determined and proud swell near the end, 70 BPM, sparse so a voiceover sits on top, no vocals, no drums until the final build",
+  "etiket": [
+   "anma",
+   "duygusal",
+   "piyano",
+   "umut",
+   "10-kasım"
+  ],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 40,
+  "maliyet": 0.4,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "sfx-bayrak",
+  "tur": "ses",
+  "dosya": "sfx-bayrak.mp3",
+  "istem": "large flag flapping and fluttering strongly in the wind, fabric snapping, outdoor",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "teknoloji-cip",
+  "tur": "gorsel",
+  "dosya": "teknoloji-cip.jpg",
+  "istem": "extreme macro close-up of a glowing microchip on a dark circuit board, tiny golden traces lit by cyan light, high-tech semiconductor",
+  "etiket": [
+   "teknoloji",
+   "çip",
+   "yarı-iletken",
+   "devre",
+   "üretim"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "genc-girisimciler",
+  "tur": "gorsel",
+  "dosya": "genc-girisimciler.jpg",
+  "istem": "a small team of young startup founders working together in a modern bright office at sunrise, laptops and a whiteboard full of product sketches, determined and hopeful mood, seen from behind and side, faces not in focus",
+  "etiket": [
+   "girişimci",
+   "ekip",
+   "ofis",
+   "startup",
+   "gün-doğumu",
+   "umut"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "liman-konteyner",
+  "tur": "gorsel",
+  "dosya": "liman-konteyner.jpg",
+  "istem": "aerial view of a huge cargo port with colorful shipping containers being unloaded from a giant foreign container ship, cranes, overcast morning",
+  "etiket": [
+   "liman",
+   "konteyner",
+   "ithalat",
+   "ticaret",
+   "gemi"
+  ],
+  "kaynak": "fal-ai/flux/dev",
+  "maliyet": 0.036,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "liman-konteyner",
+  "tur": "video",
+  "dosya": "liman-konteyner.mp4",
+  "istem": "slow aerial drift over the container ship and cranes, containers being lifted",
+  "etiket": [
+   "liman",
+   "konteyner",
+   "ithalat",
+   "ticaret",
+   "gemi"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "genc-girisimciler",
+  "tur": "video",
+  "dosya": "genc-girisimciler.mp4",
+  "istem": "slow push-in as the team leans over the laptop and one founder points at the screen, warm sunrise light",
+  "etiket": [
+   "girişimci",
+   "ekip",
+   "ofis",
+   "startup",
+   "gün-doğumu",
+   "umut"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "teknoloji-cip",
+  "tur": "video",
+  "dosya": "teknoloji-cip.mp4",
+  "istem": "slow camera glide across the circuit board, light pulses travel along the traces",
+  "etiket": [
+   "teknoloji",
+   "çip",
+   "yarı-iletken",
+   "devre",
+   "üretim"
+  ],
+  "kaynak": "fal-ai/veo3.1/lite/image-to-video",
+  "sure": 4,
+  "maliyet": 0.2,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "dudak-e2vc_v4-asil",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v4-asil.mp4",
+  "metin": "Asıl mesele şu.",
+  "kelimeler": [
+   {
+    "w": "Asıl",
+    "s": 0,
+    "e": 0.31
+   },
+   {
+    "w": "mesele",
+    "s": 0.31,
+    "e": 0.65
+   },
+   {
+    "w": "şu.",
+    "s": 0.65,
+    "e": 0.83
+   }
+  ],
+  "sure": 0.96,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 52.1",
+  "model": "fal-ai/sync-lipsync/v2/pro",
+  "testler": {
+   "dudak": "1/1",
+   "yama": "YAMA doku 0.52 parlak -1.3 kötü-kare %10 → TEMİZ  _dudak-aday-11-0.mp4",
+   "sakal_onar": false
+  },
+  "onay": null,
+  "ai": true,
+  "proje": "e2vc-buyume-fonu",
+  "etiket": [
+   "dudak-senkron",
+   "temiz",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v4"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.08,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "dudak-e2vc_v4-zorlu",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v4-zorlu.mp4",
+  "metin": "Bu da çok zorlu bir süreç oluyordu.",
+  "kelimeler": [
+   {
+    "w": "Bu",
+    "s": 0,
+    "e": 0.17
+   },
+   {
+    "w": "da",
+    "s": 0.17,
+    "e": 0.33
+   },
+   {
+    "w": "çok",
+    "s": 0.33,
+    "e": 0.59
+   },
+   {
+    "w": "zorlu",
+    "s": 0.59,
+    "e": 0.87
+   },
+   {
+    "w": "bir",
+    "s": 0.87,
+    "e": 0.97
+   },
+   {
+    "w": "süreç",
+    "s": 0.97,
+    "e": 1.23
+   },
+   {
+    "w": "oluyordu.",
+    "s": 1.23,
+    "e": 1.53
+   }
+  ],
+  "sure": 1.53,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 54.3",
+  "model": "fal-ai/sync-lipsync/v2/pro",
+  "testler": {
+   "dudak": "2/2",
+   "yama": "YAMA doku 0.79 parlak -4.6 kötü-kare %13 → TEMİZ  _dudak-aday-13-0.mp4",
+   "sakal_onar": false
+  },
+  "onay": null,
+  "ai": true,
+  "proje": "e2vc-buyume-fonu",
+  "etiket": [
+   "dudak-senkron",
+   "temiz",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v4"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.127,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "dudak-e2vc_v4-kapi",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v4-kapi.mp4",
+  "metin": "Ama bu kapıyı çalmadan önce",
+  "kelimeler": [
+   {
+    "w": "Ama",
+    "s": 0,
+    "e": 0.23
+   },
+   {
+    "w": "bu",
+    "s": 0.23,
+    "e": 0.47
+   },
+   {
+    "w": "kapıyı",
+    "s": 0.47,
+    "e": 0.77
+   },
+   {
+    "w": "çalmadan",
+    "s": 0.77,
+    "e": 1.21
+   },
+   {
+    "w": "önce",
+    "s": 1.21,
+    "e": 1.51
+   }
+  ],
+  "sure": 1.51,
+  "duygu": null,
+  "ref": "eser-uzun-anlatim 38.5",
+  "model": "fal-ai/sync-lipsync/v2/pro",
+  "testler": {
+   "dudak": "4/4",
+   "yama": "YAMA doku 0.75 parlak -2.0 kötü-kare %0 → TEMİZ  _dudak-aday-16-0.mp4",
+   "sakal_onar": false
+  },
+  "onay": null,
+  "ai": true,
+  "proje": "e2vc-buyume-fonu",
+  "etiket": [
+   "dudak-senkron",
+   "temiz",
+   "eser",
+   "konuşuyor",
+   "e2vc_v4"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.126,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "dudak-e2vc_v4-neden",
+  "tur": "dudak",
+  "dosya": "dudak-e2vc_v4-neden.mp4",
+  "metin": "Neden mi?",
+  "kelimeler": [
+   {
+    "w": "Neden",
+    "s": 0,
+    "e": 0.27
+   },
+   {
+    "w": "mi?",
+    "s": 0.27,
+    "e": 0.51
+   }
+  ],
+  "sure": 0.6,
+  "duygu": "nötr-vurgulu",
+  "ref": "Uzun anlatım 33.2",
+  "model": "fal-ai/sync-lipsync/v2/pro",
+  "testler": {
+   "dudak": "1/1",
+   "yama": "YAMA doku 0.33 parlak +0.8 kötü-kare %67 → LEKE  _dudak-aday-8-0.mp4",
+   "sakal_onar": false
+  },
+  "onay": null,
+  "ai": true,
+  "proje": "e2vc-buyume-fonu",
+  "etiket": [
+   "dudak-senkron",
+   "sakal-lekesi",
+   "eser",
+   "konuşuyor",
+   "nötr-vurgulu",
+   "e2vc_v4"
+  ],
+  "kaynak": "fal-ai/sync-lipsync",
+  "maliyet": 0.05,
+  "tarih": "2026-11-10"
+ },
+ {
+  "id": "sfx-damga",
+  "tur": "ses",
+  "dosya": "sfx-damga.mp3",
+  "istem": "heavy rubber stamp slamming down on a desk, single punchy thud",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-16"
+ },
+ {
+  "id": "sfx-hata",
+  "tur": "ses",
+  "dosya": "sfx-hata.mp3",
+  "istem": "short digital error buzz, wrong answer UI sound, two quick low beeps",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-16"
+ },
+ {
+  "id": "sfx-glitch",
+  "tur": "ses",
+  "dosya": "sfx-glitch.mp3",
+  "istem": "short digital glitch transition, data stutter, clean and modern",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-16"
+ },
+ {
+  "id": "muzik-hatali-basvuru",
+  "tur": "muzik",
+  "dosya": "muzik-hatali-basvuru.mp3",
+  "istem": "Modern punchy instrumental for a business advice short video, tight kick and snappy claps, deep 808 bass, confident and slightly tense, steady 100 BPM, minimal and clean so a voiceover sits on top, no vocals, small energy lift in the second half",
+  "etiket": [
+   "egitim",
+   "ciddi",
+   "enerjik",
+   "trap"
+  ],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 50,
+  "maliyet": 0.5,
+  "tarih": "2026-11-16"
+ },
+ {
+  "id": "sfx-mikrofon",
+  "tur": "ses",
+  "dosya": "sfx-mikrofon.mp3",
+  "istem": "two quick taps on a live microphone, soft thump with slight PA reverb",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-17"
+ },
+ {
+  "id": "sfx-hediye",
+  "tur": "ses",
+  "dosya": "sfx-hediye.mp3",
+  "istem": "bright magical sparkle chime, gift box reveal, short and cheerful",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-17"
+ },
+ {
+  "id": "sfx-alkis",
+  "tur": "ses",
+  "dosya": "sfx-alkis.mp3",
+  "istem": "short enthusiastic applause and a few cheers from a small conference audience",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-17"
+ },
+ {
+  "id": "muzik-zaim-talks",
+  "tur": "muzik",
+  "dosya": "muzik-zaim-talks.mp3",
+  "istem": "Upbeat uplifting modern instrumental for a startup event announcement, punchy four-on-the-floor kick, crisp claps, bright synth plucks and a warm bass, celebratory and energetic but clean enough for a voiceover on top, steady 120 BPM, no vocals, small build and drop near the start",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 45,
+  "maliyet": 0.45,
+  "tarih": "2026-11-17"
+ },
+ {
+  "id": "sfx-kitap",
+  "tur": "ses",
+  "dosya": "sfx-kitap.mp3",
+  "istem": "hardcover book slammed shut on a wooden desk then a quick page flip, crisp and short",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-19"
+ },
+ {
+  "id": "muzik-yatirimci-sunumu",
+  "tur": "muzik",
+  "dosya": "muzik-yatirimci-sunumu.mp3",
+  "istem": "Confident modern instrumental for a business education short video, tight punchy kick, snappy claps, deep bass, light plucked synth hook, focused and slightly bold, steady 110 BPM, clean and minimal so a voiceover sits on top, no vocals",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 55,
+  "maliyet": 0.55,
+  "tarih": "2026-11-19"
+ },
+ {
+  "id": "sfx-yildiz",
+  "tur": "ses",
+  "dosya": "sfx-yildiz.mp3",
+  "istem": "magical bright star twinkle shimmer, short sparkling chime rising",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/sound-effects/v2",
+  "maliyet": 0.003,
+  "tarih": "2026-11-21"
+ },
+ {
+  "id": "muzik-kuzey-yildizi",
+  "tur": "muzik",
+  "dosya": "muzik-kuzey-yildizi.mp3",
+  "istem": "Inspiring modern instrumental for a startup strategy short video, punchy kick and claps, deep bass, shimmering bright synth arpeggio like stars, focused and uplifting, steady 115 BPM, clean and minimal so a voiceover sits on top, no vocals",
+  "etiket": [],
+  "kaynak": "fal-ai/elevenlabs/music",
+  "sure": 45,
+  "maliyet": 0.45,
+  "tarih": "2026-11-21"
  }
 ]

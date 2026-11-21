@@ -66,3 +66,6 @@ scripts/haber/node_modules
 # B-roll kütüphanesi: medya yerelde kalır, yalnız dizin (index.json) repoya girer
 /scripts/video/kutuphane/*
 !/scripts/video/kutuphane/index.json
+/scripts/video/.venv-yuz
+# yüz analizi: Eser'in yüz fotoğrafları + model dosyası (repo public)
+/scripts/video/analiz

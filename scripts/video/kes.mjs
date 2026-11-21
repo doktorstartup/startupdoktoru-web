@@ -7,6 +7,11 @@
 //     "duzelt": { "yanlış": "doğru" } }   ("" → kelimeyi at, "+ek" → önceki kelimeye ekle)
 //   goruntu: true → bu klibin görüntüsü de kullanılır (yüz çekimi); değilse yalnız sesi.
 //   kes: ham videonun saniyeleri — takılma, tekrar gibi elle atılacak yerler.
+//   { "sessizlik": 0.8 } → araya sessiz boşluk (tepki anı, efekt için nefes).
+//   "tempo": 0.88 → klibin sesi tonu bozmadan yavaşlatılır (yutulan kelimeler anlaşılsın); yalnız ses klibinde.
+//   Aynı dosya birden çok klip olabilir (ör. soğuk açılış için cümle başa alınır).
+//   "ses_filtre": anlatıma loudnorm'dan önce uygulanan ffmpeg süzgeci (stüdyo sesi).
+//   "muzik", "efektler", "studyo", "bayrak": kurgu.json'a olduğu gibi aktarılır (Remotion'da çalınır).
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { execFileSync, spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
@@ -49,11 +54,11 @@ const tutulacak = (f, kes = []) => {
   return aralik;
 };
 
-// Ham zamanı kesilmiş zamana çevirir (atılmış yere düşen kelime null döner).
-const tasi = (aralik, kayma) => (x) => {
+// Ham zamanı kesilmiş zamana çevirir (atılmış yere düşen kelime null döner); tempo < 1 süreyi uzatır.
+const tasi = (aralik, kayma, tempo = 1) => (x) => {
   let birikim = 0;
   for (const [a, b] of aralik) {
-    if (x >= a && x <= b) return kayma + birikim + (x - a);
+    if (x >= a && x <= b) return kayma + (birikim + (x - a)) / tempo;
     birikim += b - a;
   }
   return null;
@@ -65,18 +70,28 @@ const sahneler = [];
 let kayma = 0;
 
 for (const [i, k] of proje.klipler.entries()) {
+  if (k.sessizlik) {
+    const sesDosya = join(cikti, `ses${i}.wav`);
+    ff("-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", `${k.sessizlik}`, sesDosya);
+    sesParcalari.push(sesDosya);
+    sahneler.push({ klip: i, bas: kayma, son: kayma + k.sessizlik, goruntu: null });
+    kayma += k.sessizlik;
+    continue;
+  }
   const yaziJson = join(cikti, `klip${i}.json`);
   if (!existsSync(yaziJson)) execFileSync(join(KOK, ".venv/bin/python"), [join(KOK, "yazi.py"), k.dosya, yaziJson], { stdio: "inherit" });
 
   const aralik = tutulacak(k.dosya, k.kes);
-  const uzunluk = aralik.reduce((t, [a, b]) => t + (b - a), 0);
+  const tempo = k.tempo ?? 1;
+  if (tempo !== 1 && k.goruntu) throw new Error("tempo yalnız ses klibinde kullanılabilir");
+  const uzunluk = aralik.reduce((t, [a, b]) => t + (b - a), 0) / tempo;
 
   // Ses: her aralık 10 ms yumuşak geçişle (tık sesi olmasın) uç uca.
   const sesF = aralik
     .map(([a, b], j) => `[0:a]atrim=${a}:${b},asetpts=PTS-STARTPTS,afade=t=in:d=0.01,afade=t=out:st=${(b - a - 0.01).toFixed(3)}:d=0.01[a${j}]`)
     .join(";");
   const sesDosya = join(cikti, `ses${i}.wav`);
-  ff("-i", k.dosya, "-filter_complex", `${sesF};${aralik.map((_, j) => `[a${j}]`).join("")}concat=n=${aralik.length}:v=0:a=1[a]`, "-map", "[a]", "-ar", "48000", sesDosya);
+  ff("-i", k.dosya, "-filter_complex", `${sesF};${aralik.map((_, j) => `[a${j}]`).join("")}concat=n=${aralik.length}:v=0:a=1${tempo !== 1 ? `,atempo=${tempo}` : ""}[a]`, "-map", "[a]", "-ar", "48000", sesDosya);
   sesParcalari.push(sesDosya);
 
   if (k.goruntu) {
@@ -87,14 +102,14 @@ for (const [i, k] of proje.klipler.entries()) {
       "-map", "[v]", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", "-an", join(cikti, `goruntu${i}.mp4`));
   }
 
-  const t = tasi(aralik, kayma);
+  const t = tasi(aralik, kayma, tempo);
   for (const w of JSON.parse(readFileSync(yaziJson, "utf8"))) {
     // Kelimenin korunan sesle örtüşmesi 60 ms'den azsa kesilmiştir.
     const ortusme = aralik.reduce((top, [a, b]) => top + Math.max(0, Math.min(b, w.e) - Math.max(a, w.s)), 0);
     if (ortusme < 0.06) continue;
     const ilk = aralik.find(([, b]) => b > w.s);
     const s = t(Math.max(w.s, ilk[0]));
-    const e = t(w.e) ?? s + ortusme;
+    const e = t(w.e) ?? s + ortusme / tempo;
     const metin = proje.duzelt?.[w.w] ?? w.w;
     if (!metin) continue;
     // "+..." düzeltmesi önceki kelimeye eklenir (ör. "startup" + "doktoru.com'a").
@@ -107,10 +122,10 @@ for (const [i, k] of proje.klipler.entries()) {
     kelimeler.push({ w: metin, s: +s.toFixed(3), e: +Math.max(e, s + 0.08).toFixed(3) });
   }
   sahneler.push({ klip: i, bas: kayma, son: kayma + uzunluk, goruntu: k.goruntu ? `${proje.ad}/goruntu${i}.mp4` : null });
-  console.log(`klip${i}: ${sure(k.dosya).toFixed(1)} sn → ${uzunluk.toFixed(1)} sn (${aralik.length} parça)`);
+  console.log(`klip${i}: ${sure(k.dosya).toFixed(1)} sn → ${uzunluk.toFixed(1)} sn (${aralik.length} parça${tempo !== 1 ? `, tempo ${tempo}` : ""})`);
   kayma += uzunluk;
 }
 
-ff(...sesParcalari.flatMap((f) => ["-i", f]), "-filter_complex", `${sesParcalari.map((_, j) => `[${j}:a]`).join("")}concat=n=${sesParcalari.length}:v=0:a=1,loudnorm=I=-14:TP=-1.5[a]`, "-map", "[a]", "-ar", "48000", join(cikti, "ses.wav"));
-writeFileSync(join(cikti, "kurgu.json"), JSON.stringify({ ad: proje.ad, sure: kayma, kuyruk: proje.kuyruk ?? 1.5, gorsel: proje.gorsel, kapak: proje.kapak, kelimeler, sahneler }, null, 1));
+ff(...sesParcalari.flatMap((f) => ["-i", f]), "-filter_complex", `${sesParcalari.map((_, j) => `[${j}:a]aformat=sample_rates=48000:channel_layouts=mono[p${j}]`).join(";")};${sesParcalari.map((_, j) => `[p${j}]`).join("")}concat=n=${sesParcalari.length}:v=0:a=1${proje.ses_filtre ? `,${proje.ses_filtre}` : ""},loudnorm=I=-14:TP=-1.5[a]`, "-map", "[a]", "-ar", "48000", join(cikti, "ses.wav"));
+writeFileSync(join(cikti, "kurgu.json"), JSON.stringify({ ad: proje.ad, sure: kayma, kuyruk: proje.kuyruk ?? 1.5, gorsel: proje.gorsel, kapak: proje.kapak, muzik: proje.muzik, efektler: proje.efektler, studyo: proje.studyo, bayrak: proje.bayrak, kelimeler, sahneler }, null, 1));
 console.log(`toplam ${kayma.toFixed(1)} sn → public/${proje.ad}/`);

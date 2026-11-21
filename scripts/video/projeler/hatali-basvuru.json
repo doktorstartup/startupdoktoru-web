@@ -1,0 +1,375 @@
+{
+ "ad": "hatali-basvuru",
+ "klipler": [
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Hatalı Başvuru-1/IMG_4536.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     10.94
+    ],
+    [
+     12.6,
+     22.25
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Hatalı Başvuru-1/IMG_4536.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     10.3,
+     22.25
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Hatalı Başvuru-1/IMG_4539.MOV",
+   "goruntu": true,
+   "kes": [
+    [
+     11.65,
+     24.1
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Hatalı Başvuru-1/IMG_4537.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     9.4,
+     41.6
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Hatalı Başvuru-1/IMG_4537.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     9.9
+    ],
+    [
+     25.62,
+     26.7
+    ],
+    [
+     29.6,
+     33.5
+    ],
+    [
+     40.95,
+     41.6
+    ]
+   ]
+  },
+  {
+   "sessizlik": 0.3
+  }
+ ],
+ "duzelt": {
+  "'ın": "+'ın",
+  "'i": "+'i",
+  "startuplar.": "startup'lar."
+ },
+ "ses_filtre": "highpass=f=75,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.4:g=2.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+ "kuyruk": 2.4,
+ "studyo": true,
+ "ai_beyan": false,
+ "gorsel": [
+  {
+   "ifade": "Çok yanlış",
+   "tur": "yuz",
+   "kanca": [
+    "Yatırımcıya",
+    "YANLIŞ BAŞVURU"
+   ],
+   "zoom": "yanlış"
+  },
+  {
+   "ifade": "Yatırım arayan",
+   "tur": "yuz",
+   "isim": [
+    "Eser Memişoğlu",
+    "STARTUP DOKTORU"
+   ],
+   "an": 1.628
+  },
+  {
+   "ifade": "Platformumuzda",
+   "tur": "ekran",
+   "resim": "anasayfa.png",
+   "an": 3.38
+  },
+  {
+   "ifade": "Bakın",
+   "tur": "grafik",
+   "resim": "basvuru-duz.png",
+   "baslik": "Gerçek bir başvuru",
+   "kaynak": "Girişim bilgileri gizlendi",
+   "an": 6.512
+  },
+  {
+   "ifade": "Burada",
+   "tur": "grafik",
+   "resim": "basvuru-web.png",
+   "baslik": "Web sitesi: YouTube linki?",
+   "an": 9.645
+  },
+  {
+   "ifade": "Yatırımcı sunumun",
+   "tur": "grafik",
+   "resim": "basvuru-sunum.png",
+   "baslik": "Yatırımcı sunumu: yok",
+   "an": 11.882
+  },
+  {
+   "ifade": "Yani bunu",
+   "tur": "buyuk",
+   "vurgu": [
+    "eşleştirebilirim"
+   ],
+   "an": 13.673
+  },
+  {
+   "ifade": "Albert",
+   "tur": "yuz",
+   "kanca": [
+    "Basit anlatamıyorsan",
+    "ANLAMAMIŞSIN"
+   ],
+   "an": 16.537
+  },
+  {
+   "ifade": "O yüzden",
+   "tur": "liste",
+   "baslik": "Yatırımcıya bunlar olmaz",
+   "maddeler": [
+    {
+     "metin": "Sayfalarca sunum",
+     "ifade": "sayfalarca"
+    },
+    {
+     "metin": "\"YouTube'dan izleyin\"",
+     "ifade": "YouTube"
+    },
+    {
+     "metin": "\"Gelin göstereyim\"",
+     "ifade": "göstererek"
+    }
+   ],
+   "an": 23.07
+  },
+  {
+   "ifade": "yatırım dünyasında",
+   "tur": "yuz",
+   "zoom": "gerçek",
+   "an": 29.335
+  },
+  {
+   "ifade": "Onu",
+   "tur": "sayi",
+   "sayi": 10,
+   "son": " SLAYT",
+   "ust": "YATIRIMCI SUNUMU",
+   "etiket": "geçmesin. Basit anlat.",
+   "an": 31.125
+  },
+  {
+   "ifade": "yatırımcı sunumunda işi",
+   "tur": "yuz",
+   "kanca": [
+    "Sunumda",
+    "İŞİ ANLATMA"
+   ],
+   "zoom": "işi",
+   "an": 34.258
+  },
+  {
+   "ifade": "Yatırımcı sunumunda yatırımcının",
+   "tur": "buyuk",
+   "vurgu": [
+    "kazanacağını"
+   ],
+   "an": 36.495
+  },
+  {
+   "ifade": "edersiniz",
+   "tur": "kapanis",
+   "ust": [
+    "Başvurunu",
+    "DOĞRU YAP"
+   ],
+   "metin": "startupdoktoru.com",
+   "an": 40.97
+  }
+ ],
+ "muzik": {
+  "dosya": "muzik-hatali-basvuru-k.mp3",
+  "ses": 0.16,
+  "kisik": 0.06,
+  "kaynak": "kütüphanedeki muzik-hatali-basvuru, başı 0.62 sn kırpıldı (kesimler vuruşa otursun)"
+ },
+ "efektler": [
+  {
+   "ses": "sfx-impact.mp3",
+   "an": 0,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-riser.mp3",
+   "an": 0.12,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 1.49,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 3.26,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 6.392,
+   "seviye": 0.35,
+   "ses_istem": "short digital glitch transition, data stutter, clean and modern",
+   "ses_sure": 0.6
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 9.525,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 11.762,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 13.553,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 16.4,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 22.95,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 29.215,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 31.005,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 34.138,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 36.375,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 40.85,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "yanlış",
+   "kaydir": 0.02,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "YouTube",
+   "kaydir": 0.05,
+   "seviye": 0.35,
+   "ses_istem": "short digital error buzz, wrong answer UI sound, two quick low beeps",
+   "ses_sure": 0.6
+  },
+  {
+   "ses": "sfx-damga.mp3",
+   "ifade": "boş",
+   "kaydir": -0.05,
+   "seviye": 0.5,
+   "ses_istem": "heavy rubber stamp slamming down on a desk, single punchy thud",
+   "ses_sure": 0.7
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "anlamamışsınız",
+   "kaydir": 0.05,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "sayfalarca",
+   "kaydir": 0.05,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "YouTube videosundan",
+   "kaydir": 0.05,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "göstererek",
+   "kaydir": 0.05,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "Onu",
+   "kaydir": 1.15,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-impact.mp3",
+   "ifade": "işi",
+   "kaydir": 0,
+   "seviye": 0.3
+  },
+  {
+   "ses": "kasa-kaching.mp3",
+   "ifade": "kazanacağını",
+   "kaydir": 0.05,
+   "seviye": 0.45
+  }
+ ],
+ "kapak": {
+  "arka_sn": 0.6,
+  "rozet": "Yatırımcı başvurusu",
+  "baslik": [
+   "Yatırımcıya böyle",
+   "başvuru"
+  ],
+  "vurgu": "YAPMA"
+ },
+ "paylasim": {
+  "baslik": "Yatırımcıya böyle başvuru yapma",
+  "instagram": "Platformumuza yatırım arayan girişimleri davet ettik… ve gelen başvuruların bir kısmı yatırımcının önüne çıkamayacak durumda. 😬\n\nGerçek bir örnek (isim gizli):\n❌ Web sitesi yerine YouTube linki\n❌ Yatırımcı sunumu boş\n\nUnutma: 10 slaytı geçmeyen, basit bir sunum. Ve sunumda işini değil, yatırımcının ne kadar kazanacağını anlat.\n\nSenin sunumun kaç slayt? Yorumlara yaz 👇\n\n#yatırım #girişimcilik #startup #pitchdeck #yatırımcısunumu #startupdoktoru",
+  "shorts": "BAŞLIK: Yatırımcıya Böyle Başvuru Yapma ❌ #shorts\n\nAÇIKLAMA:\nGerçek bir başvuru üzerinden (isim gizli): web sitesi yerine YouTube linki, boş yatırımcı sunumu. Yatırımcı sunumu 10 slaytı geçmemeli ve yatırımcının kazancını anlatmalı.\n\n#yatırım #startup #pitchdeck #girişimcilik #shorts",
+  "linkedin": "Platformumuza yatırım arayan girişimleri davet ettik. Gelen başvuruların önemli bir kısmı ise yatırımcıyla eşleşemeyecek durumda.\n\nİsim vermeden gerçek bir örnek: web sitesi alanında bir YouTube linki, yatırımcı sunumu alanı boş. Bu başvuruyu hiçbir yatırımcıyla eşleştiremeyiz.\n\nEinstein'ın sözü yatırım dünyası için de geçerli: bir şeyi basitçe anlatamıyorsanız, yeterince anlamamışsınızdır. Sayfalarca doküman, \"YouTube'dan izleyin\", \"gelin göstereyim\" yatırımcı dünyasında karşılık bulmaz.\n\n10 slaytı geçmeyen bir sunum hazırlayın. Ve sunumda işinizi değil, yatırımcının ne kadar kazanacağını anlatın.\n\n#yatırım #girişimcilik #startup #pitchdeck"
+ }
+}

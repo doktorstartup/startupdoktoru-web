@@ -1,0 +1,433 @@
+{
+ "ad": "yatirimci-sunumu-yanlislar",
+ "klipler": [
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Yatırımcı Sunumu Hakkında Bilinen Yanlışlar/IMG_4570.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     61.02
+    ],
+    [
+     63.58,
+     82.6
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Yatırımcı Sunumu Hakkında Bilinen Yanlışlar/IMG_4570.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     0.68
+    ],
+    [
+     3.82,
+     11.3
+    ],
+    [
+     13.94,
+     14.8
+    ],
+    [
+     24.45,
+     25.5
+    ],
+    [
+     41.2,
+     50
+    ],
+    [
+     54.92,
+     82.6
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Yatırımcı Sunumu Hakkında Bilinen Yanlışlar/IMG_4570.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     66.33
+    ],
+    [
+     69.42,
+     82.6
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Yatırımcı Sunumu Hakkında Bilinen Yanlışlar/IMG_4570.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     70.85
+    ],
+    [
+     73.12,
+     80.15
+    ],
+    [
+     82.2,
+     82.6
+    ]
+   ]
+  },
+  {
+   "sessizlik": 0.3
+  }
+ ],
+ "duzelt": {
+  "sunu": "şunu",
+  "tekneye": "tekniğe",
+  "ediyorsunuz": "ediyorsanız"
+ },
+ "ses_filtre": "highpass=f=75,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.4:g=2.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+ "kuyruk": 2.4,
+ "studyo": true,
+ "ai_beyan": false,
+ "gorsel": [
+  {
+   "ifade": "yatırımcı",
+   "tur": "yuz",
+   "kanca": [
+    "Yatırımcı sunumundan",
+    "YATIRIM ALINMAZ"
+   ],
+   "zoom": "alınmaz"
+  },
+  {
+   "ifade": "Yatırımcı sunumuyla",
+   "tur": "yuz",
+   "isim": [
+    "Eser Memişoğlu",
+    "STARTUP DOKTORU"
+   ],
+   "zoom": "yanlış",
+   "an": 2.509
+  },
+  {
+   "ifade": "yatırımcı şunu",
+   "tur": "buyuk",
+   "vurgu": [
+    "al",
+    "parayı",
+    "yok"
+   ],
+   "an": 5.571
+  },
+  {
+   "ifade": "Yatırımcı sunumu yatırımcının",
+   "tur": "yuz",
+   "kanca": [
+    "Sunumun tek işi",
+    "İKNA ETMEK"
+   ],
+   "zoom": "ikna",
+   "an": 9.39
+  },
+  {
+   "ifade": "O yüzden",
+   "tur": "yuz",
+   "kanca": [
+    "Teknik detay",
+    "VERMEZSİN"
+   ],
+   "zoom": "teknik",
+   "an": 14.299
+  },
+  {
+   "ifade": "5 ila",
+   "tur": "sayi",
+   "on": "5–",
+   "sayi": 10,
+   "son": " DK",
+   "ust": "YATIRIMCI SUNUMU",
+   "etiket": "Parasını katlayacağını anlat",
+   "an": 17.572
+  },
+  {
+   "ifade": "yatırımcıya parasını",
+   "tur": "yuz",
+   "zoom": "katlayacağınızı",
+   "an": 20.845
+  },
+  {
+   "ifade": "Zaten eğer",
+   "tur": "yuz",
+   "kanca": [
+    "İnanırsa",
+    "SİZİ ÇAĞIRIR"
+   ],
+   "zoom": "çağırır",
+   "an": 24.118
+  },
+  {
+   "ifade": "Değerlemenizi",
+   "tur": "liste",
+   "tik": true,
+   "baslik": "Sonra bunları sorar",
+   "maddeler": [
+    {
+     "metin": "Değerleme",
+     "ifade": "Değerlemenizi"
+    },
+    {
+     "metin": "İş modeli",
+     "ifade": "iş modelinizi"
+    },
+    {
+     "metin": "Gelir modeli",
+     "ifade": "gelir"
+    },
+    {
+     "metin": "Finansallar",
+     "ifade": "finansallarınızı"
+    }
+   ],
+   "an": 27.88
+  },
+  {
+   "ifade": "Zaten Türkiye",
+   "tur": "sayi",
+   "sayi": 6,
+   "son": " AY",
+   "ust": "SUNUMDAN YATIRIMA",
+   "etiket": "Türkiye’de ortalama süre",
+   "an": 32.63
+  },
+  {
+   "ifade": "Orada temel",
+   "tur": "buyuk",
+   "vurgu": [
+    "problem",
+    "çözüme"
+   ],
+   "an": 37.21
+  },
+  {
+   "ifade": "Eğer daha",
+   "tur": "yuz",
+   "zoom": "merak",
+   "an": 40.483
+  },
+  {
+   "ifade": "Hedef Milyon",
+   "tur": "grafik",
+   "resim": "kitap.png",
+   "baslik": "Hedef Milyon Dolar",
+   "kaynak": "Eser Memişoğlu",
+   "an": 42.12
+  },
+  {
+   "ifade": "faydalanabilirsiniz",
+   "tur": "kapanis",
+   "ust": [
+    "Yatırımcı sunumunu",
+    "DOĞRU HAZIRLA"
+   ],
+   "metin": "startupdoktoru.com",
+   "an": 44
+  }
+ ],
+ "muzik": {
+  "dosya": "muzik-yatirimci-sunumu-k.mp3",
+  "ses": 0.16,
+  "kisik": 0.06,
+  "kaynak": "kütüphanedeki muzik-yatirimci-sunumu, başı 0.420 sn kırpıldı (kesimler vuruşa otursun, 110 BPM)"
+ },
+ "efektler": [
+  {
+   "ses": "sfx-impact.mp3",
+   "an": 0,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-riser.mp3",
+   "an": 0.12,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 2.389,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 5.451,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 9.27,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 14.179,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 17.452,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 20.725,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 23.998,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 27.76,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 32.51,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 37.09,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 40.363,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 42,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 43.88,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-damga.mp3",
+   "ifade": "alınmaz",
+   "kaydir": 0,
+   "seviye": 0.45
+  },
+  {
+   "ses": "kasa-kaching.mp3",
+   "ifade": "parayı",
+   "kaydir": 0.05,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "dünya yok",
+   "kaydir": 0.4,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "ikna",
+   "kaydir": 0.03,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "teknik",
+   "kaydir": 0.05,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "10",
+   "kaydir": 0.03,
+   "seviye": 0.35
+  },
+  {
+   "ses": "kasa-kaching.mp3",
+   "ifade": "katlayacağınızı",
+   "kaydir": 0.1,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "çağırır",
+   "kaydir": 0.03,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "Değerlemenizi",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "iş modelinizi",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "gelir",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "finansallarınızı",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-impact.mp3",
+   "ifade": "6 ay",
+   "kaydir": 0.05,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "problem",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "çözüme",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-kitap.mp3",
+   "ifade": "Hedef",
+   "kaydir": 0,
+   "seviye": 0.4,
+   "ses_istem": "hardcover book slammed shut on a wooden desk then a quick page flip, crisp and short",
+   "ses_sure": 0.9
+  }
+ ],
+ "kapak": {
+  "arka_sn": 1.2,
+  "rozet": "Yatırımcı sunumu",
+  "baslik": [
+   "Sunumdan",
+   "yatırım"
+  ],
+  "vurgu": "ALINMAZ"
+ },
+ "paylasim": {
+  "baslik": "Yatırımcı sunumundan yatırım alınmaz",
+  "instagram": "Yatırımcı sunumundan yatırım alınmaz. 🙅‍♂️\n\nYatırımcı sunumu dinler dinlemez “al parayı” demez. Sunumun tek işi, bu işin para kazandıracağına yatırımcıyı ikna etmek.\n\n❌ Teknik detaya boğma\n⏱️ 5–10 dakikada anlat\n💰 Parasını nasıl katlayacağını göster\n\nİnanırsa seni çağırır; değerleme, iş modeli, gelir modeli, finansallar ondan sonra konuşulur. Türkiye’de bu süreç ortalama 6 ay.\n\nDaha fazlası “Hedef Milyon Dolar” kitabında 📘\n\n#yatırım #girişimcilik #startup #pitchdeck #yatırımcısunumu #startupdoktoru",
+  "shorts": "BAŞLIK: Yatırımcı Sunumundan Yatırım Alınmaz ❌ #shorts\n\nAÇIKLAMA:\nYatırımcı sunumunun amacı parayı almak değil, yatırımcıyı ikna etmek. Teknik detay yok, 5–10 dakika, odak problem ve çözüm. Türkiye’de sunumdan yatırıma süreç ortalama 6 ay.\n\n#yatırım #startup #pitchdeck #girişimcilik #shorts",
+  "linkedin": "Yatırımcı sunumuyla ilgili en yaygın yanılgı: sunumu dinleyen yatırımcının hemen yatırım yapacağı.\n\nBöyle bir dünya yok. Yatırımcı sunumu, bu işin para kazandıracağına yatırımcıyı ikna ettiğiniz bir araçtır. O yüzden teknik detaylara boğmazsınız; 5–10 dakika içinde yatırımcının parasını nasıl katlayacağınızı anlatırsınız.\n\nYatırımcı buna inanırsa sizi çağırır: değerleme, iş modeli, gelir modeli ve finansallar ondan sonra konuşulur. Türkiye’de sunumdan yatırıma süreç ortalama 6 ay civarında.\n\nSunumda odak: problem ve çözüm.\n\nDaha fazlası için: Hedef Milyon Dolar.\n\n#yatırım #girişimcilik #startup #pitchdeck"
+ }
+}

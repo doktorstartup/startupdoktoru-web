@@ -1,0 +1,355 @@
+{
+ "ad": "kuzey-yildizi-metrigi",
+ "klipler": [
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Kuzey Yıldızı Metriği Nedir ?/IMG_4584.mov",
+   "goruntu": true,
+   "kes": [
+    [
+     3.32,
+     4.4
+    ],
+    [
+     76,
+     76.95
+    ]
+   ]
+  },
+  {
+   "sessizlik": 0.3
+  }
+ ],
+ "duzelt": {
+  "'nin": "+'nin",
+  "Metri'dir.": "Metriği'dir.",
+  "Metri": "Metriği",
+  "over": "overengineering",
+  "engine": "",
+  "renk": "",
+  "metreye": "metriğe",
+  "rezerv": "rezervasyon"
+ },
+ "ses_filtre": "highpass=f=75,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.4:g=2.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+ "kuyruk": 2.4,
+ "studyo": true,
+ "ai_beyan": false,
+ "gorsel": [
+  {
+   "ifade": "Airbnb",
+   "tur": "yuz",
+   "kanca": [
+    "Airbnb’nin en önemli rakamı",
+    "GELİR DEĞİL"
+   ],
+   "zoom": "değil"
+  },
+  {
+   "ifade": "Kuzey Yıldızı Metriği'dir",
+   "tur": "buyuk",
+   "vurgu": [
+    "Kuzey",
+    "Yıldızı",
+    "Metriği"
+   ],
+   "an": 2.543
+  },
+  {
+   "ifade": "Ve bu",
+   "tur": "yuz",
+   "isim": [
+    "Eser Memişoğlu",
+    "STARTUP DOKTORU"
+   ],
+   "zoom": "overengineering",
+   "an": 3.605
+  },
+  {
+   "ifade": "Bir şirketin",
+   "tur": "grafik",
+   "resim": "kuzey.png",
+   "baslik": "Kuzey Yıldızı nedir?",
+   "an": 7.781
+  },
+  {
+   "ifade": "Airbnb için",
+   "tur": "liste",
+   "tik": true,
+   "baslik": "Onların kuzey yıldızı",
+   "maddeler": [
+    {
+     "metin": "Airbnb: gece rezervasyonu",
+     "ifade": "Airbnb"
+    },
+    {
+     "metin": "Spotify: dinlenme süresi",
+     "ifade": "Spotify"
+    }
+   ],
+   "an": 10.913
+  },
+  {
+   "ifade": "WhatsApp",
+   "tur": "liste",
+   "tik": true,
+   "baslik": "Onların kuzey yıldızı",
+   "maddeler": [
+    {
+     "metin": "WhatsApp: gönderilen mesaj",
+     "ifade": "WhatsApp"
+    },
+    {
+     "metin": "Netflix: izlenme süresi",
+     "ifade": "Netflix"
+    }
+   ],
+   "an": 15.977
+  },
+  {
+   "ifade": "Gelir bunların",
+   "tur": "buyuk",
+   "vurgu": [
+    "sonucudur",
+    "değildir"
+   ],
+   "an": 21.338
+  },
+  {
+   "ifade": "Girişimcilerin",
+   "tur": "sayi",
+   "on": "5–",
+   "sayi": 10,
+   "son": " METRİK",
+   "ust": "GİRİŞİMCİLERİN ÇOĞU",
+   "etiket": "bakar… ama hiçbirine odaklanmaz",
+   "an": 25.007
+  },
+  {
+   "ifade": "Ve hiçbirine",
+   "tur": "yuz",
+   "kanca": [
+    "Hiçbirine",
+    "ODAKLANMAZ"
+   ],
+   "zoom": "hiçbirine",
+   "an": 27.617
+  },
+  {
+   "ifade": "Sen bir",
+   "tur": "yuz",
+   "kanca": [
+    "Bir tane seç",
+    "EKİBİNİ ODAKLA"
+   ],
+   "zoom": "odakla",
+   "an": 29.183
+  },
+  {
+   "ifade": "Senin Kuzey",
+   "tur": "buyuk",
+   "vurgu": [
+    "Kuzey",
+    "Yıldızı",
+    "ne"
+   ],
+   "an": 32.278
+  },
+  {
+   "ifade": "kitabın",
+   "tur": "grafik",
+   "resim": "kitap.png",
+   "baslik": "Hedef Milyon Dolar · 2. bölüm",
+   "kaynak": "Eser Memişoğlu",
+   "an": 34.403
+  },
+  {
+   "ifade": "göre",
+   "tur": "kapanis",
+   "ust": [
+    "Senin kuzey yıldızın",
+    "NE?"
+   ],
+   "metin": "startupdoktoru.com",
+   "an": 36.491
+  }
+ ],
+ "muzik": {
+  "dosya": "muzik-kuzey-yildizi-k.mp3",
+  "ses": 0.16,
+  "kisik": 0.06,
+  "kaynak": "kütüphanedeki muzik-kuzey-yildizi, başı 0.166 sn kırpıldı (kesimler vuruşa otursun, 115 BPM)"
+ },
+ "efektler": [
+  {
+   "ses": "sfx-impact.mp3",
+   "an": 0,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-riser.mp3",
+   "an": 0.12,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 2.423,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 3.485,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 7.661,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 10.793,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 15.857,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 21.218,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 24.887,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 27.497,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 29.063,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 32.158,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 34.283,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 36.371,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-damga.mp3",
+   "ifade": "değil",
+   "kaydir": 0,
+   "seviye": 0.45
+  },
+  {
+   "ses": "sfx-yildiz.mp3",
+   "ifade": "Kuzey",
+   "kaydir": 0,
+   "seviye": 0.4,
+   "ses_istem": "magical bright star twinkle shimmer, short sparkling chime rising",
+   "ses_sure": 1
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "overengineering",
+   "kaydir": 0.1,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "Airbnb için",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "Spotify",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "WhatsApp",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "Netflix",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "kasa-kaching.mp3",
+   "ifade": "Gelir bunların",
+   "kaydir": 0.05,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "değildir",
+   "kaydir": 0.05,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "-10",
+   "kaydir": 0.03,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-hata.mp3",
+   "ifade": "hiçbirine",
+   "kaydir": 0.05,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-impact.mp3",
+   "ifade": "odakla",
+   "kaydir": 0.05,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "ne?",
+   "kaydir": 0.03,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-kitap.mp3",
+   "ifade": "kitabın",
+   "kaydir": 0,
+   "seviye": 0.4
+  }
+ ],
+ "kapak": {
+  "arka_sn": 31.2,
+  "rozet": "Kuzey Yıldızı Metriği",
+  "baslik": [
+   "Airbnb’nin en önemli",
+   "rakamı gelir"
+  ],
+  "vurgu": "DEĞİL"
+ },
+ "paylasim": {
+  "baslik": "Airbnb’nin en önemli rakamı gelir değil",
+  "instagram": "Airbnb’nin en önemli rakamı gelir değil. ⭐\n\nKuzey Yıldızı Metriği: müşteriye verdiğin en iyi değeri tek bir sayıyla ölçer.\n\n🏠 Airbnb: gece rezervasyonu\n🎧 Spotify: dinlenme süresi\n💬 WhatsApp: gönderilen mesaj\n🎬 Netflix: izlenme süresi\n\nGelir bunların sonucudur, kendisi değil. Çoğu girişimci 5–10 metriğe bakar ve hiçbirine odaklanmaz. Bir tane seç, bütün ekibini ona odakla.\n\nSenin kuzey yıldızın ne? Yorumlara yaz 👇\n\n#girişimcilik #startup #northstarmetric #büyüme #metrik #startupdoktoru",
+  "shorts": "BAŞLIK: Airbnb’nin En Önemli Rakamı Gelir Değil ⭐ Kuzey Yıldızı Metriği #shorts\n\nAÇIKLAMA:\nKuzey Yıldızı Metriği nedir? Airbnb, Spotify, WhatsApp ve Netflix örnekleriyle: gelir sonuçtur, odak tek bir metrikte olmalı.\n\n#startup #girişimcilik #northstarmetric #shorts",
+  "linkedin": "Airbnb’nin en önemli rakamı gelir değil; Kuzey Yıldızı Metriği.\n\nKuzey Yıldızı, bir şirketin müşteriye verdiği en iyi değeri tek bir sayıyla anlatır:\n• Airbnb: gece rezervasyonu\n• Spotify: dinlenme süresi\n• WhatsApp: gönderilen mesaj\n• Netflix: toplam izlenme süresi\n\nGelir bunların sonucudur, kendisi değil. Doğru seçilmiş bir Kuzey Yıldızı sizi overengineering’den de korur.\n\nGirişimcilerin çoğu 5–10 metriğe bakar ve hiçbirine odaklanmaz. Bir tane seçin ve bütün ekibinizi ona odaklayın.\n\nSizin Kuzey Yıldızınız ne?\n\n#girişimcilik #startup #northstarmetric #büyüme"
+ },
+ "hikaye_sozu": "Gelir sonuçtur, kendisi değil."
+}

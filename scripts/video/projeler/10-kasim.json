@@ -1,0 +1,248 @@
+{
+  "ad": "10-kasim",
+  "klipler": [
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/10 Kasım/IMG_4456.mov",
+      "goruntu": true,
+      "kes": [
+        [
+          53.3,
+          55.77
+        ]
+      ]
+    }
+  ],
+  "duzelt": {
+    "'ümüzü": "+'ümüzü",
+    "Savaşı": "Savaşımız",
+    "'nız": "",
+    "mahkum": "mahkûm",
+    "İzlediğiniz": "",
+    "teşekkür": "",
+    "ederim.": ""
+  },
+  "ses_filtre": "highpass=f=75,afftdn=nf=-28,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+  "kuyruk": 2.4,
+  "gorsel": [
+    {
+      "ifade": "Bugün 10",
+      "tur": "yuz",
+      "kanca": [
+        "Bugün yeni bir",
+        "KURTULUŞ SAVAŞI"
+      ]
+    },
+    {
+      "ifade": "Atatürk",
+      "tur": "baslik",
+      "ust": "10 KASIM",
+      "baslik": [
+        "Saygı, sevgi"
+      ],
+      "vurgu": "ve özlemle"
+    },
+    {
+      "ifade": "Fakat",
+      "tur": "yuz",
+      "isim": [
+        "Eser Memişoğlu",
+        "STARTUP DOKTORU"
+      ]
+    },
+    {
+      "ifade": "bambaşka",
+      "tur": "baslik",
+      "ust": "YENİ CEPHE",
+      "baslik": [
+        "Bağımsızlığın",
+        "yeni cephesi"
+      ],
+      "vurgu": "TEKNOLOJİ",
+      "arka": "teknoloji-cip.mp4"
+    },
+    {
+      "ifade": "Kendi teknolojisini",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "üretemeyen",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "üretemeyen",
+          "id": "liman-konteyner",
+          "istem": "aerial view of a huge cargo port with colorful shipping containers being unloaded from a giant foreign container ship, cranes, overcast morning",
+          "hareket": "slow aerial drift over the container ship and cranes, containers being lifted",
+          "etiket": [
+            "liman",
+            "konteyner",
+            "ithalat",
+            "ticaret",
+            "gemi"
+          ]
+        }
+      ]
+    },
+    {
+      "ifade": "mahkûm",
+      "tur": "yuz",
+      "zoom": "mahkûm"
+    },
+    {
+      "ifade": "Bizim Kurtuluş",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "bu topraklardan",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "bu topraklardan",
+          "id": "istanbul-gece",
+          "hareket": "x"
+        }
+      ]
+    },
+    {
+      "ifade": "global",
+      "tur": "sayi",
+      "sayi": 1000000000,
+      "on": "$",
+      "ust": "BU TOPRAKLARDAN DÜNYAYA",
+      "etiket": "global şirketler"
+    },
+    {
+      "ifade": "Ve biz",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "girişimciler",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "girişimciler",
+          "id": "genc-girisimciler",
+          "istem": "a small team of young startup founders working together in a modern bright office at sunrise, laptops and a whiteboard full of product sketches, determined and hopeful mood, seen from behind and side, faces not in focus",
+          "hareket": "slow push-in as the team leans over the laptop and one founder points at the screen, warm sunrise light",
+          "etiket": [
+            "girişimci",
+            "ekip",
+            "ofis",
+            "startup",
+            "gün-doğumu",
+            "umut"
+          ]
+        }
+      ]
+    },
+    {
+      "ifade": "en büyük",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "son",
+      "an": 25.62,
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "10 Kasım 1938",
+        "Saygıyla anıyoruz."
+      ]
+    }
+  ],
+  "studyo": true,
+  "ai_beyan": true,
+  "muzik": {
+    "dosya": "muzik-10-kasim.mp3",
+    "sure": 40,
+    "ses": 0.14,
+    "kisik": 0.05,
+    "etiket": [
+      "anma",
+      "duygusal",
+      "piyano",
+      "umut",
+      "10-kasım"
+    ],
+    "istem": "Solemn and respectful cinematic piano with soft strings, starts quiet and reflective, slowly builds to a hopeful, determined and proud swell near the end, 70 BPM, sparse so a voiceover sits on top, no vocals, no drums until the final build"
+  },
+  "efektler": [
+    {
+      "ses": "sfx-impact.mp3",
+      "an": 0.0,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Atatürk",
+      "kaydir": -0.12,
+      "seviye": 0.22
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "bambaşka",
+      "kaydir": -0.12,
+      "seviye": 0.22
+    },
+    {
+      "ses": "sfx-impact.mp3",
+      "ifade": "mahkûm",
+      "kaydir": -0.05,
+      "seviye": 0.2
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "global",
+      "kaydir": -0.12,
+      "seviye": 0.22
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 25.52,
+      "seviye": 0.2
+    },
+    {
+      "ses": "sfx-bayrak.mp3",
+      "ifade": "en büyük",
+      "kaydir": 0.0,
+      "seviye": 0.35,
+      "ses_istem": "large flag flapping and fluttering strongly in the wind, fabric snapping, outdoor",
+      "ses_sure": 4
+    }
+  ],
+  "kapak": {
+    "arka_sn": 12.0,
+    "rozet": "10 Kasım",
+    "baslik": [
+      "Yeni",
+      "Kurtuluş Savaşı"
+    ],
+    "vurgu": "TEKNOLOJİ"
+  },
+  "paylasim": {
+    "baslik": "10 Kasım: Yeni Kurtuluş Savaşı teknoloji",
+    "instagram": "Bugün 10 Kasım. Atatürk'ümüzü saygı, sevgi ve özlemle anıyoruz. 🇹🇷\n\nBağımsızlık mücadelesi bugün bambaşka bir cephede: teknolojide. Kendi teknolojisini üretemeyen bir ülke başkasına mahkûm kalır.\n\nBizim Kurtuluş Savaşımız, bu topraklardan çıkıp global milyar dolarlık şirketler kurmakla başlıyor. Ve biz girişimciler, bu mirasın taşıyıcılarıyız.\n\n#10Kasım #Atatürk #girişimcilik #startup #teknoloji #startupdoktoru",
+    "shorts": "BAŞLIK: 10 Kasım: Yeni Kurtuluş Savaşı Teknolojide #shorts\n\nAÇIKLAMA:\nAtatürk'ümüzü saygı, sevgi ve özlemle anıyoruz. Bugün bağımsızlık mücadelesi teknolojide veriliyor: bu topraklardan global şirketler çıkarmak.\n\n#10Kasım #Atatürk #girişimcilik #shorts",
+    "linkedin": "Bugün 10 Kasım. Atatürk'ümüzü saygı, sevgi ve özlemle anıyoruz.\n\nBağımsızlık mücadelesi bugün bambaşka bir cephede veriliyor: teknolojide. Kendi teknolojisini üretemeyen bir ülke başkasına mahkûm kalır.\n\nBizim Kurtuluş Savaşımız, bu topraklardan çıkıp global, milyar dolarlık şirketler kurmakla başlıyor. Biz girişimciler bu mirasın taşıyıcılarıyız.\n\n#10Kasım #Atatürk #girişimcilik #teknoloji"
+  },
+  "uret": [
+    {
+      "id": "teknoloji-cip",
+      "istem": "extreme macro close-up of a glowing microchip on a dark circuit board, tiny golden traces lit by cyan light, high-tech semiconductor",
+      "hareket": "slow camera glide across the circuit board, light pulses travel along the traces",
+      "sure": 4,
+      "etiket": [
+        "teknoloji",
+        "çip",
+        "yarı-iletken",
+        "devre",
+        "üretim"
+      ]
+    }
+  ],
+  "bayrak": {
+    "ifade": "en büyük",
+    "genislik": 640,
+    "ust": 1380
+  }
+}

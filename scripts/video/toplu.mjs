@@ -101,7 +101,8 @@ if (!argv.includes("--durum")) {
     }
     const id = kimlik(dosya);
     const k = (durum[id] ??= { dosya: ad, ad: `${sadelestir(basename(ad, extname(ad)))}-${id.slice(0, 4)}`, asama: "yeni" });
-    if (k.asama === "kuyrukta" || k.asama === "birlesti") continue; // birlesti: başka projenin klibi oldu
+    // birlesti: başka projenin klibi oldu; kutuphane: tepki/duygu çekimi, tek başına video değil
+    if (k.asama === "kuyrukta" || k.asama === "birlesti" || k.asama === "kutuphane") continue;
     console.log(`\n▶ ${ad} → ${k.ad}`);
     try {
       delete k.hata;

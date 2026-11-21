@@ -1,0 +1,258 @@
+{
+  "ad": "terminal-istanbul",
+  "klipler": [
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/terminal-istanbul/kaynak.mov",
+      "goruntu": true,
+      "kes": [
+        [
+          23.8,
+          32.0
+        ],
+        [
+          80.0,
+          87.1
+        ],
+        [
+          143.3,
+          153.8
+        ]
+      ]
+    }
+  ],
+  "duzelt": {
+    "teknolojisi.": "teknoloji üssü.",
+    "yatırımcılığı": "yatırımcı",
+    "Türkiye": "Türkiye'nin",
+    "'nin": ""
+  },
+  "kuyruk": 2.6,
+  "gorsel": [
+    {
+      "ifade": "Eski dış hatlar artık",
+      "tur": "yuz",
+      "kanca": [
+        "Eski dış hatlar artık",
+        "TEKNOLOJİ ÜSSÜ"
+      ]
+    },
+    {
+      "ifade": "Geçenlerde",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "Geçenlerde",
+          "id": "t-totem",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "açılış",
+          "id": "t-kokteyl",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "Adı",
+          "id": "t-amfi",
+          "hareket": "edit"
+        }
+      ]
+    },
+    {
+      "ifade": "Eski dış hatlar binasını",
+      "tur": "yuz",
+      "isim": [
+        "Eser Memişoğlu",
+        "STARTUP DOKTORU"
+      ]
+    },
+    {
+      "ifade": "İçeride toplantı",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "İçeride",
+          "id": "t-lounge",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "özel",
+          "id": "t-salon",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "birinci",
+          "resim": "t-mutfak.jpg"
+        },
+        {
+          "ifade": "restoranları",
+          "resim": "t-tatli.jpg"
+        },
+        {
+          "ifade": "uyku",
+          "id": "t-logo",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "her şeyi düşünmüşler",
+          "id": "t-piyano",
+          "hareket": "edit"
+        }
+      ]
+    },
+    {
+      "ifade": "Ama asıl",
+      "tur": "yuz",
+      "zoom": "önemli"
+    },
+    {
+      "ifade": "İçeride test",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "İçeride",
+          "id": "t-amfi2",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "global",
+          "id": "t-network",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "Dünyadaki",
+          "id": "t-kokteyl2",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "buraya",
+          "id": "t-salon2",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "birleşmelerini",
+          "id": "t-yuzler",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "network",
+          "id": "t-kalabalik",
+          "hareket": "edit"
+        }
+      ]
+    },
+    {
+      "ifade": "Hatta bu",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "Hatta",
+          "resim": "t-foto.jpg"
+        }
+      ]
+    },
+    {
+      "ifade": "Yeni insanlarla",
+      "tur": "yuz"
+    },
+    {
+      "ifade": "Kimileriyle",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "Kimileriyle",
+          "resim": "t-foto.jpg"
+        }
+      ]
+    },
+    {
+      "ifade": "Türkiye'nin",
+      "tur": "broll",
+      "kareler": [
+        {
+          "ifade": "Türkiye'nin",
+          "id": "t-totem2",
+          "hareket": "edit"
+        },
+        {
+          "ifade": "binayı",
+          "id": "t-salon3",
+          "hareket": "edit"
+        }
+      ]
+    },
+    {
+      "ifade": "Dış hatlar",
+      "tur": "yuz",
+      "zoom": "hemen"
+    },
+    {
+      "ifade": "son",
+      "an": 52.15,
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Girişimin yeni",
+        "TERMİNALİ"
+      ]
+    }
+  ],
+  "studyo": true,
+  "ai_beyan": false,
+  "muzik": {
+    "dosya": "muzik-tech-haber.mp3",
+    "ses": 0.12,
+    "kisik": 0.05
+  },
+  "efektler": [
+    {
+      "ses": "sfx-impact.mp3",
+      "an": 0.0,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 2.64,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 10.8,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 21.27,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-impact.mp3",
+      "an": 32.06,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 42.0,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 52.05,
+      "seviye": 0.25
+    }
+  ],
+  "kapak": {
+    "arka_sn": 1.0,
+    "rozet": "Ekosistem",
+    "baslik": [
+      "Eski dış hatlar",
+      "artık girişimin"
+    ],
+    "vurgu": "ÜSSÜ"
+  },
+  "paylasim": {
+    "baslik": "Eski dış hatlar artık teknoloji üssü: Terminal İstanbul",
+    "instagram": "Atatürk Havalimanı'nın eski dış hatlar binası artık bir teknoloji üssü: Terminal İstanbul ✈️\n\nKapalı açılış etkinliğindeydik. Toplantı odaları, etkinlik alanları, birinci sınıf restoranlar, hatta uyku odaları… Ama asıl önemli olan: test merkezleri ve global yatırımcı ağları.\n\nBiz de orada yeni insanlarla tanıştık, eski dostlarla buluştuk, yeni iş ortaklıkları kurduk. 🤝\n\nSen de burada olmak ister miydin? Yorumlara yaz 👇\n\n#TerminalIstanbul #GITEX #girişimcilik #startup #yatırım #network #startupdoktoru",
+    "shorts": "BAŞLIK: Eski Dış Hatlar Artık Teknoloji Üssü ✈️ #shorts\n\nAÇIKLAMA:\nAtatürk Havalimanı'nın dış hatlar binası Terminal İstanbul oldu: test merkezleri, global yatırımcı ağları ve girişimciler aynı çatı altında.\n\n#TerminalIstanbul #startup #girişimcilik #shorts",
+    "linkedin": "Bir zamanlar dünyaya açılan kapımızdı. Şimdi girişimlerin dünyaya açılan kapısı olmaya hazırlanıyor.\n\nAtatürk Havalimanı'nın eski dış hatlar binasında kurulan Terminal İstanbul'un kapalı açılış etkinliğindeydim. Toplantı ve etkinlik alanları, birinci sınıf restoranlar, uyku odaları; en önemlisi test merkezleri ve global yatırımcı ağları aynı çatı altında olacak.\n\nO akşam yeni insanlarla tanıştık, eski dostlarla buluştuk ve yeni iş ortaklıkları kurduk. Türkiye'nin girişim haritasında bu binayı çok konuşacağız.\n\n#TerminalIstanbul #girişimcilik #startup #yatırım"
+  }
+}

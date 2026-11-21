@@ -1,0 +1,88 @@
+{
+  "ad": "yatirimci-ekibe-bakar",
+  "klipler": [
+    {
+      "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/yatirimci-ekibe-bakar/kaynak.mp4",
+      "goruntu": true
+    }
+  ],
+  "duzelt": {},
+  "kuyruk": 2.6,
+  "gorsel": [
+    {
+      "ifade": "Şunu net",
+      "tur": "yuz",
+      "kanca": [
+        "Yatırımcı neye",
+        "BAKAR?"
+      ]
+    },
+    {
+      "ifade": "Gerçek iş ekipte",
+      "tur": "buyuk",
+      "vurgu": [
+        "ekipte"
+      ]
+    },
+    {
+      "ifade": "Bunu sakın",
+      "tur": "yuz",
+      "zoom": "unutmayın",
+      "isim": [
+        "Eser Memişoğlu",
+        "STARTUP DOKTORU"
+      ]
+    },
+    {
+      "ifade": "son",
+      "an": 10.62,
+      "tur": "kapanis",
+      "metin": "startupdoktoru.com",
+      "ust": [
+        "Fikir değil,",
+        "ekip kazanır."
+      ]
+    }
+  ],
+  "studyo": true,
+  "ai_beyan": false,
+  "muzik": {
+    "dosya": "muzik-tech-haber.mp3",
+    "sure": 15,
+    "ses": 0.12,
+    "kisik": 0.05
+  },
+  "efektler": [
+    {
+      "ses": "sfx-impact.mp3",
+      "an": 0.0,
+      "seviye": 0.25
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "ifade": "Gerçek iş ekipte",
+      "kaydir": -0.12,
+      "seviye": 0.3
+    },
+    {
+      "ses": "sfx-whoosh.mp3",
+      "an": 10.52,
+      "seviye": 0.25
+    }
+  ],
+  "kapak": {
+    "arka_sn": 1.5,
+    "rozet": "Yatırım",
+    "baslik": [
+      "Yatırımcı",
+      "neye bakar?"
+    ],
+    "vurgu": "EKİBE"
+  },
+  "paylasim": {
+    "baslik": "Yatırımcı fikre değil ekibe bakar",
+    "instagram": "Yatırımcılar ne dünyada ilk olan fikrinize ne de gelecek hayalinize bakar. Gerçek iş ekipte. 🎯\n\n#startup #girişimcilik #yatırım #startupdoktoru",
+    "shorts": "BAŞLIK: Yatırımcı Fikre Değil Ekibe Bakar #shorts\n\nAÇIKLAMA:\nGerçek iş ekipte. Bunu sakın unutmayın.\n\n#startup #yatırım #shorts",
+    "linkedin": "Yatırımcılar ne dünyada ilk olan fikrinize ne de gelecek hayalinize bakar. Gerçek iş ekipte.\n\n#startup #girişimcilik #yatırım"
+  }
+}

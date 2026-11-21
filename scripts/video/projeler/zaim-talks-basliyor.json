@@ -1,0 +1,411 @@
+{
+ "ad": "zaim-talks-basliyor",
+ "klipler": [
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Zaim Talks'da Neler Var-1/IMG_4483.MOV",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     2.25
+    ],
+    [
+     6.65,
+     8.4
+    ],
+    [
+     13.45,
+     22.27
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Zaim Talks'da Neler Var-1/Zaim Talks Tanıtım-1.m4a",
+   "kes": [
+    [
+     0,
+     1.55
+    ],
+    [
+     9.25,
+     16.68
+    ],
+    [
+     21.95,
+     25.42
+    ],
+    [
+     26.7,
+     26.98
+    ]
+   ]
+  },
+  {
+   "dosya": "/Users/eser.user/Desktop/Startup Doktoru Videolar/ham_gelen/Zaim Talks'da Neler Var-1/IMG_4483.MOV",
+   "goruntu": true,
+   "kes": [
+    [
+     0,
+     17.93
+    ],
+    [
+     20.68,
+     22.27
+    ]
+   ]
+  },
+  {
+   "sessizlik": 0.3
+  }
+ ],
+ "duzelt": {
+  "Zahim": "Zaim",
+  "dayanında.": "yanımda.",
+  "girişimci": "girişimciyi",
+  "önemlisi...": "önemlisi"
+ },
+ "ses_filtre": "highpass=f=75,afftdn=nf=-28,equalizer=f=220:t=q:w=1.2:g=-2,equalizer=f=3500:t=q:w=1.4:g=2.5,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=2",
+ "kuyruk": 2.4,
+ "studyo": true,
+ "ai_beyan": false,
+ "gorsel": [
+  {
+   "ifade": "Startup",
+   "tur": "broll",
+   "kanca": [
+    "Startup dünyası",
+    "ZAİM TALKS BAŞLIYOR"
+   ],
+   "kareler": [
+    {
+     "ifade": "Startup",
+     "id": "z-giris",
+     "hareket": "edit"
+    },
+    {
+     "ifade": "Zaim",
+     "id": "z-tabela",
+     "hareket": "edit"
+    }
+   ]
+  },
+  {
+   "ifade": "Sevgili",
+   "tur": "yuz",
+   "isim": [
+    "Özgür Özdemir",
+    "CEO · İZÜ ZAİM TEKNOPARK"
+   ],
+   "zoom": "bulacaklar",
+   "an": 1.98
+  },
+  {
+   "ifade": "Girişimcileri",
+   "tur": "liste",
+   "tik": true,
+   "baslik": "Zaim Talks’ta kimler var?",
+   "maddeler": [
+    {
+     "metin": "Girişimciler",
+     "ifade": "Girişimcileri"
+    },
+    {
+     "metin": "Yatırımcılar",
+     "ifade": "yatırımcıları"
+    },
+    {
+     "metin": "Öğrenciler",
+     "ifade": "öğrencileri"
+    },
+    {
+     "metin": "Mezunlar",
+     "ifade": "mezunları"
+    }
+   ],
+   "an": 4.323
+  },
+  {
+   "ifade": "ekosistemdeki",
+   "tur": "yuz",
+   "kanca": [
+    "Ekosistemdeki",
+    "HERKES BURADA"
+   ],
+   "zoom": "herkesi",
+   "an": 8.071
+  },
+  {
+   "ifade": "Her ay",
+   "tur": "grafik",
+   "resim": "teshis-masasi.png",
+   "baslik": "Her ay yeni bir teşhis",
+   "kaynak": "Zaim Talks · İZÜ Zaim Teknopark",
+   "an": 9.476
+  },
+  {
+   "ifade": "En büyük",
+   "tur": "buyuk",
+   "vurgu": [
+    "sıkıntılarını",
+    "masaya"
+   ],
+   "an": 13.693
+  },
+  {
+   "ifade": "Sonra bol",
+   "tur": "broll",
+   "kanca": [
+    "Bol bol",
+    "NETWORK"
+   ],
+   "kareler": [
+    {
+     "ifade": "Sonra",
+     "id": "z-lounge",
+     "hareket": "edit"
+    },
+    {
+     "ifade": "network",
+     "id": "z-pinpon",
+     "hareket": "edit"
+    },
+    {
+     "ifade": "Yatırımcılarla",
+     "id": "z-toplanti",
+     "hareket": "edit"
+    },
+    {
+     "ifade": "birbirinizle",
+     "id": "z-kirmizi",
+     "hareket": "edit"
+    }
+   ],
+   "an": 16.035
+  },
+  {
+   "ifade": "Ve en",
+   "tur": "buyuk",
+   "vurgu": [
+    "önemlisi",
+    "konuşmayacağız"
+   ],
+   "an": 20.59
+  },
+  {
+   "ifade": "Mikrofon",
+   "tur": "broll",
+   "kanca": [
+    "Teknopark sakinleri",
+    "MİKROFON SİZDE"
+   ],
+   "kareler": [
+    {
+     "ifade": "Mikrofon",
+     "id": "z-pencere",
+     "hareket": "edit"
+    },
+    {
+     "ifade": "sakinleri",
+     "id": "z-gunbatimi",
+     "hareket": "edit"
+    }
+   ],
+   "an": 23.532
+  },
+  {
+   "ifade": "çok güzel",
+   "tur": "yuz",
+   "zoom": "hediyelerimiz",
+   "an": 27.279
+  },
+  {
+   "ifade": "Takip",
+   "tur": "kapanis",
+   "ust": [
+    "Zaim Talks",
+    "TAKİPTE KAL"
+   ],
+   "metin": "startupdoktoru.com",
+   "an": 28.685
+  }
+ ],
+ "muzik": {
+  "dosya": "muzik-zaim-talks-k.mp3",
+  "ses": 0.16,
+  "kisik": 0.06,
+  "kaynak": "kütüphanedeki muzik-zaim-talks, başı 0.362 sn kırpıldı (kesimler vuruşa otursun, 128 BPM)"
+ },
+ "efektler": [
+  {
+   "ses": "sfx-impact.mp3",
+   "an": 0,
+   "seviye": 0.4
+  },
+  {
+   "ses": "sfx-riser.mp3",
+   "an": 0.12,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 1.861,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 4.203,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 7.951,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-glitch.mp3",
+   "an": 9.357,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 13.573,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 15.915,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 20.47,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 23.412,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 27.159,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-whoosh.mp3",
+   "an": 28.565,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "Zaim",
+   "kaydir": 0.02,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "Girişimcileri",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "yatırımcıları",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "öğrencileri",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "mezunları",
+   "kaydir": 0.03,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-damga.mp3",
+   "ifade": "masaya",
+   "kaydir": 0,
+   "seviye": 0.45
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "network",
+   "kaydir": 0,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "Yatırımcılarla",
+   "kaydir": 0,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-tik.mp3",
+   "ifade": "birbirinizle",
+   "kaydir": 0,
+   "seviye": 0.3
+  },
+  {
+   "ses": "sfx-riser.mp3",
+   "ifade": "Ve en",
+   "kaydir": 0,
+   "seviye": 0.25
+  },
+  {
+   "ses": "sfx-impact.mp3",
+   "ifade": "konuşmayacağız",
+   "kaydir": 0.1,
+   "seviye": 0.35
+  },
+  {
+   "ses": "sfx-mikrofon.mp3",
+   "ifade": "Mikrofon",
+   "kaydir": -0.05,
+   "seviye": 0.45,
+   "ses_istem": "two quick taps on a live microphone, soft thump with slight PA reverb",
+   "ses_sure": 0.8
+  },
+  {
+   "ses": "sfx-alkis.mp3",
+   "ifade": "duyuracağız",
+   "kaydir": 0.2,
+   "seviye": 0.3,
+   "ses_istem": "short enthusiastic applause and a few cheers from a small conference audience",
+   "ses_sure": 1.6
+  },
+  {
+   "ses": "sfx-hediye.mp3",
+   "ifade": "hediyelerimiz",
+   "kaydir": 0,
+   "seviye": 0.4,
+   "ses_istem": "bright magical sparkle chime, gift box reveal, short and cheerful",
+   "ses_sure": 1
+  },
+  {
+   "ses": "sfx-pop.mp3",
+   "ifade": "Takip",
+   "kaydir": 0.02,
+   "seviye": 0.35
+  }
+ ],
+ "kapak": {
+  "arka_sn": 0.6,
+  "rozet": "İZÜ Zaim Teknopark",
+  "baslik": [
+   "Zaim Talks",
+   "başlıyor"
+  ],
+  "vurgu": "HER AY"
+ },
+ "paylasim": {
+  "baslik": "Zaim Talks başlıyor",
+  "instagram": "Startup dünyası, Zaim Talks başlıyor! 🚀\n\nİZÜ Zaim Teknopark CEO’su Özgür Özdemir ile yeni programımızı duyuruyoruz:\n\n🩺 Her ay Teşhis Masası: bir girişimci + bir yatırımcı, en büyük sıkıntılar masaya yatırılıyor\n🤝 Bol bol network: yatırımcılarla da, birbirinizle de iş birliği\n🎤 Mikrofon sizde: teknopark sakinleri de konuşuyor\n🎁 Ve sürpriz hediyeler\n\nTakipte kal, ilk buluşmayı kaçırma 👇\n\n#ZaimTalks #ZaimTeknopark #girişimcilik #startup #yatırım #network #startupdoktoru",
+  "shorts": "BAŞLIK: Zaim Talks Başlıyor 🚀 Her Ay Teşhis Masası #shorts\n\nAÇIKLAMA:\nİZÜ Zaim Teknopark ile yeni program: her ay bir girişimci ve bir yatırımcı Teşhis Masası’nda; bol network ve teknopark sakinlerine açık mikrofon.\n\n#ZaimTalks #startup #girişimcilik #yatırım #shorts",
+  "linkedin": "Startup dünyası için yeni bir buluşma başlıyor: Zaim Talks.\n\nİZÜ Zaim Teknopark CEO’su Özgür Özdemir ile birlikte hayata geçirdiğimiz programda her ay Teşhis Masası’nda bir girişimci ve bir yatırımcıyı ağırlayacağız; en büyük sıkıntıları açıkça masaya yatıracağız.\n\nArdından bol bol network: yatırımcılarla ve girişimcilerin kendi aralarında iş birliği kurabileceği bir ortam.\n\nVe en önemlisi: sadece biz konuşmayacağız. Mikrofon teknopark sakinlerinde olacak.\n\nTakipte kalın.\n\n#ZaimTalks #ZaimTeknopark #girişimcilik #startup #yatırım"
+ }
+}
