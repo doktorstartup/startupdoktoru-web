@@ -24,6 +24,7 @@ import { VIDEOS } from "../../../../lib/videos";
 import { TESTIMONIALS } from "../../../../lib/socialproof";
 import { useMember } from "../../../../lib/member";
 import { useHref, useT, useLang } from "../../../../lib/i18n-client";
+import { EbookTeklif } from "../../../../components/EbookTeklif";
 
 // Formun altında kısa yazılı öğrenci sözleri (video/link yok, sürtünme olmasın).
 const FORM_SOZLERI = TESTIMONIALS.filter(
@@ -321,6 +322,22 @@ export default function FreeTraining() {
                 />
               </div>
 
+              {/* TR: önce 6 $ kitap teklifi (ödeme aynı sayfada), sonra yatırımcı profili.
+                  Eylül'de sıra tersine çevrilince satış durdu (2026-11-21). EN: kitap satışı yok. */}
+              {!en ? (
+                <>
+                  <EbookTeklif />
+                  <div className="flex items-center gap-3 w-full max-w-md my-6">
+                    <div className="h-px flex-1 bg-border/40" />
+                    <span className="text-[11px] text-muted-foreground uppercase tracking-wider">ya da</span>
+                    <div className="h-px flex-1 bg-border/40" />
+                  </div>
+                  <Link href={`${href("/portal/startup")}#kayit`} className="btn btn-secondary btn-lg">
+                    <Rocket className="h-5 w-5" /> Girişim profilini oluştur, yatırımcılarla eşleş
+                  </Link>
+                </>
+              ) : (
+                <>
               {/* GİRİŞİM PROFİLİ CTA — yatırımcı ağına giriş (birincil sonraki adım) */}
               <Link href={`${href("/portal/startup")}#kayit`}
                 className="w-full p-8 rounded-2xl bg-gradient-to-br from-primary/[0.12] via-[#0F213A] to-accent/[0.06] border border-primary/30 hover:border-primary/50 transition-all relative overflow-hidden flex flex-col items-center text-center shadow-lg group mb-6">
@@ -361,6 +378,9 @@ export default function FreeTraining() {
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
+
+                </>
+              )}
 
             </div>
           )}

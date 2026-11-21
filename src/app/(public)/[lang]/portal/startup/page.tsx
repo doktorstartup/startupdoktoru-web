@@ -7,6 +7,7 @@ import { MemberLogin } from "../../../../../components/MemberLogin";
 import { useMember } from "../../../../../lib/member";
 import { supabase } from "../../../../../lib/supabase";
 import { useHref } from "../../../../../lib/i18n-client";
+import { EbookTeklif } from "../../../../../components/EbookTeklif";
 
 type Profile = {
   startup_name: string;
@@ -179,6 +180,14 @@ export default function StartupProfilePage() {
           <div className="glass-panel rounded-2xl border border-emerald-500/25 p-6 flex items-center gap-2 text-emerald-400 font-semibold">
             <Sparkles className="h-5 w-5" /> Profilin güçlü — değerlemen ve sunumun hazır. Eşleştirmeye hazırsın! 🎉
           </div>
+        )}
+
+        {/* Profil bitince somut ilk adım: 6 $ kitap, ödeme bu sayfada (2026-11-21). */}
+        {!hasAccess("ebook_13_steps") && (
+          <EbookTeklif
+            baslik="Yatırımcı karşısına çıkmadan önce: Hedef Milyon Dolar"
+            aciklama="Profilini tamamladın. Yatırımcıların sorduğu check-up, MVP, funnel ve büyüme sorularının cevapları bu kitapta."
+          />
         )}
 
         <div className="flex items-center gap-3">

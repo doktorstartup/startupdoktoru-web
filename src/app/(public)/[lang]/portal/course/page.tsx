@@ -6,16 +6,19 @@ import { Lock, CheckCircle2, Circle, Play, Loader2, ShoppingCart, GraduationCap,
 import { BunnyEmbed } from "../../../../../components/BunnyEmbed";
 import { YouTubeEmbed } from "../../../../../components/YouTubeEmbed";
 import { MemberLogin } from "../../../../../components/MemberLogin";
-import { TRAININGS, DISCOUNTED_TRAINING_PRICE, trainingPoster, trainingText, lessonTitle, type Training } from "../../../../../lib/trainings";
+import { TRAININGS, DISCOUNTED_TRAINING_PRICE, EBOOK_DISCOUNT_CODE, trainingPoster, trainingText, lessonTitle, type Training } from "../../../../../lib/trainings";
 import { VIDEOS } from "../../../../../lib/videos";
 import { useMember, getProgress, saveProgress, tagInterest } from "../../../../../lib/member";
 import { useHref, useLang, useT } from "../../../../../lib/i18n-client";
 import { fill } from "../../../../../lib/i18n";
+import CheckoutForm from "../../../../../components/CheckoutForm";
+import { EbookTeklif } from "../../../../../components/EbookTeklif";
 
 export default function CoursePortal() {
   const { member, loading, hasAccess } = useMember();
   const lang = useLang();
-  const t = useT().portal;
+  const all = useT();
+  const t = all.portal;
   const href = useHref();
   const email = member?.email || "";
 
@@ -23,6 +26,7 @@ export default function CoursePortal() {
   const [activeLessonId, setActiveLessonId] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [completed, setCompleted] = useState<string[]>([]);
+  const [satinAl, setSatinAl] = useState<Training | null>(null);
 
   useEffect(() => {
     if (!email) return;
@@ -47,6 +51,21 @@ export default function CoursePortal() {
   const ownsEbook = hasAccess("ebook_13_steps");
   // Sunum dosyası eğitim alanlara da açık; kart ikisinde de görünsün.
   const dosyasiVar = ownsEbook || owned.length > 0;
+
+  // Satın al: /egitimler'e göndermek yerine ödeme formu burada açılır (üye → doğrudan kart adımı).
+  // Kitap sahibine %50 kupon otomatik uygulanır (portaldaki "kitapla 35 $" vaadi).
+  const odeme = satinAl && (
+    <CheckoutForm
+      productId={satinAl.id}
+      productTitle={trainingText(satinAl, lang).title}
+      productNote={ownsEbook ? all.trainingsPage.noteDiscounted : all.trainingsPage.noteNormal}
+      priceLabel={ownsEbook ? `${DISCOUNTED_TRAINING_PRICE} $` : `$${satinAl.price}.00`}
+      comparePrice={ownsEbook ? `$${satinAl.price}` : undefined}
+      productQuery={satinAl.productQuery}
+      discountCode={ownsEbook ? EBOOK_DISCOUNT_CODE : undefined}
+      onClose={() => setSatinAl(null)}
+    />
+  );
 
   const openTraining = (id: string, lessonId?: string) => {
     setActiveId(id);
@@ -118,6 +137,8 @@ export default function CoursePortal() {
             </span>
           </div>
         </Link>
+
+        {!ownsEbook && <div className="max-w-4xl"><EbookTeklif /></div>}
       </div>
     );
   }
@@ -164,9 +185,9 @@ export default function CoursePortal() {
                   <h2 className="text-lg font-bold">{text.title}</h2>
                   <p className="text-sm text-muted-foreground">{text.tagline}</p>
                 </div>
-                <Link href={href("/egitimler")} className="btn btn-primary shrink-0">
+                <button type="button" onClick={() => setSatinAl(tr)} className="btn btn-primary shrink-0 cursor-pointer">
                   <ShoppingCart className="h-4 w-4" /> {lang === "en" ? `$${tr.price}` : `${tr.price} $`} <span className="text-xs opacity-80">{fill(t.withEbook, { price: DISCOUNTED_TRAINING_PRICE })}</span>
-                </Link>
+                </button>
               </div>
             )}
           </div>
@@ -195,6 +216,7 @@ export default function CoursePortal() {
             </div>
           )}
         </div>
+        {odeme}
       </div>
     );
   }
@@ -311,6 +333,8 @@ export default function CoursePortal() {
           </div>
         </div>
 
+      {!ownsEbook && <EbookTeklif />}
+
       {/* Diğer eğitimler (sahip olunmayan) */}
       {notOwned.length > 0 && (
         <div>
@@ -330,9 +354,9 @@ export default function CoursePortal() {
                   <button onClick={() => openTraining(tr.id)} className="btn btn-secondary btn-sm flex-1">
                     <Play className="h-3.5 w-3.5" /> {t.preview}
                   </button>
-                  <Link href={href("/egitimler")} className="btn btn-primary btn-sm flex-1">
+                  <button type="button" onClick={() => setSatinAl(tr)} className="btn btn-primary btn-sm flex-1 cursor-pointer">
                     <ShoppingCart className="h-3.5 w-3.5" /> {t.buy}
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}
@@ -340,6 +364,7 @@ export default function CoursePortal() {
           <p className="text-[11px] text-muted-foreground mt-3">{fill(t.discountNote, { price: DISCOUNTED_TRAINING_PRICE })}</p>
         </div>
       )}
+      {odeme}
     </div>
   );
 }
