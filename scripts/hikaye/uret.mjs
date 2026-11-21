@@ -5,7 +5,8 @@
 //
 // Kullanım: node scripts/hikaye/uret.mjs scripts/hikaye/hafta/<dosya>.json
 //   Dosya: [{ "ad": "kisa-ad", "soz": "tam söz", "ust": "başlık", "alt1": "sonuç ilk satır", "alt2": "vurgulu son satır",
-//             "sahne": "İngilizce sahne tarifi", "yazi": "çizimde izin verilen yazı (isteğe bağlı, sayı gibi)" }]
+//             "sahne": "İngilizce sahne tarifi", "yazi": "çizimde izin verilen yazı (isteğe bağlı, sayı gibi)",
+//             "linkedin": "LinkedIn gönderi metni (isteğe bağlı; varsa görsel 08:30 TR'de LinkedIn'de de paylaşılır)" }]
 // Çıktı: ~/Desktop/hikaye-ornekleri/<dosya adı>/NN-ad.jpg — onaydan sonra: node scripts/hikaye/kuyruga-al.mjs --klasor <o klasör>
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { createRequire } from "node:module";

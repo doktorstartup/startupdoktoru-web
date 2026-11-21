@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "./supabase";
 import { notifyAdmin } from "./email";
-import { instagramIstemci } from "./paylasim-platform";
-import { BUCKET, dosyalariSil, paylasimAktif } from "./paylasim-yayin";
+import { instagramIstemci, linkedinGorselGonderi } from "./paylasim-platform";
+import { BUCKET, dosyalariSil, linkedinHesap, paylasimAktif } from "./paylasim-yayin";
 
 // Instagram hikâyesi (migration 0048):
 // 1) Reels yayından HIKAYE_SAAT sonra aynı video hikâye olur. Her tik tek aşama: container aç → hazırsa yayınla.
@@ -125,6 +125,42 @@ export async function sozHikayesi(simdi = new Date()) {
     const deneme = s.deneme + 1;
     const kalici = (e as { kalici?: boolean }).kalici || deneme >= MAX_DENEME;
     return yaz({ deneme, hata: e instanceof Error ? e.message : String(e), ...(kalici ? { durum: "hata" } : {}) });
+  }
+}
+
+// Söz görselinin LinkedIn gönderisi (linkedin_at, varsayılan 08:30 TR). Önce "gonderiliyor" işaretlenir (satır sahiplenilir):
+// cevap kaybolursa ikinci kez gönderilmez, hata bildirilir ve profil elle kontrol edilir.
+export async function sozLinkedin(simdi = new Date()) {
+  if (!(await paylasimAktif())) return { pasif: true };
+  const { data, error } = await supabaseAdmin
+    .from("ds_hikaye_kuyruk")
+    .select("id, soz, gorsel_yol, linkedin_metin, linkedin_at")
+    .not("linkedin_metin", "is", null)
+    .is("linkedin_durum", null)
+    .neq("durum", "iptal")
+    .lte("linkedin_at", simdi.toISOString())
+    .order("linkedin_at")
+    .limit(1);
+  if (error) throw new Error(error.message);
+  const s = data?.[0];
+  if (!s) return "yok";
+  const yaz = async (alan: Record<string, string | null>) => {
+    const { error: e } = await supabaseAdmin.from("ds_hikaye_kuyruk").update(alan).eq("id", s.id);
+    if (e) throw new Error(e.message);
+    return alan.linkedin_durum;
+  };
+  if (simdi.getTime() - new Date(s.linkedin_at).getTime() > GEC_KALMA_SAAT * 3600000) return yaz({ linkedin_durum: "atlandi", linkedin_hata: "Saatinde atılamadı." });
+
+  const { data: al } = await supabaseAdmin.from("ds_hikaye_kuyruk").update({ linkedin_durum: "gonderiliyor" }).eq("id", s.id).is("linkedin_durum", null).select("id");
+  if (!al?.length) return "baska-tik";
+  try {
+    const link = await linkedinGorselGonderi(await linkedinHesap(), s.linkedin_metin, supabaseAdmin.storage.from(BUCKET).getPublicUrl(s.gorsel_yol).data.publicUrl, s.soz);
+    return yaz({ linkedin_durum: "yayinda", linkedin_link: link, linkedin_hata: null });
+  } catch (e) {
+    const ret = (e as { ret?: boolean }).ret === true;
+    const mesaj = e instanceof Error ? e.message : String(e);
+    await notifyAdmin(`LinkedIn söz gönderisi ${ret ? "çıkmadı" : "yarıda kaldı"}`, `<p>${s.soz}</p><p>${mesaj}</p>${ret ? "" : "<p>Gönderi çıkmış olabilir: profili kontrol et.</p>"}`);
+    return yaz({ linkedin_durum: "hata", linkedin_hata: mesaj });
   }
 }
 

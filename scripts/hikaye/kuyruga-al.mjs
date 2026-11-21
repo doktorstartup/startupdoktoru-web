@@ -13,6 +13,7 @@ import { createClient } from "../../node_modules/@supabase/supabase-js/dist/inde
 
 const KOK = dirname(fileURLToPath(import.meta.url));
 const SAAT = 7; // TR
+const LINKEDIN_FARK_DK = 90; // LinkedIn gönderisi 08:30 TR (sozler.json'da "linkedin" metni varsa)
 const env = Object.fromEntries(
   readFileSync(join(KOK, "../../.env.local"), "utf8")
     .split("\n")
@@ -40,7 +41,7 @@ if (a === "--iptal") {
 const isler =
   a === "--klasor"
     ? JSON.parse(readFileSync(join(b, "sozler.json"), "utf8"))
-        .map((s, i) => [join(b, `${String(i + 1).padStart(2, "0")}-${s.ad}.jpg`), s.soz])
+        .map((s, i) => [join(b, `${String(i + 1).padStart(2, "0")}-${s.ad}.jpg`), s.soz, s.linkedin])
         .filter(([d]) => existsSync(d))
     : [[a, b]];
 if (!a || !b) {
@@ -48,7 +49,7 @@ if (!a || !b) {
   process.exit(1);
 }
 
-for (const [dosya, soz] of isler) {
+for (const [dosya, soz, linkedin] of isler) {
   // İlk boş gün: yarın ya da sonrası (bugünün 07:00'ı geçmiş olabilir), dolu günler atlanır.
   const { data: dolu, error } = await db.from("ds_hikaye_kuyruk").select("yayin_at").in("durum", ["bekliyor", "isleniyor", "yayinda"]).gte("yayin_at", new Date().toISOString());
   hata(error);
@@ -63,7 +64,7 @@ for (const [dosya, soz] of isler) {
 
   const yol = `hikaye/${randomUUID()}.jpg`;
   hata((await db.storage.from("paylasim-video").upload(yol, readFileSync(dosya), { contentType: "image/jpeg" })).error);
-  const { data: satir, error: e2 } = await db.from("ds_hikaye_kuyruk").insert({ soz, gorsel_yol: yol, yayin_at: yayin.toISOString() }).select("id").single();
+  const { data: satir, error: e2 } = await db.from("ds_hikaye_kuyruk").insert({ soz, gorsel_yol: yol, yayin_at: yayin.toISOString(), ...(linkedin ? { linkedin_metin: linkedin, linkedin_at: new Date(yayin.getTime() + LINKEDIN_FARK_DK * 60000).toISOString() } : {}) }).select("id").single();
   hata(e2);
-  console.log(`✓ ${tr(yayin)} — ${soz.slice(0, 60)} (${satir.id})`);
+  console.log(`✓ ${tr(yayin)}${linkedin ? " +LinkedIn" : ""} — ${soz.slice(0, 60)} (${satir.id})`);
 }

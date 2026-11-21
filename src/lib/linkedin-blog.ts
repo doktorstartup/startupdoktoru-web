@@ -3,7 +3,7 @@ import { notifyAdmin } from "./email";
 import { linkedinMakale } from "./paylasim-platform";
 import { linkedinHesap, paylasimAktif } from "./paylasim-yayin";
 
-// Günde bir blog yazısını LinkedIn kişisel profilinde paylaşır (pg_cron 08:30 TR → /api/cron/linkedin-blog).
+// Günde bir blog yazısını LinkedIn kişisel profilinde paylaşır (pg_cron 12:00 TR → /api/cron/linkedin-blog).
 // Metin mekaniktir: başlık + yazının kendi özet cümlesi; bağlantı kartta. Model yeni metin yazmaz.
 // Yazı seçimi ve çift paylaşım koruması veritabanında: linkedin_blog_al (migration 0044).
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";

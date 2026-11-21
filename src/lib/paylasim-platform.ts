@@ -178,6 +178,25 @@ export async function linkedinMakale(hesap: LinkedInHesap, m: Makale, api = LINK
   return `https://www.linkedin.com/feed/update/${id}/`;
 }
 
+// Tek görselli gönderi (söz hikâyesi görseli). ret: gönderi kesin çıkmadı (görsel yüklenemedi ya da LinkedIn reddetti).
+export async function linkedinGorselGonderi(hesap: LinkedInHesap, metin: string, gorselUrl: string, alt: string, api = LINKEDIN) {
+  let gorsel: string;
+  try {
+    gorsel = await linkedinGorsel(hesap, gorselUrl, api);
+  } catch (e) {
+    throw Object.assign(e as Error, { ret: true });
+  }
+  const r = await fetch(`${api}/posts`, {
+    method: "POST",
+    headers: linkedinBasliklar(hesap.token),
+    body: gonderiGovdesi(hesap.kisi, linkedinMetni(metin, hesap.etiketler), { media: { id: gorsel, altText: alt.slice(0, 4000) } }),
+  });
+  const id = r.headers.get("x-restli-id");
+  if (!r.ok) throw Object.assign(new Error(`LinkedIn gönderi: ${await hataMetni(r)}`), { ret: true });
+  if (!id) throw new Error("LinkedIn gönderi kimliği dönmedi.");
+  return `https://www.linkedin.com/feed/update/${id}/`;
+}
+
 async function linkedinGorsel(hesap: LinkedInHesap, url: string, api: string) {
   const dosya = await fetch(url);
   if (!dosya.ok) throw new Error(`Kapak okunamadı (${dosya.status}).`);
