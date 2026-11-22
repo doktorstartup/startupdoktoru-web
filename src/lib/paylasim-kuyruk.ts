@@ -55,6 +55,7 @@ export type YouTubeIstemci = {
 export type InstagramIstemci = {
   containerAc(video: KuyrukVideo): Promise<string>;
   hikayeAc(yol: string): Promise<string>; // hikâye: Reels videosu ya da söz görseli (instagram-hikaye.ts)
+  carouselAc(yollar: string[], metin: string): Promise<string>; // kaydırmalı post (instagram-carousel.ts)
   durum(container: string): Promise<string>;
   yayinla(container: string): Promise<string>;
   sonMedya(sonra: string): Promise<string | null>;

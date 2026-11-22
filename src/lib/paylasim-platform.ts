@@ -108,6 +108,13 @@ export function instagramIstemci(hesap: string, token: string, adres: Adres, api
     // Hikâye açıklama almaz; video en fazla 60 sn olabilir. .jpg yolu görsel hikâye olur.
     hikayeAc: (yol: string) =>
       gonder(`${hesap}/media`, { media_type: "STORIES", ...(/\.jpe?g$/.test(yol) ? { image_url: adres(yol) } : { video_url: adres(yol) }) }),
+    // Kaydırmalı post: önce her görsel için çocuk container, sonra onları sırayla taşıyan ana container.
+    // Instagram yalnız JPEG kabul eder; 2–10 görsel. Yarıda kalırsa yayınlanmamış container'lar kendiliğinden düşer.
+    carouselAc: async (yollar: string[], metin: string) => {
+      const cocuklar: string[] = [];
+      for (const yol of yollar) cocuklar.push(await gonder(`${hesap}/media`, { image_url: adres(yol), is_carousel_item: "true" }));
+      return gonder(`${hesap}/media`, { media_type: "CAROUSEL", children: cocuklar.join(","), caption: metin });
+    },
     durum: async (container) => (await al(`${container}?fields=status_code`)).status_code,
     yayinla: (container) => gonder(`${hesap}/media_publish`, { creation_id: container }),
     sonMedya: async (sonra) => {

@@ -800,3 +800,20 @@ test("gerçek HTTP: Instagram anahtarı URL'de ve hata metninde görünmez", asy
   assert.ok(urller.every((u) => !u.includes("GIZLI")));
   s.close();
 });
+
+test("gerçek HTTP: kaydırmalı post önce sıralı çocuk container'lar, sonra açıklamalı ana container açar", async () => {
+  const istekler = [];
+  let n = 0;
+  const { s, url } = await yerelSunucu((req, res, govde) => {
+    istekler.push([req.url, Object.fromEntries(new URLSearchParams(govde.toString()))]);
+    res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ id: `c${++n}` }));
+  });
+  const ig = instagramIstemci("hesap", "GIZLI", (y) => `https://x/${y}`, url);
+  assert.equal(await ig.carouselAc(["k/01.jpg", "k/02.jpg"], "Açıklama"), "c3");
+  assert.deepEqual(istekler, [
+    ["/hesap/media", { image_url: "https://x/k/01.jpg", is_carousel_item: "true" }],
+    ["/hesap/media", { image_url: "https://x/k/02.jpg", is_carousel_item: "true" }],
+    ["/hesap/media", { media_type: "CAROUSEL", children: "c1,c2", caption: "Açıklama" }],
+  ]);
+  s.close();
+});
