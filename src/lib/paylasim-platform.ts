@@ -204,6 +204,43 @@ export async function linkedinGorselGonderi(hesap: LinkedInHesap, metin: string,
   return `https://www.linkedin.com/feed/update/${id}/`;
 }
 
+// Kaydırmalı postun LinkedIn karşılığı: slaytlar tek PDF belge olarak yüklenir, LinkedIn işleyince gönderi olur.
+export async function linkedinBelgeYukle(hesap: LinkedInHesap, pdfUrl: string, api = LINKEDIN) {
+  const dosya = await fetch(pdfUrl);
+  if (!dosya.ok) throw new Error(`PDF okunamadı (${dosya.status}).`);
+  const bas = await fetch(`${api}/documents?action=initializeUpload`, {
+    method: "POST",
+    headers: linkedinBasliklar(hesap.token),
+    body: JSON.stringify({ initializeUploadRequest: { owner: `urn:li:person:${hesap.kisi}` } }),
+  });
+  if (!bas.ok) throw new Error(`LinkedIn belge: ${await hataMetni(bas)}`);
+  const { uploadUrl, document } = (await bas.json()).value as { uploadUrl: string; document: string };
+  const r = await fetch(uploadUrl, { method: "PUT", headers: { Authorization: `Bearer ${hesap.token}` }, body: await dosya.arrayBuffer() });
+  if (!r.ok) throw new Error(`LinkedIn belge yüklemesi: ${r.status}`);
+  return document;
+}
+
+export async function linkedinBelgeHazir(hesap: LinkedInHesap, belge: string, api = LINKEDIN) {
+  const r = await fetch(`${api}/documents/${encodeURIComponent(belge)}`, { headers: linkedinBasliklar(hesap.token) });
+  if (!r.ok) throw new Error(`LinkedIn belge durumu: ${await hataMetni(r)}`);
+  const durum = (await r.json()).status as string;
+  if (durum === "PROCESSING_FAILED") throw Object.assign(new Error("LinkedIn belgeyi işleyemedi."), { kalici: true });
+  return durum === "AVAILABLE";
+}
+
+// ret: LinkedIn açıkça reddetti (gönderi kesin çıkmadı).
+export async function linkedinBelgeGonderi(hesap: LinkedInHesap, metin: string, belge: string, baslik: string, api = LINKEDIN) {
+  const r = await fetch(`${api}/posts`, {
+    method: "POST",
+    headers: linkedinBasliklar(hesap.token),
+    body: gonderiGovdesi(hesap.kisi, linkedinMetni(metin, hesap.etiketler), { media: { title: baslik, id: belge } }),
+  });
+  const id = r.headers.get("x-restli-id");
+  if (!r.ok) throw Object.assign(new Error(`LinkedIn gönderi: ${await hataMetni(r)}`), { ret: true });
+  if (!id) throw new Error("LinkedIn gönderi kimliği dönmedi.");
+  return `https://www.linkedin.com/feed/update/${id}/`;
+}
+
 async function linkedinGorsel(hesap: LinkedInHesap, url: string, api: string) {
   const dosya = await fetch(url);
   if (!dosya.ok) throw new Error(`Kapak okunamadı (${dosya.status}).`);

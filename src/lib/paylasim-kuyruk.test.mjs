@@ -14,6 +14,8 @@ const ayar = readFileSync(new URL("../../supabase/migrations/0038_paylasim_ayar.
 const linkedinSql = readFileSync(new URL("../../supabase/migrations/0043_paylasim_linkedin.sql", import.meta.url), "utf8");
 const tiktokSql = readFileSync(new URL("../../supabase/migrations/0046_paylasim_tiktok.sql", import.meta.url), "utf8");
 const ucSaatSql = readFileSync(new URL("../../supabase/migrations/0047_paylasim_3_saat.sql", import.meta.url), "utf8");
+const carouselSql = readFileSync(new URL("../../supabase/migrations/0053_carousel_kuyrugu.sql", import.meta.url), "utf8");
+const carouselGunSql = readFileSync(new URL("../../supabase/migrations/0054_carousel_video_gunu.sql", import.meta.url), "utf8");
 const blogSql = readFileSync(new URL("../../supabase/migrations/0044_linkedin_etiket_blog.sql", import.meta.url), "utf8");
 
 // Varsayılan: sistem açık (eski davranış testleri). Kapalı durum testleri { aktif: false } verir.
@@ -36,6 +38,8 @@ async function kur({ aktif = true, linkedin = false, tiktok = false } = {}) {
   await db.exec(blogSql);
   await db.exec(tiktokSql);
   await db.exec(ucSaatSql);
+  await db.exec(carouselSql);
+  await db.exec(carouselGunSql);
   if (tiktok) await db.query(`update ds_paylasim_ayar set tiktok_refresh = 'yenile'`);
   if (linkedin) await db.query(`update ds_paylasim_ayar set linkedin_token = 'tok', linkedin_kisi = 'kisi'`);
   if (aktif) await db.query(`update ds_paylasim_ayar set aktif = true`);
@@ -815,5 +819,42 @@ test("gerçek HTTP: kaydırmalı post önce sıralı çocuk container'lar, sonra
     ["/hesap/media", { image_url: "https://x/k/02.jpg", is_carousel_item: "true" }],
     ["/hesap/media", { media_type: "CAROUSEL", children: "c1,c2", caption: "Açıklama" }],
   ]);
+  s.close();
+});
+
+test("video yerleştirici kaydırmalı post olan günü atlar; iptal edilmiş carousel günü tutmaz", async () => {
+  const db = await kur();
+  const a = await video(db, "a");
+  const bos = new Date((await db.query(`select paylasim_kuyruga_al($1) r`, [a])).rows[0].r);
+  await db.query(`update ds_paylasim set yayin_at = null where id = $1`, [a]);
+  await db.query(`insert into ds_carousel_kuyruk (baslik, metin, gorsel_yollar, yayin_at, durum) values ('iptal', 'm', '{x,y}', $1, 'iptal')`, [bos]);
+  assert.equal(new Date((await db.query(`select paylasim_kuyruga_al($1) r`, [a])).rows[0].r).getTime(), bos.getTime(), "iptal edilen carousel günü boş sayılır");
+  await db.query(`update ds_paylasim set yayin_at = null where id = $1`, [a]);
+  await db.query(`insert into ds_carousel_kuyruk (baslik, metin, gorsel_yollar, yayin_at) values ('c', 'm', '{x,y}', $1)`, [bos]);
+  const yeni = new Date((await db.query(`select paylasim_kuyruga_al($1) r`, [a])).rows[0].r);
+  assert.equal(yeni.getTime() - bos.getTime(), 86400000, "carousel olan gün atlanır, ertesi güne geçer");
+  await db.exec(carouselGunSql); // ikinci kez çalıştırmak koşulu çiftlemez
+  assert.equal((await db.query(`select pg_get_functiondef('paylasim_kuyruga_al(uuid)'::regprocedure) d`)).rows[0].d.split("ds_carousel_kuyruk").length, 2);
+});
+
+test("gerçek HTTP: LinkedIn belge yüklenir, aynı belgeyle gönderi atılır", async () => {
+  const { linkedinBelgeYukle, linkedinBelgeGonderi } = await import("./paylasim-platform.ts");
+  const istekler = [];
+  const { s, url } = await yerelSunucu((req, res, govde) => {
+    istekler.push([req.method, req.url, govde.length]);
+    if (req.url === "/pdf") return res.writeHead(200).end("PDFBAYT");
+    if (req.url.startsWith("/documents")) return res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ value: { uploadUrl: `${url}/yukle`, document: "urn:li:document:1" } }));
+    if (req.url === "/yukle") return res.writeHead(201).end();
+    const g = JSON.parse(govde.toString());
+    assert.equal(g.content.media.id, "urn:li:document:1");
+    assert.equal(g.content.media.title, "Başlık");
+    res.writeHead(201, { "x-restli-id": "urn:li:share:9" }).end();
+  });
+  const hesap = { token: "tok", kisi: "kisi" };
+  const belge = await linkedinBelgeYukle(hesap, `${url}/pdf`, url);
+  assert.equal(belge, "urn:li:document:1");
+  assert.equal(await linkedinBelgeGonderi(hesap, "metin", belge, "Başlık", url), "https://www.linkedin.com/feed/update/urn:li:share:9/");
+  assert.deepEqual(istekler.map((i) => i[1]), ["/pdf", "/documents?action=initializeUpload", "/yukle", "/posts"]);
+  assert.equal(istekler[2][2], 7, "PDF baytları yüklendi");
   s.close();
 });
