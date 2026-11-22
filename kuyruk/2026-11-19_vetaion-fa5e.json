@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-19_vetaion-fa5e",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 9,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Vetaion",
+    "domain": "vetaion.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5700000,
+      "birim": "EUR",
+      "usd": 6156000
+    },
+    "lider": "Visionaries Tomorrow",
+    "katilanlar": [
+      "2100 Ventures",
+      "UVC Partners"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-19T11:54:27.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/munich-based-vetaion-raises-e5-7-million-to-automate-control-cabinet-manufacturing-with-ai-and-robotics/",
+      "baslik": "Munich-based Vetaion raises €5.7 million to automate control cabinet manufacturing with AI and robotics",
+      "tarih": "Thu, 19 Nov 2026 11:54:27 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Vetaion , a Munich-based company that automates the manufacturing of custom electrical control cabinets, has closed a €5.7 million pre-Seed financing round to scale its production in Munich and grow i",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/munich-based-vetaion-raises-e5-7-million-to-automate-control-cabinet-manufacturing-with-ai-and-robotics/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/munich-based-vetaion-raises-e5-7-million-to-automate-control-cabinet-manufacturing-with-ai-and-robotics/"
+    }
+  ],
+  "olusturma": "2026-11-22T13:16:31.273Z"
+}

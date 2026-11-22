@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-20_wilco-77d7",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Wilco",
+    "domain": "getwilco.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2500000,
+      "birim": "EUR",
+      "usd": 2700000
+    },
+    "lider": "Samaipata",
+    "katilanlar": [],
+    "kurucular": [
+      "Francisco Hernández Parga"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-20T09:56:25.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/madrid-based-wilco-secures-e2-5-million-to-scale-its-ai-patient-follow-up-platform-across-europe/",
+      "baslik": "Madrid-based Wilco secures €2.5 million to scale its AI patient follow-up platform across Europe",
+      "tarih": "Fri, 20 Nov 2026 09:56:25 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Wilco , a Madrid-based startup building AI voice and messaging agents for healthcare clinic groups, has announced its launch and a new €2.5 million funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/madrid-based-wilco-secures-e2-5-million-to-scale-its-ai-patient-follow-up-platform-across-europe/"
+    }
+  ],
+  "olusturma": "2026-11-22T13:16:31.273Z"
+}
