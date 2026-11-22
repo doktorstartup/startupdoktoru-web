@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Loader2, Share2, Plus, Trash2, Check, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import Istatistik from "./Istatistik";
+import Carousel from "./Carousel";
 import Kuyruk, { type Baglanti, type KuyrukVideo } from "./Kuyruk";
 
 // Paylaşım — kameraya konuşulan kısa videoların takibi.
@@ -187,6 +188,8 @@ export default function PaylasimAdmin() {
       </div>
 
       <Kuyruk videolar={videolar || []} islem={kuyrukIslem} aktif={aktif} aktifDegistir={aktifDegistir} baglantilar={baglantilar} />
+
+      <Carousel pw={pw} />
 
       <form onSubmit={ekle} className="flex gap-2">
         <input value={yeniBaslik} onChange={(e) => setYeniBaslik(e.target.value)} placeholder="Yeni video fikri / başlık" className={inputCls} />
