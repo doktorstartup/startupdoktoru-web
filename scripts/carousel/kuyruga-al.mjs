@@ -10,7 +10,7 @@ import { execFileSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import ffmpeg from "ffmpeg-static";
+import ffmpeg from "../haber/node_modules/ffmpeg-static/index.js";
 import { createClient } from "../../node_modules/@supabase/supabase-js/dist/index.mjs";
 
 const KOK = dirname(fileURLToPath(import.meta.url));
