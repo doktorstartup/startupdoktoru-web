@@ -429,3 +429,9 @@ create table if not exists public.ds_haber_aksam_log (
 );
 alter table public.ds_haber_aksam_log enable row level security;
 revoke all on public.ds_haber_aksam_log from public, anon, authenticated;
+
+-- 0057_hikaye_tiktok
+alter table public.ds_hikaye_kuyruk
+  add column if not exists tiktok_durum text,
+  add column if not exists tiktok_id text,
+  add column if not exists tiktok_hata text;

@@ -61,7 +61,7 @@ export async function tiktokAnahtarAl(alan: Record<string, string>) {
   return d.access_token as string;
 }
 
-async function tiktokAnahtari() {
+export async function tiktokAnahtari() {
   const { data } = await supabaseAdmin.from("ds_paylasim_ayar").select("tiktok_access, tiktok_access_bitis, tiktok_refresh").maybeSingle();
   if (!data?.tiktok_refresh) {
     throw Object.assign(new Error("TikTok bağlı değil. Paylaşım sekmesinden bağla, sonra Yeniden dene."), { kalici: true });

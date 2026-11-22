@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "./supabase";
 import { notifyAdmin } from "./email";
 import { instagramIstemci, linkedinGorselGonderi } from "./paylasim-platform";
-import { BUCKET, dosyalariSil, linkedinHesap, paylasimAktif } from "./paylasim-yayin";
+import { BUCKET, dosyalariSil, linkedinHesap, paylasimAktif, tiktokAnahtari, tiktokDurumu } from "./paylasim-yayin";
 
 // Instagram hikâyesi (migration 0048):
 // 1) Reels yayından HIKAYE_SAAT sonra aynı video hikâye olur. Her tik tek aşama: container aç → hazırsa yayınla.
@@ -162,6 +162,77 @@ export async function sozLinkedin(simdi = new Date()) {
     await notifyAdmin(`LinkedIn söz gönderisi ${ret ? "çıkmadı" : "yarıda kaldı"}`, `<p>${s.soz}</p><p>${mesaj}</p>${ret ? "" : "<p>Gönderi çıkmış olabilir: profili kontrol et.</p>"}`);
     return yaz({ linkedin_durum: "hata", linkedin_hata: mesaj });
   }
+}
+
+// Söz görselinin TikTok fotoğraf taslağı (migration 0057). Instagram'a çıkmış söz hikâyesi, video.upload izniyle
+// hesabın gelen kutusuna düşer; yayını Eser uygulamadan yapar. TikTok görseli yalnız doğrulanmış alan adından
+// çektiği için adres sitedir (next.config rewrites /tiktok-medya). Tik başına tek aşama: gönder → sonraki tikte durum.
+const TIKTOK_API = "https://open.tiktokapis.com";
+const TIKTOK_PENCERE_SAAT = 12;
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
+
+async function tiktokCagir(yol: string, govde: object) {
+  const r = await fetch(`${TIKTOK_API}${yol}`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${await tiktokAnahtari()}`, "Content-Type": "application/json; charset=UTF-8" },
+    body: JSON.stringify(govde),
+  });
+  const d = await r.json().catch(() => null);
+  if (!r.ok || !d || (d.error?.code && d.error.code !== "ok")) throw new Error(`TikTok: ${d?.error?.message || d?.error?.code || r.status}`);
+  return d.data;
+}
+
+export async function sozTiktok(simdi = new Date()) {
+  if (!(await paylasimAktif())) return { pasif: true };
+  if (!(await tiktokDurumu()).bagli) return "bagli-degil";
+  const { data, error } = await supabaseAdmin
+    .from("ds_hikaye_kuyruk")
+    .select("id, soz, gorsel_yol, tiktok_durum, tiktok_id")
+    .eq("durum", "yayinda")
+    .or("tiktok_durum.is.null,tiktok_durum.eq.isleniyor")
+    .gte("yayin_at", new Date(simdi.getTime() - TIKTOK_PENCERE_SAAT * 3600000).toISOString())
+    .order("yayin_at")
+    .limit(1);
+  if (error) throw new Error(error.message);
+  const s = data?.[0];
+  if (!s) return "yok";
+  const yaz = async (alan: Record<string, string | null>) => {
+    const { error: e } = await supabaseAdmin.from("ds_hikaye_kuyruk").update(alan).eq("id", s.id);
+    if (e) throw new Error(e.message);
+    return alan.tiktok_durum;
+  };
+
+  if (!s.tiktok_durum) {
+    // Önce sahiplen: cevap kaybolursa ikinci kez gönderilmez.
+    const { data: al } = await supabaseAdmin.from("ds_hikaye_kuyruk").update({ tiktok_durum: "isleniyor" }).eq("id", s.id).is("tiktok_durum", null).select("id");
+    if (!al?.length) return "baska-tik";
+    try {
+      const d = await tiktokCagir("/v2/post/publish/content/init/", {
+        post_info: { title: s.soz.slice(0, 90), description: `${s.soz}\n\n#startup #girişimcilik #yatırım` },
+        source_info: { source: "PULL_FROM_URL", photo_cover_index: 0, photo_images: [`${SITE}/tiktok-medya/${s.gorsel_yol}`] },
+        post_mode: "MEDIA_UPLOAD",
+        media_type: "PHOTO",
+      });
+      return yaz({ tiktok_id: d.publish_id, tiktok_hata: null });
+    } catch (e) {
+      const mesaj = e instanceof Error ? e.message : String(e);
+      await notifyAdmin("TikTok söz taslağı gönderilemedi", `<p>${s.soz}</p><p>${mesaj}</p>`);
+      return yaz({ tiktok_durum: "hata", tiktok_hata: mesaj });
+    }
+  }
+
+  if (!s.tiktok_id) return yaz({ tiktok_durum: "hata", tiktok_hata: "Gönderim kimliği kaydedilmedi; TikTok gelen kutusunu elle kontrol et." });
+  const d = await tiktokCagir("/v2/post/publish/status/fetch/", { publish_id: s.tiktok_id });
+  if (d.status === "SEND_TO_USER_INBOX" || d.status === "PUBLISH_COMPLETE") {
+    await notifyAdmin("TikTok'a söz taslağı düştü", `<p>TikTok uygulamasında gelen kutundan yayınla.</p><p>Açıklama önerisi: ${s.soz}</p>`);
+    return yaz({ tiktok_durum: "taslak", tiktok_hata: null });
+  }
+  if (d.status === "FAILED") {
+    const mesaj = `TikTok: ${d.fail_reason || "başarısız"}`;
+    await notifyAdmin("TikTok söz taslağı başarısız", `<p>${s.soz}</p><p>${mesaj}</p>`);
+    return yaz({ tiktok_durum: "hata", tiktok_hata: mesaj });
+  }
+  return "isleniyor";
 }
 
 const sayi = (v: unknown) => (typeof v === "number" ? v : null);

@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
       { source: "/en/startup-ucretsiz-egitim", destination: "/en/free-training", permanent: true },
     ];
   },
+  async rewrites() {
+    return [
+      // TikTok fotoğraf gönderisi görseli yalnız doğrulanmış alan adından çeker (PULL_FROM_URL):
+      // söz hikâyesi görseli depodan bu adres üzerinden verilir (lib/instagram-hikaye.ts sozTiktok).
+      { source: "/tiktok-medya/hikaye/:dosya", destination: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/paylasim-video/hikaye/:dosya` },
+    ];
+  },
 };
 
 export default nextConfig;
