@@ -18,7 +18,7 @@
     "sirket": "each::labs",
     "domain": "eachlabs.ai",
     "ulke": "TR",
-    "turk": false,
+    "turk": true,
     "tur_tipi": "seed",
     "tutar": {
       "deger": 7000000,
