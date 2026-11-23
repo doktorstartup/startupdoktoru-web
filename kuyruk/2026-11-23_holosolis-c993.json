@@ -1,0 +1,66 @@
+{
+  "surum": 1,
+  "id": "2026-11-23_holosolis-c993",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "HoloSolis",
+    "domain": "holosolis.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 15000000,
+      "birim": "EUR",
+      "usd": 16200000
+    },
+    "lider": null,
+    "katilanlar": [
+      "European Commission’s Innovation Fund",
+      "Crédit Agricole Group",
+      "FertigHy",
+      "GravitHy",
+      "Verkor",
+      "Repono"
+    ],
+    "kurucular": [
+      "Henri Poupart-Lafarge"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-23T07:48:17.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/paris-based-holosolis-raises-over-e15-million-to-advance-e1-billion-solar-gigafactory-in-france/",
+      "baslik": "Paris-based HoloSolis raises over €15 million to advance €1 billion solar gigafactory in France",
+      "tarih": "Mon, 23 Nov 2026 07:48:17 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "HoloSolis , a Paris-based solar manufacturing startup, has closed a Series A funding round of more than €15 million to build Europe’s next solar gigafactory.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/paris-based-holosolis-raises-over-e15-million-to-advance-e1-billion-solar-gigafactory-in-france/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/paris-based-holosolis-raises-over-e15-million-to-advance-e1-billion-solar-gigafactory-in-france/"
+    }
+  ],
+  "olusturma": "2026-11-23T15:53:39.319Z"
+}

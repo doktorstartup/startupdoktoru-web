@@ -1,8 +1,4 @@
 {"surum":1,"kayitlar":[
-  {"dom":"linkener.com","ad":"linkener","tarih":"2026-10-19","dosya":"2026-10-19_linkener-8ff1.json"},
-  {"dom":"vessla.ai","ad":"vessla","tarih":"2026-10-19","dosya":"2026-10-19_vessla-7c49.json"},
-  {"dom":null,"ad":"nouscom","tarih":"2026-10-19","dosya":"2026-10-19_nouscom-4ea0.json"},
-  {"dom":"huppa.app","ad":"huppa","tarih":"2026-10-19","dosya":"2026-10-19_huppa-7f72.json"},
   {"dom":"coherencequantum.tech","ad":"coherence quantum","tarih":"2026-10-20","dosya":"2026-10-20_coherence-quantum-5741.json"},
   {"dom":null,"ad":"blackwall","tarih":"2026-10-20","dosya":"2026-10-20_blackwall-1507.json"},
   {"dom":"ganiga.ai","ad":"ganiga","tarih":"2026-10-20","dosya":"2026-10-20_ganiga-f205.json"},
@@ -160,5 +156,11 @@
   {"dom":null,"ad":"switchpoint bio","tarih":"2026-11-13","dosya":"2026-11-13_switchpoint-bio-9e67.json"},
   {"dom":"getwilco.ai","ad":"wilco","tarih":"2026-11-20","dosya":"2026-11-20_wilco-77d7.json"},
   {"dom":"mistral.ai","ad":"mistral","tarih":"2026-11-19","dosya":"2026-11-19_mistral-950a.json"},
-  {"dom":"vetaion.com","ad":"vetaion","tarih":"2026-11-19","dosya":"2026-11-19_vetaion-fa5e.json"}
+  {"dom":"vetaion.com","ad":"vetaion","tarih":"2026-11-19","dosya":"2026-11-19_vetaion-fa5e.json"},
+  {"dom":"agon.com","ad":"agon","tarih":"2026-11-23","dosya":"2026-11-23_agon-1e9c.json"},
+  {"dom":"acorda.io","ad":"acorda","tarih":"2026-11-23","dosya":"2026-11-23_acorda-766c.json"},
+  {"dom":"coprod.co","ad":"coprod","tarih":"2026-11-23","dosya":"2026-11-23_coprod-8fe0.json"},
+  {"dom":"holosolis.com","ad":"holosolis","tarih":"2026-11-23","dosya":"2026-11-23_holosolis-c993.json"},
+  {"dom":"appsilon.tech","ad":"appsilon","tarih":"2026-11-23","dosya":"2026-11-23_appsilon-2f59.json"},
+  {"dom":"deepsportapp.com","ad":"deepsport","tarih":"2026-11-23","dosya":"2026-11-23_deepsport-a175.json"}
 ]}

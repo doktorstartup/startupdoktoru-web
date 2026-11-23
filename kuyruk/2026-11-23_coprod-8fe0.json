@@ -1,0 +1,73 @@
+{
+  "surum": 1,
+  "id": "2026-11-23_coprod-8fe0",
+  "durum": "hazir",
+  "puan": 75,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "coprod",
+    "domain": "coprod.co",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5450000,
+      "birim": "EUR",
+      "usd": 5886000
+    },
+    "lider": "Founderful",
+    "katilanlar": [
+      "Tiny Supercomputer Investment Company",
+      "Florent Perrichon",
+      "General Catalyst",
+      "Dassault Family",
+      "Unruly Capital",
+      "Pace Ventures",
+      "Kima Ventures",
+      "Hugging Face",
+      "Venturekick",
+      "Thomas Wolf",
+      "PROTOTYPE",
+      "SDAC"
+    ],
+    "kurucular": [
+      "Vincent Nguyen",
+      "Matthias Schuller"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-23T09:01:18.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/swiss-startup-coprod-raises-e5-45-million-to-solve-integration-hell-in-robotics-and-physical-ai-hardware/",
+      "baslik": "Swiss startup coprod raises €5.45 million to solve “integration hell” in robotics and physical AI hardware",
+      "tarih": "Mon, 23 Nov 2026 09:01:18 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "coprod , a Swiss robotics hardware startup building modular hardware components for robotics and physical AI applications, has raised €5.45 million ($6 million) in a pre-Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swiss-startup-coprod-raises-e5-45-million-to-solve-integration-hell-in-robotics-and-physical-ai-hardware/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/swiss-startup-coprod-raises-e5-45-million-to-solve-integration-hell-in-robotics-and-physical-ai-hardware/"
+    }
+  ],
+  "olusturma": "2026-11-23T15:53:39.319Z"
+}

@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-23_appsilon-2f59",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Appsilon",
+    "domain": "appsilon.tech",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "USD",
+      "usd": 1000000
+    },
+    "lider": "Neo Portföy",
+    "katilanlar": [],
+    "kurucular": [
+      "Sabancı Üniversitesi"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-23T10:35:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/laboratuvar-ortaminda-elmas-ureten-appsilon-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Laboratuvar ortamında elmas üreten Appsilon, 1 milyon dolar yatırım aldı",
+      "tarih": "Mon, 23 Nov 2026 10:35:52 +0000"
+    },
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/23/appsilon-diamond-technologies-neo-portfoyden-1-milyon-dolar-yatirim-aldi/",
+      "baslik": "Appsilon Diamond Technologies, Neo Portföy'den 1 milyon dolar yatırım aldı",
+      "tarih": "Mon, 23 Nov 2026 11:35:31 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Laboratuvar ortamında sentetik elmas üreten Appsilon Diamond Technologies , Neo Portföy’den 1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/laboratuvar-ortaminda-elmas-ureten-appsilon-1-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "İleri malzeme alanına odaklanan Appsilon Diamond Technologies , 1 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/23/appsilon-diamond-technologies-neo-portfoyden-1-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-23T15:53:39.319Z"
+}

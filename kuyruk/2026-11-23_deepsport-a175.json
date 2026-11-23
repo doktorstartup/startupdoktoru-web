@@ -1,0 +1,50 @@
+{
+  "surum": 1,
+  "id": "2026-11-23_deepsport-a175",
+  "durum": "hazir",
+  "puan": 50,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 0,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "DeepSport",
+    "domain": "deepsportapp.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 110000,
+      "birim": "USD",
+      "usd": 110000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-23T07:46:48.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/sporcularin-fiziksel-performansini-olcen-deepsport-110-bin-dolar-yatirim-aldi/",
+      "baslik": "Sporcuların fiziksel performansını ölçen DeepSport, 110 bin dolar yatırım aldı",
+      "tarih": "Mon, 23 Nov 2026 07:46:48 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Spor teknolojileri girişimi DeepSport , melek yatırımcıların katıldığı ara turda 4 milyon dolar değerleme üzerinden 110 bin dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/sporcularin-fiziksel-performansini-olcen-deepsport-110-bin-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-23T15:53:39.319Z"
+}

@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-23_acorda-766c",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Acorda",
+    "domain": "acorda.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2150000,
+      "birim": "EUR",
+      "usd": 2322000
+    },
+    "lider": "Concept Ventures",
+    "katilanlar": [
+      "NFG Ventures"
+    ],
+    "kurucular": [
+      "Eileen Burbridge",
+      "Jhamat Mahbubani",
+      "Sam Kelsey",
+      "Robert Parrish"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-23T10:31:19.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/london-based-acorda-raises-e2-15-million-to-help-banks-detect-payment-scams-before-money-moves/",
+      "baslik": "London-based Acorda raises €2.15 million to help banks detect payment scams before money moves",
+      "tarih": "Mon, 23 Nov 2026 10:31:19 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Acorda , a London-based FinTech startup helping payment providers stop financial scams through shared risk data, has raised €2.15 million (£1.8 million) in a pre-Seed funding round.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/london-based-acorda-raises-e2-15-million-to-help-banks-detect-payment-scams-before-money-moves/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/london-based-acorda-raises-e2-15-million-to-help-banks-detect-payment-scams-before-money-moves/"
+    }
+  ],
+  "olusturma": "2026-11-23T15:53:39.319Z"
+}
