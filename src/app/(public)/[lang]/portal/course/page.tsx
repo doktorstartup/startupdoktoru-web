@@ -333,6 +333,10 @@ export default function CoursePortal() {
           </div>
         </div>
 
+      {/* Hiçbir ürünü yoksa: ödeme başka e-postayla yapılmış olabilir (Google hesabıyla giriş vb.) */}
+      {!ownsEbook && owned.length === 0 && (
+        <p className="text-xs text-muted-foreground">{fill(t.farkliEposta, { email })}</p>
+      )}
       {!ownsEbook && <EbookTeklif />}
 
       {/* Diğer eğitimler (sahip olunmayan) */}

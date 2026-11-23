@@ -10,6 +10,7 @@ import { useMember } from "../../../../../lib/member";
 import { supabase } from "../../../../../lib/supabase";
 import { KITAP_URUNLERI, TRAININGS } from "../../../../../lib/trainings";
 import { useHref, useT } from "../../../../../lib/i18n-client";
+import { fill } from "../../../../../lib/i18n";
 
 // Üyenin dijital dosyaları. İki belge olabilir:
 //   kitap  → e-kitabı satın alanlara (basılı kitabın dijital sürümü)
@@ -112,6 +113,7 @@ export default function EbookPortal() {
         <Link href={href("/ebook")} className="btn btn-lg btn-primary">
           <ShoppingCart className="h-4 w-4" /> {t.ebookEmptyCta}
         </Link>
+        <p className="text-xs text-muted-foreground mt-6">{fill(t.farkliEposta, { email })}</p>
       </div>
     );
   }

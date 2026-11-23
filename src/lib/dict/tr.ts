@@ -618,6 +618,7 @@ export const tr = {
     ebookEmptyBodyBefore: "Bu e-posta ile kitap satın alımı bulunamadı. Hedef Milyon Dolar'ın dijital sürümünü ",
     ebookEmptyBodyAfter: "'a edinebilirsin.",
     ebookEmptyCta: "Dijital Kitabı Al (6 $)",
+    farkliEposta: "Şu an {email} ile giriş yaptın. Ödemeyi farklı bir e-postayla yaptıysan çıkış yapıp o adresle giriş yap.",
     ebookTitle: "Hedef Milyon Dolar",
     ebookLead: "Kitabını burada, site içinde okuyabilirsin.",
     ebookFooter: "Erişimin hesabına tanımlı — istediğin zaman buradan okuyabilirsin.",

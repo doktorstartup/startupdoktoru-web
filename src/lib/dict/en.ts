@@ -625,6 +625,7 @@ export const en: Dict = {
     ebookEmptyBodyBefore: "We found no ebook purchase for this email. You can get Hedef Milyon Dolar for ",
     ebookEmptyBodyAfter: ".",
     ebookEmptyCta: "Get the Ebook ($6)",
+    farkliEposta: "You are signed in as {email}. If you paid with a different email, sign out and sign in with that address.",
     ebookTitle: "Hedef Milyon Dolar",
     ebookLead: "You can read your book right here on the site.",
     ebookFooter: "Access is tied to your account — come back and read any time.",
