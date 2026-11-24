@@ -95,7 +95,9 @@ export function useMember() {
       const { data, error } = await supabase.auth.signUp({
         email: normalized,
         password,
-        options: { data: { name, phone } },
+        // Doğrulama linki kişiyi kaldığı sayfaya (ör. /portal/ebook) döndürür; yoksa Site URL'e (ana sayfa)
+        // düşüp "beni başa attı" diyordu (2026-11-24). İzinli listede değilse Supabase yine Site URL'e döner.
+        options: { data: { name, phone }, emailRedirectTo: window.location.href.split("#")[0] },
       });
       if (error) return { ok: false, error: error.message };
 

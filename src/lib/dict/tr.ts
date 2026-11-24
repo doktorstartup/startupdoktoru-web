@@ -545,9 +545,9 @@ export const tr = {
     titleEbook: "Kitabınız Hazır!",
     titleCourse: "Erişiminiz Açıldı!",
     bodyEbook:
-      "Hedef Milyon Dolar'ın dijital sürümü ve hediye Eğitim Slaytları artık sizin. Aşağıdan hemen okumaya başlayabilirsiniz; erişim linki e-posta adresinize de iletildi.",
+      "Hedef Milyon Dolar'ın dijital sürümü ve hediye Eğitim Slaytları artık sizin. Kitabı açmak için ödemede kullandığınız e-posta adresiyle hesap oluşturun (hesabınız varsa giriş yapın) — kitap o e-postaya tanımlandı. Erişim bilgisi e-postanıza da iletildi.",
     bodyCourse:
-      "Satın aldığınız eğitime tam erişiminiz açıldı. Öğrenci portalına giriş yaparak izlemeye başlayabilirsiniz.",
+      "Satın aldığınız eğitime tam erişiminiz açıldı. Ödemede kullandığınız e-posta adresiyle hesap oluşturun (hesabınız varsa giriş yapın) — eğitim o e-postaya tanımlandı.",
     ctaEbook: "Kitabı Aç",
     ctaCourse: "Eğitime Başla",
     upsellEyebrow: "%50 İndirim Kazandınız",

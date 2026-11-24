@@ -3,7 +3,10 @@ import type Stripe from "stripe";
 import { stripe } from "../../../../lib/stripe";
 import { supabaseAdmin } from "../../../../lib/supabase";
 import { enroll } from "../../../../lib/campaigns";
-import { notifyAdmin, esc } from "../../../../lib/email";
+import { notifyAdmin, esc, shell } from "../../../../lib/email";
+import { sendLogged } from "../../../../lib/mailer";
+
+const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://startupdoktoru.com";
 
 // productId → lead aşaması/skoru eşlemesi
 const LEAD_BY_PRODUCT: Record<string, { stage: string; score: number }> = {
@@ -151,6 +154,34 @@ export async function POST(req: NextRequest) {
         if (insertError) {
           console.error("Lead insert error:", insertError.message);
         }
+      }
+    }
+
+    // Alıcıya erişim maili: hesabı yoksa kitap/eğitim görünmüyordu ve tek gelen mail
+    // "sepeti bıraktın" hatırlatmasıydı → müşteri ödemenin geçmediğini sandı (2026-11-24).
+    // Webhook tekrarlarında ikinci kez gitmesin diye ödeme kimliğiyle deftere bakılır.
+    if (email) {
+      try {
+        const { data: gitti } = await supabaseAdmin
+          .from("ds_email_messages").select("id").eq("context_ref", pi.id).limit(1);
+        if (!gitti || gitti.length === 0) {
+          const kitap = productId === "ebook_13_steps";
+          const yol = kitap ? "/portal/ebook#kayit" : "/portal/course#kayit";
+          const ad = (name || "").split(" ")[0];
+          await sendLogged(
+            {
+              to: email,
+              subject: kitap ? "Kitabın hazır: Hedef Milyon Dolar" : "Eğitim erişimin açıldı",
+              html: shell(`<p>Merhaba${ad ? " " + esc(ad) : ""},</p>
+                <p>Ödemen alındı, teşekkürler. ${kitap ? "Kitabın" : "Eğitimin"} <strong>${esc(email)}</strong> adresine tanımlandı.</p>
+                <p>Açmak için: <a href="${SITE}${yol}">${SITE.replace(/^https?:\/\//, "")}${yol.split("#")[0]}</a> → bu e-posta adresiyle <strong>hesap oluştur</strong> (hesabın varsa giriş yap). Başka bir e-postayla girersen ${kitap ? "kitabı" : "eğitimi"} göremezsin.</p>
+                <p>Bir sorun olursa bu e-postayı yanıtlaman yeterli.</p>`),
+            },
+            { context: "transactional", contextRef: pi.id },
+          );
+        }
+      } catch (e) {
+        console.error("Access mail error:", e instanceof Error ? e.message : e);
       }
     }
 

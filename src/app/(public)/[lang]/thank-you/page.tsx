@@ -96,7 +96,7 @@ function ThankYouContent() {
             {isEbook ? d.bodyEbook : d.bodyCourse}
           </p>
 
-          <Link href={href(isEbook ? "/portal/ebook" : "/portal/course")} className="btn btn-lg btn-primary mb-16">
+          <Link href={href(isEbook ? "/portal/ebook#kayit" : "/portal/course#kayit")} className="btn btn-lg btn-primary mb-16">
             {isEbook ? (
               <><Download className="h-4 w-4" /> {d.ctaEbook}</>
             ) : (

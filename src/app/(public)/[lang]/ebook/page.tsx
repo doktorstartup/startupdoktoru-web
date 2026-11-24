@@ -13,6 +13,8 @@ import CheckoutForm from "../../../../components/CheckoutForm";
 import { useHref, useLang, useT } from "../../../../lib/i18n-client";
 import { IngilizceBaskiKaydi } from "../../../../components/IngilizceBaskiKaydi";
 import { KitapYorumlari } from "../../../../components/KitapYorumlari";
+import { useMember } from "../../../../lib/member";
+import { KITAP_URUNLERI } from "../../../../lib/trainings";
 
 export default function EBookLanding() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -21,7 +23,15 @@ export default function EBookLanding() {
   const href = useHref();
   // Kitap Türkçe: /en tarafında satış yok, talep ölçülüyor.
   const en = useLang() === "en";
-
+  // Kitabı almış üye bu sayfaya dönünce "Satın al" görüp ödemenin geçmediğini sanıyordu (2026-11-24).
+  const { hasAccess } = useMember();
+  const sahip = KITAP_URUNLERI.some((id) => hasAccess(id));
+  const sahipCta = (
+    <Link href={href("/portal/ebook")} className="btn btn-lg btn-primary cursor-pointer w-full sm:w-auto">
+      <BookOpen className="h-4 w-4" /> Kitap hesabında — Aç
+      <ArrowRight className="h-4 w-4" />
+    </Link>
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary relative overflow-hidden flex flex-col justify-between">
@@ -83,6 +93,7 @@ export default function EBookLanding() {
                   {t.discountBadge}
                 </span>
               </div>
+              {sahip ? sahipCta : (
               <button
                 onClick={() => setIsCheckoutOpen(true)}
                 className="btn btn-lg btn-primary cursor-pointer w-full sm:w-auto"
@@ -90,6 +101,7 @@ export default function EBookLanding() {
                 {t.cta}
                 <ArrowRight className="h-4 w-4" />
               </button>
+              )}
             </div>
             )}
           </div>
@@ -145,6 +157,7 @@ export default function EBookLanding() {
                 {t.discountBadge}
               </span>
             </div>
+            {sahip ? sahipCta : (
             <button
               onClick={() => setIsCheckoutOpen(true)}
               className="btn btn-lg btn-primary cursor-pointer"
@@ -152,6 +165,7 @@ export default function EBookLanding() {
               {t.cta}
               <ArrowRight className="h-4 w-4" />
             </button>
+            )}
             </>
             )}
           </div>
