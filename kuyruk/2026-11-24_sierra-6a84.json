@@ -1,0 +1,71 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_sierra-6a84",
+  "durum": "hazir",
+  "puan": 84,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Sierra",
+    "domain": "sierra.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1750000000,
+      "birim": "USD",
+      "usd": 1750000000
+    },
+    "lider": "Greenoaks",
+    "katilanlar": [
+      "Lightspeed Venture Partners",
+      "Tiger Global",
+      "Benchmark",
+      "Sequoia",
+      "GV"
+    ],
+    "kurucular": [
+      "Bret Taylor"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T12:14:40.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/24/sierra-30-milyar-dolar-degerleme-uzerinden-1-75-milyar-dolar-yatirim-aldi/",
+      "baslik": "Sierra, 30 milyar dolar değerleme üzerinden 1,75 milyar dolar yatırım aldı",
+      "tarih": "Tue, 24 Nov 2026 14:00:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/bret-taylor-kurucu-ortagi-oldugu-sierra-1-75-milyar-dolar-yatirim-aldi/",
+      "baslik": "Bret Taylor’ın kurucu ortağı olduğu Sierra, 1.75 milyar dolar yatırım aldı",
+      "tarih": "Tue, 24 Nov 2026 12:14:40 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka ajanları geliştiren Sierra , 1,75 milyar dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/24/sierra-30-milyar-dolar-degerleme-uzerinden-1-75-milyar-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "F serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/24/sierra-30-milyar-dolar-degerleme-uzerinden-1-75-milyar-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-24T15:46:27.988Z"
+}

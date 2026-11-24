@@ -1,0 +1,64 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_good-heat-1e8d",
+  "durum": "hazir",
+  "puan": 73,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Good Heat",
+    "domain": "goodheat.energy",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2000000,
+      "birim": "EUR",
+      "usd": 2160000
+    },
+    "lider": "SET Ventures",
+    "katilanlar": [
+      "Europe’s leading energy VC",
+      "Shell Ventures",
+      "Investible"
+    ],
+    "kurucular": [
+      "Bauke van Gent",
+      "Tom Geiser"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T09:00:10.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/amsterdams-good-heat-raises-e2-million-to-replace-industrial-gas-fired-steam-boilers-with-heat-batteries/",
+      "baslik": "Amsterdam’s Good Heat raises €2 million to replace industrial gas-fired steam boilers with heat batteries",
+      "tarih": "Tue, 24 Nov 2026 09:00:10 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Good Heat , an Amsterdam-based startup that delivers zero-carbon heat as a service to industrial heat users, has raised €2 million to support its growing project pipeline.",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/amsterdams-good-heat-raises-e2-million-to-replace-industrial-gas-fired-steam-boilers-with-heat-batteries/"
+    },
+    {
+      "metin": "pre-Seed",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/amsterdams-good-heat-raises-e2-million-to-replace-industrial-gas-fired-steam-boilers-with-heat-batteries/"
+    }
+  ],
+  "olusturma": "2026-11-24T15:46:27.988Z"
+}

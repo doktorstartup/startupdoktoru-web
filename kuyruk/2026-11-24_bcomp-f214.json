@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_bcomp-f214",
+  "durum": "hazir",
+  "puan": 58,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 9,
+    "tazelik": 12,
+    "kaynak": 6
+  },
+  "kunye": {
+    "sirket": "Bcomp",
+    "domain": "bcomp.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 20000000,
+      "birim": "EUR",
+      "usd": 21600000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Christian Fischer",
+      "Julien Rion"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T11:34:52.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "eu-startups",
+      "url": "https://www.eu-startups.com/2026/11/bcomp-secures-e20-million-from-eib-to-scale-flax-fibre-based-alternatives-to-carbon-fibre-glass-fibre-and-plastics/",
+      "baslik": "Bcomp secures €20 million from EIB to scale flax fibre-based alternatives to carbon fibre, glass fibre and plastics",
+      "tarih": "Tue, 24 Nov 2026 11:34:52 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "This EIB backing takes the form of €20 million in venture debt, supporting the company’s €47.6 million investment programme to expand manufacturing capacity in Romania and further develop its R&D acti",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bcomp-secures-e20-million-from-eib-to-scale-flax-fibre-based-alternatives-to-carbon-fibre-glass-fibre-and-plastics/"
+    },
+    {
+      "metin": "venture debt",
+      "kaynak_url": "https://www.eu-startups.com/2026/11/bcomp-secures-e20-million-from-eib-to-scale-flax-fibre-based-alternatives-to-carbon-fibre-glass-fibre-and-plastics/"
+    }
+  ],
+  "olusturma": "2026-11-24T15:46:27.988Z"
+}

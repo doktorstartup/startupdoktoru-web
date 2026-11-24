@@ -1,0 +1,69 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_marlowe-841c",
+  "durum": "hazir",
+  "puan": 89,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Marlowe",
+    "domain": "marlowe.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 277000000,
+      "birim": "USD",
+      "usd": 277000000
+    },
+    "lider": "Accel",
+    "katilanlar": [
+      "Emergence Capital",
+      "Village Global",
+      "Altimeter",
+      "Bessemer",
+      "Atreides",
+      "Scribble",
+      "Eclipse",
+      "Journey",
+      "Pitango",
+      "Ritual",
+      "Banter",
+      "Valor"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-24T11:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/24/yapay-zeka-altyapisi-alaninda-faaliyet-gosteren-marlowe-277-milyon-dolar-yatirim-aldi/",
+      "baslik": "Yapay zeka altyapısı alanında faaliyet gösteren Marlowe, 277 milyon dolar yatırım aldı",
+      "tarih": "Tue, 24 Nov 2026 11:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Yapay zeka altyapısı alanında faaliyet gösteren Marlowe , 277 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/24/yapay-zeka-altyapisi-alaninda-faaliyet-gosteren-marlowe-277-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum yatırım",
+      "kaynak_url": "https://webrazzi.com/2026/11/24/yapay-zeka-altyapisi-alaninda-faaliyet-gosteren-marlowe-277-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-24T15:46:27.988Z"
+}
