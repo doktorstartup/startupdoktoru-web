@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_pliant-4fac",
+  "durum": "hazir",
+  "puan": 57,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 12,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Pliant",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 200000000,
+      "birim": "EUR",
+      "usd": 216000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Malte Rau"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T12:38:09.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/24/pliant-secures-over-eur200m-in-debt-financing-to-scale-european-payments-business/",
+      "baslik": "Pliant secures over €200M in debt financing to scale European payments business",
+      "tarih": "Tue, 24 Nov 2026 12:38:09 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Fintech Pliant today announced that it has secured more than €200 million in additional debt financing capacity through three transactions with Ascory Bank AG and Viola Credit.",
+      "kaynak_url": "https://tech.eu/2026/11/24/pliant-secures-over-eur200m-in-debt-financing-to-scale-european-payments-business/"
+    },
+    {
+      "metin": "debt financing",
+      "kaynak_url": "https://tech.eu/2026/11/24/pliant-secures-over-eur200m-in-debt-financing-to-scale-european-payments-business/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

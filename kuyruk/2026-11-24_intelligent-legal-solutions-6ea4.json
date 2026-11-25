@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_intelligent-legal-solutions-6ea4",
+  "durum": "hazir",
+  "puan": 56,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Intelligent Legal Solutions",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 11000000,
+      "birim": "USD",
+      "usd": 11000000
+    },
+    "lider": "Aquiline",
+    "katilanlar": [
+      "BlackFin Capital Partners",
+      "Chicago Ventures",
+      "LegalTech Fund"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-24T08:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/24/intelligent-legal-solutions-secures-11m-series-a-to-expand-provision-platform/",
+      "baslik": "Intelligent Legal Solutions secures $11M Series A to expand ProVision platform",
+      "tarih": "Tue, 24 Nov 2026 08:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Legaltech company Intelligent Legal Solutions (ILS), developer of the ProVision platform for private investment funds lawyers, has raised $11 million in a Series A round co-led by Aquiline and BlackFi",
+      "kaynak_url": "https://tech.eu/2026/11/24/intelligent-legal-solutions-secures-11m-series-a-to-expand-provision-platform/"
+    },
+    {
+      "metin": "Series A",
+      "kaynak_url": "https://tech.eu/2026/11/24/intelligent-legal-solutions-secures-11m-series-a-to-expand-provision-platform/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

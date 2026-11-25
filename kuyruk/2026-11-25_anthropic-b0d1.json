@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-25_anthropic-b0d1",
+  "durum": "hazir",
+  "puan": 67,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 5,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Anthropic",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 2200000,
+      "birim": "USD",
+      "usd": 2200000
+    },
+    "lider": "Frachtis and Metaplanet",
+    "katilanlar": [],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-25T08:00:00.000Z"
+  },
+  "dusuk_guven": [],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/25/anthropic-backer-jann-tallinn-backs-sequent/",
+      "baslik": "Anthropic backer Jaan Tallinn backs Sequent",
+      "tarih": "Wed, 25 Nov 2026 08:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Sequent has secured $2.2m in pre-seed funding, in a round co-led by crypto and blockchain investor Frachtis and Metaplanet, the investment firm of Skype co-founder Jaan Tallinn, who led Anthropic’s 20",
+      "kaynak_url": "https://tech.eu/2026/11/25/anthropic-backer-jann-tallinn-backs-sequent/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/25/anthropic-backer-jann-tallinn-backs-sequent/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

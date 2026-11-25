@@ -1,0 +1,54 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_trustly-962e",
+  "durum": "hazir",
+  "puan": 46,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 11,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Trustly",
+    "domain": "trustly.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 60000000,
+      "birim": "USD",
+      "usd": 60000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Johan Tjärnberg"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T11:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/24/trustly-completes-60m-funding-raise/",
+      "baslik": "Trustly completes $60M funding raise",
+      "tarih": "Tue, 24 Nov 2026 11:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Swedish fintech Trustly today confirmed it had completed a $60m funding round, having last month said it had received $40m in commitments from its key shareholders.",
+      "kaynak_url": "https://tech.eu/2026/11/24/trustly-completes-60m-funding-raise/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

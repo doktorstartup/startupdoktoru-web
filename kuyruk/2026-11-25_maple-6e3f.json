@@ -1,0 +1,60 @@
+{
+  "surum": 1,
+  "id": "2026-11-25_maple-6e3f",
+  "durum": "hazir",
+  "puan": 77,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 16,
+    "tr": 20,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 2
+  },
+  "kunye": {
+    "sirket": "Maple",
+    "domain": "maple.ai",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 5300000,
+      "birim": "USD",
+      "usd": 5300000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Draper Associates",
+      "Planetary VC",
+      "Epoch VC"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-25T07:01:43.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/veri-gizliligi-odakli-yapay-zeka-girisimi-maple-5-3-milyon-dolar-yatirim-aldi/",
+      "baslik": "Veri gizliliği odaklı yapay zeka girişimi Maple, 5.3 milyon dolar yatırım aldı",
+      "tarih": "Wed, 25 Nov 2026 07:01:43 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Kullanıcı verilerinin gizliliğini korumaya odaklanan ABD merkezli yapay zeka girişimi Maple, EPIC Ventures'ın liderlik ettiği tohum turunda 5.3 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://swipeline.co/veri-gizliligi-odakli-yapay-zeka-girisimi-maple-5-3-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "tohum turu",
+      "kaynak_url": "https://swipeline.co/veri-gizliligi-odakli-yapay-zeka-girisimi-maple-5-3-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

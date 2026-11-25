@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_playbook-630b",
+  "durum": "hazir",
+  "puan": 48,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 8,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Playbook",
+    "domain": "playbk.io",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 8000000,
+      "birim": "EUR",
+      "usd": 8640000
+    },
+    "lider": "Heal Capital",
+    "katilanlar": [
+      "Bayern Kapital",
+      "Capnamic"
+    ],
+    "kurucular": [
+      "Nikolai Wessendorf"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T07:23:38.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/24/playbook-raises-eur8m-to-help-pharma-companies-keep-ai-agents-compliant/",
+      "baslik": "Playbook raises €8M to help pharma companies keep AI agents compliant",
+      "tarih": "Tue, 24 Nov 2026 07:23:38 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "To expand the rollout of its tech, Playbook has raised €8 million in a funding round led by Heal Capital , with participation from Bayern Kapital and Capnamic .",
+      "kaynak_url": "https://tech.eu/2026/11/24/playbook-raises-eur8m-to-help-pharma-companies-keep-ai-agents-compliant/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

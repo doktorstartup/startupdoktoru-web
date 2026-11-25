@@ -1,0 +1,59 @@
+{
+  "surum": 1,
+  "id": "2026-11-25_aqura-systems-1656",
+  "durum": "hazir",
+  "puan": 49,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Aqura Systems",
+    "domain": "aqura.systems",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 2100000,
+      "birim": "GBP",
+      "usd": 2667000
+    },
+    "lider": "Archangels alongside Scottish Enterprise to advance its AI-powered",
+    "katilanlar": [
+      "Scottish Enterprise to advance its AI-powered"
+    ],
+    "kurucular": [
+      "Chris Hyde",
+      "Steve Ball",
+      "Gareth Hammond"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-25T12:10:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/25/aqura-systems-raises-ps21m-to-advance-ai-powered-fish-farm-monitoring/",
+      "baslik": "Aqura Systems raises £2.1M to advance AI-powered fish farm monitoring",
+      "tarih": "Wed, 25 Nov 2026 12:10:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Scottish aquatech company Aqura Systems has raised £2.1 million in a funding round led by Archangels alongside Scottish Enterprise to advance its AI-powered robotic monitoring platform for fish farms.",
+      "kaynak_url": "https://tech.eu/2026/11/25/aqura-systems-raises-ps21m-to-advance-ai-powered-fish-farm-monitoring/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}

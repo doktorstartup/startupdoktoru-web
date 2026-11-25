@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-24_reversa-588d",
+  "durum": "hazir",
+  "puan": 68,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 4,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Reversa",
+    "domain": "reversa.ai",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 750000,
+      "birim": "EUR",
+      "usd": 810000
+    },
+    "lider": "Itnig",
+    "katilanlar": [],
+    "kurucular": [
+      "Santiago Aliaga Estella"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-24T10:00:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/24/reversa-raises-eur750k-to-automate-regulatory-processes-with-ai-agents/",
+      "baslik": "Reversa raises €750K to automate regulatory processes with AI agents",
+      "tarih": "Tue, 24 Nov 2026 10:00:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Reversa , a company developing AI agents to automate regulatory processes for businesses and public institutions, has raised €750,000 in a pre-seed funding round led by Itnig , the investment fund of",
+      "kaynak_url": "https://tech.eu/2026/11/24/reversa-raises-eur750k-to-automate-regulatory-processes-with-ai-agents/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/24/reversa-raises-eur750k-to-automate-regulatory-processes-with-ai-agents/"
+    }
+  ],
+  "olusturma": "2026-11-25T15:30:34.495Z"
+}
