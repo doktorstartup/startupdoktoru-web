@@ -16,6 +16,7 @@ import { fileURLToPath } from "node:url";
 import ffmpeg from "../haber/node_modules/ffmpeg-static/index.js";
 import { chromium } from "../haber/node_modules/playwright-core/index.mjs";
 import { createClient } from "../../node_modules/@supabase/supabase-js/dist/index.mjs";
+import { instagramMetinHatalari } from "../instagram-metin.mjs";
 
 const KOK = dirname(fileURLToPath(import.meta.url));
 const SAAT = 19; // TR, video saati
@@ -83,6 +84,8 @@ if (slaytlar.length < 2 || slaytlar.length > 10) hata({ message: `Instagram 2–
 const metin = readFileSync(join(a, "metin.md"), "utf8").split("\n").filter((l) => !l.startsWith("# ")).join("\n").trim();
 if (!metin) hata({ message: "metin.md boş." });
 if (metin.length > 2200) hata({ message: `Açıklama ${metin.length} karakter; Instagram sınırı 2200.` });
+const metinHatasi = instagramMetinHatalari(metin);
+if (metinHatasi.length) hata({ message: `metin.md:\n  - ${metinHatasi.join("\n  - ")}` });
 
 // Saat: --an verildiyse o, yoksa ilk boş günün 12:00'si (en az 30 dk sonrası).
 const ai = process.argv.indexOf("--an");

@@ -14,6 +14,7 @@ import { homedir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createClient } from "../../node_modules/@supabase/supabase-js/dist/index.mjs";
+import { instagramMetinHatalari } from "../instagram-metin.mjs";
 
 const KOK = dirname(fileURLToPath(import.meta.url));
 const proje = JSON.parse(readFileSync(process.argv[2], "utf8"));
@@ -23,6 +24,8 @@ const DOSYA_SINIRI = 45 * 1024 * 1024; // Supabase ücretsiz plan tek dosya sın
 const p = proje.paylasim;
 if (!p?.baslik) throw new Error('Proje dosyasında "paylasim" (baslik, instagram, shorts, linkedin) yok');
 if (!proje.kapak) throw new Error('Proje dosyasında "kapak" ayarı yok');
+const metinHatasi = instagramMetinHatalari(p.instagram || "");
+if (metinHatasi.length) throw new Error(`Instagram metni:\n  - ${metinHatasi.join("\n  - ")}`);
 
 // Stüdyo kapısı: müzik, ses efekti ve açılış kancası olmadan video kuyruğa giremez — 2026-11-13'te
 // eski bir proje üçü de olmadan yayına çıktı. Bilerek sade video için projeye "sade": true yazılır.
