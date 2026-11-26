@@ -1,0 +1,55 @@
+{
+  "surum": 1,
+  "id": "2026-11-26_pixoanalytics-be2a",
+  "durum": "hazir",
+  "puan": 66,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 20,
+    "buyukluk": 4,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "PixoAnalytics",
+    "domain": "pixoanalytics.com",
+    "ulke": "TR",
+    "turk": true,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 1000000,
+      "birim": "EUR",
+      "usd": 1080000
+    },
+    "lider": "ACT Venture Partners",
+    "katilanlar": [],
+    "kurucular": [
+      "Ali Özyiğit",
+      "Polina Özyiğit"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-26T14:30:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/26/pixoanalytics-act-venture-partnerstan-1-milyon-euro-yatirim-aldi/",
+      "baslik": "PixoAnalytics, ACT Venture Partners'tan 1 milyon euro yatırım aldı",
+      "tarih": "Thu, 26 Nov 2026 14:30:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Londra ve İstanbul merkezli teknoloji girişimi PixoAnalytics , ACT Venture Partners 'tan 1 milyon euro yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/26/pixoanalytics-act-venture-partnerstan-1-milyon-euro-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-26T15:03:52.560Z"
+}
