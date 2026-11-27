@@ -1,0 +1,58 @@
+{
+  "surum": 1,
+  "id": "2026-11-26_watersense-3223",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "WaterSense",
+    "domain": "water-sense.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5750000,
+      "birim": "EUR",
+      "usd": 6210000
+    },
+    "lider": "Movens Capital",
+    "katilanlar": [],
+    "kurucular": [
+      "Filip Budny"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-26T08:45:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/26/watersense-raises-eur575m-to-build-europes-water-intelligence-infrastructure/",
+      "baslik": "WaterSense raises €5.75M to build Europe's water intelligence infrastructure",
+      "tarih": "Thu, 26 Nov 2026 08:45:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Water intelligence company WaterSense has secured €5.75 million in funding through a combination of grants and a pre-seed round co-led by b2venture and Movens Capital , with participation from vastpoi",
+      "kaynak_url": "https://tech.eu/2026/11/26/watersense-raises-eur575m-to-build-europes-water-intelligence-infrastructure/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/26/watersense-raises-eur575m-to-build-europes-water-intelligence-infrastructure/"
+    }
+  ],
+  "olusturma": "2026-11-27T14:57:38.225Z"
+}

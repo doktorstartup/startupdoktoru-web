@@ -1,0 +1,67 @@
+{
+  "surum": 1,
+  "id": "2026-11-27_project-omega-683b",
+  "durum": "hazir",
+  "puan": 82,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 0,
+    "tur_uygunluk": 9,
+    "tr": 20,
+    "buyukluk": 12,
+    "tazelik": 12,
+    "kaynak": 4
+  },
+  "kunye": {
+    "sirket": "Project Omega",
+    "domain": "projectomega.com",
+    "ulke": "TR",
+    "turk": false,
+    "tur_tipi": "series-a",
+    "tutar": {
+      "deger": 80000000,
+      "birim": "USD",
+      "usd": 80000000
+    },
+    "lider": "B Capital",
+    "katilanlar": [
+      "Starship Ventures",
+      "Mantis Ventures",
+      "645 Ventures",
+      "VC"
+    ],
+    "kurucular": [],
+    "sektor": null,
+    "tarih": "2026-11-27T08:20:00.000Z"
+  },
+  "dusuk_guven": [
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "webrazzi",
+      "url": "https://webrazzi.com/2026/11/27/project-omega-borusan-ventures-in-da-katildigi-turda-80-milyon-dolar-yatirim-aldi/",
+      "baslik": "Project Omega, Borusan Ventures'ın da katıldığı turda 80 milyon dolar yatırım aldı",
+      "tarih": "Fri, 27 Nov 2026 08:20:00 +0000"
+    },
+    {
+      "ad": "swipeline",
+      "url": "https://swipeline.co/project-omega-borusan-ventures-katilimiyla-80-milyon-dolar-yatirim-aldi/",
+      "baslik": "Project Omega, Borusan Ventures’ın katılımıyla 80 milyon dolar yatırım aldı",
+      "tarih": "Fri, 27 Nov 2026 08:22:44 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Nükleer enerji alanında çalışan Project Omega , 80 milyon dolar yatırım aldı.",
+      "kaynak_url": "https://webrazzi.com/2026/11/27/project-omega-borusan-ventures-in-da-katildigi-turda-80-milyon-dolar-yatirim-aldi/"
+    },
+    {
+      "metin": "A serisi",
+      "kaynak_url": "https://webrazzi.com/2026/11/27/project-omega-borusan-ventures-in-da-katildigi-turda-80-milyon-dolar-yatirim-aldi/"
+    }
+  ],
+  "olusturma": "2026-11-27T14:57:38.225Z"
+}

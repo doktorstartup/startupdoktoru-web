@@ -1,0 +1,68 @@
+{
+  "surum": 1,
+  "id": "2026-11-26_ark-capture-solutions-a63a",
+  "durum": "hazir",
+  "puan": 74,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 5,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 20,
+    "tr": 0,
+    "buyukluk": 7,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "ARK Capture Solutions",
+    "domain": "arkcapturesolutions.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "pre-seed",
+    "tutar": {
+      "deger": 5400000,
+      "birim": "EUR",
+      "usd": 5832000
+    },
+    "lider": "Aperam Ventures",
+    "katilanlar": [
+      "Wallonie Entreprendre",
+      "Seeder Fund",
+      "Invest.BW",
+      "BeAngels",
+      "Noshaq",
+      "Encevo",
+      "VITO"
+    ],
+    "kurucular": [
+      "Samuel Thiry",
+      "Aurélien Vantomme"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-26T08:22:26.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/26/ark-capture-solutions-secures-eur54m-to-scale-its-all-electric-carbon-capture-technology/",
+      "baslik": "ARK Capture Solutions secures €5.4M to scale its all-electric carbon capture technology",
+      "tarih": "Thu, 26 Nov 2026 08:22:26 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Belgian cleantech company ARK Capture Solutions , which develops fully electric carbon capture equipment for industrial emissions, has raised €5.4 million in a funding round led by Aperam Ventures , w",
+      "kaynak_url": "https://tech.eu/2026/11/26/ark-capture-solutions-secures-eur54m-to-scale-its-all-electric-carbon-capture-technology/"
+    },
+    {
+      "metin": "pre-seed",
+      "kaynak_url": "https://tech.eu/2026/11/26/ark-capture-solutions-secures-eur54m-to-scale-its-all-electric-carbon-capture-technology/"
+    }
+  ],
+  "olusturma": "2026-11-27T14:57:38.225Z"
+}

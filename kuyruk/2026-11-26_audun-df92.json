@@ -1,0 +1,57 @@
+{
+  "surum": 1,
+  "id": "2026-11-26_audun-df92",
+  "durum": "hazir",
+  "puan": 44,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 0,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 6,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 12,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Audun",
+    "domain": null,
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "bilinmiyor",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "USD",
+      "usd": 3000000
+    },
+    "lider": null,
+    "katilanlar": [],
+    "kurucular": [
+      "Peter Flo",
+      "Magnus Vonen",
+      "Jacob Hambro",
+      "Henrik Fevang"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-26T09:15:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/26/audun-raises-3m-to-modernise-debt-collection-with-ai/",
+      "baslik": "Audun raises $3M to modernise debt collection with AI",
+      "tarih": "Thu, 26 Nov 2026 09:15:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Norwegian AI-native debt collection company Audun has raised $3 million in funding from Alliance VC , Y Combinator , Robinhood Ventures , Skyfall , First Degree and angel investors across Europe and t",
+      "kaynak_url": "https://tech.eu/2026/11/26/audun-raises-3m-to-modernise-debt-collection-with-ai/"
+    }
+  ],
+  "olusturma": "2026-11-27T14:57:38.225Z"
+}

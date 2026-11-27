@@ -1,0 +1,65 @@
+{
+  "surum": 1,
+  "id": "2026-11-25_permut-6f7c",
+  "durum": "hazir",
+  "puan": 61,
+  "puan_kirilimi": {
+    "alan_tutar": 10,
+    "alan_tur": 10,
+    "alan_lider": 0,
+    "alan_kurucu": 5,
+    "tur_uygunluk": 16,
+    "tr": 0,
+    "buyukluk": 6,
+    "tazelik": 9,
+    "kaynak": 5
+  },
+  "kunye": {
+    "sirket": "Permut",
+    "domain": "permut.com",
+    "ulke": null,
+    "turk": false,
+    "tur_tipi": "seed",
+    "tutar": {
+      "deger": 3000000,
+      "birim": "EUR",
+      "usd": 3240000
+    },
+    "lider": null,
+    "katilanlar": [
+      "Cleo Capital",
+      "Decelera",
+      "Badebles",
+      "Secways",
+      "Masia"
+    ],
+    "kurucular": [
+      "Alex Lopera"
+    ],
+    "sektor": null,
+    "tarih": "2026-11-25T15:57:00.000Z"
+  },
+  "dusuk_guven": [
+    "kurucular",
+    "katilanlar"
+  ],
+  "kaynaklar": [
+    {
+      "ad": "tech.eu",
+      "url": "https://tech.eu/2026/11/25/permut-raises-eur3m-to-turn-conversational-ai-into-a-revenue-driver-for-brands/",
+      "baslik": "Permut raises €3M to turn conversational AI into a revenue driver for brands",
+      "tarih": "Wed, 25 Nov 2026 15:57:00 +0000"
+    }
+  ],
+  "alintilar": [
+    {
+      "metin": "Permut , a conversational AI agent platform that businesses can deploy across any channel they use to engage with their customers, has closed a €3 million seed round.",
+      "kaynak_url": "https://tech.eu/2026/11/25/permut-raises-eur3m-to-turn-conversational-ai-into-a-revenue-driver-for-brands/"
+    },
+    {
+      "metin": "seed",
+      "kaynak_url": "https://tech.eu/2026/11/25/permut-raises-eur3m-to-turn-conversational-ai-into-a-revenue-driver-for-brands/"
+    }
+  ],
+  "olusturma": "2026-11-27T14:57:38.225Z"
+}
