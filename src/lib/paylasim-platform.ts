@@ -104,6 +104,8 @@ export function instagramIstemci(hesap: string, token: string, adres: Adres, api
         caption: v.platformlar.instagram?.metin || "",
         share_to_feed: "true",
         ...(v.ai_icerik ? { is_ai_generated: "true" } : {}),
+        // Deneme Reels (migration 0058): önce takipçi olmayanlara; iyi giderse Instagram takipçilere de açar.
+        ...(v.ig_deneme ? { trial_params: JSON.stringify({ graduation_strategy: "SS_PERFORMANCE" }) } : {}),
       }),
     // Hikâye açıklama almaz; video en fazla 60 sn olabilir. .jpg yolu görsel hikâye olur.
     hikayeAc: (yol: string) =>

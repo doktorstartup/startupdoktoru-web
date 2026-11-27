@@ -435,3 +435,6 @@ alter table public.ds_hikaye_kuyruk
   add column if not exists tiktok_durum text,
   add column if not exists tiktok_id text,
   add column if not exists tiktok_hata text;
+
+-- 0058_paylasim_ig_deneme
+alter table public.ds_paylasim add column if not exists ig_deneme boolean not null default false;

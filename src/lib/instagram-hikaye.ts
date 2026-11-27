@@ -73,6 +73,7 @@ export async function reelsHikayeleri(simdi = new Date()) {
     .from("ds_paylasim")
     .select("id, baslik, video_yol, yayin, platformlar, hikaye")
     .not("video_yol", "is", null)
+    .eq("ig_deneme", false) // deneme Reels takipçilere hikâyeyle gösterilmez; deneyi bozar
     .or("hikaye.is.null,hikaye->>durum.eq.isleniyor");
   if (error) throw new Error(error.message);
   const sinir = simdi.getTime() - HIKAYE_SAAT * 3600000;

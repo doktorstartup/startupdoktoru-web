@@ -76,7 +76,7 @@ const depo: Depo = {
   async vadesiGelenler() {
     const { data, error } = await supabaseAdmin
       .from("ds_paylasim")
-      .select("id, baslik, video_yol, ai_icerik, platformlar, yayin_at, yayin")
+      .select("id, baslik, video_yol, ai_icerik, ig_deneme, platformlar, yayin_at, yayin")
       .lte("yayin_at", new Date().toISOString())
       .is("yayin_bitti_at", null)
       .order("yayin_at")

@@ -31,6 +31,7 @@ export type KuyrukVideo = {
   baslik: string;
   video_yol: string | null;
   ai_icerik: boolean;
+  ig_deneme?: boolean;
   yayin_at: string;
   yayin: Partial<Record<Platform, PlatformKaydi>>;
   platformlar: Partial<Record<Platform, { metin?: string; paylasildi_at?: string | null }>>;

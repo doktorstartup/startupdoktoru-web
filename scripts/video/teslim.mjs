@@ -204,6 +204,7 @@ const kayit = {
   notlar: `Proje: ${proje.ad}\nKlasör: ${klasor}\n\n${kurgu.kelimeler.map((w) => w.w).join(" ")}`,
   platformlar,
   ai_icerik: aiVar,
+  ig_deneme: !!proje.ig_deneme, // Deneme Reels (migration 0058)
   updated_at: new Date().toISOString(),
 };
 const { data: satir, error } = var_
