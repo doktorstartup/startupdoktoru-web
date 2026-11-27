@@ -1,10 +1,10 @@
 // Kaydırmalı postu kuyruğa alır: slaytları JPEG'e (Instagram) ve tek PDF'e (LinkedIn belgesi) çevirip Storage'a yükler,
-// ilk boş günün 19:00'una (TR) yerleştirir. Tür deneyi (2026-11-22): carousel videonun yerine çıkar, video olan güne konmaz;
+// ilk boş günün 21:00'ine (TR) yerleştirir. Tür deneyi (2026-11-22): carousel videonun yerine çıkar, video olan güne konmaz;
 // video yerleştirici de carousel olan günü atlar (migration 0054). Yayını site yapar (/api/cron/hikaye, 15 dk'da bir; Paylaşım düğmesi kapalıysa atmaz).
 //
 // Klasör düzeni: <klasör>/slaytlar/slide_01.png … (sırayla), <klasör>/metin.md (Instagram açıklaması; "# " ile başlayan
 // başlık satırı atılır) ve isteğe bağlı <klasör>/linkedin.md (LinkedIn metni; yoksa LinkedIn'e gitmez).
-// Kullanım: node scripts/carousel/kuyruga-al.mjs <klasör> "<başlık>" [--an 2026-11-22T19:00]
+// Kullanım: node scripts/carousel/kuyruga-al.mjs <klasör> "<başlık>" [--an 2026-11-29T21:00]
 // Güncelle: node scripts/carousel/kuyruga-al.mjs --guncelle <id> <klasör>   (bekleyen satıra PDF + LinkedIn metni ekler)
 // Liste:    node scripts/carousel/kuyruga-al.mjs --liste
 // İptal:    node scripts/carousel/kuyruga-al.mjs --iptal <id>
@@ -19,7 +19,7 @@ import { createClient } from "../../node_modules/@supabase/supabase-js/dist/inde
 import { instagramMetinHatalari } from "../instagram-metin.mjs";
 
 const KOK = dirname(fileURLToPath(import.meta.url));
-const SAAT = 19; // TR, video saati
+const SAAT = 21; // TR, video saati (2026-11-27 saat deneyi: 19 → 21, migration 0059)
 const env = Object.fromEntries(
   readFileSync(join(KOK, "../../.env.local"), "utf8")
     .split("\n")
@@ -75,7 +75,7 @@ if (a === "--guncelle") {
   process.exit(0);
 }
 if (!a || !b) {
-  console.error('Kullanım: node scripts/carousel/kuyruga-al.mjs <klasör> "<başlık>" [--an 2026-11-22T19:00]');
+  console.error('Kullanım: node scripts/carousel/kuyruga-al.mjs <klasör> "<başlık>" [--an 2026-11-29T21:00]');
   process.exit(1);
 }
 

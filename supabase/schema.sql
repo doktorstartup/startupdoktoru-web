@@ -438,3 +438,5 @@ alter table public.ds_hikaye_kuyruk
 
 -- 0058_paylasim_ig_deneme
 alter table public.ds_paylasim add column if not exists ig_deneme boolean not null default false;
+
+-- 0059_paylasim_saat_21: paylasim_kuyruga_al saat sabiti 19:00 → 21:00 (migrations/0059 dosyasına bak)
